@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="sync-project-with-drop" default="sync-lift-with-project" 
+    xmlns:if="ant:if"
+    xmlns:unless="ant:unless"
+    xmlns:au="antlib:org.apache.ant.antunit">
+    
+    <description>
+        Sync lift files with project using Ant.
+        
+        --------------------------
+        -- author:  George Moyano --
+        -- version: 1.0           --
+        -- updated: Dec 2016      --
+        --------------------------
+    </description>
+    
+<!--    <property name="niem-conformance-validator-repo-url" 
+        value="https://github.com/gmoyanollc/validate-niem-conformance"/>
+    <property name="niem-conformance-validator-destination-folder" 
+        value="${basedir}/src/test/resources/validate/validate-niem-conformance"/>-->
+    
+<!--    <property name="project.base.dir" value="/media/sf_gData/Project/TSOA/Schema/Product/temp/soi-track-datatype"/>-->
+  
+<!--    <macrodef name="git">
+        <attribute name="git-command"/>
+        <attribute name="dir" default=""/>
+        <element name="args" optional="true"/>
+        <sequential>
+            <echo message="git @{git-command}"/>
+            <exec executable="git" dir="@{dir}" failonerror="true">
+                <arg value="@{git-command}"/>
+                <args/>
+            </exec>
+        </sequential>
+    </macrodef>-->
+    
+    <target name="sync-lift-with-project">
+        <sync todir="lift-source/base-xsd">
+            <mappedresources>
+                <fileset dir="../src/main/resources" includes="*.*"/>
+            </mappedresources>
+        </sync>
+        <sync todir="lift-source/base-xsd/documentation">
+            <mappedresources>
+                <fileset dir="../src/main/resources/documentation"/>
+            </mappedresources>
+        </sync>
+        <sync todir="lift-source/base-xsd/extension">
+            <mappedresources>
+                <fileset dir="../src/main/resources/iep-schema/extension"/>
+            </mappedresources>
+        </sync>
+        <sync todir="lift-source/base-xsd/ic-ism">
+            <mappedresources>
+                <fileset dir="../src/main/resources/iep-schema/ic-ism"/>
+            </mappedresources>
+        </sync>
+        <sync todir="lift-source/base-xsd/niem">
+            <mappedresources>
+                <fileset dir="../src/main/resources/iep-schema/niem"/>
+            </mappedresources>
+        </sync>
+        <sync todir="lift-source/base-xsd/sample-xml" failonerror="false">
+            <mappedresources>
+                <fileset dir="../src/main/resources/iep-sample"/>
+            </mappedresources>
+        </sync>
+    </target>
+    
+</project>

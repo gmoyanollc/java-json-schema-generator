@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY 2008 rel. 2 U (http://www.xmlspy.com) by Northrop Grumman I T -->
+<!--__________________________________________________________________________-->
+<!--                                                                          -->
+<!-- ****** General, Event, and Individual track types are mapped to this schema (General.xsd) *******  -->
+<!--__________________________________________________________________________-->
+<!--                                                                          -->
+<xs:schema targetNamespace="urn:disa:udop.tracks:1.0:types" xmlns="urn:disa:udop.tracks:1.0:types" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="Track.xsd"/>
+	<xs:complexType name="Individual">
+		<xs:complexContent>
+			<xs:extension base="C2TrackDetails">
+				<xs:sequence>
+					<xs:element name="Name" type="IndividualNameLenType" minOccurs="0"/>
+					<xs:element name="MsgTxtFormatId" type="MsgTextFormatIdLenType" minOccurs="0"/>
+					<xs:element name="MsgIdOriginator" type="MsgIdOriginatorLenType" minOccurs="0"/>
+					<xs:element name="SecurityClassification" type="SecurityClassificationLenType" minOccurs="0"/>
+					<xs:element name="EnemyMasterKey" type="EnemyMasterKeyLenType" minOccurs="0"/>
+					<xs:element name="StageOfIntelEval" type="xs:byte" minOccurs="0"/>
+					<xs:element name="FirstName" type="FirstNameLenType" minOccurs="0"/>
+					<xs:element name="LastName" type="LastNameLenType" minOccurs="0"/>
+					<xs:element name="Sex" type="SexLenType" minOccurs="0"/>
+					<xs:element name="Nationality" type="NationalityLenType" minOccurs="0"/>
+					<xs:element name="EntityId" type="EntityIdLenType" minOccurs="0"/>
+					<xs:element name="beginDtg" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="endDtg" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="MilitaryRank" type="xs:short" minOccurs="0"/>
+					<xs:element name="OrgPosition" type="xs:byte" minOccurs="0"/>
+					<xs:element name="PersonnelId" type="xs:byte" minOccurs="0"/>
+					<xs:element name="TypeOfSourceIntel" type="xs:byte" minOccurs="0"/>
+					<xs:element name="Condition" type="xs:byte" minOccurs="0"/>
+					<xs:element name="StreetAddr" type="StreetAddrLenType" minOccurs="0"/>
+					<xs:element name="City" type="CityLenType" minOccurs="0"/>
+					<xs:element name="StateOrProvince" type="StateOrProvinceLenType" minOccurs="0"/>
+					<xs:element name="IntlPostalZipCode" type="IntlPostalZipCodeLenType" minOccurs="0"/>
+					<xs:element name="ControlMark" type="ControlMarkLenType" minOccurs="0"/>
+					<xs:element name="ReleaseMark" type="ReleaseMarkLenType" minOccurs="0"/>
+					<xs:element name="Citizenship" type="CitizenshipLenType" minOccurs="0"/>
+					<xs:element name="Allegiance" type="AllegianceLenType" minOccurs="0"/>
+					<xs:element name="PersonalIdType" type="PersonalIdTypeLenType" minOccurs="0"/>
+					<xs:element name="PersonalIdNum" type="PersonalIdNumLenType" minOccurs="0"/>
+					<xs:element name="PersonalIdIssuingCC" type="PersonalIdIssuingCCLenType" minOccurs="0"/>
+					<xs:element name="BirthCC" type="BirthCCLenType" minOccurs="0"/>
+					<xs:element name="MaritalStatus" type="xs:byte" minOccurs="0"/>
+					<xs:element name="HairColor" type="xs:byte" minOccurs="0"/>
+					<xs:element name="EyeColor" type="xs:byte" minOccurs="0"/>
+					<xs:element name="SkinColor" type="xs:byte" minOccurs="0"/>
+					<xs:element name="Weight" type="xs:long" minOccurs="0"/>
+					<xs:element name="Height" type="xs:long" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="IndividualNameLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The Event name's length is between 1 and 26</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="26"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FirstNameLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of FirstNameLenType is between 1 and 20</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LastNameLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of LastNameLenType is between 1 and 25</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SexLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of SexLenType is 1</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NationalityLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of NationalityLenType is between 1 and 60</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StreetAddrLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of StreetAddrLenType is between 1 and 25</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CityLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of CityLenType is between 1 and 25</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StateOrProvinceLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of StateOrProvinceLenType is between 1 and 18</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IntlPostalZipCodeLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of IntlPostalZipCodeLenType is between 1 and 12</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CitizenshipLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of CitizenshipLenType is between 1 and 2</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonalIdTypeLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of PersonalIdTypeLenType is between 1 and 20</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonalIdNumLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of PersonalIdNumLenType is between 1 and 32</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonalIdIssuingCCLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of PersonalIdIssuingCCLenType is between 1 and 2</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BirthCCLenType">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The length of BirthCCLenType is between 1 and 2</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<c:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:c="http://reference.niem.gov/niem/resource/mpd/catalog/3.0/"
+           xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+           xsi:schemaLocation="http://reference.niem.gov/niem/resource/mpd/catalog/3.0/ mpd-catalog-3.0.xsd"
+           xmlns="http://reference.niem.gov/niem/resource/mpd/catalog/3.0/">
+  
+  <c:MPD c:mpdName="track-iepd"
+         c:mpdVersionID="1"
+         c:mpdClassURIList="iepd"
+         c:mpdURI="urn:mtf:mil:6040c:comspot:c.0.01.00:messages">
+
+    <nc:DescriptionText></nc:DescriptionText>
+    <c:MPDInformation>
+      <c:CreationDate>2016-12-01</c:CreationDate>
+      <c:StatusText>Draft</c:StatusText>
+    </c:MPDInformation>
+    <c:IEPConformanceTarget>
+      <c:HasDocumentElement c:qualifiedNameList="Track"/>
+      <c:IEPSampleXMLDocument c:pathURI="sample-xml/xxx.xml"/>
+    </c:IEPConformanceTarget>
+    <c:ReadMe c:pathURI="base-xsd/00-readme.txt"/>
+    <c:XMLCatalog c:pathURI="base-xsd/niem/xml-catalog.xml"/>
+    <c:Wantlist c:pathURI="base-xsd/niem/wantlist.xml"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/TSOA_Track.xsd"/>
+    <c:ExternalSchemaDocument c:pathURI="base-xsd/ic-ism/CVE/Schema/ISM/IC-ISM.xsd"/>
+    <c:ConformanceAssertion c:pathURI="base-xsd/03-conformance-statement.txt"/>
+    <c:Documentation c:pathURI="base-xsd/01-changelong.txt"/>
+    <c:Documentation c:pathURI="base-xsd/02-distribution statement.txt"/>
+    <c:Documentation c:pathURI="base-xsd/02-distribution statement.txt"/>    
+  
+  </c:MPD>
+
+</c:Catalog>

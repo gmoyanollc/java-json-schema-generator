@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Newton C. Lim (Northrop Grumman I T) -->
+
+<!--__________________________________________________________________________-->
+
+<!--                                                                                                                                                    -->
+
+<!-- ******************************************  Platforms  *****************************************  -->
+
+<!--__________________________________________________________________________-->
+
+<xs:schema targetNamespace="urn:disa:udop.tracks:1.0:types" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:disa:udop.tracks:1.0:types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:include schemaLocation="Track.xsd"/>
+
+	<xs:complexType name="Platform">
+
+		<xs:complexContent>
+
+			<xs:extension base="C2TrackDetails">
+
+				<xs:sequence>
+
+					<xs:element name="ForceStructure" type="ForceStructureDetails" minOccurs="0"/>
+
+					<xs:element name="PlatformName" type="PlatformNameType" default="UNKNOWN" minOccurs="0"/>
+
+					<xs:element name="CorrelationIndex" type="xs:string" minOccurs="0"/>
+
+					<xs:element name="HierarchyLevel" type="HierarchyLevelType" minOccurs="0"/>
+
+					<xs:element name="BasicEncyclopedia" type="BasicEncyclopediaDetails" minOccurs="0">
+
+						<xs:annotation>
+
+							<xs:documentation>
+
+								<comment>OS-OTH: BE</comment>
+
+							</xs:documentation>
+
+						</xs:annotation>
+
+					</xs:element>
+
+					<xs:element name="PIN" type="PIN" minOccurs="0"/>
+
+					<xs:group ref="ClosestPointOfApproach" minOccurs="0"/>
+
+					<xs:group ref="PlatformDescription" minOccurs="0"/>
+
+					<xs:element name="ProcessingDirections" type="ProcessingDirectionsDetails" minOccurs="0"/>
+
+				</xs:sequence>
+
+			</xs:extension>
+
+		</xs:complexContent>
+
+	</xs:complexType>
+
+	<!--<xs:group name="AirPlatformPhysicalDescription">
+
+		<xs:sequence>
+
+			<xs:element name="NumberOfAircraft" type="PlatformQuantityValue" minOccurs="0"/>
+
+		</xs:sequence>
+
+	</xs:group>-->
+
+	<xs:complexType name="AirPlatformPhysicalDescription">
+
+		<xs:sequence>
+
+			<xs:element name="NumberOfAircraft" type="PlatformQuantityValue" minOccurs="0"/>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="HullLengthType">
+
+		<xs:simpleContent>
+
+			<xs:restriction base="DistanceMeasure">
+
+				<xs:maxInclusive value="9999.99"/>
+
+			</xs:restriction>
+
+		</xs:simpleContent>
+
+	</xs:complexType>
+
+	<xs:simpleType name="HullColorType">
+
+		<xs:restriction base="xs:token">
+
+			<xs:minLength value="3"/>
+
+			<xs:maxLength value="6"/>
+
+			<xs:enumeration value="Black"/>
+
+			<xs:enumeration value="Blue"/>
+
+			<xs:enumeration value="Brown"/>
+
+			<xs:enumeration value="Gray"/>
+
+			<xs:enumeration value="Green"/>
+
+			<xs:enumeration value="Orange"/>
+
+			<xs:enumeration value="Purple"/>
+
+			<xs:enumeration value="Red"/>
+
+			<xs:enumeration value="Silver"/>
+
+			<xs:enumeration value="Tan"/>
+
+			<xs:enumeration value="White"/>
+
+			<xs:enumeration value="Yellow"/>
+
+		</xs:restriction>
+
+	</xs:simpleType>
+
+	<xs:complexType name="NauticalElementPhysicalDescription">
+
+		<xs:sequence>
+
+			<xs:element name="AppearanceGroup" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>OS-OTH: Rigging _ Group Code of the vessel.(Entry List 1053: GP1, GP2, GP3)</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="HullProf" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>USMTF:  The code to indicate the sequence and types of upright sructures located on vessel weather decks, reported from bow to stern.  (OS-OTH: Rigging _  Entry List 1080, Hull Profile Codes.  FLUSH, RAISED, 1-L2,3  )</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Stern" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>OS-OTH: Rigging _ COUNTER/CRUISER</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Uprights" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>USMTF:  The code to indicate the sequence and types of upright structures located on vessel weather decks, reported from bow to stern.  OS-OTH:  Rigging _ Enter "M" for Mast, "F: for Funnel, "K" for Kingpost, "C" for Cranes, and "G: for Gantry, e.g, MKCGMFK.</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Length" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>OS-OTH: Enter the length of the vessel in feet (0-9999) followed by FT (e.g., 1200FT).</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Propulsion" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>OS-OTH: Propulsion Mode for Acoustic track.  Not applicable to Surface track by OS-OTH def.</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Tonnage" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>USMTF: The capacity of a vesse.  Enter gross estimated tonnage.  OS-OTH: Enter the estimated gross tonnage (0-999999), e.g., 2500.</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Beam" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>USMTF: The linear measurement of a vessel at its widest point.</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Draft" type="xs:string" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>USMTF:  The depth to which a vessel is immersed when bearing a given load.</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="Blades" type="xs:string" minOccurs="0"/>
+
+			<xs:element name="Shafts" type="xs:string" minOccurs="0"/>
+
+			<xs:element name="Arrival" type="ArrDepDesPlatformAttributes" minOccurs="0"/>
+
+			<xs:element name="Destination" type="ArrDepDesPlatformAttributes" minOccurs="0"/>
+
+			<xs:element name="Departure" type="ArrDepDesPlatformAttributes" minOccurs="0"/>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="PleasureCraftPlatformPhysicalDescription">
+
+		<xs:complexContent>
+
+			<xs:extension base="NauticalElementPhysicalDescription">
+
+				<xs:sequence>
+
+					<xs:element name="HullColor" type="HullColorType" minOccurs="0"/>
+
+					<xs:element name="Brand" minOccurs="0">
+
+						<xs:simpleType>
+
+							<xs:restriction base="xs:token">
+
+								<xs:minLength value="1"/>
+
+								<xs:maxLength value="20"/>
+
+							</xs:restriction>
+
+						</xs:simpleType>
+
+					</xs:element>
+
+					<xs:element name="HullLength" type="HullLengthType" minOccurs="0"/>
+
+				</xs:sequence>
+
+			</xs:extension>
+
+		</xs:complexContent>
+
+	</xs:complexType>
+
+	<xs:simpleType name="PlatformNameType">
+
+		<xs:annotation>
+
+			<xs:documentation>
+
+				<definition> The name of the vehicular platform being reported. </definition>
+
+				<USMTFref> ship.name.198.3 used in Locator NAV and MERCH sets is just a string with 1-30 characters - no entry list
+
+				also unit.desgination.987.39 used for Locator SUB and AIR sets is also just a 1-30 characters string with no entry list </USMTFref>
+
+				<comment>Length of String:  OS-OTG references the STAR and allows length 1-26, COE only supports 1-26, USMTF supports 1-30, MIDB supports 50+ characters.  Currently supporting 1-26 characters</comment>
+
+			</xs:documentation>
+
+		</xs:annotation>
+
+		<xs:restriction base="xs:string">
+
+			<xs:minLength value="1"/>
+
+			<xs:maxLength value="26"/>
+
+		</xs:restriction>
+
+	</xs:simpleType>
+
+	<xs:simpleType name="PlatformQuantityValue">
+
+		<xs:annotation>
+
+			<xs:documentation>
+
+				<definition> The number of entities being reported as a group- e.g. the number of aircraft reported. </definition>
+
+				<USMTFref> number.of.aircraft.reported.954.7 </USMTFref>
+
+				<comment>Range:  USMTF sets number of aircraft range at 1-99.  COE quantity field is an integer.   Currently supports integer.</comment>
+
+			</xs:documentation>
+
+		</xs:annotation>
+
+		<xs:restriction base="xs:integer">
+
+			<xs:minInclusive value="1"/>
+
+		</xs:restriction>
+
+	</xs:simpleType>
+
+	<xs:group name="PlatformDescription">
+
+		<xs:choice>
+
+			<xs:element name="AirPlatformPhysicalDescription" type="AirPlatformPhysicalDescription"/>
+
+			<xs:element name="NauticalPlatformPhysicalDescription" type="NauticalElementPhysicalDescription"/>
+
+		</xs:choice>
+
+	</xs:group>
+
+	<xs:group name="ClosestPointOfApproach">
+
+		<xs:sequence>
+
+			<xs:element name="ClosestPointOfApproachDistance" type="DistanceMeasure" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>The distance at the closest point of approach to own track.</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+			<xs:element name="ClosestPointOfApproachDateTimeGroup" type="xs:dateTime" minOccurs="0">
+
+				<xs:annotation>
+
+					<xs:documentation>
+
+						<definition>The dtg at the closest point of approach to own track.</definition>
+
+					</xs:documentation>
+
+				</xs:annotation>
+
+			</xs:element>
+
+		</xs:sequence>
+
+	</xs:group>
+
+	<xs:complexType name="ProcessingDirectionsDetails">
+
+		<xs:annotation>
+
+			<xs:documentation>
+
+				<comment>Used to direct the type of update.  Example:  FOTC update, Match on singel id for Tadils, etc.</comment>
+
+				<comment>Hopefully will provide a means of getting from the "Schema Model" to the TMS architecture.  Example:  If you see "match on single id" and the specified id is Link TKNO - then you process as link track in TMS.  There are many kinks to work out.  The idea of using processing directions as a means of connection between Schema and TMS came to mind when considering what unique capability does separating the Link tracks provide that may still have to be supported with the new 	model.  Link tracks only correlate with themselves based on Link TKNO.</comment>
+
+			</xs:documentation>
+
+		</xs:annotation>
+
+		<xs:sequence>
+
+			<xs:element name="ProcessingMethod" type="ProcessingMethodCode"/>
+
+			<xs:element name="ProcessingKey" type="ProcessingKeyDetails" minOccurs="0"/>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:simpleType name="ProcessingMethodCode">
+
+		<xs:restriction base="xs:token">
+
+			<xs:enumeration value="Single Identifier Match, no checks"/>
+
+			<xs:enumeration value="Single Identifier Match and no conflict"/>
+
+			<xs:enumeration value="FOTC Correlation"/>
+
+			<xs:enumeration value="UID Correlation"/>
+
+			<xs:enumeration value="Standard Attribute Correlation"/>
+
+			<xs:enumeration value="ELINT Correlation"/>
+
+		</xs:restriction>
+
+	</xs:simpleType>
+
+	<xs:complexType name="ProcessingKeyDetails">
+
+		<xs:sequence>
+
+			<xs:group ref="ProcessingKeyTypeGroup" maxOccurs="unbounded"/>
+
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:group name="ProcessingKeyTypeGroup">
+
+		<xs:choice>
+
+			<xs:element name="UID" type="EntityUniqueIdentifierDetails"/>
+
+			<xs:element name="OTHTrackNumber" type="OTHTrackNumberDetails"/>
+
+			<xs:element name="NetworkIdentifier" type="NetworkIdentifierDetails"/>
+
+		</xs:choice>
+
+	</xs:group>
+
+	<xs:complexType name="OTHTrackNumberDetails">
+
+		<xs:complexContent>
+
+			<xs:extension base="EntityOverTheHorizonTrackNumberDetails">
+
+				<xs:attribute name="source">
+
+					<xs:simpleType>
+
+						<xs:restriction base="xs:token">
+
+							<xs:enumeration value="Local"/>
+
+							<xs:enumeration value="Received"/>
+
+							<xs:enumeration value="FOTC"/>
+
+						</xs:restriction>
+
+					</xs:simpleType>
+
+				</xs:attribute>
+
+			</xs:extension>
+
+		</xs:complexContent>
+
+	</xs:complexType>
+
+</xs:schema>
+

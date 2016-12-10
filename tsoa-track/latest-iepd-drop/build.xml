@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="sync-project-with-drop" default="sync-project-with-drop" 
+    xmlns:if="ant:if"
+    xmlns:unless="ant:unless"
+    xmlns:au="antlib:org.apache.ant.antunit">
+    
+    <description>
+        Sync project with drop files using Ant.  Warning!!! Sync removes files not found in drop.
+        
+        --------------------------
+        -- author:  George Moyano --
+        -- version: 1.0           --
+        -- updated: Dec 2016      --
+        --------------------------
+    </description>
+    
+<!--    <property name="niem-conformance-validator-repo-url" 
+        value="https://github.com/gmoyanollc/validate-niem-conformance"/>
+    <property name="niem-conformance-validator-destination-folder" 
+        value="${basedir}/src/test/resources/validate/validate-niem-conformance"/>-->
+    
+<!--    <property name="project.base.dir" value="/media/sf_gData/Project/TSOA/Schema/Product/temp/soi-track-datatype"/>-->
+  
+<!--    <macrodef name="git">
+        <attribute name="git-command"/>
+        <attribute name="dir" default=""/>
+        <element name="args" optional="true"/>
+        <sequential>
+            <echo message="git @{git-command}"/>
+            <exec executable="git" dir="@{dir}" failonerror="true">
+                <arg value="@{git-command}"/>
+                <args/>
+            </exec>
+        </sequential>
+    </macrodef>-->
+    
+    <target name="sync-project-with-drop">
+        <sync todir="../src/main/resources">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd" includes="*.*" excludes="*.xpr"/>
+            </mappedresources>
+        </sync>
+        <sync todir="../src/main/resources/documentation">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/documentation"/>
+            </mappedresources>
+        </sync>
+        <sync todir="../src/main/resources/iep-schema/extension">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/extension"/>
+            </mappedresources>
+        </sync>
+        <sync todir="../src/main/resources/iep-schema/ic-ism">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/ic-ism"/>
+            </mappedresources>
+        </sync>
+        <sync todir="../src/main/resources/iep-schema/niem">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/niem"/>
+            </mappedresources>
+        </sync>
+        <sync todir="../src/main/resources/iep-sample">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/sample-xml"/>
+            </mappedresources>
+        </sync>
+    </target>
+    
+</project>

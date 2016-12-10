@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:glib="urn:disa:udop.tracks:1.0:genLib"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+	xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:icism="urn:us:gov:ic:ism"
+	xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
+	xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+	xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+	xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+	xmlns:gml="http://www.opengis.net/gml"
+	
+	targetNamespace="urn:disa:udop.tracks:1.0:genLib"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified" version="1"
+	ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument">
+	
+	<xs:annotation>
+		<xs:documentation>TSOA Track Version 1.0 DISTRIBUTION STATEMENT C. Distribution is
+			authorized to U.S. Government agencies and their contractors (Critical Technology,
+			Export Controlled, Software Documentation). Other requests for this document shall be
+			referred to Joint Staff J6, Architecture Integration Division at
+			js.dsc.j6.mbx.wma-afip-portal-help-desk@mail.mil.</xs:documentation>
+		<xs:documentation>This General Llibrary contains basic types used in the generation of various C4ISR XML Schemas.  It is expected to grow as development continues. </xs:documentation>
+		
+		<xs:appinfo>
+			<term:LocalTerm term="SABC" literal="ABC"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+		schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+		schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+		schemaLocation="../niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+		schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+	
+	<!-- update gml import to use NIEM -->
+	<!--<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../gml/geometryBasic0d1d.xsd"/> -->
+	
+	
+<!-- TODO - reuse NIEM GML and location stuff 
+	<xs:complexType name="LocationDetails">
+		<xs:choice>
+			<xs:group ref="GML"/>
+			<xs:group ref="GEOLocation"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:group name="LatitudeLongitude">
+		<xs:sequence>
+			<xs:element name="Latitude" type="LatitudeDegrees"/>
+			<xs:element name="Longitude" type="LongitudeDegrees"/>
+			<xs:element name="Precision" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<definition>Number of significant digits the latitude and longitude are precise to</definition>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="GEOLocation">
+		<xs:sequence>
+			<xs:group ref="LatitudeLongitude"/>
+			<xs:element name="RawLocation" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<comment>Correct Format is:
+ LL  : DDMMSS[.SS]N(S) DDDMMSS[.SS]E(W) 
+ UTM : +(-)zz eeeeee nnnnnnnn
+ MGRS: zzL EN eeeee nnnnn</comment>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Elevation" type="Elevation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="GML">
+		<xs:choice>
+			<xs:element ref="gml:pos">
+				<xs:annotation>
+					<xs:documentation>
+						<comment>gml:pos is defined in the GML namespace as defined by the OpenGIS group (www.opengis.net).</comment>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="gml:coordinates">
+				<xs:annotation>
+					<xs:documentation>
+						<comment>gml:coordinates is defined in the GML namespace as defined by the OpenGIS group (www.opengis.net).</comment>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="gml:coord">
+				<xs:annotation>
+					<xs:documentation>
+						<comment>gml:coord is defined in the GML namespace as defined by the OpenGIS group (www.opengis.net). </comment>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<xs:simpleType name="LatitudeDegrees">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> Latitude represented as a floating point number where the integer portion represents degrees. </definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="-90.0"/>
+			<xs:maxInclusive value="90.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LongitudeDegrees">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> Longitude represented as a floating point number where the integer portion represents degrees. </definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="-180.0"/>
+			<xs:maxInclusive value="180.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Elevation">
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="type" default="Altitude">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="Altitude"/>
+							<xs:enumeration value="Depth"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="measureUnitCode" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="FT"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="BearingDegrees">
+		<xs:simpleContent>
+			<xs:extension base="Degrees360">
+				<xs:attribute name="isTrueNorth" type="xs:boolean" default="true"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Degrees360">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="360"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Degrees180">
+		<xs:restriction base="Degrees360">
+			<xs:maxInclusive value="180"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DistanceMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> Distance in Nautical Miles, feet, meters, or kilometers. </definition>
+				<USMTFref> composite: lenth.in.nautical.miles.302 </USMTFref>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="DistanceRange">
+				<xs:attribute name="measureUnitCode" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="FT"/>
+							<xs:enumeration value="K"/>
+							<xs:enumeration value="M"/>
+							<xs:enumeration value="NMI"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DistanceRange">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="EventSpeedMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> Speed of the reported entity. </definition>
+				<USMTFref> See composite speed.knots.1164 </USMTFref>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="measureUnitCode" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="KNT"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ThreatCode">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>The Threat code where:
+					FRD = Friend
+					HOS = Hostile
+					NEU = Neutral
+					UNK = Unknown (Evaluated)
+					PND = Pending
+					AFD = Assumed Friend
+					SUS = Suspect (i.e. Assumed Hostile)
+				 </definition>
+				<comment>USMTF uses force_threat_designator and OS-OTG uses Force Code - Both of these coding schemes make use of codes that include two parts - the cateogry (e.g. AIR,SUB, SUR) combined with the threat (e.g. FRD, HOS). </comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:enumeration value="FRD"/>
+			<xs:enumeration value="HOS"/>
+			<xs:enumeration value="NEU"/>
+			<xs:enumeration value="UNK"/>
+			<xs:enumeration value="PND"/>
+			<xs:enumeration value="AFD"/>
+			<xs:enumeration value="SUS"/>
+		</xs:restriction>
+	</xs:simpleType> -->
+	<xs:complexType name="EnvironmentCategoryCodeType">
+		<xs:annotation>
+			<xs:documentation>A data type for a ....</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glib:EnvironmentCategoryCodeSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"></xs:attributeGroup>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="EnvironmentCategoryCodeSimpleType">
+		<xs:annotation>
+			<xs:documentation>
+				A data type for ....
+			</xs:documentation>
+			<xs:appinfo>
+				<USMTFref> force.threat.designator.2442.1 - See comments above</USMTFref>
+				<comment>USMTF uses force_threat_designator and OS-OTG uses Force Code - Both of
+					these coding schemes make use of codes that include two parts - the cateogry
+					(e.g. AIR,SUB, SUR) combined with the threat (e.g. FRD, HOS). </comment>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:enumeration value="AIR">
+				<xs:annotation>
+					<xs:documentation>Air</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SUB">
+				<xs:annotation>
+					<xs:documentation>Subsurface</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SUR">
+				<xs:annotation>
+					<xs:documentation>Surface</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LND">
+				<xs:annotation>
+					<xs:documentation>Land</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SPC">
+				<xs:annotation>
+					<xs:documentation>Space</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="UNK">
+				<xs:annotation>
+					<xs:documentation>Uknown</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Short0to99Type">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glib:Short0to99SimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Short0to99SimpleType">
+		<xs:annotation>
+			<xs:documentation>A data type for a ....</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:short">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+<!-- TODO
+	<xs:simpleType name="Decimal4Max">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="9999"/>
+			<xs:pattern value="[0-9]{1,4}"/>
+			<xs:pattern value="[0-9]{1,4}\.[0-9]{1,3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Decimal5Max">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99999"/>
+			<xs:pattern value="[0-9]{1,5}"/>
+			<xs:pattern value="[0-9]{1,5}\.[0-9]{1,4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Decimal8Max">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99999"/>
+			<xs:pattern value="[0-9]{1,8}"/>
+			<xs:pattern value="[0-9]{1,8}\.[0-9]{1,7}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Decimal11Max">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99999999999"/>
+			<xs:pattern value="[0-9]{1,11}"/>
+			<xs:pattern value="[0-9]{1,11}\.[0-9]{1,10}"/>
+		</xs:restriction>
+	</xs:simpleType> -->
+	
+	<xs:complexType name="Octal2DigitType">
+		<xs:annotation>
+			<xs:documentation>A data type for a 2 Digit Octal Number</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glib:Octal2DigitSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Octal2DigitSimpleType">
+		<xs:annotation>
+			<xs:documentation>
+				A data type for a 2 Digit Octal Number
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-7]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Octal4DigitType">
+		<xs:annotation>
+			<xs:documentation>A data type for a 4 Digit Octal Number</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glib:Octal4DigitSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Octal4DigitSimpleType">
+		<xs:annotation>
+			<xs:documentation>
+				A data type for a 4 Digit Octal Number
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-7]{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+<!--
+	<xs:simpleType name="Character">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType> -->
+	
+	<!-- replaced  with MilOps 
+	<xs:complexType name="MilStd2525SymbolDetails">
+		<xs:sequence>
+			<xs:element name="MilStd2525SymbolId" type="MilStd2525SymbolIdentifier"/>
+			<xs:group ref="MilStd2525SymbolModifiers" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="MilStd2525SymbolIdentifier">
+		<xs:restriction base="xs:string">
+      <xs:pattern value="[SGWIMOE]{1}[PUAFNSHGWMDLJKO]{1}[PAGSUFXZTMOVLIRNEQ\-]{1}[APCDXFSK\-]{1}[A-Z\-]{6}[ABCDEFGHMNP\-]{1}[A-Z\-]{1}[A-Z\-]{2}[AECGNSX\-]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:group name="MilStd2525SymbolModifiers">
+		<xs:sequence>
+			<xs:element name="G" type="ModifierGText" minOccurs="0"/>
+			<xs:element name="H" type="ModifierHText" minOccurs="0"/>
+			<xs:element name="J" type="ModifierJText" minOccurs="0"/>
+			<xs:element name="K" type="ModifierKText" minOccurs="0"/>
+			<xs:element name="L" type="ModifierLText" minOccurs="0"/>
+			<xs:element name="M" type="ModifierMText" minOccurs="0"/>
+			<xs:element name="N" type="ModifierNText" minOccurs="0"/>
+			<xs:element name="P" type="ModifierPText" minOccurs="0"/>
+			<xs:element name="Q" type="ModifierQText" minOccurs="0"/>
+			<xs:element name="T" type="ModifierTText" minOccurs="0"/>
+			<xs:element name="V" type="ModifierVText" minOccurs="0"/>
+			<xs:element name="W" type="ModifierWText" minOccurs="0"/>
+			<xs:element name="X" type="ModifierXText" minOccurs="0"/>
+			<xs:element name="Y" type="ModifierYText" minOccurs="0"/>
+			<xs:element name="Z" type="ModifierZText" minOccurs="0"/>
+			<xs:element name="AA" type="ModifierAAText" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group> 
+	<xs:simpleType name="ModifierGText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Staff Comments</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierHText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Additional Information</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierJText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Evaluation Rating</definition>
+				<comment>Evaluation Rating is comprise of 1A Reliability (A,B,C,D,E,F) + 1N Credibility (1,2,3,4,5,6)</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[ABCDEF]{1}[1-6]{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierKText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Combat Effectiveness</definition>
+				<comment>Combat Effectiveness is limited to 5 characters which suggests it may be coded or standardized values - however no details provided in Mil Std 2525B</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierLText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Signature Equipment</definition>
+				<comment>Signature Equipment is only applicable to Equipment</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierMText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Higher Formation</definition>
+				<comment>"Higher Echelon Command"</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="21"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierNText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Hostile (Enemy)</definition>
+				<comment>Hostile (Enemy) is only applicable to Equipment</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierPText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>IFF/SIF</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierQText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Direction of Movement</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierTText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Unique Designation</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="21"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierVText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Type</definition>
+				<comment>Applicable to Equipment only</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="24"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierWText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Date/Time Group  (DTG)</definition>
+				<comment>Details regarding format for DTG were inconsistent in Mil Std 2525B </comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="14"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierXText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Altitude/Depth</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierYText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Location</definition>
+				<comment>Details regarding format for Location were inconsistent in Mil Std 2525B</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="19"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierZText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Speed</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ModifierAAText">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Special C2 Headquarters</definition>
+				<comment>"Special C2 Headquarters"</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+	
+	<xs:element name="EnvironmentCategoryCode" type="glib:EnvironmentCategoryCodeType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	
+	
+</xs:schema>

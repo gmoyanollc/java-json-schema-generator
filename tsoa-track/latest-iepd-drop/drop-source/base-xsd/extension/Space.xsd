@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--__________________________________________________________________________-->
+<!--                                                                                                                                                    -->
+<!-- *************************************************  Space **************************************************  -->
+<!--__________________________________________________________________________-->
+<xs:schema targetNamespace="urn:disa:udop.tracks:1.0:types" xmlns="urn:disa:udop.tracks:1.0:types" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="Track.xsd"/>
+	<xs:complexType name="Space">
+		<xs:annotation>
+			<xs:documentation>
+				<comment>Most of formats for the space track fields are unknown.  Max Parker has provided some sample test files, which may be useful in determining some of the formats.  Currently supporting simple types until proper formats are determined.</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Track">
+				<xs:sequence>
+					<xs:element name="Charlie" type="CharlieAttributes" nillable="true"/>
+					<xs:element name="Norad" type="NoradAttributes" nillable="true"/>
+					<xs:element name="Sensor" type="SpaceSensor" minOccurs="0" maxOccurs="5"/>
+					<xs:element name="Type" type="SpaceType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>Type assigned by Naval Space Surveillance Center.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SatelliteNumber" type="xs:int" minOccurs="0"/>
+					<xs:element name="Name" type="SpaceName" minOccurs="0"/>
+					<xs:element name="Database" type="SpaceDatabase" minOccurs="0"/>
+					<xs:element name="Status" type="SpaceStatus" minOccurs="0"/>
+					<xs:element name="ElementType" type="SpaceElementType" minOccurs="0"/>
+					<xs:element name="Classification" type="SpaceClassification" minOccurs="0"/>
+					<xs:element name="Coverage" type="SpaceCoverage" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>Resolution or Frequency coverage.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InternationalDesignator" type="SpaceInternationalDesignator" minOccurs="0"/>
+					<xs:element name="EffectiveFieldOfView" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>The effective area sweeps by the antenna beam during the integration time.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Amplification" type="xs:string" minOccurs="0"/>
+					<xs:element name="CountryCode" type="SpaceCountryCode" minOccurs="0"/>
+					<!--<xs:group ref="EphemerisData"/>-->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SpaceSensor">
+		<xs:sequence>
+			<xs:element name="Name" type="TenCharString" minOccurs="0"/>
+			<xs:element name="Mission" type="TenCharString" minOccurs="0"/>
+			<xs:element name="ID" type="NonNegativeInt" minOccurs="0"/>
+			<xs:element name="FieldOfViewTypeString" type="TenCharString" minOccurs="0"/>
+			<xs:element name="FieldOfViewType" type="SpaceSensorFovType" minOccurs="0"/>
+			<xs:element name="RorView" type="SpaceSensorRorView" minOccurs="0"/>
+			<xs:element name="Status" type="SpaceSensorStatusCode" minOccurs="0"/>
+			<xs:element name="DistanceInNM" type="ZeroToTenThousand" minOccurs="0"/>
+			<xs:element name="Angle" type="Degrees360" minOccurs="0"/>
+			<xs:element name="InnerRange" type="ZeroToTenThousand" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!--<xs:group name="EphemerisData">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>One of the two is required but both can occur</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CharlieEphemeris" type="RawEphemeris" nillable="true"/>
+			<xs:element name="NoradEphemeris" type="NoradEphemerisDetails" nillable="true"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="NoradEphemerisDetails">
+		<xs:sequence>
+			<xs:element name="Line1" type="RawEphemeris"/>
+			<xs:element name="Line2" type="RawEphemeris"/>
+		</xs:sequence>
+	</xs:complexType>-->
+	<xs:complexType name="CharlieAttributes">
+		<xs:sequence>
+			<xs:element name="MeanAnomaly" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Mean anomaly as fraction of 360 degrees. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MeanMotion" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>mean motion in radians per herg. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Decay" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>decay in radians per herg**2. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Eccentricity" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0 is perfectly circular. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArgumentOfPerigee" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>argument of perigee as fraction of revolution. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LongitudeOfAscendingNode" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Longitude of ascending node as fraction of 360 degrees. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Inclination" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Inclination as fraction of 360 degrees. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Epoch" type="EpochType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Epoch date (yymmdd) pertinent to the ephemeris data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NoradAttributes">
+		<xs:sequence>
+			<xs:element name="MeanAnomaly" type="Degrees360" minOccurs="0"/>
+			<xs:element name="MeanMotion" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>revolutions/day. GreaterThanEqualToZero</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Eccentricity" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FirstDerivativeMeanMotion" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>First derivative of mean motion divided by 2 (revolutions/day**2).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SecondDerivativeMeanMotion" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>revolutions/day**3</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Inclination" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>In degrees. 0[inc] to 180[inc]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RightAscension" type="Degrees360" minOccurs="0"/>
+			<xs:element name="ArgumentOfPerigee" type="Degrees360" minOccurs="0"/>
+			<xs:element name="BallisticCoefficient" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>TMS term is (bstar_drag_term).  (earth radii)**-1.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ElementSet" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Element set number . 0[inc] to 9999[inc]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EpochYear" type="Short0to99" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>TMS: 2 digits.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EpochDayOfYear" type="xs:unsignedShort" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>TMS: 3 digits.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EpochFractionOfDay" type="ZeroToOne" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Epoch fractional portion of day. 0[inc] to 1[ex]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RevolutionNumberAtEpoch" type="xs:unsignedShort" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>GreaterThanEqualToZero</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EphemerisType" type="EphemerisType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>TMS: The type used to generate data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="SpaceName">
+		<xs:annotation>
+			<xs:documentation>
+				<comment>Format not yet found.</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="24"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceType">
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceCountryCode">
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceClassification">
+		<xs:restriction base="Character">
+			<xs:pattern value="[A-Za-z]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceCoverage">
+		<xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="25"/>
+    </xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceInternationalDesignator">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>International designator (YYnnnaaa).</definition>
+				<comment>TMS accepts 'aaa' as alpha-numeric.</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="8"/>
+			<xs:pattern value="[0-9]{5}[0-9A-Za-z]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceDatabase">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="RED"/>
+			<xs:enumeration value="BLUE"/>
+			<xs:enumeration value="ORANGE"/>
+			<xs:enumeration value="WHITE"/>
+			<xs:enumeration value="GRAY"/>
+			<xs:enumeration value="OTHER"/>
+			<xs:enumeration value="UNKNOWN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceStatus">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="ACTIVE"/>
+			<xs:enumeration value="DEORBITED"/>
+			<xs:enumeration value="DORMANT"/>
+			<xs:enumeration value="DEAD"/>
+			<xs:enumeration value="INACTIVE"/>
+			<xs:enumeration value="STANDBY"/>
+			<xs:enumeration value="UNKNOWN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceSensorStatusCode">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="GREEN"/>
+			<xs:enumeration value="YELLOW"/>
+			<xs:enumeration value="RED"/>
+			<xs:enumeration value="WHITE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceSensorRorView">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="LEFT"/>
+			<xs:enumeration value="RIGHT"/>
+			<xs:enumeration value="BOTH"/>
+			<xs:enumeration value="NA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceSensorFovType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="CONE_DISTANCE"/>
+			<xs:enumeration value="CONE_ANGULAR"/>
+			<xs:enumeration value="BUTTERFLY"/>
+			<xs:enumeration value="HORIZON_TO_HORIZON"/>
+			<xs:enumeration value="UNKNOWN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpaceElementType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ERROR"/>
+			<xs:enumeration value="UNKNOWN"/>
+			<xs:enumeration value="CHARLIE"/>
+			<xs:enumeration value="2LINE"/>
+			<xs:enumeration value="BOTH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EphemerisType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="UNKNOWN"/>
+			<xs:enumeration value="SGP"/>
+			<xs:enumeration value="SGP4"/>
+			<xs:enumeration value="SDP4"/>
+			<xs:enumeration value="SGP8"/>
+			<xs:enumeration value="SDP8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EpochType">
+		<xs:annotation>
+			<xs:documentation>Epoch date (YYMMDD).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+			<xs:pattern value="[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ZeroToOne">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxExclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ZeroToTenThousand">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxExclusive value="10000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NonNegativeInt">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TenCharString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--<xs:simpleType name="RawEphemeris">
+		<xs:restriction base="xs:string">
+			<xs:length value="69"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+</xs:schema>
