@@ -9,7 +9,7 @@
         
         --------------------------
         -- author:  George Moyano --
-        -- version: 1.0           --
+        -- version: 1.1           --
         -- updated: Dec 2016      --
         --------------------------
     </description>
@@ -35,32 +35,32 @@
     </macrodef>-->
     
     <target name="sync-lift-with-project">
-        <sync todir="lift-source/base-xsd">
+        <sync todir="target/base-xsd">
             <mappedresources>
                 <fileset dir="../src/main/resources" includes="*.*"/>
             </mappedresources>
         </sync>
-        <sync todir="lift-source/base-xsd/documentation">
+        <sync todir="target/base-xsd/documentation">
             <mappedresources>
                 <fileset dir="../src/main/resources/documentation"/>
             </mappedresources>
         </sync>
-        <sync todir="lift-source/base-xsd/extension">
+        <sync todir="target/base-xsd/extension">
             <mappedresources>
                 <fileset dir="../src/main/resources/iep-schema/extension"/>
             </mappedresources>
         </sync>
-        <sync todir="lift-source/base-xsd/ic-ism">
+        <sync todir="target/base-xsd/ic-ism">
             <mappedresources>
                 <fileset dir="../src/main/resources/iep-schema/ic-ism"/>
             </mappedresources>
         </sync>
-        <sync todir="lift-source/base-xsd/niem">
+        <sync todir="target/base-xsd/niem">
             <mappedresources>
                 <fileset dir="../src/main/resources/iep-schema/niem"/>
             </mappedresources>
         </sync>
-        <sync todir="lift-source/base-xsd/sample-xml" failonerror="false">
+        <sync todir="target/base-xsd/sample-xml" failonerror="false">
             <mappedresources>
                 <fileset dir="../src/main/resources/iep-sample"/>
             </mappedresources>

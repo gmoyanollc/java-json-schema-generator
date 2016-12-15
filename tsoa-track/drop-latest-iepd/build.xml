@@ -71,32 +71,32 @@
     <target name="copy-drop-to-project">
         <copy todir="../src/main/resources">
             <mappedresources>
-                <fileset dir="drop-source/base-xsd" includes="*.*" excludes="*.xpr"/>
+                <fileset dir="source/base-xsd" includes="*.*" excludes="*.xpr"/>
             </mappedresources>
         </copy>
         <copy todir="../src/main/resources/documentation">
             <mappedresources>
-                <fileset dir="drop-source/base-xsd/documentation"/>
+                <fileset dir="source/base-xsd/documentation"/>
             </mappedresources>
         </copy>
         <copy todir="../src/main/resources/iep-schema/extension">
             <mappedresources>
-                <fileset dir="drop-source/base-xsd/extension"/>
+                <fileset dir="source/base-xsd/extension"/>
             </mappedresources>
         </copy>
         <copy todir="../src/main/resources/iep-schema/ic-ism">
             <mappedresources>
-                <fileset dir="drop-source/base-xsd/ic-ism"/>
+                <fileset dir="source/base-xsd/ic-ism"/>
             </mappedresources>
         </copy>
         <copy todir="../src/main/resources/iep-schema/niem">
             <mappedresources>
-                <fileset dir="drop-source/base-xsd/niem"/>
+                <fileset dir="source/base-xsd/niem"/>
             </mappedresources>
         </copy>
         <copy todir="../src/main/resources/iep-sample">
             <mappedresources>
-                <fileset dir="drop-source/base-xsd/sample-xml"/>
+                <fileset dir="source/base-xsd/sample-xml"/>
             </mappedresources>
         </copy>
     </target>
