@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="sync-project-with-drop" default="sync-project-with-drop" 
+<project basedir="." name="copy-drop-to-project" default="copy-drop-to-project" 
     xmlns:if="ant:if"
     xmlns:unless="ant:unless"
     xmlns:au="antlib:org.apache.ant.antunit">
     
     <description>
-        Sync project with drop files using Ant.  Warning!!! Sync removes files not found in drop.
+        Copy drop files to project using Ant.
         
         --------------------------
         -- author:  George Moyano --
-        -- version: 1.0           --
+        -- version: 1.1           --
         -- updated: Dec 2016      --
         --------------------------
     </description>
@@ -34,11 +34,12 @@
         </sequential>
     </macrodef>-->
     
-    <target name="sync-project-with-drop">
+<!--    <target name="sync-project-with-drop">
         <sync todir="../src/main/resources">
             <mappedresources>
                 <fileset dir="drop-source/base-xsd" includes="*.*" excludes="*.xpr"/>
             </mappedresources>
+            <preserveintarget includes="**/application-info/** "/>
         </sync>
         <sync todir="../src/main/resources/documentation">
             <mappedresources>
@@ -65,6 +66,39 @@
                 <fileset dir="drop-source/base-xsd/sample-xml"/>
             </mappedresources>
         </sync>
+    </target>-->
+    
+    <target name="copy-drop-to-project">
+        <copy todir="../src/main/resources">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd" includes="*.*" excludes="*.xpr"/>
+            </mappedresources>
+        </copy>
+        <copy todir="../src/main/resources/documentation">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/documentation"/>
+            </mappedresources>
+        </copy>
+        <copy todir="../src/main/resources/iep-schema/extension">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/extension"/>
+            </mappedresources>
+        </copy>
+        <copy todir="../src/main/resources/iep-schema/ic-ism">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/ic-ism"/>
+            </mappedresources>
+        </copy>
+        <copy todir="../src/main/resources/iep-schema/niem">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/niem"/>
+            </mappedresources>
+        </copy>
+        <copy todir="../src/main/resources/iep-sample">
+            <mappedresources>
+                <fileset dir="drop-source/base-xsd/sample-xml"/>
+            </mappedresources>
+        </copy>
     </target>
     
 </project>
