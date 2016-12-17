@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="copy-drop-to-project" default="testConfig"
+<project basedir="." name="copy-drop-to-project" default="test-config"
   xmlns:if="ant:if"
   xmlns:unless="ant:unless"
   xmlns:au="antlib:org.apache.ant.antunit">
@@ -32,7 +32,7 @@
     </sequential> 
   </macrodef>
   
-  <target name="testConfig">
+  <target name="test-config">
     <timestamp.echo message=""/>
     <echo message="$${ant.version}: [ ${ant.version} ]"/>
     <echo message="$${ant.file}: [ ${ant.file} ]"/>
@@ -60,7 +60,7 @@
     <git git-command="status"/>
   </target>
   
-  <target name="sync-source-to-target" depends="testConfig">
+  <target name="sync-source-to-target" depends="test-config">
       <sync todir="target" verbose="true" includeemptydirs="true" failonerror="true" overwrite="true">
           <mappedresources>
               <fileset dir="source"/>
@@ -96,7 +96,7 @@
     <git git-command="status" dir="target/"/>
   </target>
     
-  <target name="copy-drop-to-project" depends="testConfig">
+  <target name="copy-drop-to-project" depends="test-config">
     <copy todir="../src/main/resources" verbose="true">
       <mappedresources>
         <fileset dir="target" includes="*.*"/>
