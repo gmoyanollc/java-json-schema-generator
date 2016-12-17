@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema 
-	xmlns:glib="urn:disa:udop.tracks:1.0:genLib"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<xs:schema xmlns:glib="urn:disa:udop.tracks:1.0:genLib"
+	xmlns:tsoa="https://tsoa.example.mil/appinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
-	xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:icism="urn:us:gov:ic:ism"
+	xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
 	xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
 	xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
 	xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
-	xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
-	xmlns:gml="http://www.opengis.net/gml"
-	
-	targetNamespace="urn:disa:udop.tracks:1.0:genLib"
-	elementFormDefault="qualified"
+	xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+	xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/"
+	targetNamespace="urn:disa:udop.tracks:1.0:genLib" elementFormDefault="qualified"
 	attributeFormDefault="unqualified" version="1"
 	ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument">
-	
+
 	<xs:annotation>
 		<xs:documentation>TSOA Track Version 1.0 DISTRIBUTION STATEMENT C. Distribution is
 			authorized to U.S. Government agencies and their contractors (Critical Technology,
 			Export Controlled, Software Documentation). Other requests for this document shall be
 			referred to Joint Staff J6, Architecture Integration Division at
 			js.dsc.j6.mbx.wma-afip-portal-help-desk@mail.mil.</xs:documentation>
-		<xs:documentation>This General Llibrary contains basic types used in the generation of various C4ISR XML Schemas.  It is expected to grow as development continues. </xs:documentation>
-		
+		<xs:documentation>This General Llibrary contains basic types used in the generation of
+			various C4ISR XML Schemas. It is expected to grow as development continues. </xs:documentation>
+
 		<xs:appinfo>
 			<term:LocalTerm term="SABC" literal="ABC"/>
 		</xs:appinfo>
@@ -33,14 +31,17 @@
 		schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
 	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
 		schemaLocation="../niem/structures/3.0/structures.xsd"/>
-	<xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
-		schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
-	
+	<xs:import namespace="http://release.niem.gov/niem/domains/cbrn/3.2/"
+		schemaLocation="../niem/domains/cbrn/3.2/cbrn.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/codes/unece_rec20/3.0/"
+		schemaLocation="../niem/codes/unece_rec20/3.0/unece_rec20-misc.xsd"/>
+
+
 	<!-- update gml import to use NIEM -->
 	<!--<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../gml/geometryBasic0d1d.xsd"/> -->
-	
-	
-<!-- TODO - reuse NIEM GML and location stuff 
+
+
+	<!-- TODO - reuse NIEM GML and location stuff 
 	<xs:complexType name="LocationDetails">
 		<xs:choice>
 			<xs:group ref="GML"/>
@@ -143,52 +144,132 @@
 				</xs:attribute>
 			</xs:extension>
 		</xs:simpleContent>
-	</xs:complexType>
-	<xs:complexType name="BearingDegrees">
+	</xs:complexType> -->
+
+
+	<xs:complexType name="BearingDegreesType">
+		<xs:annotation>
+			<xs:documentation>A data type for </xs:documentation>
+		</xs:annotation>
 		<xs:simpleContent>
-			<xs:extension base="Degrees360">
-				<xs:attribute name="isTrueNorth" type="xs:boolean" default="true"/>
+			<xs:extension base="nc:Degree360Type">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+				<xs:attribute ref="glib:isTrueNorthIndicator"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+
+
+	<xs:attribute name="isTrueNorthIndicator" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>True if ...; False otherwise.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+	<!-- reuse NIEM nc:Degree360Type
 	<xs:simpleType name="Degrees360">
 		<xs:restriction base="xs:float">
 			<xs:minInclusive value="0"/>
 			<xs:maxInclusive value="360"/>
 		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="Degrees180">
-		<xs:restriction base="Degrees360">
-			<xs:maxInclusive value="180"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="DistanceMeasure">
+	</xs:simpleType> -->
+
+
+	<xs:complexType name="Degrees180Type">
 		<xs:annotation>
-			<xs:documentation>
-				<definition> Distance in Nautical Miles, feet, meters, or kilometers. </definition>
-				<USMTFref> composite: lenth.in.nautical.miles.302 </USMTFref>
-			</xs:documentation>
+			<xs:documentation>A data type for a ....</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
-			<xs:extension base="DistanceRange">
-				<xs:attribute name="measureUnitCode" use="required">
-					<xs:simpleType>
-						<xs:restriction base="xs:token">
-							<xs:enumeration value="FT"/>
-							<xs:enumeration value="K"/>
-							<xs:enumeration value="M"/>
-							<xs:enumeration value="NMI"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:attribute>
+			<xs:extension base="glib:Degrees180SimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="DistanceRange">
+
+	<xs:simpleType name="Degrees180SimpleType">
+		<xs:annotation>
+			<xs:documentation>A data type for a .....</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="nc:Degree360SimpleType">
+			<xs:maxInclusive value="180"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- replace with LengthUnitCode subset 	
+	
+	<xs:complexType name="DistanceMeasureUnitCodeType">
+	<xs:annotation>
+		<xs:documentation>
+			A data type for a measurement for a distance in Nautical Miles, feet, meters, or kilometers. 
+		</xs:documentation>
+		<xs:appinfo>
+			<tsoa:USMTFref> composite: lenth.in.nautical.miles.302 </tsoa:USMTFref>
+		</xs:appinfo>
+	</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glib:DistanceMeasureUnitCodeSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup">
+				</xs:attributeGroup>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+<xs:simpleType name="DistanceMeasureUnitCodeSimpleType">
+	<xs:annotation>
+		<xs:documentation>
+			A data type for ....
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:token">
+		<xs:enumeration value="FT">
+			<xs:annotation>
+				<xs:documentation>Feet</xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
+		<xs:enumeration value="K">
+			<xs:annotation>
+				<xs:documentation>Kilometer</xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
+		<xs:enumeration value="M">
+			<xs:annotation>
+				<xs:documentation>Mile</xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
+		<xs:enumeration value="NMI">
+			<xs:annotation>
+				<xs:documentation>Nautical Miles</xs:documentation>
+			</xs:annotation>
+		</xs:enumeration>
+	</xs:restriction>
+</xs:simpleType>
+
+	-->
+
+	<xs:complexType name="DistanceRangeType">
+		<xs:annotation>
+			<xs:documentation>A data type for a ....</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glib:DistanceRangeSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<xs:simpleType name="DistanceRangeSimpleType">
+		<xs:annotation>
+			<xs:documentation>A data type for a ....</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+
+
+	<!-- replaced with mo:SpeedValue
 	<xs:complexType name="EventSpeedMeasure">
 		<xs:annotation>
 			<xs:documentation>
@@ -208,6 +289,8 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	
+	REPLACED with STANDARDIDENTITYCODE in mo
 	<xs:simpleType name="ThreatCode">
 		<xs:annotation>
 			<xs:documentation>
@@ -234,26 +317,25 @@
 			<xs:enumeration value="SUS"/>
 		</xs:restriction>
 	</xs:simpleType> -->
+
 	<xs:complexType name="EnvironmentCategoryCodeType">
 		<xs:annotation>
 			<xs:documentation>A data type for a ....</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="glib:EnvironmentCategoryCodeSimpleType">
-				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"></xs:attributeGroup>
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="EnvironmentCategoryCodeSimpleType">
 		<xs:annotation>
-			<xs:documentation>
-				A data type for ....
-			</xs:documentation>
+			<xs:documentation> A data type for .... </xs:documentation>
 			<xs:appinfo>
-				<USMTFref> force.threat.designator.2442.1 - See comments above</USMTFref>
-				<comment>USMTF uses force_threat_designator and OS-OTG uses Force Code - Both of
-					these coding schemes make use of codes that include two parts - the cateogry
-					(e.g. AIR,SUB, SUR) combined with the threat (e.g. FRD, HOS). </comment>
+				<tsoa:USMTFref> force.threat.designator.2442.1 - See comments above</tsoa:USMTFref>
+				<tsoa:comment>USMTF uses force_threat_designator and OS-OTG uses Force Code - Both
+					of these coding schemes make use of codes that include two parts - the cateogry
+					(e.g. AIR,SUB, SUR) combined with the threat (e.g. FRD, HOS). </tsoa:comment>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
@@ -310,7 +392,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-<!-- TODO
+	<!-- TODO
 	<xs:simpleType name="Decimal4Max">
 		<xs:restriction base="xs:decimal">
 			<xs:minInclusive value="0"/>
@@ -343,7 +425,7 @@
 			<xs:pattern value="[0-9]{1,11}\.[0-9]{1,10}"/>
 		</xs:restriction>
 	</xs:simpleType> -->
-	
+
 	<xs:complexType name="Octal2DigitType">
 		<xs:annotation>
 			<xs:documentation>A data type for a 2 Digit Octal Number</xs:documentation>
@@ -356,9 +438,7 @@
 	</xs:complexType>
 	<xs:simpleType name="Octal2DigitSimpleType">
 		<xs:annotation>
-			<xs:documentation>
-				A data type for a 2 Digit Octal Number
-			</xs:documentation>
+			<xs:documentation> A data type for a 2 Digit Octal Number </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[0-7]{2}"/>
@@ -376,9 +456,7 @@
 	</xs:complexType>
 	<xs:simpleType name="Octal4DigitSimpleType">
 		<xs:annotation>
-			<xs:documentation>
-				A data type for a 4 Digit Octal Number
-			</xs:documentation>
+			<xs:documentation> A data type for a 4 Digit Octal Number </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[0-7]{4}"/>
@@ -386,13 +464,13 @@
 	</xs:simpleType>
 
 
-<!--
+	<!--
 	<xs:simpleType name="Character">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="1"/>
 		</xs:restriction>
 	</xs:simpleType> -->
-	
+
 	<!-- replaced  with MilOps 
 	<xs:complexType name="MilStd2525SymbolDetails">
 		<xs:sequence>
@@ -594,12 +672,18 @@
 			<xs:maxLength value="9"/>
 		</xs:restriction>
 	</xs:simpleType>-->
-	
+
 	<xs:element name="EnvironmentCategoryCode" type="glib:EnvironmentCategoryCodeType">
 		<xs:annotation>
 			<xs:documentation>An ......</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	
-	
+
+	<xs:element name="DistanceMeasureUnitCode" type="unece:LengthCodeType"
+		substitutionGroup="cbrn:RelativeLocationAugmentationPoint">
+		<xs:annotation>
+			<xs:documentation>A code .....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
 </xs:schema>

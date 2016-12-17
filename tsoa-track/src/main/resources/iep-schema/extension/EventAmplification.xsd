@@ -1,0 +1,1579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by XMLSpy Key (Northrop Grumman I T) -->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Donna Utsunomiya (LOGICON) -->
+<!--__________________________________________________________________________-->
+<!--                                                                                                                                                    -->
+<!-- *************************************** Event Amplification **********************************************  -->
+<!--__________________________________________________________________________-->
+<xs:schema targetNamespace="urn:disa:udop.tracks:1.0:ea" xmlns:ea="urn:disa:udop.tracks:1.0:ea"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+	xmlns:tsoa="https://tsoa.example.mil/appinfo"
+	xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+	xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
+	xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+	xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+	xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+	xmlns:glib="urn:disa:udop.tracks:1.0:genLib" xmlns:lib="urn:disa:udop.tracks:1.0:lib"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" version="1"
+	ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument">
+
+	<xs:annotation>
+		<xs:documentation>A </xs:documentation>
+	</xs:annotation>
+
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+		schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+		schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+		schemaLocation="../niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+		schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+	<xs:import namespace="urn:disa:udop.tracks:1.0:genLib" schemaLocation="GeneralLibrary.xsd"/>
+	<xs:import namespace="urn:disa:udop.tracks:1.0:lib" schemaLocation="Library.xsd"/>
+
+
+	<xs:complexType name="EventAmplificationDetailsType">
+		<xs:annotation>
+			<xs:documentation>a data type for </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="ea:RDFRFCode" minOccurs="0"/>
+					<xs:element ref="ea:SensorCode" minOccurs="0"/>
+					<xs:element ref="ea:SourceCode" minOccurs="0"/>
+					<xs:element ref="ea:SourceReportNumber" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<!--	<xs:complexType name="ElintEventAmplificationDetails">
+		<xs:complexContent>
+			<xs:extension base="EventAmplificationDetails">
+				<xs:sequence>
+					<xs:element name="EmitterName" type="EmitterName"/>
+					<xs:element name="PrimaryELNOT" type="EmitterElintNotationIdentifier" minOccurs="0"/>
+					<xs:element name="PrimaryELNOTConfidence" type="EmitterPrimaryElintNotationConfidenceValue" minOccurs="0"/>
+					<xs:element name="SecondaryELNOT" type="EmitterElintNotationIdentifier" minOccurs="0"/>
+					<xs:element name="SecondaryELNOTConfidence" type="EmitterSecondaryElintNotationConfidenceValue" minOccurs="0"/>
+					<xs:element name="BaseBandPRI" type="BaseBandPRI" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<comment>BaseBandPRI is an internal TMS calculated field.  Should this really be re added to the schema.</comment>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="BaseBandPRIMode" type="BaseBandMode" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<comment>BaseBandPRIMode is an internal TMS field.  Should the really be re added to the schema?</comment>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="BaseBandScanRate" type="BaseBandScanRate" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<comment>BaseBandScanRate is and internal TMS calculated field.  Should this really be re added to the schema?</comment>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="BaseBandScanMode" type="BaseBandMode" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<comment>BaseBandScanMode is an internal TMS field.  Should the really be re added to the schema?</comment>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="PRI" type="EmitterPulseRepetitionIntervalMeasure" minOccurs="0"/>
+					<xs:element name="PRIType" type="EmitterPRITypeCode" minOccurs="0"/>
+					<xs:element name="PRIStability" type="EmitterPRIStabilityMeasure" minOccurs="0"/>
+					<xs:element name="ScanRate" type="EmitterScanRateMeasure" minOccurs="0"/>
+					<xs:element name="ScanType" type="EmitterScanType" minOccurs="0"/>
+					<xs:element name="ScanRateStability" type="EmitterScanRateStabilityMeasure" minOccurs="0"/>
+					<xs:element name="Frequency" type="EmitterFrequencyMeasure" minOccurs="0"/>
+					<xs:element name="FrequencyStability" type="EmitterFrequencyStabilityMeasure" minOccurs="0"/>
+					<xs:element name="PulseRepetitionFrequency" type="EmitterPulseRepetitionFrequencyMeasure" minOccurs="0"/>
+					<xs:element name="PulseWidth" type="EmitterPulseWidthMeasure" minOccurs="0"/>
+					<xs:element name="StaggerLegs" type="EmitterStaggerLegsValue" minOccurs="0"/>
+					<xs:element name="SequentialContactNumber" type="SequentialContactNumber" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>The sequential contact number (SCN).</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DateTimeGroup" type="xs:dateTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>Returns the date time group of the report elint data.</definition>
+								<comment>This could be different than the DTG of the report's position.</comment>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="CorrelationIndex" type="EventCorrelationIndexCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AcousticEventAmplificationDetails">
+		<xs:complexContent>
+			<xs:extension base="EventAmplificationDetails">
+				<xs:sequence>
+					<xs:element name="AcousticSourceCode" type="AcousticSourceCode">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>OS-OTG: Source code defined in OPNAVINST S3431.3</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="AcousticFreq" type="AcousticFrequencyMeasure">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>OS-OTH: Fundamental frequency of the source being reported.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Harmonics" type="HarmonicMeasure">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>OS-OTH: Harmonic in descending order.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="RPM" type="RevolutionsPerMinuteMeasure" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>OS-OTH: Revolutions Per Minute of the source being reported.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="TurnsPerKnot" type="TurnsPerKnotMeasure" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>OS-OTH: Turns per Knot as reported.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="AcousticSensorCode" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>The sensor code of the detecting acoustic sensor from OS-OTH Entry List 1104 (Sensor Codes).</definition>
+							</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="2"/>
+								<xs:maxLength value="6"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="DetectionStatus" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>OS-OTG: field 9 of SIGNA line.  US-MTF: SIGNA line field 9 and provides fixed list of value values.</definition>
+							</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="4"/>
+								<xs:maxLength value="13"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="DateTimeGroup" type="xs:dateTime" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="AcousticSourceCode">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>OS-OTG: Source code defined in OPNAVINST S3431.3</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AcousticFrequencyMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The frequency of the acoustic source  being reported. </definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Decimal8Max">
+				<xs:attribute name="measureUnitCode" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="HZ"/>
+							<xs:enumeration value="KHZ"/>
+							<xs:enumeration value="MHZ"/>
+							<xs:enumeration value="GHZ"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HarmonicMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The harmonic in descending order. </definition>
+				<comment>OS-OTH: 1-2 digit combination separated by commas, 1-22NS.</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="22"/>
+			<xs:pattern value="[0-9]{1,2}(,[0-9]{1,2})*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RevolutionsPerMinuteMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The revolution per minute being reported. </definition>
+				<comment>OS-OTH: 1-4 digits combination, decimal permitted (1-4NS).</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="4"/>
+			<xs:pattern value="[0-9](4)[.]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TurnsPerKnotMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The number of turns per knot being reported. </definition>
+				<comment>OS-OTH: 1-5 digits combination, decimal permitted (1-5NS).</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="5"/>
+			<xs:pattern value="[0-9](5)[.]"/>
+		</xs:restriction>
+	</xs:simpleType> -->
+
+
+	<xs:complexType name="RadioDirectionFindingRFCodeType">
+		<xs:annotation>
+			<xs:documentation> A data type for a radio frequency of the intercept used to develop
+				the track report. </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ea:MeasureUnitCodeSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"> </xs:attributeGroup>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="MeasureUnitCodeSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for a radio frequency of the intercept used to develop
+				the track report. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HZ">
+				<xs:annotation>
+					<xs:documentation>Hz</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="KHZ">
+				<xs:annotation>
+					<xs:documentation>KHz</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MHZ">
+				<xs:annotation>
+					<xs:documentation>MHz</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GHZ">
+				<xs:annotation>
+					<xs:documentation>GHz</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+	<xs:complexType name="EventSensorCategoryType">
+		<xs:annotation>
+			<xs:documentation> A data type for </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="ea:EventSourceSensorVerifiedCode"/>
+					<xs:element ref="ea:EventSourceSensorFreeFormText"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="EventSourceSensorVerifiedCodeType">
+		<xs:annotation>
+			<xs:documentation>A data type for a Sensor code of the detecting
+				sensor.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ea:EventSourceSensorVerifiedCodeSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="EventSourceSensorVerifiedCodeSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for a Sensor code of the detecting sensor. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:USMTFref> urn:mtg:mil:usmtf:2003:elemental sensor.code.1104.2</tsoa:USMTFref>
+				<tsoa:comment>Enter the appropriate code from USMTF Entry List 1104 (Sensor Codes).
+					See USMTF reference below. </tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TRAM">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SONACT">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ACSONO">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDSACT">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ADS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AQS13">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ASQ10">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ASQ81">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BATHY">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BEDF">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CABUOY">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WIZARD">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CDF">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CASS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CATAS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DATAS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DPSONA">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DPSONP">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DICASS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DIFAR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ES">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="XBT">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FDS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FLIR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SRN25">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WRN6">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="HFDF">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IFF">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IRDS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IUSS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IUSS1">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IUSS2">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ISAR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LFA">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LOFAR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LLLTV">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MAD">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NOD">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OTR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OBDF">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SONPAS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PASONO">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VDSPAS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PHOTO">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RADAR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RDF">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ROTHR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SONAR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SELOR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WSN5">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SLAR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SUBTA">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="STASS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TARPS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TACTAS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TASS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SRN19">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="UNK">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VLAD">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VISUAL">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="EventSourceSensorFreeFormTextType">
+		<xs:annotation>
+			<xs:documentation>A data type for a Sensor code of the detecting sensor.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ea:EventSourceSensorFreeFormTextSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="EventSourceSensorFreeFormTextSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for a sensor code of the detecting sensor. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:USMTFref> urn:mtg:mil:usmtf:2003:elemental sensor.code.1104.2</tsoa:USMTFref>
+				<tsoa:comment>Enter the appropriate code from USMTF Entry List 1104 (Sensor Codes).
+					See USMTF reference below. </tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="6"/>
+			<xs:pattern value="[A-Z0-9]{2,6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="EventSourceCategoryType">
+		<xs:annotation>
+			<xs:documentation> A data type for </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="ea:EventSourceVerifiedCode"/>
+					<xs:element ref="ea:EventSourceFreeFormText"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EventSourceVerifiedCodeType">
+		<xs:annotation>
+			<xs:documentation>A data type for a Sensor code of the detecting
+				sensor.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ea:EventSourceVerifiedCodeSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="EventSourceVerifiedCodeSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for a source that most recently originated, passed, or
+				amplified data on the position being reported. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:USMTFref> urn:mtg:mil:usmtf:2003:elemental source.code.1136.1</tsoa:USMTFref>
+				<tsoa:comment>Enter the appropriate code from USMTF Entry List 1136 (Source Codes).
+					See USMTF reference below.</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACTFIX">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CD">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BTMB">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BB">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CASREP">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WIZARD">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CPA">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CZ">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DP">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ELINT">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EST">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EER">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FTA">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FNOC">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GCCS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LOB">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LOCATR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MERCO">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MSCMR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PURPLE">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MOVREP">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MCDR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MCJR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JA">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JD">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JH">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JI">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JN">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JO">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="JS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NTDS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OSIS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OTR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OWN">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OSWEX">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PASFIX">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PLRS">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FIX">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PFA">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="COOK">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SKED">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SELOR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PR">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SUBN">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TSES">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TACE">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TBC">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="UNK">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="USMER">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WXRPT">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WMO">
+				<xs:annotation>
+					<xs:documentation>A </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="EventSourceFreeFormTextType">
+		<xs:annotation>
+			<xs:documentation>A data type for a Sensor code of the detecting sensor.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="ea:EventSourceFreeFormTextSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="EventSourceFreeFormTextSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for a source that most recently originated, passed, or
+				amplified data on the position being reported. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:USMTFref> urn:mtg:mil:usmtf:2003:elemental source.code.1136.1</tsoa:USMTFref>
+				<tsoa:comment>Enter the appropriate code from USMTF Entry List 1136 (Source Codes).
+					See USMTF reference below.</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="6"/>
+			<xs:pattern value="[A-Z0-9]{2,6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--
+	<xs:complexType name="EmitterFrequencyMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The frequency of the emitter being reported. </definition>
+				<USMTFref> c:specific.radio.frequency.566  </USMTFref>
+				<comment>USMTF allows choice between c:specific.radio.frequency.566 and f:frequency.band.1098.1</comment>
+				<comment>c:specific.radio.frequency.566 is decimal (up to 11 chars, decimal permitted) + Frequency Unit of Measure (HZ, KHZ, MHZ, GHZ)</comment>
+				<comment>f.frequency.band.1098.1is a string based emumerated list (e.g.A-BAND, B-BAND, ...M-BAND, OTR)</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Decimal11Max">
+				<xs:attribute name="measureUnitCode" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="HZ"/>
+							<xs:enumeration value="KHZ"/>
+							<xs:enumeration value="MHZ"/>
+							<xs:enumeration value="GHZ"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EmitterPulseRepetitionIntervalMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The PRI (Pulse Repetition Interval) of the emitter being reported. </definition>
+				<USMTFref>c:pulse.repetition.interval.microseconds.1168</USMTFref>
+				<comment>TMS holds PRI as a double with the comment "pulse repetition interval (micro-sec)"</comment>
+				<comment>USMTF ref = c:pulse.repetition.interval.microseconds.1168 - decimal (up to 11 chars, decimal permitted) - units = microseconds</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Decimal11Max">
+				<xs:attribute name="measureUnitCode" type="xs:string" use="required" fixed="microseconds"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EmitterPulseRepetitionFrequencyMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The PRF (Pulse Repetition Frequency) of the emitter being reported. </definition>
+				<USMTFref>c:pulse.repetition.frequency. pulses.per.second.1162 </USMTFref>
+				<comment>TMS holds PRF as a double with the comment "pulse repetition frequency (pulses per sec)"</comment>
+				<comment>USMTF ref = c:pulse.repetition.frequency. pulses.per.second.1162 - decimal (up to 11 chars, decimal permitted) - units = pulses per second</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Decimal11Max">
+				<xs:attribute name="measureUnitCode" type="xs:string" use="required" fixed="pulses per second"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EmitterPulseWidthMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The pulse width of the emitter being reported. </definition>
+				<USMTFref>c:pulse.width.microseconds.1179</USMTFref>
+				<comment>TMS holds Pulse Width as a double with the comment "pulse width (micro-sec)"</comment>
+				<comment>USMTF ref = c:pulse.width.microseconds.1179 - decimal (up to 4 chars, decimal permitted) - units = microseconds</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Decimal4Max">
+				<xs:attribute name="measureUnitCode" type="xs:string" use="required" fixed="microseconds"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EmitterScanRateMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> The  scan rate of the emitter being reported. </definition>
+				<USMTFref>c:scan.rate.91</USMTFref>
+				<comment>TMS holds Scan Rate as a double with the comment "Scan rate for radar (SPC) (1 / HZ)"</comment>
+				<comment>USMTF allows choice between c:scan.rate.91, c:rotation.speed.rpm.1165, or c:rotational.speed.spr.1167</comment>
+				<comment>c:scan.rate.91 is decimal (up to 5 chars, decimal permitted) + "f:scan.rate.of.electromagnetic.emission.29.15" (HZ or SPC)</comment>
+				<comment>c:rotation.speed.rpm.1165 is decimal (up to 5 chars,  only 1 decimal place allowed) + "RPM"</comment>
+				<comment>c:rotational.speed.spr.1167 is decimal  (up to 5 chars, decimal permitted) + "SPR"</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="Decimal5Max">
+				<xs:attribute name="measureUnitCode" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="HZ"/>
+							<xs:enumeration value="SPC"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EmitterFrequencyStabilityMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> Reported sigma for Radio Frequency </definition>
+				<USMTFref> f:rf.stability.2401.1 is 1 character coded value - TMS is float </USMTFref>
+				<comment>Conflict between TMS and USMTF.  TMS holds this as a float with comment "reported signma for RF" USMTF has a field f:rf.stability which is a 1 character string with permitted values of "0", "1", "2", "3"</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="measureUnitCode" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="HZ"/>
+							<xs:enumeration value="KHZ"/>
+							<xs:enumeration value="MHZ"/>
+							<xs:enumeration value="GHZ"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EmitterPRIStabilityMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> Reported sigma for Pulse Repetition Interval (PRI) </definition>
+				<USMTFref> None found in SENSOREP or LOCATOR</USMTFref>
+				<comment>TMS holds this as a float with comment "reported signma for PRI"</comment>
+				<comment>USMTF - did not find PRI Stability in LOCATOR RADPA or SENSOREP TACESM sets</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="measureUnitCode" type="xs:string" use="required" fixed="microseconds"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="EmitterScanRateStabilityMeasure">
+		<xs:annotation>
+			<xs:documentation>
+				<definition> Reported sigma for Scan Rate</definition>
+				<USMTFref> None found in SENSOREP or LOCATOR </USMTFref>
+				<comment>TMS holds this as a float with comment "reported signma for Scan Rate"</comment>
+				<comment> USMTF - did not find Scan Rate Stability in LOCATOR RADPA or SENSOREP TACESM sets</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="measureUnitCode" type="xs:token" default="sec/cycle"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="EmitterScanType">
+		<xs:union memberTypes="EmitterScanTypeVerifiedCode EmitterScanTypeFreeFormText"/>
+	</xs:simpleType>
+	<xs:simpleType name="EmitterScanTypeVerifiedCode">
+		<xs:annotation>
+			<xs:documentation>
+				<USMTFref> f:scan.type.92.1 </USMTFref>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+			<xs:enumeration value="BI"/>
+			<xs:enumeration value="CCON"/>
+			<xs:enumeration value="CNOD"/>
+			<xs:enumeration value="CIRC"/>
+			<xs:enumeration value="CONC"/>
+			<xs:enumeration value="HELI"/>
+			<xs:enumeration value="HLCN"/>
+			<xs:enumeration value="HBI"/>
+			<xs:enumeration value="HUNI"/>
+			<xs:enumeration value="IRR"/>
+			<xs:enumeration value="LOBE"/>
+			<xs:enumeration value="O"/>
+			<xs:enumeration value="OTR"/>
+			<xs:enumeration value="PCON"/>
+			<xs:enumeration value="RAST"/>
+			<xs:enumeration value="SCON"/>
+			<xs:enumeration value="SCON"/>
+			<xs:enumeration value="SPIR"/>
+			<xs:enumeration value="SPCN"/>
+			<xs:enumeration value="STDY"/>
+			<xs:enumeration value="TRCK"/>
+			<xs:enumeration value="UNK"/>
+			<xs:enumeration value="UNI"/>
+			<xs:enumeration value="VBI"/>
+			<xs:enumeration value="VUNI"/>
+			<xs:enumeration value="WDIR"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmitterScanTypeFreeFormText">
+		<xs:annotation>
+			<xs:documentation>
+				<comment>TMS holds as a 4 character string - OS-OTG says alpha only  (i.e. 1-4A</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+			<xs:pattern value="[A-Z]{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="EmitterStaggerLegsValue">
+		<xs:annotation>
+			<xs:documentation>
+				<USMTFref> f:stagger.legs.487.258  is 01-99 integer - TMS is 1 character </USMTFref>
+				<comment>TMS holds this as a character with comment "stagger legs N"</comment>
+				<comment>USMTF has a field f:stagger.legs.487.258 which is a 2 digit integer with range 01-99 </comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="measureUnitCode" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="EmitterPRITypeCode">
+		<xs:annotation>
+			<xs:documentation>
+				<USMTFref> none found in SENSOREP or LOCATOR </USMTFref>
+				<comment>TMS holds this as 1 character with the following comments "type of PRI interval"</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BaseBandPRI">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>BaseBandPRI represents the base band pulse repetition interval (PRI) in micro seconds.</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="measureUnitCode" type="xs:token" default="microseconds"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="BaseBandScanRate">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>BaseBandScanRate represents the base band scan rate in seconds per cycle.</definition>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="measureUnitCode" type="xs:token" default="sec/cycle"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="BaseBandMode">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="REPORTED BB"/>
+			<xs:enumeration value="CRYSTAL BB"/>
+			<xs:enumeration value="RANGE BB"/>
+			<xs:enumeration value="ADAPTIVE BB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SequentialContactNumber">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EventCorrelationIndexCode">
+		<xs:annotation>
+			<xs:documentation>
+				<definition>Correlation Index indicating the source or provider of the report information.</definition>
+				<USMTFref>urn:mtg:mil:usmtf:2003:elemental    correlation.index.1136.2</USMTFref>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+			<xs:pattern value="[A-Z0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ArrDepDesPlatformAttributes">
+		<xs:annotation>
+			<xs:documentation>
+				<defintion>Data from VtTech Data</defintion>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:sequence>
+				<xs:element name="Port" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>
+							<definition>Name of place (city, ...) arrived/departed/destination.</definition>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Flag" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>
+							<defintion>Country Code of Port.</defintion>
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:element name="DTG" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<definition>Actual Arrival/Departure DTG.</definition>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EstimatedDTG" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="Cargo" type="xs:string" minOccurs="0" maxOccurs="4"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MissileEventAmplificationDetails">
+		<xs:complexContent>
+			<xs:extension base="EventAmplificationDetails">
+				<xs:sequence>
+					<xs:element name="ReportType" type="MissileReportType" minOccurs="0"/>
+					<xs:element name="TimeOfReceipt" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="TimeOfReport" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="MissileUniqueIdentifier" type="MissileUniqueIdentifier" minOccurs="0"/>
+					<xs:element name="ReportConfidence" type="xs:int" minOccurs="0"/>
+					<xs:element name="CovarianceIndicator" type="MissileCovarianceType" minOccurs="0"/>
+					<xs:element name="Covariance" type="MissileCovarianceList" minOccurs="0"/>
+					<xs:element name="ContactNumber" type="xs:int" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>Contact Number for the Missile report.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DataNumber" type="xs:int" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>Data number for the missile report is used with the data number of the track reports to associate a track report and a missile report.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DateTimeGroup" type="xs:dateTime" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>The Date/Time group issued for this missile report.</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="DatabaseNumber" type="xs:string" minOccurs="0"/>
+					<xs:element name="DatabaseType" type="MissileDataBaseType" minOccurs="0"/>
+					<xs:element name="ShipControlNumber" type="ShipControlNumberIdentifier" minOccurs="0"/>
+					<xs:element name="SequenceValues" type="SequenceList" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<definition>Missile Report Sequence Values</definition>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SequenceSource" type="SequenceList" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>
+								<defintion>Missile Report Sequence Report Values</defintion>
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="SourceIndicator" type="SourceIndicatorType" minOccurs="0"/>
+					<xs:element name="Boosting" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="LostTrack" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Remark" type="xs:string" minOccurs="0"/>
+					<xs:element name="Data" type="xs:string" minOccurs="0"/>
+					<xs:element name="DataType" type="MissileRawType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="MissileCovarianceType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="NoStatement"/>
+			<xs:enumeration value="StateVectorTransmitted"/>
+			<xs:enumeration value="PartialCovarianceDataFollows"/>
+			<xs:enumeration value="FullCovarianceDataFollows"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MissileCovarianceList">
+		<xs:annotation>
+			<xs:documentation>
+				<comment>Covariance list generally will have 21 items though the complete matrix actually contains 36 items.</comment>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction>
+			<xs:simpleType>
+				<xs:list itemType="xs:decimal"/>
+			</xs:simpleType>
+			<xs:maxLength value="36"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MissileReportType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="ICBM"/>
+			<xs:enumeration value="TBM"/>
+			<xs:enumeration value="SLV"/>
+			<xs:enumeration value="IR"/>
+			<xs:enumeration value="Radar"/>
+			<xs:enumeration value="Burnout"/>
+			<xs:enumeration value="Cancel"/>
+			<xs:enumeration value="Destroy"/>
+			<xs:enumeration value="Engaged"/>
+			<xs:enumeration value="Expired"/>
+			<xs:enumeration value="Impact"/>
+			<xs:enumeration value="Invalid"/>
+			<xs:enumeration value="Launch"/>
+			<xs:enumeration value="Observation"/>
+			<xs:enumeration value="RadarImpact"/>
+			<xs:enumeration value="RadarLaunch"/>
+			<xs:enumeration value="RadarObservation"/>
+			<xs:enumeration value="RadarEngaged"/>
+			<xs:enumeration value="RadarObservationNonBoosting"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MissileDataBaseType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SequenceList">
+		<xs:list itemType="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="SourceIndicatorType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="NONE"/>
+			<xs:enumeration value="TDDS"/>
+			<xs:enumeration value="TIBS"/>
+			<xs:enumeration value="TADILJ"/>
+			<xs:enumeration value="CSI"/>
+			<xs:enumeration value="TADILA"/>
+			<xs:enumeration value="JDI"/>
+			<xs:enumeration value="E2W"/>
+			<xs:enumeration value="TAWS"/>
+			<xs:enumeration value="OTHER1"/>
+			<xs:enumeration value="OTHER2"/>
+			<xs:enumeration value="OTHER3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MissileRawType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="RAW_EMPTY"/>
+			<xs:enumeration value="RAW_ACDS"/>
+			<xs:enumeration value="RAW_LINK11"/>
+			<xs:enumeration value="RAW_LINK14"/>
+			<xs:enumeration value="RAW_LN2"/>
+			<xs:enumeration value="RAW_CEC"/>
+			<xs:enumeration value="RAW_LATTL"/>
+			<xs:enumeration value="RAW_IIL11"/>
+			<xs:enumeration value="RAW_IIL16"/>
+			<xs:enumeration value="RAW_C_AND_D"/>
+			<xs:enumeration value="RAW_PLRS"/>
+			<xs:enumeration value="RAW_VTS"/>
+			<xs:enumeration value="RAW_NRTI"/>
+			<xs:enumeration value="RAW_CSEL"/>
+			<xs:enumeration value="RAW_CSI"/>
+			<xs:enumeration value="RAW_CV_TSC"/>
+			<xs:enumeration value="NUM_RAW_TYPES"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MissileUniqueIdentifier">
+		<xs:sequence>
+			<xs:element name="Source" type="xs:string"/>
+			<xs:element name="SourceTrackIdentifier" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LinkEventAmplificationDetails">
+		<xs:complexContent>
+			<xs:extension base="EventAmplificationDetails">
+				<xs:sequence>
+					<xs:element name="TrackQuality" type="TrackQuality" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SigintEventAmplificationDetails">
+		<xs:complexContent>
+			<xs:extension base="EventAmplificationDetails">
+				<xs:sequence>
+					<xs:element name="Frequency" type="xs:double" minOccurs="0"/>
+					<xs:element name="Bandwidth" type="xs:double" minOccurs="0"/>
+					<xs:element name="CN" type="xs:string" minOccurs="0"/>
+					<xs:element name="SN" type="xs:string" minOccurs="0"/>
+					<xs:element name="MT" type="xs:string" minOccurs="0"/>
+					<xs:element name="XM" type="xs:string" minOccurs="0"/>
+					<xs:element name="CG" type="xs:string" minOccurs="0"/>
+					<xs:element name="CL" type="xs:string" minOccurs="0"/>
+					<xs:element name="XC" type="xs:string" minOccurs="0"/>
+					<xs:element name="CD" type="xs:string" minOccurs="0"/>
+					<xs:element name="PDDG" type="xs:string" minOccurs="0"/>
+					<xs:element name="FDI" type="xs:string" minOccurs="0"/>
+					<xs:element name="Serial" type="xs:string" minOccurs="0"/>
+					<xs:element name="MsgType" type="xs:string" minOccurs="0"/>
+					<xs:element name="IFF" type="Octal4Digit" minOccurs="0"/>
+					<xs:element name="Quantity" type="xs:int" minOccurs="0"/>
+					<xs:element name="Sanitize" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TrackQuality" abstract="true">
+		<xs:simpleContent>
+			<xs:extension base="xs:integer"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TrackQualityTADIL-J">
+		<xs:simpleContent>
+			<xs:restriction base="TrackQuality">
+				<xs:minInclusive value="0"/>
+				<xs:maxInclusive value="15"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TrackQualityTADIL-A">
+		<xs:simpleContent>
+			<xs:restriction base="TrackQuality">
+				<xs:minInclusive value="0"/>
+				<xs:maxInclusive value="7"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType> -->
+
+	<xs:element name="Course" type="glib:BearingDegreesType" substitutionGroup="mo:CourseAbstract">
+		<xs:annotation>
+			<xs:documentation>A bearing </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RDFRFCode" type="ea:RadioDirectionFindingRFCodeType">
+		<xs:annotation>
+			<xs:documentation>A number </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SensorCode" type="ea:EventSensorCategoryType">
+		<xs:annotation>
+			<xs:documentation>A code </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SourceCode" type="ea:EventSourceCategoryType">
+		<xs:annotation>
+			<xs:documentation>A code </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SourceReportNumber" type="niem-xs:int">
+		<xs:annotation>
+			<xs:documentation>A number</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EventSourceSensorVerifiedCode" type="ea:EventSourceSensorVerifiedCodeType">
+		<xs:annotation>
+			<xs:documentation>A Sensor code of the detecting sensor.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EventSourceSensorFreeFormText" type="ea:EventSourceSensorFreeFormTextType">
+		<xs:annotation>
+			<xs:documentation>A Sensor code of the detecting sensor. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EventSourceVerifiedCode" type="ea:EventSourceVerifiedCodeType">
+		<xs:annotation>
+			<xs:documentation>A code for a Sensor code of the detecting sensor. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EventSourceFreeFormText" type="ea:EventSourceFreeFormTextType">
+		<xs:annotation>
+			<xs:documentation>A text for a Sensor code of the detecting sensor. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

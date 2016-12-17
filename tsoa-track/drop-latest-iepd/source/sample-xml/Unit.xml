@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:TrackInfo xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:ism="urn:us:gov:ic:ism"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:gco="http://www.isotc211.org/2005/gco"
+ xmlns:gss="http://www.isotc211.org/2005/gss"
+ xmlns:gmd="http://www.isotc211.org/2005/gmd"
+ xmlns:gsr="http://www.isotc211.org/2005/gsr"
+ xmlns:gts="http://www.isotc211.org/2005/gts"
+ xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+ xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/"
+ xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/"
+ xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+ xmlns:u="urn:disa:udop.tracks:1.0:unit"
+ xmlns:trk="https://tsoa.example.mil/tsoa/track"
+ xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+ xmlns:icism="urn:us:gov:ic:ism"
+ xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+ xmlns:lib="urn:disa:udop.tracks:1.0:lib"
+ xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/3.0/"
+ xmlns:ea="urn:disa:udop.tracks:1.0:ea"
+ xmlns:glib="urn:disa:udop.tracks:1.0:genLib"
+ xmlns:e="urn:disa:udop.tracks:1.0:event"
+ xmlns:ti="urn:disa:udop.tracks:1.0:trackInfo"
+ xsi:schemaLocation="urn:disa:udop.tracks:1.0:trackInfo ../base-xsd/extension/TrackInfo.xsd"
+ ism:resourceElement="true" ism:DESVersion="13" ism:createDate="2016-12-16" ism:classification="U" ism:ownerProducer="USA">
+    <mo:Track xsi:type="u:UnitType" ism:classification="U" ism:ownerProducer="USA">
+        <trk:TrackAugmentation>
+            <trk:TrackType>Unit</trk:TrackType>
+            <trk:Identifiers>
+                <trk:GUID>CBR01 10MAR</trk:GUID>
+                <lib:UniqueReferenceCode>2235868</lib:UniqueReferenceCode>
+                <trk:NickName>2235868</trk:NickName>
+            </trk:Identifiers>
+            <mo:MILSTD2525-C-SIDC-Code>SFGPUUMRG--E---</mo:MILSTD2525-C-SIDC-Code>
+        </trk:TrackAugmentation>
+    </mo:Track>
+    <mo:Event>
+        <mo:EventLocation>
+            <nc:Location3DGeospatialCoordinate>
+                <nc:GeographicCoordinateLatitude>
+                    <nc:LatitudeDegreeValue>30.65294166666612</nc:LatitudeDegreeValue>
+                </nc:GeographicCoordinateLatitude>
+                <nc:GeographicCoordinateLongitude>
+                    <nc:LongitudeDegreeValue>-82.47110833333262</nc:LongitudeDegreeValue>
+                </nc:GeographicCoordinateLongitude>
+                <nc:LocationElevation>
+                    <nc:MeasureIntegerValue>0</nc:MeasureIntegerValue>
+                    <nc:LengthUnitCode>FOT</nc:LengthUnitCode>
+                </nc:LocationElevation>
+            </nc:Location3DGeospatialCoordinate>
+        </mo:EventLocation>
+        <mo:EventValidityDateTimeRange>
+            <nc:StartDate>
+                <nc:DateTime>2006-05-04T18:13:51.0</nc:DateTime>
+            </nc:StartDate>
+            <nc:EndDate>
+                <nc:DateTime>2006-05-04T18:13:51.0</nc:DateTime>
+            </nc:EndDate>
+        </mo:EventValidityDateTimeRange>
+    </mo:Event>
+ </ti:TrackInfo>

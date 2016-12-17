@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/cbrn/3.2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Chemical, Biological, Radiological, and Nuclear Domain</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:complexType name="DistanceType">
+    <xs:annotation>
+      <xs:documentation>A data type for a distance measure where the units are meters (m) and the values may not be negative.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cbrn:NonNegativeDoubleType">
+        <xs:attribute ref="cbrn:unitsText" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="NonNegativeDoubleSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a double with value of zero or greater.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:double"/>
+  </xs:simpleType>
+  <xs:complexType name="NonNegativeDoubleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a double with value of zero or greater.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cbrn:NonNegativeDoubleSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="OriginType">
+    <xs:annotation>
+      <xs:documentation>A data type for the origin of a relative location coordinate system.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cbrn:RemarksComplexObjectType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RelativeLocationType">
+    <xs:annotation>
+      <xs:documentation>A data type for describing the relative location of an object.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cbrn:RemarksComplexObjectType">
+        <xs:sequence>
+          <xs:element ref="cbrn:DistanceValue" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cbrn:Origin" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="cbrn:RelativeLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RemarksComplexObjectType">
+    <xs:annotation>
+      <xs:documentation>A data type providing a Remark via inheritance to applicable Types.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:attribute name="unitsText" type="xs:token">
+    <xs:annotation>
+      <xs:documentation>A unit of measure for a value element. If used, the unit of measure shall be as stated in the documentation for the element.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:element name="DistanceValue" type="cbrn:DistanceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A scalar distance between the center of an object (i.e., instrument, detector, or item) or nuclide and the center of a reference point (Origin).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Origin" type="cbrn:OriginType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A definition of an origin in a relative location coordinate system. The coordinates of a point in the relative location system are defined based on this origin.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RelativeLocationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for cbrn:RelativeLocationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

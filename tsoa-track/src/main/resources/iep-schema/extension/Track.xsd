@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:trk="https://tsoa.example.mil/tsoa/track"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+	xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+	xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
+	xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+	xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+	xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+	xmlns:glib="urn:disa:udop.tracks:1.0:genLib" xmlns:lib="urn:disa:udop.tracks:1.0:lib"
+	targetNamespace="https://tsoa.example.mil/tsoa/track" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" version="1"
+	ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument">
+
+	<xs:annotation>
+		<xs:documentation>TSOA Track Version 1.0 DISTRIBUTION STATEMENT C. Distribution is
+			authorized to U.S. Government agencies and their contractors (Critical Technology,
+			Export Controlled, Software Documentation). Other requests for this document shall be
+			referred to Joint Staff J6, Architecture Integration Division at
+			js.dsc.j6.mbx.wma-afip-portal-help-desk@mail.mil.</xs:documentation>
+		<xs:appinfo>
+			<term:LocalTerm term="URI" literal="Uniform Resource Identifier"/>
+			<term:LocalTerm term="GUID" literal="Globally Unique Identifier"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+		schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+		schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+		schemaLocation="../niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+		schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+	<xs:import namespace="urn:disa:udop.tracks:1.0:genLib" schemaLocation="GeneralLibrary.xsd"/>
+	<xs:import namespace="urn:disa:udop.tracks:1.0:lib" schemaLocation="Library.xsd"/>
+
+	<!-- EXTERNAL -->
+
+
+	<!-- COMPLEX TYPES -->
+
+	<!--
+	<xs:element name="Track" type="mo:TrackType">
+		<xs:annotation>
+			<xs:documentation>A track .....</xs:documentation>
+		</xs:annotation>		
+	</xs:element>
+-->
+
+	<xs:complexType name="TrackAugmentationType">
+		<xs:annotation>
+			<xs:documentation>A data type for additional information about a
+				Track.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:AugmentationType">
+				<xs:sequence>
+					<xs:element ref="glib:EnvironmentCategoryCode" minOccurs="0"/>
+					<xs:element ref="trk:Threat" minOccurs="0"/>
+					<xs:element ref="trk:TacticalTrainingCode" minOccurs="0"/>
+					<xs:element ref="trk:TrackScope" minOccurs="0"/>
+					<xs:element ref="trk:TrackType" minOccurs="0"/>
+					<xs:element ref="trk:ForceCode" minOccurs="0"/>
+					<xs:element ref="lib:MotionModelCode" minOccurs="0"/>
+					<xs:element ref="nc:BinaryURI" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="trk:AmbiguityReasonText" minOccurs="0"/>
+					<xs:element ref="lib:DataAmplification" minOccurs="0"/>
+					<xs:element ref="trk:Identifiers" minOccurs="0"/>
+					<xs:element ref="mo:MILSTD2525-C-SIDC-Code" minOccurs="1"/>
+					<xs:element ref="trk:RemarksList" minOccurs="0"/>
+					<xs:element ref="trk:Targeting" minOccurs="0"/>
+					<xs:element ref="trk:CrossReference" minOccurs="0"/>
+					<xs:element ref="trk:CurrentEventGUID" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="C2TrackDetailsType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>A data type for a ....</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="mo:TrackType">
+				<xs:sequence>
+					<xs:element ref="lib:AlertCode" minOccurs="0"/>
+					<xs:element ref="trk:Flag" minOccurs="0"/>
+					<xs:element ref="lib:Relationship" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IdentifiersType">
+		<xs:annotation>
+			<xs:documentation>A data type .</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="trk:GUID" minOccurs="0"/>
+					<xs:element ref="lib:UID" minOccurs="0"/>
+					<xs:element ref="trk:LocalTrackNumber" minOccurs="0"/>
+					<xs:element ref="lib:NetworkIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="trk:GeneralIdentifierID" minOccurs="0"/>
+					<xs:element ref="trk:InternationalRadioCallSign" minOccurs="0"/>
+					<xs:element ref="trk:Trademark" minOccurs="0"/>
+					<xs:element ref="trk:DiscreteIdentifier" minOccurs="0"/>
+					<xs:element ref="lib:UnitIdentificationCode" minOccurs="0"/>
+					<xs:element ref="lib:UniqueReferenceCode" minOccurs="0"/>
+					<xs:element ref="lib:MIDBUnitID" minOccurs="0"/>
+					<xs:element ref="lib:IFF" minOccurs="0"/>
+					<xs:element ref="lib:EntityClassName" minOccurs="0"/>
+					<xs:element ref="lib:EntityNumberID" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Pennant number or Aircraft Tail
+								number</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="trk:EntityType" minOccurs="0"/>
+					<xs:element ref="trk:ShipControlNumber" minOccurs="0"/>
+					<xs:element ref="trk:FOTCTrackNumber" minOccurs="0"/>
+					<xs:element ref="trk:ReceivedTrackNumbers" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="trk:NickName" minOccurs="0"/>
+					<xs:element ref="trk:SystemTrackNumber" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="GeneralIdentifierType">
+		<xs:annotation>
+			<xs:documentation>A data type for a </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="lib:OriginatorText"/>
+					<xs:element ref="lib:OriginatorKeyText"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="AmbiguityType">
+		<xs:annotation>
+			<xs:documentation>A data type for.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="niem-xs:string">
+				<xs:attribute ref="trk:isAmbiguityIndicator"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="TargetingType">
+		<xs:annotation>
+			<xs:documentation>A data type .</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="trk:AttackMissionInProgress" minOccurs="0"/>
+					<xs:element ref="trk:AttackMissionTasked" minOccurs="0"/>
+					<xs:element ref="trk:BDAPhase1ReportAvailable" minOccurs="0"/>
+					<xs:element ref="trk:BDAPhase2ReportAvailable" minOccurs="0"/>
+					<xs:element ref="trk:DMPIAssigned" minOccurs="0"/>
+					<xs:element ref="trk:Engaged" minOccurs="0"/>
+					<xs:element ref="trk:NominationRequested" minOccurs="0"/>
+					<xs:element ref="trk:NominationRequestRejected" minOccurs="0"/>
+					<xs:element ref="trk:OnATO" minOccurs="0"/>
+					<xs:element ref="trk:TimeCritical" minOccurs="0"/>
+					<xs:element ref="trk:Validated" minOccurs="0"/>
+					<xs:element ref="trk:WeaponAssigned" minOccurs="0"/>
+					<xs:element ref="trk:Weaponeered" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:element name="GeneralIdentifierID" type="trk:GeneralIdentifierType">
+		<xs:annotation>
+			<xs:documentation>An identifier for .... </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="TrackAugmentation" type="trk:TrackAugmentationType"
+		substitutionGroup="mo:TrackAugmentationPoint" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Additional information about an nc:Aircraft.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Threat" type="mo:StandardIdentityCodeType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TacticalTrainingCode" type="lib:EntityTacticalTrainingCodeType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TrackScope" type="lib:EntityScopeCodeType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TrackType" type="lib:EntityTrackDetailsType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ForceCode" type="glib:Short0to99Type">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AmbiguityReasonText" type="trk:AmbiguityType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Identifiers" type="trk:IdentifiersType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RemarksList" type="lib:GeneralRemarksDetailsType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Targeting" type="trk:TargetingType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CrossReference" type="niem-xs:string">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CurrentEventGUID" type="niem-xs:string">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Flag" type="lib:EntityFlagCategoryType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="AttackMissionInProgress" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AttackMissionTasked" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BDAPhase1ReportAvailable" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BDAPhase2ReportAvailable" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DMPIAssigned" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Engaged" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NominationRequested" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NominationRequestRejected" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OnATO" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="TimeCritical" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Validated" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="WeaponAssigned" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Weaponeered" type="niem-xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GUID" type="niem-xs:string">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="LocalTrackNumber" type="lib:EntityOverTheHorizonTrackNumberDetailsType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="EntityType" type="lib:EntityCategoryType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ShipControlNumber" type="lib:ShipControlNumberIdentifierType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FOTCTrackNumber" type="lib:EntityOverTheHorizonTrackNumberDetailsType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ReceivedTrackNumbers" type="lib:EntityOverTheHorizonTrackNumberDetailsType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="NickName" type="lib:EntityNickNameType">
+		<xs:annotation>
+			<xs:documentation>A name for ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SystemTrackNumber" type="lib:SystemTrackNumberType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="InternationalRadioCallSign"
+		type="lib:InternationalRadioCallSignIdentifierType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Trademark" type="lib:TrademarkIdentifierType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DiscreteIdentifier" type="glib:Octal4DigitType">
+		<xs:annotation>
+			<xs:documentation>An ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:attribute name="isAmbiguityIndicator" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>An attribute ...</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+</xs:schema>

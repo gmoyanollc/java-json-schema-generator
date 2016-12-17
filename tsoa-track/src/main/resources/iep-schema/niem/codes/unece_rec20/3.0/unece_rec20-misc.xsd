@@ -9,6 +9,143 @@ Date: 2012;
 http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation-and-e-business-uncefact/outputs/cefactrecommendationsrec-index/list-of-trade-facilitation-recommendations-n-16-to-20.html</xs:documentation>
   </xs:annotation>
   <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:simpleType name="LengthCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurements for a length value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="SMI">
+        <xs:annotation>
+          <xs:documentation>mile (statute mile)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NMI">
+        <xs:annotation>
+          <xs:documentation>nautical mile</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KMT">
+        <xs:annotation>
+          <xs:documentation>kilometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FOT">
+        <xs:annotation>
+          <xs:documentation>foot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4H">
+        <xs:annotation>
+          <xs:documentation>micrometre (micron)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="77">
+        <xs:annotation>
+          <xs:documentation>milli-inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A11">
+        <xs:annotation>
+          <xs:documentation>angstrom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A12">
+        <xs:annotation>
+          <xs:documentation>astronomical unit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A45">
+        <xs:annotation>
+          <xs:documentation>decametre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A71">
+        <xs:annotation>
+          <xs:documentation>femtometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK">
+        <xs:annotation>
+          <xs:documentation>fathom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B57">
+        <xs:annotation>
+          <xs:documentation>light year</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C45">
+        <xs:annotation>
+          <xs:documentation>nanometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C52">
+        <xs:annotation>
+          <xs:documentation>picometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C63">
+        <xs:annotation>
+          <xs:documentation>parsec</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMT">
+        <xs:annotation>
+          <xs:documentation>centimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DMT">
+        <xs:annotation>
+          <xs:documentation>decimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HMT">
+        <xs:annotation>
+          <xs:documentation>hectometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INH">
+        <xs:annotation>
+          <xs:documentation>inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M7">
+        <xs:annotation>
+          <xs:documentation>micro-inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MMT">
+        <xs:annotation>
+          <xs:documentation>millimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTR">
+        <xs:annotation>
+          <xs:documentation>metre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X1">
+        <xs:annotation>
+          <xs:documentation>Gunter's chain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YRD">
+        <xs:annotation>
+          <xs:documentation>yard</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LengthCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurements for a length value.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:LengthCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="VelocityCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for units of measurement for a speed or velocity.</xs:documentation>

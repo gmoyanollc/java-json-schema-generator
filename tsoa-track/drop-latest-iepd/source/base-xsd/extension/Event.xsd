@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Charlie Black (Northrop Grumman I T) -->
+<!--________________________________________________________________________________-->
+<!--                                                                                                                                                                -->
+<!-- ******************************************************** Event *******************************************************-->
+<!--________________________________________________________________________________-->
+<xs:schema targetNamespace="urn:disa:udop.tracks:1.0:event" xmlns:e="urn:disa:udop.tracks:1.0:event"
+	xmlns:ea="urn:disa:udop.tracks:1.0:ea" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+	xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+	xmlns:tsoa="https://tsoa.example.mil/appinfo"
+	xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
+	xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+	xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+	xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+	xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
+	xmlns:glib="urn:disa:udop.tracks:1.0:genLib" xmlns:lib="urn:disa:udop.tracks:1.0:lib"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" version="1"
+	ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument">
+
+	<xs:annotation>
+		<xs:documentation>A </xs:documentation>
+	</xs:annotation>
+
+
+	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+		schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+		schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+		schemaLocation="../niem/structures/3.0/structures.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+		schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+	<xs:import namespace="http://release.niem.gov/niem/domains/cbrn/3.2/"
+		schemaLocation="../niem/domains/cbrn/3.2/cbrn.xsd"/>
+	<xs:import namespace="urn:disa:udop.tracks:1.0:genLib" schemaLocation="GeneralLibrary.xsd"/>
+	<xs:import namespace="urn:disa:udop.tracks:1.0:lib" schemaLocation="Library.xsd"/>
+	<xs:import namespace="urn:disa:udop.tracks:1.0:ea" schemaLocation="EventAmplification.xsd"/>
+
+
+
+
+	<xs:element name="EventAugmentation" type="e:EventAugmentationType"
+		substitutionGroup="mo:EventAugmentationPoint" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Additional information about an nc:Aircraft.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+
+	<xs:complexType name="EventAugmentationType">
+		<xs:annotation>
+			<xs:documentation>A data type for additional information about an
+				Event.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:AugmentationType">
+				<xs:sequence>
+					<xs:element ref="e:AssociatedGUID" minOccurs="0"/>
+					<xs:element ref="e:Amplification" minOccurs="0"/>
+					<xs:element ref="e:OwnerEntityUID" minOccurs="0"/>
+					<xs:element ref="e:CrossReference" minOccurs="0"/>
+					<xs:element ref="e:RawReportText" minOccurs="0"/>
+					<xs:element ref="e:ContactNumber" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="e:sourceCode" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="EventLocationDetailsType">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="structures:ObjectType">
+				<xs:sequence>
+					<xs:element ref="e:Position"/>
+					<xs:element ref="e:AngleOfElevationMeasure" minOccurs="0"/>
+					<xs:element ref="e:AreaOfUncertaintyContainmentPercent" minOccurs="0"/>
+					<xs:element ref="e:Quadcode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="PositEllipseType">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="e:EventLocationDetailsType">
+				<xs:sequence>
+					<xs:element ref="e:Semi-MajorAxis"/>
+					<xs:element ref="e:Semi-MinorAxis"/>
+					<xs:element ref="e:Bearing"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="LineOfBearingType">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="e:EventLocationDetailsType">
+				<xs:sequence>
+					<xs:element ref="e:Bearing"/>
+					<xs:element ref="e:BearingErrorMeasure"/>
+					<xs:element ref="e:AmbiguityStatusCode"/>
+					<xs:element ref="e:RangeEstimateMeasure" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="BearingBoxType">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="e:EventLocationDetailsType">
+				<xs:sequence>
+					<xs:element ref="e:Bearing"/>
+					<xs:element ref="e:RangeMeasure"/>
+					<xs:element ref="e:HalfWidthMeasure"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="FanType">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="e:EventLocationDetailsType">
+				<xs:sequence>
+					<xs:element ref="e:Bearing"/>
+					<xs:element ref="e:MinimumRangeMeasure"/>
+					<xs:element ref="e:MaximumRangeMeasure"/>
+					<xs:element ref="e:HalfAngleMeasure"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="BearingErrorType">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="glib:Degrees180Type"/>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+
+	<xs:complexType name="LineOfBearingAmbiguityStatusCodeType">
+		<xs:annotation>
+			<xs:documentation>A data type </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="e:LineOfBearingAmbiguityStatusCodeSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="LineOfBearingAmbiguityStatusCodeSimpleType">
+		<xs:annotation>
+			<xs:documentation>A data type for ....</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="NON-AMBIGUOUS">
+				<xs:annotation>
+					<xs:documentation>A....</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AMBIGUOUS">
+				<xs:annotation>
+					<xs:documentation>A....</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AMBIGUOUS RESOLVED PORT">
+				<xs:annotation>
+					<xs:documentation>A....</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AMBIGUOUS RESOLVED STBD">
+				<xs:annotation>
+					<xs:documentation>A....</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="AngleOfElevationMeasureType">
+		<xs:annotation>
+			<xs:documentation> A data type for the angle of elevation to the reported track.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="e:AngleOfElevationSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+				<xs:attribute ref="e:measureUnitCode" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:attribute name="measureUnitCode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>An attribute ....</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+	<xs:simpleType name="AngleOfElevationSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for the angle of elevation to the reported track. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:Comment>Currently supporting a range of 0-90. Need to investigate correct
+					range.</tsoa:Comment>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="AreaOfUncertaintyContainmentPercentType">
+		<xs:annotation>
+			<xs:documentation> A data type for a percent representing the certainty that the
+				reported track is located within the specified area of uncertainty (AOU).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="e:AreaOfUncertaintyContainmentPercentSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<xs:simpleType name="AreaOfUncertaintyContainmentPercentSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for a percent representing the certainty that the
+				reported track is located within the specified area of uncertainty (AOU).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="EventRawReportTextType">
+		<xs:annotation>
+			<xs:documentation> A data type for </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="e:EventRawReportTextSimpleType">
+				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="EventRawReportTextSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="500"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+	<!-- REUSE IC-ISM 
+	
+	<xs:simpleType name="Classification">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="UNKNOWN"/>
+			<xs:enumeration value="UNCLAS"/>
+			<xs:enumeration value="CONFIDENTIAL"/>
+			<xs:enumeration value="SECRET"/>
+			<xs:enumeration value="SECRET NOFORN"/>
+			<xs:enumeration value="TOP SECRET"/>
+			<xs:enumeration value="SPECIAL"/>
+		</xs:restriction>
+	</xs:simpleType> -->
+
+
+
+	<xs:element name="AssociatedGUID" type="nc:IdentificationType">
+		<xs:annotation>
+			<xs:documentation>An ID ....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Location" type="nc:LocationType">
+		<xs:annotation>
+			<xs:documentation>A ....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Amplification" type="ea:EventAmplificationDetailsType">
+		<xs:annotation>
+			<xs:documentation>An ....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="OwnerEntityUID" type="lib:EntityUniqueIdentifierDetailsType">
+		<xs:annotation>
+			<xs:documentation> A UID of the primary entity to which this report is attributed. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:comment>This should be useful when reports from subcomponents (e.g. emitters)
+					are added to the platform (e.g. ship) on which they reside. This is NOT the
+					trigraph of the node to enter this report. It is NOT information regarding the
+					source of the report.</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CrossReference" type="niem-xs:string">
+		<xs:annotation>
+			<xs:documentation>An ....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RawReportText" type="e:EventRawReportTextType">
+		<xs:annotation>
+			<xs:documentation>An ....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="ContactNumber" type="niem-xs:integer">
+		<xs:annotation>
+			<xs:documentation>A ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+
+	<xs:attribute name="sourceCode" type="e:SourceCodeSimpleType">
+		<xs:annotation>
+			<xs:documentation>A data type for the source ...... </xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+
+	<xs:simpleType name="SourceCodeSimpleType">
+		<xs:annotation>
+			<xs:documentation> A data type for a........ </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="observed">
+				<xs:annotation>
+					<xs:documentation>Observed</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="calculated">
+				<xs:annotation>
+					<xs:documentation>Calcualted</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="predicted">
+				<xs:annotation>
+					<xs:documentation>Predicted</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+	<xs:element name="Position" type="nc:LocationType">
+		<xs:annotation>
+			<xs:documentation>A ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AngleOfElevationMeasure" type="e:AngleOfElevationMeasureType">
+		<xs:annotation>
+			<xs:documentation>A measure......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AreaOfUncertaintyContainmentPercent"
+		type="e:AreaOfUncertaintyContainmentPercentType">
+		<xs:annotation>
+			<xs:documentation>A percent......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Quadcode" type="niem-xs:string">
+		<xs:annotation>
+			<xs:documentation>A ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="Semi-MajorAxis" type="cbrn:RelativeLocationType">
+		<xs:annotation>
+			<xs:documentation> A length of the semi-major axis of the area of uncertainty ellipse. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:comment>See USMTF composite “length.in.nautical.miles.302᾿</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Semi-MinorAxis" type="cbrn:RelativeLocationType">
+		<xs:annotation>
+			<xs:documentation> A length of the semi-minor axis of the area of uncertainty ellipse. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:comment>See USMTF composite “length.in.nautical.miles.302᾿</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Bearing" type="glib:BearingDegreesType">
+		<xs:annotation>
+			<xs:documentation> A true bearing of the major axis of the reported uncertainty ellipse. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:comment>See USMTF composite angle.in.degrees.true.2161 (note: integer vice
+					float)</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BearingErrorMeasure" type="e:BearingErrorType">
+		<xs:annotation>
+			<xs:documentation> A measure for bearing error (e.g. +/- degrees) of the Line Of
+				Bearing. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:comment>Range: OS-OTG indicates 0-180, TMS accepts any value greater than or
+					equal to 0. Currently supporting range from 0-180</tsoa:comment>
+				<tsoa:comment>See USMTF composite angle.in.degrees.true.2161 (note: integer vice
+					float)</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="AmbiguityStatusCode" type="e:LineOfBearingAmbiguityStatusCodeType">
+		<xs:annotation>
+			<xs:documentation>A ......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RangeEstimateMeasure" type="cbrn:RelativeLocationType">
+		<xs:annotation>
+			<xs:documentation>A measure......</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="RangeMeasure" type="cbrn:RelativeLocationType">
+		<xs:annotation>
+			<xs:documentation> A measure for the range (length) of the bearing box. The range of the
+				bearing box is along the direction of orientation. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:comment>See USMTF composite “length.in.nautical.miles.302᾿</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="HalfWidthMeasure" type="cbrn:RelativeLocationType">
+		<xs:annotation>
+			<xs:documentation> A measure for the half width of the bearing box. The half-width of
+				the bearing box is perpendicular to the orientation. </xs:documentation>
+			<xs:appinfo>
+				<tsoa:comment>See USMTF composite “length.in.nautical.miles.302᾿</tsoa:comment>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:element name="MinimumRangeMeasure" type="cbrn:RelativeLocationType">
+		<xs:annotation>
+			<xs:documentation> A measure for the minimum length of the fan. (The inner radius of the
+				fan.) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="MaximumRangeMeasure" type="cbrn:RelativeLocationType">
+		<xs:annotation>
+			<xs:documentation> A measure for the maximum length of the fan. (The outter radius of
+				the fan.) </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="HalfAngleMeasure" type="glib:BearingDegreesType">
+		<xs:annotation>
+			<xs:documentation> A measure for number of degrees that the fan should travers clockwise
+				around the axis, starting at the bearing. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

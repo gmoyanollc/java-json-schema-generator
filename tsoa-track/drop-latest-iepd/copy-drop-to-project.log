@@ -1,0 +1,8 @@
+Buildfile: /media/sf_gData/Project/TSOA/Schema/Product/soi-messaging/tsoa-track/drop-latest-iepd/build.xml
+
+copy-drop-to-project:
+     [copy] Copying 1 resource to /media/sf_gData/Project/TSOA/Schema/Product/soi-messaging/tsoa-track/src/main/resources/documentation
+     [copy] Copying 2 resources to /media/sf_gData/Project/TSOA/Schema/Product/soi-messaging/tsoa-track/src/main/resources/iep-sample
+
+BUILD SUCCESSFUL
+Total time: 3 seconds

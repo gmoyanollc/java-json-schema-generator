@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/3.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/3.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>MilOps 3.2 - Distribution A</xs:documentation>
   </xs:annotation>
@@ -8,6 +8,11 @@
   <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
   <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../external/ogc/gml/3.2.1/gml.xsd" namespace="http://www.opengis.net/gml/3.2" appinfo:externalImportIndicator="true">
+    <xs:annotation>
+      <xs:documentation>Geography Markup Language (GML) version 3.2.1 schemas.  See http://www.opengeospatial.org OGC document 07-036 for documentation: "The Geography Markup Language (GML) was originally developed within the Open Geospatial Consortium, Inc. (OGC). ISO 19136 was prepared by ISO/TC 211 jointly with the OGC."  See http://schemas.opengis.net/gml/ for schemas.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
   <xs:complexType name="CourseAngleDegreesMeasureType">
     <xs:annotation>
       <xs:documentation>A data type for an angle measured in degrees used to identify the intended direction of movement in the horizontal plane.  The value of the angle is positive in a clockwise direction as viewed from "above" the horizontal plane.</xs:documentation>
@@ -42,6 +47,8 @@
           <xs:element ref="mo:EventLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EventIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EventValidityDateTimeRange" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:EventMotion" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:EventAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -255,6 +262,34 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="WGS84LocationCylinderType">
+    <xs:annotation>
+      <xs:documentation>A data type for a cylinder described with WGS84 coordinates and meters.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:WGS84LocationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WGS84LocationPointType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a 3D geometric point, defined by a single coordinate tuple with values from the WGS84 coordinate reference system.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:Point" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A gml:Point is defined by a single coordinate tuple. The direct position of a point is specified by the gml:pos element which is of type gml:DirectPositionType.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:attribute name="sigmaErrorValue" type="xs:decimal">
     <xs:annotation>
       <xs:documentation>A magnitude of a one-sigma deviation of a normal (Gaussian) distribution followed by the true value of the quantity.</xs:documentation>
@@ -320,6 +355,11 @@
       <xs:documentation>An existance of a process or object at a location during a time interval.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EventAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:EventType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="EventIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification of an event.</xs:documentation>
@@ -328,6 +368,11 @@
   <xs:element name="EventLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location of a process or object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EventMotion" type="mo:MotionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A 2D or 3D vector describing the motion of a process or object.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EventValidityDateTimeRange" type="nc:DateRangeType" nillable="true">
@@ -360,7 +405,7 @@
       <xs:documentation>An identification of a sensor.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpeedValue" type="mo:SpeedValueType" nillable="true">
+  <xs:element name="SpeedValue" type="mo:SpeedValueType">
     <xs:annotation>
       <xs:documentation>A magnitude of motion (rate of change of position) of an object.</xs:documentation>
     </xs:annotation>
@@ -393,6 +438,16 @@
   <xs:element name="UnitTypeCodeText" type="mo:UnitTypeCodeTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Joint Chiefs of Staff developed and assigned code, consisting of five characters that uniquely identify a "type unit."</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WGS84LocationCylinder" type="mo:WGS84LocationCylinderType" substitutionGroup="nc:LocationGeospatialCoordinate" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location identified by a cylinder oriented vertically and centered on a point described with WGS84  coordinates. If it is appropriate for the radius and half-height properties to represent an error value  (for example, because the event is a laser-designated target), then the true event location follows a normal distribution such that the cylinder defines the one-sigma (p&#x2248;0.67) deviation.  (A cylinder with  twice the volume would be the two-sigma (p&#x2248;0.95) deviation, etc.)  Otherwise the cylinder encloses the  full physical extent of the event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WGS84LocationPoint" type="mo:WGS84LocationPointType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a 3D geometric point, defined by a single coordinate tuple with values from the WGS84 coordinate reference system.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>

@@ -5,11 +5,22 @@
   <uri name="http://release.niem.gov/niem/codes/nga_datum/3.0/" uri="codes/nga_datum/3.0/nga_datum.xsd"/>
   <uri name="http://release.niem.gov/niem/codes/unece_rec20/3.0/" uri="codes/unece_rec20/3.0/unece_rec20-misc.xsd"/>
   <uri name="http://release.niem.gov/niem/conformanceTargets/3.0/" uri="conformanceTargets/3.0/conformanceTargets.xsd"/>
+  <uri name="http://release.niem.gov/niem/domains/cbrn/3.2/" uri="domains/cbrn/3.2/cbrn.xsd"/>
   <uri name="http://release.niem.gov/niem/domains/jxdm/5.2/" uri="domains/jxdm/5.2/jxdm.xsd"/>
   <uri name="http://release.niem.gov/niem/domains/maritime/3.2/" uri="domains/maritime/3.2/maritime.xsd"/>
   <uri name="http://release.niem.gov/niem/domains/militaryOperations/3.2/" uri="domains/militaryOperations/3.2/mo.xsd"/>
+  <uri name="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" uri="external/ogc/ols/1.1.0/dhs-gmo/2.1.0/ols.xsd"/>
   <uri name="http://release.niem.gov/niem/localTerminology/3.0/" uri="localTerminology/3.0/localTerminology.xsd"/>
   <uri name="http://release.niem.gov/niem/niem-core/3.0/" uri="niem-core/3.0/niem-core.xsd"/>
   <uri name="http://release.niem.gov/niem/proxy/xsd/3.0/" uri="proxy/xsd/3.0/xs.xsd"/>
   <uri name="http://release.niem.gov/niem/structures/3.0/" uri="structures/3.0/structures.xsd"/>
+  <uri name="http://www.isotc211.org/2005/gco" uri="external/ogc/iso/19139/20070417/gco/basicTypes.xsd"/>
+  <uri name="http://www.isotc211.org/2005/gmd" uri="external/ogc/iso/19139/20070417/gmd/applicationSchema.xsd"/>
+  <uri name="http://www.isotc211.org/2005/gmx" uri="external/ogc/iso/19139/20070417/gmx/catalogues.xsd"/>
+  <uri name="http://www.isotc211.org/2005/gsr" uri="external/ogc/iso/19139/20070417/gsr/gsr.xsd"/>
+  <uri name="http://www.isotc211.org/2005/gss" uri="external/ogc/iso/19139/20070417/gss/geometry.xsd"/>
+  <uri name="http://www.isotc211.org/2005/gts" uri="external/ogc/iso/19139/20070417/gts/gts.xsd"/>
+  <uri name="http://www.opengis.net/gml/3.2" uri="external/ogc/gml/3.2.1/basicTypes.xsd"/>
+  <uri name="http://www.w3.org/1999/xlink" uri="external/ogc/xlink/1.0.0/xlinks.xsd"/>
+  <nextCatalog catalog="external/ogc/xml-catalog.xml"/>
 </catalog>

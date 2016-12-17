@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ti="urn:disa:udop.tracks:1.0:trackInfo"
+  xmlns:trk="https://tsoa.example.mil/tsoa/track" xmlns:e="urn:disa:udop.tracks:1.0:event"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xmlns:tsoa="https://tsoa.example.mil/appinfo" targetNamespace="urn:disa:udop.tracks:1.0:trackInfo"
+  ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+
+  <xs:annotation>
+    <xs:documentation>TSOA Unit. DISTRIBUTION STATEMENT C. Distribution is authorized to U.S.
+      Government agencies and their contractors (Critical Technology, Export Controlled, Software
+      Documentation). Other requests for this document shall be referred to Joint Staff J6,
+      Architecture Integration Division at
+      js.dsc.j6.mbx.wma-afip-portal-help-desk@mail.mil.</xs:documentation>
+  </xs:annotation>
+
+
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+    schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+    schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+    schemaLocation="../niem/structures/3.0/structures.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+    schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+  <xs:import namespace="urn:disa:udop.tracks:1.0:unit" schemaLocation="Unit.xsd"/>
+  <xs:import namespace="https://tsoa.example.mil/tsoa/track" schemaLocation="Track.xsd"/>
+  <xs:import namespace="urn:disa:udop.tracks:1.0:event" schemaLocation="Event.xsd"/>
+
+
+  <!-- Use imports as needed
+	<xs:include schemaLocation="Event.xsd"/>
+  <xs:include schemaLocation="Equipment.xsd"/>
+  <xs:include schemaLocation="Facility.xsd"/>
+  <xs:include schemaLocation="Platform.xsd"/>
+  <xs:include schemaLocation="Weapons.xsd"/>
+  <xs:include schemaLocation="Space.xsd"/>
+  <xs:include schemaLocation="Sigint.xsd"/>
+  <xs:include schemaLocation="General.xsd"/>
+  <xs:include schemaLocation="EventTrack.xsd"/>
+  <xs:include schemaLocation="Individual.xsd"/>
+  -->
+
+  <xs:element name="TrackInfo" type="ti:TrackInfoType">
+    <xs:annotation>
+      <xs:documentation>A .....</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="TrackInfoType">
+    <xs:annotation>
+      <xs:documentation>A data type for ..... </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:Track"/>
+          <xs:element ref="mo:Event" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

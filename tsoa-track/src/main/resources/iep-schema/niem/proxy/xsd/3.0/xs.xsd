@@ -54,6 +54,16 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="int">
+    <xs:annotation>
+      <xs:documentation>A data type that is  is derived from long by setting the value of maxInclusive to be 2147483647 and minInclusive to be -2147483648.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:int">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="integer">
     <xs:annotation>
       <xs:documentation>A data type for the standard mathematical concept of integer numbers.</xs:documentation>

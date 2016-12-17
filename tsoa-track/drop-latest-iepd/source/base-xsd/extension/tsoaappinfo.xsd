@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+
+<xs:schema xmlns="https://tsoa.example.mil/appinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="https://tsoa.example.mil/appinfo" elementFormDefault="qualified" version="1">
+	<xs:annotation>
+		<xs:documentation>The TSOA appinfo schema .....</xs:documentation>
+	</xs:annotation>
+	<xs:element name="Comment" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A comment ....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="USMTFref" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A USMTF ref to .....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Definition" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A definition for .....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DoDXMLref" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>A definition for .....</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

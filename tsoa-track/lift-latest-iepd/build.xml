@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="sync-project-with-drop" default="sync-lift-with-project" 
-    xmlns:if="ant:if"
-    xmlns:unless="ant:unless"
-    xmlns:au="antlib:org.apache.ant.antunit">
-    
-    <description>
-        Sync lift files with project using Ant.
-        
-        --------------------------
-        -- author:  George Moyano --
-        -- version: 1.1           --
-        -- updated: Dec 2016      --
-        --------------------------
-    </description>
+<project basedir="." name="sync-project-with-drop" default="testConfig" 
+  xmlns:if="ant:if"
+  xmlns:unless="ant:unless"
+  xmlns:au="antlib:org.apache.ant.antunit">
+  
+  <description>
+      Sync lift files with project using Ant.
+      
+      --------------------------
+      -- author:  George Moyano --
+      -- version: 1.2           --
+      -- updated: Dec 2016      --
+      --------------------------
+  </description>
     
 <!--    <property name="niem-conformance-validator-repo-url" 
         value="https://github.com/gmoyanollc/validate-niem-conformance"/>
@@ -20,7 +20,29 @@
         value="${basedir}/src/test/resources/validate/validate-niem-conformance"/>-->
     
 <!--    <property name="project.base.dir" value="/media/sf_gData/Project/TSOA/Schema/Product/temp/soi-track-datatype"/>-->
+
+  <macrodef name="timestamp.echo"> 
+    <attribute name="message" default=""/>    
+    <sequential> 
+      <local name="current.time" />
+      <tstamp> 
+        <format property="current.time" pattern="yyyy/MM/dd hh:mm:ss"/> 
+      </tstamp>          
+      <echo message="@{message} ${current.time}" />
+    </sequential> 
+  </macrodef>
   
+  <target name="testConfig">
+    <timestamp.echo message=""/>
+    <echo message="$${ant.version}: [ ${ant.version} ]"/>
+    <echo message="$${ant.file}: [ ${ant.file} ]"/>
+    <echo message="$${basedir}: [ ${basedir} ]"/>
+    <echo message="$${ant.java.version}: [ ${ant.java.version} ]"/>
+    <echo message="$${os.name}: [ ${os.name} ]"/>
+    <!--<test.ant.scripting/>-->
+    <echo message="Enter 'ant -projecthelp' for information about tasks."/>
+  </target>
+    
 <!--    <macrodef name="git">
         <attribute name="git-command"/>
         <attribute name="dir" default=""/>
@@ -34,37 +56,37 @@
         </sequential>
     </macrodef>-->
     
-    <target name="sync-lift-with-project">
-        <sync todir="target/base-xsd">
-            <mappedresources>
-                <fileset dir="../src/main/resources" includes="*.*"/>
-            </mappedresources>
-        </sync>
-        <sync todir="target/base-xsd/documentation">
-            <mappedresources>
-                <fileset dir="../src/main/resources/documentation"/>
-            </mappedresources>
-        </sync>
-        <sync todir="target/base-xsd/extension">
-            <mappedresources>
-                <fileset dir="../src/main/resources/iep-schema/extension"/>
-            </mappedresources>
-        </sync>
-        <sync todir="target/base-xsd/ic-ism">
-            <mappedresources>
-                <fileset dir="../src/main/resources/iep-schema/ic-ism"/>
-            </mappedresources>
-        </sync>
-        <sync todir="target/base-xsd/niem">
-            <mappedresources>
-                <fileset dir="../src/main/resources/iep-schema/niem"/>
-            </mappedresources>
-        </sync>
-        <sync todir="target/base-xsd/sample-xml" failonerror="false">
-            <mappedresources>
-                <fileset dir="../src/main/resources/iep-sample"/>
-            </mappedresources>
-        </sync>
-    </target>
+  <target name="sync-lift-with-project">
+    <sync todir="target/base-xsd">
+        <mappedresources>
+            <fileset dir="../src/main/resources" includes="*.*"/>
+        </mappedresources>
+    </sync>
+    <sync todir="target/base-xsd/documentation">
+        <mappedresources>
+            <fileset dir="../src/main/resources/documentation"/>
+        </mappedresources>
+    </sync>
+    <sync todir="target/base-xsd/extension">
+        <mappedresources>
+            <fileset dir="../src/main/resources/iep-schema/extension"/>
+        </mappedresources>
+    </sync>
+    <sync todir="target/base-xsd/ic-ism">
+        <mappedresources>
+            <fileset dir="../src/main/resources/iep-schema/ic-ism"/>
+        </mappedresources>
+    </sync>
+    <sync todir="target/base-xsd/niem">
+        <mappedresources>
+            <fileset dir="../src/main/resources/iep-schema/niem"/>
+        </mappedresources>
+    </sync>
+    <sync todir="target/base-xsd/sample-xml" failonerror="false">
+        <mappedresources>
+            <fileset dir="../src/main/resources/iep-sample"/>
+        </mappedresources>
+    </sync>
+  </target>
     
 </project>
