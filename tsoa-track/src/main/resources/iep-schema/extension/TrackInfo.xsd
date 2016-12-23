@@ -57,9 +57,12 @@
       <xs:documentation>A data type for ..... </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
+      <xs:extension base="trk:C2TrackDetailsType">
         <xs:sequence>
-          <xs:element ref="mo:Track"/>
+          <xs:choice>
+              <xs:element ref="mo:Unit"></xs:element>
+             <!-- <xs:element ref="mo:Person"></xs:element>     ADD Individual, Weapon, Platform, Space, Facility as choices -->
+          </xs:choice>
           <xs:element ref="mo:Event" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>

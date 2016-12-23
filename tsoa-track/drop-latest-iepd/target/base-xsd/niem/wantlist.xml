@@ -24,6 +24,7 @@
   <w:Element w:name="mo:Sensor" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:SpeedValue" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:Track" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="mo:Unit" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:WGS84LocationCylinder" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:BinaryURI" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:ContactInformation" w:isReference="false" w:nillable="false"/>
@@ -114,6 +115,8 @@
       w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="mo:UnitTypeCodeText" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:UnitAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="mo:WGS84LocationCylinderType" w:isRequested="false">
     <w:ElementInType w:name="mo:WGS84LocationPoint"
@@ -200,6 +203,8 @@
   </w:Type>
   <w:Type w:name="nc:LocationType" w:isRequested="false">
     <w:ElementInType w:name="nc:LocationGeospatialCoordinate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:LocationAugmentationPoint"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="nc:LongitudeCoordinateType" w:isRequested="false">

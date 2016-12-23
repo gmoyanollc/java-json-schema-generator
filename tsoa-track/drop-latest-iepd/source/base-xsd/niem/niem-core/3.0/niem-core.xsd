@@ -356,6 +356,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:LocationGeospatialCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -573,6 +574,11 @@
   <xs:element name="Location3DGeospatialCoordinate" type="nc:Location3DGeospatialCoordinateType" substitutionGroup="nc:LocationGeospatialCoordinate" nillable="true">
     <xs:annotation>
       <xs:documentation>A location identified by latitude, longitude, and height.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for LocationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationElevation" type="nc:LocationHeightMeasureType" substitutionGroup="nc:LocationHeight" nillable="true">

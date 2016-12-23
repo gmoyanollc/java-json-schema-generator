@@ -56,26 +56,25 @@
 		<xs:complexContent>
 			<xs:extension base="structures:AugmentationType">
 				<xs:sequence>
-					<xs:element ref="e:AssociatedGUID" minOccurs="0"/>
-					<xs:element ref="e:Amplification" minOccurs="0"/>
-					<xs:element ref="e:OwnerEntityUID" minOccurs="0"/>
-					<xs:element ref="e:CrossReference" minOccurs="0"/>
-					<xs:element ref="e:RawReportText" minOccurs="0"/>
-					<xs:element ref="e:ContactNumber" minOccurs="0"/>
+					<xs:element ref="e:EventAssociatedGUID" minOccurs="0"/>
+					<xs:element ref="e:EventAmplification" minOccurs="0"/>
+					<xs:element ref="e:EventOwnerEntityUID" minOccurs="0"/>
+					<xs:element ref="e:EventCrossReference" minOccurs="0"/>
+					<xs:element ref="e:EventRawReportText" minOccurs="0"/>
+					<xs:element ref="e:EventContactNumber" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute ref="e:sourceCode" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:complexType name="EventLocationDetailsType">
+	<xs:complexType name="EventLocationAugmentationType">
 		<xs:annotation>
 			<xs:documentation>A data type for ....</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="structures:ObjectType">
+			<xs:extension base="structures:AugmentationType">
 				<xs:sequence>
-					<xs:element ref="e:Position"/>
 					<xs:element ref="e:AngleOfElevationMeasure" minOccurs="0"/>
 					<xs:element ref="e:AreaOfUncertaintyContainmentPercent" minOccurs="0"/>
 					<xs:element ref="e:Quadcode" minOccurs="0"/>
@@ -83,13 +82,15 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
+	
 
 	<xs:complexType name="PositEllipseType">
 		<xs:annotation>
 			<xs:documentation>A data type for ....</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="e:EventLocationDetailsType">
+			<xs:extension base="nc:LocationType">
 				<xs:sequence>
 					<xs:element ref="e:Semi-MajorAxis"/>
 					<xs:element ref="e:Semi-MinorAxis"/>
@@ -104,7 +105,7 @@
 			<xs:documentation>A data type for ....</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="e:EventLocationDetailsType">
+			<xs:extension base="nc:LocationType">
 				<xs:sequence>
 					<xs:element ref="e:Bearing"/>
 					<xs:element ref="e:BearingErrorMeasure"/>
@@ -120,7 +121,7 @@
 			<xs:documentation>A data type for ....</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="e:EventLocationDetailsType">
+			<xs:extension base="nc:LocationType">
 				<xs:sequence>
 					<xs:element ref="e:Bearing"/>
 					<xs:element ref="e:RangeMeasure"/>
@@ -135,7 +136,7 @@
 			<xs:documentation>A data type for ....</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="e:EventLocationDetailsType">
+			<xs:extension base="nc:LocationType">
 				<xs:sequence>
 					<xs:element ref="e:Bearing"/>
 					<xs:element ref="e:MinimumRangeMeasure"/>
@@ -295,23 +296,26 @@
 	</xs:simpleType> -->
 
 
+	<xs:element name="EventLocationAugmentation" type="e:EventLocationAugmentationType"
+		substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Additional information about an nc:Aircraft.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 
-	<xs:element name="AssociatedGUID" type="nc:IdentificationType">
+	<xs:element name="EventAssociatedGUID" type="nc:IdentificationType">
 		<xs:annotation>
 			<xs:documentation>An ID ....</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="Location" type="nc:LocationType">
-		<xs:annotation>
-			<xs:documentation>A ....</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="Amplification" type="ea:EventAmplificationDetailsType">
+
+	
+	<xs:element name="EventAmplification" type="ea:EventAmplificationDetailsType">
 		<xs:annotation>
 			<xs:documentation>An ....</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="OwnerEntityUID" type="lib:EntityUniqueIdentifierDetailsType">
+	<xs:element name="EventOwnerEntityUID" type="lib:EntityUniqueIdentifierDetailsType">
 		<xs:annotation>
 			<xs:documentation> A UID of the primary entity to which this report is attributed. </xs:documentation>
 			<xs:appinfo>
@@ -322,18 +326,18 @@
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="CrossReference" type="niem-xs:string">
+	<xs:element name="EventCrossReference" type="niem-xs:string">
 		<xs:annotation>
 			<xs:documentation>An ....</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="RawReportText" type="e:EventRawReportTextType">
+	<xs:element name="EventRawReportText" type="e:EventRawReportTextType">
 		<xs:annotation>
 			<xs:documentation>An ....</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="ContactNumber" type="niem-xs:integer">
+	<xs:element name="EventContactNumber" type="niem-xs:integer">
 		<xs:annotation>
 			<xs:documentation>A ......</xs:documentation>
 		</xs:annotation>
@@ -370,13 +374,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-
-
-	<xs:element name="Position" type="nc:LocationType">
-		<xs:annotation>
-			<xs:documentation>A ......</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="AngleOfElevationMeasure" type="e:AngleOfElevationMeasureType">
 		<xs:annotation>
 			<xs:documentation>A measure......</xs:documentation>

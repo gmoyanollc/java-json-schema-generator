@@ -16,11 +16,8 @@
 	<xs:annotation>
 		<xs:documentation>TSOA Unit. DISTRIBUTION STATEMENT C. Distribution is authorized to U.S.
 			Government agencies and their contractors (Critical Technology, Export Controlled,
-			Software Documentation). Other requests for this document shall be referred to Joint
-			Staff J6, Architecture Integration Division at
-			js.dsc.j6.mbx.wma-afip-portal-help-desk@mail.mil.</xs:documentation>
+			Software Documentation). </xs:documentation>
 		<xs:appinfo>
-			<term:LocalTerm term="C2" literal="Command and Control"/>
 			<term:LocalTerm term="MIDB" literal="Modernized Integrated Database"/>
 		</xs:appinfo>
 	</xs:annotation>
@@ -37,42 +34,48 @@
 	<xs:import namespace="https://tsoa.example.mil/tsoa/track" schemaLocation="Track.xsd"/>
 
 
-	<xs:complexType name="UnitType">
+	<xs:complexType name="UnitAugmentationType">
 		<xs:annotation>
 			<xs:documentation> A data type that indicates who is embarked with this Unit.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="trk:C2TrackDetailsType">
+			<xs:extension base="structures:AugmentationType">
 				<xs:sequence>
-					<xs:element ref="u:ForceStructure" minOccurs="0"/>
-					<xs:element ref="mo:UnitName" minOccurs="0"/>
+					<xs:element ref="mo:Track"/>
+					<xs:element ref="u:UnitForceStructure" minOccurs="0"/>
 					<xs:element ref="u:UnitReferenceNumber" minOccurs="0"/>
-					<xs:element ref="mo:UnitTypeCodeText" minOccurs="0"/>
-					<xs:element ref="u:EmbarkedText" minOccurs="0"/>
-					<xs:element ref="u:OrganizationType" minOccurs="0"/>
-					<xs:element ref="u:PlatformCategoryText" minOccurs="0"/>
-					<xs:element ref="u:StrengthText" minOccurs="0"/>
-					<xs:element ref="u:MIDBUnitID" minOccurs="0"/>
+					<xs:element ref="u:UnitEmbarkedText" minOccurs="0"/>
+					<xs:element ref="u:UnitOrganizationType" minOccurs="0"/>
+					<xs:element ref="u:UnitPlatformCategoryText" minOccurs="0"/>
+					<xs:element ref="u:UnitStrengthText" minOccurs="0"/>
+					<xs:element ref="u:UnitMIDBID" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 
+	<xs:element name="UnitAugmentation" type="u:UnitAugmentationType"
+		substitutionGroup="mo:UnitAugmentationPoint" nillable="true">
+		<xs:annotation>
+			<xs:documentation>Additional information about an nc:Aircraft.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
 
-	<xs:complexType name="EmbarkedType">
+
+	<xs:complexType name="UnitEmbarkedType">
 		<xs:annotation>
 			<xs:documentation> A data type that indicates who is embarked with this Unit.
 			</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
-			<xs:extension base="u:EmbarkedSimpleType">
+			<xs:extension base="u:UnitEmbarkedSimpleType">
 				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 
-	<xs:simpleType name="EmbarkedSimpleType">
+	<xs:simpleType name="UnitEmbarkedSimpleType">
 		<xs:annotation>
 			<xs:documentation> A data type that indicates who is embarked with this Unit.
 			</xs:documentation>
@@ -83,7 +86,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:element name="ForceStructure" type="lib:ForceStructureDetailsType">
+	<xs:element name="UnitForceStructure" type="lib:ForceStructureDetailsType">
 		<xs:annotation>
 			<xs:documentation> A ... </xs:documentation>
 		</xs:annotation>
@@ -93,18 +96,13 @@
 			<xs:documentation> A ... </xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="EmbarkedText" type="u:EmbarkedType">
+	<xs:element name="UnitEmbarkedText" type="u:UnitEmbarkedType">
 		<xs:annotation>
 			<xs:documentation> A ... </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 
-	<xs:element name="Unit" type="u:UnitType">
-		<xs:annotation>
-			<xs:documentation>An indication of who is embarked with this Unit.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="OrganizationType" type="niem-xs:string">
+	<xs:element name="UnitOrganizationType" type="niem-xs:string">
 		<xs:annotation>
 			<xs:documentation> An OS-OTG: The organization type of a unit. </xs:documentation>
 			<xs:appinfo>
@@ -113,7 +111,7 @@
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="PlatformCategoryText" type="niem-xs:string">
+	<xs:element name="UnitPlatformCategoryText" type="niem-xs:string">
 		<xs:annotation>
 			<xs:documentation> An OS-OTG: The platform characteristic of a unit. </xs:documentation>
 			<xs:appinfo>
@@ -122,12 +120,12 @@
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="StrengthText" type="niem-xs:string">
+	<xs:element name="UnitStrengthText" type="niem-xs:string">
 		<xs:annotation>
 			<xs:documentation> A . </xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="MIDBUnitID" type="lib:MIDBUnitIdType">
+	<xs:element name="UnitMIDBID" type="lib:MIDBUnitIdType">
 		<xs:annotation>
 			<xs:documentation> A . </xs:documentation>
 		</xs:annotation>

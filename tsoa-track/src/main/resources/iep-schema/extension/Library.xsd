@@ -679,8 +679,8 @@ that include two parts - the cateogry (e.g. AIR,SUB, SUR) combined with the thre
 					<xs:element ref="lib:Relationship"/>
 					<xs:choice>
 						<xs:element ref="lib:UID" maxOccurs="unbounded"/>
-						<xs:element ref="lib:UniqueIdentificationCode" maxOccurs="unbounded"/>
-						<xs:element ref="lib:UniqueReferenceCode" maxOccurs="unbounded"/>
+						<xs:element ref="lib:UniqueIdentificationText" maxOccurs="unbounded"/>
+						<xs:element ref="lib:UniqueReferenceText" maxOccurs="unbounded"/>
 						<xs:element ref="lib:OTHTrackNumber" maxOccurs="unbounded"/>
 						<xs:element ref="lib:NetworkIdentifier" maxOccurs="unbounded"/>
 					</xs:choice>
@@ -1411,12 +1411,12 @@ that include two parts - the cateogry (e.g. AIR,SUB, SUR) combined with the thre
 			<xs:documentation>An ......</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="UniqueIdentificationCode" type="lib:EntityUniqueIdentificationCodeDetailsType">
+	<xs:element name="UniqueIdentificationText" type="lib:EntityUniqueIdentificationCodeDetailsType">
 		<xs:annotation>
 			<xs:documentation>A ....</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="UniqueReferenceCode" type="lib:EntityUniqueReferenceCodeDetailsType">
+	<xs:element name="UniqueReferenceText" type="lib:EntityUniqueReferenceCodeDetailsType">
 		<xs:annotation>
 			<xs:documentation>A ....</xs:documentation>
 		</xs:annotation>

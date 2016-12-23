@@ -146,18 +146,19 @@
 		</xs:simpleContent>
 	</xs:complexType> -->
 
-<!-- validation error, change extension base type from complex to simple // g -->
+
 	<xs:complexType name="BearingDegreesType">
 		<xs:annotation>
 			<xs:documentation>A data type for </xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
-			<xs:extension base="nc:Degree360SimpleType">
+			<xs:extension base="nc:Degree360Type">
 				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
 				<xs:attribute ref="glib:isTrueNorthIndicator"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+
 
 	<xs:attribute name="isTrueNorthIndicator" type="xs:boolean">
 		<xs:annotation>

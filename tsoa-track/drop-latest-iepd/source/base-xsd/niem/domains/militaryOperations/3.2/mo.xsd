@@ -240,6 +240,7 @@
           <xs:element ref="mo:UnitName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:UnitShortName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:UnitTypeCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:UnitAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -423,6 +424,16 @@
   <xs:element name="TrackIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification of a track.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Unit" type="mo:UnitType">
+    <xs:annotation>
+      <xs:documentation>A military element whose structure is prescribed by competent authority.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UnitAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:UnitType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="UnitName" type="mo:UnitNameType" nillable="true">
