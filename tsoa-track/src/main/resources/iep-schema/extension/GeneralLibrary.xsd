@@ -153,7 +153,8 @@
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="nc:Degree360Type">
-				<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+<!-- // gCOMMENT inherited by extension			-->
+				<!--<xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>-->
 				<xs:attribute ref="glib:isTrueNorthIndicator"/>
 			</xs:extension>
 		</xs:simpleContent>

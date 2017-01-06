@@ -5,8 +5,7 @@
         <options/>
     </meta>
     <projectTree name="tsoa-track-Project.xpr">
-        <folder path="../../../../../../../../../../../../home/g/g-dev/soi-transformer/"/>
         <folder path="../../../../"/>
-        <folder path="../../../../../../soi-track-datatype/"/>
+        <folder path="../../../../../../../soi-track-main-resources_TSOA.Project.gData.media/"/>
     </projectTree>
 </project>
