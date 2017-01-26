@@ -14,24 +14,9 @@ http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation
       <xs:documentation>A data type for units of measurements for a length value.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
-      <xs:enumeration value="SMI">
+      <xs:enumeration value="C52">
         <xs:annotation>
-          <xs:documentation>mile (statute mile)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NMI">
-        <xs:annotation>
-          <xs:documentation>nautical mile</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="KMT">
-        <xs:annotation>
-          <xs:documentation>kilometre</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="FOT">
-        <xs:annotation>
-          <xs:documentation>foot</xs:documentation>
+          <xs:documentation>picometre</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4H">
@@ -79,11 +64,6 @@ http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation
           <xs:documentation>nanometre</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="C52">
-        <xs:annotation>
-          <xs:documentation>picometre</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="C63">
         <xs:annotation>
           <xs:documentation>parsec</xs:documentation>
@@ -99,6 +79,11 @@ http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation
           <xs:documentation>decimetre</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="FOT">
+        <xs:annotation>
+          <xs:documentation>foot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="HMT">
         <xs:annotation>
           <xs:documentation>hectometre</xs:documentation>
@@ -107,6 +92,11 @@ http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation
       <xs:enumeration value="INH">
         <xs:annotation>
           <xs:documentation>inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KMT">
+        <xs:annotation>
+          <xs:documentation>kilometre</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="M7">
@@ -122,6 +112,16 @@ http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation
       <xs:enumeration value="MTR">
         <xs:annotation>
           <xs:documentation>metre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NMI">
+        <xs:annotation>
+          <xs:documentation>nautical mile</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SMI">
+        <xs:annotation>
+          <xs:documentation>mile (statute mile)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="X1">

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  xmlns:tsa="http://mcsc.usmc.mil/mc2sa/tsoa/soi/appinfo/1.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  nc:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument"
+  targetNamespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+  
+  <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+    schemaLocation="../niem/structures/3.0/structures.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+    schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+  <xs:import schemaLocation="Track.xsd" namespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"/>
+  
+  <xs:attribute name="uri" type="xs:anyURI">
+    <xs:annotation>
+      <xs:documentation>A [URI (Uniform Resource Identifier)](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier).</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  
+  <xs:attribute name="id" type="xs:token">
+    <xs:annotation>
+      <xs:documentation>An identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  
+  <xs:complexType name="TsoaTrackType">
+    <xs:annotation>
+      <xs:documentation>A data type for ..... </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <!--<xs:extension base="tst:C2TrackDetailsType">-->
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndm:Track"/>
+          <!--<xs:choice>
+              <xs:element ref="ndm:Unit"/>
+             <!-\- <xs:element ref="ndm:Person"></xs:element>     ADD Individual, Weapon, Platform, Space, Facility as choices -\->
+          </xs:choice>-->
+          <!--<xs:element ref="ndm:Event" minOccurs="1" maxOccurs="unbounded"/>-->
+        </xs:sequence>
+        <xs:attribute ref="id"/>
+        <xs:attribute ref="uri"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="TsoaTrack" type="TsoaTrackType">
+    <xs:annotation>
+      <xs:documentation>A .....</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+</xs:schema>

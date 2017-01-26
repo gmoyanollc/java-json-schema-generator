@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TsoaTrack xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  xmlns:tstt="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xsi:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/ 
+    file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd"
+  tstt:id="CBR01 10MAR"
+  tstt:uri="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c">
+
+  <ndm:Track>
+    <ndm:TrackIdentification>
+      <nnc:IdentificationID>2235868</nnc:IdentificationID>
+      <tst:TrackIdentificationAugmentation>
+        <tst:TrackShortName>2235868</tst:TrackShortName>
+      </tst:TrackIdentificationAugmentation>
+    </ndm:TrackIdentification>
+    <tst:TrackAugmentation>
+      <ndm:Unit>
+        <ndm:UnitName>UnitName0</ndm:UnitName>
+        <ndm:UnitShortName>UnitShortN</ndm:UnitShortName>
+        <ndm:UnitTypeCodeText>UnitT</ndm:UnitTypeCodeText>
+      </ndm:Unit>
+      <ndm:Observation>
+        <ndm:ObservedObjectLocation>
+          <ndm:ObservedObject2DGeospatialCoordinate>
+            <nnc:GeographicCoordinateLatitude>
+              <nnc:LatitudeDegreeValue>30.65294166666612</nnc:LatitudeDegreeValue>
+            </nnc:GeographicCoordinateLatitude>
+            <nnc:GeographicCoordinateLongitude>
+              <nnc:LongitudeDegreeValue>-82.47110833333262</nnc:LongitudeDegreeValue>
+            </nnc:GeographicCoordinateLongitude>
+          </ndm:ObservedObject2DGeospatialCoordinate>
+          <ndm:ElevationMeasure>
+            <nnc:MeasureIntegerValue>0</nnc:MeasureIntegerValue>
+            <!-- transform code to NIEM code representing "foot"-->
+            <!-- measureUnitCode="FT" -->
+            <nnc:LengthUnitCode>FOT</nnc:LengthUnitCode>
+          </ndm:ElevationMeasure>
+        </ndm:ObservedObjectLocation>
+        <!-- transform UTC time offset to same moment in time without an offset -->
+        <!--<ndm:ObservationDateTime>2014-10-03T11:41:03-04:00Z</ndm:ObservationDateTime>-->
+        <ndm:ObservationDateTime>2014-10-03T15:41:03Z</ndm:ObservationDateTime>
+        <tst:MILSTD2525>
+          <ndm:MILSTD2525-C-SIDC-Code>SFGPUUMRG--E---</ndm:MILSTD2525-C-SIDC-Code>
+        </tst:MILSTD2525>
+      </ndm:Observation>
+    </tst:TrackAugmentation>
+  </ndm:Track>
+</TsoaTrack>

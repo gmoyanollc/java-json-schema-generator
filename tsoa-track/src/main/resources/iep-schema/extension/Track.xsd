@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:trk="https://tsoa.example.mil/tsoa/track"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
-	xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
-	xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
-	xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
-	xmlns:structures="http://release.niem.gov/niem/structures/3.0/"
-	xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
-	xmlns:glib="urn:disa:udop.tracks:1.0:genLib" xmlns:lib="urn:disa:udop.tracks:1.0:lib"
-	targetNamespace="https://tsoa.example.mil/tsoa/track" elementFormDefault="qualified"
-	attributeFormDefault="unqualified" version="1"
-	ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument">
-
+<xs:schema 
+  xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  nc:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument"
+  targetNamespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1" >
+<!--
+    xmlns:e="urn:disa:udop.tracks:1.0:event"
+    xmlns:trk="https://tsoa.example.mil/tsoa/track"
+    xmlns:tsa="http://mcsc.usmc.mil/mc2sa/tsoa/soi/appinfo/1.0"
+  
+  xmlns:nl="http://release.niem.gov/niem/localTerminology/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xmlns:nm="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
+  -->
 	<xs:annotation>
 		<xs:documentation>TSOA Track Version 1.0 DISTRIBUTION STATEMENT C. Distribution is
 			authorized to U.S. Government agencies and their contractors (Critical Technology,
@@ -27,19 +36,137 @@
 			<term:LocalTerm term="FOTC" literal="???"/>
 		</xs:appinfo>
 	</xs:annotation>
-	<xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
-		schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
-	<xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
-		schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
-	<xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
-		schemaLocation="../niem/structures/3.0/structures.xsd"/>
-	<xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
-		schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
-	<xs:import namespace="urn:disa:udop.tracks:1.0:genLib" schemaLocation="GeneralLibrary.xsd"/>
-	<xs:import namespace="urn:disa:udop.tracks:1.0:lib" schemaLocation="Library.xsd"/>
+
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+    schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+    schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+    schemaLocation="../niem/structures/3.0/structures.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+    schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+<!--  <xs:import namespace="urn:disa:udop.tracks:1.0:unit" schemaLocation="Unit.xsd"/>-->
+<!--  <xs:import schemaLocation="Unit.xsd" namespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/unit/2.0/"/>-->
+<!--  <xs:import namespace="https://tsoa.example.mil/tsoa/track" schemaLocation="Track.xsd"/>-->
+  <xs:import namespace="urn:disa:udop.tracks:1.0:event" schemaLocation="Event.xsd"/>
 
 
-	<xs:complexType name="TrackAugmentationType">
+  <!-- Use imports as needed
+	<xs:include schemaLocation="Event.xsd"/>
+  <xs:include schemaLocation="Equipment.xsd"/>
+  <xs:include schemaLocation="Facility.xsd"/>
+  <xs:include schemaLocation="Platform.xsd"/>
+  <xs:include schemaLocation="Weapons.xsd"/>
+  <xs:include schemaLocation="Space.xsd"/>
+  <xs:include schemaLocation="Sigint.xsd"/>
+  <xs:include schemaLocation="General.xsd"/>
+  <xs:include schemaLocation="EventTrack.xsd"/>
+  <xs:include schemaLocation="Individual.xsd"/>
+  -->
+  
+<!--  <xs:simpleType name="AlertCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation> A data type for the Alert code of the reported track.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:length value="3"/>
+      <xs:enumeration value="TGT">
+        <xs:annotation>
+          <xs:documentation>Target data available</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUS">
+        <xs:annotation>
+          <xs:documentation>Suspected carrier</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HIT">
+        <xs:annotation>
+          <xs:documentation>High Interest track</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NSP">
+        <xs:annotation>
+          <xs:documentation>Nonsuspected carrier</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="AlertCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the Alert code of the reported
+        track.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="AlertCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:element name="AlertCode" type="AlertCodeType">
+    <xs:annotation>
+      <xs:documentation>An ......</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:element name="UID" type="lib:EntityUniqueIdentifierDetailsType">
+    <xs:annotation>
+      <xs:documentation>An ......</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:element name="UniqueIdentificationText" type="lib:EntityUniqueIdentificationCodeDetailsType">
+    <xs:annotation>
+      <xs:documentation>A ....</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+  
+<!--  <xs:simpleType name="EntityUniqueReferenceCodeDetailsSimpleType">
+    <xs:annotation>
+      <xs:documentation> A data type for a unique Unit Reference Number (URN).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>-->
+  
+<!--  <xs:complexType name="EntityUniqueReferenceCodeDetailsType">
+    <xs:annotation>
+      <xs:documentation>A data type for a unique Unit Reference Number (URN).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="tst:EntityUniqueReferenceCodeDetailsSimpleType">
+        <xs:attributeGroup ref="ns:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>-->
+  
+<!--  <xs:element name="UniqueReferenceText" type="tst:EntityUniqueReferenceCodeDetailsType">
+    <xs:annotation>
+      <xs:documentation>A ....</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+  
+<!--  <xs:complexType name="C2TrackDetailsType" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a ....</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ndm:TrackType">
+        <xs:sequence>
+<!-\-          <xs:element ref="AlertCode" minOccurs="0"/>
+          <xs:element ref="trk:Flag" minOccurs="0"/>
+          <xs:element ref="lib:Relationship" minOccurs="0" maxOccurs="unbounded"/>-\->
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>-->
+  
+  <!-- 
+  	<xs:complexType name="TrackAugmentationType">
 		<xs:annotation>
 			<xs:documentation>A data type for additional information about a
 				Track.</xs:documentation>
@@ -66,20 +193,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="C2TrackDetailsType" abstract="true">
-		<xs:annotation>
-			<xs:documentation>A data type for a ....</xs:documentation>
-		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="mo:TrackType">
-				<xs:sequence>
-					<xs:element ref="lib:AlertCode" minOccurs="0"/>
-					<xs:element ref="trk:Flag" minOccurs="0"/>
-					<xs:element ref="lib:Relationship" minOccurs="0" maxOccurs="unbounded"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
+
 	
 	
 	
@@ -366,4 +480,89 @@
 			<xs:documentation>An attribute ...</xs:documentation>
 		</xs:annotation>
 	</xs:attribute>
+  -->
+  
+  <xs:complexType name="MILSTD2525Type">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndm:MILSTD2525-B-SIDC-Code" minOccurs="0"/>
+          <xs:element ref="ndm:MILSTD2525-C-SIDC-Code" minOccurs="0"/>
+          <xs:element ref="ndm:MILSTD2525-D-SIDC" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="MILSTD2525" type="tst:MILSTD2525Type" substitutionGroup="ndm:ObservedObjectSymbolAbstract">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:complexType name="TrackAugmentationType">
+    <xs:annotation>
+      <xs:documentation> A data type .
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="ndm:Event" minOccurs="0"/>
+          <xs:element ref="ndm:Unit" minOccurs="0"/>
+          <xs:element ref="ndm:Observation" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="TrackAugmentation" type="tst:TrackAugmentationType"
+    substitutionGroup="ndm:TrackAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:element name="TrackShortName" type="nnc:TextType">
+    <xs:annotation>
+      <xs:documentation>A track short-name, nick-name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:element name="TrackIdentification" type="nnc:IdentificationType">
+    <xs:annotation>
+      <xs:documentation>
+        A Track Indentification.
+      </xs:documentation>
+      <xs:documentation source="TSOA-4.0.2.0.0/entity/connectors/jtcw_gateway_data_connector/src/mc2sa/jtcwgwdataconnector/UnitTrackConverter.java-358">
+        SOI JTCW connector had mapped UnitTrack.idl/lURN to SOI-Track-datatype/1.x/Track/Identifiers/UniqueReferenceCode.
+        UniqueReferenceCode is an object mappable to this object.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="TrackIdentificationAugmentationType">
+    <xs:annotation>
+      <xs:documentation> A data type for augmentation.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="tst:TrackShortName"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="TrackIdentificationAugmentation" type="tst:TrackIdentificationAugmentationType"
+    substitutionGroup="nnc:IdentificationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
 </xs:schema>

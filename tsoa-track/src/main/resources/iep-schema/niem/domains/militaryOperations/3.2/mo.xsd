@@ -44,14 +44,30 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="mo:EventLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EventIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EventValidityDateTimeRange" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:EventMotion" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EventAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="MILSTD2525-B-SIDC-SimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a symbol identification code, an alphanumeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[A-Z0-9\-]{15}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MILSTD2525-B-SIDC-Type">
+    <xs:annotation>
+      <xs:documentation>A data type for a symbol identification code, an alphanumeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:MILSTD2525-B-SIDC-SimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:simpleType name="MILSTD2525-C-SIDC-SimpleType">
     <xs:annotation>
@@ -70,6 +86,40 @@
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MILSTD2525-D-SIDC-PartSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an unsigned integer containing ten digits of a symbol identification code (SIDC).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:unsignedInt">
+      <xs:minInclusive value="1000000000"/>
+      <xs:maxInclusive value="3999999999"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MILSTD2525-D-SIDC-PartType">
+    <xs:annotation>
+      <xs:documentation>A data type for an unsigned integer containing ten digits of a symbol identification code (SIDC).</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:MILSTD2525-D-SIDC-PartSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="MILSTD2525-D-SIDC-Type">
+    <xs:annotation>
+      <xs:documentation>A data type for a symbol identification code, a numeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:MILSTD2525-D-SIDC-Part1Code" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:MILSTD2525-D-SIDC-Part2Code" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:MILSTD2525-D-SIDC-Part3Code" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:MILSTD2525-D-SIDC-AugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="MissionType">
     <xs:annotation>
@@ -92,6 +142,35 @@
         <xs:sequence>
           <xs:element ref="mo:CourseAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:SpeedValue" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ObservationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a time, location and information of an observation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:ObservedObjectLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ObservedObjectMotion" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ObservationDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ObservedObjectSymbolAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ObservationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ObservedObjectLocationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a location of an observed object.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:ObservedObject2DGeospatialCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ElevationMeasure" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -124,9 +203,24 @@
       <xs:documentation>A data type for a code describing the standard identity of a track; codes defined by MIL-STD-2525C.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
+      <xs:enumeration value="UNKNOWN">
+        <xs:annotation>
+          <xs:documentation>An identity applied to an evaluated track that has not been identified.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="ASSUMED FRIEND">
         <xs:annotation>
           <xs:documentation>A track which is assumed to be a friend because of its characteristics, behavior, or origin.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUSPECT">
+        <xs:annotation>
+          <xs:documentation>An identity applied to a track that is potentially hostile because of its characteristics, behaviour, origin or nationality.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JOKER">
+        <xs:annotation>
+          <xs:documentation>A friendly track as a SUSPECT for exercise purposes.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="FAKER">
@@ -144,24 +238,9 @@
           <xs:documentation>A track declared to belong to any opposing nation, party, group, or entity, which by virtue of its behavior or information collected on it such as characteristics, origin or nationality contributes to the threat to friendly forces.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="JOKER">
-        <xs:annotation>
-          <xs:documentation>A friendly track as a SUSPECT for exercise purposes.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="NEUTRAL">
         <xs:annotation>
           <xs:documentation>A track or contact whose characteristics, behaviour, origin or nationality indicate that it is neither supporting nor opposing friendly forces.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SUSPECT">
-        <xs:annotation>
-          <xs:documentation>An identity applied to a track that is potentially hostile because of its characteristics, behaviour, origin or nationality.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UNKNOWN">
-        <xs:annotation>
-          <xs:documentation>An identity applied to an evaluated track that has not been identified.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -291,6 +370,28 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="ZuluDateTimeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a datetime constrained to always be ZULU.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:dateTime">
+      <xs:pattern value=".*Z">
+        <xs:annotation>
+          <xs:documentation>Restricted to UTC time zone</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ZuluDateTimeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a datetime constrained to always be ZULU.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:ZuluDateTimeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:attribute name="sigmaErrorValue" type="xs:decimal">
     <xs:annotation>
       <xs:documentation>A magnitude of a one-sigma deviation of a normal (Gaussian) distribution followed by the true value of the quantity.</xs:documentation>
@@ -351,6 +452,11 @@
       <xs:documentation>A designator for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ElevationMeasure" type="nc:LocationHeightMeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A height above a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Event" type="mo:EventType">
     <xs:annotation>
       <xs:documentation>An existance of a process or object at a location during a time interval.</xs:documentation>
@@ -366,24 +472,44 @@
       <xs:documentation>An identification of an event.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EventLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location of a process or object.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EventMotion" type="mo:MotionType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A 2D or 3D vector describing the motion of a process or object.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="EventValidityDateTimeRange" type="nc:DateRangeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A start and stop time of the Event.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="MILSTD2525-B-SIDC-Code" type="mo:MILSTD2525-B-SIDC-Type" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A symbol identification code, an alphanumeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="MILSTD2525-C-SIDC-Code" type="mo:MILSTD2525-C-SIDC-Type" nillable="true">
     <xs:annotation>
       <xs:documentation>A symbol identification code, an alphanumeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MILSTD2525-D-SIDC" type="mo:MILSTD2525-D-SIDC-Type" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A symbol identification code, a numeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MILSTD2525-D-SIDC-AugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:MILSTD2525-D-SIDC-Type</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MILSTD2525-D-SIDC-Part1Code" type="mo:MILSTD2525-D-SIDC-PartType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An unsigned integer containing the first ten digits of a symbol identification code (SIDC).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MILSTD2525-D-SIDC-Part2Code" type="mo:MILSTD2525-D-SIDC-PartType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An unsigned integer containing the second ten digits of a symbol identification code (SIDC).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MILSTD2525-D-SIDC-Part3Code" type="mo:MILSTD2525-D-SIDC-PartType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An unsigned integer containing the third (conditionally optional) ten digits of a symbol identification code (SIDC).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Mission" type="mo:MissionType">
@@ -394,6 +520,41 @@
   <xs:element name="MissionName" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a mission.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Observation" type="mo:ObservationType">
+    <xs:annotation>
+      <xs:documentation>A time, location and information of an observation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:ObservationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservationDateTime" type="mo:ZuluDateTimeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Date Time Group when this object was observed with the given information. Not to be confused with the Publish Time, which indicates when the system published the message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservedObject2DGeospatialCoordinate" type="nc:Location2DGeospatialCoordinateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A latitude and longitude of an observed object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservedObjectLocation" type="mo:ObservedObjectLocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location of an observed object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservedObjectMotion" type="mo:MotionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A speed and course of an observed object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservedObjectSymbolAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a military symbol code often used to display the track on a GUI.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Sensor" type="mo:SensorType">

@@ -19,14 +19,24 @@
   <w:Element w:name="mo:CourseValue" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:DirectionDatumCode" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:Event" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="mo:MILSTD2525-B-SIDC-Code" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="mo:MILSTD2525-C-SIDC-Code" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="mo:MILSTD2525-D-SIDC" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="mo:MILSTD2525-D-SIDC-Part1Code"
+    w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="mo:MILSTD2525-D-SIDC-Part2Code"
+    w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="mo:MILSTD2525-D-SIDC-Part3Code"
+    w:isReference="false" w:nillable="true"/>
   <w:Element w:name="mo:Mission" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="mo:Observation" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="mo:ObservedObjectSymbolAbstract"
+    w:isReference="false" w:nillable="true"/>
   <w:Element w:name="mo:Sensor" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:SpeedValue" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:Track" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:Unit" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:WGS84LocationCylinder" w:isReference="false" w:nillable="true"/>
-  <w:Element w:name="mo:WGS84LocationPoint" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:BinaryURI" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:ContactInformation" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:ContactTelephoneNumber" w:isReference="false" w:nillable="false"/>
@@ -45,7 +55,7 @@
   <w:Element w:name="nc:MeasureIntegerValue" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:MeasurePoint" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:Status" w:isReference="false" w:nillable="false"/>
-  <w:Type w:name="cbrn:RelativeLocationType" w:isRequested="true">
+  <w:Type w:name="cbrn:RelativeLocationType" w:isRequested="false">
     <w:ElementInType w:name="cbrn:DistanceValue" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="1"/>
     <w:ElementInType w:name="cbrn:RelativeLocationAugmentationPoint"
@@ -64,15 +74,21 @@
     <w:AttributeInType w:name="mo:sigmaErrorValue" w:minOccurs="0" w:maxOccurs="1"/>
   </w:Type>
   <w:Type w:name="mo:EventType" w:isRequested="false">
-    <w:ElementInType w:name="mo:EventLocation" w:isReference="false"
-      w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="mo:EventIdentification"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="mo:EventValidityDateTimeRange"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
-    <w:ElementInType w:name="mo:EventMotion" w:isReference="false"
-      w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="mo:EventAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="mo:MILSTD2525-D-SIDC-Type" w:isRequested="false">
+    <w:ElementInType w:name="mo:MILSTD2525-D-SIDC-Part1Code"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:MILSTD2525-D-SIDC-Part2Code"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:MILSTD2525-D-SIDC-Part3Code"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:MILSTD2525-D-SIDC-AugmentationPoint"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="mo:MissionType" w:isRequested="false">
@@ -85,6 +101,24 @@
     <w:ElementInType w:name="mo:SpeedValue" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
+  <w:Type w:name="mo:ObservationType" w:isRequested="false">
+    <w:ElementInType w:name="mo:ObservedObjectLocation"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:ObservedObjectMotion"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:ObservationDateTime"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:ObservedObjectSymbolAbstract"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:ObservationAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="mo:ObservedObjectLocationType" w:isRequested="false">
+    <w:ElementInType w:name="mo:ObservedObject2DGeospatialCoordinate"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:ElevationMeasure" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
   <w:Type w:name="mo:SensorType" w:isRequested="false">
     <w:ElementInType w:name="mo:SensorIdentification"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
@@ -93,14 +127,14 @@
     <w:AttributeInType w:name="mo:speedUnitCode" w:minOccurs="0" w:maxOccurs="1"/>
   </w:Type>
   <w:Type w:name="mo:StandardIdentityCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="UNKNOWN"/>
     <w:Facet w:facet="enumeration" w:value="ASSUMED FRIEND"/>
+    <w:Facet w:facet="enumeration" w:value="SUSPECT"/>
+    <w:Facet w:facet="enumeration" w:value="JOKER"/>
     <w:Facet w:facet="enumeration" w:value="FAKER"/>
     <w:Facet w:facet="enumeration" w:value="FRIEND"/>
     <w:Facet w:facet="enumeration" w:value="HOSTILE"/>
-    <w:Facet w:facet="enumeration" w:value="JOKER"/>
     <w:Facet w:facet="enumeration" w:value="NEUTRAL"/>
-    <w:Facet w:facet="enumeration" w:value="SUSPECT"/>
-    <w:Facet w:facet="enumeration" w:value="UNKNOWN"/>
   </w:Type>
   <w:Type w:name="mo:StandardIdentityCodeType" w:isRequested="true"/>
   <w:Type w:name="mo:TrackType" w:isRequested="false">
@@ -152,6 +186,7 @@
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="nc:DirectionCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="SW"/>
     <w:Facet w:facet="enumeration" w:value="E"/>
     <w:Facet w:facet="enumeration" w:value="ENE"/>
     <w:Facet w:facet="enumeration" w:value="ESE"/>
@@ -164,7 +199,6 @@
     <w:Facet w:facet="enumeration" w:value="SE"/>
     <w:Facet w:facet="enumeration" w:value="SSE"/>
     <w:Facet w:facet="enumeration" w:value="SSW"/>
-    <w:Facet w:facet="enumeration" w:value="SW"/>
     <w:Facet w:facet="enumeration" w:value="W"/>
     <w:Facet w:facet="enumeration" w:value="WNW"/>
     <w:Facet w:facet="enumeration" w:value="WSW"/>
@@ -186,10 +220,6 @@
       w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
   </w:Type>
   <w:Type w:name="nc:Location2DGeospatialCoordinateType" w:isRequested="false">
-    <w:ElementInType w:name="nc:GeographicCoordinateLatitude"
-      w:isReference="false" w:minOccurs="1" w:maxOccurs="1"/>
-    <w:ElementInType w:name="nc:GeographicCoordinateLongitude"
-      w:isReference="false" w:minOccurs="1" w:maxOccurs="1"/>
     <w:ElementInType
       w:name="nc:Location2DGeospatialCoordinateAugmentationPoint"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
@@ -212,7 +242,7 @@
     <w:ElementInType w:name="nc:LongitudeDegreeValue"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
   </w:Type>
-  <w:Type w:name="nc:MeasureType" w:isRequested="true">
+  <w:Type w:name="nc:MeasureType" w:isRequested="false">
     <w:ElementInType w:name="nc:MeasureValue" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="nc:MeasureUnit" w:isReference="false"
@@ -229,61 +259,58 @@
     <w:Facet w:facet="enumeration" w:value="Relative"/>
   </w:Type>
   <w:Type w:name="nga:VerticalDatumCodeSimpleType" w:isRequested="false">
-    <w:Facet w:facet="enumeration" w:value="approxLowestAstronomTide"/>
+    <w:Facet w:facet="enumeration" w:value="ngvd29"/>
+    <w:Facet w:facet="enumeration" w:value="highestAstronomicalTide"/>
+    <w:Facet w:facet="enumeration" w:value="lowerLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="wgs84Egm96Geoid"/>
+    <w:Facet w:facet="enumeration" w:value="highWater"/>
+    <w:Facet w:facet="enumeration" w:value="meanSeaLevel"/>
+    <w:Facet w:facet="enumeration" w:value="lowestLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="springTide"/>
+    <w:Facet w:facet="enumeration" w:value="meanHighWaterNeaps"/>
+    <w:Facet w:facet="enumeration" w:value="neapTide"/>
+    <w:Facet w:facet="enumeration" w:value="meanHigherHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="highestHighWater"/>
     <w:Facet w:facet="enumeration" w:value="approxMeanLowerLowWater"/>
     <w:Facet w:facet="enumeration" w:value="approxMeanLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="approxMeanLowWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="approxMeanSeaLevel"/>
-    <w:Facet w:facet="enumeration" w:value="equinoctialSpringLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="groundLevel"/>
-    <w:Facet w:facet="enumeration" w:value="higherHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="higherHighWaterLargeTide"/>
-    <w:Facet w:facet="enumeration" w:value="highestAstronomicalTide"/>
-    <w:Facet w:facet="enumeration" w:value="highestHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="highWater"/>
-    <w:Facet w:facet="enumeration" w:value="highWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="igld1985"/>
-    <w:Facet w:facet="enumeration" w:value="indianSpringHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="indianSpringLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="lowerLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="lowerLowWaterLargeTide"/>
-    <w:Facet w:facet="enumeration" w:value="lowestAstronomicalTide"/>
-    <w:Facet w:facet="enumeration" w:value="lowestLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="lowestLowWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="lowWater"/>
+    <w:Facet w:facet="enumeration" w:value="navd88"/>
     <w:Facet w:facet="enumeration" w:value="lowWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="meanHigherHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="meanHigherHighWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="meanHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="meanHighWaterNeaps"/>
-    <w:Facet w:facet="enumeration" w:value="meanHighWaterSprings"/>
     <w:Facet w:facet="enumeration" w:value="meanLowerLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="wgs84Ellipsoid"/>
+    <w:Facet w:facet="enumeration" w:value="approxLowestAstronomTide"/>
+    <w:Facet w:facet="enumeration" w:value="waterLevel"/>
+    <w:Facet w:facet="enumeration" w:value="highWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="indianSpringHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="nearlyLowestLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="lowestLowWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="higherHighWaterLargeTide"/>
+    <w:Facet w:facet="enumeration" w:value="wgs84Egm08Geoid"/>
+    <w:Facet w:facet="enumeration" w:value="lowWater"/>
+    <w:Facet w:facet="enumeration" w:value="groundLevel"/>
+    <w:Facet w:facet="enumeration" w:value="approxMeanSeaLevel"/>
+    <w:Facet w:facet="enumeration" w:value="lowestAstronomicalTide"/>
+    <w:Facet w:facet="enumeration" w:value="meanWaterLevel"/>
+    <w:Facet w:facet="enumeration" w:value="meanHigherHighWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="approxMeanLowWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="equinoctialSpringLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="higherHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="igld1985"/>
+    <w:Facet w:facet="enumeration" w:value="indianSpringLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="lowerLowWaterLargeTide"/>
+    <w:Facet w:facet="enumeration" w:value="meanHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="meanHighWaterSprings"/>
     <w:Facet w:facet="enumeration" w:value="meanLowerLowWaterSprings"/>
     <w:Facet w:facet="enumeration" w:value="meanLowWater"/>
     <w:Facet w:facet="enumeration" w:value="meanLowWaterNeaps"/>
     <w:Facet w:facet="enumeration" w:value="meanLowWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="meanSeaLevel"/>
     <w:Facet w:facet="enumeration" w:value="meanTideLevel"/>
-    <w:Facet w:facet="enumeration" w:value="meanWaterLevel"/>
-    <w:Facet w:facet="enumeration" w:value="navd88"/>
-    <w:Facet w:facet="enumeration" w:value="neapTide"/>
     <w:Facet w:facet="enumeration" w:value="nearlyHighestHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="nearlyLowestLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="ngvd29"/>
-    <w:Facet w:facet="enumeration" w:value="springTide"/>
-    <w:Facet w:facet="enumeration" w:value="waterLevel"/>
-    <w:Facet w:facet="enumeration" w:value="wgs84Egm08Geoid"/>
-    <w:Facet w:facet="enumeration" w:value="wgs84Egm96Geoid"/>
-    <w:Facet w:facet="enumeration" w:value="wgs84Ellipsoid"/>
   </w:Type>
   <w:Type w:name="niem-xs:base64Binary" w:isRequested="true"/>
   <w:Type w:name="niem-xs:boolean" w:isRequested="true"/>
   <w:Type w:name="niem-xs:int" w:isRequested="true"/>
-  <w:Type w:name="unece:LengthCodeSimpleType" w:isRequested="true">
-    <w:Facet w:facet="enumeration" w:value="SMI"/>
-    <w:Facet w:facet="enumeration" w:value="NMI"/>
-    <w:Facet w:facet="enumeration" w:value="KMT"/>
-    <w:Facet w:facet="enumeration" w:value="FOT"/>
+  <w:Type w:name="unece:LengthCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="C52"/>
     <w:Facet w:facet="enumeration" w:value="4H"/>
     <w:Facet w:facet="enumeration" w:value="77"/>
     <w:Facet w:facet="enumeration" w:value="A11"/>
@@ -293,15 +320,18 @@
     <w:Facet w:facet="enumeration" w:value="AK"/>
     <w:Facet w:facet="enumeration" w:value="B57"/>
     <w:Facet w:facet="enumeration" w:value="C45"/>
-    <w:Facet w:facet="enumeration" w:value="C52"/>
     <w:Facet w:facet="enumeration" w:value="C63"/>
     <w:Facet w:facet="enumeration" w:value="CMT"/>
     <w:Facet w:facet="enumeration" w:value="DMT"/>
+    <w:Facet w:facet="enumeration" w:value="FOT"/>
     <w:Facet w:facet="enumeration" w:value="HMT"/>
     <w:Facet w:facet="enumeration" w:value="INH"/>
+    <w:Facet w:facet="enumeration" w:value="KMT"/>
     <w:Facet w:facet="enumeration" w:value="M7"/>
     <w:Facet w:facet="enumeration" w:value="MMT"/>
     <w:Facet w:facet="enumeration" w:value="MTR"/>
+    <w:Facet w:facet="enumeration" w:value="NMI"/>
+    <w:Facet w:facet="enumeration" w:value="SMI"/>
     <w:Facet w:facet="enumeration" w:value="X1"/>
     <w:Facet w:facet="enumeration" w:value="YRD"/>
   </w:Type>
