@@ -1,2 +1,3 @@
-./tsoa-track/src/test/resources/validate
-./tsoa-track/src/main/resources/transform
+*.gz
+*.zip
+tsoa-track/drop-latest-iepd/target
