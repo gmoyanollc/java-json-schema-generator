@@ -1,8 +1,8 @@
 .vscode/**
 node_modules/**
-mapping/**
-bin/**
-lib/**
-data/**
+#mapping/**
+#bin/**
+#lib/**
+#data/**
 bak/**
 
