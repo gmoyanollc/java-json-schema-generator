@@ -5,19 +5,16 @@ var org_isotc211__2005_gss_Module_Factory = function () {
     defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
     dependencies: ['net_opengis_gml_v_3_2_1'],
     typeInfos: [{
-        localName: 'GMObjectPropertyType',
+        localName: 'GMPointPropertyType',
         typeName: {
           namespaceURI: 'http:\/\/www.isotc211.org\/2005\/gss',
-          localPart: 'GM_Object_PropertyType'
+          localPart: 'GM_Point_PropertyType'
         },
         propertyInfos: [{
-            name: 'abstractGeometry',
+            name: 'point',
             required: true,
-            mixed: false,
-            allowDom: false,
-            elementName: 'AbstractGeometry',
-            typeInfo: 'net_opengis_gml_v_3_2_1.AbstractGeometryType',
-            type: 'elementRef'
+            elementName: 'Point',
+            typeInfo: 'net_opengis_gml_v_3_2_1.PointType'
           }, {
             name: 'nilReason',
             typeInfo: {
@@ -59,16 +56,19 @@ var org_isotc211__2005_gss_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'GMPointPropertyType',
+        localName: 'GMObjectPropertyType',
         typeName: {
           namespaceURI: 'http:\/\/www.isotc211.org\/2005\/gss',
-          localPart: 'GM_Point_PropertyType'
+          localPart: 'GM_Object_PropertyType'
         },
         propertyInfos: [{
-            name: 'point',
+            name: 'abstractGeometry',
             required: true,
-            elementName: 'Point',
-            typeInfo: 'net_opengis_gml_v_3_2_1.PointType'
+            mixed: false,
+            allowDom: false,
+            elementName: 'AbstractGeometry',
+            typeInfo: 'net_opengis_gml_v_3_2_1.AbstractGeometryType',
+            type: 'elementRef'
           }, {
             name: 'nilReason',
             typeInfo: {

@@ -9,19 +9,23 @@
   targetNamespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
   elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
   
+  <!--  xmlns:ndc="http://release.niem.gov/niem/domains/cbrn/3.2/" -->
+  
   <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
     schemaLocation="../niem/structures/3.0/structures.xsd"/>
+<!--  <xs:import schemaLocation="../niem/domains/cbrn/3.2/cbrn.xsd" 
+    namespace="http://release.niem.gov/niem/domains/cbrn/3.2/"/>-->
   <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
     schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
   <xs:import schemaLocation="Track.xsd" namespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"/>
   
-  <xs:attribute name="uri" type="xs:anyURI">
+  <xs:attribute name="tsoaURI" type="xs:anyURI">
     <xs:annotation>
       <xs:documentation>A [URI (Uniform Resource Identifier)](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier).</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   
-  <xs:attribute name="id" type="xs:token">
+  <xs:attribute name="tsoaID" type="xs:token">
     <xs:annotation>
       <xs:documentation>An identifier.</xs:documentation>
     </xs:annotation>
@@ -42,8 +46,8 @@
           </xs:choice>-->
           <!--<xs:element ref="ndm:Event" minOccurs="1" maxOccurs="unbounded"/>-->
         </xs:sequence>
-        <xs:attribute ref="id"/>
-        <xs:attribute ref="uri"/>
+        <xs:attribute ref="tsoaID"/>
+        <xs:attribute ref="tsoaURI"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

@@ -2,7 +2,7 @@ var fs    = require('fs');
 var Jsonix = require('jsonix').Jsonix;
 var Mapping = require('./lib/mapping.js');
 
-var xmlFile = './data/in/source.xml';
+var xmlFile = './data/in/track-unit.xml';
 var jsonFromXmlFile = './data/out/from-xml.json';
 var XmlFromJsonFile = './data/out/from-json.xml';
 

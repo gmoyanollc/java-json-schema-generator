@@ -1,25 +1,38 @@
-function TrackInfo() {
+function TSOA_Track() {
   this.getModuleArray = function() {
-    var TrackInfo = require('../mapping/TrackInfo.js').TrackInfo;
-    var disa_udop_tracks__1_0_lib = require('../mapping/disa_udop_tracks__1_0_lib.js').disa_udop_tracks__1_0_lib;
-    var disa_udop_tracks__1_0_ea = require('../mapping/disa_udop_tracks__1_0_ea.js').disa_udop_tracks__1_0_ea;
-    var disa_udop_tracks__1_0_unit = require('../mapping/disa_udop_tracks__1_0_unit.js').disa_udop_tracks__1_0_unit;
-    var NiemCore_TrackInfo = require('../mapping/NiemCore_TrackInfo.js').NiemCore_TrackInfo;
-    var NiemMilitaryoperations_TrackInfo = require('../mapping/NiemMilitaryoperations_TrackInfo.js').NiemMilitaryoperations_TrackInfo;
-    var NiemProxyXd_TrackInfo = require('../mapping/NiemProxyXd_TrackInfo.js').NiemProxyXd_TrackInfo;
-    var NiemStructures_TrackInfo = require('../mapping/NiemStructures_TrackInfo.js').NiemStructures_TrackInfo;
-    var disa_udop_tracks__1_0_genlib = require('../mapping/disa_udop_tracks__1_0_genlib.js').disa_udop_tracks__1_0_genlib;
-    var gov_niem_release_niem_domains_cbrn__3 = require('../mapping/gov_niem_release_niem_domains_cbrn__3.js').gov_niem_release_niem_domains_cbrn__3;
-    var net_opengis_gml_v_3_2_1 = require('../mapping/net_opengis_gml_v_3_2_1.js').net_opengis_gml_v_3_2_1;
     var gov_niem_release_niem_codes_nga_datum__3 = require('../mapping/gov_niem_release_niem_codes_nga_datum__3.js').gov_niem_release_niem_codes_nga_datum__3;
     var gov_niem_release_niem_codes_unece_rec20__3 = require('../mapping/gov_niem_release_niem_codes_unece_rec20__3.js').gov_niem_release_niem_codes_unece_rec20__3;
-    return [TrackInfo, disa_udop_tracks__1_0_lib
-      , disa_udop_tracks__1_0_ea, disa_udop_tracks__1_0_unit, NiemCore_TrackInfo
-      , NiemMilitaryoperations_TrackInfo, NiemProxyXd_TrackInfo, NiemStructures_TrackInfo
-      , disa_udop_tracks__1_0_genlib, gov_niem_release_niem_domains_cbrn__3
-      , net_opengis_gml_v_3_2_1, gov_niem_release_niem_codes_nga_datum__3
-    , gov_niem_release_niem_codes_unece_rec20__3];
+    var gov_niem_release_niem_domains_militaryoperations__3 = require('../mapping/gov_niem_release_niem_domains_militaryoperations__3.js').gov_niem_release_niem_domains_militaryoperations__3;
+    var gov_niem_release_niem_localterminology__3 = require('../mapping/gov_niem_release_niem_localterminology__3.js').gov_niem_release_niem_localterminology__3;
+    var gov_niem_release_niem_niem_core__3 = require('../mapping/gov_niem_release_niem_niem_core__3.js').gov_niem_release_niem_niem_core__3;
+    var gov_niem_release_niem_proxy_xsd__3 = require('../mapping/gov_niem_release_niem_proxy_xsd__3.js').gov_niem_release_niem_proxy_xsd__3;
+    var gov_niem_release_niem_structures__3 = require('../mapping/gov_niem_release_niem_structures__3.js').gov_niem_release_niem_structures__3;
+    var mil_usmc_mcsc_mc2sa_tsoa_soi_track__2 = require('../mapping/mil_usmc_mcsc_mc2sa_tsoa_soi_track__2.js').mil_usmc_mcsc_mc2sa_tsoa_soi_track__2;
+    var net_opengis_gml_v_3_2_1 = require('../mapping/net_opengis_gml_v_3_2_1.js').net_opengis_gml_v_3_2_1;
+    var org_isotc211__2005_gco = require('../mapping/org_isotc211__2005_gco.js').org_isotc211__2005_gco;
+    var org_isotc211__2005_gmd = require('../mapping/org_isotc211__2005_gmd.js').org_isotc211__2005_gmd;
+    var org_isotc211__2005_gsr = require('../mapping/org_isotc211__2005_gsr.js').org_isotc211__2005_gsr;
+    var org_isotc211__2005_gss = require('../mapping/org_isotc211__2005_gss.js').org_isotc211__2005_gss;
+    var org_isotc211__2005_gts = require('../mapping/org_isotc211__2005_gts.js').org_isotc211__2005_gts;
+    var TSOA_Track = require('../mapping/TSOA_Track.js').TSOA_Track;
+    return [
+      gov_niem_release_niem_codes_nga_datum__3
+      , gov_niem_release_niem_codes_unece_rec20__3
+      , gov_niem_release_niem_domains_militaryoperations__3
+      , gov_niem_release_niem_localterminology__3
+      , gov_niem_release_niem_niem_core__3
+      , gov_niem_release_niem_proxy_xsd__3
+      , gov_niem_release_niem_structures__3
+      , mil_usmc_mcsc_mc2sa_tsoa_soi_track__2
+      , net_opengis_gml_v_3_2_1
+      , org_isotc211__2005_gco
+      , org_isotc211__2005_gmd
+      , org_isotc211__2005_gsr
+      , org_isotc211__2005_gss
+      , org_isotc211__2005_gts
+      , TSOA_Track
+    ];
   }
 }
 
-module.exports = TrackInfo;
+module.exports = TSOA_Track;

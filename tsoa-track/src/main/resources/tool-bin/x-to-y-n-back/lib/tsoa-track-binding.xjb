@@ -8,17 +8,17 @@
   jaxb:extensionBindingPrefixes="jsonix">
   
 <!--
-  <jaxb:bindings schemaLocation="../../iep-schema/extension/TrackInfo.xsd" 
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/TsoaTrack.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.track"/>
     </jaxb:schemaBindings>
 
-    <jsonix:module name="TrackInfo">
-      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TrackInfo"/>
+    <jsonix:module name="TsoaTrack">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TsoaTrack"/>
       <jsonix:mapping package="gov.niem.structures" name="NiemStructures">
         <jsonix.includes>
-          <jsonix:dependencies-of-mapping name="TrackInfo"/>
+          <jsonix:dependencies-of-mapping name="TsoaTrack"/>
         </jsonix.includes>
       </jsonix:mapping>
     </jsonix:module>
@@ -26,94 +26,99 @@
   </jaxb:bindings>
   -->
 
-  <jaxb:bindings schemaLocation="../../iep-schema/extension/TrackInfo.xsd" 
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/TSOA-Track.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.track"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TrackInfo">
-      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TrackInfo"/>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+    <jsonix:module name="TSOA_Track">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TSOA_Track"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
-  
-  <jaxb:bindings schemaLocation="../../iep-schema/extension/Track.xsd" 
+<!--  
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/Track.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.track"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TrackInfo">
-      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TrackInfo"/>
+    <jsonix:module name="TsoaTrack">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TsoaTrack"/>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
-  
-  <jaxb:bindings schemaLocation="../../iep-schema/extension/Event.xsd" 
+-->
+<!--  
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/Event.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.track"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TrackInfo">
-      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TrackInfo"/>
+    <jsonix:module name="TsoaTrack">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TsoaTrack"/>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
-  
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/structures/3.0/structures.xsd" 
+-->  
+<!--
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/structures/3.0/structures.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="gov.niem.structures"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="NiemStructures_TrackInfo">
-      <jsonix:mapping package="gov.niem.structures" name="NiemStructures_TrackInfo">
-        <jsonix:dependencies-of-mapping name="TrackInfo"/>
+    <jsonix:module name="NiemStructures_TsoaTrack">
+      <jsonix:mapping package="gov.niem.structures" name="NiemStructures_TsoaTrack">
+        <jsonix:dependencies-of-mapping name="TsoaTrack"/>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
-  
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/niem-core/3.0/niem-core.xsd" 
+-->
+<!--
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/niem-core/3.0/niem-core.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="gov.niem.core"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="NiemCore_TrackInfo">
-      <jsonix:mapping package="gov.niem.core" name="NiemCore_TrackInfo">
-        <jsonix:dependencies-of-mapping name="TrackInfo"/>
+    <jsonix:module name="NiemCore_TsoaTrack">
+      <jsonix:mapping package="gov.niem.core" name="NiemCore_TsoaTrack">
+        <jsonix:dependencies-of-mapping name="TsoaTrack"/>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
-
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/proxy/xsd/3.0/xs.xsd" 
+-->  
+<!--
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/proxy/xsd/3.0/xs.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="gov.niem.proxy.xsd"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="NiemProxyXd_TrackInfo">
-      <jsonix:mapping package="gov.niem.proxy.xsd" name="NiemProxyXd_TrackInfo">
-        <jsonix:dependencies-of-mapping name="TrackInfo"/>
+    <jsonix:module name="NiemProxyXd_TsoaTrack">
+      <jsonix:mapping package="gov.niem.proxy.xsd" name="NiemProxyXd_TsoaTrack">
+        <jsonix:dependencies-of-mapping name="TsoaTrack"/>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
-
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/domains/militaryOperations/3.2/mo.xsd" 
+-->  
+<!--
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/domains/militaryOperations/3.2/mo.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="gov.niem.domains.militaryoperations"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="NiemMilitaryoperations_TrackInfo">
-      <jsonix:mapping package="gov.niem.domains.militaryoperations" name="NiemMilitaryoperations_TrackInfo">
-        <jsonix:dependencies-of-mapping name="TrackInfo"/>
+    <jsonix:module name="NiemMilitaryoperations_TsoaTrack">
+      <jsonix:mapping package="gov.niem.domains.militaryoperations" name="NiemMilitaryoperations_TsoaTrack">
+        <jsonix:dependencies-of-mapping name="TsoaTrack"/>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
 
   </jaxb:bindings>
-
+-->
 <!--    
-  <jaxb:bindings schemaLocation="../../iep-schema/extension/GeneralLibrary.xsd" node="/xs:schema">
+  <jaxb:bindings schemaLocation="../../..p-schema/extension/GeneralLibrary.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
       <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.trackinfo"/>
     </jaxb:schemaBindings>
@@ -124,7 +129,7 @@
   <!-- // gCOMMENT -->
   <!-- source: https://java.net/projects/ogc/sources/svn/show/ogc-schemas/trunk/gml/3.2.1/schema/src/main/resources -->
   
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/external/ogc/gml/3.2.1/gml.xsd" 
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/gml/3.2.1/gml.xsd" 
     node="/xs:schema">
     <jaxb:globalBindings
       fixedAttributeAsConstantProperty="true"
@@ -142,7 +147,7 @@
     </jaxb:schemaBindings>
   </jaxb:bindings>
     
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/external/ogc/gml/3.2.1/geometryPrimitives.xsd" 
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/gml/3.2.1/geometryPrimitives.xsd" 
     node="/xs:schema">
     <jaxb:bindings>
       <jaxb:nameXmlTransform>
@@ -154,7 +159,7 @@
     </jaxb:bindings>
   </jaxb:bindings>
   
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/external/ogc/gml/3.2.1/datums.xsd" 
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/gml/3.2.1/datums.xsd" 
     node="/xs:schema">
     <jaxb:bindings>
       <jaxb:bindings node="//xs:element[@name='secondDefiningParameter']">
@@ -169,7 +174,7 @@
     </jaxb:bindings>
   </jaxb:bindings>
   
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/external/ogc/gml/3.2.1/coordinateReferenceSystems.xsd" 
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/gml/3.2.1/coordinateReferenceSystems.xsd" 
     node="/xs:schema">
     <jaxb:bindings>
       <jaxb:bindings node="//xs:element[@name='userDefinedCS']">
@@ -223,7 +228,7 @@
     </jaxb:bindings>
   </jaxb:bindings>
   
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/external/ogc/gml/3.2.1/coordinateOperations.xsd"
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/gml/3.2.1/coordinateOperations.xsd"
     node="/xs:schema">
     <jaxb:bindings>
       <jaxb:bindings node="//xs:element[@name='coordinateOperationAccuracy']//xs:element[@ref='gmd:AbstractDQ_PositionalAccuracy']">
@@ -241,7 +246,7 @@
     </jaxb:bindings>
   </jaxb:bindings>
   
-  <jaxb:bindings schemaLocation="../../iep-schema/niem/external/ogc/gml/3.2.1/referenceSystems.xsd" 
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/gml/3.2.1/referenceSystems.xsd" 
     node="/xs:schema">
     <jaxb:bindings>
       <jaxb:bindings node="//xs:element[@name='domainOfValidity']//xs:element[@ref='gmd:EX_Extent']">

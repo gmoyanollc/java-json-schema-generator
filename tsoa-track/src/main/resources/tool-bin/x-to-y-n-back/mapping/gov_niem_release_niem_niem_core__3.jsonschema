@@ -2,9 +2,9 @@
 {
     "id":"http://release.niem.gov/niem/niem-core/3.0/#",
     "definitions":{
-        "DirectionCodeType":{
+        "AngularMinuteType":{
             "type":"object",
-            "title":"DirectionCodeType",
+            "title":"AngularMinuteType",
             "properties":{
                 "otherAttributes":{
                     "title":"otherAttributes",
@@ -22,7 +22,7 @@
                     "title":"value",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/DirectionCodeSimpleType"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
                         }
                     ],
                     "propertyType":"value"
@@ -82,7 +82,7 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DirectionCodeType",
+                "localPart":"AngularMinuteType",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             },
             "propertiesOrder":[
@@ -186,14 +186,14 @@
                 "relationshipMetadata"
             ]
         },
-        "StatusType":{
+        "FacilityType":{
             "allOf":[
                 {
                     "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"StatusType",
+                    "title":"FacilityType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -207,20 +207,37 @@
                             ],
                             "propertyType":"anyAttribute"
                         },
-                        "statusCommentText":{
-                            "title":"statusCommentText",
+                        "facilityName":{
+                            "title":"facilityName",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"#/definitions/TextType"
+                                        "$ref":"#/definitions/ProperNameTextType"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"StatusCommentText",
+                                "localPart":"FacilityName",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        },
+                        "facilityLocation":{
+                            "title":"facilityLocation",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/LocationType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"FacilityLocation",
                                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
                             }
                         }
@@ -229,12 +246,13 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"StatusType",
+                "localPart":"FacilityType",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             },
             "propertiesOrder":[
                 "otherAttributes",
-                "statusCommentText"
+                "facilityName",
+                "facilityLocation"
             ]
         },
         "Location3DGeospatialCoordinateType":{
@@ -297,6 +315,259 @@
             "propertiesOrder":[
                 "otherAttributes",
                 "locationHeight"
+            ]
+        },
+        "TelephoneNumberType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"TelephoneNumberType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"TelephoneNumberType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes"
+            ]
+        },
+        "LatitudeCoordinateType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"LatitudeCoordinateType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "latitudeDegreeValue":{
+                            "title":"latitudeDegreeValue",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LatitudeDegreeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LatitudeDegreeValue",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LatitudeCoordinateType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "latitudeDegreeValue"
+            ]
+        },
+        "LocationType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"LocationType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "locationGeospatialCoordinate":{
+                            "title":"locationGeospatialCoordinate",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"LocationGeospatialCoordinate",
+                                            "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                                        }
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"LocationGeospatialCoordinate",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        },
+                        "locationAugmentationPoint":{
+                            "title":"locationAugmentationPoint",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LocationAugmentationPoint",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LocationType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "locationGeospatialCoordinate",
+                "locationAugmentationPoint"
+            ]
+        },
+        "LatitudeDegreeType":{
+            "type":"object",
+            "title":"LatitudeDegreeType",
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "ref":{
+                    "title":"ref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ref",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "metadata":{
+                    "title":"metadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"metadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "relationshipMetadata":{
+                    "title":"relationshipMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"relationshipMetadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LatitudeDegreeType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "value",
+                "id",
+                "ref",
+                "metadata",
+                "relationshipMetadata"
             ]
         },
         "AngularMeasureType":{
@@ -404,108 +675,14 @@
                 "angularMeasureAugmentationPoint"
             ]
         },
-        "LongitudeCoordinateType":{
+        "TextType":{
             "allOf":[
                 {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                    "$ref":"#/definitions/String"
                 },
                 {
                     "type":"object",
-                    "title":"LongitudeCoordinateType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "longitudeDegreeValue":{
-                            "title":"longitudeDegreeValue",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LongitudeDegreeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"LongitudeDegreeValue",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LongitudeCoordinateType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "longitudeDegreeValue"
-            ]
-        },
-        "LatitudeCoordinateType":{
-            "allOf":[
-                {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"LatitudeCoordinateType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "latitudeDegreeValue":{
-                            "title":"latitudeDegreeValue",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LatitudeDegreeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"LatitudeDegreeValue",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LatitudeCoordinateType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "latitudeDegreeValue"
-            ]
-        },
-        "ItemType":{
-            "allOf":[
-                {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"ItemType",
+                    "title":"TextType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -524,21 +701,21 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ItemType",
+                "localPart":"TextType",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             },
             "propertiesOrder":[
                 "otherAttributes"
             ]
         },
-        "ContactInformationType":{
+        "DateRangeType":{
             "allOf":[
                 {
                     "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"ContactInformationType",
+                    "title":"DateRangeType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -552,32 +729,37 @@
                             ],
                             "propertyType":"anyAttribute"
                         },
-                        "contactMeans":{
-                            "title":"contactMeans",
+                        "startDate":{
+                            "title":"startDate",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "type":"object",
-                                        "properties":{
-                                            "name":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                                            },
-                                            "value":{
-                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                            }
-                                        },
-                                        "elementName":{
-                                            "localPart":"ContactMeans",
-                                            "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                                        }
+                                        "$ref":"#/definitions/DateType"
                                     },
                                     "minItems":0
                                 }
                             ],
-                            "propertyType":"elementRef",
+                            "propertyType":"element",
                             "elementName":{
-                                "localPart":"ContactMeans",
+                                "localPart":"StartDate",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        },
+                        "endDate":{
+                            "title":"endDate",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/DateType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"EndDate",
                                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
                             }
                         }
@@ -586,104 +768,13 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ContactInformationType",
+                "localPart":"DateRangeType",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             },
             "propertiesOrder":[
                 "otherAttributes",
-                "contactMeans"
-            ]
-        },
-        "AngularSecondType":{
-            "type":"object",
-            "title":"AngularSecondType",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "ref":{
-                    "title":"ref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ref",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "metadata":{
-                    "title":"metadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"metadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "relationshipMetadata":{
-                    "title":"relationshipMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"relationshipMetadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AngularSecondType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "value",
-                "id",
-                "ref",
-                "metadata",
-                "relationshipMetadata"
+                "startDate",
+                "endDate"
             ]
         },
         "MeasureType":{
@@ -779,75 +870,6 @@
                 "measureUnit"
             ]
         },
-        "IdentificationType":{
-            "allOf":[
-                {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"IdentificationType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "identificationID":{
-                            "title":"identificationID",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/String"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"IdentificationID",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
-                        },
-                        "identificationAugmentationPoint":{
-                            "title":"identificationAugmentationPoint",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"IdentificationAugmentationPoint",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"IdentificationType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "identificationID",
-                "identificationAugmentationPoint"
-            ]
-        },
         "LocationHeightMeasureType":{
             "allOf":[
                 {
@@ -909,6 +931,98 @@
             "propertiesOrder":[
                 "otherAttributes",
                 "locationHeightVerticalDatum"
+            ]
+        },
+        "AngularSecondType":{
+            "type":"object",
+            "title":"AngularSecondType",
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "ref":{
+                    "title":"ref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ref",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "metadata":{
+                    "title":"metadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"metadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "relationshipMetadata":{
+                    "title":"relationshipMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"relationshipMetadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"AngularSecondType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "value",
+                "id",
+                "ref",
+                "metadata",
+                "relationshipMetadata"
             ]
         },
         "Degree360Type":{
@@ -1003,39 +1117,6 @@
                 "relationshipMetadata"
             ]
         },
-        "ProperNameTextType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/TextType"
-                },
-                {
-                    "type":"object",
-                    "title":"ProperNameTextType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ProperNameTextType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes"
-            ]
-        },
         "DateType":{
             "allOf":[
                 {
@@ -1099,106 +1180,14 @@
                 "dateRepresentation"
             ]
         },
-        "AngularMinuteType":{
-            "type":"object",
-            "title":"AngularMinuteType",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "ref":{
-                    "title":"ref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ref",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "metadata":{
-                    "title":"metadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"metadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "relationshipMetadata":{
-                    "title":"relationshipMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"relationshipMetadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"AngularMinuteType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "value",
-                "id",
-                "ref",
-                "metadata",
-                "relationshipMetadata"
-            ]
-        },
-        "DateRangeType":{
+        "ProperNameTextType":{
             "allOf":[
                 {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                    "$ref":"#/definitions/TextType"
                 },
                 {
                     "type":"object",
-                    "title":"DateRangeType",
+                    "title":"ProperNameTextType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -1211,122 +1200,17 @@
                                 }
                             ],
                             "propertyType":"anyAttribute"
-                        },
-                        "startDate":{
-                            "title":"startDate",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/DateType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"StartDate",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
-                        },
-                        "endDate":{
-                            "title":"endDate",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/DateType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"EndDate",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
                         }
                     }
                 }
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"DateRangeType",
+                "localPart":"ProperNameTextType",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             },
             "propertiesOrder":[
-                "otherAttributes",
-                "startDate",
-                "endDate"
-            ]
-        },
-        "FacilityType":{
-            "allOf":[
-                {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"FacilityType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "facilityName":{
-                            "title":"facilityName",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/ProperNameTextType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"FacilityName",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
-                        },
-                        "facilityLocation":{
-                            "title":"facilityLocation",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/LocationType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"FacilityLocation",
-                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"FacilityType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "facilityName",
-                "facilityLocation"
+                "otherAttributes"
             ]
         },
         "Location2DGeospatialCoordinateType":{
@@ -1412,80 +1296,14 @@
                 "location2DGeospatialCoordinateAugmentationPoint"
             ]
         },
-        "TelephoneNumberType":{
+        "ContactInformationType":{
             "allOf":[
                 {
                     "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
                 },
                 {
                     "type":"object",
-                    "title":"TelephoneNumberType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TelephoneNumberType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes"
-            ]
-        },
-        "TextType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/String"
-                },
-                {
-                    "type":"object",
-                    "title":"TextType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"TextType",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes"
-            ]
-        },
-        "LocationType":{
-            "allOf":[
-                {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"LocationType",
+                    "title":"ContactInformationType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -1499,8 +1317,8 @@
                             ],
                             "propertyType":"anyAttribute"
                         },
-                        "locationGeospatialCoordinate":{
-                            "title":"locationGeospatialCoordinate",
+                        "contactMeans":{
+                            "title":"contactMeans",
                             "allOf":[
                                 {
                                     "type":"array",
@@ -1515,7 +1333,7 @@
                                             }
                                         },
                                         "elementName":{
-                                            "localPart":"LocationGeospatialCoordinate",
+                                            "localPart":"ContactMeans",
                                             "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
                                         }
                                     },
@@ -1524,7 +1342,7 @@
                             ],
                             "propertyType":"elementRef",
                             "elementName":{
-                                "localPart":"LocationGeospatialCoordinate",
+                                "localPart":"ContactMeans",
                                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
                             }
                         }
@@ -1533,17 +1351,178 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LocationType",
+                "localPart":"ContactInformationType",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             },
             "propertiesOrder":[
                 "otherAttributes",
-                "locationGeospatialCoordinate"
+                "contactMeans"
             ]
         },
-        "LatitudeDegreeType":{
+        "LongitudeCoordinateType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"LongitudeCoordinateType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "longitudeDegreeValue":{
+                            "title":"longitudeDegreeValue",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LongitudeDegreeType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"LongitudeDegreeValue",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LongitudeCoordinateType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "longitudeDegreeValue"
+            ]
+        },
+        "ItemType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"ItemType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ItemType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes"
+            ]
+        },
+        "IdentificationType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"IdentificationType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "identificationID":{
+                            "title":"identificationID",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/String"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"IdentificationID",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        },
+                        "identificationAugmentationPoint":{
+                            "title":"identificationAugmentationPoint",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"IdentificationAugmentationPoint",
+                                            "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                                        }
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"elementRef",
+                            "elementName":{
+                                "localPart":"IdentificationAugmentationPoint",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"IdentificationType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "identificationID",
+                "identificationAugmentationPoint"
+            ]
+        },
+        "DirectionCodeType":{
             "type":"object",
-            "title":"LatitudeDegreeType",
+            "title":"DirectionCodeType",
             "properties":{
                 "otherAttributes":{
                     "title":"otherAttributes",
@@ -1561,7 +1540,7 @@
                     "title":"value",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/decimal"
+                            "$ref":"#/definitions/DirectionCodeSimpleType"
                         }
                     ],
                     "propertyType":"value"
@@ -1621,7 +1600,7 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LatitudeDegreeType",
+                "localPart":"DirectionCodeType",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             },
             "propertiesOrder":[
@@ -1633,6 +1612,57 @@
                 "relationshipMetadata"
             ]
         },
+        "StatusType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"StatusType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "statusCommentText":{
+                            "title":"statusCommentText",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/TextType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"StatusCommentText",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"StatusType",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "statusCommentText"
+            ]
+        },
         "DirectionCodeSimpleType":{
             "allOf":[
                 {
@@ -1640,6 +1670,7 @@
                 },
                 {
                     "enum":[
+                        "SW",
                         "E",
                         "ENE",
                         "ESE",
@@ -1652,7 +1683,6 @@
                         "SE",
                         "SSE",
                         "SSW",
-                        "SW",
                         "W",
                         "WNW",
                         "WSW"
@@ -1680,7 +1710,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LocationHeightVerticalDatum"
+                                        "AngularMeasureAugmentationPoint"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1697,75 +1727,7 @@
                 }
             },
             "elementName":{
-                "localPart":"LocationHeightVerticalDatum",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "LongitudeDegreeValue"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LongitudeDegreeType"
-                }
-            },
-            "elementName":{
-                "localPart":"LongitudeDegreeValue",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "MeasureIntegerValue"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Integer"
-                }
-            },
-            "elementName":{
-                "localPart":"MeasureIntegerValue",
+                "localPart":"AngularMeasureAugmentationPoint",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         },
@@ -1816,7 +1778,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LengthUnitCode"
+                                        "AngularDegreeValue"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1829,419 +1791,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LengthCodeType"
+                    "$ref":"#/definitions/Integer"
                 }
             },
             "elementName":{
-                "localPart":"LengthUnitCode",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Facility"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/FacilityType"
-                }
-            },
-            "elementName":{
-                "localPart":"Facility",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "StartDate"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DateType"
-                }
-            },
-            "elementName":{
-                "localPart":"StartDate",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "MeasureValue"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"MeasureValue",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Status"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/StatusType"
-                }
-            },
-            "elementName":{
-                "localPart":"Status",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "GeographicCoordinateLatitude"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LatitudeCoordinateType"
-                }
-            },
-            "elementName":{
-                "localPart":"GeographicCoordinateLatitude",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "IdentificationAugmentationPoint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"IdentificationAugmentationPoint",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "AngularMeasureAugmentationPoint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"AngularMeasureAugmentationPoint",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Location3DGeospatialCoordinate"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Location3DGeospatialCoordinateType"
-                }
-            },
-            "elementName":{
-                "localPart":"Location3DGeospatialCoordinate",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "IdentificationID"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/String"
-                }
-            },
-            "elementName":{
-                "localPart":"IdentificationID",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "EndDate"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DateType"
-                }
-            },
-            "elementName":{
-                "localPart":"EndDate",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "AngularMinuteValue"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AngularMinuteType"
-                }
-            },
-            "elementName":{
-                "localPart":"AngularMinuteValue",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "AngularSecondValue"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/AngularSecondType"
-                }
-            },
-            "elementName":{
-                "localPart":"AngularSecondValue",
+                "localPart":"AngularDegreeValue",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         },
@@ -2292,7 +1846,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LocationElevation"
+                                        "Status"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2305,215 +1859,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LocationHeightMeasureType"
+                    "$ref":"#/definitions/StatusType"
                 }
             },
             "elementName":{
-                "localPart":"LocationElevation",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "ContactMeans"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"ContactMeans",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "LocationAugmentationPoint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"LocationAugmentationPoint",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "AngularDegreeValue"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/Integer"
-                }
-            },
-            "elementName":{
-                "localPart":"AngularDegreeValue",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "MeasureUnit"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"MeasureUnit",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "MeasurePoint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"MeasurePoint",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "Location2DGeospatialCoordinateAugmentationPoint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"Location2DGeospatialCoordinateAugmentationPoint",
+                "localPart":"Status",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         },
@@ -2564,7 +1914,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "DateRepresentation"
+                                        "LocationGeospatialCoordinate"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2581,7 +1931,7 @@
                 }
             },
             "elementName":{
-                "localPart":"DateRepresentation",
+                "localPart":"LocationGeospatialCoordinate",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         },
@@ -2632,108 +1982,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "DateTime"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/DateTime"
-                }
-            },
-            "elementName":{
-                "localPart":"DateTime",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "FacilityName"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/ProperNameTextType"
-                }
-            },
-            "elementName":{
-                "localPart":"FacilityName",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "LocationGeospatialCoordinate"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/niem-core/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"LocationGeospatialCoordinate",
-                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "LocationHeight"
                                     ]
                                 },
@@ -2768,7 +2016,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "Location2DGeospatialCoordinate"
+                                        "StartDate"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2781,11 +2029,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/Location2DGeospatialCoordinateType"
+                    "$ref":"#/definitions/DateType"
                 }
             },
             "elementName":{
-                "localPart":"Location2DGeospatialCoordinate",
+                "localPart":"StartDate",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         },
@@ -2802,7 +2050,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "GeographicCoordinateLongitude"
+                                        "IdentificationAugmentationPoint"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2815,11 +2063,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LongitudeCoordinateType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"GeographicCoordinateLongitude",
+                "localPart":"IdentificationAugmentationPoint",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         },
@@ -2870,7 +2118,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "FacilityLocation"
+                                        "FacilityName"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2883,11 +2131,555 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LocationType"
+                    "$ref":"#/definitions/ProperNameTextType"
                 }
             },
             "elementName":{
-                "localPart":"FacilityLocation",
+                "localPart":"FacilityName",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GeographicCoordinateLongitude"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LongitudeCoordinateType"
+                }
+            },
+            "elementName":{
+                "localPart":"GeographicCoordinateLongitude",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LatitudeDegreeValue"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LatitudeDegreeType"
+                }
+            },
+            "elementName":{
+                "localPart":"LatitudeDegreeValue",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "DateRepresentation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"DateRepresentation",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Location2DGeospatialCoordinateAugmentationPoint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"Location2DGeospatialCoordinateAugmentationPoint",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "IdentificationID"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/String"
+                }
+            },
+            "elementName":{
+                "localPart":"IdentificationID",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LongitudeDegreeValue"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LongitudeDegreeType"
+                }
+            },
+            "elementName":{
+                "localPart":"LongitudeDegreeValue",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Location3DGeospatialCoordinate"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Location3DGeospatialCoordinateType"
+                }
+            },
+            "elementName":{
+                "localPart":"Location3DGeospatialCoordinate",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Facility"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/FacilityType"
+                }
+            },
+            "elementName":{
+                "localPart":"Facility",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MeasureIntegerValue"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Integer"
+                }
+            },
+            "elementName":{
+                "localPart":"MeasureIntegerValue",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ContactMeans"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"ContactMeans",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MeasureValue"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"MeasureValue",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MeasurePoint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"MeasurePoint",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "GeographicCoordinateLatitude"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LatitudeCoordinateType"
+                }
+            },
+            "elementName":{
+                "localPart":"GeographicCoordinateLatitude",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "DateTime"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/DateTime"
+                }
+            },
+            "elementName":{
+                "localPart":"DateTime",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "MeasureUnit"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"MeasureUnit",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LocationAugmentationPoint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"LocationAugmentationPoint",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         },
@@ -2938,7 +2730,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "LatitudeDegreeValue"
+                                        "EndDate"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -2951,11 +2743,249 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/LatitudeDegreeType"
+                    "$ref":"#/definitions/DateType"
                 }
             },
             "elementName":{
-                "localPart":"LatitudeDegreeValue",
+                "localPart":"EndDate",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "FacilityLocation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LocationType"
+                }
+            },
+            "elementName":{
+                "localPart":"FacilityLocation",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LengthUnitCode"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LengthCodeType"
+                }
+            },
+            "elementName":{
+                "localPart":"LengthUnitCode",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AngularSecondValue"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AngularSecondType"
+                }
+            },
+            "elementName":{
+                "localPart":"AngularSecondValue",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LocationHeightVerticalDatum"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"LocationHeightVerticalDatum",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LocationElevation"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LocationHeightMeasureType"
+                }
+            },
+            "elementName":{
+                "localPart":"LocationElevation",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "Location2DGeospatialCoordinate"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/Location2DGeospatialCoordinateType"
+                }
+            },
+            "elementName":{
+                "localPart":"Location2DGeospatialCoordinate",
+                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AngularMinuteValue"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/niem-core/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/AngularMinuteType"
+                }
+            },
+            "elementName":{
+                "localPart":"AngularMinuteValue",
                 "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
             }
         }

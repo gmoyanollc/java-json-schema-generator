@@ -1,13 +1,19 @@
-var NiemStructures_TrackInfo_Module_Factory = function () {
-  var NiemStructures_TrackInfo = {
-    name: 'NiemStructures_TrackInfo',
+var gov_niem_release_niem_structures__3_Module_Factory = function () {
+  var gov_niem_release_niem_structures__3 = {
+    name: 'gov_niem_release_niem_structures__3',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     typeInfos: [{
-        localName: 'AugmentationType',
+        localName: 'AssociationType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
+          }, {
+            name: 'associationAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AssociationAugmentationPoint',
+            typeInfo: 'AnyType'
           }, {
             name: 'id',
             typeInfo: 'ID',
@@ -18,6 +24,10 @@ var NiemStructures_TrackInfo_Module_Factory = function () {
             type: 'attribute'
           }, {
             name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
             typeInfo: 'IDREFS',
             type: 'attribute'
           }]
@@ -64,16 +74,10 @@ var NiemStructures_TrackInfo_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'AssociationType',
+        localName: 'AugmentationType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
-          }, {
-            name: 'associationAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'AssociationAugmentationPoint',
-            typeInfo: 'AnyType'
           }, {
             name: 'id',
             typeInfo: 'ID',
@@ -86,33 +90,29 @@ var NiemStructures_TrackInfo_Module_Factory = function () {
             name: 'metadata',
             typeInfo: 'IDREFS',
             type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
           }]
       }],
     elementInfos: [{
         typeInfo: 'AnyType',
-        elementName: 'ObjectAugmentationPoint'
+        elementName: 'AssociationAugmentationPoint'
       }, {
         typeInfo: 'AnyType',
-        elementName: 'AssociationAugmentationPoint'
+        elementName: 'ObjectAugmentationPoint'
       }]
   };
   return {
-    NiemStructures_TrackInfo: NiemStructures_TrackInfo
+    gov_niem_release_niem_structures__3: gov_niem_release_niem_structures__3
   };
 };
 if (typeof define === 'function' && define.amd) {
-  define([], NiemStructures_TrackInfo_Module_Factory);
+  define([], gov_niem_release_niem_structures__3_Module_Factory);
 }
 else {
-  var NiemStructures_TrackInfo_Module = NiemStructures_TrackInfo_Module_Factory();
+  var gov_niem_release_niem_structures__3_Module = gov_niem_release_niem_structures__3_Module_Factory();
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports.NiemStructures_TrackInfo = NiemStructures_TrackInfo_Module.NiemStructures_TrackInfo;
+    module.exports.gov_niem_release_niem_structures__3 = gov_niem_release_niem_structures__3_Module.gov_niem_release_niem_structures__3;
   }
   else {
-    var NiemStructures_TrackInfo = NiemStructures_TrackInfo_Module.NiemStructures_TrackInfo;
+    var gov_niem_release_niem_structures__3 = gov_niem_release_niem_structures__3_Module.gov_niem_release_niem_structures__3;
   }
 }

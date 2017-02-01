@@ -3,6 +3,7 @@
   xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nl="http://release.niem.gov/niem/localTerminology/3.0/"
   xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
   xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
   xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
@@ -26,19 +27,21 @@
 			authorized to U.S. Government agencies and their contractors (Critical Technology,
 			Export Controlled, Software Documentation). </xs:documentation>
 		<xs:appinfo>
-			<term:LocalTerm term="URI" literal="Uniform Resource Identifier"/>
-			<term:LocalTerm term="GUID" literal="Globally Unique Identifier"/>
-			<term:LocalTerm term="IFF" literal="??"/>
-			<term:LocalTerm term="MIDB" literal="Modernized Integrated Database"/>
-			<term:LocalTerm term="BDA" literal="???"/>
-			<term:LocalTerm term="ATO" literal="Air Tasking Order"/>
-			<term:LocalTerm term="DMPI" literal="???"/>
-			<term:LocalTerm term="FOTC" literal="???"/>
+			<nl:LocalTerm term="URI" literal="Uniform Resource Identifier"/>
+			<nl:LocalTerm term="GUID" literal="Globally Unique Identifier"/>
+			<nl:LocalTerm term="IFF" literal="??"/>
+			<nl:LocalTerm term="MIDB" literal="Modernized Integrated Database"/>
+			<nl:LocalTerm term="BDA" literal="???"/>
+			<nl:LocalTerm term="ATO" literal="Air Tasking Order"/>
+			<nl:LocalTerm term="DMPI" literal="???"/>
+			<nl:LocalTerm term="FOTC" literal="???"/>
 		</xs:appinfo>
 	</xs:annotation>
 
   <xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
     schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+  <xs:import schemaLocation="../niem/localTerminology/3.0/localTerminology.xsd" 
+    namespace="http://release.niem.gov/niem/localTerminology/3.0/"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
     schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
@@ -48,7 +51,7 @@
 <!--  <xs:import namespace="urn:disa:udop.tracks:1.0:unit" schemaLocation="Unit.xsd"/>-->
 <!--  <xs:import schemaLocation="Unit.xsd" namespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/unit/2.0/"/>-->
 <!--  <xs:import namespace="https://tsoa.example.mil/tsoa/track" schemaLocation="Track.xsd"/>-->
-  <xs:import namespace="urn:disa:udop.tracks:1.0:event" schemaLocation="Event.xsd"/>
+  <!--<xs:import namespace="urn:disa:udop.tracks:1.0:event" schemaLocation="Event.xsd"/>-->
 
 
   <!-- Use imports as needed

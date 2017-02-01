@@ -1,1 +1,53 @@
-<ti:TrackInfo xmlns:ti="urn:disa:udop.tracks:1.0:trackInfo" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ism="urn:us:gov:ic:ism" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/3.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:u="urn:disa:udop.tracks:1.0:unit" xmlns:trk="https://tsoa.example.mil/tsoa/track" xmlns:tsoa="https://tsoa.example.mil/appinfo" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/" xmlns:lib="urn:disa:udop.tracks:1.0:lib" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:ea="urn:disa:udop.tracks:1.0:ea" xmlns:glib="urn:disa:udop.tracks:1.0:genLib" xmlns:e="urn:disa:udop.tracks:1.0:event" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/" p0:schemaLocation="urn:disa:udop.tracks:1.0:trackInfo ../base-xsd/extension/TrackInfo.xsd" xmlns:p0="http://www.w3.org/2001/XMLSchema-instance" p1:resourceElement="true" xmlns:p1="urn:us:gov:ic:ism" p1:DESVersion="13" p1:createDate="2016-12-22" p1:classification="U" p1:ownerProducer="USA"><p2:Unit xmlns:p2="http://release.niem.gov/niem/domains/militaryOperations/3.2/"><p2:UnitName>Unit Name</p2:UnitName><p2:UnitTypeCodeText>UTCNu</p2:UnitTypeCodeText><u:UnitAugmentation xmlns:u="urn:disa:udop.tracks:1.0:unit"><p2:Track><trk:TrackAugmentation xmlns:trk="https://tsoa.example.mil/tsoa/track"><trk:TrackIdentifiers><trk:GUID>CBR01 10MAR</trk:GUID><p3:UniqueReferenceText xmlns:p3="urn:disa:udop.tracks:1.0:lib">2235868</p3:UniqueReferenceText><trk:NickName>2235868</trk:NickName></trk:TrackIdentifiers><p2:MILSTD2525-C-SIDC-Code>SFGPUUMRG--E---</p2:MILSTD2525-C-SIDC-Code></trk:TrackAugmentation></p2:Track><u:UnitForceStructure><p4:EchelonText xmlns:p4="urn:disa:udop.tracks:1.0:lib">EchelonText0</p4:EchelonText><p4:ServiceText xmlns:p4="urn:disa:udop.tracks:1.0:lib">ServiceText0</p4:ServiceText><p4:AdminOrgParentID xmlns:p4="urn:disa:udop.tracks:1.0:lib">000000000000</p4:AdminOrgParentID><p4:TaskOrgAffiliation xmlns:p4="urn:disa:udop.tracks:1.0:lib"><p4:TaskOrgName>TaskOrgName0</p4:TaskOrgName><p4:TaskOrgNumberText>TaskOrgNumberText0</p4:TaskOrgNumberText><p4:TaskOrgParentID>000000000000</p4:TaskOrgParentID></p4:TaskOrgAffiliation></u:UnitForceStructure><u:UnitReferenceNumber>0</u:UnitReferenceNumber><u:UnitEmbarkedText>EmbarkedText0</u:UnitEmbarkedText><u:UnitOrganizationType>OrganizationType0</u:UnitOrganizationType><u:UnitPlatformCategoryText>PlatformCategoryText0</u:UnitPlatformCategoryText><u:UnitStrengthText>StrengthText0</u:UnitStrengthText><u:UnitMIDBID>AAA00001</u:UnitMIDBID></u:UnitAugmentation></p2:Unit><p2:Event xmlns:p2="http://release.niem.gov/niem/domains/militaryOperations/3.2/"><p2:EventLocation><nc:Location3DGeospatialCoordinate xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"><nc:GeographicCoordinateLatitude><nc:LatitudeDegreeValue>30.65294166666612</nc:LatitudeDegreeValue></nc:GeographicCoordinateLatitude><nc:GeographicCoordinateLongitude><nc:LongitudeDegreeValue>-82.47110833333262</nc:LongitudeDegreeValue></nc:GeographicCoordinateLongitude><nc:LocationElevation><nc:MeasureIntegerValue>0</nc:MeasureIntegerValue><nc:LengthUnitCode>FOT</nc:LengthUnitCode></nc:LocationElevation></nc:Location3DGeospatialCoordinate></p2:EventLocation><p2:EventValidityDateTimeRange><p5:StartDate xmlns:p5="http://release.niem.gov/niem/niem-core/3.0/"><nc:DateTime xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/">2006-05-04T18:13:51</nc:DateTime></p5:StartDate><p5:EndDate xmlns:p5="http://release.niem.gov/niem/niem-core/3.0/"><nc:DateTime xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/">2006-05-04T18:13:51</nc:DateTime></p5:EndDate></p2:EventValidityDateTimeRange></p2:Event></ti:TrackInfo>
+<p0:TsoaTrack xmlns:p0="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  xmlns:tstt="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  p1:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/ 
+    file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd"
+  xmlns:p1="http://www.w3.org/2001/XMLSchema-instance" p0:tsoaID="CBR01 10MAR"
+  p0:tsoaURI="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c">
+  <p2:Track xmlns:p2="http://release.niem.gov/niem/domains/militaryOperations/3.2/">
+    <p2:TrackIdentification>
+      <p3:IdentificationID xmlns:p3="http://release.niem.gov/niem/niem-core/3.0/"
+        >2235868</p3:IdentificationID>
+      <tst:TrackIdentificationAugmentation
+        xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/">
+        <tst:TrackShortName>2235868</tst:TrackShortName>
+      </tst:TrackIdentificationAugmentation>
+    </p2:TrackIdentification>
+    <tst:TrackAugmentation xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/">
+      <p2:Unit>
+        <p2:UnitName>UnitName0</p2:UnitName>
+        <p2:UnitShortName>UnitShortN</p2:UnitShortName>
+        <p2:UnitTypeCodeText>UnitT</p2:UnitTypeCodeText>
+      </p2:Unit>
+      <p2:Observation>
+        <p2:ObservedObjectLocation>
+          <p2:ObservedObject2DGeospatialCoordinate>
+            <p4:GeographicCoordinateLatitude xmlns:p4="http://release.niem.gov/niem/niem-core/3.0/">
+              <p4:LatitudeDegreeValue>30.65294166666612</p4:LatitudeDegreeValue>
+            </p4:GeographicCoordinateLatitude>
+            <p4:GeographicCoordinateLongitude xmlns:p4="http://release.niem.gov/niem/niem-core/3.0/">
+              <p4:LongitudeDegreeValue>-82.47110833333262</p4:LongitudeDegreeValue>
+            </p4:GeographicCoordinateLongitude>
+          </p2:ObservedObject2DGeospatialCoordinate>
+          <p2:ElevationMeasure>
+            <nnc:MeasureIntegerValue xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+              >0</nnc:MeasureIntegerValue>
+            <nnc:LengthUnitCode xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+              >FOT</nnc:LengthUnitCode>
+          </p2:ElevationMeasure>
+        </p2:ObservedObjectLocation>
+        <p2:ObservationDateTime>2014-10-03T15:41:03Z</p2:ObservationDateTime>
+        <tst:MILSTD2525>
+          <p2:MILSTD2525-C-SIDC-Code>SFGPUUMRG--E---</p2:MILSTD2525-C-SIDC-Code>
+        </tst:MILSTD2525>
+      </p2:Observation>
+    </tst:TrackAugmentation>
+  </p2:Track>
+</p0:TsoaTrack>

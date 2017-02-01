@@ -1,6 +1,10 @@
 #!/usr/bin/bash
-XML_SCHEMA_CONST="../../iep-schema/extension/TrackInfo.xsd"
-XJB_CONST="../lib/tsoa-track-binding.xjb"
+# 
+# run from project root folder
+#
+
+XML_SCHEMA_CONST="../../iep-schema/extension/TSOA-Track.xsd"
+XJB_CONST="lib/tsoa-track-binding.xjb"
 XML_SCHEMA_ARG=${1}
 if [ -n "${XML_SCHEMA_ARG}" ];
 then

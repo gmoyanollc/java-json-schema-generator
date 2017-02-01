@@ -8,10 +8,10 @@
   xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
   xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
   xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
-  xsi:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/ 
+  xsi:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/ 
     file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd"
-  tstt:tsoaID="CBR01 10MAR"
-  tstt:tsoaURI="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c">
+  tstt:id="CBR01 10MAR"
+  tstt:uri="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c">
 
   <ndm:Track>
     <ndm:TrackIdentification>
