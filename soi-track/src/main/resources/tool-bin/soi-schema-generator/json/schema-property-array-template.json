@@ -1,0 +1,9 @@
+{
+  "type": "array",
+  "description": "",
+  "items": {
+      "$ref": ".json"            
+  },
+  "minItems": 1,
+  "additionalItems": false
+}

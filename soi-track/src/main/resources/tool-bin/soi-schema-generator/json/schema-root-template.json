@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "title": "",
+  "type": "null",
+  "description": "",
+  "version": "0.1.0",
+  "javaType": "",
+  "properties": { 
+  },
+  "additionalProperties": false,
+  "required": [
+    ""
+  ]
+}

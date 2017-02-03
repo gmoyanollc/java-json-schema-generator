@@ -1,0 +1,11 @@
+{
+  "name": "soi-schema-generator",
+  "version": "1.0.0",
+  "description": "generate SOI schema from intermediary JSON schema generated from TSOA XML Schema",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "[George Moyano] (https://onename.com/gmoyano)",
+  "license": "MIT"
+}
