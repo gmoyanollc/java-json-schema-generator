@@ -1,0 +1,1 @@
+{"$schema":"http://json-schema.org/draft-04/schema#","id":"http://release.niem.gov/niem/structures/3.0/AssociationAugmentationPoint","title":"AssociationAugmentationPoint","type":"object","description":"","version":"0.1.0","javaType":"http___release_niem_gov_niem_structures_3_0_AssociationAugmentationPoint","properties":{},"additionalProperties":false}

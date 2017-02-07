@@ -1,34 +1,69 @@
-var fs = require('fs');
+var fs = require('fs'),
+  path = require('path'),
+  SoiSchemaGenerator = require('./lib/soi-schema-generator.js');
 
-sourceSchemaDir = '../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/';
-sourceSchemaFile = sourceSchemaDir + 'TSOA_Track-schema.json';
-targetSchemaDir = '../../iep-schema/mil/usmc/mcsc/mc2sa/tsoa/soi/';
-targetSchemaFile = targetSchemaDir + 'tsoa-track/2.0/tsoa-track.json';
-schemaRootTemplate = 'json/schema-root-template.json';
-schemaPropertyObjectTemplate = 'json/schema-property-object-template.json';
-schemaPropertyArrayTemplate = 'json/schema-property-array-template.json';
+//sourceSchemaDir = '../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/';
+//sourceSchemaFile = sourceSchemaDir + 'TSOA_Track-schema.json';
+//targetSchemaDir = '../../iep-schema/mil/usmc/mcsc/mc2sa/tsoa/soi/';
+//targetSchemaFile = targetSchemaDir + 'tsoa-track/2.0/tsoa-track.json';
+//schemaRootTemplate = 'lib/schema-root-template.json';
+//schemaPropertyObjectTemplate = 'lib/schema-property-object-template.json';
+//schemaPropertyArrayTemplate = 'lib/schema-property-array-template.json';
+//config = 'lib/config.json';
 
-var schemaRootTemplateObject;
+//var schemaRootTemplateObject;
+var schemaRootTemplateBuffer;
 var schemaPropertyObjectTemplateBuffer;
 var schemaPropertyArrayTemplateBuffer;
-var sourceSchemaObject;
+//var sourceSchemaObject;
+var config;
 
 initialize();
+//var sourceSchemaFilesBuffer = config.schemaFiles;
+//var sourceSchemaFiles = JSON.parse(sourceSchemaFilesBuffer);
+var sourceSchemaBuffer;
+var sourceSchemaObject;
+var targetSchemaBuffer;
 
-//var targetSchemaId = getId(sourceSchemaObject);
-schemaRootTemplateObject.id = getId(sourceSchemaObject);
-schemaRootTemplateObject.title = getTitle(sourceSchemaObject);
-schemaRootTemplateObject.type = getType(sourceSchemaObject);
-schemaRootTemplateObject.javaType = getJavaType(sourceSchemaObject);
-schemaRootTemplateObject.properties = getProperty(getDefinition());
-schemaRootTemplateObject.required = getRequired(getDefinition());
-//targetSchemaBuffer = targetSchemaId;
-//targetSchemaBuffer = schemaRootTemplateObject.toString();
-//writeSchemaFile(targetSchemaBuffer);
-writeSchemaFile(JSON.stringify(schemaRootTemplateObject));
+config.schemaFiles.forEach( function(schemaFile) {
+  console.log(config.schemaDir.source + schemaFile.source);
+  sourceSchemaBuffer = readFile(config.schemaDir.source + schemaFile.source);
+  sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
+  targetSchemaBuffer = config.schemaDir.target + schemaFile.target;
+  //var targetSchemaId = getId(sourceSchemaObject);
+
+  //var ssg = new SoiSchemaGenerator();
+  //schemaRootTemplateObject.id = ssg.getId(sourceSchemaObject);
+  /*
+  schemaRootTemplateObject.id = getId(sourceSchemaObject);
+  schemaRootTemplateObject.title = getTitle(sourceSchemaObject);
+  schemaRootTemplateObject.type = getType(sourceSchemaObject);
+  schemaRootTemplateObject.javaType = getJavaType(sourceSchemaObject);
+  schemaRootTemplateObject.properties = getProperty(getDefinition());
+  schemaRootTemplateObject.required = getRequired(getDefinition());
+  */
+  //targetSchemaBuffer = targetSchemaId;
+  //targetSchemaBuffer = schemaRootTemplateObject.toString();
+  generateSoiObject(sourceSchemaObject);
+  //writeSchemaFile(targetSchemaBuffer);
+  //writeSchemaFile(config.schemaDir.target + schemaFile.target, schemaRootTemplateObject);
+});
+
 done();
 
-
+function generateSoiObject(sourceSchemaObject) {
+  schemaRootTemplateObject = JSON.parse(schemaRootTemplateBuffer);
+  var ssg = new SoiSchemaGenerator(schemaRootTemplateBuffer, schemaPropertyObjectTemplateBuffer, schemaPropertyArrayTemplateBuffer);
+  schemaRootTemplateObject.id = ssg.getId(sourceSchemaObject);
+  schemaRootTemplateObject.title = ssg.getTitle(sourceSchemaObject);
+  schemaRootTemplateObject.type = ssg.getType(sourceSchemaObject);
+  schemaRootTemplateObject.javaType = ssg.getJavaType(sourceSchemaObject);
+  schemaRootTemplateObject.properties = ssg.getProperty(sourceSchemaObject, ssg.getDefinition(sourceSchemaObject));
+  schemaRootTemplateObject.required = ssg.getRequired(sourceSchemaObject, ssg.getDefinition(sourceSchemaObject));
+  //writeSchemaFile(config.schemaDir.target + schemaFile.target, ssg.schemaRootTemplateObject);
+  writeSchemaFile(targetSchemaBuffer, schemaRootTemplateObject);
+}
+/*
 function getId(source) {
   console.log('##getting id');
   var localPart = sourceSchemaObject.anyOf[0].elementName.localPart;
@@ -154,6 +189,7 @@ function getProperty(definitionKey) {
 }
 
 function getRequired(definitionKey) {
+  var requiredObject;
   console.log('##getting required');
 
   for (var requiredKey in sourceSchemaObject.definitions[definitionKey]) {
@@ -161,12 +197,14 @@ function getRequired(definitionKey) {
 
     if ( requiredKey == 'required')
     {
-       var requiredObject = sourceSchemaObject.definitions[definitionKey][requiredKey];
-       console.log('###found required object: ' + requiredObject[0]) ;
+       requiredObject = sourceSchemaObject.definitions[definitionKey][requiredKey];
+       console.log('###found required object: ' + requiredObject) ;
     }
   }
-}
 
+  return(requiredObject);
+}
+*/
 /*function readschemaRootTemplate() {
   console.log('##read template schema document file');
   var schemaRootTemplateBuffer = fs.readFileSync(schemaRootTemplate);
@@ -191,21 +229,36 @@ function readFile(file) {
   return(fileBuffer);
 }
 
-function writeSchemaFile(targetSchemaBuffer) {
+function writeSchemaFile(file, schemaObject) {
+  var schemaBuffer = JSON.stringify(schemaObject);
   console.log('##output schema buffer string');
-  console.log(targetSchemaBuffer.toString());
+  console.log(schemaBuffer.toString());
   console.log('##write schema document file');
-  fs.writeFileSync(targetSchemaFile, targetSchemaBuffer);
+  //fs.writeFileSync(targetSchemaFile, targetSchemaBuffer);
+  if (dirPathExists(file)) fs.writeFileSync(file, schemaBuffer);
+
+  function dirPathExists(filePath) {
+    var dirName = path.dirname(filePath);
+    if (fs.existsSync(dirName)) {
+      return true;
+    }
+    dirPathExists(dirName);
+    fs.mkdirSync(dirName);
+  };
 }
 
 function initialize() {
   console.log('#Hello World');
-  var schemaRootTemplateBuffer = readFile(schemaRootTemplate);
-  schemaRootTemplateObject = JSON.parse(schemaRootTemplateBuffer);
-  schemaPropertyObjectTemplateBuffer = readFile(schemaPropertyObjectTemplate);
-  schemaPropertyArrayTemplateBuffer = readFile(schemaPropertyArrayTemplate);
-  var sourceSchemaBuffer = readFile(sourceSchemaFile);
-  sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
+  config = JSON.parse(readFile('./lib/config.json'));
+  //var schemaRootTemplateBuffer = readFile(schemaRootTemplate);
+  //var schemaRootTemplateBuffer = readFile(config.schemaTemplates.root);
+  schemaRootTemplateBuffer = readFile(config.schemaTemplates.root);
+  //schemaRootTemplateObject = JSON.parse(schemaRootTemplateBuffer);
+  schemaPropertyObjectTemplateBuffer = readFile(config.schemaTemplates.propertyObject);
+  schemaPropertyArrayTemplateBuffer = readFile(config.schemaTemplates.propertyArray);
+  //var sourceSchemaBuffer = readFile(sourceSchemaFile);
+  //var sourceSchemaBuffer = readFile(config.schemaDir.source + config.schemaFiles[0].source);
+  //sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
 }
 
 function done() {
