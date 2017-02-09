@@ -7,9 +7,7 @@
     {"source": "TSOA_Track-schema.json", 
       "target": "mil/usmc/mcsc/mc2sa/tsoa/soi/tsoa-track/2.0/tsoa-track.json"},
     {"source": "mil_usmc_mcsc_mc2sa_tsoa_soi_track__2.jsonschema", 
-      "target": "mil/usmc/mcsc/mc2sa/tsoa/soi/tsoa-track/2.0/track.json"},
-    {"source": "gov_niem_release_niem_structures__3.jsonschema",
-      "target": "gov/niem/release/niem/structures/3.0/structures.json"}
+      "target": "mil/usmc/mcsc/mc2sa/tsoa/soi/tsoa-track/2.0/track.json"}
   ],
   "schemaTemplates": {
     "root": "./lib/schema-root-template.json",
