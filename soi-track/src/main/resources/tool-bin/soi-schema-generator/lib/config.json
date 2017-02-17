@@ -1,17 +1,46 @@
 {
-  "schemaDir": {
+  "schemaBaseDir": {
     "source": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/",
     "target": "../../iep-schema/"
-    },
-  "schemaFiles": [
+  },
+  "schemaFilenames": [
     {"source": "TSOA_Track-schema.json", 
-      "target": "mil/usmc/mcsc/mc2sa/tsoa/soi/tsoa-track/2.0/tsoa-track.json"},
+      "target": "tsoa-track.json"},
     {"source": "mil_usmc_mcsc_mc2sa_tsoa_soi_track__2.jsonschema", 
-      "target": "mil/usmc/mcsc/mc2sa/tsoa/soi/tsoa-track/2.0/track.json"}
+      "target": "track.json"},
+    {"source": "gov_niem_release_niem_structures__3.jsonschema",
+      "target": "structures.json"}
   ],
-  "schemaTemplates": {
-    "root": "./lib/schema-root-template.json",
-    "propertyObject": "./lib/schema-property-object-template.json",
-    "propertyArray": "./lib/schema-property-array-template.json"
-  }
+  "schemaTemplates": [
+    {"id": "root-template", "file": "./lib/schema-root-template.json"},
+    {"id": "object-template", "file": "./lib/schema-object-template.json"},
+    {"id": "property-object-template", "file": "./lib/schema-property-object-template.json"},
+    {"id": "property-array-template", "file": "./lib/schema-property-array-template.json"}
+  ],
+  "schemaFilepathMappings": [
+    {
+      "namespace": "http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema",
+      "filepath": "jsonix/w3c/2001/"
+    },
+    {
+      "namespace": "http://release.niem.gov/niem/niem-core/3.0/",
+      "filepath": "niem/niem-core/3.0/"
+    },
+    {
+      "namespace": "http://release.niem.gov/niem/structures/3.0/",
+      "filepath": "niem/structures/3.0//"
+    },
+    {
+      "namespace": "http://release.niem.gov/niem/domains/militaryOperations/3.2/",
+      "filepath": "niem/domains/militaryOperations/3.2/"
+    },
+    {
+      "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/",
+      "filepath": ""
+    },
+    {
+      "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/",
+      "filepath": "tsoa/soi/track/2.0/"
+    }
+  ]
 }
