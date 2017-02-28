@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/CourseAngleDegreesMeasureType",
+  "title": "CourseAngleDegreesMeasureType",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseAngleDegreesMeasureType",
+  "properties": {
+    "AngleDegreesMeasure": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/niem-core/3.0/AngularMeasureType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "DirectionDatumCode": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/DirectionDatumCode.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "AngularMeasureDecimalValue": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/AngularMeasureDecimalValue.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}

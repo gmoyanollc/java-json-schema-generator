@@ -80,7 +80,7 @@ JSON schema object properties are defined by the "definitions" object.
   ```
   "definitions" : {
     <object-type> : {
-      allOf" : [
+      {} / allOf" : [
         {
           "properties" : {
             <object> : {
@@ -97,5 +97,16 @@ JSON schema object properties are defined by the "definitions" object.
 
 A definition for an element shall reference a remote JSON schema object.  A match to the element namespace assigns the file location of the remote JSON schema object.
 
+#To-Do
+  * keep component capitalization
+  * remove default schema require declarative that is empty
+  * capture enumeration values
+  * capture facets
+  * capture component documentation
+  * capture substitution components but ignore abstract container component
+  * ignore abstracts like augmentation point container, define and reference components or substitution components
+    * define substition components in augmentation point type
+  * reference type of component element
+  * include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
 
 

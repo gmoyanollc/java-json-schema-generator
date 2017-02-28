@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/ObservationType",
+  "title": "ObservationType",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservationType",
+  "properties": {
+    "ObservedObjectLocation": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/ObservedObjectLocationType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "ObservedObjectMotion": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/MotionType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "ObservationDateTime": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/ObservationDateTime.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "MILSTD2525": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../tsoa/soi/track/2.0/MILSTD2525Type.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false,
+  "required":[
+    "ObservationDateTime"
+  ]
+}

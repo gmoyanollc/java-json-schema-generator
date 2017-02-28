@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/AngularMeasureType",
+  "title": "AngularMeasureType",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularMeasureType",
+  "properties": {
+    "AngularDegreeValue": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../niem/niem-core/3.0/AngularDegreeValue.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "AngularMinuteValue": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../niem/niem-core/3.0/AngularMinuteValue.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "AngularSecondValue": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../niem/niem-core/3.0/AngularSecondValue.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}

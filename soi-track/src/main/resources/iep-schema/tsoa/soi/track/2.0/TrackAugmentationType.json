@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/TrackAugmentationType",
+  "title": "TrackAugmentationType",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_TrackAugmentationType",
+  "properties": {
+    "Unit": {
+      "type": "object",
+      "description": "",
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/UnitType.json"
+    },
+    "Observation": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/ObservationType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false,
+  "required":[
+    "Observation"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MotionType",
+  "title": "MotionType",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MotionType",
+  "properties": {
+    "CourseAngleDegreesMeasure": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/CourseAngleDegreesMeasureType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "CourseAngleMeasure": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/niem-core/3.0/AngularMeasureType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "CourseCode": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/niem-core/3.0/DirectionCodeType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "CourseValue": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/Degree360Type.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "SpeedValue": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/SpeedValueType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}

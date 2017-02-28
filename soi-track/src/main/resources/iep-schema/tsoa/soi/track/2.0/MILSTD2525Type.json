@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/MILSTD2525Type",
+  "title": "MILSTD2525Type",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_MILSTD2525Type",
+  "properties": {
+    "MILSTD2525BSIDCCode": {
+      "type": "object",
+      "description": "",
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525BSIDCType.json"
+    },
+    "MILSTD2525CSIDCCode": {
+      "type": "object",
+      "description": "",
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525CSIDCType.json"
+    },
+    "MILSTD2525DSIDC": {
+      "type": "object",
+      "description": "",
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525DSIDCType.json"
+    }
+  },
+  "additionalProperties": false
+}

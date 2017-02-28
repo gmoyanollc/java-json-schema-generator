@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/TrackType",
+  "title": "TrackType",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_TrackType",
+  "properties": {
+    "TrackIdentification": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "TrackAugmentation": {
+      "type": "object",
+      "description": "",
+      "items": {
+        "$ref": "../../../../tsoa/soi/track/2.0/TrackAugmentationType.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false,
+  "required":[
+    "TrackAugmentation"
+  ]
+}

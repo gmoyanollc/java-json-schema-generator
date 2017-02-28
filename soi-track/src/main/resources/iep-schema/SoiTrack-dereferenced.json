@@ -1,0 +1,803 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/soi-track/2.0/soi-track",
+  "title": "SOI Track",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "mil.usmc.mcsc.mc2sa.tsoa.soi.soitrack.SoiTrack",
+  "properties": {
+    "Track": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/TrackType",
+      "title": "TrackType",
+      "type": "object",
+      "description": "",
+      "version": "0.2.0",
+      "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_TrackType",
+      "properties": {
+        "TrackIdentification": {
+          "type": "array",
+          "description": "",
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "id": "http://release.niem.gov/niem/niem-core/3.0/IdentificationType",
+            "title": "IdentificationType",
+            "type": "object",
+            "description": "",
+            "version": "0.2.0",
+            "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationType",
+            "properties": {
+              "IdentificationID": {
+                "type": "array",
+                "description": "",
+                "items": {
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "id": "http://release.niem.gov/niem/niem-core/3.0/IdentificationID",
+                  "type": "string",
+                  "description": "",
+                  "version": "0.2.0",
+                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationID"
+                },
+                "minItems": 1,
+                "additionalItems": false
+              },
+              "IdentificationAugmentationPoint": {
+                "type": "object",
+                "description": "",
+                "items": {
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/TrackIdentificationAugmentationType",
+                  "title": "TrackIdentificationAugmentationType",
+                  "type": "object",
+                  "description": "",
+                  "version": "0.2.0",
+                  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_TrackIdentificationAugmentationType",
+                  "properties": {
+                    "TrackShortName": {
+                      "description": "",
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/TrackShortName",
+                      "type": "string",
+                      "version": "0.2.0",
+                      "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_TrackShortName"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "additionalItems": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "additionalItems": false
+        },
+        "TrackAugmentation": {
+          "type": "object",
+          "description": "",
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/TrackAugmentationType",
+            "title": "TrackAugmentationType",
+            "type": "object",
+            "description": "",
+            "version": "0.2.0",
+            "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_TrackAugmentationType",
+            "properties": {
+              "Unit": {
+                "type": "object",
+                "description": "",
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/UnitType",
+                "title": "UnitType",
+                "version": "0.2.0",
+                "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitType",
+                "properties": {
+                  "UnitName": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/UnitName",
+                      "type": "string",
+                      "description": "",
+                      "version": "0.2.0",
+                      "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitName"
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                  },
+                  "UnitShortName": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/UnitShortName",
+                      "type": "string",
+                      "description": "",
+                      "version": "0.2.0",
+                      "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitShortName"
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                  },
+                  "UnitTypeCodeText": {
+                    "type": "array",
+                    "description": "",
+                    "items": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/UnitTypeCodeText",
+                      "type": "string",
+                      "description": "",
+                      "version": "0.2.0",
+                      "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitTypeCodeText"
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                  }
+                },
+                "additionalProperties": false
+              },
+              "Observation": {
+                "type": "array",
+                "description": "",
+                "items": {
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/ObservationType",
+                  "title": "ObservationType",
+                  "type": "object",
+                  "description": "",
+                  "version": "0.2.0",
+                  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservationType",
+                  "properties": {
+                    "ObservedObjectLocation": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/ObservedObjectLocationType",
+                        "title": "ObservedObjectLocationType",
+                        "type": "object",
+                        "description": "",
+                        "version": "0.2.0",
+                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObjectLocationType",
+                        "properties": {
+                          "ObservedObject2DGeospatialCoordinate": {
+                            "type": "array",
+                            "description": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/niem-core/3.0/Location2DGeospatialCoordinateType",
+                              "title": "Location2DGeospatialCoordinateType",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.2.0",
+                              "javaType": "http___release_niem_gov_niem_niem_core_3_0_Location2DGeospatialCoordinateType",
+                              "properties": {
+                                "GeographicCoordinateLatitude": {
+                                  "type": "object",
+                                  "description": "",
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/LatitudeCoordinateType",
+                                  "title": "LatitudeCoordinateType",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LatitudeCoordinateType",
+                                  "properties": {
+                                    "LatitudeDegreeValue": {
+                                      "type": "object",
+                                      "description": "",
+                                      "$schema": "http://json-schema.org/draft-04/schema#",
+                                      "id": "http://release.niem.gov/niem/niem-core/3.0/LatitudeDegreeValue",
+                                      "version": "0.2.0",
+                                      "javaType": "http___release_niem_gov_niem_niem_core_3_0_LatitudeDegreeValue"
+                                    }
+                                  },
+                                  "additionalProperties": false
+                                },
+                                "GeographicCoordinateLongitude": {
+                                  "type": "object",
+                                  "description": "",
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/LongitudeCoordinateType",
+                                  "title": "LongitudeCoordinateType",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LongitudeCoordinateType",
+                                  "properties": {
+                                    "LongitudeDegreeValue": {
+                                      "type": "object",
+                                      "description": "",
+                                      "$schema": "http://json-schema.org/draft-04/schema#",
+                                      "id": "http://release.niem.gov/niem/niem-core/3.0/LongitudeDegreeValue",
+                                      "version": "0.2.0",
+                                      "javaType": "http___release_niem_gov_niem_niem_core_3_0_LongitudeDegreeValue"
+                                    }
+                                  },
+                                  "additionalProperties": false,
+                                  "required": [
+                                    ""
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "ElevationMeasure": {
+                            "type": "array",
+                            "description": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/ElevationMeasure",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.2.0",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ElevationMeasure",
+                              "properties": {
+                                "Measure": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/MeasureType",
+                                  "title": "MeasureType",
+                                  "type": "object",
+                                  "description": "",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_MeasureType",
+                                  "properties": {
+                                    "MeasureValue": {
+                                      "type": "array",
+                                      "description": "",
+                                      "items": {
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "id": "http://release.niem.gov/niem/niem-core/3.0/MeasureValue",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "0.2.0",
+                                        "javaType": "http___release_niem_gov_niem_niem_core_3_0_MeasureValue",
+                                        "properties": {
+                                          "anyType": {
+                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                            "id": "http://release.niem.gov/niem/niem-core/3.0/MeasureIntegerValue",
+                                            "type": "integer",
+                                            "description": "",
+                                            "version": "0.2.0",
+                                            "javaType": "http___release_niem_gov_niem_niem_core_3_0_MeasureIntegerValue",
+                                            "additionalProperties": false,
+                                            "required": [
+                                              ""
+                                            ]
+                                          }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                          ""
+                                        ]
+                                      },
+                                      "minItems": 1,
+                                      "additionalItems": false
+                                    },
+                                    "MeasureUnit": {
+                                      "type": "array",
+                                      "description": "",
+                                      "items": {
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "id": "http://release.niem.gov/niem/niem-core/3.0/MeasureUnit",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "0.2.0",
+                                        "javaType": "http___release_niem_gov_niem_niem_core_3_0_MeasureUnit",
+                                        "properties": {
+                                          "LengthUnitCode": {
+                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                            "id": "http://release.niem.gov/niem/niem-core/3.0/LengthUnitCode",
+                                            "type": "object",
+                                            "description": "",
+                                            "version": "0.2.0",
+                                            "javaType": "http___release_niem_gov_niem_niem_core_3_0_LengthUnitCode",
+                                            "properties": {
+                                              "LengthCodeType": {
+                                                "type": "string"
+                                              }
+                                            },
+                                            "additionalProperties": false,
+                                            "required": [
+                                              ""
+                                            ]
+                                          }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                          ""
+                                        ]
+                                      },
+                                      "minItems": 1,
+                                      "additionalItems": false
+                                    }
+                                  },
+                                  "additionalProperties": false,
+                                  "required": [
+                                    ""
+                                  ]
+                                },
+                                "LocationHeightMeasureType": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/LocationHeightMeasureType",
+                                  "title": "LocationHeightMeasureType",
+                                  "type": "object",
+                                  "description": "",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightMeasureType",
+                                  "properties": {
+                                    "LocationHeightVerticalDatum": {
+                                      "type": "array",
+                                      "description": "",
+                                      "items": {
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "id": "http://release.niem.gov/niem/niem-core/3.0/LocationHeightVerticalDatum",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "0.2.0",
+                                        "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightVerticalDatum",
+                                        "properties": {
+                                          "LocationHeightVerticalDatumCode": {
+                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                            "id": "http://release.niem.gov/niem/niem-core/3.0/LocationHeightVerticalDatumCode",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "0.2.0",
+                                            "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightVerticalDatumCode",
+                                            "additionalProperties": false,
+                                            "required": [
+                                              ""
+                                            ]
+                                          },
+                                          "LocationHeightVerticalDatumText": {
+                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                            "id": "http://release.niem.gov/niem/niem-core/3.0/LocationHeightVerticalDatumText",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "0.2.0",
+                                            "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightVerticalDatumText",
+                                            "additionalProperties": false,
+                                            "required": [
+                                              ""
+                                            ]
+                                          }
+                                        },
+                                        "additionalProperties": false,
+                                        "required": [
+                                          ""
+                                        ]
+                                      },
+                                      "minItems": 1,
+                                      "additionalItems": false
+                                    }
+                                  },
+                                  "additionalProperties": false,
+                                  "required": [
+                                    ""
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false,
+                              "required": [
+                                ""
+                              ]
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "additionalItems": false
+                    },
+                    "ObservedObjectMotion": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MotionType",
+                        "title": "MotionType",
+                        "type": "object",
+                        "description": "",
+                        "version": "0.2.0",
+                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MotionType",
+                        "properties": {
+                          "CourseAngleDegreesMeasure": {
+                            "type": "array",
+                            "description": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/CourseAngleDegreesMeasureType",
+                              "title": "CourseAngleDegreesMeasureType",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.2.0",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseAngleDegreesMeasureType",
+                              "properties": {
+                                "AngleDegreesMeasure": {
+                                  "type": "array",
+                                  "description": "",
+                                  "items": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/niem-core/3.0/AngularMeasureType",
+                                    "title": "AngularMeasureType",
+                                    "type": "object",
+                                    "description": "",
+                                    "version": "0.2.0",
+                                    "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularMeasureType",
+                                    "properties": {
+                                      "AngularDegreeValue": {
+                                        "type": "array",
+                                        "description": "",
+                                        "items": {
+                                          "$schema": "http://json-schema.org/draft-04/schema#",
+                                          "id": "http://release.niem.gov/niem/niem-core/3.0/AngularDegreeValue",
+                                          "type": "integer",
+                                          "description": "",
+                                          "version": "0.2.0",
+                                          "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularDegreeValue",
+                                          "additionalProperties": false
+                                        },
+                                        "minItems": 1,
+                                        "additionalItems": false
+                                      },
+                                      "AngularMinuteValue": {
+                                        "type": "array",
+                                        "description": "",
+                                        "items": {
+                                          "$schema": "http://json-schema.org/draft-04/schema#",
+                                          "id": "http://release.niem.gov/niem/niem-core/3.0/AngularMinuteValue",
+                                          "type": "number",
+                                          "description": "",
+                                          "version": "0.2.0",
+                                          "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularMinuteValue",
+                                          "additionalProperties": false
+                                        },
+                                        "minItems": 1,
+                                        "additionalItems": false
+                                      },
+                                      "AngularSecondValue": {
+                                        "type": "array",
+                                        "description": "",
+                                        "items": {
+                                          "$schema": "http://json-schema.org/draft-04/schema#",
+                                          "id": "http://release.niem.gov/niem/niem-core/3.0/AngularSecondValue",
+                                          "type": "number",
+                                          "description": "",
+                                          "version": "0.2.0",
+                                          "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularSecondValue",
+                                          "additionalProperties": false
+                                        },
+                                        "minItems": 1,
+                                        "additionalItems": false
+                                      }
+                                    },
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "additionalItems": false
+                                },
+                                "DirectionDatumCode": {
+                                  "type": "array",
+                                  "description": "",
+                                  "items": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/DirectionDatumCode",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "0.2.0",
+                                    "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_DirectionDatumCode",
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "additionalItems": false
+                                },
+                                "AngularMeasureDecimalValue": {
+                                  "type": "array",
+                                  "description": "",
+                                  "items": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/AngularMeasureDecimalValue",
+                                    "type": "number",
+                                    "description": "",
+                                    "version": "0.2.0",
+                                    "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_AngularMeasureDecimalValue",
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "additionalItems": false
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "CourseAngleMeasure": {
+                            "type": "array",
+                            "description": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/niem-core/3.0/AngularMeasureType",
+                              "title": "AngularMeasureType",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.2.0",
+                              "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularMeasureType",
+                              "properties": {
+                                "AngularDegreeValue": {
+                                  "type": "array",
+                                  "description": "",
+                                  "items": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/niem-core/3.0/AngularDegreeValue",
+                                    "type": "integer",
+                                    "description": "",
+                                    "version": "0.2.0",
+                                    "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularDegreeValue",
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "additionalItems": false
+                                },
+                                "AngularMinuteValue": {
+                                  "type": "array",
+                                  "description": "",
+                                  "items": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/niem-core/3.0/AngularMinuteValue",
+                                    "type": "number",
+                                    "description": "",
+                                    "version": "0.2.0",
+                                    "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularMinuteValue",
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "additionalItems": false
+                                },
+                                "AngularSecondValue": {
+                                  "type": "array",
+                                  "description": "",
+                                  "items": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/niem-core/3.0/AngularSecondValue",
+                                    "type": "number",
+                                    "description": "",
+                                    "version": "0.2.0",
+                                    "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularSecondValue",
+                                    "additionalProperties": false
+                                  },
+                                  "minItems": 1,
+                                  "additionalItems": false
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "CourseCode": {
+                            "type": "array",
+                            "description": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/niem-core/3.0/DirectionCodeType",
+                              "title": "DirectionCodeType",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.2.0",
+                              "javaType": "http___release_niem_gov_niem_niem_core_3_0_DirectionCodeType",
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "CourseValue": {
+                            "type": "array",
+                            "description": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/Degree360Type",
+                              "title": "Degree360Type",
+                              "type": "number",
+                              "description": "",
+                              "version": "0.2.0",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Degree360Type",
+                              "properties": {
+                                "sigmaErrorValue": {
+                                  "type": "number",
+                                  "description": ""
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "SpeedValue": {
+                            "type": "array",
+                            "description": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/SpeedValueType",
+                              "title": "SpeedValueType",
+                              "type": "number",
+                              "description": "",
+                              "version": "0.2.0",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_SpeedValueType",
+                              "properties": {
+                                "speedUnitCode": {
+                                  "type": "string",
+                                  "description": ""
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "additionalItems": false
+                    },
+                    "ObservationDateTime": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/ObservationDateTime",
+                        "type": "string",
+                        "description": "",
+                        "version": "0.2.0",
+                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservationDateTime"
+                      },
+                      "minItems": 1,
+                      "additionalItems": false
+                    },
+                    "MILSTD2525": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/MILSTD2525Type",
+                        "title": "MILSTD2525Type",
+                        "type": "object",
+                        "description": "",
+                        "version": "0.2.0",
+                        "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_MILSTD2525Type",
+                        "properties": {
+                          "MILSTD2525BSIDCCode": {
+                            "type": "object",
+                            "description": "",
+                            "$schema": "http://json-schema.org/draft-04/schema#",
+                            "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MILSTD2525-B-SIDC-Type",
+                            "title": "MILSTD2525BSIDCType",
+                            "version": "0.2.0",
+                            "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-B-SIDC-Type",
+                            "additionalProperties": false
+                          },
+                          "MILSTD2525CSIDCCode": {
+                            "type": "object",
+                            "description": "",
+                            "$schema": "http://json-schema.org/draft-04/schema#",
+                            "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MILSTD2525-C-SIDC-Type",
+                            "title": "MILSTD2525CSIDCType",
+                            "version": "0.2.0",
+                            "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-C-SIDC-Type",
+                            "additionalProperties": false
+                          },
+                          "MILSTD2525DSIDC": {
+                            "type": "object",
+                            "description": "",
+                            "$schema": "http://json-schema.org/draft-04/schema#",
+                            "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC-Type",
+                            "title": "MILSTD2525DSIDCType",
+                            "version": "0.2.0",
+                            "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-Type",
+                            "properties": {
+                              "MILSTD2525DSIDCPart1Code": {
+                                "type": "array",
+                                "description": "",
+                                "items": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC-Part1Code",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-Part1Code",
+                                  "additionalProperties": false
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "MILSTD2525DSIDCPart2Code": {
+                                "type": "array",
+                                "description": "",
+                                "items": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC-Part2Code",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-Part2Code",
+                                  "additionalProperties": false
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "MILSTD2525DSIDCPart3Code": {
+                                "type": "array",
+                                "description": "",
+                                "items": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC-Part3Code",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-Part3Code",
+                                  "additionalProperties": false
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "additionalItems": false
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "ObservationDateTime"
+                  ]
+                },
+                "minItems": 1,
+                "additionalItems": false
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "Observation"
+            ]
+          },
+          "minItems": 1,
+          "additionalItems": false
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "TrackAugmentation"
+      ]
+    },
+    "soiID": {
+      "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/soi-track/2.0/soi-track#soiID",
+      "title": "soiID",
+      "type": "string",
+      "description": "a SOI identifier",
+      "version": "0.2.0",
+      "javaType": "mil.usmc.mcsc.mc2sa.tsoa.soi.soitrack.SoiTrack_soiID"
+    },
+    "soiURI": {
+      "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/soi-track/2.0/soi-track#soiURI",
+      "title": "soiURI",
+      "type": "string",
+      "description": "a SOI resource identifier",
+      "version": "0.2.0",
+      "javaType": "mil.usmc.mcsc.mc2sa.tsoa.soi.soitrack.SoiTrack_soiURI"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "Track"
+  ]
+}

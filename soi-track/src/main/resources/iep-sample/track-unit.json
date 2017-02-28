@@ -1,0 +1,38 @@
+{
+  "soiID": "CBR01 10MAR",
+  "soiURI": "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c",
+  "Track": {
+    "TrackIdentification": [
+      {"IdentificationID": ["2235868"]},
+      {"IdentificationAugmentationPoint": 
+        {"TrackShortName": "2235868"}
+      }
+    ],
+    "TrackAugmentation": {
+      "Unit": {
+        "UnitName": ["UnitName0"],
+        "UnitShortName": ["UnitShortN"],
+        "UnitTypeCodeText": ["UnitT"]
+      },
+      "Observation": [
+        {"ObservedObjectLocation": [
+          {"ObservedObject2DGeospatialCoordinate": [
+            {"GeographicCoordinateLatitude": {
+              "LatitudeDegreeValue": "30.65294166666612"
+            }},
+            {"GeographicCoordinateLongitude": {
+              "LatitudeDegreeValue": "-82.47110833333262"
+            }}
+          ]},
+          {"ElevationMeasure": [
+            {"MeasureIntegerValue": 0}
+          ]}
+        ]},
+        {"ObservationDateTime": ["2014-10-03T15:41:03Z"]},
+        {"MILSTD2525": [
+          {"MILSTD2525-C-SIDC-Code": "SFGPUUMRG--E---"}
+        ]}
+      ]
+    }
+  }
+}

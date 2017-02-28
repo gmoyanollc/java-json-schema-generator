@@ -1,3 +1,5 @@
 *.gz
 *.zip
+.vscode/
+node_modules/
 tsoa-track/drop-latest-iepd/target

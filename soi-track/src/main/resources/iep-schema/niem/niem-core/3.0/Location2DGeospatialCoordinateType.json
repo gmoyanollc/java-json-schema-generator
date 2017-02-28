@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/Location2DGeospatialCoordinateType",
+  "title": "Location2DGeospatialCoordinateType",
+  "type": "object",
+  "description": "",
+  "version": "0.2.0",
+  "javaType": "http___release_niem_gov_niem_niem_core_3_0_Location2DGeospatialCoordinateType",
+  "properties": {
+    "GeographicCoordinateLatitude": {
+      "type": "object",
+      "description": "",
+      "$ref": "../../../niem/niem-core/3.0/LatitudeCoordinateType.json"
+    },
+    "GeographicCoordinateLongitude": {
+      "type": "object",
+      "description": "",
+      "$ref": "../../../niem/niem-core/3.0/LongitudeCoordinateType.json"
+    }
+  },
+  "additionalProperties": false
+}
