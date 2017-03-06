@@ -1,4 +1,4 @@
-#JSONIX Schema Optimizer (JSO) SOI Schema Generator
+#JSON Schema Generator
 ##JSONIX
 
   * Jsonix is based on JAXB/XJC and XJC uses XSOM to process schemas (https://github.com/highsource/jsonix/issues/33)
@@ -96,6 +96,19 @@ JSON schema object properties are defined by the "definitions" object.
   ```
 
 A definition for an element shall reference a remote JSON schema object.  A match to the element namespace assigns the file location of the remote JSON schema object.
+
+#Conventions
+
+  * namespace format: http://mcsc.usmc.mil/mc2sa/tsoa/soi/[domain-object]/[version] 
+    * namespace is a URL that contains only lower-case letters
+    * a hyphen seperates nouns, adjectives and other modifiers
+    * example: `http://mcsc.usmc.mil/mc2sa/tsoa/soi/ObservedPlatformSystem/2.0`
+  * schema file name matches [domain-object]
+    * upper-camel-case starts and seperates nouns, adjectives and other modifiers
+    * example: `ObservedPlatformSystem.xsd`
+  * namespace prefix is represented by first letter of the system, service, domain object namespace parts
+    * example: `xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/`
+
 
 #To-Do
   * keep component capitalization
