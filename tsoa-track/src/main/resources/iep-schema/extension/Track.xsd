@@ -8,6 +8,7 @@
   xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
   xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
   xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xmlns:ndmr="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
   nc:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument"
   targetNamespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/"
   elementFormDefault="qualified" attributeFormDefault="unqualified" version="1" >
@@ -23,9 +24,7 @@
   xmlns:nm="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
   -->
 	<xs:annotation>
-		<xs:documentation>TSOA Track Version 1.0 DISTRIBUTION STATEMENT C. Distribution is
-			authorized to U.S. Government agencies and their contractors (Critical Technology,
-			Export Controlled, Software Documentation). </xs:documentation>
+		<xs:documentation>A Track augmentation</xs:documentation>
 		<xs:appinfo>
 			<nl:LocalTerm term="URI" literal="Uniform Resource Identifier"/>
 			<nl:LocalTerm term="GUID" literal="Globally Unique Identifier"/>
@@ -48,6 +47,10 @@
     schemaLocation="../niem/structures/3.0/structures.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
     schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+  <xs:import schemaLocation="../niem/domains/militaryOperationsRestricted/3.2/moms.xsd" 
+    namespace="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"/>
+  <xs:import schemaLocation="ObservedMilitaryUnit.xsd" namespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/"/>
+  <xs:import schemaLocation="ObservedPlatformSystem.xsd" namespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"/>
 <!--  <xs:import namespace="urn:disa:udop.tracks:1.0:unit" schemaLocation="Unit.xsd"/>-->
 <!--  <xs:import schemaLocation="Unit.xsd" namespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/unit/2.0/"/>-->
 <!--  <xs:import namespace="https://tsoa.example.mil/tsoa/track" schemaLocation="Track.xsd"/>-->
@@ -485,7 +488,7 @@
 	</xs:attribute>
   -->
   
-  <xs:complexType name="MILSTD2525Type">
+<!--  <xs:complexType name="MILSTD2525Type">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
@@ -504,32 +507,130 @@
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
-  </xs:element>
+  </xs:element>-->
   
-  <xs:complexType name="TrackAugmentationType">
+<!--  <xs:complexType name="ObservedEventType">
     <xs:annotation>
-      <xs:documentation> A data type .
+      <xs:documentation> A data type for an observed event.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="ns:AugmentationType">
         <xs:sequence>
           <xs:element ref="ndm:Event" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="ObservedEvent" type="tst:ObservedEventType" substitutionGroup="ndm:TrackAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>An observed event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+  
+<!--  <xs:complexType name="ObservedMilitaryUnitType">
+    <xs:annotation>
+      <xs:documentation> A data type for an observed unit.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
           <xs:element ref="ndm:Unit" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="ObservedMilitaryUnit" type="tst:ObservedMilitaryUnitType" substitutionGroup="ndm:TrackAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>An observed military unit.</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+  
+  <!--<xs:complexType name="ObservedPlatformSystemType">
+    <xs:annotation>
+      <xs:documentation> A data type for an observed platform system.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="ndm:Unit" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="ObservedPlatformSystem" type="tst:ObservedPlatformSystemType" substitutionGroup="ndm:TrackAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>An observed platform system.</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+  
+<!--  <xs:complexType name="ObservedWeaponSystemType">
+    <xs:annotation>
+      <xs:documentation> A data type for an observed weapon system.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="ndmr:WeaponSystem" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="ObservedWeaponSystem" type="tst:ObservedWeaponSystemType" substitutionGroup="ndm:TrackAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>An observed weapon system.</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+  
+<!--  <xs:complexType name="TrackObserverType">
+    <xs:annotation>
+      <xs:documentation> A data type for an observer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="ndmr:Observer"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>-->
+
+<!--  <xs:complexType name="TrackObservationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a track observation.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
           <xs:element ref="ndm:Observation" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   
-  <xs:element name="TrackAugmentation" type="tst:TrackAugmentationType"
+  <xs:element name="TrackObservation" type="tst:TrackObservationType"
     substitutionGroup="ndm:TrackAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A track observation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>-->
+
+<!--  <xs:element name="TrackObserver" type="tst:TrackObserverType" substitutionGroup="ndm:TrackAugmentationPoint">
     <xs:annotation>
       <xs:documentation></xs:documentation>
     </xs:annotation>
-  </xs:element>
+  </xs:element>-->
   
-  <xs:element name="TrackShortName" type="nnc:TextType">
+<!--  <xs:element name="TrackShortName" type="nnc:TextType" substitutionGroup="nnc:IdentificationAugmentationPoint">
     <xs:annotation>
       <xs:documentation>A track short-name, nick-name.</xs:documentation>
     </xs:annotation>
@@ -545,9 +646,9 @@
         UniqueReferenceCode is an object mappable to this object.
       </xs:documentation>
     </xs:annotation>
-  </xs:element>
+  </xs:element>-->
 
-  <xs:complexType name="TrackIdentificationAugmentationType">
+<!--  <xs:complexType name="TrackIdentificationAugmentationType">
     <xs:annotation>
       <xs:documentation> A data type for augmentation.
       </xs:documentation>
@@ -567,5 +668,5 @@
       <xs:documentation></xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+-->  
 </xs:schema>

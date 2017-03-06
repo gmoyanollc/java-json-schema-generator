@@ -146,6 +146,43 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="OPEXCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the operational status of an event.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="EXERCISE">
+        <xs:annotation>
+          <xs:documentation>EXERCISE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OPERATIONS">
+        <xs:annotation>
+          <xs:documentation>OPERATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SIMULATION">
+        <xs:annotation>
+          <xs:documentation>SIMULATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEST">
+        <xs:annotation>
+          <xs:documentation>TEST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OPEXCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the operational status of an event.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:OPEXCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="ObservationType">
     <xs:annotation>
       <xs:documentation>A data type for a time, location and information of an observation.</xs:documentation>
@@ -153,11 +190,12 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="mo:ObservedObjectLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:ObservedObjectMotion" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:ObservationDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:ObservedObjectSymbolAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:ObservationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ObservedObjectLocation" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="mo:ObservedObjectMotion" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="mo:ObservationDateTime" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:ObservationOPEXCode" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="mo:ObservedObjectSymbolAbstract" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="mo:ObservationAugmentationPoint" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -170,7 +208,9 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="mo:ObservedObject2DGeospatialCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:AltitudeMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ElevationMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ObservedObjectLocationAugmentationPoint" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -203,29 +243,14 @@
       <xs:documentation>A data type for a code describing the standard identity of a track; codes defined by MIL-STD-2525C.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
-      <xs:enumeration value="UNKNOWN">
-        <xs:annotation>
-          <xs:documentation>An identity applied to an evaluated track that has not been identified.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="ASSUMED FRIEND">
         <xs:annotation>
           <xs:documentation>A track which is assumed to be a friend because of its characteristics, behavior, or origin.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SUSPECT">
+      <xs:enumeration value="UNKNOWN">
         <xs:annotation>
-          <xs:documentation>An identity applied to a track that is potentially hostile because of its characteristics, behaviour, origin or nationality.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="JOKER">
-        <xs:annotation>
-          <xs:documentation>A friendly track as a SUSPECT for exercise purposes.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="FAKER">
-        <xs:annotation>
-          <xs:documentation>A friendly track acting as a HOSTILE for exercise purposes.</xs:documentation>
+          <xs:documentation>An identity applied to an evaluated track that has not been identified.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="FRIEND">
@@ -233,14 +258,29 @@
           <xs:documentation>A track belonging to a declared, presumed or recognized friendly nation,  faction or group.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="FAKER">
+        <xs:annotation>
+          <xs:documentation>A friendly track acting as a HOSTILE for exercise purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="HOSTILE">
         <xs:annotation>
           <xs:documentation>A track declared to belong to any opposing nation, party, group, or entity, which by virtue of its behavior or information collected on it such as characteristics, origin or nationality contributes to the threat to friendly forces.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="JOKER">
+        <xs:annotation>
+          <xs:documentation>A friendly track as a SUSPECT for exercise purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="NEUTRAL">
         <xs:annotation>
           <xs:documentation>A track or contact whose characteristics, behaviour, origin or nationality indicate that it is neither supporting nor opposing friendly forces.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUSPECT">
+        <xs:annotation>
+          <xs:documentation>An identity applied to a track that is potentially hostile because of its characteristics, behaviour, origin or nationality.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -402,6 +442,11 @@
       <xs:documentation>A unit of measurement for a speed or velocity.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
+  <xs:element name="AltitudeMeasure" type="nc:LocationHeightMeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A vertical elevation of an object above a surface (as sea level or land) of a planet or natural satellite.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AngleDegreesMeasure" type="nc:AngularMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>An angle in two dimensions measured in degrees (the angle between two half-lines terminating at the same point).</xs:documentation>
@@ -465,6 +510,11 @@
   <xs:element name="EventAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type mo:EventType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EventCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the type or kind of an event.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EventIdentification" type="nc:IdentificationType" nillable="true">
@@ -537,6 +587,11 @@
       <xs:documentation>A Date Time Group when this object was observed with the given information. Not to be confused with the Publish Time, which indicates when the system published the message.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ObservationOPEXCode" type="mo:OPEXCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A designator specifying whether observation was a part of an operation, exercise or simulation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ObservedObject2DGeospatialCoordinate" type="nc:Location2DGeospatialCoordinateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A latitude and longitude of an observed object.</xs:documentation>
@@ -547,9 +602,24 @@
       <xs:documentation>A location of an observed object.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ObservedObjectLocationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:ObservedObjectLocationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ObservedObjectMotion" type="mo:MotionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A speed and course of an observed object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservedObjectStandardIdentityCode" type="mo:StandardIdentityCodeType" substitutionGroup="mo:ObservedObjectStandardIdentityCodeAbstract">
+    <xs:annotation>
+      <xs:documentation>A designator for a standard identity of an observed object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObservedObjectStandardIdentityCodeAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a designator for standard identity codes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ObservedObjectSymbolAbstract" abstract="true">
@@ -567,12 +637,12 @@
       <xs:documentation>An identification of a sensor.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpeedValue" type="mo:SpeedValueType">
+  <xs:element name="SpeedValue" type="mo:SpeedValueType" nillable="true">
     <xs:annotation>
       <xs:documentation>A magnitude of motion (rate of change of position) of an object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Track" type="mo:TrackType">
+  <xs:element name="Track" type="mo:TrackType" nillable="true">
     <xs:annotation>
       <xs:documentation>A series of related contacts displayed on a data display console or other display device.</xs:documentation>
     </xs:annotation>
