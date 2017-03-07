@@ -145,11 +145,6 @@
       <xs:documentation>A data type for compass directions.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="SW">
-        <xs:annotation>
-          <xs:documentation>South West</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="E">
         <xs:annotation>
           <xs:documentation>East</xs:documentation>
@@ -208,6 +203,11 @@
       <xs:enumeration value="SSW">
         <xs:annotation>
           <xs:documentation>South South West</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SW">
+        <xs:annotation>
+          <xs:documentation>South West</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="W">
@@ -445,6 +445,19 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="SystemIdentificationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a number or code assigned to a system to uniquely identify the system.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:IdentificationType">
+        <xs:sequence>
+          <xs:element ref="nc:SystemName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SystemIdentificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="TelephoneNumberType">
     <xs:annotation>
       <xs:documentation>A data type for a telephone number for a telecommunication device.</xs:documentation>
@@ -649,6 +662,16 @@
   <xs:element name="StatusCommentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A comment regarding a status.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SystemIdentificationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for SystemIdentificationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SystemName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the kind or the source of a system identifier.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>

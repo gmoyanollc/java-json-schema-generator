@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tsoe="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nl="http://release.niem.gov/niem/localTerminology/3.0/"
+  xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xmlns:ndmr="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
+  nc:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument"
+  targetNamespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.1.0">
+  
+  <xs:annotation>
+    <xs:documentation>A track observation.</xs:documentation>
+  </xs:annotation>
+  
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+    schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+  <xs:import schemaLocation="../niem/localTerminology/3.0/localTerminology.xsd" 
+    namespace="http://release.niem.gov/niem/localTerminology/3.0/"/>
+  <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+    schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+    schemaLocation="../niem/structures/3.0/structures.xsd"/>
+  <!--<xs:import schemaLocation="../niem/domains/intelligence/3.2/intelligence.xsd" 
+    namespace="http://release.niem.gov/niem/domains/intelligence/3.2/"/>-->
+  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+    schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+  <xs:import schemaLocation="../niem/domains/militaryOperationsRestricted/3.2/moms.xsd" 
+    namespace="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"/>
+  
+  
+  <xs:complexType name="ObservedEventType">
+    <xs:annotation>
+      <xs:documentation> A data type for an observed event.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="ndm:Event" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="ObservedEvent" type="tsoe:ObservedEventType" substitutionGroup="ndm:TrackAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>An observed event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

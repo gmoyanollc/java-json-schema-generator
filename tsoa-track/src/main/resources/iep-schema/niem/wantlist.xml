@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <w:WantList w:release="3.2" w:product="NIEM" w:nillableDefault="true"
   xmlns:w="http://niem.gov/niem/wantlist/2.2"
+  xmlns:intel="http://release.niem.gov/niem/domains/intelligence/3.2/"
   xmlns:j="http://release.niem.gov/niem/domains/jxdm/5.2/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:jc3iedm="http://release.niem.gov/niem/codes/jc3iedm/3.1/"
   xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:moms="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
   xmlns:m="http://release.niem.gov/niem/domains/maritime/3.2/"
   xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/3.2/"
   xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/3.0/"
   xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/">
+  <w:Element w:name="cbrn:RelativeLocation" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="intel:SystemIdentification" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="j:NetworkAddressID" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="jc3iedm:EventCategoryCode" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="m:AngleUnitText" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:AngularMeasureDecimalValue"
     w:isReference="false" w:nillable="false"/>
@@ -30,13 +36,20 @@
     w:isReference="false" w:nillable="true"/>
   <w:Element w:name="mo:Mission" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:Observation" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="mo:ObservedObjectStandardIdentityCode"
+    w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="mo:ObservedObjectStandardIdentityCodeAbstract"
+    w:isReference="false" w:nillable="true"/>
   <w:Element w:name="mo:ObservedObjectSymbolAbstract"
     w:isReference="false" w:nillable="true"/>
   <w:Element w:name="mo:Sensor" w:isReference="false" w:nillable="false"/>
-  <w:Element w:name="mo:SpeedValue" w:isReference="false" w:nillable="false"/>
-  <w:Element w:name="mo:Track" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="mo:SpeedValue" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="mo:Track" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="mo:Unit" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="mo:WGS84LocationCylinder" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="moms:Observer" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="moms:UnitReferenceNumberID" w:isReference="false" w:nillable="true"/>
+  <w:Element w:name="moms:WeaponSystem" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:BinaryURI" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:ContactInformation" w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:ContactTelephoneNumber" w:isReference="false" w:nillable="false"/>
@@ -53,14 +66,380 @@
   <w:Element w:name="nc:LocationHeightVerticalDatumText"
     w:isReference="false" w:nillable="false"/>
   <w:Element w:name="nc:MeasureIntegerValue" w:isReference="false" w:nillable="false"/>
-  <w:Element w:name="nc:MeasurePoint" w:isReference="false" w:nillable="false"/>
+  <w:Element w:name="nc:MeasurePoint" w:isReference="false" w:nillable="true"/>
   <w:Element w:name="nc:Status" w:isReference="false" w:nillable="false"/>
+  <w:Type w:name="cbrn:OriginType" w:isRequested="false">
+    <w:ElementInType w:name="cbrn:OriginAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+  </w:Type>
   <w:Type w:name="cbrn:RelativeLocationType" w:isRequested="false">
+    <w:ElementInType w:name="cbrn:RelativeLocationAzimuthValue"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
+    <w:ElementInType w:name="cbrn:RelativeLocationInclinationValue"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
     <w:ElementInType w:name="cbrn:DistanceValue" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="1"/>
     <w:ElementInType w:name="cbrn:RelativeLocationAugmentationPoint"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
+  <w:Type w:name="jc3iedm:EventCategoryCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="ABDICA"/>
+    <w:Facet w:facet="enumeration" w:value="ACCAIR"/>
+    <w:Facet w:facet="enumeration" w:value="ACCDNT"/>
+    <w:Facet w:facet="enumeration" w:value="ACCMNE"/>
+    <w:Facet w:facet="enumeration" w:value="ACCTRF"/>
+    <w:Facet w:facet="enumeration" w:value="ACCWPN"/>
+    <w:Facet w:facet="enumeration" w:value="ACCWRK"/>
+    <w:Facet w:facet="enumeration" w:value="ACRLOS"/>
+    <w:Facet w:facet="enumeration" w:value="ADVANC"/>
+    <w:Facet w:facet="enumeration" w:value="AERENG"/>
+    <w:Facet w:facet="enumeration" w:value="AERSHO"/>
+    <w:Facet w:facet="enumeration" w:value="AIRCRS"/>
+    <w:Facet w:facet="enumeration" w:value="AIRLAU"/>
+    <w:Facet w:facet="enumeration" w:value="AIRLND"/>
+    <w:Facet w:facet="enumeration" w:value="AIRVIO"/>
+    <w:Facet w:facet="enumeration" w:value="ALRCAN"/>
+    <w:Facet w:facet="enumeration" w:value="AMBUSH"/>
+    <w:Facet w:facet="enumeration" w:value="AMPH"/>
+    <w:Facet w:facet="enumeration" w:value="ARASLT"/>
+    <w:Facet w:facet="enumeration" w:value="ARBNAS"/>
+    <w:Facet w:facet="enumeration" w:value="ARMPRD"/>
+    <w:Facet w:facet="enumeration" w:value="ARMTRD"/>
+    <w:Facet w:facet="enumeration" w:value="ARRLGL"/>
+    <w:Facet w:facet="enumeration" w:value="ARROBS"/>
+    <w:Facet w:facet="enumeration" w:value="ARSON"/>
+    <w:Facet w:facet="enumeration" w:value="ARTFIR"/>
+    <w:Facet w:facet="enumeration" w:value="ASSMBL"/>
+    <w:Facet w:facet="enumeration" w:value="ASSNTN"/>
+    <w:Facet w:facet="enumeration" w:value="ASTCRM"/>
+    <w:Facet w:facet="enumeration" w:value="ATMPOL"/>
+    <w:Facet w:facet="enumeration" w:value="ATMRDR"/>
+    <w:Facet w:facet="enumeration" w:value="ATRAPE"/>
+    <w:Facet w:facet="enumeration" w:value="ATRBRY"/>
+    <w:Facet w:facet="enumeration" w:value="ATSCDE"/>
+    <w:Facet w:facet="enumeration" w:value="ATTACK"/>
+    <w:Facet w:facet="enumeration" w:value="ATTDVR"/>
+    <w:Facet w:facet="enumeration" w:value="ATTEL"/>
+    <w:Facet w:facet="enumeration" w:value="ATTMN"/>
+    <w:Facet w:facet="enumeration" w:value="ATTSPT"/>
+    <w:Facet w:facet="enumeration" w:value="AVOIDN"/>
+    <w:Facet w:facet="enumeration" w:value="BBYTRD"/>
+    <w:Facet w:facet="enumeration" w:value="BCESC"/>
+    <w:Facet w:facet="enumeration" w:value="BCFRCD"/>
+    <w:Facet w:facet="enumeration" w:value="BCILGL"/>
+    <w:Facet w:facet="enumeration" w:value="BCNTPL"/>
+    <w:Facet w:facet="enumeration" w:value="BCPLND"/>
+    <w:Facet w:facet="enumeration" w:value="BCSRVL"/>
+    <w:Facet w:facet="enumeration" w:value="BLDUP"/>
+    <w:Facet w:facet="enumeration" w:value="BLOCKN"/>
+    <w:Facet w:facet="enumeration" w:value="BLYLND"/>
+    <w:Facet w:facet="enumeration" w:value="BMBACC"/>
+    <w:Facet w:facet="enumeration" w:value="BMBDLB"/>
+    <w:Facet w:facet="enumeration" w:value="BOMBNG"/>
+    <w:Facet w:facet="enumeration" w:value="BORINC"/>
+    <w:Facet w:facet="enumeration" w:value="BORRAI"/>
+    <w:Facet w:facet="enumeration" w:value="BREACH"/>
+    <w:Facet w:facet="enumeration" w:value="BRNOBJ"/>
+    <w:Facet w:facet="enumeration" w:value="BYPASS"/>
+    <w:Facet w:facet="enumeration" w:value="CANLSE"/>
+    <w:Facet w:facet="enumeration" w:value="CAPTUR"/>
+    <w:Facet w:facet="enumeration" w:value="CARLNC"/>
+    <w:Facet w:facet="enumeration" w:value="CARREC"/>
+    <w:Facet w:facet="enumeration" w:value="CBRN"/>
+    <w:Facet w:facet="enumeration" w:value="CDWDEX"/>
+    <w:Facet w:facet="enumeration" w:value="CEREMN"/>
+    <w:Facet w:facet="enumeration" w:value="CIVDIS"/>
+    <w:Facet w:facet="enumeration" w:value="CIVDMI"/>
+    <w:Facet w:facet="enumeration" w:value="CIVDML"/>
+    <w:Facet w:facet="enumeration" w:value="CIVUNR"/>
+    <w:Facet w:facet="enumeration" w:value="CIVWAR"/>
+    <w:Facet w:facet="enumeration" w:value="CLRAIR"/>
+    <w:Facet w:facet="enumeration" w:value="CLRLND"/>
+    <w:Facet w:facet="enumeration" w:value="CLROBS"/>
+    <w:Facet w:facet="enumeration" w:value="CLRRAD"/>
+    <w:Facet w:facet="enumeration" w:value="CNDCNF"/>
+    <w:Facet w:facet="enumeration" w:value="CNDMED"/>
+    <w:Facet w:facet="enumeration" w:value="CNDRCR"/>
+    <w:Facet w:facet="enumeration" w:value="CNDSCL"/>
+    <w:Facet w:facet="enumeration" w:value="CNDSPT"/>
+    <w:Facet w:facet="enumeration" w:value="CNFSTN"/>
+    <w:Facet w:facet="enumeration" w:value="CNFWPS"/>
+    <w:Facet w:facet="enumeration" w:value="CNPRFR"/>
+    <w:Facet w:facet="enumeration" w:value="CNRDSV"/>
+    <w:Facet w:facet="enumeration" w:value="CNRWPS"/>
+    <w:Facet w:facet="enumeration" w:value="CNSLDT"/>
+    <w:Facet w:facet="enumeration" w:value="COLMID"/>
+    <w:Facet w:facet="enumeration" w:value="COLOBS"/>
+    <w:Facet w:facet="enumeration" w:value="COMACT"/>
+    <w:Facet w:facet="enumeration" w:value="COMDEA"/>
+    <w:Facet w:facet="enumeration" w:value="COMDIS"/>
+    <w:Facet w:facet="enumeration" w:value="COMINT"/>
+    <w:Facet w:facet="enumeration" w:value="COMOUT"/>
+    <w:Facet w:facet="enumeration" w:value="COMRES"/>
+    <w:Facet w:facet="enumeration" w:value="CONSTN"/>
+    <w:Facet w:facet="enumeration" w:value="CONTAN"/>
+    <w:Facet w:facet="enumeration" w:value="COOPER"/>
+    <w:Facet w:facet="enumeration" w:value="COUPDE"/>
+    <w:Facet w:facet="enumeration" w:value="COVERN"/>
+    <w:Facet w:facet="enumeration" w:value="CRIMIN"/>
+    <w:Facet w:facet="enumeration" w:value="CRMHMN"/>
+    <w:Facet w:facet="enumeration" w:value="CROSSN"/>
+    <w:Facet w:facet="enumeration" w:value="CTRATK"/>
+    <w:Facet w:facet="enumeration" w:value="CTRBYF"/>
+    <w:Facet w:facet="enumeration" w:value="CTRFIR"/>
+    <w:Facet w:facet="enumeration" w:value="DAZZLE"/>
+    <w:Facet w:facet="enumeration" w:value="DCPTEL"/>
+    <w:Facet w:facet="enumeration" w:value="DCPTIN"/>
+    <w:Facet w:facet="enumeration" w:value="DEACST"/>
+    <w:Facet w:facet="enumeration" w:value="DEASPL"/>
+    <w:Facet w:facet="enumeration" w:value="DEFEAT"/>
+    <w:Facet w:facet="enumeration" w:value="DEFEND"/>
+    <w:Facet w:facet="enumeration" w:value="DEFLCT"/>
+    <w:Facet w:facet="enumeration" w:value="DELAYN"/>
+    <w:Facet w:facet="enumeration" w:value="DEMO"/>
+    <w:Facet w:facet="enumeration" w:value="DENYNG"/>
+    <w:Facet w:facet="enumeration" w:value="DEPLOY"/>
+    <w:Facet w:facet="enumeration" w:value="DEPORT"/>
+    <w:Facet w:facet="enumeration" w:value="DISEAS"/>
+    <w:Facet w:facet="enumeration" w:value="DISENG"/>
+    <w:Facet w:facet="enumeration" w:value="DIVRSN"/>
+    <w:Facet w:facet="enumeration" w:value="DLBATK"/>
+    <w:Facet w:facet="enumeration" w:value="DMNSTR"/>
+    <w:Facet w:facet="enumeration" w:value="DRGCNS"/>
+    <w:Facet w:facet="enumeration" w:value="DRGDST"/>
+    <w:Facet w:facet="enumeration" w:value="DRGMNF"/>
+    <w:Facet w:facet="enumeration" w:value="DRGOPR"/>
+    <w:Facet w:facet="enumeration" w:value="DRGSTR"/>
+    <w:Facet w:facet="enumeration" w:value="DRGTRN"/>
+    <w:Facet w:facet="enumeration" w:value="DROUGH"/>
+    <w:Facet w:facet="enumeration" w:value="DRVSHT"/>
+    <w:Facet w:facet="enumeration" w:value="DSRPTN"/>
+    <w:Facet w:facet="enumeration" w:value="DSTRBT"/>
+    <w:Facet w:facet="enumeration" w:value="DSTRYN"/>
+    <w:Facet w:facet="enumeration" w:value="DTHNAT"/>
+    <w:Facet w:facet="enumeration" w:value="EARTHQ"/>
+    <w:Facet w:facet="enumeration" w:value="EARWAR"/>
+    <w:Facet w:facet="enumeration" w:value="ELCEMS"/>
+    <w:Facet w:facet="enumeration" w:value="ELCVIO"/>
+    <w:Facet w:facet="enumeration" w:value="ELCWAR"/>
+    <w:Facet w:facet="enumeration" w:value="ENGAGE"/>
+    <w:Facet w:facet="enumeration" w:value="ENMCON"/>
+    <w:Facet w:facet="enumeration" w:value="ENVLPN"/>
+    <w:Facet w:facet="enumeration" w:value="EPEDEM"/>
+    <w:Facet w:facet="enumeration" w:value="EQPFAI"/>
+    <w:Facet w:facet="enumeration" w:value="ESCPNG"/>
+    <w:Facet w:facet="enumeration" w:value="ESCRTN"/>
+    <w:Facet w:facet="enumeration" w:value="EVACTN"/>
+    <w:Facet w:facet="enumeration" w:value="EXECTN"/>
+    <w:Facet w:facet="enumeration" w:value="EXPLOS"/>
+    <w:Facet w:facet="enumeration" w:value="EXPLTN"/>
+    <w:Facet w:facet="enumeration" w:value="FAMINE"/>
+    <w:Facet w:facet="enumeration" w:value="FIRE"/>
+    <w:Facet w:facet="enumeration" w:value="FIX"/>
+    <w:Facet w:facet="enumeration" w:value="FIXACO"/>
+    <w:Facet w:facet="enumeration" w:value="FIXELM"/>
+    <w:Facet w:facet="enumeration" w:value="FIXELO"/>
+    <w:Facet w:facet="enumeration" w:value="FLOOD"/>
+    <w:Facet w:facet="enumeration" w:value="FOLASS"/>
+    <w:Facet w:facet="enumeration" w:value="FOLSPT"/>
+    <w:Facet w:facet="enumeration" w:value="FRCLND"/>
+    <w:Facet w:facet="enumeration" w:value="FRFGTN"/>
+    <w:Facet w:facet="enumeration" w:value="FRNDFR"/>
+    <w:Facet w:facet="enumeration" w:value="GENCHS"/>
+    <w:Facet w:facet="enumeration" w:value="GENOCD"/>
+    <w:Facet w:facet="enumeration" w:value="GOVCOL"/>
+    <w:Facet w:facet="enumeration" w:value="GUARDN"/>
+    <w:Facet w:facet="enumeration" w:value="GUNATA"/>
+    <w:Facet w:facet="enumeration" w:value="HARASS"/>
+    <w:Facet w:facet="enumeration" w:value="HASTY"/>
+    <w:Facet w:facet="enumeration" w:value="HIDING"/>
+    <w:Facet w:facet="enumeration" w:value="HIJACK"/>
+    <w:Facet w:facet="enumeration" w:value="HJCKBT"/>
+    <w:Facet w:facet="enumeration" w:value="HJCKLV"/>
+    <w:Facet w:facet="enumeration" w:value="HJCKPL"/>
+    <w:Facet w:facet="enumeration" w:value="HLDDEF"/>
+    <w:Facet w:facet="enumeration" w:value="HLDOFF"/>
+    <w:Facet w:facet="enumeration" w:value="HOLIDY"/>
+    <w:Facet w:facet="enumeration" w:value="HRVIOL"/>
+    <w:Facet w:facet="enumeration" w:value="HSTTKN"/>
+    <w:Facet w:facet="enumeration" w:value="HUNTNG"/>
+    <w:Facet w:facet="enumeration" w:value="IDENT"/>
+    <w:Facet w:facet="enumeration" w:value="ILLUMN"/>
+    <w:Facet w:facet="enumeration" w:value="INDESP"/>
+    <w:Facet w:facet="enumeration" w:value="INDFIR"/>
+    <w:Facet w:facet="enumeration" w:value="INDSHO"/>
+    <w:Facet w:facet="enumeration" w:value="INFLTN"/>
+    <w:Facet w:facet="enumeration" w:value="INTCPN"/>
+    <w:Facet w:facet="enumeration" w:value="INTDCT"/>
+    <w:Facet w:facet="enumeration" w:value="INTMDN"/>
+    <w:Facet w:facet="enumeration" w:value="INVASI"/>
+    <w:Facet w:facet="enumeration" w:value="ISOLTN"/>
+    <w:Facet w:facet="enumeration" w:value="ISSMDA"/>
+    <w:Facet w:facet="enumeration" w:value="ISSMDD"/>
+    <w:Facet w:facet="enumeration" w:value="ISSPRS"/>
+    <w:Facet w:facet="enumeration" w:value="JAMMNG"/>
+    <w:Facet w:facet="enumeration" w:value="KIDNAP"/>
+    <w:Facet w:facet="enumeration" w:value="LABSTR"/>
+    <w:Facet w:facet="enumeration" w:value="LEAGR"/>
+    <w:Facet w:facet="enumeration" w:value="LOCELC"/>
+    <w:Facet w:facet="enumeration" w:value="LOCTNG"/>
+    <w:Facet w:facet="enumeration" w:value="LOOTNG"/>
+    <w:Facet w:facet="enumeration" w:value="LTRBME"/>
+    <w:Facet w:facet="enumeration" w:value="LTRBMI"/>
+    <w:Facet w:facet="enumeration" w:value="MAINTN"/>
+    <w:Facet w:facet="enumeration" w:value="MARKNG"/>
+    <w:Facet w:facet="enumeration" w:value="MARLAW"/>
+    <w:Facet w:facet="enumeration" w:value="MASFOR"/>
+    <w:Facet w:facet="enumeration" w:value="MEDEVC"/>
+    <w:Facet w:facet="enumeration" w:value="MILMOB"/>
+    <w:Facet w:facet="enumeration" w:value="MINLAY"/>
+    <w:Facet w:facet="enumeration" w:value="MISSIG"/>
+    <w:Facet w:facet="enumeration" w:value="MISSTG"/>
+    <w:Facet w:facet="enumeration" w:value="MOVING"/>
+    <w:Facet w:facet="enumeration" w:value="MRTFIR"/>
+    <w:Facet w:facet="enumeration" w:value="MURDER"/>
+    <w:Facet w:facet="enumeration" w:value="MUTASS"/>
+    <w:Facet w:facet="enumeration" w:value="NATDIS"/>
+    <w:Facet w:facet="enumeration" w:value="NATELC"/>
+    <w:Facet w:facet="enumeration" w:value="NATEMG"/>
+    <w:Facet w:facet="enumeration" w:value="NAVGUN"/>
+    <w:Facet w:facet="enumeration" w:value="NAVPLF"/>
+    <w:Facet w:facet="enumeration" w:value="NETSEI"/>
+    <w:Facet w:facet="enumeration" w:value="NOS"/>
+    <w:Facet w:facet="enumeration" w:value="NTRCHM"/>
+    <w:Facet w:facet="enumeration" w:value="NTRCOM"/>
+    <w:Facet w:facet="enumeration" w:value="NTREXP"/>
+    <w:Facet w:facet="enumeration" w:value="OBSCUR"/>
+    <w:Facet w:facet="enumeration" w:value="OBSRNG"/>
+    <w:Facet w:facet="enumeration" w:value="OCCPNG"/>
+    <w:Facet w:facet="enumeration" w:value="OFFCOF"/>
+    <w:Facet w:facet="enumeration" w:value="ORGCRM"/>
+    <w:Facet w:facet="enumeration" w:value="PCKTNG"/>
+    <w:Facet w:facet="enumeration" w:value="PEAAGR"/>
+    <w:Facet w:facet="enumeration" w:value="PEACON"/>
+    <w:Facet w:facet="enumeration" w:value="PENTRT"/>
+    <w:Facet w:facet="enumeration" w:value="PETSPL"/>
+    <w:Facet w:facet="enumeration" w:value="POISON"/>
+    <w:Facet w:facet="enumeration" w:value="POLDEM"/>
+    <w:Facet w:facet="enumeration" w:value="POLEXE"/>
+    <w:Facet w:facet="enumeration" w:value="POWEXC"/>
+    <w:Facet w:facet="enumeration" w:value="POWRET"/>
+    <w:Facet w:facet="enumeration" w:value="PROCUR"/>
+    <w:Facet w:facet="enumeration" w:value="PROTEL"/>
+    <w:Facet w:facet="enumeration" w:value="PRVACC"/>
+    <w:Facet w:facet="enumeration" w:value="PRVAGR"/>
+    <w:Facet w:facet="enumeration" w:value="PRVBDD"/>
+    <w:Facet w:facet="enumeration" w:value="PRVCMP"/>
+    <w:Facet w:facet="enumeration" w:value="PRVCNS"/>
+    <w:Facet w:facet="enumeration" w:value="PRVDCN"/>
+    <w:Facet w:facet="enumeration" w:value="PRVEDU"/>
+    <w:Facet w:facet="enumeration" w:value="PRVHLT"/>
+    <w:Facet w:facet="enumeration" w:value="PRVHSN"/>
+    <w:Facet w:facet="enumeration" w:value="PRVINF"/>
+    <w:Facet w:facet="enumeration" w:value="PRVLND"/>
+    <w:Facet w:facet="enumeration" w:value="PRVRPR"/>
+    <w:Facet w:facet="enumeration" w:value="PRVSCY"/>
+    <w:Facet w:facet="enumeration" w:value="PRVSHL"/>
+    <w:Facet w:facet="enumeration" w:value="PRVSTG"/>
+    <w:Facet w:facet="enumeration" w:value="PRVTRS"/>
+    <w:Facet w:facet="enumeration" w:value="PRXBMB"/>
+    <w:Facet w:facet="enumeration" w:value="PSTLNC"/>
+    <w:Facet w:facet="enumeration" w:value="PSYOP"/>
+    <w:Facet w:facet="enumeration" w:value="PTRLNG"/>
+    <w:Facet w:facet="enumeration" w:value="PUBMDA"/>
+    <w:Facet w:facet="enumeration" w:value="PUBMDD"/>
+    <w:Facet w:facet="enumeration" w:value="PUBPRS"/>
+    <w:Facet w:facet="enumeration" w:value="PURSNG"/>
+    <w:Facet w:facet="enumeration" w:value="RACIAL"/>
+    <w:Facet w:facet="enumeration" w:value="RAPE"/>
+    <w:Facet w:facet="enumeration" w:value="RECCE"/>
+    <w:Facet w:facet="enumeration" w:value="RECCEF"/>
+    <w:Facet w:facet="enumeration" w:value="RECNSN"/>
+    <w:Facet w:facet="enumeration" w:value="RECPRN"/>
+    <w:Facet w:facet="enumeration" w:value="RECVRN"/>
+    <w:Facet w:facet="enumeration" w:value="REDPLN"/>
+    <w:Facet w:facet="enumeration" w:value="REFMVM"/>
+    <w:Facet w:facet="enumeration" w:value="REINFN"/>
+    <w:Facet w:facet="enumeration" w:value="RELDEM"/>
+    <w:Facet w:facet="enumeration" w:value="RELVIO"/>
+    <w:Facet w:facet="enumeration" w:value="RELWAR"/>
+    <w:Facet w:facet="enumeration" w:value="REORGN"/>
+    <w:Facet w:facet="enumeration" w:value="REPAIR"/>
+    <w:Facet w:facet="enumeration" w:value="RESPLN"/>
+    <w:Facet w:facet="enumeration" w:value="RESTNG"/>
+    <w:Facet w:facet="enumeration" w:value="RETAIN"/>
+    <w:Facet w:facet="enumeration" w:value="RETIRE"/>
+    <w:Facet w:facet="enumeration" w:value="REVOLU"/>
+    <w:Facet w:facet="enumeration" w:value="RIOT"/>
+    <w:Facet w:facet="enumeration" w:value="RKTFIR"/>
+    <w:Facet w:facet="enumeration" w:value="RLFPLC"/>
+    <w:Facet w:facet="enumeration" w:value="RNDZVS"/>
+    <w:Facet w:facet="enumeration" w:value="ROBERY"/>
+    <w:Facet w:facet="enumeration" w:value="SABOTG"/>
+    <w:Facet w:facet="enumeration" w:value="SCRNNG"/>
+    <w:Facet w:facet="enumeration" w:value="SECCMP"/>
+    <w:Facet w:facet="enumeration" w:value="SECCOU"/>
+    <w:Facet w:facet="enumeration" w:value="SECRNG"/>
+    <w:Facet w:facet="enumeration" w:value="SECVIO"/>
+    <w:Facet w:facet="enumeration" w:value="SEIZNG"/>
+    <w:Facet w:facet="enumeration" w:value="SHOTNG"/>
+    <w:Facet w:facet="enumeration" w:value="SINKIN"/>
+    <w:Facet w:facet="enumeration" w:value="SNPATK"/>
+    <w:Facet w:facet="enumeration" w:value="SPACAC"/>
+    <w:Facet w:facet="enumeration" w:value="SPYING"/>
+    <w:Facet w:facet="enumeration" w:value="SRVADV"/>
+    <w:Facet w:facet="enumeration" w:value="SRVBRD"/>
+    <w:Facet w:facet="enumeration" w:value="SRVBRK"/>
+    <w:Facet w:facet="enumeration" w:value="SRVFLK"/>
+    <w:Facet w:facet="enumeration" w:value="SRVINP"/>
+    <w:Facet w:facet="enumeration" w:value="SRVMNB"/>
+    <w:Facet w:facet="enumeration" w:value="SRVRGD"/>
+    <w:Facet w:facet="enumeration" w:value="SRVRSF"/>
+    <w:Facet w:facet="enumeration" w:value="STAWAR"/>
+    <w:Facet w:facet="enumeration" w:value="STNGUP"/>
+    <w:Facet w:facet="enumeration" w:value="STRFAR"/>
+    <w:Facet w:facet="enumeration" w:value="STRIKE"/>
+    <w:Facet w:facet="enumeration" w:value="SUICDE"/>
+    <w:Facet w:facet="enumeration" w:value="SUPRSN"/>
+    <w:Facet w:facet="enumeration" w:value="SUPRTN"/>
+    <w:Facet w:facet="enumeration" w:value="SURREN"/>
+    <w:Facet w:facet="enumeration" w:value="SURVEL"/>
+    <w:Facet w:facet="enumeration" w:value="SUSHOS"/>
+    <w:Facet w:facet="enumeration" w:value="TERR"/>
+    <w:Facet w:facet="enumeration" w:value="THREAT"/>
+    <w:Facet w:facet="enumeration" w:value="TORTUR"/>
+    <w:Facet w:facet="enumeration" w:value="TRBAGT"/>
+    <w:Facet w:facet="enumeration" w:value="TRBBLL"/>
+    <w:Facet w:facet="enumeration" w:value="TRBHAR"/>
+    <w:Facet w:facet="enumeration" w:value="TRBHLG"/>
+    <w:Facet w:facet="enumeration" w:value="TRBINC"/>
+    <w:Facet w:facet="enumeration" w:value="TRBINT"/>
+    <w:Facet w:facet="enumeration" w:value="TREVIO"/>
+    <w:Facet w:facet="enumeration" w:value="TRNSPN"/>
+    <w:Facet w:facet="enumeration" w:value="TRVRSN"/>
+    <w:Facet w:facet="enumeration" w:value="TURNNG"/>
+    <w:Facet w:facet="enumeration" w:value="UXODSC"/>
+    <w:Facet w:facet="enumeration" w:value="VANDAL"/>
+    <w:Facet w:facet="enumeration" w:value="VERFYN"/>
+    <w:Facet w:facet="enumeration" w:value="VOLCAN"/>
+    <w:Facet w:facet="enumeration" w:value="WARALE"/>
+    <w:Facet w:facet="enumeration" w:value="WARCON"/>
+    <w:Facet w:facet="enumeration" w:value="WARCRM"/>
+    <w:Facet w:facet="enumeration" w:value="WATPOL"/>
+    <w:Facet w:facet="enumeration" w:value="WDRPRS"/>
+    <w:Facet w:facet="enumeration" w:value="WITDRL"/>
+    <w:Facet w:facet="enumeration" w:value="WITNSN"/>
+    <w:Facet w:facet="enumeration" w:value="WPNFIR"/>
+  </w:Type>
+  <w:Type w:name="m:USMTFEnvironmentCategoryCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="AIR"/>
+    <w:Facet w:facet="enumeration" w:value="LND"/>
+    <w:Facet w:facet="enumeration" w:value="SPC"/>
+    <w:Facet w:facet="enumeration" w:value="SUB"/>
+    <w:Facet w:facet="enumeration" w:value="SUR"/>
+    <w:Facet w:facet="enumeration" w:value="UNK"/>
+  </w:Type>
+  <w:Type w:name="m:USMTFEnvironmentCategoryCodeType" w:isRequested="true"/>
   <w:Type w:name="mo:CourseAngleDegreesMeasureType" w:isRequested="false">
     <w:ElementInType w:name="mo:AngleDegreesMeasure"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
@@ -101,23 +480,36 @@
     <w:ElementInType w:name="mo:SpeedValue" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
-  <w:Type w:name="mo:ObservationType" w:isRequested="false">
+  <w:Type w:name="mo:OPEXCodeSimpleType" w:isRequested="false">
+    <w:Facet w:facet="enumeration" w:value="EXERCISE"/>
+    <w:Facet w:facet="enumeration" w:value="OPERATIONS"/>
+    <w:Facet w:facet="enumeration" w:value="SIMULATION"/>
+    <w:Facet w:facet="enumeration" w:value="TEST"/>
+  </w:Type>
+  <w:Type w:name="mo:OPEXCodeType" w:isRequested="true"/>
+  <w:Type w:name="mo:ObservationType" w:isRequested="true">
     <w:ElementInType w:name="mo:ObservedObjectLocation"
-      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
     <w:ElementInType w:name="mo:ObservedObjectMotion"
-      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
     <w:ElementInType w:name="mo:ObservationDateTime"
-      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+      w:isReference="false" w:minOccurs="1" w:maxOccurs="1"/>
+    <w:ElementInType w:name="mo:ObservationOPEXCode"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
     <w:ElementInType w:name="mo:ObservedObjectSymbolAbstract"
-      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
     <w:ElementInType w:name="mo:ObservationAugmentationPoint"
-      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
   </w:Type>
   <w:Type w:name="mo:ObservedObjectLocationType" w:isRequested="false">
     <w:ElementInType w:name="mo:ObservedObject2DGeospatialCoordinate"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:AltitudeMeasure" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
     <w:ElementInType w:name="mo:ElevationMeasure" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="mo:ObservedObjectLocationAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="1"/>
   </w:Type>
   <w:Type w:name="mo:SensorType" w:isRequested="false">
     <w:ElementInType w:name="mo:SensorIdentification"
@@ -127,14 +519,14 @@
     <w:AttributeInType w:name="mo:speedUnitCode" w:minOccurs="0" w:maxOccurs="1"/>
   </w:Type>
   <w:Type w:name="mo:StandardIdentityCodeSimpleType" w:isRequested="false">
-    <w:Facet w:facet="enumeration" w:value="UNKNOWN"/>
     <w:Facet w:facet="enumeration" w:value="ASSUMED FRIEND"/>
-    <w:Facet w:facet="enumeration" w:value="SUSPECT"/>
-    <w:Facet w:facet="enumeration" w:value="JOKER"/>
-    <w:Facet w:facet="enumeration" w:value="FAKER"/>
+    <w:Facet w:facet="enumeration" w:value="UNKNOWN"/>
     <w:Facet w:facet="enumeration" w:value="FRIEND"/>
+    <w:Facet w:facet="enumeration" w:value="FAKER"/>
     <w:Facet w:facet="enumeration" w:value="HOSTILE"/>
+    <w:Facet w:facet="enumeration" w:value="JOKER"/>
     <w:Facet w:facet="enumeration" w:value="NEUTRAL"/>
+    <w:Facet w:facet="enumeration" w:value="SUSPECT"/>
   </w:Type>
   <w:Type w:name="mo:StandardIdentityCodeType" w:isRequested="true"/>
   <w:Type w:name="mo:TrackType" w:isRequested="false">
@@ -161,6 +553,14 @@
     <w:ElementInType w:name="gml:Point" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
+  <w:Type w:name="moms:ObserverType" w:isRequested="false">
+    <w:ElementInType w:name="moms:ObserverAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
+  <w:Type w:name="moms:WeaponSystemType" w:isRequested="false">
+    <w:ElementInType w:name="moms:WeaponSystemAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
   <w:Type w:name="nc:AngularMeasureType" w:isRequested="false">
     <w:ElementInType w:name="nc:AngularDegreeValue"
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
@@ -186,7 +586,6 @@
       w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
   <w:Type w:name="nc:DirectionCodeSimpleType" w:isRequested="false">
-    <w:Facet w:facet="enumeration" w:value="SW"/>
     <w:Facet w:facet="enumeration" w:value="E"/>
     <w:Facet w:facet="enumeration" w:value="ENE"/>
     <w:Facet w:facet="enumeration" w:value="ESE"/>
@@ -199,6 +598,7 @@
     <w:Facet w:facet="enumeration" w:value="SE"/>
     <w:Facet w:facet="enumeration" w:value="SSE"/>
     <w:Facet w:facet="enumeration" w:value="SSW"/>
+    <w:Facet w:facet="enumeration" w:value="SW"/>
     <w:Facet w:facet="enumeration" w:value="W"/>
     <w:Facet w:facet="enumeration" w:value="WNW"/>
     <w:Facet w:facet="enumeration" w:value="WSW"/>
@@ -252,87 +652,93 @@
     <w:ElementInType w:name="nc:StatusCommentText" w:isReference="false"
       w:minOccurs="0" w:maxOccurs="unbounded"/>
   </w:Type>
+  <w:Type w:name="nc:SystemIdentificationType" w:isRequested="false">
+    <w:ElementInType w:name="nc:SystemName" w:isReference="false"
+      w:minOccurs="0" w:maxOccurs="unbounded"/>
+    <w:ElementInType w:name="nc:SystemIdentificationAugmentationPoint"
+      w:isReference="false" w:minOccurs="0" w:maxOccurs="unbounded"/>
+  </w:Type>
   <w:Type w:name="nga:DirectionDatumCodeSimpleType" w:isRequested="false">
     <w:Facet w:facet="enumeration" w:value="geodetic"/>
-    <w:Facet w:facet="enumeration" w:value="Magnetic"/>
-    <w:Facet w:facet="enumeration" w:value="militaryGrid"/>
     <w:Facet w:facet="enumeration" w:value="Relative"/>
+    <w:Facet w:facet="enumeration" w:value="militaryGrid"/>
+    <w:Facet w:facet="enumeration" w:value="Magnetic"/>
   </w:Type>
   <w:Type w:name="nga:VerticalDatumCodeSimpleType" w:isRequested="false">
-    <w:Facet w:facet="enumeration" w:value="ngvd29"/>
-    <w:Facet w:facet="enumeration" w:value="highestAstronomicalTide"/>
-    <w:Facet w:facet="enumeration" w:value="lowerLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="wgs84Egm96Geoid"/>
-    <w:Facet w:facet="enumeration" w:value="highWater"/>
-    <w:Facet w:facet="enumeration" w:value="meanSeaLevel"/>
-    <w:Facet w:facet="enumeration" w:value="lowestLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="springTide"/>
-    <w:Facet w:facet="enumeration" w:value="meanHighWaterNeaps"/>
-    <w:Facet w:facet="enumeration" w:value="neapTide"/>
-    <w:Facet w:facet="enumeration" w:value="meanHigherHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="highestHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="approxMeanLowerLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="approxMeanLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="navd88"/>
-    <w:Facet w:facet="enumeration" w:value="lowWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="meanLowerLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="wgs84Ellipsoid"/>
-    <w:Facet w:facet="enumeration" w:value="approxLowestAstronomTide"/>
-    <w:Facet w:facet="enumeration" w:value="waterLevel"/>
-    <w:Facet w:facet="enumeration" w:value="highWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="indianSpringHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="nearlyLowestLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="lowestLowWaterSprings"/>
     <w:Facet w:facet="enumeration" w:value="higherHighWaterLargeTide"/>
-    <w:Facet w:facet="enumeration" w:value="wgs84Egm08Geoid"/>
-    <w:Facet w:facet="enumeration" w:value="lowWater"/>
-    <w:Facet w:facet="enumeration" w:value="groundLevel"/>
-    <w:Facet w:facet="enumeration" w:value="approxMeanSeaLevel"/>
-    <w:Facet w:facet="enumeration" w:value="lowestAstronomicalTide"/>
-    <w:Facet w:facet="enumeration" w:value="meanWaterLevel"/>
-    <w:Facet w:facet="enumeration" w:value="meanHigherHighWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="approxMeanLowWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="equinoctialSpringLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="higherHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="igld1985"/>
-    <w:Facet w:facet="enumeration" w:value="indianSpringLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="lowerLowWaterLargeTide"/>
-    <w:Facet w:facet="enumeration" w:value="meanHighWater"/>
-    <w:Facet w:facet="enumeration" w:value="meanHighWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="highestHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="indianSpringHighWater"/>
     <w:Facet w:facet="enumeration" w:value="meanLowerLowWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="lowWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="wgs84Egm08Geoid"/>
+    <w:Facet w:facet="enumeration" w:value="indianSpringLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="lowerLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="approxMeanLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="ngvd29"/>
     <w:Facet w:facet="enumeration" w:value="meanLowWater"/>
-    <w:Facet w:facet="enumeration" w:value="meanLowWaterNeaps"/>
-    <w:Facet w:facet="enumeration" w:value="meanLowWaterSprings"/>
-    <w:Facet w:facet="enumeration" w:value="meanTideLevel"/>
+    <w:Facet w:facet="enumeration" w:value="meanHighWaterNeaps"/>
+    <w:Facet w:facet="enumeration" w:value="meanHigherHighWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="igld1985"/>
+    <w:Facet w:facet="enumeration" w:value="lowestLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="neapTide"/>
+    <w:Facet w:facet="enumeration" w:value="navd88"/>
+    <w:Facet w:facet="enumeration" w:value="highWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="wgs84Ellipsoid"/>
+    <w:Facet w:facet="enumeration" w:value="meanHigherHighWater"/>
     <w:Facet w:facet="enumeration" w:value="nearlyHighestHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="higherHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="meanTideLevel"/>
+    <w:Facet w:facet="enumeration" w:value="approxMeanLowerLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="meanLowerLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="highWater"/>
+    <w:Facet w:facet="enumeration" w:value="highestAstronomicalTide"/>
+    <w:Facet w:facet="enumeration" w:value="meanHighWater"/>
+    <w:Facet w:facet="enumeration" w:value="lowestLowWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="meanSeaLevel"/>
+    <w:Facet w:facet="enumeration" w:value="lowerLowWaterLargeTide"/>
+    <w:Facet w:facet="enumeration" w:value="meanWaterLevel"/>
+    <w:Facet w:facet="enumeration" w:value="lowestAstronomicalTide"/>
+    <w:Facet w:facet="enumeration" w:value="meanLowWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="approxMeanLowWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="approxMeanSeaLevel"/>
+    <w:Facet w:facet="enumeration" w:value="wgs84Egm96Geoid"/>
+    <w:Facet w:facet="enumeration" w:value="springTide"/>
+    <w:Facet w:facet="enumeration" w:value="approxLowestAstronomTide"/>
+    <w:Facet w:facet="enumeration" w:value="equinoctialSpringLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="groundLevel"/>
+    <w:Facet w:facet="enumeration" w:value="lowWater"/>
+    <w:Facet w:facet="enumeration" w:value="meanHighWaterSprings"/>
+    <w:Facet w:facet="enumeration" w:value="meanLowWaterNeaps"/>
+    <w:Facet w:facet="enumeration" w:value="nearlyLowestLowWater"/>
+    <w:Facet w:facet="enumeration" w:value="waterLevel"/>
   </w:Type>
   <w:Type w:name="niem-xs:base64Binary" w:isRequested="true"/>
   <w:Type w:name="niem-xs:boolean" w:isRequested="true"/>
   <w:Type w:name="niem-xs:int" w:isRequested="true"/>
   <w:Type w:name="unece:LengthCodeSimpleType" w:isRequested="false">
-    <w:Facet w:facet="enumeration" w:value="C52"/>
+    <w:Facet w:facet="enumeration" w:value="X1"/>
+    <w:Facet w:facet="enumeration" w:value="M7"/>
+    <w:Facet w:facet="enumeration" w:value="CMT"/>
+    <w:Facet w:facet="enumeration" w:value="A45"/>
     <w:Facet w:facet="enumeration" w:value="4H"/>
     <w:Facet w:facet="enumeration" w:value="77"/>
     <w:Facet w:facet="enumeration" w:value="A11"/>
     <w:Facet w:facet="enumeration" w:value="A12"/>
-    <w:Facet w:facet="enumeration" w:value="A45"/>
     <w:Facet w:facet="enumeration" w:value="A71"/>
     <w:Facet w:facet="enumeration" w:value="AK"/>
     <w:Facet w:facet="enumeration" w:value="B57"/>
     <w:Facet w:facet="enumeration" w:value="C45"/>
+    <w:Facet w:facet="enumeration" w:value="C52"/>
     <w:Facet w:facet="enumeration" w:value="C63"/>
-    <w:Facet w:facet="enumeration" w:value="CMT"/>
     <w:Facet w:facet="enumeration" w:value="DMT"/>
     <w:Facet w:facet="enumeration" w:value="FOT"/>
     <w:Facet w:facet="enumeration" w:value="HMT"/>
     <w:Facet w:facet="enumeration" w:value="INH"/>
     <w:Facet w:facet="enumeration" w:value="KMT"/>
-    <w:Facet w:facet="enumeration" w:value="M7"/>
     <w:Facet w:facet="enumeration" w:value="MMT"/>
     <w:Facet w:facet="enumeration" w:value="MTR"/>
     <w:Facet w:facet="enumeration" w:value="NMI"/>
     <w:Facet w:facet="enumeration" w:value="SMI"/>
-    <w:Facet w:facet="enumeration" w:value="X1"/>
     <w:Facet w:facet="enumeration" w:value="YRD"/>
   </w:Type>
   <w:Type w:name="unece:LengthCodeType" w:isRequested="true"/>

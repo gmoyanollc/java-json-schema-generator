@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tsfon="http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nl="http://release.niem.gov/niem/localTerminology/3.0/"
+  xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndc="http://release.niem.gov/niem/domains/cbrn/3.2/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/maritime/3.2/"
+  xmlns:ndmo="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xmlns:ndmr="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
+  nc:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ExtensionSchemaDocument"
+  targetNamespace="http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.1.0">
+
+  <xs:annotation>
+    <xs:documentation>A feature observation of something.  An observation result of a distinctive attribute or aspect 
+      of something associated with a discrete time instance or period.</xs:documentation>
+  </xs:annotation>
+
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/3.0/"
+    schemaLocation="../niem/niem-core/3.0/niem-core.xsd"/>
+  <xs:import schemaLocation="../niem/localTerminology/3.0/localTerminology.xsd"
+    namespace="http://release.niem.gov/niem/localTerminology/3.0/"/>
+  <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"
+    schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
+    schemaLocation="../niem/structures/3.0/structures.xsd"/>
+  <xs:import schemaLocation="../niem/domains/cbrn/3.2/cbrn.xsd"
+    namespace="http://release.niem.gov/niem/domains/cbrn/3.2/"/>
+  <!--<xs:import schemaLocation="../niem/domains/intelligence/3.2/intelligence.xsd" 
+    namespace="http://release.niem.gov/niem/domains/intelligence/3.2/"/>-->
+  <xs:import schemaLocation="../niem/domains/maritime/3.2/maritime.xsd"
+    namespace="http://release.niem.gov/niem/domains/maritime/3.2/"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+    schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
+  <xs:import schemaLocation="../niem/domains/militaryOperationsRestricted/3.2/moms.xsd"
+    namespace="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"/>
+
+  <xs:element name="SpatialEnvironmentCode" type="ndm:USMTFEnvironmentCategoryCodeType"
+    substitutionGroup="ndmo:ObservationAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>A spatial environment Code.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="MILSTD2525-D-Type">
+    <xs:annotation>
+      <xs:documentation>A data type for a MILSTD2525-D symbol representation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndmo:MILSTD2525-D-SIDC" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="MILSTD2525-D" type="tsfon:MILSTD2525-D-Type"
+    substitutionGroup="ndmo:ObservedObjectSymbolAbstract">
+    <xs:annotation>
+      <xs:documentation>A MILSTD2525-D symbol representation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="MILSTD2525-C-Type">
+    <xs:annotation>
+      <xs:documentation>A data type for a MILSTD2525-C symbol representation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndmo:MILSTD2525-C-SIDC-Code" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="MILSTD2525-C" type="tsfon:MILSTD2525-C-Type"
+    substitutionGroup="ndmo:ObservedObjectSymbolAbstract">
+    <xs:annotation>
+      <xs:documentation>A MILSTD2525-C symbol representation</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="MILSTD2525-B-Type">
+    <xs:annotation>
+      <xs:documentation>A data type for a MILSTD2525-B symbol representation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndmo:MILSTD2525-B-SIDC-Code" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="MILSTD2525-B" type="tsfon:MILSTD2525-B-Type"
+    substitutionGroup="ndmo:ObservedObjectSymbolAbstract">
+    <xs:annotation>
+      <xs:documentation>A MILSTD2525-B symbol representation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="OriginLocationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an origin location measurement.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndmo:AltitudeMeasure" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="ndmo:ElevationMeasure" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nnc:Location2DGeospatialCoordinate" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+<!--ToDo: piggy back on Observer-->
+  <xs:element name="OriginLocation" type="tsfon:OriginLocationType"
+    substitutionGroup="ndc:OriginAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>An origin location measurement.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="ObservedRelativeLocationType">
+    <xs:annotation>
+      <xs:documentation>A data type for relative location measurement.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndc:RelativeLocation" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="ObservedRelativeLocation" type="tsfon:ObservedRelativeLocationType"
+    substitutionGroup="ndmo:ObservedObjectLocationAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>A relative location measurement.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="FeatureObservationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a feature observation of something.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ns:ObjectType">
+        <xs:sequence>
+          <xs:element ref="ndmo:Observation" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="FeatureObservation" type="tsfon:FeatureObservationType"
+    substitutionGroup="ndmo:TrackAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A feature observation of something.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+</xs:schema>
