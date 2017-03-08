@@ -1,0 +1,595 @@
+{
+  "schemaUri": "http://release.niem.gov/niem/niem-core/3.0/",
+  "documentations": [
+    {
+      "documentation": "NIEM Core."
+    }
+  ],
+  "components": [
+    {
+      "name": "AngularDegreeValue",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A value that specifies a degree of an angular measure."
+        }
+      ]
+    },
+    {
+      "name": "AngularMeasureAugmentationPoint",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An augmentation point for AngularMeasureType."
+        }
+      ]
+    },
+    {
+      "name": "AngularMinuteValue",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A value that specifies a minute of a degree. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive)."
+        }
+      ]
+    },
+    {
+      "name": "AngularSecondValue",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A value that specifies a second of a minute. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive)."
+        }
+      ]
+    },
+    {
+      "name": "BinaryURI",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A URL or file reference of a binary object."
+        }
+      ]
+    },
+    {
+      "name": "ContactInformation",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A set of details about how to contact a person or an organization."
+        }
+      ]
+    },
+    {
+      "name": "ContactMeans",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a means of contacting someone."
+        }
+      ]
+    },
+    {
+      "name": "ContactTelephoneNumber",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A telephone number for a telecommunication device by which a person or organization may be contacted."
+        }
+      ]
+    },
+    {
+      "name": "DateRepresentation",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a representation of a date."
+        }
+      ]
+    },
+    {
+      "name": "DateTime",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A full date and time."
+        }
+      ]
+    },
+    {
+      "name": "EndDate",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An end date."
+        }
+      ]
+    },
+    {
+      "name": "Facility",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A building, place, or structure that provides a particular service."
+        }
+      ]
+    },
+    {
+      "name": "FacilityLocation",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A location of a facility."
+        }
+      ]
+    },
+    {
+      "name": "FacilityName",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A name of a facility."
+        }
+      ]
+    },
+    {
+      "name": "GeographicCoordinateLatitude",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A measurement of the angular distance between a point on the Earth and the Equator."
+        }
+      ]
+    },
+    {
+      "name": "GeographicCoordinateLongitude",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A measurement of the angular distance between a point on the Earth and the Prime Meridian."
+        }
+      ]
+    },
+    {
+      "name": "IdentificationAugmentationPoint",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An augmentation point for IdentificationType."
+        }
+      ]
+    },
+    {
+      "name": "IdentificationID",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An identifier."
+        }
+      ]
+    },
+    {
+      "name": "LatitudeDegreeValue",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A value that specifies the degree of a latitude. The value comes from a restricted range between -90 (inclusive) and +90 (inclusive)."
+        }
+      ]
+    },
+    {
+      "name": "LengthUnitCode",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A unit of measure of a length value."
+        }
+      ]
+    },
+    {
+      "name": "Location2DGeospatialCoordinate",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A location identified by a latitude and longitude."
+        }
+      ]
+    },
+    {
+      "name": "Location2DGeospatialCoordinateAugmentationPoint",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An augmentation point for Location2DGeospatialCoordinateType."
+        }
+      ]
+    },
+    {
+      "name": "Location3DGeospatialCoordinate",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A location identified by latitude, longitude, and height."
+        }
+      ]
+    },
+    {
+      "name": "LocationAugmentationPoint",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An augmentation point for LocationType."
+        }
+      ]
+    },
+    {
+      "name": "LocationElevation",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A measure of the distance of a point on the Earth from a reference point."
+        }
+      ]
+    },
+    {
+      "name": "LocationGeospatialCoordinate",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a geospatial location."
+        }
+      ]
+    },
+    {
+      "name": "LocationHeight",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a measure of the height of a location."
+        }
+      ]
+    },
+    {
+      "name": "LocationHeightVerticalDatum",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a vertical datum system used to designate the reference point for a height measurement."
+        }
+      ]
+    },
+    {
+      "name": "LocationHeightVerticalDatumCode",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A code that describes the relationship of a two- or three-dimensional coordinate system to the shape of the Earth."
+        }
+      ]
+    },
+    {
+      "name": "LocationHeightVerticalDatumText",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A vertical datum system used to designate the reference point for a height measurement."
+        }
+      ]
+    },
+    {
+      "name": "LongitudeDegreeValue",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A value that specifies the degree of a longitude. The value comes from a restricted range between -180 (inclusive) and +180 (exclusive)."
+        }
+      ]
+    },
+    {
+      "name": "MeasureIntegerValue",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An integer measurement value."
+        }
+      ]
+    },
+    {
+      "name": "MeasurePoint",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a measurement value."
+        }
+      ]
+    },
+    {
+      "name": "MeasureUnit",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a unit of measure of a measurement value."
+        }
+      ]
+    },
+    {
+      "name": "MeasureValue",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A data concept for a measurement value."
+        }
+      ]
+    },
+    {
+      "name": "StartDate",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A date on which something begins."
+        }
+      ]
+    },
+    {
+      "name": "Status",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A state of something or someone."
+        }
+      ]
+    },
+    {
+      "name": "StatusCommentText",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A comment regarding a status."
+        }
+      ]
+    },
+    {
+      "name": "SystemIdentificationAugmentationPoint",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "An augmentation point for SystemIdentificationType."
+        }
+      ]
+    },
+    {
+      "name": "SystemName",
+      "type": "element",
+      "documentations": [
+        {
+          "documentation": "A name of the kind or the source of a system identifier."
+        }
+      ]
+    },
+    {
+      "name": "AngularMeasureType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for the measurement of an angle."
+        }
+      ]
+    },
+    {
+      "name": "AngularMinuteType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a minute of a degree, with a restricted range of 0 (inclusive) to 60 (exclusive)."
+        }
+      ]
+    },
+    {
+      "name": "AngularSecondType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a second of a minute, with a restricted range of 0 (inclusive) to 60 (exclusive)."
+        }
+      ]
+    },
+    {
+      "name": "ContactInformationType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for how to contact a person or an organization."
+        }
+      ]
+    },
+    {
+      "name": "DateRangeType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a range of dates."
+        }
+      ]
+    },
+    {
+      "name": "DateType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a calendar date."
+        }
+      ]
+    },
+    {
+      "name": "Degree360Type",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a value between 0 (inclusive) and 360 (exclusive)."
+        }
+      ]
+    },
+    {
+      "name": "DirectionCodeType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for compass directions."
+        }
+      ]
+    },
+    {
+      "name": "FacilityType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a building, place, or structure that provides a particular service."
+        }
+      ]
+    },
+    {
+      "name": "IdentificationType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a representation of an identity."
+        }
+      ]
+    },
+    {
+      "name": "ItemType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for an article or thing."
+        }
+      ]
+    },
+    {
+      "name": "LatitudeCoordinateType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a measurement of the angular distance between a point on the Earth and the Equator."
+        }
+      ]
+    },
+    {
+      "name": "LatitudeDegreeType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a degree of latitude."
+        }
+      ]
+    },
+    {
+      "name": "Location2DGeospatialCoordinateType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a location identified by latitude and longitude."
+        }
+      ]
+    },
+    {
+      "name": "Location3DGeospatialCoordinateType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a location identified by latitude, longitude, and height."
+        }
+      ]
+    },
+    {
+      "name": "LocationHeightMeasureType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a measurement of the height of a location relative to a reference point."
+        }
+      ]
+    },
+    {
+      "name": "LocationType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for geospatial location."
+        }
+      ]
+    },
+    {
+      "name": "LongitudeCoordinateType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a measurement of the angular distance between a point on the Earth and the Prime Meridian."
+        }
+      ]
+    },
+    {
+      "name": "LongitudeDegreeType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a degree of longitude."
+        }
+      ]
+    },
+    {
+      "name": "MeasureType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a measurement."
+        }
+      ]
+    },
+    {
+      "name": "ProperNameTextType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a word or phrase by which a person or thing is known, referred, or addressed."
+        }
+      ]
+    },
+    {
+      "name": "StatusType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a state of something or someone."
+        }
+      ]
+    },
+    {
+      "name": "SystemIdentificationType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a number or code assigned to a system to uniquely identify the system."
+        }
+      ]
+    },
+    {
+      "name": "TelephoneNumberType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a telephone number for a telecommunication device."
+        }
+      ]
+    },
+    {
+      "name": "TextType",
+      "type": "complexType",
+      "documentations": [
+        {
+          "documentation": "A data type for a character string."
+        }
+      ]
+    }
+  ]
+}
