@@ -1,10 +1,10 @@
 
 {
-    "id":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#",
+    "id":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/#",
     "definitions":{
-        "TsoaTrackType":{
+        "PlatformSystemType":{
             "required":[
-                "track"
+                "platformStandardIdentityCode"
             ],
             "allOf":[
                 {
@@ -12,7 +12,7 @@
                 },
                 {
                     "type":"object",
-                    "title":"TsoaTrackType",
+                    "title":"PlatformSystemType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -26,47 +26,34 @@
                             ],
                             "propertyType":"anyAttribute"
                         },
-                        "track":{
-                            "title":"track",
+                        "systemIdentification":{
+                            "title":"systemIdentification",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"http://release.niem.gov/niem/domains/militaryOperations/3.2/#/definitions/TrackType"
+                                        "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/SystemIdentificationType"
                                     },
-                                    "minItems":1
+                                    "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"Track",
-                                "namespaceURI":"http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+                                "localPart":"SystemIdentification",
+                                "namespaceURI":"http://release.niem.gov/niem/domains/intelligence/3.2/"
                             }
                         },
-                        "tsoaID":{
-                            "title":"tsoaID",
+                        "platformStandardIdentityCode":{
+                            "title":"platformStandardIdentityCode",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
+                                    "$ref":"http://release.niem.gov/niem/domains/militaryOperations/3.2/#/definitions/StandardIdentityCodeType"
                                 }
                             ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"tsoaID",
-                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
-                            }
-                        },
-                        "tsoaURI":{
-                            "title":"tsoaURI",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"tsoaURI",
-                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PlatformStandardIdentityCode",
+                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
                             }
                         }
                     }
@@ -74,14 +61,64 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"TsoaTrackType",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                "localPart":"PlatformSystemType",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
             },
             "propertiesOrder":[
                 "otherAttributes",
-                "track",
-                "tsoaID",
-                "tsoaURI"
+                "systemIdentification",
+                "platformStandardIdentityCode"
+            ]
+        },
+        "ObservedPlatformSystemType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/AugmentationType"
+                },
+                {
+                    "type":"object",
+                    "title":"ObservedPlatformSystemType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "platformSystem":{
+                            "title":"platformSystem",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/PlatformSystemType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PlatformSystem",
+                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservedPlatformSystemType",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "platformSystem"
             ]
         }
     },
@@ -99,12 +136,12 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TsoaTrack"
+                                        "ObservedPlatformSystem"
                                     ]
                                 },
                                 "namespaceURI":{
                                     "enum":[
-                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
                                     ]
                                 }
                             }
@@ -112,12 +149,12 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TsoaTrackType"
+                    "$ref":"#/definitions/ObservedPlatformSystemType"
                 }
             },
             "elementName":{
-                "localPart":"TsoaTrack",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                "localPart":"ObservedPlatformSystem",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
             }
         },
         {
@@ -133,12 +170,12 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ShortName"
+                                        "PlatformSystem"
                                     ]
                                 },
                                 "namespaceURI":{
                                     "enum":[
-                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
                                     ]
                                 }
                             }
@@ -146,12 +183,12 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/TextType"
+                    "$ref":"#/definitions/PlatformSystemType"
                 }
             },
             "elementName":{
-                "localPart":"ShortName",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                "localPart":"PlatformSystem",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
             }
         },
         {
@@ -167,12 +204,12 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TrackIdentification"
+                                        "PlatformStandardIdentityCode"
                                     ]
                                 },
                                 "namespaceURI":{
                                     "enum":[
-                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
                                     ]
                                 }
                             }
@@ -180,12 +217,12 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/IdentificationType"
+                    "$ref":"http://release.niem.gov/niem/domains/militaryOperations/3.2/#/definitions/StandardIdentityCodeType"
                 }
             },
             "elementName":{
-                "localPart":"TrackIdentification",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                "localPart":"PlatformStandardIdentityCode",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
             }
         }
     ]

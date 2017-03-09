@@ -1,15 +1,11 @@
 var TSOA_Track_Module_Factory = function () {
   var TSOA_Track = {
     name: 'TSOA_Track',
-    defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/',
+    defaultElementNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/tsoa-track\/2.0\/',
     defaultAttributeNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/tsoa-track\/2.0\/',
-    dependencies: ['gov_niem_release_niem_domains_militaryoperations__3', 'gov_niem_release_niem_structures__3'],
+    dependencies: ['gov_niem_release_niem_structures__3', 'TSOA_Track.NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3'],
     typeInfos: [{
         localName: 'TsoaTrackType',
-        typeName: {
-          namespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/tsoa-track\/2.0\/',
-          localPart: 'TsoaTrackType'
-        },
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -17,7 +13,11 @@ var TSOA_Track_Module_Factory = function () {
           }, {
             name: 'track',
             required: true,
-            elementName: 'Track',
+            collection: true,
+            elementName: {
+              localPart: 'Track',
+              namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/'
+            },
             typeInfo: 'gov_niem_release_niem_domains_militaryoperations__3.TrackType'
           }, {
             name: 'tsoaID',
@@ -30,10 +30,17 @@ var TSOA_Track_Module_Factory = function () {
       }],
     elementInfos: [{
         typeInfo: '.TsoaTrackType',
-        elementName: {
-          localPart: 'TsoaTrack',
-          namespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/tsoa-track\/2.0\/'
+        elementName: 'TsoaTrack'
+      }, {
+        typeInfo: 'TSOA_Track.NIEM_Core.TextType',
+        elementName: 'ShortName',
+        substitutionHead: {
+          localPart: 'IdentificationAugmentationPoint',
+          namespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/'
         }
+      }, {
+        typeInfo: 'TSOA_Track.NIEM_Core.IdentificationType',
+        elementName: 'TrackIdentification'
       }]
   };
   return {

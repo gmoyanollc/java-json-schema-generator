@@ -31,7 +31,6 @@
      JSON Schema 
          |
          v
-        SOI
    Schema Generator
          |
          v
@@ -111,15 +110,20 @@ A definition for an element shall reference a remote JSON schema object.  A matc
 
 
 #To-Do
-  * keep component capitalization
-  * remove default schema require declarative that is empty
-  * capture enumeration values
-  * capture facets
-  * capture component documentation
-  * capture substitution components but ignore abstract container component
-  * ignore abstracts like augmentation point container, define and reference components or substitution components
-    * define substition components in augmentation point type
-  * reference type of component element
-  * include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
+- [ ] narrow breadth of components converted from XML Schema to only those referenced
+- [ ] implement relative path to external components
+- [ ] keep component capitalization
+- [ ] remove default schema require declarative that is empty
+- [x] capture enumeration values
+- [ ] implement enumeration values
+- [x] capture facets
+- [ ] implement facets
+- [x] capture component documentation
+- [ ] implement component documentation
+- [ ] capture substitution components but ignore abstract container component
+- [ ] ignore abstracts like augmentation point container, define and reference components or substitution components
+- [ ] define substition components in augmentation point type
+- [ ] reference type of component element
+- [ ] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
 
 

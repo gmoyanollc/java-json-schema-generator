@@ -66,12 +66,12 @@ var gov_niem_release_niem_codes_nga_datum__3_Module_Factory = function () {
         type: 'enumInfo',
         localName: 'VerticalDatumCodeSimpleType',
         baseTypeInfo: 'Token',
-        values: ['ngvd29', 'highestAstronomicalTide', 'lowerLowWater', 'wgs84Egm96Geoid', 'highWater', 'meanSeaLevel', 'lowestLowWater', 'springTide', 'meanHighWaterNeaps', 'neapTide', 'meanHigherHighWater', 'highestHighWater', 'approxMeanLowerLowWater', 'approxMeanLowWater', 'navd88', 'lowWaterSprings', 'meanLowerLowWater', 'wgs84Ellipsoid', 'approxLowestAstronomTide', 'waterLevel', 'highWaterSprings', 'indianSpringHighWater', 'nearlyLowestLowWater', 'lowestLowWaterSprings', 'higherHighWaterLargeTide', 'wgs84Egm08Geoid', 'lowWater', 'groundLevel', 'approxMeanSeaLevel', 'lowestAstronomicalTide', 'meanWaterLevel', 'meanHigherHighWaterSprings', 'approxMeanLowWaterSprings', 'equinoctialSpringLowWater', 'higherHighWater', 'igld1985', 'indianSpringLowWater', 'lowerLowWaterLargeTide', 'meanHighWater', 'meanHighWaterSprings', 'meanLowerLowWaterSprings', 'meanLowWater', 'meanLowWaterNeaps', 'meanLowWaterSprings', 'meanTideLevel', 'nearlyHighestHighWater']
+        values: ['higherHighWaterLargeTide', 'highestHighWater', 'indianSpringHighWater', 'meanLowerLowWaterSprings', 'lowWaterSprings', 'wgs84Egm08Geoid', 'indianSpringLowWater', 'lowerLowWater', 'approxMeanLowWater', 'ngvd29', 'meanLowWater', 'meanHighWaterNeaps', 'meanHigherHighWaterSprings', 'igld1985', 'lowestLowWater', 'neapTide', 'navd88', 'highWaterSprings', 'wgs84Ellipsoid', 'meanHigherHighWater', 'nearlyHighestHighWater', 'higherHighWater', 'meanTideLevel', 'approxMeanLowerLowWater', 'meanLowerLowWater', 'highWater', 'highestAstronomicalTide', 'meanHighWater', 'lowestLowWaterSprings', 'meanSeaLevel', 'lowerLowWaterLargeTide', 'meanWaterLevel', 'lowestAstronomicalTide', 'meanLowWaterSprings', 'approxMeanLowWaterSprings', 'approxMeanSeaLevel', 'wgs84Egm96Geoid', 'springTide', 'approxLowestAstronomTide', 'equinoctialSpringLowWater', 'groundLevel', 'lowWater', 'meanHighWaterSprings', 'meanLowWaterNeaps', 'nearlyLowestLowWater', 'waterLevel']
       }, {
         type: 'enumInfo',
         localName: 'DirectionDatumCodeSimpleType',
         baseTypeInfo: 'Token',
-        values: ['geodetic', 'Magnetic', 'militaryGrid', 'Relative']
+        values: ['geodetic', 'Relative', 'militaryGrid', 'Magnetic']
       }],
     elementInfos: []
   };

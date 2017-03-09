@@ -4,48 +4,6 @@ var gov_niem_release_niem_structures__3_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     typeInfos: [{
-        localName: 'AssociationType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'associationAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'AssociationAugmentationPoint',
-            typeInfo: 'AnyType'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'MetadataType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }]
-      }, {
         localName: 'ObjectType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -91,13 +49,55 @@ var gov_niem_release_niem_structures__3_Module_Factory = function () {
             typeInfo: 'IDREFS',
             type: 'attribute'
           }]
+      }, {
+        localName: 'AssociationType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'associationAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AssociationAugmentationPoint',
+            typeInfo: 'AnyType'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'MetadataType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }]
       }],
     elementInfos: [{
         typeInfo: 'AnyType',
-        elementName: 'AssociationAugmentationPoint'
+        elementName: 'ObjectAugmentationPoint'
       }, {
         typeInfo: 'AnyType',
-        elementName: 'ObjectAugmentationPoint'
+        elementName: 'AssociationAugmentationPoint'
       }]
   };
   return {

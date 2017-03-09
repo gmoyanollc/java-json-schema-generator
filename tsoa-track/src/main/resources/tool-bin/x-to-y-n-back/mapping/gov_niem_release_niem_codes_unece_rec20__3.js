@@ -36,7 +36,7 @@ var gov_niem_release_niem_codes_unece_rec20__3_Module_Factory = function () {
         type: 'enumInfo',
         localName: 'LengthCodeSimpleType',
         baseTypeInfo: 'Token',
-        values: ['C52', '4H', '77', 'A11', 'A12', 'A45', 'A71', 'AK', 'B57', 'C45', 'C63', 'CMT', 'DMT', 'FOT', 'HMT', 'INH', 'KMT', 'M7', 'MMT', 'MTR', 'NMI', 'SMI', 'X1', 'YRD']
+        values: ['X1', 'M7', 'CMT', 'A45', '4H', '77', 'A11', 'A12', 'A71', 'AK', 'B57', 'C45', 'C52', 'C63', 'DMT', 'FOT', 'HMT', 'INH', 'KMT', 'MMT', 'MTR', 'NMI', 'SMI', 'YRD']
       }],
     elementInfos: []
   };

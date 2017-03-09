@@ -11,8 +11,8 @@
       Act of 1979 (Title 50, U.S.C., App. 2401 et seq.), as amended. Violations of these export 
       laws are subject to severe criminal penalties. Disseminate in accordance with provisions of DoD Directive 5230.25.</xs:documentation>
   </xs:annotation>
-  <xs:import schemaLocation="../../../../../../../../../../niem/niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
-  <xs:import schemaLocation="../../../../../../../../../../niem/structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../../niem/niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../../niem/structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
   <xs:complexType name="ObserverType">
     <xs:annotation>
       <xs:documentation>A data type for an entity that becomes aware of things through senses.</xs:documentation>

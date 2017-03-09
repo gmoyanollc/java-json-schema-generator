@@ -29,37 +29,49 @@
   <jaxb:bindings schemaLocation="../../../iep-schema/extension/TSOA-Track.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.track"/>
+      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.soi.tsoa_track.v_2_0"/>
     </jaxb:schemaBindings>
     <jsonix:module name="TSOA_Track">
-      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TSOA_Track"/>
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.tsoa_track.v_2_0" name="TSOA_Track"/>
       <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
-<!--  
-  <jaxb:bindings schemaLocation="../../../iep-schema/extension/Track.xsd" 
+  <!--
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/ObservedMilitaryUnit.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.track"/>
+      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.soi.observed-military-unit"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TsoaTrack">
-      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TsoaTrack"/>
+    <jsonix:module name="ObservedMilitaryUnit">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.observed-military-unit" name="ObservedMilitaryUnit"/>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
--->
-<!--  
-  <jaxb:bindings schemaLocation="../../../iep-schema/extension/Event.xsd" 
+  -->
+<!--
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/ObservedPlatformSystem.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.track"/>
+      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.soi.observed-platform-system"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TsoaTrack">
-      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.track" name="TsoaTrack"/>
+    <jsonix:module name="ObservedPlatformSystem">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.observed-platform-system" name="ObservedPlatformSystem"/>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
--->  
+  -->
+<!--
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/FeatureObservation.xsd" 
+    node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.soi.feature-observation"/>
+    </jaxb:schemaBindings>
+    <jsonix:module name="FeatureObservation">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.feature-observation" name="FeatureObservation"/>
+      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+    </jsonix:module>
+  </jaxb:bindings>
+  -->
 <!--
   <jaxb:bindings schemaLocation="../../../iep-schema/niem/structures/3.0/structures.xsd" 
     node="/xs:schema">
@@ -74,20 +86,22 @@
     </jsonix:module>
   </jaxb:bindings>
 -->
-<!--
+
   <jaxb:bindings schemaLocation="../../../iep-schema/niem/niem-core/3.0/niem-core.xsd" 
     node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="gov.niem.core"/>
+      <jaxb:package name="gov.niem.core.v_3_0"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="NiemCore_TsoaTrack">
-      <jsonix:mapping package="gov.niem.core" name="NiemCore_TsoaTrack">
-        <jsonix:dependencies-of-mapping name="TsoaTrack"/>
+    <jsonix:module name="TSOA_Track.NIEM_Core">
+      <jsonix:mapping package="gov.niem.core.v_3_0" name="TSOA_Track.NIEM_Core">
+        <jsonix:includes>
+          <jsonix:dependencies-of-mapping name="TSOA_Track"/>
+        </jsonix:includes>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
--->  
+
 <!--
   <jaxb:bindings schemaLocation="../../../iep-schema/niem/proxy/xsd/3.0/xs.xsd" 
     node="/xs:schema">
@@ -145,6 +159,14 @@
         <jaxb:elementName suffix="Element"/>
       </jaxb:nameXmlTransform>
     </jaxb:schemaBindings>
+    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML">
+      <jsonix:mapping package="net.opengis.gml.v_3_2_1" name="TSOA_Track.NIEM_Core.OGC_GML">
+        <jsonix:includes>
+          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core"/>
+        </jsonix:includes>
+      </jsonix:mapping>
+      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+    </jsonix:module>
   </jaxb:bindings>
     
   <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/gml/3.2.1/geometryPrimitives.xsd" 
@@ -253,6 +275,70 @@
         <xjc:dom/>
       </jaxb:bindings>
     </jaxb:bindings>
+  </jaxb:bindings>
+
+<!-- module not created w/ dependency defined -->
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/iso/19139/20070417/gmd/gmd.xsd" 
+    node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.isotc211.v_2005.gmd"/>
+    </jaxb:schemaBindings>
+    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD">
+      <jsonix:mapping package="org.isotc211.v_2005.gmd" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD">
+        <jsonix:includes>
+          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML"/>
+        </jsonix:includes>
+      </jsonix:mapping>
+      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+    </jsonix:module>
+  </jaxb:bindings>
+
+  <!-- module not created w/ dependency defined -->
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/iso/19139/20070417/gsr/gsr.xsd" 
+    node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.isotc211.v_2005.gsr"/>
+    </jaxb:schemaBindings>
+    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSR">
+      <jsonix:mapping package="org.isotc211.v_2005.gsr" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSR">
+        <jsonix:includes>
+          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD"/>
+        </jsonix:includes>
+      </jsonix:mapping>
+      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+    </jsonix:module>
+  </jaxb:bindings>
+
+  <!-- module not created w/ dependency defined -->
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/iso/19139/20070417/gss/gss.xsd" 
+    node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.isotc211.v_2005.gss"/>
+    </jaxb:schemaBindings>
+    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSS">
+      <jsonix:mapping package="org.isotc211.v_2005.gss" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSS">
+        <jsonix:includes>
+          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD"/>
+        </jsonix:includes>
+      </jsonix:mapping>
+      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+    </jsonix:module>
+  </jaxb:bindings>
+
+  <!-- module not created w/ dependency defined -->
+  <jaxb:bindings schemaLocation="../../../iep-schema/niem/external/ogc/iso/19139/20070417/gts/gts.xsd" 
+    node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="org.isotc211.v_2005.gts"/>
+    </jaxb:schemaBindings>
+    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GTS">
+      <jsonix:mapping package="org.isotc211.v_2005.gts" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GTS">
+        <jsonix:includes>
+          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD"/>
+        </jsonix:includes>
+      </jsonix:mapping>
+      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+    </jsonix:module>
   </jaxb:bindings>
 
 </jaxb:bindings>

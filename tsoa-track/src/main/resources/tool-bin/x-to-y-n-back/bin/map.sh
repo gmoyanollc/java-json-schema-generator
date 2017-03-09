@@ -4,7 +4,7 @@
 #
 
 XML_SCHEMA_CONST="../../iep-schema/extension/TSOA-Track.xsd"
-XJB_CONST="lib/tsoa-track-binding.xjb"
+XJB_CONST="./lib/tsoa-track-binding.xjb"
 XML_SCHEMA_ARG=${1}
 if [ -n "${XML_SCHEMA_ARG}" ];
 then
@@ -20,4 +20,4 @@ else
   XJB=${XJB_CONST};
 fi
 set -x
-java -jar node_modules/jsonix-schema-compiler/lib/jsonix-schema-compiler-full.jar -b ${XJB} -d mapping -extension -generateJsonSchema ${XML_SCHEMA}
+java -jar ./node_modules/jsonix-schema-compiler/lib/jsonix-schema-compiler-full.jar -b ${XJB} -d ./mapping -extension -generateJsonSchema ${XML_SCHEMA}

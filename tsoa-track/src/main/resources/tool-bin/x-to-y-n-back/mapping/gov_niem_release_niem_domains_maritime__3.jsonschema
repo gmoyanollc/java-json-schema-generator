@@ -1,10 +1,10 @@
 
 {
-    "id":"#",
+    "id":"http://release.niem.gov/niem/domains/maritime/3.2/#",
     "definitions":{
-        "LengthCodeType":{
+        "USMTFEnvironmentCategoryCodeType":{
             "type":"object",
-            "title":"LengthCodeType",
+            "title":"USMTFEnvironmentCategoryCodeType",
             "properties":{
                 "otherAttributes":{
                     "title":"otherAttributes",
@@ -22,7 +22,7 @@
                     "title":"value",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/LengthCodeSimpleType"
+                            "$ref":"#/definitions/USMTFEnvironmentCategoryCodeSimpleType"
                         }
                     ],
                     "propertyType":"value"
@@ -82,8 +82,8 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LengthCodeType",
-                "namespaceURI":"http://release.niem.gov/niem/codes/unece_rec20/3.0/"
+                "localPart":"USMTFEnvironmentCategoryCodeType",
+                "namespaceURI":"http://release.niem.gov/niem/domains/maritime/3.2/"
             },
             "propertiesOrder":[
                 "otherAttributes",
@@ -94,45 +94,97 @@
                 "relationshipMetadata"
             ]
         },
-        "LengthCodeSimpleType":{
+        "USMTFEnvironmentCategoryCodeSimpleType":{
             "allOf":[
                 {
                     "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
                 },
                 {
                     "enum":[
-                        "X1",
-                        "M7",
-                        "CMT",
-                        "A45",
-                        "4H",
-                        "77",
-                        "A11",
-                        "A12",
-                        "A71",
-                        "AK",
-                        "B57",
-                        "C45",
-                        "C52",
-                        "C63",
-                        "DMT",
-                        "FOT",
-                        "HMT",
-                        "INH",
-                        "KMT",
-                        "MMT",
-                        "MTR",
-                        "NMI",
-                        "SMI",
-                        "YRD"
+                        "AIR",
+                        "LND",
+                        "SPC",
+                        "SUB",
+                        "SUR",
+                        "UNK"
                     ]
                 }
             ],
             "typeType":"enumInfo",
             "typeName":{
-                "localPart":"LengthCodeSimpleType",
-                "namespaceURI":"http://release.niem.gov/niem/codes/unece_rec20/3.0/"
+                "localPart":"USMTFEnvironmentCategoryCodeSimpleType",
+                "namespaceURI":"http://release.niem.gov/niem/domains/maritime/3.2/"
             }
         }
-    }
+    },
+    "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AngleUnit"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/domains/maritime/3.2/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"AngleUnit",
+                "namespaceURI":"http://release.niem.gov/niem/domains/maritime/3.2/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AngleUnitText"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/domains/maritime/3.2/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/TextType"
+                }
+            },
+            "elementName":{
+                "localPart":"AngleUnitText",
+                "namespaceURI":"http://release.niem.gov/niem/domains/maritime/3.2/"
+            }
+        }
+    ]
 }
