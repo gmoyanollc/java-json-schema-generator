@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#TsoaTrack",
+  "title": "TsoaTrack",
+  "type": "object",
+  "description": "",
+  "version": "0.3.0",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TsoaTrack",
+  "properties": {
+    "track": [
+      {
+        "id": "",
+        "title": "",
+        "type": "array",
+        "description": "",
+        "version": "0.3.0",
+        "javaType": "",
+        "items": {
+          "$ref": "../../../../niem/domains/militaryOperations/3.2/Track.json"
+        },
+        "minItems": 1,
+        "additionalItems": false
+      }
+    ],
+    "tsoaID": {
+      "type": "?string"
+    },
+    "tsoaURI": {
+      "type": "?string"
+    }
+  },
+  "additionalProperties": false
+}

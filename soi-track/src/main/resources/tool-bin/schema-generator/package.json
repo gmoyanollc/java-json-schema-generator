@@ -1,8 +1,8 @@
 {
-  "name": "soi-schema-generator",
+  "name": "schema-generator",
   "version": "1.0.0",
-  "description": "generate SOI schema from intermediary JSON schema generated from TSOA XML Schema",
-  "main": "index.js",
+  "description": "Generate JSON schema from intermediary JSONIX JSON schema. JSONIX JSON schema is generated from XML Schema with JAXB/XJC.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

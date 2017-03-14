@@ -4,12 +4,9 @@
   "title": "",
   "type": "null",
   "description": "",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "javaType": "",
   "properties": { 
   },
-  "additionalProperties": false,
-  "required": [
-    ""
-  ]
+  "additionalProperties": false
 }

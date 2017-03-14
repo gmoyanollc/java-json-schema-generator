@@ -1,6 +1,10 @@
 {
+  "id": "",
+  "title": "",
   "type": "array",
   "description": "",
+  "version": "0.3.0",
+  "javaType": "",
   "items": {
       "$ref": ".json"            
   },

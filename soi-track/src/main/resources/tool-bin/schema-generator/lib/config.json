@@ -3,42 +3,19 @@
     "source": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/",
     "target": "../../iep-schema/"
   },
-  "//schemaFilenames": [
-    {
-      "source": "TSOA_Track-schema.json",
-      "target": "@tsoa-track.json"
-    },
-    {
-      "source": "mil_usmc_mcsc_mc2sa_tsoa_soi_track__2.jsonschema",
-      "target": "@track.json"
-    },
-    {
-      "source": "gov_niem_release_niem_structures__3.jsonschema",
-      "target": "@structures.json"
-    }
-  ],
   "schemaSourceFilenames": [
-    "TSOA_Track-schema.json",
-    "gov_niem_release_niem_codes_nga_datum__3.jsonschema",
-    "gov_niem_release_niem_codes_unece_rec20__3.jsonschema",
-    "gov_niem_release_niem_domains_militaryoperations__3.jsonschema",
-    "gov_niem_release_niem_localterminology__3.jsonschema",
-    "gov_niem_release_niem_niem_core__3.jsonschema",
-    "gov_niem_release_niem_proxy_xsd__3.jsonschema",
-    "gov_niem_release_niem_structures__3.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_track__2.jsonschema",
-    "net_opengis_gml_v_3_2_1.jsonschema",
-    "org_isotc211__2005_gco.jsonschema",
-    "org_isotc211__2005_gmd.jsonschema",
-    "org_isotc211__2005_gsr.jsonschema",
-    "org_isotc211__2005_gss.jsonschema",
-    "org_isotc211__2005_gts.jsonschema"
+ "TSOA_Track-schema.json"
+  ],
+  "g_schemaSourceFilenames": [
+    "gov_niem_release_niem_codes_nga_datum__3.jsonschema", "gov_niem_release_niem_codes_unece_rec20__3.jsonschema", "gov_niem_release_niem_domains_cbrn__3.jsonschema",
+    "gov_niem_release_niem_domains_intelligence__3.jsonschema", "gov_niem_release_niem_domains_maritime__3.jsonschema", "gov_niem_release_niem_domains_militaryoperations__3.jsonschema",
+    "gov_niem_release_niem_localterminology__3.jsonschema", "gov_niem_release_niem_proxy_xsd__3.jsonschema", "gov_niem_release_niem_structures__3.jsonschema",
+    "https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3.jsonschema", "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observation__2.jsonschema",
+    "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observer__2.jsonschema", "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2.jsonschema", "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_military_unit__2.jsonschema",
+    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2.jsonschema", "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_weapon__2.jsonschema", "org_isotc211__2005_gco.jsonschema",
+    "TSOA_Track.NIEM_Core.OGC_GML.schema.json", "TSOA_Track.NIEM_Core.schema.json", "TSOA_Track-schema.json"
   ],
   "schemaTemplates": [
-    {
-      "id": "root-template",
-      "file": "./lib/schema-root-template.json"
-    },
     {
       "id": "object-template",
       "file": "./lib/schema-object-template.json"
@@ -50,6 +27,10 @@
     {
       "id": "property-array-template",
       "file": "./lib/schema-property-array-template.json"
+    },
+    {
+      "id": "property-primitive-template",
+      "file": "./lib/schema-property-primitive-template.json"
     }
   ],
   "schemaFilepathMappings": [
@@ -118,7 +99,7 @@
       "namespace": "http://www.opengis.net/gml/3.2"
     },
     {
-      "filepath": "",
+      "filepath": "tsoa/soi/tsoa-track/2.0/",
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
     },
     {

@@ -27,8 +27,9 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
   ssg.targetSchemaBaseDir = config.schemaBaseDir.target;
   ssg.schemaFilepathMappings = config.schemaFilepathMappings;
   //ssg.schemaNamespace = SoiSchemaGenerator.getSchemaNamespace(sourceSchemaObject);
-  ssg.setSchemaNamespace(sourceSchemaObject);
-  ssg.generateObjectTypeSchema(sourceSchemaObject);
+  ssg.setSourceSchemaNamespace(sourceSchemaObject);
+  ssg.setSourceSchemaBaseDirRelativeDepth();
+  //ssg.generateObjectTypeSchema(sourceSchemaObject);
   ssg.generateObjectSchema(sourceSchemaObject);
 //});
 };

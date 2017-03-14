@@ -1,9 +1,10 @@
-#JSON Schema Generator
+#Schema Generator
 ##JSONIX
 
-  * Jsonix is based on JAXB/XJC and XJC uses XSOM to process schemas (https://github.com/highsource/jsonix/issues/33)
+  * Jsonix is based on JAXB/XJC and XJC uses XSOM to process XML schemas (https://github.com/highsource/jsonix/issues/33)
 
 #Jsonix Caveats
+The following are caveats that the Schema Generator is intended to resolve.
 
   * xs:pattern is not supported and the expressions are not compatible
     * XML Schema regular expressions are not compatible with JavaScript/ECMAScript regular expressions
@@ -17,24 +18,22 @@
     *   length, enumerations
 
 
-#Workflow
+#Overall Workflow
 
   ```
-  NIEM-Track XML Schema
+      XML Schema
          |        
          v
-    JSONIX compiler
+   JSONIX compiler
          |
          v
-      NIEM-Track
      intermediary 
      JSON Schema 
          |
          v
    Schema Generator
          |
-         v
-        SOI 
+         v 
      JSON Schema
   ```
   
@@ -49,7 +48,9 @@
   "javaType": replace(trim(anyOf.elementName.namespaceURI, "http:// https://"), "/", "_") + replace(anyOf.elementName.localPart), "/", "_")
   "required": anyOf.properties.value.$ref.required
   ```
+#Algorithmic Design Entities
 
+##anyOf
 JSON schema objects are described by the "anyOf" object.
 
   ```
@@ -70,11 +71,20 @@ An elementName object generates a JSON schema object.
 
 An attributeName object adds a property to a local JSON schema object.
 
-The above "$ref" object points to a definition object that contains the JSON schema object's properties.  
+###$ref
+A "$ref" object points to a definition object.  A definition is isometric to an XML type.  It contains the JSON schema object's structural properties and constraints.
 
-The "$ref" object may point to a local or remote definition object.  A remote definition object reference is matched with the "$ref" object value.  The match assigns the file location of the remote definition object.
+The "$ref" object may point to a local or remote definition object.  
 
-JSON schema object properties are defined by the "definitions" object.
+The following example is a remote reference:
+
+```
+"$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/TextType"
+```
+A remote reference is processed to obtain the schema file that contains the definition object.  The schema file is identified by a match of the namespace part to a pre-configured mapping.
+
+##definitions
+JSON schema object's structural properties and constraints are defined by a "definitions" object.
 
   ```
   "definitions" : {
@@ -94,8 +104,6 @@ JSON schema object properties are defined by the "definitions" object.
 
   ```
 
-A definition for an element shall reference a remote JSON schema object.  A match to the element namespace assigns the file location of the remote JSON schema object.
-
 #Conventions
 
   * namespace format: http://mcsc.usmc.mil/mc2sa/tsoa/soi/[domain-object]/[version] 
@@ -108,9 +116,28 @@ A definition for an element shall reference a remote JSON schema object.  A matc
   * namespace prefix is represented by first letter of the system, service, domain object namespace parts
     * example: `xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/`
 
+#workflow
+
+generateObjectSchema
+  `-> sourceSchemaObject.anyOf.forEach
+        `-> getSchemaTemplateObject('object-template');
+        |     `-> getDefinitionReference() || getRemoteDefinitionReference()
+        |     |                                 `-> getDefinitionObjectName
+        |     |                                 `-> getRemoteDefinitionFileLocation()
+        |     `-> getProperties([definitionObjectName])
+        |
+        |           `-> forEach(definitionObjectProperty)
+        |                 `-> setPropertyArrayTemplate || setPropertyObjectTemplate
+        |                       `-> getSchemaTemplateObject()
+        |                       `-> getSchemaFileDestination(withRelativeDepth: true)
+        |
+        |
+        `--getSchemaFileDestination()
+        `--writeSchemaFile()
 
 #To-Do
-- [ ] narrow breadth of components converted from XML Schema to only those referenced
+- [x] narrow breadth of components converted from XML Schema to only those referenced
+- [ ] generate SoiTrack/soi-track from TSOA_Track/tsoa-track
 - [ ] implement relative path to external components
 - [ ] keep component capitalization
 - [ ] remove default schema require declarative that is empty
@@ -122,6 +149,8 @@ A definition for an element shall reference a remote JSON schema object.  A matc
 - [ ] implement component documentation
 - [ ] capture substitution components but ignore abstract container component
 - [ ] ignore abstracts like augmentation point container, define and reference components or substitution components
+        * augmentation point objects are listed in type definitions
+        * the assocation between an augmentation point object and its containing <elements> is not defined by jsonix
 - [ ] define substition components in augmentation point type
 - [ ] reference type of component element
 - [ ] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
