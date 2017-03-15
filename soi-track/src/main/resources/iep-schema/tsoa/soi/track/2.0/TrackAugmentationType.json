@@ -4,15 +4,15 @@
   "title": "TrackAugmentationType",
   "type": "object",
   "description": "",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_TrackAugmentationType",
   "properties": {
-    "Unit": {
+    "ObservedMilitaryUnit": {
       "type": "object",
       "description": "",
       "$ref": "../../../../niem/domains/militaryOperations/3.2/UnitType.json"
     },
-    "Observation": {
+    "FeatureObservation": {
       "type": "array",
       "description": "",
       "items": {
@@ -24,6 +24,6 @@
   },
   "additionalProperties": false,
   "required":[
-    "Observation"
+    "FeatureObservation"
   ]
 }

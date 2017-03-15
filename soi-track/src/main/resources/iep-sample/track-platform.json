@@ -1,0 +1,49 @@
+{
+  "tsoaID": "42cb6a24-85a3-33bc-8c91-73305bdffe0b",
+  "tsoaURI": "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/42cb6a2485a333bc8c9173305bdffe0b",
+  "Track": { 
+    "TrackIdentification": [
+      {"IdentificationID": ["TC1645739552"]},
+      {"IdentificationAugmentationPoint": 
+        {"TrackShortName": "PLT-1"}
+      }
+    ],
+    "TrackAugmentation": {
+      "ObservedPlatformSystem": {
+        "PlatformSystem": [
+          {"SystemIdentification": [
+            {"SystemName": "Track Platform"}
+          ]},
+          {"PlatformStandardIdentityCode": "FRIEND"}
+        ]
+      },
+      "FeatureObservation": [
+        {"ObservedObjectLocation": [
+          {"ObservedObject2DGeospatialCoordinate": [
+            {"GeographicCoordinateLatitude": {
+              "LatitudeDegreeValue": "40.1486111111111085847369395196437835693359375"
+            }},
+            {"GeographicCoordinateLongitude": {
+              "LatitudeDegreeValue": "-76.5597222222222200116448220796883106231689453125"
+            }}
+          ]},
+          {"ObservedRelativeLocation": [
+            {"RelativeLocation": [
+              {"RelativeLocationInclinationValue": 0.0},
+              {"unitsText": "DEG"},
+              {"Origin": [
+                {"OriginLocation": ""}
+              ]}
+            ]}
+          ]}
+        ]},
+        {"ObservationDateTime": ["2014-10-03T15:41:03Z"]},
+        {"ObservationOPEXCode": "EXERCISE"},
+        {"MILSTD2525": [
+          {"MILSTD2525-C-SIDC-Code": "SFSPO---------N"}
+        ]},
+        {"SpatialEnvironmentCode": "SUR"}
+      ]
+    }
+  }
+}

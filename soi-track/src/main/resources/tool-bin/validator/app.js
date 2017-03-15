@@ -1,8 +1,10 @@
 var fs = require('fs');
 var Ajv = require('ajv');
 
-var schemaFile = '../../iep-schema/SoiTrack-dereferenced.json';
+//var schemaFile = '../../iep-schema/SoiTrack-dereferenced.json';
+var schemaFile = '../../iep-schema/TsoaTrack-dereferenced.json';
 var dataFile = '../../iep-sample/track-unit.json';
+//var dataFile = '../../iep-sample/track-platform.json';
 
 var schema = JSON.parse(readFile(schemaFile));
 /*

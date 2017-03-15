@@ -7,27 +7,39 @@
   "version": "0.3.0",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TsoaTrack",
   "properties": {
-    "track": [
+    "Track": 
       {
         "id": "",
         "title": "",
-        "type": "array",
+        "type": "object",
         "description": "",
         "version": "0.3.0",
         "javaType": "",
         "items": {
-          "$ref": "../../../../niem/domains/militaryOperations/3.2/Track.json"
+          "$ref": "../../../../niem/domains/militaryOperations/3.2/TrackType.json"
         },
         "minItems": 1,
         "additionalItems": false
-      }
-    ],
-    "tsoaID": {
-      "type": "?string"
+      },
+        "tsoaID": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     },
     "tsoaURI": {
-      "type": "?string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "required": [
+    "Track"
+  ]
 }

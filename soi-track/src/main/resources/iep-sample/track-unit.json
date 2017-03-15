@@ -1,6 +1,6 @@
 {
-  "soiID": "CBR01 10MAR",
-  "soiURI": "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c",
+  "tsoaID": "CBR01 10MAR",
+  "tsoaURI": "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c",
   "Track": {
     "TrackIdentification": [
       {"IdentificationID": ["2235868"]},
@@ -9,12 +9,12 @@
       }
     ],
     "TrackAugmentation": {
-      "Unit": {
+      "ObservedMilitaryUnit": {
         "UnitName": ["UnitName0"],
         "UnitShortName": ["UnitShortN"],
         "UnitTypeCodeText": ["UnitT"]
       },
-      "Observation": [
+      "FeatureObservation": [
         {"ObservedObjectLocation": [
           {"ObservedObject2DGeospatialCoordinate": [
             {"GeographicCoordinateLatitude": {
