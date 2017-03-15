@@ -1,6 +1,6 @@
 var fs = require('fs')
   , path = require('path');
-
+/*
 function getSchemaTemplateObject(templateId) {
   console.log('##match schema template object: ' + templateId);
 
@@ -11,13 +11,21 @@ function getSchemaTemplateObject(templateId) {
 
   throw 'schema id was not matched for a template object';
 };
+*/
+function readFile (file) {
+  console.log('##read file: ' + file);
+  var fileBuffer = fs.readFileSync(file);
+  console.log('##output file buffer string');
+  console.log(fileBuffer.toString());
+  return(fileBuffer);
+}
 
 //var SoiSchemaGenerator = function SoiSchemaGenerator(schemaTemplateObjects
 //  , targetSchemaBaseDir, schemaFilepathMappings, targetSchemaFilename) {
 //var SoiSchemaGenerator = function SoiSchemaGenerator(schemaTemplateObjects
 //  , targetSchemaBaseDir, schemaFilepathMappings) {
 var SoiSchemaGenerator = function () {
-
+  this.sourceSchemaBaseDir;
   this.sourceSchemaNamespace;
   this.sourceSchemaBaseDirRelativeDepth;
   //this.schemaTemplateObjects = schemaTemplateObjects;
@@ -29,7 +37,30 @@ var SoiSchemaGenerator = function () {
   //this.targetSchemaFilename = targetSchemaFilename;
   this.targetSchemaFileDestination;
 }
+/*
+SoiSchemaGenerator.prototype.readFile = function (file) {
+  console.log('##read file: ' + file);
+  var fileBuffer = fs.readFileSync(file);
+  console.log('##output file buffer string');
+  console.log(fileBuffer.toString());
+  return(fileBuffer);
+}
 
+SoiSchemaGenerator.prototype.setSchemaTemplateObjects = function (schemaTemplates) {
+  var schemaTemplateObjects = [];
+  
+  schemaTemplates.forEach(function (schemaTemplate) {
+    var schemaTemplateFileBuffer = this.readFile(schemaTemplate.file);
+    var schemaTemplateObjectItem = {
+      'templateId' : schemaTemplate.id,
+      'templateObject' : JSON.parse(schemaTemplateFileBuffer)
+    };
+    schemaTemplateObjects.push(schemaTemplateObjectItem);
+  });
+
+  this.schemaTemplateObjects = schemaTemplateObjects;
+}
+*/
 SoiSchemaGenerator.prototype.setSourceSchemaNamespace = function (sourceSchemaObject) {
   //return(sourceSchemaObject.id.substring(0, sourceSchemaObject.id.indexOf('#')));
   this.sourceSchemaNamespace = sourceSchemaObject.id.substring(0, sourceSchemaObject.id.indexOf('#'));
@@ -40,7 +71,7 @@ SoiSchemaGenerator.prototype.setSourceSchemaBaseDirRelativeDepth = function () {
 
   for (var index = 0; index < this.schemaFilepathMappings.length; index++) {
     if ( this.schemaFilepathMappings[index].namespace === this.sourceSchemaNamespace ) {
-      var sourceSchemaFilepath = this.schemaFilepathMappings[index].filepath
+      var sourceSchemaFilepath = this.schemaFilepathMappings[index].targetSchemaFilepath
     }
   }
 
@@ -84,15 +115,31 @@ SoiSchemaGenerator.prototype.getSchemaFileDestination = function (PropertyObject
 
   for (var index = 0; index < this.schemaFilepathMappings.length; index++) {
     //if ( this.schemaFilepathMappings[index].namespace === anyOfAllOfPropertyObject.elementName.namespaceURI )
-    //  return(this.schemaFilepathMappings[index].filepath + anyOfAllOfPropertyObject.elementName.localPart + '.json');
+    //  return(this.schemaFilepathMappings[index].targetSchemaFilepath + anyOfAllOfPropertyObject.elementName.localPart + '.json');
     if ( this.schemaFilepathMappings[index].namespace === PropertyObjectNameIdentifier.namespaceURI )
-      return(this.schemaFilepathMappings[index].filepath + PropertyObjectNameIdentifier.localPart + '.json');
+      return(this.schemaFilepathMappings[index].targetSchemaFilepath + PropertyObjectNameIdentifier.localPart + '.json');
   };
 
   throw 'object namespace was not matched for schema file destination';
   //};
 }
 */
+
+SoiSchemaGenerator.prototype.getRemoteDefinitionNamespace = function (anyOfObject) {
+  var anyOfObjectProperty$ref;
+  if ( typeof anyOfObject.properties.value.$ref != "undefined" )
+    anyOfObjectProperty$ref = anyOfObject.properties.value.$ref;
+  else
+    if ( typeof anyOfObject.properties.value.items.$ref != "undefined" )
+      anyOfObjectProperty$ref = anyOfObject.properties.value.items.$ref;
+    else
+      throw "trouble locating anyOf object definition reference";
+  console.log('##get namespace from remote anyOf object property definition reference: ' + anyOfObjectProperty$ref);
+  var remoteDefinitionNamespace = anyOfObjectProperty$ref.substring(0, anyOfObjectProperty$ref.indexOf('#'));
+  console.log("remoteDefinitionNamespace: " + remoteDefinitionNamespace);
+  return(remoteDefinitionNamespace);
+}
+
 SoiSchemaGenerator.prototype.getSchemaFileDestination = function (PropertyContainer, addRelativeDepth) {
   if ( this.addRelativeDepth != 'undefined') 
     if ( this.addRelativeDepth != true ) this.addRelativeDepth = false
@@ -111,9 +158,9 @@ SoiSchemaGenerator.prototype.getSchemaFileDestination = function (PropertyContai
   for (var index = 0; index < this.schemaFilepathMappings.length; index++) {
     if ( this.schemaFilepathMappings[index].namespace === PropertyObjectNameIdentifier.namespaceURI ){
       if ( addRelativeDepth )
-        return(this.sourceSchemaBaseDirRelativeDepth + this.schemaFilepathMappings[index].filepath + PropertyObjectNameIdentifier.localPart + '.json')
+        return(this.sourceSchemaBaseDirRelativeDepth + this.schemaFilepathMappings[index].targetSchemaFilepath + PropertyObjectNameIdentifier.localPart + '.json')
       else
-        return(this.schemaFilepathMappings[index].filepath + PropertyObjectNameIdentifier.localPart + '.json');
+        return(this.schemaFilepathMappings[index].targetSchemaFilepath + PropertyObjectNameIdentifier.localPart + '.json');
     };
   };
 
@@ -121,15 +168,15 @@ SoiSchemaGenerator.prototype.getSchemaFileDestination = function (PropertyContai
 }
 
 SoiSchemaGenerator.prototype.getRemoteDefinitionFileLocation = function (anyOfPropertyObject) {
-  var anyOfObjectPropertyDefinitionReferenceNamespace = getRemoteDefinitionNamespace(anyOfPropertyObject);
+  var anyOfObjectPropertyDefinitionReferenceNamespace = this.getRemoteDefinitionNamespace(anyOfPropertyObject);
 
   for (var index = 0; index < this.schemaFilepathMappings.length; index++) {
     if ( this.schemaFilepathMappings[index].namespace === anyOfObjectPropertyDefinitionReferenceNamespace ) {
       remoteDefinitionObjectName = this.getDefinitionObjectName(anyOfPropertyObject);
-      return(this.sourceSchemaBaseDirRelativeDepth + this.schemaFilepathMappings[index].filepath + remoteDefinitionObjectName + '.json');
+      return(this.sourceSchemaBaseDirRelativeDepth + this.schemaFilepathMappings[index].targetSchemaFilepath + remoteDefinitionObjectName + '.json');
     }
   };
-
+/*
   function getRemoteDefinitionNamespace(anyOfObject) {
     var anyOfObjectProperty$ref;
     if ( typeof anyOfObject.properties.value.$ref != "undefined" )
@@ -147,6 +194,17 @@ SoiSchemaGenerator.prototype.getRemoteDefinitionFileLocation = function (anyOfPr
     console.log("remoteDefinitionNamespace: " + remoteDefinitionNamespace);
     return(remoteDefinitionNamespace);
   }
+*/
+  throw 'schema namespace was not matched for a filepath';
+}
+
+SoiSchemaGenerator.prototype.getRemoteSchemaSourceFile = function (anyOfPropertyObject) {
+  var anyOfObjectPropertyDefinitionReferenceNamespace = this.getRemoteDefinitionNamespace(anyOfPropertyObject);
+
+  for (var index = 0; index < this.schemaFilepathMappings.length; index++) {
+    if ( this.schemaFilepathMappings[index].namespace === anyOfObjectPropertyDefinitionReferenceNamespace )
+      return(this.schemaFilepathMappings[index].sourceSchemaFile);
+  };
 
   throw 'schema namespace was not matched for a filepath';
 }
@@ -179,7 +237,7 @@ SoiSchemaGenerator.prototype.generateObjectSchema = function (sourceSchemaObject
       //schemaObjectNamespace = anyOfObject.elementName.namespaceURI;
       switch ( this.getType(anyOfObject) ) {
         case 'object' :
-          schemaObject = this.getSchemaTemplateObject('object-template');
+          var schemaObject = this.getSchemaTemplateObject('object-template');
           schemaObject.id = this.getId(anyOfObject.elementName);
           //schemaObject.title = this.getTitle(anyOfObject);
           schemaObject.title = this.getTitle(anyOfObject.elementName);
@@ -192,18 +250,19 @@ SoiSchemaGenerator.prototype.generateObjectSchema = function (sourceSchemaObject
             //    , schemaObjectNamespace);
             schemaObject.properties 
               = this.getProperties(sourceSchemaObject.definitions[definitionObjectName])
-          else
+          else {
             schemaObject.properties = this.getRemoteDefinitionReference(anyOfObject);
-            var test = new SoiSchemaGenerator();
-            test.schemaTemplateObjects = this.schemaTemplateObjects;
+            this.generateRemoteObjectSchema(anyOfObject, definitionObjectName);
+          };
           break;
         default:
-          console.log('not sure how to generate an object for this anyOf object type: ' + this.getType(anyOfObject));
-      }
+          throw('ERROR: not sure how to generate an object for this anyOf object type: ' + this.getType(anyOfObject));
+      };
       //this.targetSchemaFileDestination = this.getSchemaFileDestination(anyOfObject.elementName);
       this.targetSchemaFileDestination = this.getSchemaFileDestination(anyOfObject);
       this.writeSchemaFile(schemaObject);
     }, this);
+
   };
 /*
   if ( typeof sourceSchemaObject.definitions != "undefined" ) {
@@ -261,9 +320,58 @@ SoiSchemaGenerator.prototype.generateSoiSchema = function (sourceSchemaObject) {
 }
 */
 
-SoiSchemaGenerator.prototype.generateObjectTypeSchema = function (sourceSchemaObject) {
-  if ( typeof sourceSchemaObject.definitions != "undefined" ) {
+SoiSchemaGenerator.prototype.generateRemoteObjectSchema = function (anyOfObject, definitionObjectName) {
+  console.log('###instantiating Remote Object Schema generation');
+  //sourceSchemaFile = config.schemaBaseDir.source + config.schemaSourceFilenames[index];
+  //var sourceSchemaFile = this.sourceSchemaBaseDir + this.getRemoteSchemaSourceFile(anyOfPropertyObject);
+  var sourceSchemaFile = this.sourceSchemaBaseDir + this.getRemoteSchemaSourceFile(anyOfObject);
+  console.log('##remote object source schema file: ' + sourceSchemaFile);
+  var sourceSchemaBuffer = readFile(sourceSchemaFile);
+  var sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
+  var ssg = new SoiSchemaGenerator();
+  ssg.schemaTemplateObjects = this.schemaTemplateObjects;
+  ssg.targetSchemaBaseDir = this.targetSchemaBaseDir;
+  ssg.schemaFilepathMappings = this.schemaFilepathMappings;
+  ssg.sourceSchemaBaseDir = this.sourceSchemaBaseDir;
+  ssg.setSourceSchemaNamespace(sourceSchemaObject);
+  ssg.setSourceSchemaBaseDirRelativeDepth();
+  ssg.generateObjectDefinitionSchema(sourceSchemaObject.definitions[definitionObjectName]);
+}
+/*g*/
+//SoiSchemaGenerator.prototype.generateObjectSchemaType = function (sourceSchemaObject) {
+SoiSchemaGenerator.prototype.generateObjectDefinitionSchema = function (definitionObject) {
+  //if ( typeof sourceSchemaObject.definitions != "undefined" ) {
+  if ( typeof definitionObject != "undefined" ) {
 
+      //definitionObject.allOf.forEach(function (anyOfObject) {
+        //schemaObjectNamespace = anyOfObject.elementName.namespaceURI;
+        switch ( this.getType(definitionObject) ) {
+          case 'object' :
+            var schemaObject = this.getSchemaTemplateObject('object-template');
+            schemaObject.id = this.getId(definitionObject.typeName);
+            //schemaObject.title = this.getTitle(anyOfObject);
+            schemaObject.title = this.getTitle(definitionObject.typeName);
+            schemaObject.type = this.getType(definitionObject);
+            schemaObject.javaType = this.getJavaType(definitionObject.typeName);
+            //var definitionObjectName = this.getDefinitionObjectName(definitionObject);
+            //if ( typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined" )
+              schemaObject.properties = this.getProperties(definitionObject)
+            //else {
+            //  schemaObject.properties = this.getRemoteDefinitionReference(anyOfObject);
+            //  this.generateRemoteObjectSchema(anyOfObject, definitionObjectName);
+            //};
+            break;
+          default:
+            throw('ERROR: not sure how to generate an object for this allOf object type: ' + this.getType(definitionObject));
+        };
+        this.targetSchemaFileDestination = this.getSchemaFileDestination(definitionObject);
+        this.writeSchemaFile(schemaObject);
+      //}, this);
+
+  } else {
+    throw('definition object is undefined: ' + definitionObjectName);
+  };
+/*
     for (var definition in sourceSchemaObject.definitions) {
       if ( typeof sourceSchemaObject.definitions[definition].typeName != 'undefined' )
         var schemaObjectNamespace = sourceSchemaObject.definitions[definition].typeName.namespaceURI;
@@ -309,8 +417,7 @@ SoiSchemaGenerator.prototype.generateObjectTypeSchema = function (sourceSchemaOb
         console.log("Can not write object schema: " + schemaObject);
       };
     };
-
-  }
+*/
 }
 
 //SoiSchemaGenerator.prototype.getId = function(anyOfObject) {
@@ -345,11 +452,22 @@ SoiSchemaGenerator.prototype.getType = function(anyOfObject) {
 }
 */
 SoiSchemaGenerator.prototype.getType = function(propertyObject) {
+  var propertyObjectType;
   //console.log('##get type for: ' + propertyObject.elementName.localPart);
-  console.log('##get type for: ' + this.getId(propertyObject.elementName));
-  var type = propertyObject.type;
-  console.log('##type: ' + type);
-  return(type);
+  if ( typeof propertyObject.elementName != 'undefined' ) {
+    console.log('##get type for: ' + this.getId(propertyObject.elementName));
+    propertyObjectType = propertyObject.type;
+  } else {
+    if ( typeof propertyObject.typeName != 'undefined' ) {
+      console.log('##get type for: ' + this.getId(propertyObject.typeName));
+      if ( typeof propertyObject.allOf != 'undefined' ) 
+        propertyObjectType = propertyObject.allOf[1].type;
+      else
+        throw("ERROR: having trouble getting propertyObject type. ");
+    }
+  }
+  console.log('##type: ' + propertyObjectType);
+  return(propertyObjectType);
 }
 SoiSchemaGenerator.prototype.getDescription = function(propertyObject) {
   console.log('##get description from ?xsd short description' );
@@ -720,7 +838,7 @@ SoiSchemaGenerator.prototype.setPropertyPrimitiveTemplate = function (definition
 SoiSchemaGenerator.prototype.getRemoteDefinitionReference = function (anyOfObject) {
   var properties  = {}; 
   console.log('##get properties for remote definition');
-  remoteDefinitionObjectName = this.getDefinitionObjectName(anyOfObject);
+  //remoteDefinitionObjectName = this.getDefinitionObjectName(anyOfObject);
   //properties[remoteDefinitionObjectName] = { '$ref' : this.getRemoteDefinitionFileLocation(anyOfObject) }
   properties = { '$ref' : this.getRemoteDefinitionFileLocation(anyOfObject) };
   return(properties); 

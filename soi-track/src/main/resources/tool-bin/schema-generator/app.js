@@ -26,7 +26,9 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
   ssg.schemaTemplateObjects = schemaTemplateObjects;
   ssg.targetSchemaBaseDir = config.schemaBaseDir.target;
   ssg.schemaFilepathMappings = config.schemaFilepathMappings;
+  //ssg.setSchemaTemplateObjects(config.schemaTemplates);
   //ssg.schemaNamespace = SoiSchemaGenerator.getSchemaNamespace(sourceSchemaObject);
+  ssg.sourceSchemaBaseDir = config.schemaBaseDir.source;
   ssg.setSourceSchemaNamespace(sourceSchemaObject);
   ssg.setSourceSchemaBaseDirRelativeDepth();
   //ssg.generateObjectTypeSchema(sourceSchemaObject);
