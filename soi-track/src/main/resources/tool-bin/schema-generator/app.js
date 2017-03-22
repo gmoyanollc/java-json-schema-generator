@@ -1,6 +1,6 @@
 var fs = require('fs')
   , $RefParser = require('json-schema-ref-parser')
-  , SoiSchemaGenerator = require('./lib/soi-schema-generator.js');
+  , SchemaGenerator = require('./lib/schema-generator.js');
 
 var config;
 var schemaTemplateObjects = [];
@@ -20,14 +20,14 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
   console.log('##source schema file: ' + sourceSchemaFile);
   sourceSchemaBuffer = readFile(sourceSchemaFile);
   sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
-  //var ssg = new SoiSchemaGenerator(schemaTemplateObjects, config.schemaBaseDir.target
+  //var ssg = new SchemaGenerator(schemaTemplateObjects, config.schemaBaseDir.target
   //  , config.schemaFilepathMappings, schemaFilename.target);
-  var ssg = new SoiSchemaGenerator();
+  var ssg = new SchemaGenerator();
   ssg.schemaTemplateObjects = schemaTemplateObjects;
   ssg.targetSchemaBaseDir = config.schemaBaseDir.target;
   ssg.schemaFilepathMappings = config.schemaFilepathMappings;
   //ssg.setSchemaTemplateObjects(config.schemaTemplates);
-  //ssg.schemaNamespace = SoiSchemaGenerator.getSchemaNamespace(sourceSchemaObject);
+  //ssg.schemaNamespace = SchemaGenerator.getSchemaNamespace(sourceSchemaObject);
   ssg.sourceSchemaBaseDir = config.schemaBaseDir.source;
   ssg.setSourceSchemaNamespace(sourceSchemaObject);
   ssg.setSourceSchemaBaseDirRelativeDepth();
@@ -36,7 +36,7 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
 //});
 };
 
-writeDeferencedTargetSchemaFile();
+//writeDeferencedTargetSchemaFile();
 done();
 
 function readFile(file) {

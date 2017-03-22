@@ -1,15 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#TrackIdentification",
   "title": "TrackIdentification",
   "type": "object",
-  "description": "",
-  "version": "0.3.0",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TrackIdentification",
   "properties": {
-    "IdentificationType": {
-      "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
-    }
-  },
-  "additionalProperties": false
+    "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+  }
 }

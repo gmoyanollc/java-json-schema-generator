@@ -1,17 +1,9 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/LengthUnitCode",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#LengthUnitCode",
+  "title": "LengthUnitCode",
   "type": "object",
-  "description": "",
-  "version": "0.2.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_LengthUnitCode",
   "properties": {
-    "LengthCodeType": {
-      "type": "string"
-    }
-  },
-  "additionalProperties": false,
-  "required": [
-    ""
-  ]
+    "$ref": "../../../niem/codes/unece_rec20/3.0/LengthCodeType.json"
+  }
 }

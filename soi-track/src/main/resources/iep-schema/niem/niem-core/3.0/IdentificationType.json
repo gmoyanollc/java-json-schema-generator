@@ -1,30 +1,14 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/IdentificationType",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationType",
   "title": "IdentificationType",
   "type": "object",
-  "description": "",
-  "version": "0.2.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationType",
   "properties": {
-    "IdentificationID": {
-      "type": "array",
-      "description": "",
-      "items": {
-        "$ref": "../../../niem/niem-core/3.0/IdentificationID.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
-    },
-    "IdentificationAugmentationPoint": {
-      "type": "object",
-      "description": "",
-      "items": {
-        "$ref": "../../../tsoa/soi/track/2.0/TrackIdentificationAugmentationType.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
-    }
-  },
-  "additionalProperties": false
+    "identificationID": [
+      {}
+    ],
+    "identificationAugmentationPoint": [
+      {}
+    ]
+  }
 }
