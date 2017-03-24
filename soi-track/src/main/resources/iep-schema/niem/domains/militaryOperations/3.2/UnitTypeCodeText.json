@@ -1,8 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/UnitTypeCodeText",
-  "type": "string",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitTypeCodeText",
+  "title": "UnitTypeCodeText",
+  "type": "object",
   "description": "",
-  "version": "0.2.0",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitTypeCodeText"
+  "version": "0.3.0",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitTypeCodeText",
+  "properties": {
+    "value": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "ref": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "string"
+    },
+    "relationshipMetadata": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
 }

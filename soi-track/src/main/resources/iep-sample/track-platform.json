@@ -4,9 +4,7 @@
   "Track": { 
     "TrackIdentification": [
       {"IdentificationID": ["TC1645739552"]},
-      {"IdentificationAugmentationPoint": 
-        {"TrackShortName": "PLT-1"}
-      }
+      {"TrackShortName": "PLT-1"}
     ],
     "TrackAugmentation": {
       "ObservedPlatformSystem": {

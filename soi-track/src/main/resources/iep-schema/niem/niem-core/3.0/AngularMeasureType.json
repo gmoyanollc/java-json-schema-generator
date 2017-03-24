@@ -1,35 +1,60 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/AngularMeasureType",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularMeasureType",
   "title": "AngularMeasureType",
   "type": "object",
   "description": "",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularMeasureType",
   "properties": {
     "AngularDegreeValue": {
+      "id": "",
+      "title": "",
       "type": "array",
       "description": "",
+      "version": "0.3.0",
+      "javaType": "",
       "items": {
-        "$ref": "../../../niem/niem-core/3.0/AngularDegreeValue.json"
+        "$ref": "AngularDegreeValue.json"
       },
       "minItems": 1,
       "additionalItems": false
     },
     "AngularMinuteValue": {
+      "id": "",
+      "title": "",
       "type": "array",
       "description": "",
+      "version": "0.3.0",
+      "javaType": "",
       "items": {
-        "$ref": "../../../niem/niem-core/3.0/AngularMinuteValue.json"
+        "$ref": "AngularMinuteValue.json"
       },
       "minItems": 1,
       "additionalItems": false
     },
     "AngularSecondValue": {
+      "id": "",
+      "title": "",
       "type": "array",
       "description": "",
+      "version": "0.3.0",
+      "javaType": "",
       "items": {
-        "$ref": "../../../niem/niem-core/3.0/AngularSecondValue.json"
+        "$ref": "AngularSecondValue.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "AngularMeasureAugmentationPoint": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": "",
+      "items": {
+        "$ref": "AngularMeasureAugmentationPoint.json"
       },
       "minItems": 1,
       "additionalItems": false

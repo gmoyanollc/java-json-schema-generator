@@ -1,8 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/UnitName",
-  "type": "string",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitName",
+  "title": "UnitName",
+  "type": "object",
   "description": "",
-  "version": "0.2.0",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitName"
+  "version": "0.3.0",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitName",
+  "properties": {
+    "value": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "ref": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "string"
+    },
+    "relationshipMetadata": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
 }

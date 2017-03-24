@@ -42,8 +42,8 @@ done();
 function readFile(file) {
   console.log('##read file: ' + file);
   var fileBuffer = fs.readFileSync(file);
-  console.log('##output file buffer string');
-  console.log(fileBuffer.toString());
+  //console.log('##output file buffer string');
+  //console.log(fileBuffer.toString());
   return(fileBuffer);
 }
 

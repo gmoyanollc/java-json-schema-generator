@@ -1,14 +1,37 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationType",
   "title": "IdentificationType",
   "type": "object",
+  "description": "",
+  "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationType",
   "properties": {
-    "identificationID": [
-      {}
-    ],
-    "identificationAugmentationPoint": [
-      {}
-    ]
-  }
+    "IdentificationID": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": "",
+      "items": {
+        "$ref": "IdentificationID.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "ShortName": {
+      "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#ShortName",
+      "title": "ShortName",
+      "type": "object",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_ShortName",
+      "properties": {
+        "$ref": "../../../niem/niem-core/3.0/TextType.json"
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
 }

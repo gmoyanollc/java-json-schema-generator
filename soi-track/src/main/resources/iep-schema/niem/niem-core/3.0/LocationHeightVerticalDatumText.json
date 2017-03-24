@@ -1,7 +1,11 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationHeightVerticalDatumText",
   "title": "LocationHeightVerticalDatumText",
   "type": "object",
+  "description": "",
+  "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightVerticalDatumText",
-  "properties": {}
+  "properties": {},
+  "additionalProperties": false
 }

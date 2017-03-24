@@ -1,24 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/LocationHeightMeasureType",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationHeightMeasureType",
   "title": "LocationHeightMeasureType",
   "type": "object",
   "description": "",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightMeasureType",
   "properties": {
     "LocationHeightVerticalDatum": {
+      "id": "",
+      "title": "",
       "type": "array",
       "description": "",
+      "version": "0.3.0",
+      "javaType": "",
       "items": {
-        "$ref": "../../../niem/niem-core/3.0/LocationHeightVerticalDatum.json"
+        "$ref": "LocationHeightVerticalDatum.json"
       },
       "minItems": 1,
       "additionalItems": false
     }
   },
-  "additionalProperties": false,
-  "required": [
-    ""
-  ]
+  "additionalProperties": false
 }

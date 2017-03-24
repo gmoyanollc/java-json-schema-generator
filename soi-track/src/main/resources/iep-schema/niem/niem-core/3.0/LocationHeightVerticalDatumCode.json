@@ -1,9 +1,13 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationHeightVerticalDatumCode",
   "title": "LocationHeightVerticalDatumCode",
   "type": "object",
+  "description": "",
+  "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightVerticalDatumCode",
   "properties": {
     "$ref": "../../../niem/codes/nga_datum/3.0/VerticalDatumCodeType.json"
-  }
+  },
+  "additionalProperties": false
 }

@@ -138,7 +138,7 @@ generateObjectSchema
 #To-Do
 - [x] narrow breadth of components converted from XML Schema to only those referenced
 - [ ] generate SoiTrack/soi-track from TSOA_Track/tsoa-track
-- [ ] implement relative path to external components
+- [x] implement relative path to external components
 - [ ] keep component capitalization
 - [ ] remove default schema require declarative that is empty
 - [x] capture enumeration values
@@ -150,7 +150,10 @@ generateObjectSchema
 - [ ] capture substitution components but ignore abstract container component
 - [ ] ignore abstracts like augmentation point container, define and reference components or substitution components
         * augmentation point objects are listed in type definitions
-        * the assocation between an augmentation point object and its containing <elements> is not defined by jsonix
+        * the assocation between an augmentation point object and its containing <elements> is described in jsonix js module.
+          ** descendent component may be identified by a substitutionHead property that associates it to an augmentation point object
+            - [ ] populate a lookup table containing substitutionHeads and their substitutions
+            - [ ] lookup substitutions for substitutionHeads and generate
 - [ ] define substition components in augmentation point type
 - [ ] reference type of component element
 - [ ] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
