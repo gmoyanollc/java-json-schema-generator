@@ -8,19 +8,44 @@
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitShortName",
   "properties": {
     "value": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     },
     "id": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     },
     "ref": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     },
     "metadata": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     },
     "relationshipMetadata": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     }
   },
   "additionalProperties": false

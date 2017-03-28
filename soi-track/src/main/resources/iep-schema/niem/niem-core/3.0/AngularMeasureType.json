@@ -1,64 +1,54 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularMeasureType",
-  "title": "AngularMeasureType",
-  "type": "object",
-  "description": "",
-  "version": "0.3.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularMeasureType",
-  "properties": {
-    "AngularDegreeValue": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "0.3.0",
-      "javaType": "",
-      "items": {
-        "$ref": "AngularDegreeValue.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
+  "AngularDegreeValue": {
+    "id": "",
+    "title": "",
+    "type": "array",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": "",
+    "items": {
+      "$ref": "AngularDegreeValue.json"
     },
-    "AngularMinuteValue": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "0.3.0",
-      "javaType": "",
-      "items": {
-        "$ref": "AngularMinuteValue.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
-    },
-    "AngularSecondValue": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "0.3.0",
-      "javaType": "",
-      "items": {
-        "$ref": "AngularSecondValue.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
-    },
-    "AngularMeasureAugmentationPoint": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "0.3.0",
-      "javaType": "",
-      "items": {
-        "$ref": "AngularMeasureAugmentationPoint.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
-    }
+    "minItems": 1,
+    "additionalItems": false
   },
-  "additionalProperties": false
+  "AngularMinuteValue": {
+    "id": "",
+    "title": "",
+    "type": "array",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": "",
+    "items": {
+      "$ref": "AngularMinuteValue.json"
+    },
+    "minItems": 1,
+    "additionalItems": false
+  },
+  "AngularSecondValue": {
+    "id": "",
+    "title": "",
+    "type": "array",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": "",
+    "items": {
+      "$ref": "AngularSecondValue.json"
+    },
+    "minItems": 1,
+    "additionalItems": false
+  },
+  "AngularMeasureAugmentationPoint": {
+    "id": "",
+    "title": "",
+    "type": "array",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": "",
+    "items": {
+      "$ref": "AngularMeasureAugmentationPoint.json"
+    },
+    "minItems": 1,
+    "additionalItems": false
+  }
 }

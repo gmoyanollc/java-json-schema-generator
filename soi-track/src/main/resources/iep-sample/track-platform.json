@@ -1,11 +1,13 @@
 {
   "tsoaID": "42cb6a24-85a3-33bc-8c91-73305bdffe0b",
   "tsoaURI": "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/42cb6a2485a333bc8c9173305bdffe0b",
-  "Track": { 
+  "Track": [
+    { 
     "TrackIdentification": [
       {"IdentificationID": ["TC1645739552"]},
       {"TrackShortName": "PLT-1"}
-    ],
+    ]
+    },{
     "TrackAugmentation": {
       "ObservedPlatformSystem": {
         "PlatformSystem": [
@@ -43,5 +45,6 @@
         {"SpatialEnvironmentCode": "SUR"}
       ]
     }
-  }
+    }
+  ]
 }

@@ -1,47 +1,37 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/#Location2DGeospatialCoordinateType",
-  "title": "Location2DGeospatialCoordinateType",
-  "type": "object",
-  "description": "",
-  "version": "0.3.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_Location2DGeospatialCoordinateType",
-  "properties": {
-    "GeographicCoordinateLatitude": [
-      {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "0.3.0",
-        "javaType": "",
-        "$ref": "GeographicCoordinateLatitude.json"
-      }
-    ],
-    "GeographicCoordinateLongitude": [
-      {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "0.3.0",
-        "javaType": "",
-        "$ref": "GeographicCoordinateLongitude.json"
-      }
-    ],
-    "Location2DGeospatialCoordinateAugmentationPoint": {
+  "GeographicCoordinateLatitude": [
+    {
       "id": "",
       "title": "",
-      "type": "array",
+      "type": "object",
       "description": "",
       "version": "0.3.0",
       "javaType": "",
-      "items": {
-        "$ref": "Location2DGeospatialCoordinateAugmentationPoint.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
+      "$ref": "GeographicCoordinateLatitude.json"
     }
-  },
-  "additionalProperties": false
+  ],
+  "GeographicCoordinateLongitude": [
+    {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": "",
+      "$ref": "GeographicCoordinateLongitude.json"
+    }
+  ],
+  "Location2DGeospatialCoordinateAugmentationPoint": {
+    "id": "",
+    "title": "",
+    "type": "array",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": "",
+    "items": {
+      "$ref": "Location2DGeospatialCoordinateAugmentationPoint.json"
+    },
+    "minItems": 1,
+    "additionalItems": false
+  }
 }

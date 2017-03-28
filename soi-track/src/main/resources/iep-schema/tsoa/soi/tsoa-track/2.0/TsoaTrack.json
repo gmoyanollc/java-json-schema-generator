@@ -21,10 +21,20 @@
       "additionalItems": false
     },
     "tsoaID": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     },
     "tsoaURI": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     }
   },
   "additionalProperties": false
