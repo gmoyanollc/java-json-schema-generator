@@ -7,7 +7,9 @@
   "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObject2DGeospatialCoordinate",
   "properties": {
-    "$ref": "../../../../niem/niem-core/3.0/Location2DGeospatialCoordinateType.json"
+    "Location2DGeospatialCoordinateType": {
+      "$ref": "../../../../niem/niem-core/3.0/Location2DGeospatialCoordinateType.json"
+    }
   },
   "additionalProperties": false
 }

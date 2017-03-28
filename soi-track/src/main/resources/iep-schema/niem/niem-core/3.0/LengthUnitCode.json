@@ -7,7 +7,9 @@
   "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_LengthUnitCode",
   "properties": {
-    "$ref": "../../../niem/codes/unece_rec20/3.0/LengthCodeType.json"
+    "LengthCodeType": {
+      "$ref": "../../../niem/codes/unece_rec20/3.0/LengthCodeType.json"
+    }
   },
   "additionalProperties": false
 }

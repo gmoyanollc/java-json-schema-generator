@@ -284,16 +284,17 @@ SchemaGenerator.prototype.generateObjectSchema = function (sourceSchemaObject) {
               schemaObject.format = "date-time";
               break;
             default:
-              /*not sure if this condition needed: if ( typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined" )
+              if (( typeof sourceSchemaObject.definitions != "undefined" ) 
+                && ( typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined" ))
                 //schemaObject.properties 
                 //  = this.getProperty(sourceSchemaObject.definitions[this.getDefinitionObjectName(anyOfObject)]
                 //    , schemaObjectNamespace);
                 schemaObject.properties 
                   = this.getProperties(sourceSchemaObject.definitions[definitionObjectName])
-              else {*/
+              else {
                 schemaObject.properties = this.getRemoteDefinitionReference(anyOfObject);
                 this.generateRemoteObjectSchema(anyOfObject, definitionObjectName);
-              //};
+              };
           //} else {
             //console.log("##object definition is 'anyType'; type set to 'abstract object' and may be ignored.");
             //schemaObject.type = "abstract object may be ignored";
@@ -331,36 +332,25 @@ SchemaGenerator.prototype.generateRemoteObjectSchema = function (anyOfObject, de
 }
 
 SchemaGenerator.prototype.generateObjectDefinitionSchema = function (definitionObject) {
+  console.log("###generate Object Definition Schema");
   //if ( typeof sourceSchemaObject.definitions != "undefined" ) {
   if ( typeof definitionObject != "undefined" ) {
-
-      //definitionObject.allOf.forEach(function (anyOfObject) {
-        //schemaObjectNamespace = anyOfObject.elementName.namespaceURI;
-        switch ( this.getType(definitionObject) ) {
-          case 'object' :
-            var schemaObject = this.createSchemaTemplateObject('object-template');
-            schemaObject.id = this.getId(definitionObject.typeName);
-            //schemaObject.title = this.getTitle(anyOfObject);
-            //schemaObject.title = this.getTitle(definitionObject.typeName);
-            schemaObject.title = this.getTitle(definitionObject);
-            schemaObject.type = this.getType(definitionObject);
-            schemaObject.javaType = this.getJavaType(definitionObject.typeName);
-            //var definitionObjectName = this.getDefinitionObjectName(definitionObject);
-            //if ( typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined" )
-              schemaObject.properties = this.getProperties(definitionObject)
-            //else {
-            //  schemaObject.properties = this.getRemoteDefinitionReference(anyOfObject);
-            //  this.generateRemoteObjectSchema(anyOfObject, definitionObjectName);
-            //};
-            break;
-          default:
-            throw('ERROR: not sure how to generate an object for this allOf object type: ' + this.getType(definitionObject));
-        };
-        this.targetSchemaFileDestination = this.getSchemaFileDestination(definitionObject);
-        //this.targetSchemaFileDestination = this.getSchemaFileDestination(definitionObject, {"addRelativeDepth": true});
-        this.writeSchemaFile(schemaObject);
-      //}, this);
-
+    switch ( this.getType(definitionObject) ) {
+      case 'object' :
+        //g var schemaObject = this.createSchemaTemplateObject('object-template');
+        var schemaObject = {};
+        //g schemaObject.id = this.getId(definitionObject.typeName);
+        //g schemaObject.title = this.getTitle(definitionObject);
+        //g schemaObject.type = this.getType(definitionObject);
+        //g schemaObject.javaType = this.getJavaType(definitionObject.typeName);
+        schemaObject = this.getProperties(definitionObject);
+        break;
+      default:
+        throw('ERROR: not sure how to generate an object for this allOf object type: ' + this.getType(definitionObject));
+    };
+    this.targetSchemaFileDestination = this.getSchemaFileDestination(definitionObject);
+    //this.targetSchemaFileDestination = this.getSchemaFileDestination(definitionObject, {"addRelativeDepth": true});
+    this.writeSchemaFile(schemaObject);
   } else {
     throw('definition object is undefined: ' + definitionObjectName);
   };
@@ -497,7 +487,9 @@ SchemaGenerator.prototype.getProperties = function(definitionObject) {
     }
   }
 
-  return(properties); 
+  if ( Object.keys(properties).length > 0 )
+    return(properties)
+  else return(this.setPropertyPrimitiveTemplate(definitionObject)); 
   
   function getDefinitionPropertyContainer(definitionObject) {
     console.log('##get definitionPropertyContainer');
@@ -517,7 +509,8 @@ SchemaGenerator.prototype.getProperties = function(definitionObject) {
         //if (definitionObjectProperty.allOf[0].type === 'array') return('array');
         switch ( definitionObjectProperty.allOf[0].type ) {
           case "array": return("array")
-          case "object": return("array")
+          //case "object": return("array")
+          case "object": return("object")
           default: return('not applicable')
         };
       } else {
@@ -538,6 +531,7 @@ SchemaGenerator.prototype.getProperties = function(definitionObject) {
 SchemaGenerator.prototype.setPropertyArrayTemplate = function (definitionObjectProperty) {
 
   var schemaPropertyArrayTemplate = this.createSchemaTemplateObject('property-array-template');
+  //g var schemaPropertyArrayTemplate = { "items": {}};
   // only elements are schema objects
   /*
   if ( typeof definitionObjectProperties[definitionObjectProperty].elementName != "undefined" ) {
@@ -606,34 +600,35 @@ SchemaGenerator.prototype.setPropertyObjectTemplate = function (definitionObject
 }
 
 SchemaGenerator.prototype.setPropertyPrimitiveTemplate = function (definitionObjectProperty) {
-  var schemaPropertyPrimitiveTemplate = this.createSchemaTemplateObject('property-object-template');
-          //if ( typeof definitionObjectProperties[definitionObjectProperty].elementName != "undefined" ) {
-            //var schemaPropertyObjectTemplate = this.createSchemaTemplateObject('property-object-template');
-            //schemaPropertyObjectTemplate.type = 'object';
-            //if ( schemaObjectNamespace === this.sourceSchemaNamespace ) {
-              //schemaPropertyObjectTemplate.$ref = definitionObjectProperties[definitionObjectProperty].elementName.localPart + '.json'
-            //} else {
-              //schemaPropertyObjectTemplate.$ref 
-              //  = this.getSchemaFileDestination(definitionObjectProperties[definitionObjectProperty].elementName);
-              //schemaPropertyObjectTemplate.$ref 
-              //  = this.getSchemaFileDestination(definitionObjectProperties[definitionObjectProperty]);
-            //};
-            //return({[definitionObjectProperty] : [schemaPropertyObjectTemplate]});
+  var schemaPropertyPrimitiveTemplate = this.createSchemaTemplateObject('property-primitive-template');
+  //if ( typeof definitionObjectProperty.elementName != "undefined" ) {
+    //var schemaPropertyObjectTemplate = this.createSchemaTemplateObject('property-object-template');
+    //schemaPropertyObjectTemplate.type = 'object';
+    //if ( schemaObjectNamespace === this.sourceSchemaNamespace ) {
+      //schemaPropertyObjectTemplate.$ref = definitionObjectProperties[definitionObjectProperty].elementName.localPart + '.json'
+    //} else {
+      //schemaPropertyObjectTemplate.$ref 
+      //  = this.getSchemaFileDestination(definitionObjectProperties[definitionObjectProperty].elementName);
+      //schemaPropertyObjectTemplate.$ref 
+      //  = this.getSchemaFileDestination(definitionObjectProperties[definitionObjectProperty]);
+    //};
+    //return({[definitionObjectProperty] : [schemaPropertyObjectTemplate]});
   //if ( typeof definitionObjectProperty.attributeName != "undefined" ) {
-    return({ 'type' : 'string' });
+    //return({ 'type' : 'string' });
   //} else {
   //  throw('##### WARNING: ' + [definitionObjectProperty.title] + ' is not an element nor an attribute.');
  // }
   //};
-
+  schemaPropertyPrimitiveTemplate.type = "string";
+  return(schemaPropertyPrimitiveTemplate);
 }
 
 SchemaGenerator.prototype.getRemoteDefinitionReference = function (anyOfObject) {
   var properties  = {}; 
   console.log('##get properties for remote definition');
-  //remoteDefinitionObjectName = this.getDefinitionObjectName(anyOfObject);
-  //properties[remoteDefinitionObjectName] = { '$ref' : this.getRemoteDefinitionFileLocation(anyOfObject) }
-  properties = { '$ref' : this.getRemoteDefinitionFileLocation(anyOfObject) };
+  remoteDefinitionObjectName = this.getDefinitionObjectName(anyOfObject);
+  properties[remoteDefinitionObjectName] = { '$ref' : this.getRemoteDefinitionFileLocation(anyOfObject) };
+  //g properties = { '$ref' : this.getRemoteDefinitionFileLocation(anyOfObject) };
   return(properties); 
 }
 

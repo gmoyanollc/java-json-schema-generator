@@ -7,7 +7,9 @@
   "version": "0.3.0",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TrackIdentification",
   "properties": {
-    "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+    "IdentificationType": {
+      "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+    }
   },
   "additionalProperties": false
 }

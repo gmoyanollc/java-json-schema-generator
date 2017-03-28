@@ -7,7 +7,9 @@
   "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_DirectionDatumCode",
   "properties": {
-    "$ref": "../../../../niem/codes/nga_datum/3.0/DirectionDatumCodeType.json"
+    "DirectionDatumCodeType": {
+      "$ref": "../../../../niem/codes/nga_datum/3.0/DirectionDatumCodeType.json"
+    }
   },
   "additionalProperties": false
 }

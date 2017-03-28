@@ -7,7 +7,9 @@
   "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightVerticalDatumCode",
   "properties": {
-    "$ref": "../../../niem/codes/nga_datum/3.0/VerticalDatumCodeType.json"
+    "VerticalDatumCodeType": {
+      "$ref": "../../../niem/codes/nga_datum/3.0/VerticalDatumCodeType.json"
+    }
   },
   "additionalProperties": false
 }

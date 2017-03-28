@@ -6,6 +6,13 @@
   "description": "",
   "version": "0.3.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightVerticalDatumText",
-  "properties": {},
+  "properties": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": ""
+  },
   "additionalProperties": false
 }

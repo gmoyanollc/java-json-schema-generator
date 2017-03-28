@@ -39,14 +39,7 @@
               "version": "0.3.0",
               "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_TrackIdentification",
               "properties": {
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationType",
-                "title": "IdentificationType",
-                "type": "object",
-                "description": "",
-                "version": "0.3.0",
-                "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationType",
-                "properties": {
+                "IdentificationType": {
                   "IdentificationID": {
                     "id": "",
                     "title": "",
@@ -66,6 +59,7 @@
                     "additionalItems": false
                   },
                   "ShortName": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
                     "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#ShortName",
                     "title": "ShortName",
                     "type": "object",
@@ -73,190 +67,23 @@
                     "version": "0.3.0",
                     "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_ShortName",
                     "properties": {
-                      "$schema": "http://json-schema.org/draft-04/schema#",
-                      "id": "http://release.niem.gov/niem/niem-core/3.0/#TextType",
-                      "title": "TextType",
-                      "type": "object",
-                      "description": "",
-                      "version": "0.3.0",
-                      "javaType": "http___release_niem_gov_niem_niem_core_3_0_TextType",
-                      "properties": {},
-                      "additionalProperties": false
+                      "TextType": {
+                        "id": "",
+                        "title": "",
+                        "type": "string",
+                        "description": "",
+                        "version": "0.3.0",
+                        "javaType": ""
+                      }
                     },
                     "additionalProperties": false
                   }
-                },
-                "additionalProperties": false
+                }
               },
               "additionalProperties": false
             },
             "minItems": 1,
             "additionalItems": false
-          },
-          "ObservedMilitaryUnit": {
-            "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/#ObservedMilitaryUnit",
-            "title": "ObservedMilitaryUnit",
-            "type": "object",
-            "description": "",
-            "version": "0.3.0",
-            "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_military_unit_2_0_ObservedMilitaryUnit",
-            "properties": {
-              "Unit": {
-                "id": "",
-                "title": "",
-                "type": "array",
-                "description": "",
-                "version": "0.3.0",
-                "javaType": "",
-                "items": {
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Unit",
-                  "title": "Unit",
-                  "type": "object",
-                  "description": "",
-                  "version": "0.3.0",
-                  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Unit",
-                  "properties": {
-                    "UnitName": {
-                      "id": "",
-                      "title": "",
-                      "type": "array",
-                      "description": "",
-                      "version": "0.3.0",
-                      "javaType": "",
-                      "items": {
-                        "$schema": "http://json-schema.org/draft-04/schema#",
-                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitName",
-                        "title": "UnitName",
-                        "type": "object",
-                        "description": "",
-                        "version": "0.3.0",
-                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitName",
-                        "properties": {
-                          "value": {
-                            "type": "string"
-                          },
-                          "id": {
-                            "type": "string"
-                          },
-                          "ref": {
-                            "type": "string"
-                          },
-                          "metadata": {
-                            "type": "string"
-                          },
-                          "relationshipMetadata": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": false
-                      },
-                      "minItems": 1,
-                      "additionalItems": false
-                    },
-                    "UnitShortName": {
-                      "id": "",
-                      "title": "",
-                      "type": "array",
-                      "description": "",
-                      "version": "0.3.0",
-                      "javaType": "",
-                      "items": {
-                        "$schema": "http://json-schema.org/draft-04/schema#",
-                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitShortName",
-                        "title": "UnitShortName",
-                        "type": "object",
-                        "description": "",
-                        "version": "0.3.0",
-                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitShortName",
-                        "properties": {
-                          "value": {
-                            "type": "string"
-                          },
-                          "id": {
-                            "type": "string"
-                          },
-                          "ref": {
-                            "type": "string"
-                          },
-                          "metadata": {
-                            "type": "string"
-                          },
-                          "relationshipMetadata": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": false
-                      },
-                      "minItems": 1,
-                      "additionalItems": false
-                    },
-                    "UnitTypeCodeText": {
-                      "id": "",
-                      "title": "",
-                      "type": "array",
-                      "description": "",
-                      "version": "0.3.0",
-                      "javaType": "",
-                      "items": {
-                        "$schema": "http://json-schema.org/draft-04/schema#",
-                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitTypeCodeText",
-                        "title": "UnitTypeCodeText",
-                        "type": "object",
-                        "description": "",
-                        "version": "0.3.0",
-                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitTypeCodeText",
-                        "properties": {
-                          "value": {
-                            "type": "string"
-                          },
-                          "id": {
-                            "type": "string"
-                          },
-                          "ref": {
-                            "type": "string"
-                          },
-                          "metadata": {
-                            "type": "string"
-                          },
-                          "relationshipMetadata": {
-                            "type": "string"
-                          }
-                        },
-                        "additionalProperties": false
-                      },
-                      "minItems": 1,
-                      "additionalItems": false
-                    },
-                    "UnitAugmentationPoint": {
-                      "id": "",
-                      "title": "",
-                      "type": "array",
-                      "description": "",
-                      "version": "0.3.0",
-                      "javaType": "",
-                      "items": {
-                        "$schema": "http://json-schema.org/draft-04/schema#",
-                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitAugmentationPoint",
-                        "title": "UnitAugmentationPoint",
-                        "type": "object",
-                        "description": "",
-                        "version": "0.3.0",
-                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitAugmentationPoint",
-                        "properties": {},
-                        "additionalProperties": false
-                      },
-                      "minItems": 1,
-                      "additionalItems": false
-                    }
-                  },
-                  "additionalProperties": false
-                },
-                "minItems": 1,
-                "additionalItems": false
-              }
-            },
-            "additionalProperties": false
           }
         },
         "additionalProperties": false
@@ -265,10 +92,20 @@
       "additionalItems": false
     },
     "tsoaID": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     },
     "tsoaURI": {
-      "type": "string"
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "0.3.0",
+      "javaType": ""
     }
   },
   "additionalProperties": false

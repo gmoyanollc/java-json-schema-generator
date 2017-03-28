@@ -1,27 +1,42 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/#DirectionCodeType",
-  "title": "DirectionCodeType",
-  "type": "object",
-  "description": "",
-  "version": "0.3.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_DirectionCodeType",
-  "properties": {
-    "value": {
-      "type": "string"
-    },
-    "id": {
-      "type": "string"
-    },
-    "ref": {
-      "type": "string"
-    },
-    "metadata": {
-      "type": "string"
-    },
-    "relationshipMetadata": {
-      "type": "string"
-    }
+  "value": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": ""
   },
-  "additionalProperties": false
+  "id": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": ""
+  },
+  "ref": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": ""
+  },
+  "metadata": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": ""
+  },
+  "relationshipMetadata": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "0.3.0",
+    "javaType": ""
+  }
 }

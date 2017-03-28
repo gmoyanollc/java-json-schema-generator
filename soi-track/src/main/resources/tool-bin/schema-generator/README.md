@@ -117,23 +117,30 @@ JSON schema object's structural properties and constraints are defined by a "def
     * example: `xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/`
 
 #workflow
+Every 'anyOf' and 'definition' referenced by an anyOf component gets a schema file generated.  
 
 generateObjectSchema
   `-> sourceSchemaObject.anyOf.forEach
-        `-> getSchemaTemplateObject('object-template');
-        |     `-> getDefinitionReference() || getRemoteDefinitionReference()
-        |     |                                 `-> getDefinitionObjectName
-        |     |                                 `-> getRemoteDefinitionFileLocation()
-        |     `-> getProperties([definitionObjectName])
+        `-> createSchemaTemplateObject('object-template');
+        |     `-> getDefinitionObjectName
+        |     `-> test( definition is local )
+        |           `-> getProperties([definitionObjectName])
+        |         else
+        |           `-> getRemoteDefinitionReference()
+        |           `-> generateRemoteObjectSchema()
+        |                 `-> generateObjectDefinitionSchema()
+        |                       `-> getProperties([definitionObjectName])
+        |                       `-> getSchemaFileDestination()
+        |                       `-> writeSchemaFile()
         |
-        |           `-> forEach(definitionObjectProperty)
-        |                 `-> setPropertyArrayTemplate || setPropertyObjectTemplate
-        |                       `-> getSchemaTemplateObject()
-        |                       `-> getSchemaFileDestination(withRelativeDepth: true)
-        |
-        |
-        `--getSchemaFileDestination()
-        `--writeSchemaFile()
+        `-> getSchemaFileDestination()
+        `-> writeSchemaFile()
+
+getProperties([definitionObjectName])
+  `-> forEach(definitionObjectProperty)
+        `-> getPropertyTemplateType
+        `-> setProperty*Template
+
 
 #To-Do
 - [x] narrow breadth of components converted from XML Schema to only those referenced
@@ -155,7 +162,8 @@ generateObjectSchema
             - [ ] populate a lookup table containing substitutionHeads and their substitutions
             - [ ] lookup substitutions for substitutionHeads and generate
 - [ ] define substition components in augmentation point type
-- [ ] reference type of component element
+- [x] allOf reference to a definition should define only the properties of the definition.  The definition object should be ignored.
 - [ ] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
+- [ ] generate schema files recursively or remove filter for JSONIX compiler.  The schema file for certain definition properties is never generated because the property is locally referenced by a definition but not defined in the local JSONIX schema file.  This may be attributeable to filtered generation of JSONIX artifacts. [Example]("http://release.niem.gov/niem/niem-core/3.0/#SystemName")
 
 
