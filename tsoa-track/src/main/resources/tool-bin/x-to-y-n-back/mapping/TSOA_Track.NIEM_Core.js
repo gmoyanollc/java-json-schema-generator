@@ -3,24 +3,22 @@ var TSOA_Track.NIEM_Core_Module_Factory = function () {
     name: 'TSOA_Track.NIEM_Core',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
-    dependencies: ['gov_niem_release_niem_codes_nga_datum__3', 'gov_niem_release_niem_codes_unece_rec20__3', 'gov_niem_release_niem_structures__3', 'gov_niem_release_niem_proxy_xsd__3'],
+    dependencies: ['gov_niem_release_niem_codes_nga_datum__3', 'gov_niem_release_niem_structures__3', 'gov_niem_release_niem_proxy_xsd__3', 'gov_niem_release_niem_codes_unece_rec20__3'],
     typeInfos: [{
-        localName: 'ItemType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }]
-      }, {
-        localName: 'LongitudeCoordinateType',
+        localName: 'DateType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
-            name: 'longitudeDegreeValue',
-            elementName: 'LongitudeDegreeValue',
-            typeInfo: '.LongitudeDegreeType'
+            name: 'dateRepresentation',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementName: 'DateRepresentation',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
           }]
       }, {
         localName: 'AngularMinuteType',
@@ -49,87 +47,6 @@ var TSOA_Track.NIEM_Core_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'LocationHeightMeasureType',
-        baseTypeInfo: '.MeasureType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'locationHeightVerticalDatum',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            allowDom: false,
-            elementName: 'LocationHeightVerticalDatum',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }]
-      }, {
-        localName: 'Location2DGeospatialCoordinateType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'geographicCoordinateLatitude',
-            required: true,
-            elementName: 'GeographicCoordinateLatitude',
-            typeInfo: '.LatitudeCoordinateType'
-          }, {
-            name: 'geographicCoordinateLongitude',
-            required: true,
-            elementName: 'GeographicCoordinateLongitude',
-            typeInfo: '.LongitudeCoordinateType'
-          }, {
-            name: 'location2DGeospatialCoordinateAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'Location2DGeospatialCoordinateAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
-        localName: 'LatitudeCoordinateType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'latitudeDegreeValue',
-            elementName: 'LatitudeDegreeValue',
-            typeInfo: '.LatitudeDegreeType'
-          }]
-      }, {
-        localName: 'AngularMeasureType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'angularDegreeValue',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'AngularDegreeValue',
-            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.Integer'
-          }, {
-            name: 'angularMinuteValue',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'AngularMinuteValue',
-            typeInfo: '.AngularMinuteType'
-          }, {
-            name: 'angularSecondValue',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'AngularSecondValue',
-            typeInfo: '.AngularSecondType'
-          }, {
-            name: 'angularMeasureAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'AngularMeasureAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
         localName: 'MeasureType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
         propertyInfos: [{
@@ -155,49 +72,52 @@ var TSOA_Track.NIEM_Core_Module_Factory = function () {
             type: 'elementRef'
           }]
       }, {
-        localName: 'AngularSecondType',
+        localName: 'ItemType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: 'Decimal',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
           }]
       }, {
-        localName: 'DateType',
+        localName: 'IdentificationType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
-            name: 'dateRepresentation',
+            name: 'identificationID',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'IdentificationID',
+            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String'
+          }, {
+            name: 'identificationAugmentationPoint',
             minOccurs: 0,
             collection: true,
             mixed: false,
             allowDom: false,
-            elementName: 'DateRepresentation',
+            elementName: 'IdentificationAugmentationPoint',
             typeInfo: 'AnyType',
             type: 'elementRef'
           }]
       }, {
-        localName: 'LatitudeDegreeType',
+        localName: 'LocationHeightMeasureType',
+        baseTypeInfo: '.MeasureType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'locationHeightVerticalDatum',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementName: 'LocationHeightVerticalDatum',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'LongitudeDegreeType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
@@ -242,6 +162,120 @@ var TSOA_Track.NIEM_Core_Module_Factory = function () {
             typeInfo: '.DateType'
           }]
       }, {
+        localName: 'Location2DGeospatialCoordinateType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'geographicCoordinateLatitude',
+            required: true,
+            elementName: 'GeographicCoordinateLatitude',
+            typeInfo: '.LatitudeCoordinateType'
+          }, {
+            name: 'geographicCoordinateLongitude',
+            required: true,
+            elementName: 'GeographicCoordinateLongitude',
+            typeInfo: '.LongitudeCoordinateType'
+          }, {
+            name: 'location2DGeospatialCoordinateAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'Location2DGeospatialCoordinateAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'SystemIdentificationType',
+        baseTypeInfo: '.IdentificationType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'systemName',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'SystemName',
+            typeInfo: '.TextType'
+          }, {
+            name: 'systemIdentificationAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'SystemIdentificationAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'ProperNameTextType',
+        baseTypeInfo: '.TextType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }]
+      }, {
+        localName: 'LatitudeCoordinateType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'latitudeDegreeValue',
+            elementName: 'LatitudeDegreeValue',
+            typeInfo: '.LatitudeDegreeType'
+          }]
+      }, {
+        localName: 'LatitudeDegreeType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'Decimal',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'FacilityType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'facilityIdentification',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'FacilityIdentification',
+            typeInfo: '.IdentificationType'
+          }, {
+            name: 'facilityName',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'FacilityName',
+            typeInfo: '.ProperNameTextType'
+          }, {
+            name: 'facilityAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementName: 'FacilityAugmentationPoint',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }]
+      }, {
         localName: 'TextType',
         baseTypeInfo: 'gov_niem_release_niem_proxy_xsd__3.String',
         propertyInfos: [{
@@ -249,7 +283,75 @@ var TSOA_Track.NIEM_Core_Module_Factory = function () {
             type: 'anyAttribute'
           }]
       }, {
-        localName: 'LongitudeDegreeType',
+        localName: 'Degree360Type',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'Decimal',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'AngularMeasureType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'angularDegreeValue',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AngularDegreeValue',
+            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.Integer'
+          }, {
+            name: 'angularMinuteValue',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AngularMinuteValue',
+            typeInfo: '.AngularMinuteType'
+          }, {
+            name: 'angularSecondValue',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AngularSecondValue',
+            typeInfo: '.AngularSecondType'
+          }, {
+            name: 'angularMeasureAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AngularMeasureAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'LongitudeCoordinateType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'longitudeDegreeValue',
+            elementName: 'LongitudeDegreeValue',
+            typeInfo: '.LongitudeDegreeType'
+          }]
+      }, {
+        localName: 'AngularSecondType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
@@ -301,93 +403,26 @@ var TSOA_Track.NIEM_Core_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Degree360Type',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: 'Decimal',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'IdentificationType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'identificationID',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'IdentificationID',
-            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String'
-          }, {
-            name: 'identificationAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            allowDom: false,
-            elementName: 'IdentificationAugmentationPoint',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }]
-      }, {
-        localName: 'SystemIdentificationType',
-        baseTypeInfo: '.IdentificationType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'systemName',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'SystemName',
-            typeInfo: '.TextType'
-          }, {
-            name: 'systemIdentificationAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'SystemIdentificationAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
         type: 'enumInfo',
         localName: 'DirectionCodeSimpleType',
         values: ['E', 'ENE', 'ESE', 'N', 'NE', 'NNE', 'NNW', 'NW', 'S', 'SE', 'SSE', 'SSW', 'SW', 'W', 'WNW', 'WSW']
       }],
     elementInfos: [{
-        typeInfo: 'AnyType',
-        elementName: 'MeasurePoint',
-        substitutionHead: 'MeasureValue'
-      }, {
         typeInfo: '.TextType',
         elementName: 'LocationHeightVerticalDatumText',
         substitutionHead: 'LocationHeightVerticalDatum'
       }, {
-        typeInfo: 'gov_niem_release_niem_codes_unece_rec20__3.LengthCodeType',
-        elementName: 'LengthUnitCode',
-        substitutionHead: 'MeasureUnit'
-      }, {
         typeInfo: 'gov_niem_release_niem_codes_nga_datum__3.VerticalDatumCodeType',
         elementName: 'LocationHeightVerticalDatumCode',
         substitutionHead: 'LocationHeightVerticalDatum'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'MeasurePoint',
+        substitutionHead: 'MeasureValue'
+      }, {
+        typeInfo: 'gov_niem_release_niem_codes_unece_rec20__3.LengthCodeType',
+        elementName: 'LengthUnitCode',
+        substitutionHead: 'MeasureUnit'
       }, {
         typeInfo: 'gov_niem_release_niem_proxy_xsd__3.DateTime',
         elementName: 'DateTime',

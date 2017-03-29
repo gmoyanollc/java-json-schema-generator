@@ -2,57 +2,6 @@
 {
     "id":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/#",
     "definitions":{
-        "ObservedMilitaryUnitType":{
-            "allOf":[
-                {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/AugmentationType"
-                },
-                {
-                    "type":"object",
-                    "title":"ObservedMilitaryUnitType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "unit":{
-                            "title":"unit",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"http://release.niem.gov/niem/domains/militaryOperations/3.2/#/definitions/UnitType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"Unit",
-                                "namespaceURI":"http://release.niem.gov/niem/domains/militaryOperations/3.2/"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObservedMilitaryUnitType",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "unit"
-            ]
-        },
         "UnitReferenceNumberType":{
             "allOf":[
                 {
@@ -102,6 +51,57 @@
             "propertiesOrder":[
                 "otherAttributes",
                 "unitReferenceNumberID"
+            ]
+        },
+        "ObservedMilitaryUnitType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/AugmentationType"
+                },
+                {
+                    "type":"object",
+                    "title":"ObservedMilitaryUnitType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "unit":{
+                            "title":"unit",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"http://release.niem.gov/niem/domains/militaryOperations/3.2/#/definitions/UnitType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"Unit",
+                                "namespaceURI":"http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservedMilitaryUnitType",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "unit"
             ]
         }
     },

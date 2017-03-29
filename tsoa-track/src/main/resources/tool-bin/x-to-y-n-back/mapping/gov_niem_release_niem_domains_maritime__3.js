@@ -37,16 +37,16 @@ var gov_niem_release_niem_domains_maritime__3_Module_Factory = function () {
         values: ['AIR', 'LND', 'SPC', 'SUB', 'SUR', 'UNK']
       }],
     elementInfos: [{
+        typeInfo: 'TSOA_Track.NIEM_Core.TextType',
+        elementName: 'AngleUnitText',
+        substitutionHead: 'AngleUnit'
+      }, {
         typeInfo: 'AnyType',
         elementName: 'AngleUnit',
         substitutionHead: {
           localPart: 'MeasureUnit',
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/'
         }
-      }, {
-        typeInfo: 'TSOA_Track.NIEM_Core.TextType',
-        elementName: 'AngleUnitText',
-        substitutionHead: 'AngleUnit'
       }]
   };
   return {

@@ -3,21 +3,8 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
     name: 'https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3',
     defaultElementNamespaceURI: 'https:\/\/metadata.ces.mil\/dse\/dse_assets\/100135658\/SubmissionPackage\/niem\/militaryOperationsRestricted\/3.2\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
-    dependencies: ['gov_niem_release_niem_structures__3', 'TSOA_Track.NIEM_Core'],
+    dependencies: ['TSOA_Track.NIEM_Core', 'gov_niem_release_niem_structures__3'],
     typeInfos: [{
-        localName: 'ObserverType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'observerAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'ObserverAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
         localName: 'UnitReferenceNumberType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -56,11 +43,21 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
             elementName: 'WeaponSystemAugmentationPoint',
             typeInfo: 'AnyType'
           }]
+      }, {
+        localName: 'ObserverType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'observerAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ObserverAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
       }],
     elementInfos: [{
-        typeInfo: '.WeaponSystemType',
-        elementName: 'WeaponSystem'
-      }, {
         typeInfo: '.UnitReferenceNumberType',
         elementName: 'UnitReferenceNumberID'
       }, {
@@ -68,10 +65,13 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
         elementName: 'Observer'
       }, {
         typeInfo: 'AnyType',
-        elementName: 'WeaponSystemAugmentationPoint'
+        elementName: 'ObserverAugmentationPoint'
+      }, {
+        typeInfo: '.WeaponSystemType',
+        elementName: 'WeaponSystem'
       }, {
         typeInfo: 'AnyType',
-        elementName: 'ObserverAugmentationPoint'
+        elementName: 'WeaponSystemAugmentationPoint'
       }]
   };
   return {

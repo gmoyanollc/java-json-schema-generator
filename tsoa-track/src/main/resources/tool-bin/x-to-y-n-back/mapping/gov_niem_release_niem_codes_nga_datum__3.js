@@ -64,14 +64,14 @@ var gov_niem_release_niem_codes_nga_datum__3_Module_Factory = function () {
           }]
       }, {
         type: 'enumInfo',
-        localName: 'VerticalDatumCodeSimpleType',
-        baseTypeInfo: 'Token',
-        values: ['higherHighWaterLargeTide', 'highestHighWater', 'indianSpringHighWater', 'meanLowerLowWaterSprings', 'lowWaterSprings', 'wgs84Egm08Geoid', 'indianSpringLowWater', 'lowerLowWater', 'approxMeanLowWater', 'ngvd29', 'meanLowWater', 'meanHighWaterNeaps', 'meanHigherHighWaterSprings', 'igld1985', 'lowestLowWater', 'neapTide', 'navd88', 'highWaterSprings', 'wgs84Ellipsoid', 'meanHigherHighWater', 'nearlyHighestHighWater', 'higherHighWater', 'meanTideLevel', 'approxMeanLowerLowWater', 'meanLowerLowWater', 'highWater', 'highestAstronomicalTide', 'meanHighWater', 'lowestLowWaterSprings', 'meanSeaLevel', 'lowerLowWaterLargeTide', 'meanWaterLevel', 'lowestAstronomicalTide', 'meanLowWaterSprings', 'approxMeanLowWaterSprings', 'approxMeanSeaLevel', 'wgs84Egm96Geoid', 'springTide', 'approxLowestAstronomTide', 'equinoctialSpringLowWater', 'groundLevel', 'lowWater', 'meanHighWaterSprings', 'meanLowWaterNeaps', 'nearlyLowestLowWater', 'waterLevel']
-      }, {
-        type: 'enumInfo',
         localName: 'DirectionDatumCodeSimpleType',
         baseTypeInfo: 'Token',
         values: ['geodetic', 'Relative', 'militaryGrid', 'Magnetic']
+      }, {
+        type: 'enumInfo',
+        localName: 'VerticalDatumCodeSimpleType',
+        baseTypeInfo: 'Token',
+        values: ['higherHighWaterLargeTide', 'highestHighWater', 'indianSpringHighWater', 'meanLowerLowWaterSprings', 'lowWaterSprings', 'wgs84Egm08Geoid', 'indianSpringLowWater', 'lowerLowWater', 'approxMeanLowWater', 'ngvd29', 'meanLowWater', 'meanHighWaterNeaps', 'meanHigherHighWaterSprings', 'igld1985', 'lowestLowWater', 'neapTide', 'navd88', 'highWaterSprings', 'wgs84Ellipsoid', 'meanHigherHighWater', 'nearlyHighestHighWater', 'higherHighWater', 'meanTideLevel', 'approxMeanLowerLowWater', 'meanLowerLowWater', 'highWater', 'highestAstronomicalTide', 'meanHighWater', 'lowestLowWaterSprings', 'meanSeaLevel', 'lowerLowWaterLargeTide', 'meanWaterLevel', 'lowestAstronomicalTide', 'meanLowWaterSprings', 'approxMeanLowWaterSprings', 'approxMeanSeaLevel', 'wgs84Egm96Geoid', 'springTide', 'approxLowestAstronomTide', 'equinoctialSpringLowWater', 'groundLevel', 'lowWater', 'meanHighWaterSprings', 'meanLowWaterNeaps', 'nearlyLowestLowWater', 'waterLevel']
       }],
     elementInfos: []
   };

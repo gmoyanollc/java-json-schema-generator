@@ -1,15 +1,18 @@
 
 {
-    "id":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/#",
+    "id":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#",
     "definitions":{
-        "ObservedPlatformSystemType":{
+        "FacilityAugmentationType":{
+            "required":[
+                "facilityAllegianceCountryAbstract"
+            ],
             "allOf":[
                 {
                     "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/AugmentationType"
                 },
                 {
                     "type":"object",
-                    "title":"ObservedPlatformSystemType",
+                    "title":"FacilityAugmentationType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -23,21 +26,29 @@
                             ],
                             "propertyType":"anyAttribute"
                         },
-                        "platformSystem":{
-                            "title":"platformSystem",
+                        "facilityAllegianceCountryAbstract":{
+                            "title":"facilityAllegianceCountryAbstract",
                             "allOf":[
                                 {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/PlatformSystemType"
+                                    "type":"object",
+                                    "properties":{
+                                        "name":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                        },
+                                        "value":{
+                                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                        }
                                     },
-                                    "minItems":0
+                                    "elementName":{
+                                        "localPart":"FacilityAllegianceCountryAbstract",
+                                        "namespaceURI":"http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+                                    }
                                 }
                             ],
-                            "propertyType":"element",
+                            "propertyType":"elementRef",
                             "elementName":{
-                                "localPart":"PlatformSystem",
-                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                                "localPart":"FacilityAllegianceCountryAbstract",
+                                "namespaceURI":"http://release.niem.gov/niem/domains/militaryOperations/3.2/"
                             }
                         }
                     }
@@ -45,25 +56,22 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"ObservedPlatformSystemType",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                "localPart":"FacilityAugmentationType",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
             },
             "propertiesOrder":[
                 "otherAttributes",
-                "platformSystem"
+                "facilityAllegianceCountryAbstract"
             ]
         },
-        "PlatformSystemType":{
-            "required":[
-                "platformStandardIdentityCode"
-            ],
+        "ObservedFacilityType":{
             "allOf":[
                 {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/ObjectType"
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/AugmentationType"
                 },
                 {
                     "type":"object",
-                    "title":"PlatformSystemType",
+                    "title":"ObservedFacilityType",
                     "properties":{
                         "otherAttributes":{
                             "title":"otherAttributes",
@@ -77,34 +85,21 @@
                             ],
                             "propertyType":"anyAttribute"
                         },
-                        "systemIdentification":{
-                            "title":"systemIdentification",
+                        "facility":{
+                            "title":"facility",
                             "allOf":[
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/SystemIdentificationType"
+                                        "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/FacilityType"
                                     },
                                     "minItems":0
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"SystemIdentification",
-                                "namespaceURI":"http://release.niem.gov/niem/domains/intelligence/3.2/"
-                            }
-                        },
-                        "platformStandardIdentityCode":{
-                            "title":"platformStandardIdentityCode",
-                            "allOf":[
-                                {
-                                    "$ref":"http://release.niem.gov/niem/domains/militaryOperations/3.2/#/definitions/StandardIdentityCodeType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"PlatformStandardIdentityCode",
-                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                                "localPart":"Facility",
+                                "namespaceURI":"http://release.niem.gov/niem/niem-core/3.0/"
                             }
                         }
                     }
@@ -112,13 +107,12 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"PlatformSystemType",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                "localPart":"ObservedFacilityType",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
             },
             "propertiesOrder":[
                 "otherAttributes",
-                "systemIdentification",
-                "platformStandardIdentityCode"
+                "facility"
             ]
         }
     },
@@ -136,46 +130,12 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ObservedPlatformSystem"
+                                        "FacilityStandardIdentityCode"
                                     ]
                                 },
                                 "namespaceURI":{
                                     "enum":[
-                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/ObservedPlatformSystemType"
-                }
-            },
-            "elementName":{
-                "localPart":"ObservedPlatformSystem",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "PlatformStandardIdentityCode"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
                                     ]
                                 }
                             }
@@ -187,8 +147,8 @@
                 }
             },
             "elementName":{
-                "localPart":"PlatformStandardIdentityCode",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                "localPart":"FacilityStandardIdentityCode",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
             }
         },
         {
@@ -204,12 +164,12 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "PlatformSystem"
+                                        "FacilityAugmentationAbstract"
                                     ]
                                 },
                                 "namespaceURI":{
                                     "enum":[
-                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
                                     ]
                                 }
                             }
@@ -217,12 +177,46 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PlatformSystemType"
+                    "$ref":"#/definitions/FacilityAugmentationType"
                 }
             },
             "elementName":{
-                "localPart":"PlatformSystem",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                "localPart":"FacilityAugmentationAbstract",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ObservedFacility"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/ObservedFacilityType"
+                }
+            },
+            "elementName":{
+                "localPart":"ObservedFacility",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
             }
         }
     ]

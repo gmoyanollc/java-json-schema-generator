@@ -99,7 +99,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TsoaTrack"
+                                        "TrackIdentification"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -112,11 +112,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/TsoaTrackType"
+                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/IdentificationType"
                 }
             },
             "elementName":{
-                "localPart":"TsoaTrack",
+                "localPart":"TrackIdentification",
                 "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
             }
         },
@@ -167,7 +167,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TrackIdentification"
+                                        "TsoaTrack"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -180,11 +180,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/IdentificationType"
+                    "$ref":"#/definitions/TsoaTrackType"
                 }
             },
             "elementName":{
-                "localPart":"TrackIdentification",
+                "localPart":"TsoaTrack",
                 "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
             }
         }

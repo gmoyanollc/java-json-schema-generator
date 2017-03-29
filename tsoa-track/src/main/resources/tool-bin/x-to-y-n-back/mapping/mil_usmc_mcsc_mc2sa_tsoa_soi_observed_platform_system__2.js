@@ -2,8 +2,21 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2_Module_Factory = fu
   var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2 = {
     name: 'mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2',
     defaultElementNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/observed-platform-system\/2.0\/',
-    dependencies: ['gov_niem_release_niem_structures__3', 'TSOA_Track.NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3'],
+    dependencies: ['TSOA_Track.NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3', 'gov_niem_release_niem_structures__3'],
     typeInfos: [{
+        localName: 'ObservedPlatformSystemType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.AugmentationType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'platformSystem',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'PlatformSystem',
+            typeInfo: '.PlatformSystemType'
+          }]
+      }, {
         localName: 'PlatformSystemType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
         propertyInfos: [{
@@ -24,19 +37,6 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2_Module_Factory = fu
             elementName: 'PlatformStandardIdentityCode',
             typeInfo: 'gov_niem_release_niem_domains_militaryoperations__3.StandardIdentityCodeType'
           }]
-      }, {
-        localName: 'ObservedPlatformSystemType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.AugmentationType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'platformSystem',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'PlatformSystem',
-            typeInfo: '.PlatformSystemType'
-          }]
       }],
     elementInfos: [{
         typeInfo: '.ObservedPlatformSystemType',
@@ -46,11 +46,11 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2_Module_Factory = fu
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/'
         }
       }, {
-        typeInfo: '.PlatformSystemType',
-        elementName: 'PlatformSystem'
-      }, {
         typeInfo: 'gov_niem_release_niem_domains_militaryoperations__3.StandardIdentityCodeType',
         elementName: 'PlatformStandardIdentityCode'
+      }, {
+        typeInfo: '.PlatformSystemType',
+        elementName: 'PlatformSystem'
       }]
   };
   return {

@@ -3,36 +3,6 @@ var gov_niem_release_niem_proxy_xsd__3_Module_Factory = function () {
     name: 'gov_niem_release_niem_proxy_xsd__3',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     typeInfos: [{
-        localName: 'Base64Binary',
-        typeName: {
-          namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
-          localPart: 'base64Binary'
-        },
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: 'Base64Binary',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
         localName: 'Decimal',
         typeName: {
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
@@ -92,46 +62,17 @@ var gov_niem_release_niem_proxy_xsd__3_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Int',
+        localName: 'Boolean',
         typeName: {
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
-          localPart: 'int'
+          localPart: 'boolean'
         },
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
             name: 'value',
-            typeInfo: 'Int',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'AnyURI',
-        typeName: {
-          namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
-          localPart: 'anyURI'
-        },
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
+            typeInfo: 'Boolean',
             type: 'value'
           }, {
             name: 'id',
@@ -181,17 +122,16 @@ var gov_niem_release_niem_proxy_xsd__3_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Integer',
+        localName: 'AnyURI',
         typeName: {
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
-          localPart: 'integer'
+          localPart: 'anyURI'
         },
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
             name: 'value',
-            typeInfo: 'Integer',
             type: 'value'
           }, {
             name: 'id',
@@ -211,17 +151,77 @@ var gov_niem_release_niem_proxy_xsd__3_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Boolean',
+        localName: 'Base64Binary',
         typeName: {
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
-          localPart: 'boolean'
+          localPart: 'base64Binary'
         },
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
             name: 'value',
-            typeInfo: 'Boolean',
+            typeInfo: 'Base64Binary',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Int',
+        typeName: {
+          namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
+          localPart: 'int'
+        },
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'Int',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Integer',
+        typeName: {
+          namespaceURI: 'http:\/\/release.niem.gov\/niem\/proxy\/xsd\/3.0\/',
+          localPart: 'integer'
+        },
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'Integer',
             type: 'value'
           }, {
             name: 'id',

@@ -186,6 +186,26 @@
                 "relationshipMetadata"
             ]
         },
+        "DirectionDatumCodeSimpleType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
+                },
+                {
+                    "enum":[
+                        "geodetic",
+                        "Relative",
+                        "militaryGrid",
+                        "Magnetic"
+                    ]
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"DirectionDatumCodeSimpleType",
+                "namespaceURI":"http://release.niem.gov/niem/codes/nga_datum/3.0/"
+            }
+        },
         "VerticalDatumCodeSimpleType":{
             "allOf":[
                 {
@@ -245,26 +265,6 @@
             "typeType":"enumInfo",
             "typeName":{
                 "localPart":"VerticalDatumCodeSimpleType",
-                "namespaceURI":"http://release.niem.gov/niem/codes/nga_datum/3.0/"
-            }
-        },
-        "DirectionDatumCodeSimpleType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
-                },
-                {
-                    "enum":[
-                        "geodetic",
-                        "Relative",
-                        "militaryGrid",
-                        "Magnetic"
-                    ]
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"DirectionDatumCodeSimpleType",
                 "namespaceURI":"http://release.niem.gov/niem/codes/nga_datum/3.0/"
             }
         }

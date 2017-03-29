@@ -3,7 +3,7 @@ var TSOA_Track_Module_Factory = function () {
     name: 'TSOA_Track',
     defaultElementNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/tsoa-track\/2.0\/',
     defaultAttributeNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/tsoa-track\/2.0\/',
-    dependencies: ['gov_niem_release_niem_structures__3', 'TSOA_Track.NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3'],
+    dependencies: ['TSOA_Track.NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3', 'gov_niem_release_niem_structures__3'],
     typeInfos: [{
         localName: 'TsoaTrackType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
@@ -29,8 +29,8 @@ var TSOA_Track_Module_Factory = function () {
           }]
       }],
     elementInfos: [{
-        typeInfo: '.TsoaTrackType',
-        elementName: 'TsoaTrack'
+        typeInfo: 'TSOA_Track.NIEM_Core.IdentificationType',
+        elementName: 'TrackIdentification'
       }, {
         typeInfo: 'TSOA_Track.NIEM_Core.TextType',
         elementName: 'ShortName',
@@ -39,8 +39,8 @@ var TSOA_Track_Module_Factory = function () {
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/'
         }
       }, {
-        typeInfo: 'TSOA_Track.NIEM_Core.IdentificationType',
-        elementName: 'TrackIdentification'
+        typeInfo: '.TsoaTrackType',
+        elementName: 'TsoaTrack'
       }]
   };
   return {
