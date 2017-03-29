@@ -244,8 +244,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:FacilityIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:FacilityLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FacilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -534,9 +535,14 @@
       <xs:documentation>A building, place, or structure that provides a particular service.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityLocation" type="nc:LocationType" nillable="true">
+  <xs:element name="FacilityAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>A location of a facility.</xs:documentation>
+      <xs:documentation>An augmentation point for FacilityType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification assigned to a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FacilityName" type="nc:ProperNameTextType" nillable="true">

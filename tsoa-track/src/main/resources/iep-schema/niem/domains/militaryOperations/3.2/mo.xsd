@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/3.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:genc="http://release.niem.gov/niem/codes/nga_genc/3.0/" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/3.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/3.2/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>MilOps 3.2 - Distribution A</xs:documentation>
   </xs:annotation>
   <xs:import schemaLocation="../../../codes/nga_datum/3.0/nga_datum.xsd" namespace="http://release.niem.gov/niem/codes/nga_datum/3.0/"/>
+  <xs:import schemaLocation="../../../codes/nga_genc/3.0/nga_genc.xsd" namespace="http://release.niem.gov/niem/codes/nga_genc/3.0/"/>
   <xs:import schemaLocation="../../../codes/unece_rec20/3.0/unece_rec20-misc.xsd" namespace="http://release.niem.gov/niem/codes/unece_rec20/3.0/"/>
   <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
@@ -47,6 +48,18 @@
           <xs:element ref="mo:EventIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EventValidityDateTimeRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EventAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FacilityAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a nc:Facility.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="mo:FacilityAllegianceCountryAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -525,6 +538,21 @@
   <xs:element name="EventValidityDateTimeRange" type="nc:DateRangeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A start and stop time of the Event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityAllegianceCountryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a designator for a country to which a facility owes its allegiance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityAllegianceCountryCode" type="genc:CountryAlpha3CodeType" substitutionGroup="mo:FacilityAllegianceCountryAbstract">
+    <xs:annotation>
+      <xs:documentation>A designator for a country to which a facility owes its allegiance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityAugmentation" type="mo:FacilityAugmentationType" substitutionGroup="nc:FacilityAugmentationPoint">
+    <xs:annotation>
+      <xs:documentation>Additional information about a nc:Facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MILSTD2525-B-SIDC-Code" type="mo:MILSTD2525-B-SIDC-Type" nillable="true">
