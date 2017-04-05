@@ -92,8 +92,8 @@
     <jaxb:schemaBindings>
       <jaxb:package name="gov.niem.core.v_3_0"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TSOA_Track.NIEM_Core">
-      <jsonix:mapping package="gov.niem.core.v_3_0" name="TSOA_Track.NIEM_Core">
+    <jsonix:module name="TSOA_Track_NIEM_Core">
+      <jsonix:mapping package="gov.niem.core.v_3_0" name="TSOA_Track_NIEM_Core">
         <jsonix:includes>
           <jsonix:dependencies-of-mapping name="TSOA_Track"/>
         </jsonix:includes>
@@ -159,10 +159,10 @@
         <jaxb:elementName suffix="Element"/>
       </jaxb:nameXmlTransform>
     </jaxb:schemaBindings>
-    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML">
-      <jsonix:mapping package="net.opengis.gml.v_3_2_1" name="TSOA_Track.NIEM_Core.OGC_GML">
+    <jsonix:module name="TSOA_Track_NIEM_Core.OGC_GML">
+      <jsonix:mapping package="net.opengis.gml.v_3_2_1" name="TSOA_Track_NIEM_Core.OGC_GML">
         <jsonix:includes>
-          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core"/>
+          <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core"/>
         </jsonix:includes>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
@@ -283,10 +283,10 @@
     <jaxb:schemaBindings>
       <jaxb:package name="org.isotc211.v_2005.gmd"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD">
-      <jsonix:mapping package="org.isotc211.v_2005.gmd" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD">
+    <jsonix:module name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GMD">
+      <jsonix:mapping package="org.isotc211.v_2005.gmd" name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GMD">
         <jsonix:includes>
-          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML"/>
+          <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core.OGC_GML"/>
         </jsonix:includes>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
@@ -299,10 +299,10 @@
     <jaxb:schemaBindings>
       <jaxb:package name="org.isotc211.v_2005.gsr"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSR">
-      <jsonix:mapping package="org.isotc211.v_2005.gsr" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSR">
+    <jsonix:module name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GSR">
+      <jsonix:mapping package="org.isotc211.v_2005.gsr" name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GSR">
         <jsonix:includes>
-          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD"/>
+          <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
@@ -315,10 +315,10 @@
     <jaxb:schemaBindings>
       <jaxb:package name="org.isotc211.v_2005.gss"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSS">
-      <jsonix:mapping package="org.isotc211.v_2005.gss" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GSS">
+    <jsonix:module name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GSS">
+      <jsonix:mapping package="org.isotc211.v_2005.gss" name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GSS">
         <jsonix:includes>
-          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD"/>
+          <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
@@ -331,10 +331,10 @@
     <jaxb:schemaBindings>
       <jaxb:package name="org.isotc211.v_2005.gts"/>
     </jaxb:schemaBindings>
-    <jsonix:module name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GTS">
-      <jsonix:mapping package="org.isotc211.v_2005.gts" name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GTS">
+    <jsonix:module name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GTS">
+      <jsonix:mapping package="org.isotc211.v_2005.gts" name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GTS">
         <jsonix:includes>
-          <jsonix:dependencies-of-mapping name="TSOA_Track.NIEM_Core.OGC_GML.ISOTC211_GMD"/>
+          <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core.OGC_GML.ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
       <jsonix:jsonSchema fileName="${module.name}.schema.json"/>

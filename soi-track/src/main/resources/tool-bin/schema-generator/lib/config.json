@@ -1,17 +1,19 @@
 {
+  "targetSchemaBuildVersion": "0.4.0",
   "schemaBaseDir": {
     "source": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/",
     "target": "../../iep-schema/"
   },
-  "schemaSourceFilenames": ["TSOA_Track-schema.json"
-    
-    ],
+  "schemaSourceFilenames": [
+    "TSOA_Track-schema.json"
+  ],
   "g_schemaSourceFilenames": [
     "TSOA_Track-schema.json",
-    "TSOA_Track.NIEM_Core.schema.json",  
     "gov_niem_release_niem_domains_militaryoperations__3.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2.jsonschema",
+    "TSOA_Track.NIEM_Core.schema.json",  
+    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.jsonschema",
 
+    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2.jsonschema",
     "gov_niem_release_niem_codes_nga_datum__3.jsonschema", 
     "gov_niem_release_niem_codes_unece_rec20__3.jsonschema", 
     "gov_niem_release_niem_domains_cbrn__3.jsonschema",
@@ -35,156 +37,195 @@
     {
       "id": "object-template",
       "file": "./lib/schema-object-template.json"
-    },
-    {
+    }, {
+      "id": "array-template",
+      "file": "./lib/schema-array-template.json"
+    }, {
       "id": "property-object-template",
       "file": "./lib/schema-property-object-template.json"
-    },
-    {
+    }, {
       "id": "property-array-template",
       "file": "./lib/schema-property-array-template.json"
-    },
-    {
+    }, {
       "id": "property-primitive-template",
       "file": "./lib/schema-property-primitive-template.json"
     }
   ],
   "schemaFilepathMappings": [
     {
+      "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/",
+      "sourceModuleFile": "TSOA_Track.js",
+      "sourceSchemaFile": "TSOA_Track-schema.json",
+      "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/",
+      "targetSchemaFilepath": "tsoa/soi/tsoa-track/2.0/"
+    },{
       "namespace": "http://www.w3.org/1999/xlink",
+      "sourceModuleFile": "",
       "sourceSchemaFile": "",
       "sourceSchemaFileId": "",
       "targetSchemaFilepath": "jsonix/w3c/1999/"
     },{
       "namespace": "",
+      "sourceModuleFile": "",
       "sourceSchemaFile": "",
       "sourceSchemaFileId": "",
       "targetSchemaFilepath": "jsonix/w3c/2001/"
     },{
       "namespace": "http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema",
+      "sourceModuleFile": "",
       "sourceSchemaFile": "jsonschemas/w3c/2001/XMLSchema.jsonschema",
       "sourceSchemaFileId": "http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema",
       "targetSchemaFilepath": "jsonix/w3c/2001/"
     },{
       "namespace": "http://release.niem.gov/niem/codes/nga_datum/3.0/",
+      "sourceModuleFile": "gov_niem_release_niem_codes_nga_datum__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_codes_nga_datum__3.jsonschema",
       "sourceSchemaFileId": "#",
       "targetSchemaFilepath": "niem/codes/nga_datum/3.0/"
     },{
+      "namespace": "http://release.niem.gov/niem/codes/nga_genc/3.0/",
+      "sourceModuleFile": "gov_niem_release_niem_codes_nga_genc__3.js",
+      "sourceSchemaFile": "gov_niem_release_niem_codes_nga_genc__3.jsonschema",
+      "sourceSchemaFileId": "#",
+      "targetSchemaFilepath": "niem/codes/nga_genc/3.0/"
+    },{
       "namespace": "http://release.niem.gov/niem/codes/unece_rec20/3.0/",
+      "sourceModuleFile": "gov_niem_release_niem_codes_unece_rec20__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_codes_unece_rec20__3.jsonschema",
       "sourceSchemaFileId": "#",
       "targetSchemaFilepath": "niem/codes/unece_rec20/3.0/"
     },{
       "namespace": "http://release.niem.gov/niem/domains/cbrn/3.2/",
+      "sourceModuleFile": "gov_niem_release_niem_domains_cbrn__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_domains_cbrn__3.jsonschema",
       "sourceSchemaFileId": "http://release.niem.gov/niem/domains/cbrn/3.2/",
       "targetSchemaFilepath": "niem/domains/cbrn/3.2/"
     },{
       "namespace": "http://release.niem.gov/niem/domains/intelligence/3.2/",
+      "sourceModuleFile": "gov_niem_release_niem_domains_intelligence__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_domains_intelligence__3.jsonschema",
       "sourceSchemaFileId": "http://release.niem.gov/niem/domains/intelligence/3.2/", 
       "targetSchemaFilepath": "niem/domains/intelligence/3.2/"
     },{
       "namespace": "http://release.niem.gov/niem/domains/maritime/3.2/",
+      "sourceModuleFile": "gov_niem_release_niem_domains_maritime__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_domains_maritime__3.jsonschema",
       "sourceSchemaFileId": "http://release.niem.gov/niem/domains/maritime/3.2/",
       "targetSchemaFilepath": "niem/domains/maritime/3.2/"
     },{
       "namespace": "http://release.niem.gov/niem/domains/militaryOperations/3.2/",
+      "sourceModuleFile": "gov_niem_release_niem_domains_militaryoperations__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_domains_militaryoperations__3.jsonschema",
       "sourceSchemaFileId": "http://release.niem.gov/niem/domains/militaryOperations/3.2/",
       "targetSchemaFilepath": "niem/domains/militaryOperations/3.2/"
     },{
       "namespace": "http://release.niem.gov/niem/localTerminology/3.0/",
+      "sourceModuleFile": "gov_niem_release_niem_localterminology__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_localterminology__3.jsonschema",
       "sourceSchemaFileId": "http://release.niem.gov/niem/localTerminology/3.0/",
       "targetSchemaFilepath": "niem/localTerminology/3.0/"
     },{
       "namespace": "http://release.niem.gov/niem/niem-core/3.0/",
+      "sourceModuleFile": "TSOA_Track.NIEM_Core.js",
       "sourceSchemaFile": "TSOA_Track.NIEM_Core.schema.json",
       "sourceSchemaFileId": "http://release.niem.gov/niem/niem-core/3.0/",
       "targetSchemaFilepath": "niem/niem-core/3.0/"
     },{
       "namespace": "http://release.niem.gov/niem/proxy/xsd/3.0/",
+      "sourceModuleFile": "gov_niem_release_niem_proxy_xsd__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_proxy_xsd__3.jsonschema",
       "sourceSchemaFileId": "http://release.niem.gov/niem/proxy/xsd/3.0/",
       "targetSchemaFilepath": "niem/proxy/xsd/3.0/"
     },{
       "namespace": "http://release.niem.gov/niem/structures/3.0/",
+      "sourceModuleFile": "gov_niem_release_niem_structures__3.js",
       "sourceSchemaFile": "gov_niem_release_niem_structures__3.jsonschema",
       "sourceSchemaFileId": "http://release.niem.gov/niem/structures/3.0/",
       "targetSchemaFilepath": "niem/structures/3.0/"
     },{
       "namespace": "https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/",
+      "sourceModuleFile": "https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3.js",
       "sourceSchemaFile": "https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3.jsonschema",
       "sourceSchemaFileId": "https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/",
       "targetSchemaFilepath": "niem/domains/militaryOperationsRestricted/3.2/"
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/",
+      "sourceModuleFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observation__2.js",
       "sourceSchemaFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observation__2.jsonschema",
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/",
       "targetSchemaFilepath": "tsoa/soi/feature-observation/2.0/"
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/",
+      "sourceModuleFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observer__2.js",
       "sourceSchemaFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observer__2.jsonschema", 
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/",
       "targetSchemaFilepath": "tsoa/soi/feature-observer/2.0/"
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/",
+      "sourceModuleFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2.js",
       "sourceSchemaFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2.jsonschema", 
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/",
       "targetSchemaFilepath": "tsoa/soi/observed-event/2.0/"
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/",
+      "sourceModuleFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_military_unit__2.js",
       "sourceSchemaFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_military_unit__2.jsonschema",
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/",
       "targetSchemaFilepath": "tsoa/soi/observed-military-unit/2.0/"
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/",
+      "sourceModuleFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2.js",
       "sourceSchemaFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2.jsonschema",
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/", 
       "targetSchemaFilepath": "tsoa/soi/observed-platform-system/2.0/"
     },{
+      "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/",
+      "sourceModuleFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.js",
+      "sourceSchemaFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.jsonschema",
+      "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/", 
+      "targetSchemaFilepath": "tsoa/soi/observed-facility/2.0/"
+    },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-weapon/2.0/",
+      "sourceModuleFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_weapon__2.js",
       "sourceSchemaFile": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_weapon__2.jsonschema",
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-weapon/2.0/", 
       "targetSchemaFilepath": "tsoa/soi/observed-weapon/2.0/"
     },{
       "namespace": "http://www.isotc211.org/2005/gco",
+      "sourceModuleFile": "org_isotc211__2005_gco.js",
       "sourceSchemaFile": "org_isotc211__2005_gco.jsonschema",
       "sourceSchemaFileId": "http://www.isotc211.org/2005/gco",
       "targetSchemaFilepath": "iso/19139/20070417/gco/"
     },{
       "namespace": "http://www.isotc211.org/2005/gmd",
+      "sourceModuleFile": "",
       "sourceSchemaFile": "",
       "sourceSchemaFileId": "http://www.isotc211.org/2005/gmd",
       "targetSchemaFilepath": "iso/19139/20070417/gmd/"
     },{
       "namespace": "http://www.isotc211.org/2005/gsr",
+      "sourceModuleFile": "",
       "sourceSchemaFile": "",
       "sourceSchemaFileId": "http://www.isotc211.org/2005/gsr",
       "targetSchemaFilepath": "iso/19139/20070417/gsr/"
     },{
       "namespace": "http://www.isotc211.org/2005/gss",
+      "sourceModuleFile": "",
       "sourceSchemaFile": "",
       "sourceSchemaFileId": "http://www.isotc211.org/2005/gss",
       "targetSchemaFilepath": "iso/19139/20070417/gss/"
     },{
       "namespace": "http://www.isotc211.org/2005/gts",
+      "sourceModuleFile": "",
       "sourceSchemaFile": "",
       "sourceSchemaFileId": "http://www.isotc211.org/2005/gts",
       "targetSchemaFilepath": "iso/19139/20070417/gts/"
     },{
       "namespace": "http://www.opengis.net/gml/3.2",
+      "sourceModuleFile": "TSOA_Track.NIEM_Core.OGC_GML.js",
       "sourceSchemaFile": "TSOA_Track.NIEM_Core.OGC_GML.schema.json",
       "sourceSchemaFileId": "http://www.opengis.net/gml/3.2",
       "targetSchemaFilepath": "ogc/gml/3.2.1/"
-    },{
-      "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/",
-      "sourceSchemaFile": "TSOA_Track-schema.json",
-      "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/",
-      "targetSchemaFilepath": "tsoa/soi/tsoa-track/2.0/"
     }
   ]
 }

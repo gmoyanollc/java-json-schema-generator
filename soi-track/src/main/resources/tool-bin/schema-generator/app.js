@@ -3,13 +3,16 @@ var fs = require('fs')
   , SchemaGenerator = require('./lib/schema-generator.js');
 
 var config;
-var schemaTemplateObjects = [];
+//var schemaTemplateObjects = [];
 
 initialize();
 
+var sourceSchemaFile;
 var sourceSchemaBuffer;
 var sourceSchemaObject;
-var sourceSchemaFile;
+var sourceModuleFile;
+var sourceModuleBuffer
+var sourceModuleObject
 
 console.log('##iterate JSONIX generated JSON schema files');
 
@@ -20,17 +23,26 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
   console.log('##source schema file: ' + sourceSchemaFile);
   sourceSchemaBuffer = readFile(sourceSchemaFile);
   sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
+  //sourceModuleFile = require(config.schemaBaseDir.source + "TSOA_Track.NIEM_Core.js");
+  //console.log('##source module file: ' + sourceModuleFile);
+  //sourceModuleBuffer = readFile(sourceModuleFile);
+  //sourceModuleObject = JSON.parse(sourceModuleBuffer);
   //var ssg = new SchemaGenerator(schemaTemplateObjects, config.schemaBaseDir.target
   //  , config.schemaFilepathMappings, schemaFilename.target);
   var ssg = new SchemaGenerator();
-  ssg.schemaTemplateObjects = schemaTemplateObjects;
+  //ssg.schemaTemplateObjects = schemaTemplateObjects;
+  ssg.schemaTemplateObjects = getSchemaTemplateObjects();
+  //ssg.substitutionHeadAssociations = sourceSchemaFile;
   ssg.targetSchemaBaseDir = config.schemaBaseDir.target;
+  ssg.targetSchemaBuildVersion = config.targetSchemaBuildVersion;
   ssg.schemaFilepathMappings = config.schemaFilepathMappings;
   //ssg.setSchemaTemplateObjects(config.schemaTemplates);
   //ssg.schemaNamespace = SchemaGenerator.getSchemaNamespace(sourceSchemaObject);
   ssg.sourceSchemaBaseDir = config.schemaBaseDir.source;
   ssg.setSourceSchemaNamespace(sourceSchemaObject);
   ssg.setSourceSchemaBaseDirRelativeDepth();
+  //ssg.setSourceModule();
+  ssg.setSubstitutionMappings();
   //ssg.generateObjectTypeSchema(sourceSchemaObject);
   ssg.generateObjectSchema(sourceSchemaObject);
 //});
@@ -79,7 +91,7 @@ function writeDeferencedTargetSchemaFile() {
 function initialize() {
   console.log('#Hello World');
   config = JSON.parse(readFile('./lib/config.json'));
-  schemaTemplateObjects = getSchemaTemplateObjects();
+  //schemaTemplateObjects = getSchemaTemplateObjects();
 }
 
 function done() {

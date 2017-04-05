@@ -1,6 +1,6 @@
-var TSOA_Track.NIEM_Core_Module_Factory = function () {
-  var TSOA_Track.NIEM_Core = {
-    name: 'TSOA_Track.NIEM_Core',
+var TSOA_Track_NIEM_Core_Module_Factory = function () {
+  var TSOA_Track_NIEM_Core = {
+    name: 'TSOA_Track_NIEM_Core',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     dependencies: ['gov_niem_release_niem_codes_nga_datum__3', 'gov_niem_release_niem_structures__3', 'gov_niem_release_niem_proxy_xsd__3', 'gov_niem_release_niem_codes_unece_rec20__3'],
@@ -430,18 +430,18 @@ var TSOA_Track.NIEM_Core_Module_Factory = function () {
       }]
   };
   return {
-    TSOA_Track.NIEM_Core: TSOA_Track.NIEM_Core
+    TSOA_Track_NIEM_Core: TSOA_Track_NIEM_Core
   };
 };
 if (typeof define === 'function' && define.amd) {
-  define([], TSOA_Track.NIEM_Core_Module_Factory);
+  define([], TSOA_Track_NIEM_Core_Module_Factory);
 }
 else {
-  var TSOA_Track.NIEM_Core_Module = TSOA_Track.NIEM_Core_Module_Factory();
+  var TSOA_Track_NIEM_Core_Module = TSOA_Track_NIEM_Core_Module_Factory();
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports.TSOA_Track.NIEM_Core = TSOA_Track.NIEM_Core_Module.TSOA_Track.NIEM_Core;
+    module.exports.TSOA_Track_NIEM_Core = TSOA_Track_NIEM_Core_Module.TSOA_Track_NIEM_Core;
   }
   else {
-    var TSOA_Track.NIEM_Core = TSOA_Track.NIEM_Core_Module.TSOA_Track.NIEM_Core;
+    var TSOA_Track_NIEM_Core = TSOA_Track_NIEM_Core_Module.TSOA_Track_NIEM_Core;
   }
 }

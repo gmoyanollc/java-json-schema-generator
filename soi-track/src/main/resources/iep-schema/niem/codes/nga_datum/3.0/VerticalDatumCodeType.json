@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/codes/nga_datum/3.0/#VerticalDatumCodeType",
+  "title": "VerticalDatumCodeType",
+  "type": "object",
+  "description": " :-) Soon we'll include documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___release_niem_gov_niem_codes_nga_datum_3_0_VerticalDatumCodeType",
+  "properties": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "",
+    "javaType": ""
+  },
+  "additionalProperties": false
+}

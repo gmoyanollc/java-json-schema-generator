@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/structures/3.0/#ObjectType",
+  "title": "ObjectType",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___release_niem_gov_niem_structures_3_0_ObjectType",
+  "properties": {
+    "ObjectAugmentationPoint": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "items": {
+        "$ref": "ObjectAugmentationPoint.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "id": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "ref": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "metadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "relationshipMetadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    }
+  },
+  "additionalProperties": false
+}

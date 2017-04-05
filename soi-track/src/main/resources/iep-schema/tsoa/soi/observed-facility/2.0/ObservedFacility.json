@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#ObservedFacility",
+  "title": "ObservedFacility",
+  "type": "object",
+  "description": "",
+  "version": "0.3.1",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_facility_2_0_ObservedFacility",
+  "properties": {
+    "Facility": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.1",
+      "javaType": "",
+      "items": {
+        "$ref": "../../../../niem/niem-core/3.0/Facility.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/codes/unece_rec20/3.0/#LengthCodeType",
+  "title": "LengthCodeType",
+  "type": "object",
+  "description": " :-) Soon we'll include documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___release_niem_gov_niem_codes_unece_rec20_3_0_LengthCodeType",
+  "properties": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "",
+    "javaType": ""
+  },
+  "additionalProperties": false
+}

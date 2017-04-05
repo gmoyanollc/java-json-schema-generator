@@ -5,7 +5,7 @@
       "title": "",
       "type": "object",
       "description": "",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "javaType": "",
       "$ref": "GeographicCoordinateLatitude.json"
     }
@@ -16,7 +16,7 @@
       "title": "",
       "type": "object",
       "description": "",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "javaType": "",
       "$ref": "GeographicCoordinateLongitude.json"
     }
@@ -26,7 +26,7 @@
     "title": "",
     "type": "array",
     "description": "",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "javaType": "",
     "items": {
       "$ref": "Location2DGeospatialCoordinateAugmentationPoint.json"

@@ -1,0 +1,28 @@
+{
+  "associations": [
+    {
+      "componentId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#ShortName",
+      "substitutionHead": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationAugmentationPoint"
+      , "@$ref": "../../../tsoa/soi/tsoa-track/2.0/ShortName.json"
+    }, {
+      "componentId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#ObservedFacility",
+      "substitutionHead": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#TrackAugmentationPoint"
+      , "@$ref": "../../../../tsoa/soi/observed-facility/2.0/ObservedFacility.json"
+    }, {
+      "componentId": "LocationHeightVerticalDatumCode",
+      "substitutionHead": "LocationHeightVerticalDatum"
+    }, {
+      "componentId": "MeasurePoint",
+      "substitutionHead": "MeasureValue"
+    }, {
+      "componentId": "MeasurePoint",
+      "substitutionHead": "MeasureValue"
+    }, {
+      "elementName": "LengthUnitCode",
+      "substitutionHead": "MeasureUnit"
+    }, {
+      "componentId": "DateTime",
+      "substitutionHead": "DateRepresentation"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-var TSOA_Track.NIEM_Core.OGC_GML_Module_Factory = function () {
-  var TSOA_Track.NIEM_Core.OGC_GML = {
-    name: 'TSOA_Track.NIEM_Core.OGC_GML',
+var TSOA_Track_NIEM_Core_OGC_GML_Module_Factory = function () {
+  var TSOA_Track_NIEM_Core_OGC_GML = {
+    name: 'TSOA_Track_NIEM_Core_OGC_GML',
     defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2',
     defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
     typeInfos: [{
@@ -345,18 +345,18 @@ var TSOA_Track.NIEM_Core.OGC_GML_Module_Factory = function () {
       }]
   };
   return {
-    TSOA_Track.NIEM_Core.OGC_GML: TSOA_Track.NIEM_Core.OGC_GML
+    TSOA_Track_NIEM_Core_OGC_GML: TSOA_Track_NIEM_Core_OGC_GML
   };
 };
 if (typeof define === 'function' && define.amd) {
-  define([], TSOA_Track.NIEM_Core.OGC_GML_Module_Factory);
+  define([], TSOA_Track_NIEM_Core_OGC_GML_Module_Factory);
 }
 else {
-  var TSOA_Track.NIEM_Core.OGC_GML_Module = TSOA_Track.NIEM_Core.OGC_GML_Module_Factory();
+  var TSOA_Track_NIEM_Core_OGC_GML_Module = TSOA_Track_NIEM_Core_OGC_GML_Module_Factory();
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports.TSOA_Track.NIEM_Core.OGC_GML = TSOA_Track.NIEM_Core.OGC_GML_Module.TSOA_Track.NIEM_Core.OGC_GML;
+    module.exports.TSOA_Track_NIEM_Core_OGC_GML = TSOA_Track_NIEM_Core_OGC_GML_Module.TSOA_Track_NIEM_Core_OGC_GML;
   }
   else {
-    var TSOA_Track.NIEM_Core.OGC_GML = TSOA_Track.NIEM_Core.OGC_GML_Module.TSOA_Track.NIEM_Core.OGC_GML;
+    var TSOA_Track_NIEM_Core_OGC_GML = TSOA_Track_NIEM_Core_OGC_GML_Module.TSOA_Track_NIEM_Core_OGC_GML;
   }
 }

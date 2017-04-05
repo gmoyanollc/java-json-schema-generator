@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-D-SIDC",
+  "title": "MILSTD2525-D-SIDC",
+  "type": "object",
+  "description": "",
+  "version": "0.3.1",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC",
+  "properties": {
+    "MILSTD2525-D-SIDC-Part1Code": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.1",
+      "javaType": "",
+      "items": {
+        "$ref": "MILSTD2525-D-SIDC-Part1Code.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "MILSTD2525-D-SIDC-Part2Code": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.1",
+      "javaType": "",
+      "items": {
+        "$ref": "MILSTD2525-D-SIDC-Part2Code.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "MILSTD2525-D-SIDC-Part3Code": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.1",
+      "javaType": "",
+      "items": {
+        "$ref": "MILSTD2525-D-SIDC-Part3Code.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "MILSTD2525-D-SIDC-AugmentationPoint": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.1",
+      "javaType": "",
+      "items": {
+        "$ref": "MILSTD2525-D-SIDC-AugmentationPoint.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}

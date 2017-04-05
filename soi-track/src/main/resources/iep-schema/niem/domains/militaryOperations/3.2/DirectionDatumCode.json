@@ -4,7 +4,7 @@
   "title": "DirectionDatumCode",
   "type": "object",
   "description": "",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_DirectionDatumCode",
   "properties": {
     "DirectionDatumCodeType": {

@@ -6,7 +6,8 @@ deferenceSchemaFile();
 function deferenceSchemaFile() {
 
   //$RefParser.dereference('../../iep-schema/SoiTrack.json', function(err, schema) {
-  $RefParser.dereference('../../iep-schema/tsoa/soi/tsoa-track/2.0/TsoaTrack.json', function(err, schema) {
+  //$RefParser.dereference('../../iep-schema/tsoa/soi/tsoa-track/2.0/TsoaTrack.json', function(err, schema) {
+  $RefParser.dereference('military-unit.json', function(err, schema) {
     if (err) {
       console.error(err);
     }
@@ -25,7 +26,8 @@ function writeSchemaFile (schemaObject) {
   console.log(schemaBuffer.toString());
   console.log('##write schema document file');
   //fs.writeFileSync('../../iep-schema/SoiTrack-dereferenced.json', schemaBuffer);
-  fs.writeFileSync('../../iep-schema/TsoaTrack-dereferenced.json', schemaBuffer);
+  //fs.writeFileSync('../../iep-schema/TsoaTrack-dereferenced.json', schemaBuffer);
+  fs.writeFileSync('military-unit-dereferenced.json', schemaBuffer);
   /*
   if (dirPathExists(this.targetSchemaBaseDir + this.targetSchemaFileDestination))
     fs.writeFileSync(this.targetSchemaBaseDir + this.targetSchemaFileDestination, schemaBuffer);

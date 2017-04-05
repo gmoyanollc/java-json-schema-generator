@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Observation",
+  "title": "Observation",
+  "type": "object",
+  "description": "",
+  "version": "0.3.1",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Observation",
+  "properties": {
+    "ObservedObjectLocation": [
+      {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "0.3.1",
+        "javaType": "",
+        "$ref": "ObservedObjectLocation.json"
+      }
+    ],
+    "ObservedObjectMotion": [
+      {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "0.3.1",
+        "javaType": "",
+        "$ref": "ObservedObjectMotion.json"
+      }
+    ],
+    "ObservationDateTime": [
+      {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "0.3.1",
+        "javaType": "",
+        "$ref": "ObservationDateTime.json"
+      }
+    ],
+    "ObservationOPEXCode": [
+      {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "0.3.1",
+        "javaType": "",
+        "$ref": "ObservationOPEXCode.json"
+      }
+    ],
+    "ObservedObjectSymbolAbstract": [
+      {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "0.3.1",
+        "javaType": "",
+        "$ref": "ObservedObjectSymbolAbstract.json"
+      }
+    ],
+    "ObservationAugmentationPoint": [
+      {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "0.3.1",
+        "javaType": "",
+        "$ref": "ObservationAugmentationPoint.json"
+      }
+    ]
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,28 @@
+{
+  "StartDate": {
+    "id": "",
+    "title": "",
+    "type": "array",
+    "description": "",
+    "version": "0.3.1",
+    "javaType": "",
+    "items": {
+      "$ref": "StartDate.json"
+    },
+    "minItems": 1,
+    "additionalItems": false
+  },
+  "EndDate": {
+    "id": "",
+    "title": "",
+    "type": "array",
+    "description": "",
+    "version": "0.3.1",
+    "javaType": "",
+    "items": {
+      "$ref": "EndDate.json"
+    },
+    "minItems": 1,
+    "additionalItems": false
+  }
+}

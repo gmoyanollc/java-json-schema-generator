@@ -18,25 +18,37 @@ The following are caveats that the Schema Generator is intended to resolve.
     *   length, enumerations
 
 
-#Overall Workflow
+#JSON Schema Generation
+The generation of JSON schema provides the same advantages found with any automation: increased productivity, predictability, and quality.  All of these characteristics are especially important for the conversion of mature XML data models, which are typically thoroughly designed and documented.
+
+ The following workflow takes in XML Schema to generate JSON schema file components.  
 
   ```
-      XML Schema
-         |        
-         v
-   JSONIX compiler
-         |
-         v
-     intermediary 
-     JSON Schema 
-         |
-         v
-   Schema Generator
-         |
-         v 
-     JSON Schema
+  .------------.
+  | XML Schema |
+  '------------'     .+-+-+-+-+-+-+.
+            `----->  + XML content +   
+            |        +  extractor  +     
+            |        `-+-+-+-+-+-+-'     .----------------.
+            |                   `----->  | schema content |
+            |                            |    mapping     | ----.
+            |        .+-+-+-+-+-+-+.     '----------------'     |
+            `----->  + JSONIX/JAXB +                            |
+                     +  compiler   +                            |
+                     `-+-+-+-+-+-+-'     .----------------.     |
+                                `----->  | schema mapping |     |
+                                         |   artifacts    |---. |
+                                         '----------------'   | |
+                      .+-+-+-+-+-.                            | |
+                      | schema   |  <-------------------------' |
+                      |  builder |  <---------------------------'
+  .-------------.     '+-+-+-+-+-' 
+  | JSON Schema |  <-----'
+  |  components |
+  '-------------'  
   ```
-  
+Several schema file components are produced to represent general and specific concepts and properties.  They are associated to each other by relative file-path value in a '$ref' property.  These associations compose larger representations for general concepts.  In other words, general concepts are described by specific concepts and properties that are assocatied to each other by file references.  A de-referenced JSON schema file contains all the representations that describe a general concept.
+
 #JSON Schema Mappings
 
   ```
@@ -126,9 +138,9 @@ generateObjectSchema
         |     `-> test( definition is local )
         |           `-> getProperties([definitionObjectName])
         |         else
-        |           `-> getRemoteDefinitionReference()
-        |           `-> generateRemoteObjectSchema()
-        |                 `-> generateObjectDefinitionSchema()
+        |           `-> getRemoteDefinitionReference(anyOfObject)
+        |           `-> generateRemoteObjectSchema(anyOfObject, definitionObjectName)
+        |                 `-> generateObjectDefinitionSchema(definitionObject)
         |                       `-> getProperties([definitionObjectName])
         |                       `-> getSchemaFileDestination()
         |                       `-> writeSchemaFile()
@@ -140,21 +152,30 @@ getProperties([definitionObjectName])
   `-> forEach(definitionObjectProperty)
         `-> getPropertyTemplateType
         `-> setProperty*Template
-
+              `-> test( definitionObjectNamespace === this.sourceSchemaNamespace )
+                    $ref = localPart + '.json'
+                  else                  
+                    `-> $ref = targetSchemaFilepath + localPart + '.json'
+                    g`-> generateRemotePropertySchema(definitionObjectProperty)
+                    g      `-> generateObjectDefinitionSchema(definitionObject)
+                    g            `-> getProperties([definitionObjectName])
+                    g            `-> getSchemaFileDestination()
+                    g            `-> writeSchemaFile()
 
 #To-Do
 - [x] narrow breadth of components converted from XML Schema to only those referenced
-- [ ] generate SoiTrack/soi-track from TSOA_Track/tsoa-track
+- [x] generate SoiTrack/soi-track from TSOA_Track/tsoa-track
 - [x] implement relative path to external components
-- [ ] keep component capitalization
-- [ ] remove default schema require declarative that is empty
+- [x] keep component capitalization
+- [x] remove default schema require declarative that is empty
 - [x] capture enumeration values
 - [ ] implement enumeration values
 - [x] capture facets
 - [ ] implement facets
 - [x] capture component documentation
 - [ ] implement component documentation
-- [ ] capture substitution components but ignore abstract container component
+- [ ] capture substitution components
+- [ ] ignore abstract container component
 - [ ] ignore abstracts like augmentation point container, define and reference components or substitution components
         * augmentation point objects are listed in type definitions
         * the assocation between an augmentation point object and its containing <elements> is described in jsonix js module.
@@ -164,6 +185,6 @@ getProperties([definitionObjectName])
 - [ ] define substition components in augmentation point type
 - [x] allOf reference to a definition should define only the properties of the definition.  The definition object should be ignored.
 - [ ] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
-- [ ] generate schema files recursively or remove filter for JSONIX compiler.  The schema file for certain definition properties is never generated because the property is locally referenced by a definition but not defined in the local JSONIX schema file.  This may be attributeable to filtered generation of JSONIX artifacts. [Example]("http://release.niem.gov/niem/niem-core/3.0/#SystemName")
+- [x] generate schema files recursively or remove filter for JSONIX compiler.  The schema file for certain definition properties is never generated because the property is locally referenced by a definition but not defined in the local JSONIX schema file.  This may be attributeable to filtered generation of JSONIX artifacts. [Example]("http://release.niem.gov/niem/niem-core/3.0/#SystemName")  Another case is a definition not referenced by a local 'anyOf' component.
 
 

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#EventIdentification",
+  "title": "EventIdentification",
+  "type": "object",
+  "description": "",
+  "version": "0.3.1",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_EventIdentification",
+  "properties": {
+    "IdentificationType": {
+      "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+    }
+  },
+  "additionalProperties": false
+}

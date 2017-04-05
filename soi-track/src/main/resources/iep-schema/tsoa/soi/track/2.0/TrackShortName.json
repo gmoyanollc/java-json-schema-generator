@@ -1,8 +1,0 @@
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/TrackShortName",
-  "type": "string",
-  "description": "",
-  "version": "0.2.0",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_track_2_0_TrackShortName"
-}

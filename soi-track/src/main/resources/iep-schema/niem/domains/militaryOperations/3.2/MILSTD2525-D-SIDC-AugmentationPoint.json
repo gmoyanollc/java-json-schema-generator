@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-D-SIDC-AugmentationPoint",
+  "title": "MILSTD2525-D-SIDC-AugmentationPoint",
+  "type": "object",
+  "description": "",
+  "version": "0.3.1",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-AugmentationPoint",
+  "properties": {},
+  "additionalProperties": false
+}

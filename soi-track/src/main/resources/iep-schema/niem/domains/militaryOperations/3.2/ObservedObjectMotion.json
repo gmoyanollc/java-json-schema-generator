@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservedObjectMotion",
+  "title": "ObservedObjectMotion",
+  "type": "object",
+  "description": "",
+  "version": "0.3.1",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObjectMotion",
+  "properties": {
+    "CourseAbstract": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.1",
+      "javaType": "",
+      "items": {
+        "$ref": "CourseAbstract.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "SpeedValue": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.3.1",
+      "javaType": "",
+      "items": {
+        "$ref": "SpeedValue.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}
