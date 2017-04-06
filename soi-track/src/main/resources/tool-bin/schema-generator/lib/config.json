@@ -5,7 +5,7 @@
     "target": "../../iep-schema/"
   },
   "schemaSourceFilenames": [
-    "TSOA_Track-schema.json"
+    "TSOA_Track.NIEM_Core.schema.json"
   ],
   "g_schemaSourceFilenames": [
     "TSOA_Track-schema.json",

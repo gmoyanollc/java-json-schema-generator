@@ -6,7 +6,14 @@
   "description": " :-) documentation extracted from xml schema!",
   "version": "0.4.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_TextType",
-  "properties": {},
+  "properties": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "",
+    "javaType": ""
+  },
   "additionalProperties": false,
   "format": "date-time"
 }

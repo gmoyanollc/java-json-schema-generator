@@ -234,24 +234,10 @@ SchemaGenerator.prototype.getRemoteDefinitionFileLocation = function (anyOfPrope
 SchemaGenerator.prototype.getRemoteDefinitionReference = function (PropertyObject) {
   var properties  = {}; 
   console.log('##get properties for remote definition');
-  //remoteDefinitionObjectName = this.getDefinitionObjectName(anyOfObject);
   remoteDefinitionObjectName = this.getDefinitionReferenceName(PropertyObject);
   properties[remoteDefinitionObjectName] = { '$ref' : this.getRemoteDefinitionFileLocation(PropertyObject) };
   return(properties); 
 }
-/* deprecated by getDefinitionReferenceName */
-/*SchemaGenerator.prototype.getDefinitionObjectName = function (anyOfObject) {
-  var anyOfObjectProperty$ref;
-  if ( typeof anyOfObject.properties.value.$ref != "undefined" )
-    anyOfObjectProperty$ref = anyOfObject.properties.value.$ref;
-  else
-    if ( typeof anyOfObject.properties.value.items.$ref != "undefined" )
-      anyOfObjectProperty$ref = anyOfObject.properties.value.items.$ref;
-    else
-      throw "trouble locating anyOf object definition reference";
-  console.log('##getDefinitionObjectName from anyOf object reference: ' + anyOfObjectProperty$ref);
-  return(anyOfObjectProperty$ref.substring(anyOfObjectProperty$ref.lastIndexOf('/') + 1));
-}*/
 
 SchemaGenerator.prototype.getDefinitionReferenceContainer = function (definitionObjectContainer) {
   var definitionReferenceContainer;
@@ -266,53 +252,23 @@ SchemaGenerator.prototype.getDefinitionReferenceContainer = function (definition
       if ( typeof definitionObjectContainer.allOf[0].items != "undefined" )
         definitionReferenceContainer = definitionObjectContainer.allOf[0].items
       else definitionReferenceContainer = definitionObjectContainer.allOf[0]
-    } else throw "trouble locating definitionReferenceContainer";
+    } else {
+      if ( typeof definitionObjectContainer.$ref != "undefined" )
+        definitionReferenceContainer = definitionObjectContainer
+      else throw "trouble locating definitionReferenceContainer"
+    }
   };
-  //if ( typeof definitionReferenceContainer.$ref == "undefined" )
-  //if ( typeof definitionReferenceContainer == "undefined" )
   if ( typeof definitionReferenceContainer != "undefined" )
-    /*  var definitionReference = definitionReferenceContainer.$ref
-    else
-      if ( typeof definitionReferenceContainer.items.$ref != "undefined" )
-        var definitionReference = definitionReferenceContainer.items.$ref
-      else*/
-        //throw "trouble locating definitionReferenceContainer reference";
     console.log('##DefinitionReference: ' + definitionReferenceContainer.$ref)
   else console.log("##DefinitionReference is undefined.");
-  //return(definitionReference.substring(definitionReference.lastIndexOf('/') + 1));
   return(definitionReferenceContainer);
 }
 
 SchemaGenerator.prototype.getDefinitionReferenceName = function (definitionObjectContainer) {
-  /*
-  if ( typeof definitionObjectContainer.properties != "undefined" ) {
-    if ( typeof definitionObjectContainer.properties.value != "undefined" ) 
-      if ( typeof definitionObjectContainer.properties.value.allOf != "undefined" )
-        var definitionReferenceContainer = definitionObjectContainer.properties.value.allOf[0]
-      else 
-        var definitionReferenceContainer = definitionObjectContainer.properties.value
-  } else {
-    if ( typeof definitionObjectContainer.allOf != "undefined" ) {
-      if ( typeof definitionObjectContainer.allOf[0].items != "undefined" )
-        var definitionReferenceContainer = definitionObjectContainer.allOf[0].items
-      else var definitionReferenceContainer = definitionObjectContainer.allOf[0]
-    } else throw "trouble locating definitionReferenceContainer";
-  };
-  if ( typeof definitionReferenceContainer.$ref == "undefined" )
-  */
-    /*  var definitionReference = definitionReferenceContainer.$ref
-    else
-      if ( typeof definitionReferenceContainer.items.$ref != "undefined" )
-        var definitionReference = definitionReferenceContainer.items.$ref
-      else*/
-      /*
-        throw "trouble locating definitionReferenceContainer reference";
-  console.log('##DefinitionReference: ' + definitionReferenceContainer.$ref);
-  */
-  //return(definitionReference.substring(definitionReference.lastIndexOf('/') + 1));
   var definitionReferenceContainer = this.getDefinitionReferenceContainer(definitionObjectContainer);
   if ( typeof definitionReferenceContainer != "undefined" )
-    return(definitionReferenceContainer.$ref.substring(definitionReferenceContainer.$ref.lastIndexOf('/') + 1));
+    return(definitionReferenceContainer.$ref.substring(definitionReferenceContainer.$ref.lastIndexOf('/') + 1))
+  else return;
 }
 
 SchemaGenerator.prototype.getRemotePropertySchemaSourceFile = function (definitionObjectProperty) {
@@ -556,13 +512,6 @@ SchemaGenerator.prototype.generateObjectDefinitionSchema = function (sourceSchem
           };
         break;
       case 'object' :
-        //throw("To-Do: generateObjectDefinitionSchema as object");
-        //var schemaObject = {};
-        //g schemaObject.id = this.getId(definitionObject);
-        //g schemaObject.title = this.getTitle(definitionObject);
-        //g schemaObject.type = this.getType(definitionObject);
-        //g schemaObject.javaType = this.getJavaType(definitionObject);
-        //schemaObject = this.getProperties(definitionObject);
         var schemaObject = this.createSchemaTemplateObject('object-template');
         schemaObject.id = this.getId(definitionObject);
         schemaObject.title = this.getTitle(definitionObject);
@@ -570,10 +519,56 @@ SchemaGenerator.prototype.generateObjectDefinitionSchema = function (sourceSchem
         schemaObject.description = this.getDescription(definitionObject);
         schemaObject.version = this.getVersion();
         schemaObject.javaType = this.getJavaType(definitionObject);
-        var definitionObjectName = this.getDefinitionReferenceName(definitionObject);
-        if ( typeof definitionObjectName == "undefined")
-            definitionObjectName = schemaObject.title;
-        switch ( definitionObjectName ) {
+        var definitionObjectName;
+        if ( typeof definitionObject.allOf != "undefined") {
+
+          definitionObject.allOf.forEach(function (definitionObject_allOfObject) {
+            //definitionObjectName = void(0);
+            //if ( typeof definitionObjectName == "undefined")
+            //    definitionObjectName = schemaObject.title;
+            /*if ( typeof allOfObject.$ref != "undefined" )
+              definitionObjectName = this.getDefinitionReferenceName(allOfObject);
+              */
+            //else
+            //  definitionObjectName = this.getType(allOfObject);
+            definitionObjectName = this.getDefinitionReferenceName(definitionObject_allOfObject);
+            if ( typeof definitionObjectName == "undefined" ) definitionObjectName = schemaObject.title;
+            switch ( definitionObjectName ) {
+              case "anyType":
+                console.log("##object definition is 'anyType'.");
+                var substitutions = this.getSubstitutionIdentifiers(schemaObject.id);
+                schemaObject.type = "object";
+                break;
+              case "DateTime":
+                console.log("##object definition is 'DateTime'; type set to 'string', format 'date-time'.");
+                schemaObject.type = "string";
+                schemaObject.format = "date-time";
+                break;
+              case "Decimal":
+                console.log("##object definition is 'Decimal'; type set to 'number'.");
+                schemaObject.type = "number";
+                break;
+              case "String":
+                console.log("##object definition is 'String'; type set to 'string'.");
+                schemaObject.type = "string";
+                schemaObject.format = "date-time";
+                break;
+              default:
+                if (( typeof sourceSchemaObject.definitions != "undefined" ) 
+                  && ( typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined" ))
+                  schemaObject.properties 
+                    = this.getProperties(definitionObject_allOfObject)
+                else {
+                  schemaObject.properties = this.getRemoteDefinitionReference(definitionObject_allOfObject);
+                  this.generateRemoteObjectSchema(definitionObject_allOfObject, definitionObjectName);
+                };
+            }
+          }, this);
+
+        } else {
+          definitionObjectName = this.getDefinitionReferenceName(definitionObject);
+          if ( typeof definitionObjectName == "undefined" ) definitionObjectName = schemaObject.title;
+          switch ( definitionObjectName ) {
             case "anyType":
               console.log("##object definition is 'anyType'.");
               var substitutions = this.getSubstitutionIdentifiers(schemaObject.id);
@@ -602,7 +597,8 @@ SchemaGenerator.prototype.generateObjectDefinitionSchema = function (sourceSchem
                 schemaObject.properties = this.getRemoteDefinitionReference(definitionObject);
                 this.generateRemoteObjectSchema(definitionObject, definitionObjectName);
               };
-          };
+          }
+        }
         break;
       default:
         throw('ERROR: not sure how to generate an object for this definitionObject');
