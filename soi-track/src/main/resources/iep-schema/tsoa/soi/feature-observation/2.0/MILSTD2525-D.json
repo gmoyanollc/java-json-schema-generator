@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#ObservedFacility",
-  "title": "ObservedFacility",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/#MILSTD2525-D",
+  "title": "MILSTD2525-D",
   "type": "object",
   "description": " :-) documentation extracted from xml schema!",
   "version": "0.4.0",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_facility_2_0_ObservedFacility",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_feature_observation_2_0_MILSTD2525-D",
   "properties": {
-    "Facility": {
+    "MILSTD2525-D-SIDC": {
       "id": "",
       "title": "",
       "type": "array",
@@ -15,7 +15,7 @@
       "version": "",
       "javaType": "",
       "items": {
-        "$ref": "../../../../niem/niem-core/3.0/Facility.json"
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC.json"
       },
       "minItems": 1,
       "additionalItems": false

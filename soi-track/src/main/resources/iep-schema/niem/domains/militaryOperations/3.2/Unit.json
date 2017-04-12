@@ -1,18 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Unit",
   "title": "Unit",
-  "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "type": "array",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Unit",
-  "properties": {
+  "items": {
     "UnitName": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "UnitName.json"
@@ -25,7 +24,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "UnitShortName.json"
@@ -38,7 +37,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "UnitTypeCodeText.json"
@@ -47,18 +46,17 @@
       "additionalItems": false
     },
     "UnitAugmentationPoint": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "0.3.1",
-      "javaType": "",
-      "items": {
-        "$ref": "UnitAugmentationPoint.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
+      "UnitReferenceNumber": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "../../../../tsoa/soi/observed-military-unit/2.0/UnitReferenceNumber.json"
+      }
     }
   },
-  "additionalProperties": false
+  "minItems": 1,
+  "additionalItems": false
 }

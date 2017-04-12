@@ -1,42 +1,11 @@
 {
-  "value": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "id": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "ref": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "metadata": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "relationshipMetadata": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  }
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/codes/nga_genc/3.0/#CountryAlpha3CodeType",
+  "title": "CountryAlpha3CodeType",
+  "type": "string",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___release_niem_gov_niem_codes_nga_genc_3_0_CountryAlpha3CodeType",
+  "properties": {},
+  "additionalProperties": false
 }

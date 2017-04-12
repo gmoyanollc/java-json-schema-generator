@@ -1,42 +1,18 @@
 {
-  "value": {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#StandardIdentityCodeType",
+  "title": "StandardIdentityCodeType",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_StandardIdentityCodeType",
+  "properties": {
     "id": "",
     "title": "",
     "type": "string",
     "description": "",
-    "version": "0.3.1",
+    "version": "",
     "javaType": ""
   },
-  "id": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "ref": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "metadata": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "relationshipMetadata": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  }
+  "additionalProperties": false
 }

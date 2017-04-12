@@ -21,17 +21,15 @@
       "additionalItems": false
     },
     "IdentificationAugmentationPoint": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "",
-      "javaType": "",
-      "items": {
-        "$ref": "IdentificationAugmentationPoint.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
+      "ShortName": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "../../../tsoa/soi/tsoa-track/2.0/ShortName.json"
+      }
     }
   },
   "additionalProperties": false

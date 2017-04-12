@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-weapon/2.0/#ObservedWeaponSystem",
+  "title": "ObservedWeaponSystem",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_weapon_2_0_ObservedWeaponSystem",
+  "properties": {
+    "WeaponSystem": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "../../../../niem/domains/militaryOperationsRestricted/3.2/WeaponSystem.json"
+    }
+  },
+  "additionalProperties": false
+}

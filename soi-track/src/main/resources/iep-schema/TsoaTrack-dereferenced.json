@@ -3,32 +3,31 @@
   "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#TsoaTrack",
   "title": "TsoaTrack",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TsoaTrack",
   "properties": {
-    "Track": {
+    "TrackType": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
-        "$schema": "http://json-schema.org/draft-04/schema#",
         "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Track",
         "title": "Track",
-        "type": "object",
-        "description": "",
-        "version": "0.3.1",
+        "type": "array",
+        "description": " :-) documentation extracted from xml schema!",
+        "version": "0.4.0",
         "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Track",
-        "properties": {
-          "TrackIdentification": {
+        "items": {
+          "IdentificationType": {
             "id": "",
             "title": "",
             "type": "array",
             "description": "",
-            "version": "0.3.1",
+            "version": "",
             "javaType": "",
             "items": {
               "$schema": "http://json-schema.org/draft-04/schema#",
@@ -40,54 +39,66 @@
               "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_TrackIdentification",
               "properties": {
                 "IdentificationType": {
-                  "IdentificationID": {
-                    "id": "",
-                    "title": "",
-                    "type": "array",
-                    "description": "",
-                    "version": "0.3.1",
-                    "javaType": "",
-                    "items": {
-                      "$schema": "http://json-schema.org/draft-04/schema#",
-                      "id": "http://release.niem.gov/niem/niem-core/3.0/IdentificationID",
-                      "type": "string",
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationType",
+                  "title": "IdentificationType",
+                  "type": "object",
+                  "description": " :-) documentation extracted from xml schema!",
+                  "version": "0.4.0",
+                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationType",
+                  "properties": {
+                    "IdentificationID": {
+                      "id": "",
+                      "title": "",
+                      "type": "array",
                       "description": "",
-                      "version": "0.2.0",
-                      "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationID"
-                    },
-                    "minItems": 1,
-                    "additionalItems": false
-                  },
-                  "ShortName": {
-                    "id": "",
-                    "title": "",
-                    "type": "array",
-                    "description": "",
-                    "version": "0.3.1",
-                    "javaType": "",
-                    "items": {
-                      "$schema": "http://json-schema.org/draft-04/schema#",
-                      "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#ShortName",
-                      "title": "ShortName",
-                      "type": "object",
-                      "description": "",
-                      "version": "0.3.1",
-                      "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_ShortName",
-                      "properties": {
-                        "TextType": {
-                          "id": "",
-                          "title": "",
-                          "type": "string",
-                          "description": "",
-                          "version": "0.3.1",
-                          "javaType": ""
-                        }
+                      "version": "",
+                      "javaType": "",
+                      "items": {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "id": "http://release.niem.gov/niem/niem-core/3.0/IdentificationID",
+                        "type": "string",
+                        "description": "",
+                        "version": "0.2.0",
+                        "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationID"
                       },
-                      "additionalProperties": false
+                      "minItems": 1,
+                      "additionalItems": false
                     },
-                    "minItems": 1,
-                    "additionalItems": false
-                  }
+                    "IdentificationAugmentationPoint": {
+                      "ShortName": {
+                        "id": "",
+                        "title": "",
+                        "type": "object",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "properties": {
+                          "TextType": {
+                            "$schema": "http://json-schema.org/draft-04/schema#",
+                            "id": "http://release.niem.gov/niem/niem-core/3.0/#TextType",
+                            "title": "TextType",
+                            "type": "object",
+                            "description": " :-) documentation extracted from xml schema!",
+                            "version": "0.4.0",
+                            "javaType": "http___release_niem_gov_niem_niem_core_3_0_TextType",
+                            "properties": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "",
+                              "javaType": ""
+                            },
+                            "additionalProperties": false
+                          }
+                        },
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
                 }
               },
               "additionalProperties": false
@@ -95,47 +106,48 @@
             "minItems": 1,
             "additionalItems": false
           },
-          "TrackAugmentationPoint": {
-            "id": "",
-            "title": "",
-            "type": "array",
-            "description": "",
-            "version": "0.3.1",
-            "javaType": "",
-            "items": {
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#TrackAugmentationPoint",
-              "title": "TrackAugmentationPoint",
-              "type": "object",
-              "description": "",
-              "version": "0.3.1",
-              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_TrackAugmentationPoint",
-              "properties": {},
-              "additionalProperties": false
-            },
-            "minItems": 1,
-            "additionalItems": false
+          "FeatureObservation": {
+            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/#FeatureObservation"
+          },
+          "FeatureObserver": {
+            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/#FeatureObserver"
+          },
+          "[object Object]": {
+            "ref$": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#[object Object]"
+          },
+          "ObservedMilitaryUnit": {
+            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/#ObservedMilitaryUnit"
+          },
+          "ObservedPlatformSystem": {
+            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/#ObservedPlatformSystem"
+          },
+          "ObservedFacility": {
+            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#ObservedFacility"
+          },
+          "ObservedWeaponSystem": {
+            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-weapon/2.0/#ObservedWeaponSystem"
           }
         },
-        "additionalProperties": false
+        "minItems": 1,
+        "additionalItems": false
       },
       "minItems": 1,
       "additionalItems": false
     },
-    "tsoaID": {
+    "token": {
       "id": "",
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
-    "tsoaURI": {
+    "anyURI": {
       "id": "",
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     }
   },

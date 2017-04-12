@@ -1,78 +1,88 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Observation",
   "title": "Observation",
-  "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "type": "array",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Observation",
-  "properties": {
-    "ObservedObjectLocation": [
-      {
+  "items": {
+    "ObservedObjectLocation": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "ObservedObjectLocation.json"
+    },
+    "ObservedObjectMotion": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "ObservedObjectMotion.json"
+    },
+    "ObservationDateTime": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "ObservationDateTime.json"
+    },
+    "ObservationOPEXCode": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "ObservationOPEXCode.json"
+    },
+    "ObservedObjectSymbolAbstract": {
+      "MILSTD2525-B": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
-        "version": "0.3.1",
+        "version": "",
         "javaType": "",
-        "$ref": "ObservedObjectLocation.json"
-      }
-    ],
-    "ObservedObjectMotion": [
-      {
+        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-B.json"
+      },
+      "MILSTD2525-C": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
-        "version": "0.3.1",
+        "version": "",
         "javaType": "",
-        "$ref": "ObservedObjectMotion.json"
-      }
-    ],
-    "ObservationDateTime": [
-      {
+        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-C.json"
+      },
+      "MILSTD2525-D": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
-        "version": "0.3.1",
+        "version": "",
         "javaType": "",
-        "$ref": "ObservationDateTime.json"
+        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-D.json"
       }
-    ],
-    "ObservationOPEXCode": [
-      {
+    },
+    "ObservationAugmentationPoint": {
+      "SpatialEnvironmentCode": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
-        "version": "0.3.1",
+        "version": "",
         "javaType": "",
-        "$ref": "ObservationOPEXCode.json"
+        "$ref": "../../../../tsoa/soi/feature-observation/2.0/SpatialEnvironmentCode.json"
       }
-    ],
-    "ObservedObjectSymbolAbstract": [
-      {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "0.3.1",
-        "javaType": "",
-        "$ref": "ObservedObjectSymbolAbstract.json"
-      }
-    ],
-    "ObservationAugmentationPoint": [
-      {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "0.3.1",
-        "javaType": "",
-        "$ref": "ObservationAugmentationPoint.json"
-      }
-    ]
+    }
   },
-  "additionalProperties": false
+  "minItems": 1,
+  "additionalItems": false
 }

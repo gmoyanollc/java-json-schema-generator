@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/#ObservedEvent",
+  "title": "ObservedEvent",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_event_2_0_ObservedEvent",
+  "properties": {
+    "Event": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "Event.json"
+    }
+  },
+  "additionalProperties": false
+}

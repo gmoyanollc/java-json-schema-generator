@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#ObservedFacility",
-  "title": "ObservedFacility",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/#ObservedMilitaryUnit",
+  "title": "ObservedMilitaryUnit",
   "type": "object",
   "description": " :-) documentation extracted from xml schema!",
   "version": "0.4.0",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_facility_2_0_ObservedFacility",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_military_unit_2_0_ObservedMilitaryUnit",
   "properties": {
-    "Facility": {
+    "Unit": {
       "id": "",
       "title": "",
       "type": "array",
@@ -15,7 +15,7 @@
       "version": "",
       "javaType": "",
       "items": {
-        "$ref": "../../../../niem/niem-core/3.0/Facility.json"
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/Unit.json"
       },
       "minItems": 1,
       "additionalItems": false

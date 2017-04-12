@@ -3,21 +3,21 @@
   "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#FacilityAugmentationAbstract",
   "title": "FacilityAugmentationAbstract",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_facility_2_0_FacilityAugmentationAbstract",
   "properties": {
-    "FacilityAllegianceCountryAbstract": [
-      {
+    "FacilityAllegianceCountryAbstract": {
+      "FacilityAllegianceCountryCode": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
-        "version": "0.3.1",
+        "version": "",
         "javaType": "",
-        "$ref": "../../../../niem/domains/militaryOperations/3.2/FacilityAllegianceCountryAbstract.json"
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/FacilityAllegianceCountryCode.json"
       }
-    ]
+    }
   },
   "additionalProperties": false
 }

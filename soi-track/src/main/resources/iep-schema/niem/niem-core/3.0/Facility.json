@@ -2,8 +2,8 @@
   "id": "http://release.niem.gov/niem/niem-core/3.0/#Facility",
   "title": "Facility",
   "type": "array",
-  "description": "",
-  "version": "0.3.1",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
   "javaType": "http___release_niem_gov_niem_niem_core_3_0_Facility",
   "items": {
     "FacilityIdentification": {
@@ -11,7 +11,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "FacilityIdentification.json"
@@ -24,7 +24,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "FacilityName.json"
@@ -33,17 +33,33 @@
       "additionalItems": false
     },
     "FacilityAugmentationPoint": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "0.3.1",
-      "javaType": "",
-      "items": {
-        "$ref": "FacilityAugmentationPoint.json"
+      "FacilityAugmentation": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "../../../niem/domains/militaryOperations/3.2/FacilityAugmentation.json"
       },
-      "minItems": 1,
-      "additionalItems": false
+      "FacilityStandardIdentityCode": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "../../../tsoa/soi/observed-facility/2.0/FacilityStandardIdentityCode.json"
+      },
+      "FacilityAugmentationAbstract": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "../../../tsoa/soi/observed-facility/2.0/FacilityAugmentationAbstract.json"
+      }
     }
   },
   "minItems": 1,

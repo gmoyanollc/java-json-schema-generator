@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/#TextType",
-  "title": "TextType",
+  "id": "http://release.niem.gov/niem/domains/maritime/3.2/#USMTFEnvironmentCategoryCodeType",
+  "title": "USMTFEnvironmentCategoryCodeType",
   "type": "object",
   "description": " :-) documentation extracted from xml schema!",
   "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_TextType",
+  "javaType": "http___release_niem_gov_niem_domains_maritime_3_2_USMTFEnvironmentCategoryCodeType",
   "properties": {
     "id": "",
     "title": "",

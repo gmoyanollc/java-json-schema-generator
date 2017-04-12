@@ -132,35 +132,75 @@ JSON schema object's structural properties and constraints are defined by a "def
 Every 'anyOf' and 'definition' referenced by an anyOf component gets a schema file generated.  
 
 generateObjectSchema
+  |
   `-> sourceSchemaObject.anyOf.forEach
-        `-> createSchemaTemplateObject('object-template');
-        |     `-> getDefinitionObjectName
-        |     `-> test( definition is local )
-        |           `-> getProperties([definitionObjectName])
-        |         else
-        |           `-> getRemoteDefinitionReference(anyOfObject)
-        |           `-> generateRemoteObjectSchema(anyOfObject, definitionObjectName)
-        |                 `-> generateObjectDefinitionSchema(definitionObject)
-        |                       `-> getProperties([definitionObjectName])
-        |                       `-> getSchemaFileDestination()
-        |                       `-> writeSchemaFile()
-        |
+        `-> getDefinitionReferenceName()
+        `-> test(definitionObjectName != anyType)
+        |     `-> createSchemaTemplateObject('object-template');
+        |           `-> getDefinitionObjectName
+        |           `-> test( definition is local )
+        |                 `-> getProperties([definitionObjectName])
+        |               else
+        |                 `-> getRemoteDefinitionReference(anyOfObject)
+        |                 `-> generateRemoteDefinitionObjectSchema(anyOfObject, definitionObjectName)
+        |                      `-> getRemoteObjectSchemaSourceFile(anyOfObject)
+        |                           `-> getRemoteDefinitionNamespace(anyOfPropertyObject)
+        |                           `-> getDefinitionReferenceName(anyOfPropertyObject)
+        |                      `-> generateObjectDefinitionSchema(definitionObject)
+        |                            `-> getProperties([definitionObjectName])
+        |                             `-> getSchemaFileDestination()
+        |                             `-> writeSchemaFile()
+        `--> test(definitionObjectName == anyType)
+        |     `-> generateSubstitutionObjectDefinitionSchema()
+        |           `-> getSubstitutionIdentifiers()
+      |             `-> test( definition is local )
+      *|                  `-> generateObjectDefinitionSchema()
+      *|                  :     `-> getProperties()
+      *|                  :     `-> getSchemaFileDestination()
+      *|                  :     `-> writeSchemaFile()
+      |                   `-else
+      |                       `-> getRemoteDefinitionObject()
+      |                       `-> generateRemoteObjectSchema()
+      |                       |     `-> generateObjectDefinitionSchema()
+      |                       |           `-> getProperties()
+      |                       |           `-> getSchemaFileDestination()
+      |                       |           `-> writeSchemaFile()
+      |                       `-> getRemoteDefinitionReference()
         `-> getSchemaFileDestination()
         `-> writeSchemaFile()
 
-getProperties([definitionObjectName])
+getProperties(sourceSchemaObject, definitionObject)
+  |
   `-> forEach(definitionObjectProperty)
-        `-> getPropertyTemplateType
-        `-> setProperty*Template
-              `-> test( definitionObjectNamespace === this.sourceSchemaNamespace )
-                    $ref = localPart + '.json'
-                  else                  
-                    `-> $ref = targetSchemaFilepath + localPart + '.json'
-                    g`-> generateRemotePropertySchema(definitionObjectProperty)
-                    g      `-> generateObjectDefinitionSchema(definitionObject)
-                    g            `-> getProperties([definitionObjectName])
-                    g            `-> getSchemaFileDestination()
-                    g            `-> writeSchemaFile()
+        `-> getDefinitionReferenceName()
+        `-> test(definitionObjectName != anyType)
+        |     `-> getPropertyTemplateType
+        |     `-> setProperty*Template
+        |           `-> test( definitionObjectNamespace === this.sourceSchemaNamespace )
+        |                 $ref = localPart + '.json'
+        |               else                  
+        |                 `-> $ref = targetSchemaFilepath + localPart + '.json'
+        |                g`-> generateRemotePropertySchema(definitionObjectProperty)
+        |                g      `-> generateObjectDefinitionSchema(definitionObject)
+        |                g            `-> getProperties([definitionObjectName])
+        |                g            `-> getSchemaFileDestination()
+        |                g            `-> writeSchemaFile()
+        `--> test(definitionObjectName == anyType)
+        |     `-> generateSubstitutionObjectDefinitionSchema((sourceSchemaObject, definitionObject)
+        |           `-> getSubstitutionIdentifiers(this.getId(definitionObject))
+        |           `-> test( definition is local )
+        |                 `-> generateObjectDefinitionSchema(definitionObject)
+        |                 :     `-> getProperties([definitionObjectName])
+        |                 :     `-> getSchemaFileDestination()
+        |                 :     `-> writeSchemaFile()
+      |                   `-else
+      |                       `-> getRemoteObject()
+      |                       `-> generateRemoteObjectSchema()
+      |                       |     `-> generateObjectDefinitionSchema()
+      |                       |           `-> getProperties()
+      |                       |           `-> getSchemaFileDestination()
+      |                       |           `-> writeSchemaFile()
+      |                       `-> getRemoteDefinitionReference()
 
 #To-Do
 - [x] narrow breadth of components converted from XML Schema to only those referenced
@@ -174,17 +214,17 @@ getProperties([definitionObjectName])
 - [ ] implement facets
 - [x] capture component documentation
 - [ ] implement component documentation
-- [ ] capture substitution components
+- [x] capture substitution components
 - [ ] ignore abstract container component
 - [ ] ignore abstracts like augmentation point container, define and reference components or substitution components
         * augmentation point objects are listed in type definitions
         * the assocation between an augmentation point object and its containing <elements> is described in jsonix js module.
           ** descendent component may be identified by a substitutionHead property that associates it to an augmentation point object
-            - [ ] populate a lookup table containing substitutionHeads and their substitutions
-            - [ ] lookup substitutions for substitutionHeads and generate
-- [ ] define substition components in augmentation point type
+            - [x] populate a lookup table containing substitutionHeads and their substitutions
+            - [x] lookup substitutions for substitutionHeads and generate
+- [x] define substition components in augmentation point type
 - [x] allOf reference to a definition should define only the properties of the definition.  The definition object should be ignored.
-- [ ] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
+- [x] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
 - [x] generate schema files recursively or remove filter for JSONIX compiler.  The schema file for certain definition properties is never generated because the property is locally referenced by a definition but not defined in the local JSONIX schema file.  This may be attributeable to filtered generation of JSONIX artifacts. [Example]("http://release.niem.gov/niem/niem-core/3.0/#SystemName")  Another case is a definition not referenced by a local 'anyOf' component.
 
 
