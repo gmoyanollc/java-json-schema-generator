@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://www.opengis.net/gml/3.2#GenericMetaData",
+  "title": "GenericMetaData",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___www_opengis_net_gml_3_2GenericMetaData",
+  "properties": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "",
+    "javaType": ""
+  },
+  "additionalProperties": false
+}

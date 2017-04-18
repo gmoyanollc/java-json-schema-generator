@@ -7,7 +7,7 @@
   "version": "0.4.0",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TsoaTrack",
   "properties": {
-    "TrackType": {
+    "Track": {
       "id": "",
       "title": "",
       "type": "array",
@@ -22,7 +22,7 @@
         "version": "0.4.0",
         "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Track",
         "items": {
-          "IdentificationType": {
+          "TrackIdentification": {
             "id": "",
             "title": "",
             "type": "array",
@@ -106,26 +106,1532 @@
             "minItems": 1,
             "additionalItems": false
           },
-          "FeatureObservation": {
-            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/#FeatureObservation"
-          },
-          "FeatureObserver": {
-            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/#FeatureObserver"
-          },
-          "[object Object]": {
-            "ref$": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#[object Object]"
-          },
-          "ObservedMilitaryUnit": {
-            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/#ObservedMilitaryUnit"
-          },
-          "ObservedPlatformSystem": {
-            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/#ObservedPlatformSystem"
-          },
-          "ObservedFacility": {
-            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#ObservedFacility"
-          },
-          "ObservedWeaponSystem": {
-            "ref$": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-weapon/2.0/#ObservedWeaponSystem"
+          "TrackAugmentationPoint": {
+            "FeatureObservation": {
+              "id": "",
+              "title": "",
+              "type": "object",
+              "description": "",
+              "version": "",
+              "javaType": "",
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "properties": {
+                "Observation": {
+                  "id": "",
+                  "title": "",
+                  "type": "array",
+                  "description": "",
+                  "version": "",
+                  "javaType": "",
+                  "items": {
+                    "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Observation",
+                    "title": "Observation",
+                    "type": "array",
+                    "description": " :-) documentation extracted from xml schema!",
+                    "version": "0.4.0",
+                    "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Observation",
+                    "items": {
+                      "ObservedObjectLocation": {
+                        "id": "",
+                        "title": "",
+                        "type": "object",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "properties": {
+                          "ObservedObject2DGeospatialCoordinate": {
+                            "id": "",
+                            "title": "",
+                            "type": "array",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservedObject2DGeospatialCoordinate",
+                              "title": "ObservedObject2DGeospatialCoordinate",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObject2DGeospatialCoordinate",
+                              "properties": {
+                                "Location2DGeospatialCoordinateType": {
+                                  "GeographicCoordinateLatitude": [
+                                    {
+                                      "id": "",
+                                      "title": "",
+                                      "type": "object",
+                                      "description": "",
+                                      "version": "0.3.1",
+                                      "javaType": "",
+                                      "$schema": "http://json-schema.org/draft-04/schema#"
+                                    }
+                                  ],
+                                  "GeographicCoordinateLongitude": [
+                                    {
+                                      "id": "",
+                                      "title": "",
+                                      "type": "object",
+                                      "description": "",
+                                      "version": "0.3.1",
+                                      "javaType": "",
+                                      "$schema": "http://json-schema.org/draft-04/schema#"
+                                    }
+                                  ]
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "AltitudeMeasure": {
+                            "id": "",
+                            "title": "",
+                            "type": "array",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#AltitudeMeasure",
+                              "title": "AltitudeMeasure",
+                              "type": "object",
+                              "description": " :-) documentation extracted from xml schema!",
+                              "version": "0.4.0",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_AltitudeMeasure",
+                              "properties": {
+                                "LocationHeightMeasureType": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationHeightMeasureType",
+                                  "title": "LocationHeightMeasureType",
+                                  "type": "object",
+                                  "description": " :-) documentation extracted from xml schema!",
+                                  "version": "0.4.0",
+                                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightMeasureType",
+                                  "properties": {
+                                    "LocationHeightVerticalDatum": {
+                                      "LocationHeightVerticalDatumText": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": "",
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "properties": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "",
+                                          "javaType": ""
+                                        },
+                                        "additionalProperties": false
+                                      },
+                                      "LocationHeightVerticalDatumCode": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": "",
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "properties": {
+                                          "VerticalDatumCodeType": {
+                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                            "id": "http://release.niem.gov/niem/codes/nga_datum/3.0/#VerticalDatumCodeType",
+                                            "title": "VerticalDatumCodeType",
+                                            "type": "object",
+                                            "description": " :-) documentation extracted from xml schema!",
+                                            "version": "0.4.0",
+                                            "javaType": "http___release_niem_gov_niem_codes_nga_datum_3_0_VerticalDatumCodeType",
+                                            "properties": {
+                                              "id": "",
+                                              "title": "",
+                                              "type": "string",
+                                              "description": "",
+                                              "version": "",
+                                              "javaType": ""
+                                            },
+                                            "additionalProperties": false
+                                          }
+                                        },
+                                        "additionalProperties": false
+                                      }
+                                    }
+                                  },
+                                  "additionalProperties": false
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "ElevationMeasure": {
+                            "id": "",
+                            "title": "",
+                            "type": "array",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ElevationMeasure",
+                              "title": "ElevationMeasure",
+                              "type": "object",
+                              "description": " :-) documentation extracted from xml schema!",
+                              "version": "0.4.0",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ElevationMeasure",
+                              "properties": {
+                                "LocationHeightMeasureType": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationHeightMeasureType",
+                                  "title": "LocationHeightMeasureType",
+                                  "type": "object",
+                                  "description": " :-) documentation extracted from xml schema!",
+                                  "version": "0.4.0",
+                                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightMeasureType",
+                                  "properties": {
+                                    "LocationHeightVerticalDatum": {
+                                      "LocationHeightVerticalDatumText": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": "",
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "properties": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "",
+                                          "javaType": ""
+                                        },
+                                        "additionalProperties": false
+                                      },
+                                      "LocationHeightVerticalDatumCode": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": "",
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "properties": {
+                                          "VerticalDatumCodeType": {
+                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                            "id": "http://release.niem.gov/niem/codes/nga_datum/3.0/#VerticalDatumCodeType",
+                                            "title": "VerticalDatumCodeType",
+                                            "type": "object",
+                                            "description": " :-) documentation extracted from xml schema!",
+                                            "version": "0.4.0",
+                                            "javaType": "http___release_niem_gov_niem_codes_nga_datum_3_0_VerticalDatumCodeType",
+                                            "properties": {
+                                              "id": "",
+                                              "title": "",
+                                              "type": "string",
+                                              "description": "",
+                                              "version": "",
+                                              "javaType": ""
+                                            },
+                                            "additionalProperties": false
+                                          }
+                                        },
+                                        "additionalProperties": false
+                                      }
+                                    }
+                                  },
+                                  "additionalProperties": false
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "ObservedObjectLocationAugmentationPoint": [
+                            {
+                              "id": "",
+                              "title": "",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": "",
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "properties": {},
+                              "additionalProperties": false
+                            }
+                          ]
+                        },
+                        "additionalProperties": false
+                      },
+                      "ObservedObjectMotion": {
+                        "id": "",
+                        "title": "",
+                        "type": "object",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "properties": {
+                          "CourseAbstract": {
+                            "id": "",
+                            "title": "",
+                            "type": "array",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseAbstract",
+                              "title": "CourseAbstract",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseAbstract",
+                              "properties": {},
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          },
+                          "SpeedValue": {
+                            "id": "",
+                            "title": "",
+                            "type": "array",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": "",
+                            "items": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#SpeedValue",
+                              "title": "SpeedValue",
+                              "type": "object",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_SpeedValue",
+                              "properties": {
+                                "value": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.3.1",
+                                  "javaType": ""
+                                },
+                                "speedUnitCode": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.3.1",
+                                  "javaType": ""
+                                },
+                                "id": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.3.1",
+                                  "javaType": ""
+                                },
+                                "ref": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.3.1",
+                                  "javaType": ""
+                                },
+                                "metadata": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.3.1",
+                                  "javaType": ""
+                                },
+                                "relationshipMetadata": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.3.1",
+                                  "javaType": ""
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "minItems": 1,
+                            "additionalItems": false
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "ObservationDateTime": {
+                        "id": "",
+                        "title": "",
+                        "type": "object",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "properties": {
+                          "value": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "id": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "ref": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "metadata": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "relationshipMetadata": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "ObservationOPEXCode": {
+                        "id": "",
+                        "title": "",
+                        "type": "object",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "properties": {
+                          "value": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "id": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "ref": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "metadata": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          },
+                          "relationshipMetadata": {
+                            "id": "",
+                            "title": "",
+                            "type": "string",
+                            "description": "",
+                            "version": "0.3.1",
+                            "javaType": ""
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "ObservedObjectSymbolAbstract": {
+                        "MILSTD2525-B": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "MILSTD2525-B-SIDC-Code": {
+                              "id": "",
+                              "title": "",
+                              "type": "array",
+                              "description": "",
+                              "version": "",
+                              "javaType": "",
+                              "items": {
+                                "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-B-SIDC-Code",
+                                "title": "MILSTD2525-B-SIDC-Code",
+                                "type": "array",
+                                "description": " :-) documentation extracted from xml schema!",
+                                "version": "0.4.0",
+                                "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-B-SIDC-Code",
+                                "items": {
+                                  "value": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "id": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "ref": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "metadata": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "relationshipMetadata": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  }
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "minItems": 1,
+                              "additionalItems": false
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "MILSTD2525-C": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "MILSTD2525-C-SIDC-Code": {
+                              "id": "",
+                              "title": "",
+                              "type": "array",
+                              "description": "",
+                              "version": "",
+                              "javaType": "",
+                              "items": {
+                                "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-C-SIDC-Code",
+                                "title": "MILSTD2525-C-SIDC-Code",
+                                "type": "array",
+                                "description": " :-) documentation extracted from xml schema!",
+                                "version": "0.4.0",
+                                "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-C-SIDC-Code",
+                                "items": {
+                                  "value": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "id": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "ref": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "metadata": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "relationshipMetadata": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  }
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "minItems": 1,
+                              "additionalItems": false
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "MILSTD2525-D": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "MILSTD2525-D-SIDC": {
+                              "id": "",
+                              "title": "",
+                              "type": "array",
+                              "description": "",
+                              "version": "",
+                              "javaType": "",
+                              "items": {
+                                "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-D-SIDC",
+                                "title": "MILSTD2525-D-SIDC",
+                                "type": "array",
+                                "description": " :-) documentation extracted from xml schema!",
+                                "version": "0.4.0",
+                                "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC",
+                                "items": {
+                                  "MILSTD2525-D-SIDC-Part1Code": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "array",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": "",
+                                    "items": {
+                                      "$schema": "http://json-schema.org/draft-04/schema#",
+                                      "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-D-SIDC-Part1Code",
+                                      "title": "MILSTD2525-D-SIDC-Part1Code",
+                                      "type": "object",
+                                      "description": "",
+                                      "version": "0.3.1",
+                                      "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-Part1Code",
+                                      "properties": {
+                                        "value": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "id": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "ref": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "metadata": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "relationshipMetadata": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        }
+                                      },
+                                      "additionalProperties": false
+                                    },
+                                    "minItems": 1,
+                                    "additionalItems": false
+                                  },
+                                  "MILSTD2525-D-SIDC-Part2Code": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "array",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": "",
+                                    "items": {
+                                      "$schema": "http://json-schema.org/draft-04/schema#",
+                                      "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-D-SIDC-Part2Code",
+                                      "title": "MILSTD2525-D-SIDC-Part2Code",
+                                      "type": "object",
+                                      "description": "",
+                                      "version": "0.3.1",
+                                      "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-Part2Code",
+                                      "properties": {
+                                        "value": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "id": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "ref": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "metadata": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "relationshipMetadata": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        }
+                                      },
+                                      "additionalProperties": false
+                                    },
+                                    "minItems": 1,
+                                    "additionalItems": false
+                                  },
+                                  "MILSTD2525-D-SIDC-Part3Code": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "array",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": "",
+                                    "items": {
+                                      "$schema": "http://json-schema.org/draft-04/schema#",
+                                      "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-D-SIDC-Part3Code",
+                                      "title": "MILSTD2525-D-SIDC-Part3Code",
+                                      "type": "object",
+                                      "description": "",
+                                      "version": "0.3.1",
+                                      "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC-Part3Code",
+                                      "properties": {
+                                        "value": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "id": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "ref": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "metadata": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        },
+                                        "relationshipMetadata": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "0.3.1",
+                                          "javaType": ""
+                                        }
+                                      },
+                                      "additionalProperties": false
+                                    },
+                                    "minItems": 1,
+                                    "additionalItems": false
+                                  }
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "minItems": 1,
+                              "additionalItems": false
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      },
+                      "ObservationAugmentationPoint": {
+                        "SpatialEnvironmentCode": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "USMTFEnvironmentCategoryCodeType": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/maritime/3.2/#USMTFEnvironmentCategoryCodeType",
+                              "title": "USMTFEnvironmentCategoryCodeType",
+                              "type": "object",
+                              "description": " :-) documentation extracted from xml schema!",
+                              "version": "0.4.0",
+                              "javaType": "http___release_niem_gov_niem_domains_maritime_3_2_USMTFEnvironmentCategoryCodeType",
+                              "properties": {
+                                "id": "",
+                                "title": "",
+                                "type": "string",
+                                "description": "",
+                                "version": "",
+                                "javaType": ""
+                              },
+                              "additionalProperties": false
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                  },
+                  "minItems": 1,
+                  "additionalItems": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "ObservedEvent": {
+              "id": "",
+              "title": "",
+              "type": "object",
+              "description": "",
+              "version": "",
+              "javaType": "",
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "properties": {
+                "Event": {
+                  "id": "",
+                  "title": "",
+                  "type": "object",
+                  "description": "",
+                  "version": "",
+                  "javaType": "",
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "properties": {
+                    "EventIdentification": {
+                      "id": "",
+                      "title": "",
+                      "type": "array",
+                      "description": "",
+                      "version": "",
+                      "javaType": "",
+                      "items": {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#EventIdentification",
+                        "title": "EventIdentification",
+                        "type": "object",
+                        "description": "",
+                        "version": "0.3.1",
+                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_EventIdentification",
+                        "properties": {
+                          "IdentificationType": {
+                            "$schema": "http://json-schema.org/draft-04/schema#",
+                            "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationType",
+                            "title": "IdentificationType",
+                            "type": "object",
+                            "description": " :-) documentation extracted from xml schema!",
+                            "version": "0.4.0",
+                            "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationType",
+                            "properties": {
+                              "IdentificationID": {
+                                "id": "",
+                                "title": "",
+                                "type": "array",
+                                "description": "",
+                                "version": "",
+                                "javaType": "",
+                                "items": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/IdentificationID",
+                                  "type": "string",
+                                  "description": "",
+                                  "version": "0.2.0",
+                                  "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationID"
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "IdentificationAugmentationPoint": {
+                                "ShortName": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "object",
+                                  "description": "",
+                                  "version": "",
+                                  "javaType": "",
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "properties": {
+                                    "TextType": {
+                                      "$schema": "http://json-schema.org/draft-04/schema#",
+                                      "id": "http://release.niem.gov/niem/niem-core/3.0/#TextType",
+                                      "title": "TextType",
+                                      "type": "object",
+                                      "description": " :-) documentation extracted from xml schema!",
+                                      "version": "0.4.0",
+                                      "javaType": "http___release_niem_gov_niem_niem_core_3_0_TextType",
+                                      "properties": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "string",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": ""
+                                      },
+                                      "additionalProperties": false
+                                    }
+                                  },
+                                  "additionalProperties": false
+                                }
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "additionalItems": false
+                    },
+                    "EventValidityDateTimeRange": {
+                      "id": "",
+                      "title": "",
+                      "type": "array",
+                      "description": "",
+                      "version": "",
+                      "javaType": "",
+                      "items": {
+                        "$schema": "http://json-schema.org/draft-04/schema#",
+                        "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#EventValidityDateTimeRange",
+                        "title": "EventValidityDateTimeRange",
+                        "type": "object",
+                        "description": "",
+                        "version": "0.3.1",
+                        "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_EventValidityDateTimeRange",
+                        "properties": {
+                          "DateRangeType": {
+                            "StartDate": {
+                              "id": "",
+                              "title": "",
+                              "type": "array",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": "",
+                              "items": {
+                                "id": "StartDate",
+                                "title": "",
+                                "type": "string",
+                                "description": "",
+                                "version": "",
+                                "javaType": "",
+                                "format": "date-time"
+                              },
+                              "minItems": 1,
+                              "additionalItems": false
+                            },
+                            "EndDate": {
+                              "id": "",
+                              "title": "",
+                              "type": "array",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": "",
+                              "items": {
+                                "id": "EndDate",
+                                "title": "",
+                                "type": "string",
+                                "description": "",
+                                "version": "",
+                                "javaType": "",
+                                "format": "date-time"
+                              },
+                              "minItems": 1,
+                              "additionalItems": false
+                            }
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "additionalItems": false
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "ObservedMilitaryUnit": {
+              "id": "",
+              "title": "",
+              "type": "object",
+              "description": "",
+              "version": "",
+              "javaType": "",
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "properties": {
+                "Unit": {
+                  "id": "",
+                  "title": "",
+                  "type": "array",
+                  "description": "",
+                  "version": "",
+                  "javaType": "",
+                  "items": {
+                    "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Unit",
+                    "title": "Unit",
+                    "type": "array",
+                    "description": " :-) documentation extracted from xml schema!",
+                    "version": "0.4.0",
+                    "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Unit",
+                    "items": {
+                      "UnitName": {
+                        "id": "",
+                        "title": "",
+                        "type": "array",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "items": {
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitName",
+                          "title": "UnitName",
+                          "type": "object",
+                          "description": "",
+                          "version": "0.3.1",
+                          "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitName",
+                          "properties": {
+                            "value": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "id": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "ref": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "metadata": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "relationshipMetadata": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "minItems": 1,
+                        "additionalItems": false
+                      },
+                      "UnitShortName": {
+                        "id": "",
+                        "title": "",
+                        "type": "array",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "items": {
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitShortName",
+                          "title": "UnitShortName",
+                          "type": "object",
+                          "description": "",
+                          "version": "0.3.1",
+                          "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitShortName",
+                          "properties": {
+                            "value": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "id": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "ref": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "metadata": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "relationshipMetadata": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "minItems": 1,
+                        "additionalItems": false
+                      },
+                      "UnitTypeCodeText": {
+                        "id": "",
+                        "title": "",
+                        "type": "array",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "items": {
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#UnitTypeCodeText",
+                          "title": "UnitTypeCodeText",
+                          "type": "object",
+                          "description": "",
+                          "version": "0.3.1",
+                          "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_UnitTypeCodeText",
+                          "properties": {
+                            "value": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "id": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "ref": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "metadata": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            },
+                            "relationshipMetadata": {
+                              "id": "",
+                              "title": "",
+                              "type": "string",
+                              "description": "",
+                              "version": "0.3.1",
+                              "javaType": ""
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "minItems": 1,
+                        "additionalItems": false
+                      },
+                      "UnitAugmentationPoint": {
+                        "UnitReferenceNumber": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "UnitReferenceNumberID": {
+                              "id": "",
+                              "title": "",
+                              "type": "array",
+                              "description": "",
+                              "version": "",
+                              "javaType": "",
+                              "items": {
+                                "id": "https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/#UnitReferenceNumberID",
+                                "title": "UnitReferenceNumberID",
+                                "type": "array",
+                                "description": " :-) documentation extracted from xml schema!",
+                                "version": "0.4.0",
+                                "javaType": "https___metadata_ces_mil_dse_dse_assets_100135658_SubmissionPackage_niem_militaryOperationsRestricted_3_2_UnitReferenceNumberID",
+                                "items": {
+                                  "value": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "id": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "ref": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "metadata": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "relationshipMetadata": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  }
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "minItems": 1,
+                              "additionalItems": false
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                  },
+                  "minItems": 1,
+                  "additionalItems": false
+                }
+              },
+              "additionalProperties": false
+            },
+            "ObservedFacility": {
+              "id": "",
+              "title": "",
+              "type": "object",
+              "description": "",
+              "version": "",
+              "javaType": "",
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "properties": {
+                "Facility": {
+                  "id": "",
+                  "title": "",
+                  "type": "array",
+                  "description": "",
+                  "version": "",
+                  "javaType": "",
+                  "items": {
+                    "id": "http://release.niem.gov/niem/niem-core/3.0/#Facility",
+                    "title": "Facility",
+                    "type": "array",
+                    "description": " :-) documentation extracted from xml schema!",
+                    "version": "0.4.0",
+                    "javaType": "http___release_niem_gov_niem_niem_core_3_0_Facility",
+                    "items": {
+                      "FacilityIdentification": {
+                        "id": "",
+                        "title": "",
+                        "type": "array",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "items": {
+                          "id": "",
+                          "title": "FacilityIdentification",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#"
+                        },
+                        "minItems": 1,
+                        "additionalItems": false
+                      },
+                      "FacilityName": {
+                        "id": "",
+                        "title": "",
+                        "type": "array",
+                        "description": "",
+                        "version": "",
+                        "javaType": "",
+                        "items": {
+                          "id": "FacilityName",
+                          "title": "",
+                          "type": "string",
+                          "description": "",
+                          "version": "",
+                          "javaType": ""
+                        },
+                        "minItems": 1,
+                        "additionalItems": false
+                      },
+                      "FacilityAugmentationPoint": {
+                        "FacilityAugmentation": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "FacilityAllegianceCountryAbstract": {
+                              "FacilityAllegianceCountryCode": {
+                                "id": "",
+                                "title": "",
+                                "type": "object",
+                                "description": "",
+                                "version": "",
+                                "javaType": "",
+                                "$schema": "http://json-schema.org/draft-04/schema#",
+                                "properties": {
+                                  "CountryAlpha3CodeType": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/codes/nga_genc/3.0/#CountryAlpha3CodeType",
+                                    "title": "CountryAlpha3CodeType",
+                                    "type": "string",
+                                    "description": " :-) documentation extracted from xml schema!",
+                                    "version": "0.4.0",
+                                    "javaType": "http___release_niem_gov_niem_codes_nga_genc_3_0_CountryAlpha3CodeType",
+                                    "properties": {},
+                                    "additionalProperties": false
+                                  }
+                                },
+                                "additionalProperties": false
+                              }
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "FacilityStandardIdentityCode": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "StandardIdentityCodeType": {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#StandardIdentityCodeType",
+                              "title": "StandardIdentityCodeType",
+                              "type": "object",
+                              "description": " :-) documentation extracted from xml schema!",
+                              "version": "0.4.0",
+                              "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_StandardIdentityCodeType",
+                              "properties": {
+                                "id": "",
+                                "title": "",
+                                "type": "string",
+                                "description": "",
+                                "version": "",
+                                "javaType": ""
+                              },
+                              "additionalProperties": false
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "FacilityAugmentationAbstract": {
+                          "id": "",
+                          "title": "",
+                          "type": "object",
+                          "description": "",
+                          "version": "",
+                          "javaType": "",
+                          "$schema": "http://json-schema.org/draft-04/schema#",
+                          "properties": {
+                            "FacilityAllegianceCountryAbstract": {
+                              "FacilityAllegianceCountryCode": {
+                                "id": "",
+                                "title": "",
+                                "type": "object",
+                                "description": "",
+                                "version": "",
+                                "javaType": "",
+                                "$schema": "http://json-schema.org/draft-04/schema#",
+                                "properties": {
+                                  "CountryAlpha3CodeType": {
+                                    "$schema": "http://json-schema.org/draft-04/schema#",
+                                    "id": "http://release.niem.gov/niem/codes/nga_genc/3.0/#CountryAlpha3CodeType",
+                                    "title": "CountryAlpha3CodeType",
+                                    "type": "string",
+                                    "description": " :-) documentation extracted from xml schema!",
+                                    "version": "0.4.0",
+                                    "javaType": "http___release_niem_gov_niem_codes_nga_genc_3_0_CountryAlpha3CodeType",
+                                    "properties": {},
+                                    "additionalProperties": false
+                                  }
+                                },
+                                "additionalProperties": false
+                              }
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "minItems": 1,
+                    "additionalItems": false
+                  },
+                  "minItems": 1,
+                  "additionalItems": false
+                }
+              },
+              "additionalProperties": false
+            }
           }
         },
         "minItems": 1,
@@ -134,7 +1640,7 @@
       "minItems": 1,
       "additionalItems": false
     },
-    "token": {
+    "tsoaID": {
       "id": "",
       "title": "",
       "type": "string",
@@ -142,7 +1648,7 @@
       "version": "",
       "javaType": ""
     },
-    "anyURI": {
+    "tsoaURI": {
       "id": "",
       "title": "",
       "type": "string",

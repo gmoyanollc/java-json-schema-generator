@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/#PlatformStandardIdentityCode",
+  "title": "PlatformStandardIdentityCode",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_platform_system_2_0_PlatformStandardIdentityCode",
+  "properties": {
+    "StandardIdentityCodeType": {
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/StandardIdentityCodeType.json"
+    }
+  },
+  "additionalProperties": false
+}

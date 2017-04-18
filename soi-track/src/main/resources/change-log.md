@@ -1,6 +1,13 @@
 # TSOA Track 2.0 JSON IEP Schema Change Log
 
 Author: George Moyano <g@gmoyano.com>
+Date:   Mon Apr 17 18:26:26 PDT 2017
+
+  * initial valid Event sample instance 
+  * valid de-referenced JSON schema 
+  * subset of generated V0.4.0 schema components
+
+Author: George Moyano <g@gmoyano.com>
 Date:   Tue Mar 28 17:48:26 2017 -0700
 
   * add Facility data model components 

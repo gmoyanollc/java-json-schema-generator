@@ -20,18 +20,5 @@
       "javaType": "",
       "$ref": "GeographicCoordinateLongitude.json"
     }
-  ],
-  "Location2DGeospatialCoordinateAugmentationPoint": {
-    "id": "",
-    "title": "",
-    "type": "array",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": "",
-    "items": {
-      "$ref": "Location2DGeospatialCoordinateAugmentationPoint.json"
-    },
-    "minItems": 1,
-    "additionalItems": false
-  }
+  ]
 }

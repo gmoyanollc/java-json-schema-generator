@@ -321,7 +321,9 @@ SchemaGenerator.prototype.getDefinitionReferenceName = function (definitionObjec
 }
 
 SchemaGenerator.prototype.getRemotePropertySchemaSourceFile = function (definitionObjectProperty) {
-  var definitionObjectPropertyNamespace = definitionObjectProperty.elementName.namespaceURI;
+  var propertyObjectIdentifierContainer = this.getPropertyObjectIdentifierContainer(definitionObjectProperty);
+  //var definitionObjectPropertyNamespace = definitionObjectProperty.elementName.namespaceURI;
+  var definitionObjectPropertyNamespace = propertyObjectIdentifierContainer.namespaceURI;
   console.log("getting RemoteDefinitionFileLocation for namespace: " 
     + definitionObjectPropertyNamespace);
 
@@ -394,10 +396,15 @@ SchemaGenerator.prototype.writeSchemaFile = function (schemaObject) {
   var schemaBuffer = JSON.stringify(schemaObject, null, '  ');
   console.log('##output schema buffer string');
   console.log(schemaBuffer.toString());
-  if ( dirPathExists(this.targetSchemaBaseDir + this.targetSchemaFileDestination) ) {
-    console.log('##write schema document file to: ' + this.targetSchemaBaseDir 
-      + this.targetSchemaFileDestination);
-    fs.writeFileSync(this.targetSchemaBaseDir + this.targetSchemaFileDestination, schemaBuffer);
+  if ( this.targetSchemaFileDestination.includes("..") )
+    var relativeDestination = this.targetSchemaBaseDir + this.targetSchemaFileDestination.substring(this.targetSchemaFileDestination.lastIndexOf("../") + 3)
+  else var relativeDestination = this.targetSchemaBaseDir + this.targetSchemaFileDestination;
+  if ( dirPathExists(relativeDestination) ) {
+    //console.log('##write schema document file to: ' + this.targetSchemaBaseDir 
+    //  + this.targetSchemaFileDestination);
+    console.log('##write schema document file to: ' + relativeDestination);
+    //fs.writeFileSync(this.targetSchemaBaseDir + this.targetSchemaFileDestination, schemaBuffer);
+    fs.writeFileSync(relativeDestination, schemaBuffer);
   };
 }
 
@@ -817,6 +824,13 @@ SchemaGenerator.prototype.getProperties = function (sourceSchemaObject, definiti
               if ( definitionPropertyContainer.properties[definitionObjectProperty].elementName.namespaceURI != this.sourceSchemaNamespace ) this.generateRemotePropertySchema(definitionPropertyContainer.properties[definitionObjectProperty]);
             break;
           case 'object':
+            if (( typeof sourceSchemaObject.definitions != "undefined" ) 
+              && ( typeof sourceSchemaObject.definitions[definitionObjectProperty] != "undefined" ))
+              this.generateObjectDefinitionSchema(sourceSchemaObject, definitionObject)
+            else {
+              var remoteObject = this.getRemoteObject(this.getId(definitionPropertyContainer.properties[definitionObjectProperty]));
+              this.generateRemotePropertySchema(remoteObject);
+            }
             propertyTemplate = this.setPropertyObjectTemplate(definitionPropertyContainer.properties[definitionObjectProperty]);
             properties[propertyObjectName] = propertyTemplate;
             break;

@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Event",
-  "title": "Event",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/#PlatformSystem",
+  "title": "PlatformSystem",
   "type": "object",
   "description": " :-) documentation extracted from xml schema!",
   "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Event",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_platform_system_2_0_PlatformSystem",
   "properties": {
-    "EventIdentification": {
+    "SystemIdentification": {
       "id": "",
       "title": "",
       "type": "array",
@@ -15,23 +15,19 @@
       "version": "",
       "javaType": "",
       "items": {
-        "$ref": "EventIdentification.json"
+        "$ref": "../../../../niem/domains/intelligence/3.2/SystemIdentification.json"
       },
       "minItems": 1,
       "additionalItems": false
     },
-    "EventValidityDateTimeRange": {
+    "PlatformStandardIdentityCode": {
       "id": "",
       "title": "",
-      "type": "array",
+      "type": "object",
       "description": "",
       "version": "",
       "javaType": "",
-      "items": {
-        "$ref": "EventValidityDateTimeRange.json"
-      },
-      "minItems": 1,
-      "additionalItems": false
+      "$ref": "PlatformStandardIdentityCode.json"
     }
   },
   "additionalProperties": false

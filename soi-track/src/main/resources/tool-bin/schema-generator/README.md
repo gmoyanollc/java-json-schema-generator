@@ -176,15 +176,18 @@ getProperties(sourceSchemaObject, definitionObject)
         `-> test(definitionObjectName != anyType)
         |     `-> getPropertyTemplateType
         |     `-> setProperty*Template
-        |           `-> test( definitionObjectNamespace === this.sourceSchemaNamespace )
-        |                 $ref = localPart + '.json'
-        |               else                  
-        |                 `-> $ref = targetSchemaFilepath + localPart + '.json'
-        |                g`-> generateRemotePropertySchema(definitionObjectProperty)
-        |                g      `-> generateObjectDefinitionSchema(definitionObject)
-        |                g            `-> getProperties([definitionObjectName])
-        |                g            `-> getSchemaFileDestination()
-        |                g            `-> writeSchemaFile()
+        |     :     `-> test( definitionObjectNamespace === this.sourceSchemaNamespace )
+        |     :           $ref = localPart + '.json'
+        |     :         else                  
+        |     :           `-> $ref = targetSchemaFilepath + localPart + '.json'
+        |     `-> test( definition is local )
+        |           `-> generateObjectDefinitionSchema(sourceSchemaObject, definitionObject)
+        |           `-else
+        |               `-> generateRemotePropertySchema(definitionObjectProperty)
+        |                     `-> generateObjectDefinitionSchema(definitionObject)
+        |                           `-> getProperties([definitionObjectName])
+        |                           `-> getSchemaFileDestination()
+        |                           `-> writeSchemaFile()
         `--> test(definitionObjectName == anyType)
         |     `-> generateSubstitutionObjectDefinitionSchema((sourceSchemaObject, definitionObject)
         |           `-> getSubstitutionIdentifiers(this.getId(definitionObject))

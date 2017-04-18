@@ -1,0 +1,9 @@
+{
+  "id": "StartDate",
+  "title": "",
+  "type": "string",
+  "description": "",
+  "version": "",
+  "javaType": "",
+  "format": "date-time"
+}

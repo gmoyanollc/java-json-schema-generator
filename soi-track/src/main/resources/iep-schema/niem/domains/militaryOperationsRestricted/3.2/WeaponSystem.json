@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/#WeaponSystem",
+  "title": "WeaponSystem",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "https___metadata_ces_mil_dse_dse_assets_100135658_SubmissionPackage_niem_militaryOperationsRestricted_3_2_WeaponSystem",
+  "properties": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "",
+    "javaType": ""
+  },
+  "additionalProperties": false
+}

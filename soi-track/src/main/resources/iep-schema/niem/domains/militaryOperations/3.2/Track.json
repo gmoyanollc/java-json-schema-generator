@@ -29,15 +29,6 @@
         "javaType": "",
         "$ref": "../../../../tsoa/soi/feature-observation/2.0/FeatureObservation.json"
       },
-      "FeatureObserver": {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "",
-        "javaType": "",
-        "$ref": "../../../../tsoa/soi/feature-observer/2.0/FeatureObserver.json"
-      },
       "ObservedEvent": {
         "id": "",
         "title": "",
@@ -56,15 +47,6 @@
         "javaType": "",
         "$ref": "../../../../tsoa/soi/observed-military-unit/2.0/ObservedMilitaryUnit.json"
       },
-      "ObservedPlatformSystem": {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "",
-        "javaType": "",
-        "$ref": "../../../../tsoa/soi/observed-platform-system/2.0/ObservedPlatformSystem.json"
-      },
       "ObservedFacility": {
         "id": "",
         "title": "",
@@ -73,15 +55,6 @@
         "version": "",
         "javaType": "",
         "$ref": "../../../../tsoa/soi/observed-facility/2.0/ObservedFacility.json"
-      },
-      "ObservedWeaponSystem": {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "",
-        "javaType": "",
-        "$ref": "../../../../tsoa/soi/observed-weapon/2.0/ObservedWeaponSystem.json"
       }
     }
   },

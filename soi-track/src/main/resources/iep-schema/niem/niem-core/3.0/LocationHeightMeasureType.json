@@ -1,15 +1,32 @@
 {
-  "LocationHeightVerticalDatum": {
-    "id": "",
-    "title": "",
-    "type": "array",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": "",
-    "items": {
-      "$ref": "LocationHeightVerticalDatum.json"
-    },
-    "minItems": 1,
-    "additionalItems": false
-  }
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationHeightMeasureType",
+  "title": "LocationHeightMeasureType",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightMeasureType",
+  "properties": {
+    "LocationHeightVerticalDatum": {
+      "LocationHeightVerticalDatumText": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "LocationHeightVerticalDatumText.json"
+      },
+      "LocationHeightVerticalDatumCode": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "LocationHeightVerticalDatumCode.json"
+      }
+    }
+  },
+  "additionalProperties": false
 }

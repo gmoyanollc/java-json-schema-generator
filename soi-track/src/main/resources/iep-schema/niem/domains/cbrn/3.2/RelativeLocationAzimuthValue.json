@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/cbrn/3.2/#RelativeLocationAzimuthValue",
+  "title": "RelativeLocationAzimuthValue",
+  "type": "object",
+  "description": " :-) documentation extracted from xml schema!",
+  "version": "0.4.0",
+  "javaType": "http___release_niem_gov_niem_domains_cbrn_3_2_RelativeLocationAzimuthValue",
+  "properties": {
+    "value": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "unitsText": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "id": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "ref": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "metadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "relationshipMetadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    }
+  },
+  "additionalProperties": false
+}
