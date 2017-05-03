@@ -94,9 +94,9 @@
                 "relationshipMetadata"
             ]
         },
-        "String":{
+        "AnyURI":{
             "type":"object",
-            "title":"String",
+            "title":"AnyURI",
             "properties":{
                 "otherAttributes":{
                     "title":"otherAttributes",
@@ -114,7 +114,7 @@
                     "title":"value",
                     "allOf":[
                         {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
                         }
                     ],
                     "propertyType":"value"
@@ -174,99 +174,7 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"string",
-                "namespaceURI":"http://release.niem.gov/niem/proxy/xsd/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "value",
-                "id",
-                "ref",
-                "metadata",
-                "relationshipMetadata"
-            ]
-        },
-        "Boolean":{
-            "type":"object",
-            "title":"Boolean",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "ref":{
-                    "title":"ref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ref",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "metadata":{
-                    "title":"metadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"metadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "relationshipMetadata":{
-                    "title":"relationshipMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"relationshipMetadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"boolean",
+                "localPart":"anyURI",
                 "namespaceURI":"http://release.niem.gov/niem/proxy/xsd/3.0/"
             },
             "propertiesOrder":[
@@ -359,98 +267,6 @@
             "typeType":"classInfo",
             "typeName":{
                 "localPart":"dateTime",
-                "namespaceURI":"http://release.niem.gov/niem/proxy/xsd/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "value",
-                "id",
-                "ref",
-                "metadata",
-                "relationshipMetadata"
-            ]
-        },
-        "AnyURI":{
-            "type":"object",
-            "title":"AnyURI",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "ref":{
-                    "title":"ref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ref",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "metadata":{
-                    "title":"metadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"metadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "relationshipMetadata":{
-                    "title":"relationshipMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"relationshipMetadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"anyURI",
                 "namespaceURI":"http://release.niem.gov/niem/proxy/xsd/3.0/"
             },
             "propertiesOrder":[
@@ -646,6 +462,98 @@
                 "relationshipMetadata"
             ]
         },
+        "String":{
+            "type":"object",
+            "title":"String",
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "ref":{
+                    "title":"ref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ref",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "metadata":{
+                    "title":"metadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"metadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "relationshipMetadata":{
+                    "title":"relationshipMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"relationshipMetadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"string",
+                "namespaceURI":"http://release.niem.gov/niem/proxy/xsd/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "value",
+                "id",
+                "ref",
+                "metadata",
+                "relationshipMetadata"
+            ]
+        },
         "Integer":{
             "type":"object",
             "title":"Integer",
@@ -727,6 +635,98 @@
             "typeType":"classInfo",
             "typeName":{
                 "localPart":"integer",
+                "namespaceURI":"http://release.niem.gov/niem/proxy/xsd/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "value",
+                "id",
+                "ref",
+                "metadata",
+                "relationshipMetadata"
+            ]
+        },
+        "Boolean":{
+            "type":"object",
+            "title":"Boolean",
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/boolean"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "ref":{
+                    "title":"ref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ref",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "metadata":{
+                    "title":"metadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"metadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "relationshipMetadata":{
+                    "title":"relationshipMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"relationshipMetadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"boolean",
                 "namespaceURI":"http://release.niem.gov/niem/proxy/xsd/3.0/"
             },
             "propertiesOrder":[

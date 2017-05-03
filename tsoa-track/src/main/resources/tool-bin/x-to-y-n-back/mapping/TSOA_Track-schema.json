@@ -99,40 +99,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "TrackIdentification"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/IdentificationType"
-                }
-            },
-            "elementName":{
-                "localPart":"TrackIdentification",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "ShortName"
                                     ]
                                 },
@@ -151,6 +117,40 @@
             },
             "elementName":{
                 "localPart":"ShortName",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "TrackIdentification"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/IdentificationType"
+                }
+            },
+            "elementName":{
+                "localPart":"TrackIdentification",
                 "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
             }
         },

@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservationDateTime",
   "title": "ObservationDateTime",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "A Date Time Group when this object was observed with the given information. Not to be confused with the Publish Time, which indicates when the system published the message.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservationDateTime",
   "properties": {
     "value": {
@@ -12,7 +12,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "id": {
@@ -20,7 +20,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "ref": {
@@ -28,7 +28,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "metadata": {
@@ -36,7 +36,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "relationshipMetadata": {
@@ -44,7 +44,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     }
   },

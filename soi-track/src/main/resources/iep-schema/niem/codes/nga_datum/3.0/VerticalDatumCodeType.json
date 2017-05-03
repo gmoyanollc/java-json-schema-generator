@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/codes/nga_datum/3.0/#VerticalDatumCodeType",
   "title": "VerticalDatumCodeType",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
+  "description": "A data type for vertical datum codes.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_codes_nga_datum_3_0_VerticalDatumCodeType",
   "properties": {
     "id": "",

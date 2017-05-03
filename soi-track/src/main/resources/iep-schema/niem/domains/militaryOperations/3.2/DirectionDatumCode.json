@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#DirectionDatumCode",
   "title": "DirectionDatumCode",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "A designator for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_DirectionDatumCode",
   "properties": {
     "DirectionDatumCodeType": {

@@ -1,0 +1,5 @@
+{ "schemaUri": "http://release.niem.gov/niem/domains/intelligence/3.2/", "documentation": ["Intelligence"],"components": {"SystemIdentification": { "type": "element", "documentation": [
+    
+      "A number or code identification assigned by a system to uniquely identify a person or object."
+    
+  ]}}}

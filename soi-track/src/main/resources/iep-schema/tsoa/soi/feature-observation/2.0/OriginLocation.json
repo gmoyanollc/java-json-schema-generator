@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/#OriginLocation",
+  "title": "OriginLocation",
+  "type": "object",
+  "description": "An origin location measurement.",
+  "version": "0.4.1",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_feature_observation_2_0_OriginLocation",
+  "properties": {
+    "AltitudeMeasure": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/AltitudeMeasure.json"
+    },
+    "ElevationMeasure": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/ElevationMeasure.json"
+    },
+    "Location2DGeospatialCoordinate": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "../../../../niem/niem-core/3.0/Location2DGeospatialCoordinate.json"
+    }
+  },
+  "additionalProperties": false
+}

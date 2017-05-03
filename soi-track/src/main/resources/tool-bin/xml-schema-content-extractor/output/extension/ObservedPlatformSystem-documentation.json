@@ -1,0 +1,13 @@
+{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/", "documentation": ["An observed platform system described by its properties."],"components": {"PlatformSystemType": { "type": "complexType", "documentation": ["A data type for a platform system."]}, "ObservedPlatformSystemType": { "type": "complexType", "documentation": ["A data type for an observed platform system."]}, "PlatformStandardIdentityCode": { "type": "element", "documentation": [
+    
+      "A platform Standard Identity Code."
+    
+  ]}, "PlatformSystem": { "type": "element", "documentation": [
+    
+      "A platform system described by its properties."
+    
+  ]}, "ObservedPlatformSystem": { "type": "element", "documentation": [
+    
+      "An observed platform system described by its properties."
+    
+  ]}}}

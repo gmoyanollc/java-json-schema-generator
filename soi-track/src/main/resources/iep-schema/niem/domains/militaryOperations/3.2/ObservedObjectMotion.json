@@ -3,29 +3,54 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservedObjectMotion",
   "title": "ObservedObjectMotion",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "A speed and course of an observed object.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObjectMotion",
   "properties": {
     "CourseAbstract": {
-      "id": "",
-      "title": "",
-      "type": "array",
-      "description": "",
-      "version": "0.3.1",
-      "javaType": "",
-      "items": {
-        "$ref": "CourseAbstract.json"
+      "CourseAngleDegreesMeasure": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "CourseAngleDegreesMeasure.json"
       },
-      "minItems": 1,
-      "additionalItems": false
+      "CourseValue": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "CourseValue.json"
+      },
+      "CourseAngleMeasure": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "CourseAngleMeasure.json"
+      },
+      "CourseCode": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "CourseCode.json"
+      }
     },
     "SpeedValue": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "SpeedValue.json"

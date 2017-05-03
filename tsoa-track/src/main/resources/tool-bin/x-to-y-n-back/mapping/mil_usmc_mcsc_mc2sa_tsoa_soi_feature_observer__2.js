@@ -2,7 +2,7 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observer__2_Module_Factory = function (
   var mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observer__2 = {
     name: 'mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observer__2',
     defaultElementNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/feature-observer\/2.0\/',
-    dependencies: ['https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3', 'gov_niem_release_niem_structures__3'],
+    dependencies: ['gov_niem_release_niem_structures__3', 'https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3'],
     typeInfos: [{
         localName: 'FeatureObserverType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.AugmentationType',

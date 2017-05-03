@@ -1,9 +1,21 @@
 {
-  "id": "",
-  "title": "",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#GeographicCoordinateLongitude",
+  "title": "GeographicCoordinateLongitude",
   "type": "object",
-  "description": "",
-  "version": "",
-  "javaType": "",
-  "$ref": "LongitudeDegreeValue.json"
+  "description": "A measurement of the angular distance between a point on the Earth and the Prime Meridian.",
+  "version": "0.4.1",
+  "javaType": "http___release_niem_gov_niem_niem_core_3_0_GeographicCoordinateLongitude",
+  "properties": {
+    "LongitudeDegreeValue": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "LongitudeDegreeValue.json"
+    }
+  },
+  "additionalProperties": false
 }

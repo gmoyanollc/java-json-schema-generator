@@ -2,10 +2,10 @@ var gov_niem_release_niem_domains_intelligence__3_Module_Factory = function () {
   var gov_niem_release_niem_domains_intelligence__3 = {
     name: 'gov_niem_release_niem_domains_intelligence__3',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/intelligence\/3.2\/',
-    dependencies: ['TSOA_Track.NIEM_Core'],
+    dependencies: ['NIEM_Core'],
     typeInfos: [],
     elementInfos: [{
-        typeInfo: 'TSOA_Track.NIEM_Core.SystemIdentificationType',
+        typeInfo: 'NIEM_Core.SystemIdentificationType',
         elementName: 'SystemIdentification'
       }]
   };

@@ -1,0 +1,33 @@
+{ "schemaUri": "http://release.niem.gov/niem/domains/cbrn/3.2/", "documentation": ["Chemical, Biological, Radiological, and Nuclear Domain"],"components": {"Angle180SimpleType": { "type": "simpleType", "documentation": ["A data type for an angle measure where the units are decimal degrees and the values range from +180.0 to -180.0."]},"Angle90SimpleType": { "type": "simpleType", "documentation": ["A data type for an inclination measure where the units are decimal degrees and the values range from +90.0 to -90.0."]},"NonNegativeDoubleSimpleType": { "type": "simpleType", "documentation": ["A data type for a double with value of zero or greater."]}, "Angle180Type": { "type": "complexType", "documentation": ["A data type for an angle measure where the units are decimal degrees and the values range from +180.0 to -180.0."]}, "Angle90Type": { "type": "complexType", "documentation": ["A data type for an inclination measure where the units are decimal degrees and the values range from +90.0 to -90.0."]}, "DistanceType": { "type": "complexType", "documentation": ["A data type for a distance measure where the units are meters (m) and the values may not be negative."]}, "NonNegativeDoubleType": { "type": "complexType", "documentation": ["A data type for a double with value of zero or greater."]}, "OriginType": { "type": "complexType", "documentation": ["A data type for the origin of a relative location coordinate system."]}, "RelativeLocationType": { "type": "complexType", "documentation": ["A data type for describing the relative location of an object."]}, "RemarksComplexObjectType": { "type": "complexType", "documentation": ["A data type providing a Remark via inheritance to applicable Types."]}, "DistanceValue": { "type": "element", "documentation": [
+    
+      "A scalar distance between the center of an object (i.e., instrument, detector, or item) or nuclide and the center of a reference point (Origin)."
+    
+  ]}, "Origin": { "type": "element", "documentation": [
+    
+      "A definition of an origin in a relative location coordinate system. The coordinates of a point in the relative location system are defined based on this origin."
+    
+  ]}, "OriginAugmentationPoint": { "type": "element", "documentation": [
+    
+      "An augmentation point for cbrn:OriginType."
+    
+  ]}, "RelativeLocation": { "type": "element", "documentation": [
+    
+      "A set of information describing the location of an object (i.e., radiation measurement instrument, radiation detector, or measured item) or a radiation source relative to a reference point (Origin)."
+    
+  ]}, "RelativeLocationAugmentationPoint": { "type": "element", "documentation": [
+    
+      "An augmentation point for cbrn:RelativeLocationType."
+    
+  ]}, "RelativeLocationAzimuthValue": { "type": "element", "documentation": [
+    
+      "A horizontal bearing angle with respect to True North from a reference point (Origin) to an object (i.e., instrument, detector, or item) or a nuclide. Its value is the angle subtended by the projection onto the horizontal plane of a straight line from the reference point to the center of the object or nuclide, and a line extending in the forward direction from the reference point. The angle range is from \"-180.0\" to \"+180.0\" degrees. A value of zero implies the center of the object or nuclide's body is aligned directly in front of the reference point; positive values imply the object or nuclide is to the right of the reference point; negative values imply the object or nuclide is to the left of the reference point."
+    
+  ]}, "RelativeLocationInclinationValue": { "type": "element", "documentation": [
+    
+      "A vertical bearing angle with respect to the horizontal plane from a reference point (Origin) to an object (i.e., instrument, detector, or item) or a nuclide. Its value is the angle subtended by a straight line, running from the center of the reference point to the center of the object or nuclide, and a projection of that line onto the horizontal plane. The angle range is from \"-90.0\" to \"+90.0\" degrees. A value of zero implies the center of the object or nuclide is at the same altitude or elevation as the reference point; positive values imply the object or nuclide is higher than the reference point; negative values imply the object or nuclide is lower than the reference point."
+    
+  ]}, "StateVectorLocationChoice": { "type": "element", "documentation": [
+    
+      "A data concept for various location representation types"
+    
+  ]}}}

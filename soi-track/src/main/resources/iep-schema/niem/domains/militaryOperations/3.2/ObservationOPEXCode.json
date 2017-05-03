@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservationOPEXCode",
   "title": "ObservationOPEXCode",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "A designator specifying whether observation was a part of an operation, exercise or simulation.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservationOPEXCode",
   "properties": {
     "value": {
@@ -12,7 +12,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "id": {
@@ -20,7 +20,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "ref": {
@@ -28,7 +28,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "metadata": {
@@ -36,7 +36,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     },
     "relationshipMetadata": {
@@ -44,7 +44,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     }
   },

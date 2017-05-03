@@ -1,0 +1,5 @@
+{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/", "documentation": ["A track observation."],"components": {"ObservedEventType": { "type": "complexType", "documentation": ["A data type for an observed event."]}, "ObservedEvent": { "type": "element", "documentation": [
+    
+      "An observed event."
+    
+  ]}}}

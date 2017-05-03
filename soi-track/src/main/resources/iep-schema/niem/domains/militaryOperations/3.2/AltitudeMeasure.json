@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#AltitudeMeasure",
   "title": "AltitudeMeasure",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
+  "description": "A vertical elevation of an object above a surface (as sea level or land) of a planet or natural satellite.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_AltitudeMeasure",
   "properties": {
     "LocationHeightMeasureType": {

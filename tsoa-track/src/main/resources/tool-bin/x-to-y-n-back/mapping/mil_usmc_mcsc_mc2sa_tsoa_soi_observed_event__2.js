@@ -2,7 +2,7 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module_Factory = function () 
   var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2 = {
     name: 'mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/',
-    dependencies: ['gov_niem_release_niem_domains_militaryoperations__3', 'gov_niem_release_niem_structures__3'],
+    dependencies: ['gov_niem_release_niem_structures__3', 'gov_niem_release_niem_domains_militaryoperations__3'],
     typeInfos: [{
         localName: 'ObservedEventType',
         typeName: {

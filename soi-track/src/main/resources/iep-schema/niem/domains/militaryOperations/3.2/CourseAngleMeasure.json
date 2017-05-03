@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseAngleMeasure",
   "title": "CourseAngleMeasure",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "An angular distance of a direction from a chosen reference direction. The measured and reference directions are located in the horizontal plane, and the value of the angle is positive in a clockwise direction as viewed from \"above\" the horizontal plane.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseAngleMeasure",
   "properties": {
     "AngularMeasureType": {

@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservedObjectLocation",
   "title": "ObservedObjectLocation",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "A location of an observed object.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObjectLocation",
   "properties": {
     "ObservedObject2DGeospatialCoordinate": {
@@ -12,7 +12,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "ObservedObject2DGeospatialCoordinate.json"
@@ -25,7 +25,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "AltitudeMeasure.json"
@@ -38,7 +38,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "items": {
         "$ref": "ElevationMeasure.json"
@@ -46,17 +46,17 @@
       "minItems": 1,
       "additionalItems": false
     },
-    "ObservedObjectLocationAugmentationPoint": [
-      {
+    "ObservedObjectLocationAugmentationPoint": {
+      "ObservedRelativeLocation": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
-        "version": "0.3.1",
+        "version": "",
         "javaType": "",
-        "$ref": "ObservedObjectLocationAugmentationPoint.json"
+        "$ref": "../../../../tsoa/soi/feature-observation/2.0/ObservedRelativeLocation.json"
       }
-    ]
+    }
   },
   "additionalProperties": false
 }

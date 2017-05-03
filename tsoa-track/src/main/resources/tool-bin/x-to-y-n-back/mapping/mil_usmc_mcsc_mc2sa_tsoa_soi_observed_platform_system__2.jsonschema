@@ -2,57 +2,6 @@
 {
     "id":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/#",
     "definitions":{
-        "ObservedPlatformSystemType":{
-            "allOf":[
-                {
-                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/AugmentationType"
-                },
-                {
-                    "type":"object",
-                    "title":"ObservedPlatformSystemType",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "platformSystem":{
-                            "title":"platformSystem",
-                            "allOf":[
-                                {
-                                    "type":"array",
-                                    "items":{
-                                        "$ref":"#/definitions/PlatformSystemType"
-                                    },
-                                    "minItems":0
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"PlatformSystem",
-                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObservedPlatformSystemType",
-                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "platformSystem"
-            ]
-        },
         "PlatformSystemType":{
             "required":[
                 "platformStandardIdentityCode"
@@ -119,6 +68,57 @@
                 "otherAttributes",
                 "systemIdentification",
                 "platformStandardIdentityCode"
+            ]
+        },
+        "ObservedPlatformSystemType":{
+            "allOf":[
+                {
+                    "$ref":"http://release.niem.gov/niem/structures/3.0/#/definitions/AugmentationType"
+                },
+                {
+                    "type":"object",
+                    "title":"ObservedPlatformSystemType",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "platformSystem":{
+                            "title":"platformSystem",
+                            "allOf":[
+                                {
+                                    "type":"array",
+                                    "items":{
+                                        "$ref":"#/definitions/PlatformSystemType"
+                                    },
+                                    "minItems":0
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"PlatformSystem",
+                                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservedPlatformSystemType",
+                "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "platformSystem"
             ]
         }
     },

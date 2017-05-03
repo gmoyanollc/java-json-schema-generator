@@ -1,0 +1,5 @@
+{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/", "documentation": ["A feature observer of something."],"components": {"FeatureObserverType": { "type": "complexType", "documentation": ["A data type for a feature observer of something."]}, "FeatureObserver": { "type": "element", "documentation": [
+    
+      "A feature observer of something."
+    
+  ]}}}

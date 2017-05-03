@@ -1,8 +1,52 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/LatitudeDegreeValue",
-  "type": "string",
-  "description": "",
-  "version": "0.2.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LatitudeDegreeValue"
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#LatitudeDegreeValue",
+  "title": "LatitudeDegreeValue",
+  "type": "object",
+  "description": "A value that specifies the degree of a latitude. The value comes from a restricted range between -90 (inclusive) and +90 (inclusive).",
+  "version": "0.4.1",
+  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LatitudeDegreeValue",
+  "properties": {
+    "value": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "id": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "ref": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "metadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "relationshipMetadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    }
+  },
+  "additionalProperties": false
 }

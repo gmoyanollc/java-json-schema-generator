@@ -16,36 +16,23 @@ var sourceModuleObject
 
 console.log('##iterate JSONIX generated JSON schema files');
 
-//config.schemaFilenames.forEach(function(schemaFilename) {
 for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
-  //sourceSchemaFile = config.schemaBaseDir.source + schemaFilename.source;
   sourceSchemaFile = config.schemaBaseDir.source + config.schemaSourceFilenames[index];
   console.log('##source schema file: ' + sourceSchemaFile);
   sourceSchemaBuffer = readFile(sourceSchemaFile);
   sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
-  //sourceModuleFile = require(config.schemaBaseDir.source + "TSOA_Track.NIEM_Core.js");
-  //console.log('##source module file: ' + sourceModuleFile);
-  //sourceModuleBuffer = readFile(sourceModuleFile);
-  //sourceModuleObject = JSON.parse(sourceModuleBuffer);
-  //var ssg = new SchemaGenerator(schemaTemplateObjects, config.schemaBaseDir.target
-  //  , config.schemaFilepathMappings, schemaFilename.target);
   var ssg = new SchemaGenerator();
-  //ssg.schemaTemplateObjects = schemaTemplateObjects;
   ssg.schemaTemplateObjects = getSchemaTemplateObjects();
-  //ssg.substitutionHeadAssociations = sourceSchemaFile;
   ssg.targetSchemaBaseDir = config.schemaBaseDir.target;
   ssg.targetSchemaBuildVersion = config.targetSchemaBuildVersion;
   ssg.schemaFilepathMappings = config.schemaFilepathMappings;
-  //ssg.setSchemaTemplateObjects(config.schemaTemplates);
-  //ssg.schemaNamespace = SchemaGenerator.getSchemaNamespace(sourceSchemaObject);
+  ssg.sourceDocumentationBaseDir = config.sourceDocumentationBaseDir;
   ssg.sourceSchemaBaseDir = config.schemaBaseDir.source;
   ssg.setSourceSchemaNamespace(sourceSchemaObject);
   ssg.setSourceSchemaBaseDirRelativeDepth();
-  //ssg.setSourceModule();
   ssg.setSubstitutionMappings();
-  //ssg.generateObjectTypeSchema(sourceSchemaObject);
+  ssg.loadDocumentationMap();
   ssg.generateObjectSchema(sourceSchemaObject);
-//});
 };
 
 //writeDeferencedTargetSchemaFile();

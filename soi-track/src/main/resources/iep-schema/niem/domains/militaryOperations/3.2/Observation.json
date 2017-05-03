@@ -2,8 +2,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Observation",
   "title": "Observation",
   "type": "array",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
+  "description": "A time, location and information of an observation.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Observation",
   "items": {
     "ObservedObjectLocation": {
@@ -43,14 +43,14 @@
       "$ref": "ObservationOPEXCode.json"
     },
     "ObservedObjectSymbolAbstract": {
-      "MILSTD2525-B": {
+      "MILSTD2525-D": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
         "version": "",
         "javaType": "",
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-B.json"
+        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-D.json"
       },
       "MILSTD2525-C": {
         "id": "",
@@ -61,14 +61,14 @@
         "javaType": "",
         "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-C.json"
       },
-      "MILSTD2525-D": {
+      "MILSTD2525-B": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
         "version": "",
         "javaType": "",
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-D.json"
+        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-B.json"
       }
     },
     "ObservationAugmentationPoint": {

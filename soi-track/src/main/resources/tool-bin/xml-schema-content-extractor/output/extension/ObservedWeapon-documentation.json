@@ -1,0 +1,5 @@
+{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-weapon/2.0/", "documentation": ["A track observation."],"components": {"ObservedWeaponSystemType": { "type": "complexType", "documentation": ["A data type for an observed weapon system."]}, "ObservedWeaponSystem": { "type": "element", "documentation": [
+    
+      "An observed weapon system."
+    
+  ]}}}

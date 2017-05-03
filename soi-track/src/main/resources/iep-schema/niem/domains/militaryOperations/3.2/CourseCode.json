@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseCode",
   "title": "CourseCode",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "A designator for the 16 generalized directions (for example: southeast) based on the compass rose.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseCode",
   "properties": {
     "DirectionCodeType": {

@@ -1,0 +1,29 @@
+{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/", "documentation": ["A feature observation of something. An observation result of a distinctive attribute or aspect of something associated with a discrete time instance or period."],"components": {"MILSTD2525-D-Type": { "type": "complexType", "documentation": ["A data type for a MILSTD2525-D symbol representation."]}, "MILSTD2525-C-Type": { "type": "complexType", "documentation": ["A data type for a MILSTD2525-C symbol representation."]}, "MILSTD2525-B-Type": { "type": "complexType", "documentation": ["A data type for a MILSTD2525-B symbol representation."]}, "OriginLocationType": { "type": "complexType", "documentation": ["A data type for an origin location measurement."]}, "ObservedRelativeLocationType": { "type": "complexType", "documentation": ["A data type for relative location measurement."]}, "FeatureObservationType": { "type": "complexType", "documentation": ["A data type for a feature observation of something."]}, "SpatialEnvironmentCode": { "type": "element", "documentation": [
+    
+      "A spatial environment Code."
+    
+  ]}, "MILSTD2525-D": { "type": "element", "documentation": [
+    
+      "A MILSTD2525-D symbol representation"
+    
+  ]}, "MILSTD2525-C": { "type": "element", "documentation": [
+    
+      "A MILSTD2525-C symbol representation"
+    
+  ]}, "MILSTD2525-B": { "type": "element", "documentation": [
+    
+      "A MILSTD2525-B symbol representation."
+    
+  ]}, "OriginLocation": { "type": "element", "documentation": [
+    
+      "An origin location measurement."
+    
+  ]}, "ObservedRelativeLocation": { "type": "element", "documentation": [
+    
+      "A relative location measurement."
+    
+  ]}, "FeatureObservation": { "type": "element", "documentation": [
+    
+      "A feature observation of something."
+    
+  ]}}}

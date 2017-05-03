@@ -1,42 +1,18 @@
 {
-  "value": {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/codes/nga_datum/3.0/#DirectionDatumCodeType",
+  "title": "DirectionDatumCodeType",
+  "type": "object",
+  "description": "A data type for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).",
+  "version": "0.4.1",
+  "javaType": "http___release_niem_gov_niem_codes_nga_datum_3_0_DirectionDatumCodeType",
+  "properties": {
     "id": "",
     "title": "",
     "type": "string",
     "description": "",
-    "version": "0.3.1",
+    "version": "",
     "javaType": ""
   },
-  "id": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "ref": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "metadata": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  },
-  "relationshipMetadata": {
-    "id": "",
-    "title": "",
-    "type": "string",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": ""
-  }
+  "additionalProperties": false
 }

@@ -3,7 +3,7 @@ var gov_niem_release_niem_domains_maritime__3_Module_Factory = function () {
     name: 'gov_niem_release_niem_domains_maritime__3',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/maritime\/3.2\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
-    dependencies: ['TSOA_Track.NIEM_Core'],
+    dependencies: ['NIEM_Core'],
     typeInfos: [{
         localName: 'USMTFEnvironmentCategoryCodeType',
         propertyInfos: [{
@@ -37,7 +37,7 @@ var gov_niem_release_niem_domains_maritime__3_Module_Factory = function () {
         values: ['AIR', 'LND', 'SPC', 'SUB', 'SUR', 'UNK']
       }],
     elementInfos: [{
-        typeInfo: 'TSOA_Track.NIEM_Core.TextType',
+        typeInfo: 'NIEM_Core.TextType',
         elementName: 'AngleUnitText',
         substitutionHead: 'AngleUnit'
       }, {

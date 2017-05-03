@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/#ObservedRelativeLocation",
+  "title": "ObservedRelativeLocation",
+  "type": "object",
+  "description": "A relative location measurement.",
+  "version": "0.4.1",
+  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_feature_observation_2_0_ObservedRelativeLocation",
+  "properties": {
+    "RelativeLocation": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "items": {
+        "$ref": "../../../../niem/domains/cbrn/3.2/RelativeLocation.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,48 @@
+{
+  "id": "http://release.niem.gov/niem/domains/cbrn/3.2/#RelativeLocation",
+  "title": "RelativeLocation",
+  "type": "array",
+  "description": "A set of information describing the location of an object (i.e., radiation measurement instrument, radiation detector, or measured item) or a radiation source relative to a reference point (Origin).",
+  "version": "0.4.1",
+  "javaType": "http___release_niem_gov_niem_domains_cbrn_3_2_RelativeLocation",
+  "items": {
+    "RelativeLocationAzimuthValue": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "RelativeLocationAzimuthValue.json"
+    },
+    "RelativeLocationInclinationValue": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "RelativeLocationInclinationValue.json"
+    },
+    "DistanceValue": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "DistanceValue.json"
+    },
+    "Origin": {
+      "id": "",
+      "title": "",
+      "type": "object",
+      "description": "",
+      "version": "",
+      "javaType": "",
+      "$ref": "Origin.json"
+    }
+  },
+  "minItems": 1,
+  "additionalItems": false
+}

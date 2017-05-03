@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ElevationMeasure",
   "title": "ElevationMeasure",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
+  "description": "A height above a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ElevationMeasure",
   "properties": {
     "LocationHeightMeasureType": {

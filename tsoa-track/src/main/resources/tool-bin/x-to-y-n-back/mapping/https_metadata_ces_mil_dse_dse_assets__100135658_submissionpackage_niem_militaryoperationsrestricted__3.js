@@ -3,8 +3,34 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
     name: 'https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3',
     defaultElementNamespaceURI: 'https:\/\/metadata.ces.mil\/dse\/dse_assets\/100135658\/SubmissionPackage\/niem\/militaryOperationsRestricted\/3.2\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
-    dependencies: ['TSOA_Track.NIEM_Core', 'gov_niem_release_niem_structures__3'],
+    dependencies: ['NIEM_Core', 'gov_niem_release_niem_structures__3'],
     typeInfos: [{
+        localName: 'WeaponSystemType',
+        baseTypeInfo: 'NIEM_Core.ItemType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'weaponSystemAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'WeaponSystemAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'ObserverType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'observerAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ObserverAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
         localName: 'UnitReferenceNumberType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -30,48 +56,22 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
             typeInfo: 'IDREFS',
             type: 'attribute'
           }]
-      }, {
-        localName: 'WeaponSystemType',
-        baseTypeInfo: 'TSOA_Track.NIEM_Core.ItemType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'weaponSystemAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'WeaponSystemAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
-        localName: 'ObserverType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'observerAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'ObserverAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
       }],
     elementInfos: [{
         typeInfo: '.UnitReferenceNumberType',
         elementName: 'UnitReferenceNumberID'
-      }, {
-        typeInfo: '.ObserverType',
-        elementName: 'Observer'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'ObserverAugmentationPoint'
       }, {
         typeInfo: '.WeaponSystemType',
         elementName: 'WeaponSystem'
       }, {
         typeInfo: 'AnyType',
         elementName: 'WeaponSystemAugmentationPoint'
+      }, {
+        typeInfo: '.ObserverType',
+        elementName: 'Observer'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'ObserverAugmentationPoint'
       }]
   };
   return {

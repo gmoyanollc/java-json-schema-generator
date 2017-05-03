@@ -3,8 +3,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseValue",
   "title": "CourseValue",
   "type": "object",
-  "description": "",
-  "version": "0.3.1",
+  "description": "A direction of horizontal motion with respect to true north, measured in degrees.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseValue",
   "properties": {
     "sigmaErrorValue": {
@@ -12,7 +12,7 @@
       "title": "",
       "type": "string",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": ""
     }
   },

@@ -3,8 +3,8 @@
   "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#TrackIdentification",
   "title": "TrackIdentification",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
+  "description": "A track indentification for a TSOA Track of observation acts.  SOI JTCW connector had mapped UnitTrack.idl/lURN to SOI-Track-datatype/1.x/Track/Identifiers/UniqueReferenceCode. UniqueReferenceCode is mappable to this object.",
+  "version": "0.4.1",
   "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TrackIdentification",
   "properties": {
     "IdentificationType": {

@@ -2,8 +2,8 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#MILSTD2525-D-SIDC",
   "title": "MILSTD2525-D-SIDC",
   "type": "array",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
+  "description": "A symbol identification code, a numeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.",
+  "version": "0.4.1",
   "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_MILSTD2525-D-SIDC",
   "items": {
     "MILSTD2525-D-SIDC-Part1Code": {

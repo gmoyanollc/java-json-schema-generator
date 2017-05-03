@@ -1,0 +1,9 @@
+{ "schemaUri": "http://release.niem.gov/niem/domains/maritime/3.2/", "documentation": ["Maritime"],"components": {"USMTFEnvironmentCategoryCodeSimpleType": { "type": "simpleType", "documentation": ["A data type for a USMTF-defined force-threat designator code used in combination with threat codes."]}, "USMTFEnvironmentCategoryCodeType": { "type": "complexType", "documentation": ["A data type for a USMTF-defined force-threat designator code used in combination with threat codes."]}, "AngleUnit": { "type": "element", "documentation": [
+    
+      "A data concept for a unit of measure of an angle value."
+    
+  ]}, "AngleUnitText": { "type": "element", "documentation": [
+    
+      "A unit of measure of an angle value."
+    
+  ]}}}
