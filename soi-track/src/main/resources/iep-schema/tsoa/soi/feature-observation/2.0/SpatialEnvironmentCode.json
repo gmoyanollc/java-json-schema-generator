@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A spatial environment Code.",
   "version": "0.4.1",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_feature_observation_2_0_SpatialEnvironmentCode",
+  "javaType": "SpatialEnvironmentCode",
   "properties": {
     "USMTFEnvironmentCategoryCodeType": {
       "$ref": "../../../../niem/domains/maritime/3.2/USMTFEnvironmentCategoryCodeType.json"

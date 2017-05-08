@@ -5,14 +5,14 @@
   "type": "object",
   "description": "An angular distance measured in degrees of a direction from a chosen reference direction. The measured and reference directions are located in the horizontal plane, and the value of the angle is positive in a clockwise direction as viewed from \"above\" the horizontal plane.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseAngleDegreesMeasure",
+  "javaType": "CourseAngleDegreesMeasure",
   "properties": {
     "AngleDegreesMeasure": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "AngleDegreesMeasure.json"

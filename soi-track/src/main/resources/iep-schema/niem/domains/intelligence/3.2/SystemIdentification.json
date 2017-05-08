@@ -1,15 +1,15 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/domains/intelligence/3.2/#SystemIdentification",
   "title": "SystemIdentification",
-  "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_domains_intelligence_3_2_SystemIdentification",
-  "properties": {
+  "type": "array",
+  "description": "A number or code identification assigned by a system to uniquely identify a person or object.",
+  "version": "0.4.1",
+  "javaType": "SystemIdentification",
+  "items": {
     "SystemIdentificationType": {
       "$ref": "../../../../niem/niem-core/3.0/SystemIdentificationType.json"
     }
   },
-  "additionalProperties": false
+  "minItems": 1,
+  "additionalItems": false
 }

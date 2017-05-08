@@ -5,14 +5,14 @@
   "type": "object",
   "description": "A data type for a representation of an identity.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_IdentificationType",
+  "javaType": "IdentificationType",
   "properties": {
     "IdentificationID": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "IdentificationID.json"

@@ -3,16 +3,16 @@
   "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/#UnitReferenceNumber",
   "title": "UnitReferenceNumber",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_military_unit_2_0_UnitReferenceNumber",
+  "description": "A Unit Reference Number (URN).",
+  "version": "0.4.1",
+  "javaType": "UnitReferenceNumber",
   "properties": {
     "UnitReferenceNumberID": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "../../../../niem/domains/militaryOperationsRestricted/3.2/UnitReferenceNumberID.json"

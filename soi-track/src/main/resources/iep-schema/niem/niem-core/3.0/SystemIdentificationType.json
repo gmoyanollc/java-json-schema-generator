@@ -3,16 +3,16 @@
   "id": "http://release.niem.gov/niem/niem-core/3.0/#SystemIdentificationType",
   "title": "SystemIdentificationType",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_SystemIdentificationType",
+  "description": "A data type for a number or code assigned to a system to uniquely identify the system.",
+  "version": "0.4.1",
+  "javaType": "SystemIdentificationType",
   "properties": {
     "SystemName": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "SystemName.json"

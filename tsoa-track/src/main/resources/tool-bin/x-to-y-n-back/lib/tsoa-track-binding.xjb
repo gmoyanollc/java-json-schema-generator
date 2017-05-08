@@ -36,6 +36,21 @@
       <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
+
+<!-- schemaId value is hard-coded, forced.  The value in the XML Schema 
+for targetNamespace attribute is not used as expected in this case when not specifying a value for schemaId 
+or specifying to use targetNamespace.  See [JSONIX Mapping Configuration]
+(https://github.com/highsource/jsonix-schema-compiler/wiki/Mapping-Configuration) -->
+  <jaxb:bindings schemaLocation="../../../iep-schema/extension/ObservedEvent.xsd" 
+    node="/xs:schema">
+    <jaxb:schemaBindings>
+      <jaxb:package name="mil.usmc.mcsc.mc2sa.tsoa.soi.observed_event.v_2_0"/>
+    </jaxb:schemaBindings>
+    <jsonix:module name="ObservedEvent">
+      <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.observed_event.v_2_0" name="ObservedEvent" schemaId="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
+    </jsonix:module>
+  </jaxb:bindings>
   <!--
   <jaxb:bindings schemaLocation="../../../iep-schema/extension/ObservedMilitaryUnit.xsd" 
     node="/xs:schema">
@@ -44,7 +59,7 @@
     </jaxb:schemaBindings>
     <jsonix:module name="ObservedMilitaryUnit">
       <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.observed-military-unit" name="ObservedMilitaryUnit"/>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
   -->
@@ -56,7 +71,7 @@
     </jaxb:schemaBindings>
     <jsonix:module name="ObservedPlatformSystem">
       <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.observed-platform-system" name="ObservedPlatformSystem"/>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
   -->
@@ -68,7 +83,7 @@
     </jaxb:schemaBindings>
     <jsonix:module name="FeatureObservation">
       <jsonix:mapping package="mil.usmc.mcsc.mc2sa.tsoa.soi.feature-observation" name="FeatureObservation"/>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
   -->
@@ -82,7 +97,7 @@
       <jsonix:mapping package="gov.niem.structures" name="NiemStructures_TsoaTrack">
         <jsonix:dependencies-of-mapping name="TsoaTrack"/>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 -->
@@ -100,7 +115,7 @@
           <jsonix:dependencies-of-mapping name="TSOA_Track"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 -->
@@ -115,7 +130,7 @@
           <jsonix:dependencies-of-mapping name="TSOA_Track"/>
         </jsonix:includes>-->
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 
@@ -129,7 +144,7 @@
       <jsonix:mapping package="gov.niem.proxy.xsd" name="NiemProxyXd_TsoaTrack">
         <jsonix:dependencies-of-mapping name="TsoaTrack"/>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 -->  
@@ -143,7 +158,7 @@
       <jsonix:mapping package="gov.niem.domains.militaryoperations" name="NiemMilitaryoperations_TsoaTrack">
         <jsonix:dependencies-of-mapping name="TsoaTrack"/>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
 
   </jaxb:bindings>
@@ -182,7 +197,7 @@
           <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>-->
     <jsonix:module name="NIEM_Core_OGC_GML">
       <jsonix:mapping package="net.opengis.gml.v_3_2_1" name="NIEM_Core_OGC_GML">
@@ -190,7 +205,7 @@
           <jsonix:dependencies-of-mapping name="NIEM_Core"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
     
@@ -314,7 +329,7 @@
           <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core_OGC_GML"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>-->
     <jsonix:module name="NIEM_Core_OGC_GML_ISOTC211_GMD">
       <jsonix:mapping package="org.isotc211.v_2005.gmd" name="NIEM_Core_OGC_GML_ISOTC211_GMD">
@@ -322,7 +337,7 @@
           <jsonix:dependencies-of-mapping name="NIEM_Core_OGC_GML"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 
@@ -338,7 +353,7 @@
           <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core_OGC_GML_ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>-->
     <jsonix:module name="NIEM_Core_OGC_GML_ISOTC211_GSR">
       <jsonix:mapping package="org.isotc211.v_2005.gsr" name="NIEM_Core_OGC_GML_ISOTC211_GSR">
@@ -346,7 +361,7 @@
           <jsonix:dependencies-of-mapping name="NIEM_Core_OGC_GML_ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 
@@ -362,7 +377,7 @@
           <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core_OGC_GML_ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>-->
     <jsonix:module name="NIEM_Core_OGC_GML_ISOTC211_GSS">
       <jsonix:mapping package="org.isotc211.v_2005.gss" name="NIEM_Core_OGC_GML_ISOTC211_GSS">
@@ -370,7 +385,7 @@
           <jsonix:dependencies-of-mapping name="NIEM_Core_OGC_GML_ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 
@@ -386,7 +401,7 @@
           <jsonix:dependencies-of-mapping name="TSOA_Track_NIEM_Core_OGC_GML_ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>-->
     <jsonix:module name="NIEM_Core_OGC_GML_ISOTC211_GTS">
       <jsonix:mapping package="org.isotc211.v_2005.gts" name="NIEM_Core_OGC_GML_ISOTC211_GTS">
@@ -394,7 +409,7 @@
           <jsonix:dependencies-of-mapping name="NIEM_Core_OGC_GML_ISOTC211_GMD"/>
         </jsonix:includes>
       </jsonix:mapping>
-      <jsonix:jsonSchema fileName="${module.name}.schema.json"/>
+      <jsonix:jsonSchema fileName="${module.name}-schema.json"/>
     </jsonix:module>
   </jaxb:bindings>
 

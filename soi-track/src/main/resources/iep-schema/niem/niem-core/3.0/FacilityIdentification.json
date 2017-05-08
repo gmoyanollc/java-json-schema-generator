@@ -1,9 +1,36 @@
 {
-  "id": "",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#FacilityIdentification",
   "title": "FacilityIdentification",
-  "type": "object",
-  "description": "",
-  "version": "",
-  "javaType": "",
-  "$ref": "IdentificationID.json"
+  "type": "array",
+  "description": "An identification assigned to a facility.",
+  "version": "0.4.1",
+  "javaType": "FacilityIdentification",
+  "items": {
+    "IdentificationID": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.2",
+      "javaType": "",
+      "items": {
+        "$ref": "IdentificationID.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
+    "IdentificationAugmentationPoint": {
+      "ShortName": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "../../../tsoa/soi/tsoa-track/2.0/ShortName.json"
+      }
+    }
+  },
+  "minItems": 1,
+  "additionalItems": false
 }

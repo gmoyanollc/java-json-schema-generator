@@ -1,9 +1,23 @@
 {
-  "id": "StartDate",
-  "title": "",
-  "type": "string",
-  "description": "",
-  "version": "",
-  "javaType": "",
-  "format": "date-time"
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#StartDate",
+  "title": "StartDate",
+  "type": "array",
+  "description": "A date on which something begins.",
+  "version": "0.4.1",
+  "javaType": "StartDate",
+  "items": {
+    "DateRepresentation": {
+      "DateTime": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "DateTime.json"
+      }
+    }
+  },
+  "minItems": 1,
+  "additionalItems": false
 }

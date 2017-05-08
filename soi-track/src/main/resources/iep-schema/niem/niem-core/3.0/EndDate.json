@@ -1,9 +1,23 @@
 {
-  "id": "EndDate",
-  "title": "",
-  "type": "string",
-  "description": "",
-  "version": "",
-  "javaType": "",
-  "format": "date-time"
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#EndDate",
+  "title": "EndDate",
+  "type": "array",
+  "description": "An end date.",
+  "version": "0.4.1",
+  "javaType": "EndDate",
+  "items": {
+    "DateRepresentation": {
+      "DateTime": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "DateTime.json"
+      }
+    }
+  },
+  "minItems": 1,
+  "additionalItems": false
 }

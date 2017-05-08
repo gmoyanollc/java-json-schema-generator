@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A horizontal bearing angle with respect to True North from a reference point (Origin) to an object (i.e., instrument, detector, or item) or a nuclide. Its value is the angle subtended by the projection onto the horizontal plane of a straight line from the reference point to the center of the object or nuclide, and a line extending in the forward direction from the reference point. The angle range is from \"-180.0\" to \"+180.0\" degrees. A value of zero implies the center of the object or nuclide's body is aligned directly in front of the reference point; positive values imply the object or nuclide is to the right of the reference point; negative values imply the object or nuclide is to the left of the reference point.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_cbrn_3_2_RelativeLocationAzimuthValue",
+  "javaType": "RelativeLocationAzimuthValue",
   "properties": {
     "value": {
       "id": "",

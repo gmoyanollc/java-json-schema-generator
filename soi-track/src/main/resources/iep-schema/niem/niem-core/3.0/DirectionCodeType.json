@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A data type for compass directions.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_DirectionCodeType",
+  "javaType": "DirectionCodeType",
   "properties": {
     "id": "",
     "title": "",

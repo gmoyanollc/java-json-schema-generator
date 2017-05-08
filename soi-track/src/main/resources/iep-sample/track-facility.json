@@ -2,39 +2,80 @@
   "tsoaID": "086604f0-173c-3c57-a73e-3faf142e8bc2",
   "tsoaURI": "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/ac5b998b-49ac-4fdb-9871-bf30d00abe19",
   "Track": [
-    { 
-    "TrackIdentification": [
-      {"IdentificationID": ["TC1778094891"]},
-      {"TrackShortName": "F000W7"}
+    [
+      {
+        "TrackIdentification": [
+          {
+            "IdentificationID": [
+              "TC1778094891"
+            ]
+          },
+          {
+            "TrackShortName": "F000W7"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "TrackAugmentation": {
+          "ObservedFacility": {
+            "Facility": [
+              {
+                "FacilityIdentification": [
+                  {
+                    "IdentificationID": ""
+                  }
+                ]
+              },
+              {
+                "FacilityName": "FAC000000000000000000000000000000000000000000000000001"
+              },
+              {
+                "FacilityStandardIdentityCode": "HOSTILE"
+              }
+            ]
+          },
+          "FeatureObservation": [
+            {
+              "ObservedObjectLocation": [
+                {
+                  "ObservedObject2DGeospatialCoordinate": [
+                    {
+                      "GeographicCoordinateLatitude": {
+                        "LatitudeDegreeValue": "5.03427228614154476105113644734956324100494384765625"
+                      }
+                    },
+                    {
+                      "GeographicCoordinateLongitude": {
+                        "LatitudeDegreeValue": "-5.2000183111056852425235774717293679714202880859375"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "ObservationDateTime": [
+                "2014-09-10T16:13:25.000Z"
+              ]
+            },
+            {
+              "ObservationOPEXCode": "EXERCISE"
+            },
+            {
+              "MILSTD2525": [
+                {
+                  "MILSTD2525-C-SIDC-Code": "SHGPI-----H---G"
+                }
+              ]
+            },
+            {
+              "SpatialEnvironmentCode": "LND"
+            }
+          ]
+        }
+      }
     ]
-    },{
-    "ObservedFacility": {
-      "Facility": [
-        {"FacilityIdentification": [
-          {"IdentificationID": ""}
-        ]},
-        {"FacilityName": "FAC000000000000000000000000000000000000000000000000001"},
-        {"FacilityStandardIdentityCode": "HOSTILE"}
-      ]
-    },
-    "FeatureObservation": [
-      {"ObservedObjectLocation": [
-        {"ObservedObject2DGeospatialCoordinate": [
-          {"GeographicCoordinateLatitude": {
-            "LatitudeDegreeValue": "5.03427228614154476105113644734956324100494384765625"
-          }},
-          {"GeographicCoordinateLongitude": {
-            "LatitudeDegreeValue": "-5.2000183111056852425235774717293679714202880859375"
-          }}
-        ]}
-      ]},
-      {"ObservationDateTime": ["2014-09-10T16:13:25.000Z"]},
-      {"ObservationOPEXCode": "EXERCISE"},
-      {"MILSTD2525": [
-        {"MILSTD2525-C-SIDC-Code": "SHGPI-----H---G"}
-      ]},
-      {"SpatialEnvironmentCode": "LND"}
-    ]
-  }
   ]
 }

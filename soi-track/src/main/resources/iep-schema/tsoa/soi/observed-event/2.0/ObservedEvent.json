@@ -3,18 +3,22 @@
   "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/#ObservedEvent",
   "title": "ObservedEvent",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_event_2_0_ObservedEvent",
+  "description": "An observed event.",
+  "version": "0.4.1",
+  "javaType": "ObservedEvent",
   "properties": {
     "Event": {
       "id": "",
       "title": "",
-      "type": "object",
+      "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
-      "$ref": "../../../../niem/domains/militaryOperations/3.2/Event.json"
+      "items": {
+        "$ref": "../../../../niem/domains/militaryOperations/3.2/Event.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
     }
   },
   "additionalProperties": false

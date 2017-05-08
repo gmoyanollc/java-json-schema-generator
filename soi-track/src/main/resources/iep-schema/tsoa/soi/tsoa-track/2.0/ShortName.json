@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A short-name, nick-name for something.",
   "version": "0.4.1",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_ShortName",
+  "javaType": "ShortName",
   "properties": {
     "TextType": {
       "$ref": "../../../../niem/niem-core/3.0/TextType.json"

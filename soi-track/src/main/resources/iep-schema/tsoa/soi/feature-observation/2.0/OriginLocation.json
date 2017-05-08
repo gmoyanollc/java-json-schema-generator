@@ -5,7 +5,7 @@
   "type": "object",
   "description": "An origin location measurement.",
   "version": "0.4.1",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_feature_observation_2_0_OriginLocation",
+  "javaType": "OriginLocation",
   "properties": {
     "AltitudeMeasure": {
       "id": "",

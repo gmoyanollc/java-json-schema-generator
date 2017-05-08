@@ -5,32 +5,6 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     dependencies: ['NIEM_Core', 'gov_niem_release_niem_structures__3'],
     typeInfos: [{
-        localName: 'WeaponSystemType',
-        baseTypeInfo: 'NIEM_Core.ItemType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'weaponSystemAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'WeaponSystemAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
-        localName: 'ObserverType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'observerAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'ObserverAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
         localName: 'UnitReferenceNumberType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -56,8 +30,40 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
             typeInfo: 'IDREFS',
             type: 'attribute'
           }]
+      }, {
+        localName: 'ObserverType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'observerAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ObserverAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'WeaponSystemType',
+        baseTypeInfo: 'NIEM_Core.ItemType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'weaponSystemAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'WeaponSystemAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
       }],
     elementInfos: [{
+        typeInfo: '.ObserverType',
+        elementName: 'Observer'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'ObserverAugmentationPoint'
+      }, {
         typeInfo: '.UnitReferenceNumberType',
         elementName: 'UnitReferenceNumberID'
       }, {
@@ -66,12 +72,6 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
       }, {
         typeInfo: 'AnyType',
         elementName: 'WeaponSystemAugmentationPoint'
-      }, {
-        typeInfo: '.ObserverType',
-        elementName: 'Observer'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'ObserverAugmentationPoint'
       }]
   };
   return {

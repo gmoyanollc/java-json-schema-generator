@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A track indentification for a TSOA Track of observation acts.  SOI JTCW connector had mapped UnitTrack.idl/lURN to SOI-Track-datatype/1.x/Track/Identifiers/UniqueReferenceCode. UniqueReferenceCode is mappable to this object.",
   "version": "0.4.1",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_tsoa_track_2_0_TrackIdentification",
+  "javaType": "TrackIdentification",
   "properties": {
     "IdentificationType": {
       "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"

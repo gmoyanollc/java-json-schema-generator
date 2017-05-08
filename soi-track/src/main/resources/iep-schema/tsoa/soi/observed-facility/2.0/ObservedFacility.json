@@ -3,16 +3,16 @@
   "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#ObservedFacility",
   "title": "ObservedFacility",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_observed_facility_2_0_ObservedFacility",
+  "description": "An observed facility described by its properties.",
+  "version": "0.4.1",
+  "javaType": "ObservedFacility",
   "properties": {
     "Facility": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "../../../../niem/niem-core/3.0/Facility.json"

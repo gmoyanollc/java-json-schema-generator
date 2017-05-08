@@ -5,7 +5,7 @@
   "type": "number",
   "description": "A decimal value for a measurement of an angle.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_AngularMeasureDecimalValue",
+  "javaType": "AngularMeasureDecimalValue",
   "properties": {},
   "additionalProperties": false
 }

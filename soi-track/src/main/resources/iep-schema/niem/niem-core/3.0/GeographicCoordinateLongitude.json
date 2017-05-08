@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A measurement of the angular distance between a point on the Earth and the Prime Meridian.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_GeographicCoordinateLongitude",
+  "javaType": "GeographicCoordinateLongitude",
   "properties": {
     "LongitudeDegreeValue": {
       "id": "",

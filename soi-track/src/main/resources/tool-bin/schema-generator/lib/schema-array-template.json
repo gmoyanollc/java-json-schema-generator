@@ -3,11 +3,9 @@
   "title": "",
   "type": "array",
   "description": "",
-  "version": "",
+  "version": "0.2",
   "javaType": "",
-  "items": {
-      "$ref": ".json"            
-  },
+  "items": {},
   "minItems": 1,
   "additionalItems": false
 }

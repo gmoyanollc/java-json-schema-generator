@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A vertical bearing angle with respect to the horizontal plane from a reference point (Origin) to an object (i.e., instrument, detector, or item) or a nuclide. Its value is the angle subtended by a straight line, running from the center of the reference point to the center of the object or nuclide, and a projection of that line onto the horizontal plane. The angle range is from \"-90.0\" to \"+90.0\" degrees. A value of zero implies the center of the object or nuclide is at the same altitude or elevation as the reference point; positive values imply the object or nuclide is higher than the reference point; negative values imply the object or nuclide is lower than the reference point.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_cbrn_3_2_RelativeLocationInclinationValue",
+  "javaType": "RelativeLocationInclinationValue",
   "properties": {
     "value": {
       "id": "",

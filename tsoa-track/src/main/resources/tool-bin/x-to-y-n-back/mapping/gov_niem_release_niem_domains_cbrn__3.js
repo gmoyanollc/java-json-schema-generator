@@ -5,6 +5,29 @@ var gov_niem_release_niem_domains_cbrn__3_Module_Factory = function () {
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     dependencies: ['gov_niem_release_niem_structures__3'],
     typeInfos: [{
+        localName: 'DistanceType',
+        baseTypeInfo: '.NonNegativeDoubleType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'unitsText',
+            required: true,
+            typeInfo: 'Token',
+            attributeName: {
+              localPart: 'unitsText',
+              namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/cbrn\/3.2\/'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'RemarksComplexObjectType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }]
+      }, {
         localName: 'OriginType',
         baseTypeInfo: '.RemarksComplexObjectType',
         propertyInfos: [{
@@ -19,49 +42,7 @@ var gov_niem_release_niem_domains_cbrn__3_Module_Factory = function () {
             type: 'elementRef'
           }]
       }, {
-        localName: 'RemarksComplexObjectType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }]
-      }, {
         localName: 'Angle180Type',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: 'Decimal',
-            type: 'value'
-          }, {
-            name: 'unitsText',
-            required: true,
-            typeInfo: 'Token',
-            attributeName: {
-              localPart: 'unitsText',
-              namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/cbrn\/3.2\/'
-            },
-            type: 'attribute'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Angle90Type',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
@@ -122,11 +103,14 @@ var gov_niem_release_niem_domains_cbrn__3_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'DistanceType',
-        baseTypeInfo: '.NonNegativeDoubleType',
+        localName: 'Angle90Type',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'Decimal',
+            type: 'value'
           }, {
             name: 'unitsText',
             required: true,
@@ -135,6 +119,22 @@ var gov_niem_release_niem_domains_cbrn__3_Module_Factory = function () {
               localPart: 'unitsText',
               namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/cbrn\/3.2\/'
             },
+            type: 'attribute'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
             type: 'attribute'
           }]
       }, {
@@ -170,29 +170,29 @@ var gov_niem_release_niem_domains_cbrn__3_Module_Factory = function () {
       }],
     elementInfos: [{
         typeInfo: 'AnyType',
+        elementName: 'OriginAugmentationPoint'
+      }, {
+        typeInfo: 'AnyType',
         elementName: 'StateVectorLocationChoice'
       }, {
         typeInfo: '.RelativeLocationType',
         elementName: 'RelativeLocation',
         substitutionHead: 'StateVectorLocationChoice'
       }, {
-        typeInfo: '.DistanceType',
-        elementName: 'DistanceValue'
-      }, {
         typeInfo: '.Angle180Type',
         elementName: 'RelativeLocationAzimuthValue'
+      }, {
+        typeInfo: '.Angle90Type',
+        elementName: 'RelativeLocationInclinationValue'
       }, {
         typeInfo: '.OriginType',
         elementName: 'Origin'
       }, {
+        typeInfo: '.DistanceType',
+        elementName: 'DistanceValue'
+      }, {
         typeInfo: 'AnyType',
         elementName: 'RelativeLocationAugmentationPoint'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'OriginAugmentationPoint'
-      }, {
-        typeInfo: '.Angle90Type',
-        elementName: 'RelativeLocationInclinationValue'
       }]
   };
   return {

@@ -5,7 +5,7 @@
   "type": "object",
   "description": "An entity that becomes aware of things through senses.",
   "version": "0.4.1",
-  "javaType": "https___metadata_ces_mil_dse_dse_assets_100135658_SubmissionPackage_niem_militaryOperationsRestricted_3_2_Observer",
+  "javaType": "Observer",
   "properties": {
     "id": "",
     "title": "",

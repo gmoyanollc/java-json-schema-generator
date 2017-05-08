@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A Date Time Group when this object was observed with the given information. Not to be confused with the Publish Time, which indicates when the system published the message.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservationDateTime",
+  "javaType": "ObservationDateTime",
   "properties": {
     "value": {
       "id": "",

@@ -1,24 +1,30 @@
 {
-  "GeographicCoordinateLatitude": [
-    {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#Location2DGeospatialCoordinateType",
+  "title": "Location2DGeospatialCoordinateType",
+  "type": "object",
+  "description": "A data type for a location identified by latitude and longitude.",
+  "version": "0.4.1",
+  "javaType": "Location2DGeospatialCoordinateType",
+  "properties": {
+    "GeographicCoordinateLatitude": {
       "id": "",
       "title": "",
       "type": "object",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "$ref": "GeographicCoordinateLatitude.json"
-    }
-  ],
-  "GeographicCoordinateLongitude": [
-    {
+    },
+    "GeographicCoordinateLongitude": {
       "id": "",
       "title": "",
       "type": "object",
       "description": "",
-      "version": "0.3.1",
+      "version": "",
       "javaType": "",
       "$ref": "GeographicCoordinateLongitude.json"
     }
-  ]
+  },
+  "additionalProperties": false
 }

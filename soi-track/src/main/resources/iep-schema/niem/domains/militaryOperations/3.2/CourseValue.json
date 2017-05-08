@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A direction of horizontal motion with respect to true north, measured in degrees.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseValue",
+  "javaType": "CourseValue",
   "properties": {
     "sigmaErrorValue": {
       "id": "",

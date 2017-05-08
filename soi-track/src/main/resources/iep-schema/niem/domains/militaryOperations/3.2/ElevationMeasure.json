@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A height above a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ElevationMeasure",
+  "javaType": "ElevationMeasure",
   "properties": {
     "LocationHeightMeasureType": {
       "$ref": "../../../../niem/niem-core/3.0/LocationHeightMeasureType.json"

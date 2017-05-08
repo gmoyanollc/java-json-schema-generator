@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A feature observer of something.",
   "version": "0.4.1",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_feature_observer_2_0_FeatureObserver",
+  "javaType": "FeatureObserver",
   "properties": {
     "Observer": {
       "id": "",

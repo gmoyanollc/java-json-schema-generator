@@ -130,7 +130,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ObservedFacility"
+                                        "FacilityAugmentationAbstract"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -143,11 +143,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ObservedFacilityType"
+                    "$ref":"#/definitions/FacilityAugmentationType"
                 }
             },
             "elementName":{
-                "localPart":"ObservedFacility",
+                "localPart":"FacilityAugmentationAbstract",
                 "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
             }
         },
@@ -198,7 +198,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "FacilityAugmentationAbstract"
+                                        "ObservedFacility"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -211,11 +211,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/FacilityAugmentationType"
+                    "$ref":"#/definitions/ObservedFacilityType"
                 }
             },
             "elementName":{
-                "localPart":"FacilityAugmentationAbstract",
+                "localPart":"ObservedFacility",
                 "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/"
             }
         }

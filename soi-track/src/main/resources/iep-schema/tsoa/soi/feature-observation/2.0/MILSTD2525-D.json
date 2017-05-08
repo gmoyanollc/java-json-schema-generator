@@ -5,14 +5,14 @@
   "type": "object",
   "description": "A MILSTD2525-D symbol representation",
   "version": "0.4.1",
-  "javaType": "http___mcsc_usmc_mil_mc2sa_tsoa_soi_feature_observation_2_0_MILSTD2525-D",
+  "javaType": "MILSTD2525_D",
   "properties": {
     "MILSTD2525-D-SIDC": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC.json"

@@ -1,6 +1,22 @@
 # TSOA Track 2.0 JSON IEP Schema Change Log
 
 Author: George Moyano <g@gmoyano.com>
+Date:   Mon May 8 14:10:00 2017 -0700
+
+  * valid de-referenced JSON schema 
+  * documented JSON schema V0.4.1 components 
+  * validated JSON instances
+
+Author: George Moyano <g@gmoyano.com>
+Date:   Wed May 3 09:25:50 2017 -0700
+
+  * initial inclusion of documentation from XML Schema extraction 
+  * partial set of documented json schema components 
+  * support XML element definitions in documentation extraction 
+  * missing NIEM Core component JAXB config fix
+  * re-format javaType value
+
+Author: George Moyano <g@gmoyano.com>
 Date:   Mon Apr 17 18:26:26 PDT 2017
 
   * initial valid Event sample instance 

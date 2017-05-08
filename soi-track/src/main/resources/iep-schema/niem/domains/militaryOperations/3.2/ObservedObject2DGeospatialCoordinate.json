@@ -1,15 +1,15 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservedObject2DGeospatialCoordinate",
   "title": "ObservedObject2DGeospatialCoordinate",
-  "type": "object",
-  "description": "",
-  "version": "0.3.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObject2DGeospatialCoordinate",
-  "properties": {
+  "type": "array",
+  "description": "A latitude and longitude of an observed object.",
+  "version": "0.4.1",
+  "javaType": "ObservedObject2DGeospatialCoordinate",
+  "items": {
     "Location2DGeospatialCoordinateType": {
       "$ref": "../../../../niem/niem-core/3.0/Location2DGeospatialCoordinateType.json"
     }
   },
-  "additionalProperties": false
+  "minItems": 1,
+  "additionalItems": false
 }

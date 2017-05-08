@@ -1,18 +1,17 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Event",
   "title": "Event",
-  "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Event",
-  "properties": {
+  "type": "array",
+  "description": "An existance of a process or object at a location during a time interval.",
+  "version": "0.4.1",
+  "javaType": "Event",
+  "items": {
     "EventIdentification": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "EventIdentification.json"
@@ -25,7 +24,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "EventValidityDateTimeRange.json"
@@ -34,5 +33,6 @@
       "additionalItems": false
     }
   },
-  "additionalProperties": false
+  "minItems": 1,
+  "additionalItems": false
 }

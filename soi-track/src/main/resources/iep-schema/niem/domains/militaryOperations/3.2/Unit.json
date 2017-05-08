@@ -2,16 +2,16 @@
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#Unit",
   "title": "Unit",
   "type": "array",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_Unit",
+  "description": "A military element whose structure is prescribed by competent authority.",
+  "version": "0.4.1",
+  "javaType": "Unit",
   "items": {
     "UnitName": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "UnitName.json"
@@ -24,7 +24,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "UnitShortName.json"
@@ -37,7 +37,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "UnitTypeCodeText.json"

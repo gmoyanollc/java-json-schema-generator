@@ -1,6 +1,6 @@
-var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module_Factory = function () {
-  var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2 = {
-    name: 'mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2',
+var ObservedEvent_Module_Factory = function () {
+  var ObservedEvent = {
+    name: 'ObservedEvent',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/',
     dependencies: ['gov_niem_release_niem_domains_militaryoperations__3', 'gov_niem_release_niem_structures__3'],
     typeInfos: [{
@@ -15,6 +15,8 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module_Factory = function () 
             type: 'anyAttribute'
           }, {
             name: 'event',
+            minOccurs: 0,
+            collection: true,
             elementName: 'Event',
             typeInfo: 'gov_niem_release_niem_domains_militaryoperations__3.EventType'
           }]
@@ -29,18 +31,18 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module_Factory = function () 
       }]
   };
   return {
-    mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2: mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2
+    ObservedEvent: ObservedEvent
   };
 };
 if (typeof define === 'function' && define.amd) {
-  define([], mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module_Factory);
+  define([], ObservedEvent_Module_Factory);
 }
 else {
-  var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module = mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module_Factory();
+  var ObservedEvent_Module = ObservedEvent_Module_Factory();
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports.mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2 = mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module.mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2;
+    module.exports.ObservedEvent = ObservedEvent_Module.ObservedEvent;
   }
   else {
-    var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2 = mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2_Module.mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2;
+    var ObservedEvent = ObservedEvent_Module.ObservedEvent;
   }
 }

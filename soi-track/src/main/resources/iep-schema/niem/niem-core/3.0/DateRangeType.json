@@ -1,28 +1,38 @@
 {
-  "StartDate": {
-    "id": "",
-    "title": "",
-    "type": "array",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": "",
-    "items": {
-      "$ref": "StartDate.json"
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#DateRangeType",
+  "title": "DateRangeType",
+  "type": "object",
+  "description": "A data type for a range of dates.",
+  "version": "0.4.1",
+  "javaType": "DateRangeType",
+  "properties": {
+    "StartDate": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.2",
+      "javaType": "",
+      "items": {
+        "$ref": "StartDate.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
     },
-    "minItems": 1,
-    "additionalItems": false
+    "EndDate": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.2",
+      "javaType": "",
+      "items": {
+        "$ref": "EndDate.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    }
   },
-  "EndDate": {
-    "id": "",
-    "title": "",
-    "type": "array",
-    "description": "",
-    "version": "0.3.1",
-    "javaType": "",
-    "items": {
-      "$ref": "EndDate.json"
-    },
-    "minItems": 1,
-    "additionalItems": false
-  }
+  "additionalProperties": false
 }

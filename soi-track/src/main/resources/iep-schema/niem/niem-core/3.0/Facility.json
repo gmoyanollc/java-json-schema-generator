@@ -2,16 +2,16 @@
   "id": "http://release.niem.gov/niem/niem-core/3.0/#Facility",
   "title": "Facility",
   "type": "array",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_Facility",
+  "description": "A building, place, or structure that provides a particular service.",
+  "version": "0.4.1",
+  "javaType": "Facility",
   "items": {
     "FacilityIdentification": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "FacilityIdentification.json"
@@ -24,7 +24,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "FacilityName.json"
@@ -42,15 +42,6 @@
         "javaType": "",
         "$ref": "../../../niem/domains/militaryOperations/3.2/FacilityAugmentation.json"
       },
-      "FacilityStandardIdentityCode": {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "",
-        "javaType": "",
-        "$ref": "../../../tsoa/soi/observed-facility/2.0/FacilityStandardIdentityCode.json"
-      },
       "FacilityAugmentationAbstract": {
         "id": "",
         "title": "",
@@ -59,6 +50,15 @@
         "version": "",
         "javaType": "",
         "$ref": "../../../tsoa/soi/observed-facility/2.0/FacilityAugmentationAbstract.json"
+      },
+      "FacilityStandardIdentityCode": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "../../../tsoa/soi/observed-facility/2.0/FacilityStandardIdentityCode.json"
       }
     }
   },

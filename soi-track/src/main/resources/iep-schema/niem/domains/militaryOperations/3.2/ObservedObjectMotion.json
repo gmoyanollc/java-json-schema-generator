@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A speed and course of an observed object.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObjectMotion",
+  "javaType": "ObservedObjectMotion",
   "properties": {
     "CourseAbstract": {
       "CourseAngleDegreesMeasure": {
@@ -16,15 +16,6 @@
         "version": "",
         "javaType": "",
         "$ref": "CourseAngleDegreesMeasure.json"
-      },
-      "CourseValue": {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "",
-        "javaType": "",
-        "$ref": "CourseValue.json"
       },
       "CourseAngleMeasure": {
         "id": "",
@@ -43,6 +34,15 @@
         "version": "",
         "javaType": "",
         "$ref": "CourseCode.json"
+      },
+      "CourseValue": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "CourseValue.json"
       }
     },
     "SpeedValue": {
@@ -50,7 +50,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "SpeedValue.json"

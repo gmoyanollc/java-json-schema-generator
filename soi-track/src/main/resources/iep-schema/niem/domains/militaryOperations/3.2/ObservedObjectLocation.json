@@ -5,14 +5,14 @@
   "type": "object",
   "description": "A location of an observed object.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_ObservedObjectLocation",
+  "javaType": "ObservedObjectLocation",
   "properties": {
     "ObservedObject2DGeospatialCoordinate": {
       "id": "",
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "ObservedObject2DGeospatialCoordinate.json"
@@ -25,7 +25,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "AltitudeMeasure.json"
@@ -38,7 +38,7 @@
       "title": "",
       "type": "array",
       "description": "",
-      "version": "",
+      "version": "0.2",
       "javaType": "",
       "items": {
         "$ref": "ElevationMeasure.json"

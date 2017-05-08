@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A designator for the 16 generalized directions (for example: southeast) based on the compass rose.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_domains_militaryOperations_3_2_CourseCode",
+  "javaType": "CourseCode",
   "properties": {
     "DirectionCodeType": {
       "$ref": "../../../../niem/niem-core/3.0/DirectionCodeType.json"

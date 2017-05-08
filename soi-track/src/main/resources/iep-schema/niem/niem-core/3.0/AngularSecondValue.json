@@ -1,9 +1,52 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/AngularSecondValue",
-  "type": "number",
-  "description": "",
-  "version": "0.2.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_AngularSecondValue",
-  "additionalProperties": false
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularSecondValue",
+  "title": "AngularSecondValue",
+  "type": "array",
+  "description": "A value that specifies a second of a minute. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).",
+  "version": "0.4.1",
+  "javaType": "AngularSecondValue",
+  "items": {
+    "value": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "id": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "ref": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "metadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    },
+    "relationshipMetadata": {
+      "id": "",
+      "title": "",
+      "type": "string",
+      "description": "",
+      "version": "",
+      "javaType": ""
+    }
+  },
+  "minItems": 1,
+  "additionalItems": false
 }

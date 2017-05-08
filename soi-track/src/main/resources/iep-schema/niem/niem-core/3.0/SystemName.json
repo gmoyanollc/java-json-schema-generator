@@ -1,10 +1,10 @@
 {
-  "id": "http://release.niem.gov/niem/niem-core/3.0/#FacilityName",
-  "title": "FacilityName",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#SystemName",
+  "title": "SystemName",
   "type": "array",
-  "description": "A name of a facility.",
+  "description": "A name of the kind or the source of a system identifier.",
   "version": "0.4.1",
-  "javaType": "FacilityName",
+  "javaType": "SystemName",
   "items": {
     "id": "",
     "title": "",

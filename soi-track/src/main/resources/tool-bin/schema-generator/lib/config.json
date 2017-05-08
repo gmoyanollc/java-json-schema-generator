@@ -27,8 +27,8 @@
     "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_military_unit__2.jsonschema",
     "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_weapon__2.jsonschema",
     "org_isotc211__2005_gco.jsonschema", 
-    "NIEM_Core.schema.json", 
-    "NIEM_Core_OGC_GML.schema.json",
+    "NIEM_Core-schema.json", 
+    "NIEM_Core_OGC_GML-schema.json",
     "TSOA_Track-schema.json"
   ],
   "schemaTemplates": [
@@ -151,7 +151,7 @@
       "sourceDocumentationFilename": "niem-core-documentation.json",
       "sourceDocumentationFilepath": "niem/niem-core/3.0/",
       "sourceModuleFilename": "NIEM_Core.js",
-      "sourceSchemaFilename": "NIEM_Core.schema.json",
+      "sourceSchemaFilename": "NIEM_Core-schema.json",
       "sourceSchemaFileId": "http://release.niem.gov/niem/niem-core/3.0/",
       "targetSchemaFilepath": "niem/niem-core/3.0/"
     },{
@@ -189,10 +189,19 @@
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/",
       "sourceDocumentationFilename": "ObservedEvent-documentation.json",
-      "sourceModuleFilename": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2.js",
-      "sourceSchemaFilename": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2.jsonschema", 
+      "sourceDocumentationFilepath": "extension/",
+      "sourceModuleFilename": "ObservedEvent.js",
+      "sourceSchemaFilename": "ObservedEvent-schema.json", 
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/",
       "targetSchemaFilepath": "tsoa/soi/observed-event/2.0/"
+    },{
+      "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/",
+      "sourceDocumentationFilename": "ObservedFacility-documentation.json",
+      "sourceDocumentationFilepath": "extension/",
+      "sourceModuleFilename": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.js",
+      "sourceSchemaFilename": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.jsonschema",
+      "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/", 
+      "targetSchemaFilepath": "tsoa/soi/observed-facility/2.0/"
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/",
       "sourceDocumentationFilename": "ObservedMilitaryUnit-documentation.json",
@@ -209,14 +218,6 @@
       "sourceSchemaFilename": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2.jsonschema",
       "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/", 
       "targetSchemaFilepath": "tsoa/soi/observed-platform-system/2.0/"
-    },{
-      "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/",
-      "sourceDocumentationFilename": "ObservedWeapon-documentation.json",
-      "sourceDocumentationFilepath": "extension/",
-      "sourceModuleFilename": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.js",
-      "sourceSchemaFilename": "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.jsonschema",
-      "sourceSchemaFileId": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/", 
-      "targetSchemaFilepath": "tsoa/soi/observed-facility/2.0/"
     },{
       "namespace": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-weapon/2.0/",
       "sourceDocumentationFilename": "ObservedWeapon-documentation.json",
@@ -278,7 +279,7 @@
       "sourceDocumentationFilename": "",
       "sourceDocumentationFilepath": "",
       "sourceModuleFilename": "NIEM_Core_OGC_GML.js",
-      "sourceSchemaFilename": "NIEM_Core_OGC_GML.schema.json",
+      "sourceSchemaFilename": "NIEM_Core_OGC_GML-schema.json",
       "sourceSchemaFileId": "http://www.opengis.net/gml/3.2",
       "targetSchemaFilepath": "ogc/gml/3.2.1/"
     }

@@ -131,40 +131,6 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "AngleUnitText"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/domains/maritime/3.2/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/TextType"
-                }
-            },
-            "elementName":{
-                "localPart":"AngleUnitText",
-                "namespaceURI":"http://release.niem.gov/niem/domains/maritime/3.2/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
                                         "AngleUnit"
                                     ]
                                 },
@@ -183,6 +149,40 @@
             },
             "elementName":{
                 "localPart":"AngleUnit",
+                "namespaceURI":"http://release.niem.gov/niem/domains/maritime/3.2/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "AngleUnitText"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/domains/maritime/3.2/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://release.niem.gov/niem/niem-core/3.0/#/definitions/TextType"
+                }
+            },
+            "elementName":{
+                "localPart":"AngleUnitText",
                 "namespaceURI":"http://release.niem.gov/niem/domains/maritime/3.2/"
             }
         }

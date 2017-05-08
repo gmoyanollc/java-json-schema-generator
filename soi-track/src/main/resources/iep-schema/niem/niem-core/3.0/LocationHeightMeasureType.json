@@ -5,18 +5,9 @@
   "type": "object",
   "description": "A data type for a measurement of the height of a location relative to a reference point.",
   "version": "0.4.1",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LocationHeightMeasureType",
+  "javaType": "LocationHeightMeasureType",
   "properties": {
     "LocationHeightVerticalDatum": {
-      "LocationHeightVerticalDatumText": {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "",
-        "javaType": "",
-        "$ref": "LocationHeightVerticalDatumText.json"
-      },
       "LocationHeightVerticalDatumCode": {
         "id": "",
         "title": "",
@@ -25,6 +16,15 @@
         "version": "",
         "javaType": "",
         "$ref": "LocationHeightVerticalDatumCode.json"
+      },
+      "LocationHeightVerticalDatumText": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "LocationHeightVerticalDatumText.json"
       }
     }
   },

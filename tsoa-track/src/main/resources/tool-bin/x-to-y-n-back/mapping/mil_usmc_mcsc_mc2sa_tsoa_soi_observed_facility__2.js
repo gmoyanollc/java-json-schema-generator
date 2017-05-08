@@ -2,7 +2,7 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2_Module_Factory = function 
   var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2 = {
     name: 'mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2',
     defaultElementNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/observed-facility\/2.0\/',
-    dependencies: ['NIEM_Core', 'gov_niem_release_niem_structures__3', 'gov_niem_release_niem_domains_militaryoperations__3'],
+    dependencies: ['NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3', 'gov_niem_release_niem_structures__3'],
     typeInfos: [{
         localName: 'FacilityAugmentationType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.AugmentationType',
@@ -39,11 +39,11 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2_Module_Factory = function 
           }]
       }],
     elementInfos: [{
-        typeInfo: '.ObservedFacilityType',
-        elementName: 'ObservedFacility',
+        typeInfo: '.FacilityAugmentationType',
+        elementName: 'FacilityAugmentationAbstract',
         substitutionHead: {
-          localPart: 'TrackAugmentationPoint',
-          namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/'
+          localPart: 'FacilityAugmentationPoint',
+          namespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/'
         }
       }, {
         typeInfo: 'gov_niem_release_niem_domains_militaryoperations__3.StandardIdentityCodeType',
@@ -53,11 +53,11 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2_Module_Factory = function 
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/'
         }
       }, {
-        typeInfo: '.FacilityAugmentationType',
-        elementName: 'FacilityAugmentationAbstract',
+        typeInfo: '.ObservedFacilityType',
+        elementName: 'ObservedFacility',
         substitutionHead: {
-          localPart: 'FacilityAugmentationPoint',
-          namespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/'
+          localPart: 'TrackAugmentationPoint',
+          namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/'
         }
       }]
   };

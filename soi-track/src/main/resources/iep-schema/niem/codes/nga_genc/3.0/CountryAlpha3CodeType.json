@@ -3,9 +3,9 @@
   "id": "http://release.niem.gov/niem/codes/nga_genc/3.0/#CountryAlpha3CodeType",
   "title": "CountryAlpha3CodeType",
   "type": "string",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_codes_nga_genc_3_0_CountryAlpha3CodeType",
+  "description": "A data type for three-character country codes.",
+  "version": "0.4.1",
+  "javaType": "CountryAlpha3CodeType",
   "properties": {},
   "additionalProperties": false
 }
