@@ -216,7 +216,7 @@ getProperties(sourceSchemaObject, definitionObject)
 - [x] capture facets
 - [ ] implement facets
 - [x] capture component documentation
-- [ ] implement component documentation
+- [x] implement component documentation
 - [x] capture substitution components
 - [ ] ignore abstract container component
 - [ ] ignore abstracts like augmentation point container, define and reference components or substitution components
