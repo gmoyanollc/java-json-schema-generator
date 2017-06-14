@@ -10,15 +10,24 @@
   xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
   xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
   xsi:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/ 
-  file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd"
-  tstt:tsoaID="086604f0-173c-3c57-a73e-3faf142e8bc2"
-  tstt:tsoaURI="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/ac5b998b-49ac-4fdb-9871-bf30d00abe19">
+  file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd">
 
+  <nnc:Identification>
+    <nnc:IdentificationID>086604f0-173c-3c57-a73e-3faf142e8bc2</nnc:IdentificationID>
+  </nnc:Identification>
+  <SystemIdentification xmlns="http://release.niem.gov/niem/domains/intelligence/3.2/">
+    <nnc:IdentificationID>https://mctssa.mcsc.usmc.mil/soi/dac9630aec642a428cd73f4be0a03569</nnc:IdentificationID>
+  </SystemIdentification>
   <ndm:Track>
-    <ndm:TrackIdentification>
-      <nnc:IdentificationID>TC1778094891</nnc:IdentificationID>
-      <tstt:ShortName>F000W7</tstt:ShortName>
-    </ndm:TrackIdentification>
+    <TrackOrigination>
+      <OriginatorTrackIdentification>
+        <nnc:IdentificationID>TC1778094891</nnc:IdentificationID>
+        <ShortName>F000W7</ShortName>
+      </OriginatorTrackIdentification>
+      <SystemIdentification xmlns="http://release.niem.gov/niem/domains/intelligence/3.2/">
+        <nnc:SystemName>JTCW-on-WinXP</nnc:SystemName>
+      </SystemIdentification>
+    </TrackOrigination>
     <ObservedFacility xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/">
       <nnc:Facility>
         <nnc:FacilityIdentification>
@@ -40,6 +49,10 @@
             </nnc:GeographicCoordinateLongitude>
           </ndm:ObservedObject2DGeospatialCoordinate>
         </ndm:ObservedObjectLocation>
+        <ndm:ObservedObjectMotion>
+          <ndm:CourseValue>85.0</ndm:CourseValue>
+          <ndm:SpeedValue ndm:speedUnitCode="KNT">5.0</ndm:SpeedValue>
+        </ndm:ObservedObjectMotion>
         <ndm:ObservationDateTime>2014-09-10T16:13:25.000Z</ndm:ObservationDateTime>
         <ndm:ObservationOPEXCode>EXERCISE</ndm:ObservationOPEXCode>
         <tsfon:MILSTD2525-C>

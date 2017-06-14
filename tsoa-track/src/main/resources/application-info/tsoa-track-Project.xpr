@@ -7,6 +7,6 @@
     <projectTree name="tsoa-track-Project.xpr">
         <folder path="../../../../../soi-track/"/>
         <folder path="../../../../"/>
-        <folder path="../../../../../../../soi-track-main-resources_TSOA.Project.gData.media/"/>
+        <folder path="../../../../../../../TSOA.Project.gData.media/Schema/Product/soi-track-datatype/"/>
     </projectTree>
 </project>

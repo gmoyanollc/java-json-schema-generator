@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>mc2sa.soi.sdk</groupId>
+    <artifactId>soi-java-sdk-schema-binder</artifactId>
+    <version>0.1</version>
+    <packaging>jar</packaging>
+
+    <name>soi-java-sdk-schema-binder</name>
+  
+  <properties>
+    <!--<json-converter-plugin-source-directory>/home/g/g-dev/soi-messaging/soi-track/src/main/resources/iep-schema/niem/structures/3.0/</json-converter-plugin-source-directory>-->
+    <json-converter-plugin-source-directory>source</json-converter-plugin-source-directory>
+  </properties>
+
+    <dependencies>
+        <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.4</version>
+    </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.7.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.mongodb.morphia</groupId>
+        <artifactId>morphia</artifactId>
+        <version>0.109</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>bson</artifactId>
+        <version>2.3</version>
+        <scope>provided</scope>
+    </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>mc2sa.soi.sdk.plugins.schema</groupId>
+                <artifactId>json-converter-plugin</artifactId>
+                <version>1.2.0</version>
+                <configuration>
+                  <sourceDirectory>${json-converter-plugin-source-directory}</sourceDirectory>
+                    <useMongoAnnotations>false</useMongoAnnotations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting/>
+    
+    <licenses>
+        <license>
+            <name/>
+            <url/>
+        </license>
+    </licenses>
+    
+    <organization>
+        <name/>
+        <url/>
+    </organization>
+    
+    <developers>
+        <developer>
+            <name>George Moyano</name>
+            <url>https://github.com/gmoyanollc</url>
+        </developer>
+    </developers>
+
+</project>

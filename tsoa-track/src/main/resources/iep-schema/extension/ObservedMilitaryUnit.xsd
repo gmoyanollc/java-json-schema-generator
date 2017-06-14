@@ -24,6 +24,8 @@
     schemaLocation="../niem/proxy/xsd/3.0/xs.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/3.0/"
     schemaLocation="../niem/structures/3.0/structures.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/intelligence/3.2/" 
+    schemaLocation="../niem/domains/intelligence/3.2/intelligence.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
     schemaLocation="../niem/domains/militaryOperations/3.2/mo.xsd"/>
   <xs:import schemaLocation="../niem/domains/militaryOperationsRestricted/3.2/moms.xsd" 

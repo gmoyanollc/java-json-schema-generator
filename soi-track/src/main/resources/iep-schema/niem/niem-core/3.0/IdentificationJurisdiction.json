@@ -1,0 +1,23 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationJurisdiction",
+  "title": "IdentificationJurisdiction",
+  "type": "array",
+  "description": "An area, region, or unit where a unique identification is issued.",
+  "version": "0.4.1",
+  "javaType": "IdentificationJurisdiction",
+  "items": {
+    "LocationCountry": {
+      "LocationCountryName": {
+        "id": "",
+        "title": "",
+        "type": "object",
+        "description": "",
+        "version": "",
+        "javaType": "",
+        "$ref": "LocationCountryName.json"
+      }
+    }
+  },
+  "minItems": 1,
+  "additionalItems": false
+}

@@ -3,8 +3,21 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
     name: 'https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3',
     defaultElementNamespaceURI: 'https:\/\/metadata.ces.mil\/dse\/dse_assets\/100135658\/SubmissionPackage\/niem\/militaryOperationsRestricted\/3.2\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
-    dependencies: ['NIEM_Core', 'gov_niem_release_niem_structures__3'],
+    dependencies: ['gov_niem_release_niem_structures__3', 'NIEM_Core'],
     typeInfos: [{
+        localName: 'WeaponSystemType',
+        baseTypeInfo: 'NIEM_Core.ItemType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'weaponSystemAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'WeaponSystemAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
         localName: 'UnitReferenceNumberType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -43,35 +56,22 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
             elementName: 'ObserverAugmentationPoint',
             typeInfo: 'AnyType'
           }]
-      }, {
-        localName: 'WeaponSystemType',
-        baseTypeInfo: 'NIEM_Core.ItemType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'weaponSystemAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'WeaponSystemAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
       }],
     elementInfos: [{
-        typeInfo: '.ObserverType',
-        elementName: 'Observer'
-      }, {
         typeInfo: 'AnyType',
         elementName: 'ObserverAugmentationPoint'
-      }, {
-        typeInfo: '.UnitReferenceNumberType',
-        elementName: 'UnitReferenceNumberID'
       }, {
         typeInfo: '.WeaponSystemType',
         elementName: 'WeaponSystem'
       }, {
         typeInfo: 'AnyType',
         elementName: 'WeaponSystemAugmentationPoint'
+      }, {
+        typeInfo: '.ObserverType',
+        elementName: 'Observer'
+      }, {
+        typeInfo: '.UnitReferenceNumberType',
+        elementName: 'UnitReferenceNumberID'
       }]
   };
   return {

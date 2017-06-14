@@ -2,7 +2,7 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2_Module_Factory = fu
   var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2 = {
     name: 'mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2',
     defaultElementNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/observed-platform-system\/2.0\/',
-    dependencies: ['NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3', 'gov_niem_release_niem_structures__3'],
+    dependencies: ['gov_niem_release_niem_structures__3', 'NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3'],
     typeInfos: [{
         localName: 'PlatformSystemType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
@@ -39,18 +39,18 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2_Module_Factory = fu
           }]
       }],
     elementInfos: [{
+        typeInfo: '.PlatformSystemType',
+        elementName: 'PlatformSystem'
+      }, {
+        typeInfo: 'gov_niem_release_niem_domains_militaryoperations__3.StandardIdentityCodeType',
+        elementName: 'PlatformStandardIdentityCode'
+      }, {
         typeInfo: '.ObservedPlatformSystemType',
         elementName: 'ObservedPlatformSystem',
         substitutionHead: {
           localPart: 'TrackAugmentationPoint',
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/'
         }
-      }, {
-        typeInfo: '.PlatformSystemType',
-        elementName: 'PlatformSystem'
-      }, {
-        typeInfo: 'gov_niem_release_niem_domains_militaryoperations__3.StandardIdentityCodeType',
-        elementName: 'PlatformStandardIdentityCode'
       }]
   };
   return {

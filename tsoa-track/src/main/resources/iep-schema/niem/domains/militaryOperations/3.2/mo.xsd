@@ -14,6 +14,19 @@
       <xs:documentation>Geography Markup Language (GML) version 3.2.1 schemas.  See http://www.opengeospatial.org OGC document 07-036 for documentation: "The Geography Markup Language (GML) was originally developed within the Open Geospatial Consortium, Inc. (OGC). ISO 19136 was prepared by ISO/TC 211 jointly with the OGC."  See http://schemas.opengis.net/gml/ for schemas.</xs:documentation>
     </xs:annotation>
   </xs:import>
+  <xs:complexType name="ContactInformationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a nc:Contact.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="mo:ContactInformationRankText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ContactInformationSecureEmailID" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="CourseAngleDegreesMeasureType">
     <xs:annotation>
       <xs:documentation>A data type for an angle measured in degrees used to identify the intended direction of movement in the horizontal plane.  The value of the angle is positive in a clockwise direction as viewed from "above" the horizontal plane.</xs:documentation>
@@ -236,6 +249,7 @@
       <xs:extension base="nc:ItemType">
         <xs:sequence>
           <xs:element ref="mo:SensorIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:SensorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -315,7 +329,6 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="mo:TrackIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:TrackAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -470,6 +483,21 @@
       <xs:documentation>A decimal value for a measurement of an angle.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ContactDSNTelephoneNumber" type="nc:FullTelephoneNumberType">
+    <xs:annotation>
+      <xs:documentation>A Defense Switched Network (DSN) telephone number for a telecommunications device by which a person or organization may be contacted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactInformationRankText" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A military rank for the focal point of information concerning an activity or event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactInformationSecureEmailID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A secure electronic mailing address by which a person or organization may be contacted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CourseAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the intended direction of movement in the horizontal plane.</xs:documentation>
@@ -548,11 +576,6 @@
   <xs:element name="FacilityAllegianceCountryCode" type="genc:CountryAlpha3CodeType" substitutionGroup="mo:FacilityAllegianceCountryAbstract">
     <xs:annotation>
       <xs:documentation>A designator for a country to which a facility owes its allegiance.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FacilityAugmentation" type="mo:FacilityAugmentationType" substitutionGroup="nc:FacilityAugmentationPoint">
-    <xs:annotation>
-      <xs:documentation>Additional information about a nc:Facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MILSTD2525-B-SIDC-Code" type="mo:MILSTD2525-B-SIDC-Type" nillable="true">
@@ -660,6 +683,11 @@
       <xs:documentation>A device which detects or measures a physical property.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="SensorAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:SensorType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="SensorIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification of a sensor.</xs:documentation>
@@ -678,11 +706,6 @@
   <xs:element name="TrackAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type mo:TrackType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TrackIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identification of a track.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Unit" type="mo:UnitType">

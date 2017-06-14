@@ -2,6 +2,8 @@
 <!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <uri name="http://release.niem.gov/niem/appinfo/3.0/" uri="appinfo/3.0/appinfo.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/fips_10-4/3.0/" uri="codes/fips_10-4/3.0/fips_10-4.xsd"/>
+  <uri name="http://release.niem.gov/niem/codes/iso_3166-1/3.0/" uri="codes/iso_3166-1/3.0/iso_3166-1.xsd"/>
   <uri name="http://release.niem.gov/niem/codes/jc3iedm/3.1/" uri="codes/jc3iedm/3.1/jc3iedm.xsd"/>
   <uri name="http://release.niem.gov/niem/codes/nga_datum/3.0/" uri="codes/nga_datum/3.0/nga_datum.xsd"/>
   <uri name="http://release.niem.gov/niem/codes/nga_genc/3.0/" uri="codes/nga_genc/3.0/nga_genc.xsd"/>
@@ -12,6 +14,7 @@
   <uri name="http://release.niem.gov/niem/domains/jxdm/5.2/" uri="domains/jxdm/5.2/jxdm.xsd"/>
   <uri name="http://release.niem.gov/niem/domains/maritime/3.2/" uri="domains/maritime/3.2/maritime.xsd"/>
   <uri name="http://release.niem.gov/niem/domains/militaryOperations/3.2/" uri="domains/militaryOperations/3.2/mo.xsd"/>
+  <uri name="http://release.niem.gov/niem/domains/screening/3.2/" uri="domains/screening/3.2/screening.xsd"/>
   <uri name="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" uri="external/ogc/ols/1.1.0/dhs-gmo/2.1.0/ols.xsd"/>
   <uri name="http://release.niem.gov/niem/localTerminology/3.0/" uri="localTerminology/3.0/localTerminology.xsd"/>
   <uri name="http://release.niem.gov/niem/niem-core/3.0/" uri="niem-core/3.0/niem-core.xsd"/>

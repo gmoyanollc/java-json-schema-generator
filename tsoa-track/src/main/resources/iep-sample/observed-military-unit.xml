@@ -10,15 +10,22 @@
   xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
   xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
   xsi:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/ 
-    file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd"
-  tstt:tsoaID="CBR01 10MAR"
-  tstt:tsoaURI="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/6afedb7a8348eb4ebdbe0c77ef92db4c">
+    file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd">
 
+  <nnc:Identification>
+    <nnc:IdentificationID>CBR01 10MAR</nnc:IdentificationID>
+  </nnc:Identification>
+  <SystemIdentification xmlns="http://release.niem.gov/niem/domains/intelligence/3.2/">
+    <nnc:IdentificationID>https://mctssa.mcsc.usmc.mil/soi/dac9630aec642a428cd73f4be0a03569</nnc:IdentificationID>
+  </SystemIdentification>
   <ndm:Track>
-    <ndm:TrackIdentification>
-      <nnc:IdentificationID>2235868</nnc:IdentificationID>
-      <tstt:ShortName>2235868</tstt:ShortName>
-    </ndm:TrackIdentification>
+    <TrackOrigination>
+      <OriginatorTrackIdentification>
+        <nnc:IdentificationID>2235868</nnc:IdentificationID>
+        <ShortName>2235868</ShortName>
+      </OriginatorTrackIdentification>
+      <SystemIdentification xmlns="http://release.niem.gov/niem/domains/intelligence/3.2/"/>
+    </TrackOrigination>
     <tsomu:ObservedMilitaryUnit>
       <ndm:Unit>
         <ndm:UnitName>UnitName0</ndm:UnitName>

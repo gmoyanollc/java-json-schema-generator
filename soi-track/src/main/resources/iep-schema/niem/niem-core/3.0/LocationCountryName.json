@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationCountryName",
+  "title": "LocationCountryName",
+  "type": "object",
+  "description": "A name of a country, territory, dependency, or other such geopolitical subdivision of a location.",
+  "version": "0.4.1",
+  "javaType": "LocationCountryName",
+  "properties": {
+    "id": "",
+    "title": "",
+    "type": "string",
+    "description": "",
+    "version": "",
+    "javaType": ""
+  },
+  "additionalProperties": false
+}

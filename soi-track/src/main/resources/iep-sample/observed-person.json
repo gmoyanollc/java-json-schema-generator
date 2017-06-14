@@ -1,0 +1,75 @@
+{
+  "tsoaID": "fb38e9dc-8192-3f0c-99ec-b87248d5ea82",
+  "tsoaURI": "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/fb38e9dc-8192-3f0c-99ec-b87248d5ea82",
+  "Track": [
+    [
+      {
+        "TrackIdentification": [
+          {
+            "IdentificationID": [
+              "TC1779910585"
+            ]
+          },
+          {
+            "TrackShortName": "INDTRK"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "TrackAugmentation": {
+          "ObservedPerson": {
+            "Person": [
+              {
+                "PersonRepresentation": [
+                  {
+                    "IdentificationID": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "FeatureObservation": [
+            {
+              "ObservedObjectLocation": [
+                {
+                  "ObservedObject2DGeospatialCoordinate": [
+                    {
+                      "GeographicCoordinateLatitude": {
+                        "LatitudeDegreeValue": "39.1702489999999983183442964218556880950927734375"
+                      }
+                    },
+                    {
+                      "GeographicCoordinateLongitude": {
+                        "LatitudeDegreeValue": "-121.244022000000001071384758688509464263916015625"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "ObservationDateTime": [
+                "2014-09-19T14:55:59.000Z"
+              ]
+            },
+            {
+              "ObservationOPEXCode": "EXERCISE"
+            },
+            {
+              "MILSTD2525": [
+                {
+                  "MILSTD2525-C-SIDC-Code": "OP-P----------N"
+                }
+              ]
+            },
+            {
+              "SpatialEnvironmentCode": "SUR"
+            }
+          ]
+        }
+      }
+    ]
+  ]
+}

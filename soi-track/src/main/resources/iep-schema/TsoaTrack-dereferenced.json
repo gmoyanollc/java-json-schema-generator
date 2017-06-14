@@ -67,6 +67,48 @@
                       "minItems": 1,
                       "additionalItems": false
                     },
+                    "IdentificationJurisdiction": {
+                      "id": "",
+                      "title": "",
+                      "type": "array",
+                      "description": "",
+                      "version": "0.2",
+                      "javaType": "",
+                      "items": {
+                        "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationJurisdiction",
+                        "title": "IdentificationJurisdiction",
+                        "type": "array",
+                        "description": "An area, region, or unit where a unique identification is issued.",
+                        "version": "0.4.1",
+                        "javaType": "IdentificationJurisdiction",
+                        "items": {
+                          "LocationCountry": {
+                            "LocationCountryName": {
+                              "id": "",
+                              "title": "",
+                              "type": "object",
+                              "description": "",
+                              "version": "",
+                              "javaType": "",
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "properties": {
+                                "id": "",
+                                "title": "",
+                                "type": "string",
+                                "description": "",
+                                "version": "",
+                                "javaType": ""
+                              },
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "minItems": 1,
+                        "additionalItems": false
+                      },
+                      "minItems": 1,
+                      "additionalItems": false
+                    },
                     "IdentificationAugmentationPoint": {
                       "ShortName": {
                         "id": "",
@@ -331,6 +373,24 @@
                                   "javaType": "LocationHeightMeasureType",
                                   "properties": {
                                     "LocationHeightVerticalDatum": {
+                                      "LocationHeightVerticalDatumText": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": "",
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "properties": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "",
+                                          "javaType": ""
+                                        },
+                                        "additionalProperties": false
+                                      },
                                       "LocationHeightVerticalDatumCode": {
                                         "id": "",
                                         "title": "",
@@ -358,24 +418,6 @@
                                             },
                                             "additionalProperties": false
                                           }
-                                        },
-                                        "additionalProperties": false
-                                      },
-                                      "LocationHeightVerticalDatumText": {
-                                        "id": "",
-                                        "title": "",
-                                        "type": "object",
-                                        "description": "",
-                                        "version": "",
-                                        "javaType": "",
-                                        "$schema": "http://json-schema.org/draft-04/schema#",
-                                        "properties": {
-                                          "id": "",
-                                          "title": "",
-                                          "type": "string",
-                                          "description": "",
-                                          "version": "",
-                                          "javaType": ""
                                         },
                                         "additionalProperties": false
                                       }
@@ -415,6 +457,24 @@
                                   "javaType": "LocationHeightMeasureType",
                                   "properties": {
                                     "LocationHeightVerticalDatum": {
+                                      "LocationHeightVerticalDatumText": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "object",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": "",
+                                        "$schema": "http://json-schema.org/draft-04/schema#",
+                                        "properties": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "string",
+                                          "description": "",
+                                          "version": "",
+                                          "javaType": ""
+                                        },
+                                        "additionalProperties": false
+                                      },
                                       "LocationHeightVerticalDatumCode": {
                                         "id": "",
                                         "title": "",
@@ -442,24 +502,6 @@
                                             },
                                             "additionalProperties": false
                                           }
-                                        },
-                                        "additionalProperties": false
-                                      },
-                                      "LocationHeightVerticalDatumText": {
-                                        "id": "",
-                                        "title": "",
-                                        "type": "object",
-                                        "description": "",
-                                        "version": "",
-                                        "javaType": "",
-                                        "$schema": "http://json-schema.org/draft-04/schema#",
-                                        "properties": {
-                                          "id": "",
-                                          "title": "",
-                                          "type": "string",
-                                          "description": "",
-                                          "version": "",
-                                          "javaType": ""
                                         },
                                         "additionalProperties": false
                                       }
@@ -676,6 +718,24 @@
                                                       "javaType": "LocationHeightMeasureType",
                                                       "properties": {
                                                         "LocationHeightVerticalDatum": {
+                                                          "LocationHeightVerticalDatumText": {
+                                                            "id": "",
+                                                            "title": "",
+                                                            "type": "object",
+                                                            "description": "",
+                                                            "version": "",
+                                                            "javaType": "",
+                                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                                            "properties": {
+                                                              "id": "",
+                                                              "title": "",
+                                                              "type": "string",
+                                                              "description": "",
+                                                              "version": "",
+                                                              "javaType": ""
+                                                            },
+                                                            "additionalProperties": false
+                                                          },
                                                           "LocationHeightVerticalDatumCode": {
                                                             "id": "",
                                                             "title": "",
@@ -703,24 +763,6 @@
                                                                 },
                                                                 "additionalProperties": false
                                                               }
-                                                            },
-                                                            "additionalProperties": false
-                                                          },
-                                                          "LocationHeightVerticalDatumText": {
-                                                            "id": "",
-                                                            "title": "",
-                                                            "type": "object",
-                                                            "description": "",
-                                                            "version": "",
-                                                            "javaType": "",
-                                                            "$schema": "http://json-schema.org/draft-04/schema#",
-                                                            "properties": {
-                                                              "id": "",
-                                                              "title": "",
-                                                              "type": "string",
-                                                              "description": "",
-                                                              "version": "",
-                                                              "javaType": ""
                                                             },
                                                             "additionalProperties": false
                                                           }
@@ -750,6 +792,24 @@
                                                       "javaType": "LocationHeightMeasureType",
                                                       "properties": {
                                                         "LocationHeightVerticalDatum": {
+                                                          "LocationHeightVerticalDatumText": {
+                                                            "id": "",
+                                                            "title": "",
+                                                            "type": "object",
+                                                            "description": "",
+                                                            "version": "",
+                                                            "javaType": "",
+                                                            "$schema": "http://json-schema.org/draft-04/schema#",
+                                                            "properties": {
+                                                              "id": "",
+                                                              "title": "",
+                                                              "type": "string",
+                                                              "description": "",
+                                                              "version": "",
+                                                              "javaType": ""
+                                                            },
+                                                            "additionalProperties": false
+                                                          },
                                                           "LocationHeightVerticalDatumCode": {
                                                             "id": "",
                                                             "title": "",
@@ -777,24 +837,6 @@
                                                                 },
                                                                 "additionalProperties": false
                                                               }
-                                                            },
-                                                            "additionalProperties": false
-                                                          },
-                                                          "LocationHeightVerticalDatumText": {
-                                                            "id": "",
-                                                            "title": "",
-                                                            "type": "object",
-                                                            "description": "",
-                                                            "version": "",
-                                                            "javaType": "",
-                                                            "$schema": "http://json-schema.org/draft-04/schema#",
-                                                            "properties": {
-                                                              "id": "",
-                                                              "title": "",
-                                                              "type": "string",
-                                                              "description": "",
-                                                              "version": "",
-                                                              "javaType": ""
                                                             },
                                                             "additionalProperties": false
                                                           }
@@ -976,6 +1018,205 @@
                         "$schema": "http://json-schema.org/draft-04/schema#",
                         "properties": {
                           "CourseAbstract": {
+                            "CourseCode": {
+                              "id": "",
+                              "title": "",
+                              "type": "object",
+                              "description": "",
+                              "version": "",
+                              "javaType": "",
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "properties": {
+                                "DirectionCodeType": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/#DirectionCodeType",
+                                  "title": "DirectionCodeType",
+                                  "type": "object",
+                                  "description": "A data type for compass directions.",
+                                  "version": "0.4.1",
+                                  "javaType": "DirectionCodeType",
+                                  "properties": {
+                                    "id": "",
+                                    "title": "",
+                                    "type": "string",
+                                    "description": "",
+                                    "version": "",
+                                    "javaType": ""
+                                  },
+                                  "additionalProperties": false
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "CourseAngleMeasure": {
+                              "id": "",
+                              "title": "",
+                              "type": "object",
+                              "description": "",
+                              "version": "",
+                              "javaType": "",
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "properties": {
+                                "AngularMeasureType": {
+                                  "$schema": "http://json-schema.org/draft-04/schema#",
+                                  "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularMeasureType",
+                                  "title": "AngularMeasureType",
+                                  "type": "object",
+                                  "description": "A data type for the measurement of an angle.",
+                                  "version": "0.4.1",
+                                  "javaType": "AngularMeasureType",
+                                  "properties": {
+                                    "AngularDegreeValue": {
+                                      "id": "",
+                                      "title": "",
+                                      "type": "array",
+                                      "description": "",
+                                      "version": "0.2",
+                                      "javaType": "",
+                                      "items": {
+                                        "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularDegreeValue",
+                                        "title": "AngularDegreeValue",
+                                        "type": "number",
+                                        "description": "A value that specifies a degree of an angular measure.",
+                                        "version": "0.4.1",
+                                        "javaType": "AngularDegreeValue",
+                                        "items": {},
+                                        "minItems": 1,
+                                        "additionalItems": false
+                                      },
+                                      "minItems": 1,
+                                      "additionalItems": false
+                                    },
+                                    "AngularMinuteValue": {
+                                      "id": "",
+                                      "title": "",
+                                      "type": "array",
+                                      "description": "",
+                                      "version": "0.2",
+                                      "javaType": "",
+                                      "items": {
+                                        "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularMinuteValue",
+                                        "title": "AngularMinuteValue",
+                                        "type": "array",
+                                        "description": "A value that specifies a minute of a degree. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).",
+                                        "version": "0.4.1",
+                                        "javaType": "AngularMinuteValue",
+                                        "items": {
+                                          "value": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "id": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "ref": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "metadata": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "relationshipMetadata": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          }
+                                        },
+                                        "minItems": 1,
+                                        "additionalItems": false
+                                      },
+                                      "minItems": 1,
+                                      "additionalItems": false
+                                    },
+                                    "AngularSecondValue": {
+                                      "id": "",
+                                      "title": "",
+                                      "type": "array",
+                                      "description": "",
+                                      "version": "0.2",
+                                      "javaType": "",
+                                      "items": {
+                                        "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularSecondValue",
+                                        "title": "AngularSecondValue",
+                                        "type": "array",
+                                        "description": "A value that specifies a second of a minute. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).",
+                                        "version": "0.4.1",
+                                        "javaType": "AngularSecondValue",
+                                        "items": {
+                                          "value": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "id": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "ref": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "metadata": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "relationshipMetadata": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          }
+                                        },
+                                        "minItems": 1,
+                                        "additionalItems": false
+                                      },
+                                      "minItems": 1,
+                                      "additionalItems": false
+                                    }
+                                  },
+                                  "additionalProperties": false
+                                }
+                              },
+                              "additionalProperties": false
+                            },
                             "CourseAngleDegreesMeasure": {
                               "id": "",
                               "title": "",
@@ -1208,205 +1449,6 @@
                                     "properties": {},
                                     "additionalProperties": false
                                   }
-                                }
-                              },
-                              "additionalProperties": false
-                            },
-                            "CourseAngleMeasure": {
-                              "id": "",
-                              "title": "",
-                              "type": "object",
-                              "description": "",
-                              "version": "",
-                              "javaType": "",
-                              "$schema": "http://json-schema.org/draft-04/schema#",
-                              "properties": {
-                                "AngularMeasureType": {
-                                  "$schema": "http://json-schema.org/draft-04/schema#",
-                                  "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularMeasureType",
-                                  "title": "AngularMeasureType",
-                                  "type": "object",
-                                  "description": "A data type for the measurement of an angle.",
-                                  "version": "0.4.1",
-                                  "javaType": "AngularMeasureType",
-                                  "properties": {
-                                    "AngularDegreeValue": {
-                                      "id": "",
-                                      "title": "",
-                                      "type": "array",
-                                      "description": "",
-                                      "version": "0.2",
-                                      "javaType": "",
-                                      "items": {
-                                        "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularDegreeValue",
-                                        "title": "AngularDegreeValue",
-                                        "type": "number",
-                                        "description": "A value that specifies a degree of an angular measure.",
-                                        "version": "0.4.1",
-                                        "javaType": "AngularDegreeValue",
-                                        "items": {},
-                                        "minItems": 1,
-                                        "additionalItems": false
-                                      },
-                                      "minItems": 1,
-                                      "additionalItems": false
-                                    },
-                                    "AngularMinuteValue": {
-                                      "id": "",
-                                      "title": "",
-                                      "type": "array",
-                                      "description": "",
-                                      "version": "0.2",
-                                      "javaType": "",
-                                      "items": {
-                                        "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularMinuteValue",
-                                        "title": "AngularMinuteValue",
-                                        "type": "array",
-                                        "description": "A value that specifies a minute of a degree. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).",
-                                        "version": "0.4.1",
-                                        "javaType": "AngularMinuteValue",
-                                        "items": {
-                                          "value": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "id": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "ref": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "metadata": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "relationshipMetadata": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          }
-                                        },
-                                        "minItems": 1,
-                                        "additionalItems": false
-                                      },
-                                      "minItems": 1,
-                                      "additionalItems": false
-                                    },
-                                    "AngularSecondValue": {
-                                      "id": "",
-                                      "title": "",
-                                      "type": "array",
-                                      "description": "",
-                                      "version": "0.2",
-                                      "javaType": "",
-                                      "items": {
-                                        "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularSecondValue",
-                                        "title": "AngularSecondValue",
-                                        "type": "array",
-                                        "description": "A value that specifies a second of a minute. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).",
-                                        "version": "0.4.1",
-                                        "javaType": "AngularSecondValue",
-                                        "items": {
-                                          "value": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "id": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "ref": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "metadata": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          },
-                                          "relationshipMetadata": {
-                                            "id": "",
-                                            "title": "",
-                                            "type": "string",
-                                            "description": "",
-                                            "version": "",
-                                            "javaType": ""
-                                          }
-                                        },
-                                        "minItems": 1,
-                                        "additionalItems": false
-                                      },
-                                      "minItems": 1,
-                                      "additionalItems": false
-                                    }
-                                  },
-                                  "additionalProperties": false
-                                }
-                              },
-                              "additionalProperties": false
-                            },
-                            "CourseCode": {
-                              "id": "",
-                              "title": "",
-                              "type": "object",
-                              "description": "",
-                              "version": "",
-                              "javaType": "",
-                              "$schema": "http://json-schema.org/draft-04/schema#",
-                              "properties": {
-                                "DirectionCodeType": {
-                                  "$schema": "http://json-schema.org/draft-04/schema#",
-                                  "id": "http://release.niem.gov/niem/niem-core/3.0/#DirectionCodeType",
-                                  "title": "DirectionCodeType",
-                                  "type": "object",
-                                  "description": "A data type for compass directions.",
-                                  "version": "0.4.1",
-                                  "javaType": "DirectionCodeType",
-                                  "properties": {
-                                    "id": "",
-                                    "title": "",
-                                    "type": "string",
-                                    "description": "",
-                                    "version": "",
-                                    "javaType": ""
-                                  },
-                                  "additionalProperties": false
                                 }
                               },
                               "additionalProperties": false
@@ -2120,6 +2162,48 @@
                                   "minItems": 1,
                                   "additionalItems": false
                                 },
+                                "IdentificationJurisdiction": {
+                                  "id": "",
+                                  "title": "",
+                                  "type": "array",
+                                  "description": "",
+                                  "version": "0.2",
+                                  "javaType": "",
+                                  "items": {
+                                    "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationJurisdiction",
+                                    "title": "IdentificationJurisdiction",
+                                    "type": "array",
+                                    "description": "An area, region, or unit where a unique identification is issued.",
+                                    "version": "0.4.1",
+                                    "javaType": "IdentificationJurisdiction",
+                                    "items": {
+                                      "LocationCountry": {
+                                        "LocationCountryName": {
+                                          "id": "",
+                                          "title": "",
+                                          "type": "object",
+                                          "description": "",
+                                          "version": "",
+                                          "javaType": "",
+                                          "$schema": "http://json-schema.org/draft-04/schema#",
+                                          "properties": {
+                                            "id": "",
+                                            "title": "",
+                                            "type": "string",
+                                            "description": "",
+                                            "version": "",
+                                            "javaType": ""
+                                          },
+                                          "additionalProperties": false
+                                        }
+                                      }
+                                    },
+                                    "minItems": 1,
+                                    "additionalItems": false
+                                  },
+                                  "minItems": 1,
+                                  "additionalItems": false
+                                },
                                 "IdentificationAugmentationPoint": {
                                   "ShortName": {
                                     "id": "",
@@ -2338,6 +2422,48 @@
                               "minItems": 1,
                               "additionalItems": false
                             },
+                            "IdentificationJurisdiction": {
+                              "id": "",
+                              "title": "",
+                              "type": "array",
+                              "description": "",
+                              "version": "0.2",
+                              "javaType": "",
+                              "items": {
+                                "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationJurisdiction",
+                                "title": "IdentificationJurisdiction",
+                                "type": "array",
+                                "description": "An area, region, or unit where a unique identification is issued.",
+                                "version": "0.4.1",
+                                "javaType": "IdentificationJurisdiction",
+                                "items": {
+                                  "LocationCountry": {
+                                    "LocationCountryName": {
+                                      "id": "",
+                                      "title": "",
+                                      "type": "object",
+                                      "description": "",
+                                      "version": "",
+                                      "javaType": "",
+                                      "$schema": "http://json-schema.org/draft-04/schema#",
+                                      "properties": {
+                                        "id": "",
+                                        "title": "",
+                                        "type": "string",
+                                        "description": "",
+                                        "version": "",
+                                        "javaType": ""
+                                      },
+                                      "additionalProperties": false
+                                    }
+                                  }
+                                },
+                                "minItems": 1,
+                                "additionalItems": false
+                              },
+                              "minItems": 1,
+                              "additionalItems": false
+                            },
                             "IdentificationAugmentationPoint": {
                               "ShortName": {
                                 "id": "",
@@ -2406,43 +2532,6 @@
                         "additionalItems": false
                       },
                       "FacilityAugmentationPoint": {
-                        "FacilityAugmentation": {
-                          "id": "",
-                          "title": "",
-                          "type": "object",
-                          "description": "",
-                          "version": "",
-                          "javaType": "",
-                          "$schema": "http://json-schema.org/draft-04/schema#",
-                          "properties": {
-                            "FacilityAllegianceCountryAbstract": {
-                              "FacilityAllegianceCountryCode": {
-                                "id": "",
-                                "title": "",
-                                "type": "object",
-                                "description": "",
-                                "version": "",
-                                "javaType": "",
-                                "$schema": "http://json-schema.org/draft-04/schema#",
-                                "properties": {
-                                  "CountryAlpha3CodeType": {
-                                    "$schema": "http://json-schema.org/draft-04/schema#",
-                                    "id": "http://release.niem.gov/niem/codes/nga_genc/3.0/#CountryAlpha3CodeType",
-                                    "title": "CountryAlpha3CodeType",
-                                    "type": "string",
-                                    "description": "A data type for three-character country codes.",
-                                    "version": "0.4.1",
-                                    "javaType": "CountryAlpha3CodeType",
-                                    "properties": {},
-                                    "additionalProperties": false
-                                  }
-                                },
-                                "additionalProperties": false
-                              }
-                            }
-                          },
-                          "additionalProperties": false
-                        },
                         "FacilityAugmentationAbstract": {
                           "id": "",
                           "title": "",

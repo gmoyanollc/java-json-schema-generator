@@ -8,14 +8,14 @@
   "javaType": "ObservedObjectMotion",
   "properties": {
     "CourseAbstract": {
-      "CourseAngleDegreesMeasure": {
+      "CourseCode": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
         "version": "",
         "javaType": "",
-        "$ref": "CourseAngleDegreesMeasure.json"
+        "$ref": "CourseCode.json"
       },
       "CourseAngleMeasure": {
         "id": "",
@@ -26,14 +26,14 @@
         "javaType": "",
         "$ref": "CourseAngleMeasure.json"
       },
-      "CourseCode": {
+      "CourseAngleDegreesMeasure": {
         "id": "",
         "title": "",
         "type": "object",
         "description": "",
         "version": "",
         "javaType": "",
-        "$ref": "CourseCode.json"
+        "$ref": "CourseAngleDegreesMeasure.json"
       },
       "CourseValue": {
         "id": "",

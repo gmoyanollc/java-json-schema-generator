@@ -20,6 +20,19 @@
       "minItems": 1,
       "additionalItems": false
     },
+    "IdentificationJurisdiction": {
+      "id": "",
+      "title": "",
+      "type": "array",
+      "description": "",
+      "version": "0.2",
+      "javaType": "",
+      "items": {
+        "$ref": "IdentificationJurisdiction.json"
+      },
+      "minItems": 1,
+      "additionalItems": false
+    },
     "IdentificationAugmentationPoint": {
       "ShortName": {
         "id": "",

@@ -1,0 +1,5 @@
+#surefire
+#Mon Jun 12 17:35:17 PDT 2017
+user.dir=/home/g/g-dev/soi-messaging/soi-track/src/main/resources/tool-bin/schema-java-binder
+localRepository=/home/g/.m2/repository
+basedir=/home/g/g-dev/soi-messaging/soi-track/src/main/resources/tool-bin/schema-java-binder

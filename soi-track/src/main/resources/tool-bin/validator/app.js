@@ -5,10 +5,16 @@ var resultSummary = [];
 //var schemaFile = '../../iep-schema/SoiTrack-dereferenced.json';
 var schemaFile = '../../iep-schema/TsoaTrack-dereferenced.json';
 const dataFileSet = [
-  "../../iep-sample/track-unit.json",
-  "../../iep-sample/track-facility.json",
-  "../../iep-sample/track-platform.json",
-  "../../iep-sample/track-event.json"];
+  "../../iep-sample/observed-military-unit.json",
+  "../../iep-sample/observed-facility.json",
+  "../../iep-sample/observed-platform-system.json",
+  "../../iep-sample/observed-event.json",
+  "../../iep-sample/observed-person.json"];
+// const dataFileSet = [
+//   "../../iep-sample/track-unit.json",
+//   "../../iep-sample/track-facility.json",
+//   "../../iep-sample/track-platform.json",
+//   "../../iep-sample/track-event.json"];
 /* 
 ,
   "../../iep-sample/track-facility.json",

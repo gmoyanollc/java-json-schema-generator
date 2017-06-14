@@ -9,30 +9,34 @@
   xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
   xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
   xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xmlns:nds="http://release.niem.gov/niem/domains/screening/3.2/"
   xsi:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/ 
   file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd"
-  tstt:tsoaID="42cb6a24-85a3-33bc-8c91-73305bdffe0b"
-  tstt:tsoaURI="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/42cb6a2485a333bc8c9173305bdffe0b">
+  tstt:tsoaID="fb38e9dc-8192-3f0c-99ec-b87248d5ea82"
+  tstt:tsoaURI="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/fb38e9dc-8192-3f0c-99ec-b87248d5ea82">
   
   <ndm:Track>
     <ndm:TrackIdentification>
-      <nnc:IdentificationID>TC1645739552</nnc:IdentificationID>
-      <tstt:ShortName>PLT-1</tstt:ShortName>
+      <nnc:IdentificationID>TC1779910585</nnc:IdentificationID>
+      <tstt:ShortName>INDTRK</tstt:ShortName>
     </ndm:TrackIdentification>
-    <ObservedPlatformSystem xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/">
-      <PlatformSystem>
-        <SystemIdentification xmlns="http://release.niem.gov/niem/domains/intelligence/3.2/">
+    <ObservedPerson xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-person/2.0/">
+      <nnc:Person>
+        <!--<SystemIdentification xmlns="http://release.niem.gov/niem/domains/intelligence/3.2/">
           <nnc:SystemName>Track Platform</nnc:SystemName>
         </SystemIdentification>
-        <PlatformStandardIdentityCode>FRIEND</PlatformStandardIdentityCode>
-      </PlatformSystem>
-    </ObservedPlatformSystem>
+        <PlatformStandardIdentityCode>FRIEND</PlatformStandardIdentityCode>-->
+        <PersonRepresentation><nds:PersonIdentification>
+          <nnc:IdentificationID></nnc:IdentificationID>
+        </nds:PersonIdentification></PersonRepresentation>
+      </nnc:Person>
+    </ObservedPerson>
     <tsfon:FeatureObservation>
       <ndm:Observation>
         <ndm:ObservedObjectLocation>
           <ndm:ObservedObject2DGeospatialCoordinate>
-            <nnc:GeographicCoordinateLatitude><nnc:LatitudeDegreeValue>40.1486111111111085847369395196437835693359375</nnc:LatitudeDegreeValue></nnc:GeographicCoordinateLatitude>
-            <nnc:GeographicCoordinateLongitude><nnc:LongitudeDegreeValue>-76.5597222222222200116448220796883106231689453125</nnc:LongitudeDegreeValue></nnc:GeographicCoordinateLongitude>
+            <nnc:GeographicCoordinateLatitude><nnc:LatitudeDegreeValue>39.1702489999999983183442964218556880950927734375</nnc:LatitudeDegreeValue></nnc:GeographicCoordinateLatitude>
+            <nnc:GeographicCoordinateLongitude><nnc:LongitudeDegreeValue>-121.244022000000001071384758688509464263916015625</nnc:LongitudeDegreeValue></nnc:GeographicCoordinateLongitude>
           </ndm:ObservedObject2DGeospatialCoordinate>
           <tsfon:ObservedRelativeLocation>
             <RelativeLocation xmlns="http://release.niem.gov/niem/domains/cbrn/3.2/">
@@ -43,9 +47,9 @@
             </RelativeLocation>
           </tsfon:ObservedRelativeLocation>
         </ndm:ObservedObjectLocation>
-        <ndm:ObservationDateTime>2014-09-10T17:35:27.000Z</ndm:ObservationDateTime>
+        <ndm:ObservationDateTime>2014-09-19T14:55:59.000Z</ndm:ObservationDateTime>
         <ndm:ObservationOPEXCode>EXERCISE</ndm:ObservationOPEXCode>
-        <tsfon:MILSTD2525-C><ndm:MILSTD2525-C-SIDC-Code>SFSPO---------N</ndm:MILSTD2525-C-SIDC-Code></tsfon:MILSTD2525-C>
+        <tsfon:MILSTD2525-C><ndm:MILSTD2525-C-SIDC-Code>OP-P----------N</ndm:MILSTD2525-C-SIDC-Code></tsfon:MILSTD2525-C>
         <tsfon:SpatialEnvironmentCode>SUR</tsfon:SpatialEnvironmentCode>
       </ndm:Observation>
     </tsfon:FeatureObservation>

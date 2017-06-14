@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TsoaTrack xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  xmlns:tstt="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/"
+  xmlns:tsomu="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/"
+  xmlns:tsfon="http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:nc="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nnc="http://release.niem.gov/niem/niem-core/3.0/"
+  xmlns:npx="http://release.niem.gov/niem/proxy/xsd/3.0/"
+  xmlns:ns="http://release.niem.gov/niem/structures/3.0/"
+  xmlns:ndm="http://release.niem.gov/niem/domains/militaryOperations/3.2/"
+  xsi:schemaLocation="http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/ 
+  file:/home/g/g-dev/soi-messaging/tsoa-track/src/main/resources/iep-schema/extension/TSOA-Track.xsd"
+  tstt:tsoaID="76f29642-449d-3216-bac3-88da794d787c"
+  tstt:tsoaURI="https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/76f29642-449d-3216-bac3-88da794d787c">
+  
+  <ndm:Track>
+    <ndm:TrackIdentification>
+      <nnc:IdentificationID>TC1779910584</nnc:IdentificationID>
+      <tstt:ShortName>EVENTTRK</tstt:ShortName>
+    </ndm:TrackIdentification>
+    <ObservedEvent xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-event/2.0/">
+      <Event xmlns="http://release.niem.gov/niem/domains/militaryOperations/3.2/">
+        <EventIdentification xmlns="http://release.niem.gov/niem/domains/militaryOperations/3.2/">
+          <nnc:IdentificationID>847b32c4-8faf-381c-9c1c-7dfd20e6d39c</nnc:IdentificationID>
+          <tstt:ShortName>EVENTTRK</tstt:ShortName>
+        </EventIdentification>
+      </Event>
+    </ObservedEvent>
+    <tsfon:FeatureObservation>
+      <ndm:Observation>
+        <ndm:ObservedObjectLocation>
+          <ndm:ObservedObject2DGeospatialCoordinate>
+            <nnc:GeographicCoordinateLatitude><nnc:LatitudeDegreeValue>45.950783000000001266016624867916107177734375</nnc:LatitudeDegreeValue></nnc:GeographicCoordinateLatitude>
+            <nnc:GeographicCoordinateLongitude><nnc:LongitudeDegreeValue>-122.0095720000000056870703701861202716827392578125</nnc:LongitudeDegreeValue></nnc:GeographicCoordinateLongitude>
+          </ndm:ObservedObject2DGeospatialCoordinate>
+        </ndm:ObservedObjectLocation>
+        <ndm:ObservationDateTime>2014-09-19T14:55:20.000Z</ndm:ObservationDateTime>
+        <ndm:ObservationOPEXCode>EXERCISE</ndm:ObservationOPEXCode>
+        <tsfon:MILSTD2525-C><ndm:MILSTD2525-C-SIDC-Code>OP-P----------N</ndm:MILSTD2525-C-SIDC-Code></tsfon:MILSTD2525-C>
+        <tsfon:SpatialEnvironmentCode>SUR</tsfon:SpatialEnvironmentCode>
+      </ndm:Observation>
+    </tsfon:FeatureObservation>
+    <FeatureObserver xmlns="http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/">
+      <Observer xmlns="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/">
+      </Observer>
+    </FeatureObserver>
+  </ndm:Track>
+</TsoaTrack>

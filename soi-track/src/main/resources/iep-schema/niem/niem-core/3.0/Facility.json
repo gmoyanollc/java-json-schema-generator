@@ -33,15 +33,6 @@
       "additionalItems": false
     },
     "FacilityAugmentationPoint": {
-      "FacilityAugmentation": {
-        "id": "",
-        "title": "",
-        "type": "object",
-        "description": "",
-        "version": "",
-        "javaType": "",
-        "$ref": "../../../niem/domains/militaryOperations/3.2/FacilityAugmentation.json"
-      },
       "FacilityAugmentationAbstract": {
         "id": "",
         "title": "",

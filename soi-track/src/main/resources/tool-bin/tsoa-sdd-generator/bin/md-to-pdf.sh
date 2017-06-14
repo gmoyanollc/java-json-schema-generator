@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# man pandoc_markdown
 set -x
 INPUT=$1
 OUTPUT=$2

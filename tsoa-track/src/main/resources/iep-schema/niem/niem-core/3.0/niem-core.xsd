@@ -84,6 +84,21 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:ContactMeans" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactEntity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactRadioType">
+    <xs:annotation>
+      <xs:documentation>A data type for a method of contacting a person or organization by messages over a radio.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:ContactRadioChannelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactRadioCallSignID" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -237,6 +252,18 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="EntityType">
+    <xs:annotation>
+      <xs:documentation>A data type for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:EntityRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="FacilityType">
     <xs:annotation>
       <xs:documentation>A data type for a building, place, or structure that provides a particular service.</xs:documentation>
@@ -251,6 +278,20 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="FullTelephoneNumberType">
+    <xs:annotation>
+      <xs:documentation>A data type for a full telephone number.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:TelephoneNumberFullID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TelephoneSuffixID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FullTelephoneNumberAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="IdentificationType">
     <xs:annotation>
       <xs:documentation>A data type for a representation of an identity.</xs:documentation>
@@ -259,7 +300,21 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:IdentificationID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IdentificationJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IdentificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InstantMessengerType">
+    <xs:annotation>
+      <xs:documentation>A data type for a user account for an instant messaging program by which a person or organization may be contacted.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:InstantMessengerServiceName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:InstantMessengerScreenID" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -270,6 +325,18 @@
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JurisdictionType">
+    <xs:annotation>
+      <xs:documentation>A data type for a geopolitical area in which an organization, person, or object has a specific range of authority.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="LatitudeCoordinateType">
@@ -426,6 +493,53 @@
       </xs:minInclusive>
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="OrganizationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a body of people organized for a particular purpose.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:OrganizationAbbreviationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationName" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonNameTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for a name by which a person is known, referred, or addressed.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:ProperNameTextType"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PersonNameType">
+    <xs:annotation>
+      <xs:documentation>A data type for a combination of names and/or titles by which a person is known.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PersonFullName" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonType">
+    <xs:annotation>
+      <xs:documentation>A data type for a human being.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PersonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="ProperNameTextType">
     <xs:annotation>
       <xs:documentation>A data type for a word or phrase by which a person or thing is known, referred, or addressed.</xs:documentation>
@@ -500,14 +614,54 @@
       <xs:documentation>A URL or file reference of a binary object.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="Contact" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a person or organization to contact.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactEmailID" type="niem-xs:string" substitutionGroup="nc:ContactMeans">
+    <xs:annotation>
+      <xs:documentation>An electronic mailing address by which a person or organization may be contacted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactEntity" type="nc:EntityType" substitutionGroup="nc:Contact" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity that may be contacted by using the given contact information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ContactInformation" type="nc:ContactInformationType">
     <xs:annotation>
       <xs:documentation>A set of details about how to contact a person or an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ContactInformationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ContactInformationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactInstantMessenger" type="nc:InstantMessengerType" substitutionGroup="nc:ContactMeans" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A user account for an instant messaging program by which a person or organization may be contacted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ContactMeans" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a means of contacting someone.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactRadio" type="nc:ContactRadioType" substitutionGroup="nc:ContactMeans" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A method of contacting a person or organization by messages over a radio.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactRadioCallSignID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of a person using a radio.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactRadioChannelText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A radio channel or frequency within the band.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ContactTelephoneNumber" type="nc:TelephoneNumberType" substitutionGroup="nc:ContactMeans">
@@ -530,6 +684,21 @@
       <xs:documentation>An end date.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EntityOrganization" type="nc:OrganizationType" substitutionGroup="nc:EntityRepresentation">
+    <xs:annotation>
+      <xs:documentation>An organization capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EntityPerson" type="nc:PersonType" substitutionGroup="nc:EntityRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EntityRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Facility" type="nc:FacilityType">
     <xs:annotation>
       <xs:documentation>A building, place, or structure that provides a particular service.</xs:documentation>
@@ -550,6 +719,11 @@
       <xs:documentation>A name of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="FullTelephoneNumberAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for FullTelephoneNumberType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="GeographicCoordinateLatitude" type="nc:LatitudeCoordinateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A measurement of the angular distance between a point on the Earth and the Equator.</xs:documentation>
@@ -560,6 +734,11 @@
       <xs:documentation>A measurement of the angular distance between a point on the Earth and the Prime Meridian.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="Identification" type="nc:IdentificationType">
+    <xs:annotation>
+      <xs:documentation>A representation of an identity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="IdentificationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for IdentificationType.</xs:documentation>
@@ -568,6 +747,21 @@
   <xs:element name="IdentificationID" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationJurisdiction" type="nc:JurisdictionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An area, region, or unit where a unique identification is issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InstantMessengerScreenID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An account identifier used to reference a person or organization within an instant messaging system.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InstantMessengerServiceName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an instant messaging service.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LatitudeDegreeValue" type="nc:LatitudeDegreeType" nillable="true">
@@ -598,6 +792,16 @@
   <xs:element name="LocationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for LocationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCountry" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCountryName" type="nc:ProperNameTextType" substitutionGroup="nc:LocationCountry">
+    <xs:annotation>
+      <xs:documentation>A name of a country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationElevation" type="nc:LocationHeightMeasureType" substitutionGroup="nc:LocationHeight" nillable="true">
@@ -655,6 +859,41 @@
       <xs:documentation>A data concept for a measurement value.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationAbbreviationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An abbreviation, acronym, or code for an organization name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Person" type="nc:PersonType">
+    <xs:annotation>
+      <xs:documentation>A human being.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PersonType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonFullName" type="nc:PersonNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete name of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonName" type="nc:PersonNameType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A combination of names and/or titles by which a person is known.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="StartDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date on which something begins.</xs:documentation>
@@ -678,6 +917,16 @@
   <xs:element name="SystemName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the kind or the source of a system identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TelephoneNumberFullID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete telephone number.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TelephoneSuffixID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An additional sequence of numbers to be entered after a call connects to be directed to the appropriate place.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>

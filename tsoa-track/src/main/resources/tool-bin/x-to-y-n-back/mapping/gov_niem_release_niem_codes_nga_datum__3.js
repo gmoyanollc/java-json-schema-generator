@@ -3,17 +3,17 @@ var gov_niem_release_niem_codes_nga_datum__3_Module_Factory = function () {
     name: 'gov_niem_release_niem_codes_nga_datum__3',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     typeInfos: [{
-        localName: 'DirectionDatumCodeType',
+        localName: 'VerticalDatumCodeType',
         typeName: {
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/codes\/nga_datum\/3.0\/',
-          localPart: 'DirectionDatumCodeType'
+          localPart: 'VerticalDatumCodeType'
         },
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
             name: 'value',
-            typeInfo: '.DirectionDatumCodeSimpleType',
+            typeInfo: '.VerticalDatumCodeSimpleType',
             type: 'value'
           }, {
             name: 'id',
@@ -33,17 +33,17 @@ var gov_niem_release_niem_codes_nga_datum__3_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'VerticalDatumCodeType',
+        localName: 'DirectionDatumCodeType',
         typeName: {
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/codes\/nga_datum\/3.0\/',
-          localPart: 'VerticalDatumCodeType'
+          localPart: 'DirectionDatumCodeType'
         },
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
             name: 'value',
-            typeInfo: '.VerticalDatumCodeSimpleType',
+            typeInfo: '.DirectionDatumCodeSimpleType',
             type: 'value'
           }, {
             name: 'id',
