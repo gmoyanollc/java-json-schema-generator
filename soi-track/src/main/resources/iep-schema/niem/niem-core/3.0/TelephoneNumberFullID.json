@@ -1,0 +1,13 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#TelephoneNumberFullID",
+  "title": "TelephoneNumberFullID",
+  "type": "array",
+  "description": "A complete telephone number.",
+  "version": "0.4.4",
+  "items": [
+    {
+      "type": "string"
+    }
+  ],
+  "additionalItems": false
+}

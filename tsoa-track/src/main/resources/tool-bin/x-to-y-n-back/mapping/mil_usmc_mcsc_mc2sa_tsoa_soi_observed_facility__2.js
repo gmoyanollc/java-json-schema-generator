@@ -2,7 +2,7 @@ var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2_Module_Factory = function 
   var mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2 = {
     name: 'mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2',
     defaultElementNamespaceURI: 'http:\/\/mcsc.usmc.mil\/mc2sa\/tsoa\/soi\/observed-facility\/2.0\/',
-    dependencies: ['gov_niem_release_niem_structures__3', 'NIEM_Core', 'gov_niem_release_niem_domains_militaryoperations__3'],
+    dependencies: ['gov_niem_release_niem_structures__3', 'gov_niem_release_niem_domains_militaryoperations__3', 'NIEM_Core'],
     typeInfos: [{
         localName: 'FacilityAugmentationType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.AugmentationType',

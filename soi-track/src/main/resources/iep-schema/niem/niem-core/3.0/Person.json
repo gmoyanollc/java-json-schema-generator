@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#Person",
+  "title": "Person",
+  "type": "object",
+  "description": "A human being.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_Person",
+  "properties": {
+    "PersonDescriptionText": {
+      "$ref": "PersonDescriptionText.json"
+    },
+    "PersonName": {
+      "$ref": "PersonName.json"
+    }
+  },
+  "additionalProperties": false
+}

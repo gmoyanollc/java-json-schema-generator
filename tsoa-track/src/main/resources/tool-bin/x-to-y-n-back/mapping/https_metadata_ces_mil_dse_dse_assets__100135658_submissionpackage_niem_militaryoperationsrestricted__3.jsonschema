@@ -172,12 +172,24 @@
                                 {
                                     "type":"array",
                                     "items":{
-                                        "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                                            },
+                                            "value":{
+                                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                                            }
+                                        },
+                                        "elementName":{
+                                            "localPart":"ObserverAugmentationPoint",
+                                            "namespaceURI":"https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
+                                        }
                                     },
                                     "minItems":0
                                 }
                             ],
-                            "propertyType":"element",
+                            "propertyType":"elementRef",
                             "elementName":{
                                 "localPart":"ObserverAugmentationPoint",
                                 "namespaceURI":"https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
@@ -279,6 +291,40 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
+                                        "UnitReferenceNumberID"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/UnitReferenceNumberType"
+                }
+            },
+            "elementName":{
+                "localPart":"UnitReferenceNumberID",
+                "namespaceURI":"https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
                                         "WeaponSystemAugmentationPoint"
                                     ]
                                 },
@@ -331,40 +377,6 @@
             },
             "elementName":{
                 "localPart":"Observer",
-                "namespaceURI":"https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "UnitReferenceNumberID"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/UnitReferenceNumberType"
-                }
-            },
-            "elementName":{
-                "localPart":"UnitReferenceNumberID",
                 "namespaceURI":"https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/"
             }
         }

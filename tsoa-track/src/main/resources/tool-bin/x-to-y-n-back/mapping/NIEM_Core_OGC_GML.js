@@ -4,11 +4,15 @@ var NIEM_Core_OGC_GML_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2',
     defaultAttributeNamespaceURI: 'http:\/\/www.w3.org\/1999\/xlink',
     typeInfos: [{
-        localName: 'GenericMetaDataType',
-        baseTypeInfo: '.AbstractMetaDataType'
-      }, {
         localName: 'ReferenceType',
         propertyInfos: [{
+            name: 'owns',
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'owns'
+            },
+            type: 'attribute'
+          }, {
             name: 'nilReason',
             typeInfo: {
               type: 'list'
@@ -47,38 +51,16 @@ var NIEM_Core_OGC_GML_Module_Factory = function () {
             name: 'actuate',
             values: ['onLoad', 'onRequest', 'other', 'none'],
             type: 'attribute'
-          }, {
-            name: 'owns',
-            typeInfo: 'Boolean',
-            attributeName: {
-              localPart: 'owns'
-            },
-            type: 'attribute'
           }]
       }, {
-        localName: 'AbstractGMLType',
+        localName: 'AbstractMetaDataType',
         propertyInfos: [{
-            name: 'metaDataProperty',
-            minOccurs: 0,
+            name: 'content',
             collection: true,
-            typeInfo: '.MetaDataPropertyType'
-          }, {
-            name: 'description',
-            typeInfo: '.StringOrRefType'
-          }, {
-            name: 'descriptionReference',
-            typeInfo: '.ReferenceType'
-          }, {
-            name: 'identifier',
-            typeInfo: '.CodeWithAuthorityType'
-          }, {
-            name: 'name',
-            minOccurs: 0,
-            collection: true,
-            typeInfo: '.CodeType'
+            allowDom: false,
+            type: 'elementRefs'
           }, {
             name: 'id',
-            required: true,
             typeInfo: 'ID',
             attributeName: {
               localPart: 'id',
@@ -111,58 +93,8 @@ var NIEM_Core_OGC_GML_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'AbstractMetaDataType',
-        propertyInfos: [{
-            name: 'content',
-            collection: true,
-            allowDom: false,
-            type: 'elementRefs'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            attributeName: {
-              localPart: 'id',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'AbstractGeometryType',
-        baseTypeInfo: '.AbstractGMLType',
-        propertyInfos: [{
-            name: 'srsName',
-            attributeName: {
-              localPart: 'srsName'
-            },
-            type: 'attribute'
-          }, {
-            name: 'srsDimension',
-            typeInfo: 'PositiveInteger',
-            attributeName: {
-              localPart: 'srsDimension'
-            },
-            type: 'attribute'
-          }, {
-            name: 'axisLabels',
-            typeInfo: {
-              type: 'list',
-              baseTypeInfo: 'NCName'
-            },
-            attributeName: {
-              localPart: 'axisLabels'
-            },
-            type: 'attribute'
-          }, {
-            name: 'uomLabels',
-            typeInfo: {
-              type: 'list',
-              baseTypeInfo: 'NCName'
-            },
-            attributeName: {
-              localPart: 'uomLabels'
-            },
-            type: 'attribute'
-          }]
+        localName: 'CodeWithAuthorityType',
+        baseTypeInfo: '.CodeType'
       }, {
         localName: 'DirectPositionType',
         propertyInfos: [{
@@ -207,59 +139,51 @@ var NIEM_Core_OGC_GML_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'StringOrRefType',
+        localName: 'PointType',
+        baseTypeInfo: '.AbstractGeometricPrimitiveType',
         propertyInfos: [{
-            name: 'value',
-            type: 'value'
+            name: 'pos',
+            required: true,
+            typeInfo: '.DirectPositionType'
           }, {
-            name: 'nilReason',
-            typeInfo: {
-              type: 'list'
-            },
-            attributeName: {
-              localPart: 'nilReason'
-            },
-            type: 'attribute'
-          }, {
-            name: 'remoteSchema',
-            attributeName: {
-              localPart: 'remoteSchema',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            type: 'attribute'
-          }, {
-            name: 'type',
-            type: 'attribute'
-          }, {
-            name: 'href',
-            type: 'attribute'
-          }, {
-            name: 'role',
-            type: 'attribute'
-          }, {
-            name: 'arcrole',
-            type: 'attribute'
-          }, {
-            name: 'title',
-            type: 'attribute'
-          }, {
-            name: 'show',
-            values: ['new', 'replace', 'embed', 'other', 'none'],
-            type: 'attribute'
-          }, {
-            name: 'actuate',
-            values: ['onLoad', 'onRequest', 'other', 'none'],
-            type: 'attribute'
+            name: 'coordinates',
+            required: true,
+            typeInfo: '.CoordinatesType'
           }]
       }, {
-        localName: 'CodeType',
+        localName: 'AbstractGeometryType',
+        baseTypeInfo: '.AbstractGMLType',
         propertyInfos: [{
-            name: 'value',
-            type: 'value'
-          }, {
-            name: 'codeSpace',
+            name: 'srsName',
             attributeName: {
-              localPart: 'codeSpace'
+              localPart: 'srsName'
+            },
+            type: 'attribute'
+          }, {
+            name: 'srsDimension',
+            typeInfo: 'PositiveInteger',
+            attributeName: {
+              localPart: 'srsDimension'
+            },
+            type: 'attribute'
+          }, {
+            name: 'axisLabels',
+            typeInfo: {
+              type: 'list',
+              baseTypeInfo: 'NCName'
+            },
+            attributeName: {
+              localPart: 'axisLabels'
+            },
+            type: 'attribute'
+          }, {
+            name: 'uomLabels',
+            typeInfo: {
+              type: 'list',
+              baseTypeInfo: 'NCName'
+            },
+            attributeName: {
+              localPart: 'uomLabels'
             },
             type: 'attribute'
           }]
@@ -323,20 +247,96 @@ var NIEM_Core_OGC_GML_Module_Factory = function () {
         localName: 'AbstractGeometricPrimitiveType',
         baseTypeInfo: '.AbstractGeometryType'
       }, {
-        localName: 'PointType',
-        baseTypeInfo: '.AbstractGeometricPrimitiveType',
+        localName: 'StringOrRefType',
         propertyInfos: [{
-            name: 'pos',
-            required: true,
-            typeInfo: '.DirectPositionType'
+            name: 'value',
+            type: 'value'
           }, {
-            name: 'coordinates',
-            required: true,
-            typeInfo: '.CoordinatesType'
+            name: 'nilReason',
+            typeInfo: {
+              type: 'list'
+            },
+            attributeName: {
+              localPart: 'nilReason'
+            },
+            type: 'attribute'
+          }, {
+            name: 'remoteSchema',
+            attributeName: {
+              localPart: 'remoteSchema',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            type: 'attribute'
+          }, {
+            name: 'type',
+            type: 'attribute'
+          }, {
+            name: 'href',
+            type: 'attribute'
+          }, {
+            name: 'role',
+            type: 'attribute'
+          }, {
+            name: 'arcrole',
+            type: 'attribute'
+          }, {
+            name: 'title',
+            type: 'attribute'
+          }, {
+            name: 'show',
+            values: ['new', 'replace', 'embed', 'other', 'none'],
+            type: 'attribute'
+          }, {
+            name: 'actuate',
+            values: ['onLoad', 'onRequest', 'other', 'none'],
+            type: 'attribute'
           }]
       }, {
-        localName: 'CodeWithAuthorityType',
-        baseTypeInfo: '.CodeType'
+        localName: 'AbstractGMLType',
+        propertyInfos: [{
+            name: 'metaDataProperty',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.MetaDataPropertyType'
+          }, {
+            name: 'description',
+            typeInfo: '.StringOrRefType'
+          }, {
+            name: 'descriptionReference',
+            typeInfo: '.ReferenceType'
+          }, {
+            name: 'identifier',
+            typeInfo: '.CodeWithAuthorityType'
+          }, {
+            name: 'name',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.CodeType'
+          }, {
+            name: 'id',
+            required: true,
+            typeInfo: 'ID',
+            attributeName: {
+              localPart: 'id',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'CodeType',
+        propertyInfos: [{
+            name: 'value',
+            type: 'value'
+          }, {
+            name: 'codeSpace',
+            attributeName: {
+              localPart: 'codeSpace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'GenericMetaDataType',
+        baseTypeInfo: '.AbstractMetaDataType'
       }],
     elementInfos: [{
         typeInfo: '.GenericMetaDataType',

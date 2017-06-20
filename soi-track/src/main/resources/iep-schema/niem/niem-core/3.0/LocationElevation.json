@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#LocationElevation",
+  "title": "LocationElevation",
+  "type": "object",
+  "description": "A measure of the distance of a point on the Earth from a reference point.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_LocationElevation",
+  "properties": {
+    "LocationHeightVerticalDatum": {
+      "LocationHeightVerticalDatumCode": {
+        "$ref": "LocationHeightVerticalDatumCode.json"
+      },
+      "LocationHeightVerticalDatumText": {
+        "$ref": "LocationHeightVerticalDatumText.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}

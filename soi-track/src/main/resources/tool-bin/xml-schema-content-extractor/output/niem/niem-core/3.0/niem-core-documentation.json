@@ -1,4 +1,4 @@
-{ "schemaUri": "http://release.niem.gov/niem/niem-core/3.0/", "documentation": ["NIEM Core."],"components": {"AngularMinuteSimpleType": { "type": "simpleType", "documentation": ["A data type for a minute of a degree, with a restricted range of 0 (inclusive) to 60 (exclusive)."]},"AngularSecondSimpleType": { "type": "simpleType", "documentation": ["A data type for a second of a minute, with a restricted range of 0 (inclusive) to 60 (exclusive)."]},"Degree360SimpleType": { "type": "simpleType", "documentation": ["A data type for a value between 0 (inclusive) and 360 (exclusive)."]},"DirectionCodeSimpleType": { "type": "simpleType", "documentation": ["A data type for compass directions."]},"LatitudeDegreeSimpleType": { "type": "simpleType", "documentation": ["A data type for a degree of latitude."]},"LongitudeDegreeSimpleType": { "type": "simpleType", "documentation": ["A data type for a degree of longitude."]},"NonNegativeDecimalSimpleType": { "type": "simpleType", "documentation": ["A data type for a decimal value with a minimum value of 0."]}, "AngularMeasureType": { "type": "complexType", "documentation": ["A data type for the measurement of an angle."]}, "AngularMinuteType": { "type": "complexType", "documentation": ["A data type for a minute of a degree, with a restricted range of 0 (inclusive) to 60 (exclusive)."]}, "AngularSecondType": { "type": "complexType", "documentation": ["A data type for a second of a minute, with a restricted range of 0 (inclusive) to 60 (exclusive)."]}, "ContactInformationType": { "type": "complexType", "documentation": ["A data type for how to contact a person or an organization."]}, "DateRangeType": { "type": "complexType", "documentation": ["A data type for a range of dates."]}, "DateType": { "type": "complexType", "documentation": ["A data type for a calendar date."]}, "Degree360Type": { "type": "complexType", "documentation": ["A data type for a value between 0 (inclusive) and 360 (exclusive)."]}, "DirectionCodeType": { "type": "complexType", "documentation": ["A data type for compass directions."]}, "FacilityType": { "type": "complexType", "documentation": ["A data type for a building, place, or structure that provides a particular service."]}, "IdentificationType": { "type": "complexType", "documentation": ["A data type for a representation of an identity."]}, "ItemType": { "type": "complexType", "documentation": ["A data type for an article or thing."]}, "JurisdictionType": { "type": "complexType", "documentation": ["A data type for a geopolitical area in which an organization, person, or object has a specific range of authority."]}, "LatitudeCoordinateType": { "type": "complexType", "documentation": ["A data type for a measurement of the angular distance between a point on the Earth and the Equator."]}, "LatitudeDegreeType": { "type": "complexType", "documentation": ["A data type for a degree of latitude."]}, "Location2DGeospatialCoordinateType": { "type": "complexType", "documentation": ["A data type for a location identified by latitude and longitude."]}, "Location3DGeospatialCoordinateType": { "type": "complexType", "documentation": ["A data type for a location identified by latitude, longitude, and height."]}, "LocationHeightMeasureType": { "type": "complexType", "documentation": ["A data type for a measurement of the height of a location relative to a reference point."]}, "LocationType": { "type": "complexType", "documentation": ["A data type for geospatial location."]}, "LongitudeCoordinateType": { "type": "complexType", "documentation": ["A data type for a measurement of the angular distance between a point on the Earth and the Prime Meridian."]}, "LongitudeDegreeType": { "type": "complexType", "documentation": ["A data type for a degree of longitude."]}, "MeasureType": { "type": "complexType", "documentation": ["A data type for a measurement."]}, "PersonType": { "type": "complexType", "documentation": ["A data type for a human being."]}, "ProperNameTextType": { "type": "complexType", "documentation": ["A data type for a word or phrase by which a person or thing is known, referred, or addressed."]}, "StatusType": { "type": "complexType", "documentation": ["A data type for a state of something or someone."]}, "SystemIdentificationType": { "type": "complexType", "documentation": ["A data type for a number or code assigned to a system to uniquely identify the system."]}, "TelephoneNumberType": { "type": "complexType", "documentation": ["A data type for a telephone number for a telecommunication device."]}, "TextType": { "type": "complexType", "documentation": ["A data type for a character string."]}, "AngularDegreeValue": { "type": "element", "documentation": [
+{ "schemaUri": "http://release.niem.gov/niem/niem-core/3.0/", "documentation": ["NIEM Core."],"components": {"AngularMinuteSimpleType": { "type": "simpleType", "documentation": ["A data type for a minute of a degree, with a restricted range of 0 (inclusive) to 60 (exclusive)."]},"AngularSecondSimpleType": { "type": "simpleType", "documentation": ["A data type for a second of a minute, with a restricted range of 0 (inclusive) to 60 (exclusive)."]},"Degree360SimpleType": { "type": "simpleType", "documentation": ["A data type for a value between 0 (inclusive) and 360 (exclusive)."]},"DirectionCodeSimpleType": { "type": "simpleType", "documentation": ["A data type for compass directions."]},"LatitudeDegreeSimpleType": { "type": "simpleType", "documentation": ["A data type for a degree of latitude."]},"LongitudeDegreeSimpleType": { "type": "simpleType", "documentation": ["A data type for a degree of longitude."]},"NonNegativeDecimalSimpleType": { "type": "simpleType", "documentation": ["A data type for a decimal value with a minimum value of 0."]}, "AngularMeasureType": { "type": "complexType", "documentation": ["A data type for the measurement of an angle."]}, "AngularMinuteType": { "type": "complexType", "documentation": ["A data type for a minute of a degree, with a restricted range of 0 (inclusive) to 60 (exclusive)."]}, "AngularSecondType": { "type": "complexType", "documentation": ["A data type for a second of a minute, with a restricted range of 0 (inclusive) to 60 (exclusive)."]}, "ContactInformationType": { "type": "complexType", "documentation": ["A data type for how to contact a person or an organization."]}, "ContactRadioType": { "type": "complexType", "documentation": ["A data type for a method of contacting a person or organization by messages over a radio."]}, "DateRangeType": { "type": "complexType", "documentation": ["A data type for a range of dates."]}, "DateType": { "type": "complexType", "documentation": ["A data type for a calendar date."]}, "Degree360Type": { "type": "complexType", "documentation": ["A data type for a value between 0 (inclusive) and 360 (exclusive)."]}, "DirectionCodeType": { "type": "complexType", "documentation": ["A data type for compass directions."]}, "EntityType": { "type": "complexType", "documentation": ["A data type for a person, organization, or thing capable of bearing legal rights and responsibilities."]}, "FacilityType": { "type": "complexType", "documentation": ["A data type for a building, place, or structure that provides a particular service."]}, "FullTelephoneNumberType": { "type": "complexType", "documentation": ["A data type for a full telephone number."]}, "IdentificationType": { "type": "complexType", "documentation": ["A data type for a representation of an identity."]}, "InstantMessengerType": { "type": "complexType", "documentation": ["A data type for a user account for an instant messaging program by which a person or organization may be contacted."]}, "ItemType": { "type": "complexType", "documentation": ["A data type for an article or thing."]}, "JurisdictionType": { "type": "complexType", "documentation": ["A data type for a geopolitical area in which an organization, person, or object has a specific range of authority."]}, "LatitudeCoordinateType": { "type": "complexType", "documentation": ["A data type for a measurement of the angular distance between a point on the Earth and the Equator."]}, "LatitudeDegreeType": { "type": "complexType", "documentation": ["A data type for a degree of latitude."]}, "Location2DGeospatialCoordinateType": { "type": "complexType", "documentation": ["A data type for a location identified by latitude and longitude."]}, "Location3DGeospatialCoordinateType": { "type": "complexType", "documentation": ["A data type for a location identified by latitude, longitude, and height."]}, "LocationHeightMeasureType": { "type": "complexType", "documentation": ["A data type for a measurement of the height of a location relative to a reference point."]}, "LocationType": { "type": "complexType", "documentation": ["A data type for geospatial location."]}, "LongitudeCoordinateType": { "type": "complexType", "documentation": ["A data type for a measurement of the angular distance between a point on the Earth and the Prime Meridian."]}, "LongitudeDegreeType": { "type": "complexType", "documentation": ["A data type for a degree of longitude."]}, "MeasureType": { "type": "complexType", "documentation": ["A data type for a measurement."]}, "OrganizationType": { "type": "complexType", "documentation": ["A data type for a body of people organized for a particular purpose."]}, "PersonNameTextType": { "type": "complexType", "documentation": ["A data type for a name by which a person is known, referred, or addressed."]}, "PersonNameType": { "type": "complexType", "documentation": ["A data type for a combination of names and/or titles by which a person is known."]}, "PersonType": { "type": "complexType", "documentation": ["A data type for a human being."]}, "ProperNameTextType": { "type": "complexType", "documentation": ["A data type for a word or phrase by which a person or thing is known, referred, or addressed."]}, "StatusType": { "type": "complexType", "documentation": ["A data type for a state of something or someone."]}, "SystemIdentificationType": { "type": "complexType", "documentation": ["A data type for a number or code assigned to a system to uniquely identify the system."]}, "TelephoneNumberType": { "type": "complexType", "documentation": ["A data type for a telephone number for a telecommunication device."]}, "TextType": { "type": "complexType", "documentation": ["A data type for a character string."]}, "AngularDegreeValue": { "type": "element", "documentation": [
     
       "A value that specifies a degree of an angular measure."
     
@@ -18,13 +18,45 @@
     
       "A URL or file reference of a binary object."
     
+  ]}, "Contact": { "type": "element", "documentation": [
+    
+      "A data concept for a person or organization to contact."
+    
+  ]}, "ContactEmailID": { "type": "element", "documentation": [
+    
+      "An electronic mailing address by which a person or organization may be contacted."
+    
+  ]}, "ContactEntity": { "type": "element", "documentation": [
+    
+      "An entity that may be contacted by using the given contact information."
+    
   ]}, "ContactInformation": { "type": "element", "documentation": [
     
       "A set of details about how to contact a person or an organization."
     
+  ]}, "ContactInformationAugmentationPoint": { "type": "element", "documentation": [
+    
+      "An augmentation point for ContactInformationType."
+    
+  ]}, "ContactInstantMessenger": { "type": "element", "documentation": [
+    
+      "A user account for an instant messaging program by which a person or organization may be contacted."
+    
   ]}, "ContactMeans": { "type": "element", "documentation": [
     
       "A data concept for a means of contacting someone."
+    
+  ]}, "ContactRadio": { "type": "element", "documentation": [
+    
+      "A method of contacting a person or organization by messages over a radio."
+    
+  ]}, "ContactRadioCallSignID": { "type": "element", "documentation": [
+    
+      "An identifier of a person using a radio."
+    
+  ]}, "ContactRadioChannelText": { "type": "element", "documentation": [
+    
+      "A radio channel or frequency within the band."
     
   ]}, "ContactTelephoneNumber": { "type": "element", "documentation": [
     
@@ -42,6 +74,18 @@
     
       "An end date."
     
+  ]}, "EntityOrganization": { "type": "element", "documentation": [
+    
+      "An organization capable of bearing legal rights and responsibilities."
+    
+  ]}, "EntityPerson": { "type": "element", "documentation": [
+    
+      "A person capable of bearing legal rights and responsibilities."
+    
+  ]}, "EntityRepresentation": { "type": "element", "documentation": [
+    
+      "A data concept for a person, organization, or thing capable of bearing legal rights and responsibilities."
+    
   ]}, "Facility": { "type": "element", "documentation": [
     
       "A building, place, or structure that provides a particular service."
@@ -58,6 +102,10 @@
     
       "A name of a facility."
     
+  ]}, "FullTelephoneNumberAugmentationPoint": { "type": "element", "documentation": [
+    
+      "An augmentation point for FullTelephoneNumberType."
+    
   ]}, "GeographicCoordinateLatitude": { "type": "element", "documentation": [
     
       "A measurement of the angular distance between a point on the Earth and the Equator."
@@ -65,6 +113,10 @@
   ]}, "GeographicCoordinateLongitude": { "type": "element", "documentation": [
     
       "A measurement of the angular distance between a point on the Earth and the Prime Meridian."
+    
+  ]}, "Identification": { "type": "element", "documentation": [
+    
+      "A representation of an identity."
     
   ]}, "IdentificationAugmentationPoint": { "type": "element", "documentation": [
     
@@ -77,6 +129,14 @@
   ]}, "IdentificationJurisdiction": { "type": "element", "documentation": [
     
       "An area, region, or unit where a unique identification is issued."
+    
+  ]}, "InstantMessengerScreenID": { "type": "element", "documentation": [
+    
+      "An account identifier used to reference a person or organization within an instant messaging system."
+    
+  ]}, "InstantMessengerServiceName": { "type": "element", "documentation": [
+    
+      "A name of an instant messaging service."
     
   ]}, "LatitudeDegreeValue": { "type": "element", "documentation": [
     
@@ -154,6 +214,14 @@
     
       "A data concept for a measurement value."
     
+  ]}, "OrganizationAbbreviationText": { "type": "element", "documentation": [
+    
+      "An abbreviation, acronym, or code for an organization name."
+    
+  ]}, "OrganizationName": { "type": "element", "documentation": [
+    
+      "A name of an organization."
+    
   ]}, "Person": { "type": "element", "documentation": [
     
       "A human being."
@@ -166,9 +234,13 @@
     
       "A description of a person."
     
-  ]}, "PersonNationalIdentification": { "type": "element", "documentation": [
+  ]}, "PersonFullName": { "type": "element", "documentation": [
     
-      "An identification that references a person within a country but is not based on fingerprint."
+      "A complete name of a person."
+    
+  ]}, "PersonName": { "type": "element", "documentation": [
+    
+      "A combination of names and/or titles by which a person is known."
     
   ]}, "StartDate": { "type": "element", "documentation": [
     
@@ -189,5 +261,13 @@
   ]}, "SystemName": { "type": "element", "documentation": [
     
       "A name of the kind or the source of a system identifier."
+    
+  ]}, "TelephoneNumberFullID": { "type": "element", "documentation": [
+    
+      "A complete telephone number."
+    
+  ]}, "TelephoneSuffixID": { "type": "element", "documentation": [
+    
+      "An additional sequence of numbers to be entered after a call connects to be directed to the appropriate place."
     
   ]}}}

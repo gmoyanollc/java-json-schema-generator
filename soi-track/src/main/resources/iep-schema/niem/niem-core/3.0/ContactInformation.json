@@ -1,0 +1,32 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#ContactInformation",
+  "title": "ContactInformation",
+  "type": "array",
+  "description": "A set of details about how to contact a person or an organization.",
+  "version": "0.4.4",
+  "items": {
+    "ContactMeans": {
+      "ContactInstantMessenger": {
+        "$ref": "ContactInstantMessenger.json"
+      },
+      "ContactTelephoneNumber": {
+        "$ref": "ContactTelephoneNumber.json"
+      },
+      "ContactRadio": {
+        "$ref": "ContactRadio.json"
+      },
+      "ContactEmailID": {
+        "$ref": "ContactEmailID.json"
+      }
+    },
+    "ContactEntity": {
+      "$ref": "ContactEntity.json"
+    },
+    "ContactInformationAugmentationPoint": {
+      "ContactInformationAugmentation": {
+        "$ref": "../../../tsoa/soi/tsoa-track/2.0/ContactInformationAugmentation.json"
+      }
+    }
+  },
+  "additionalItems": false
+}

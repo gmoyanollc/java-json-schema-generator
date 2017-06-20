@@ -53,8 +53,11 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
             name: 'observerAugmentationPoint',
             minOccurs: 0,
             collection: true,
+            mixed: false,
+            allowDom: false,
             elementName: 'ObserverAugmentationPoint',
-            typeInfo: 'AnyType'
+            typeInfo: 'AnyType',
+            type: 'elementRef'
           }]
       }],
     elementInfos: [{
@@ -64,14 +67,14 @@ var https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_mili
         typeInfo: '.WeaponSystemType',
         elementName: 'WeaponSystem'
       }, {
+        typeInfo: '.UnitReferenceNumberType',
+        elementName: 'UnitReferenceNumberID'
+      }, {
         typeInfo: 'AnyType',
         elementName: 'WeaponSystemAugmentationPoint'
       }, {
         typeInfo: '.ObserverType',
         elementName: 'Observer'
-      }, {
-        typeInfo: '.UnitReferenceNumberType',
-        elementName: 'UnitReferenceNumberID'
       }]
   };
   return {

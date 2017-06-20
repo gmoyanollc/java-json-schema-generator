@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#ContactInstantMessenger",
+  "title": "ContactInstantMessenger",
+  "type": "object",
+  "description": "A user account for an instant messaging program by which a person or organization may be contacted.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_ContactInstantMessenger",
+  "properties": {
+    "InstantMessengerServiceName": {
+      "$ref": "InstantMessengerServiceName.json"
+    },
+    "InstantMessengerScreenID": {
+      "$ref": "InstantMessengerScreenID.json"
+    }
+  },
+  "additionalProperties": false
+}

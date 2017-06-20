@@ -136,7 +136,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "PlatformSystem"
+                                        "ObservedPlatformSystem"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -149,11 +149,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/PlatformSystemType"
+                    "$ref":"#/definitions/ObservedPlatformSystemType"
                 }
             },
             "elementName":{
-                "localPart":"PlatformSystem",
+                "localPart":"ObservedPlatformSystem",
                 "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
             }
         },
@@ -204,7 +204,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ObservedPlatformSystem"
+                                        "PlatformSystem"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -217,11 +217,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ObservedPlatformSystemType"
+                    "$ref":"#/definitions/PlatformSystemType"
                 }
             },
             "elementName":{
-                "localPart":"ObservedPlatformSystem",
+                "localPart":"PlatformSystem",
                 "namespaceURI":"http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-platform-system/2.0/"
             }
         }

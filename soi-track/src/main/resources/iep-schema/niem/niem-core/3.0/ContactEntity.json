@@ -1,0 +1,18 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#ContactEntity",
+  "title": "ContactEntity",
+  "type": "array",
+  "description": "An entity that may be contacted by using the given contact information.",
+  "version": "0.4.4",
+  "items": {
+    "EntityRepresentation": {
+      "EntityPerson": {
+        "$ref": "EntityPerson.json"
+      },
+      "EntityOrganization": {
+        "$ref": "EntityOrganization.json"
+      }
+    }
+  },
+  "additionalItems": false
+}

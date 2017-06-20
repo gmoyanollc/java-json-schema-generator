@@ -3,8 +3,7 @@
   "title": "",
   "type": "array",
   "description": "",
-  "version": "0.2",
-  "javaType": "",
+  "version": "0.3",
   "items": {},
   "minItems": 1,
   "additionalItems": false

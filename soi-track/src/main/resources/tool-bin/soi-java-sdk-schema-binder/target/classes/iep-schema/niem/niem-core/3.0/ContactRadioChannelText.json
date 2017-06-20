@@ -1,0 +1,13 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#ContactRadioChannelText",
+  "title": "ContactRadioChannelText",
+  "type": "array",
+  "description": "A radio channel or frequency within the band.",
+  "version": "0.4.4",
+  "items": {
+    "value": {
+      "type": "string"
+    }
+  },
+  "additionalItems": false
+}

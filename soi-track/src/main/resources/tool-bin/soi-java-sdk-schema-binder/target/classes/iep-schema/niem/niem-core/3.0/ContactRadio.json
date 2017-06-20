@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#ContactRadio",
+  "title": "ContactRadio",
+  "type": "object",
+  "description": "A method of contacting a person or organization by messages over a radio.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_ContactRadio",
+  "properties": {
+    "ContactRadioChannelText": {
+      "$ref": "ContactRadioChannelText.json"
+    },
+    "ContactRadioCallSignID": {
+      "$ref": "ContactRadioCallSignID.json"
+    }
+  },
+  "additionalProperties": false
+}

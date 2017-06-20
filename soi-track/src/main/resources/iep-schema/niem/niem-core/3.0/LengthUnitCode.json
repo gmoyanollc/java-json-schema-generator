@@ -3,9 +3,9 @@
   "id": "http://release.niem.gov/niem/niem-core/3.0/#LengthUnitCode",
   "title": "LengthUnitCode",
   "type": "object",
-  "description": " :-) documentation extracted from xml schema!",
-  "version": "0.4.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_LengthUnitCode",
+  "description": "A unit of measure of a length value.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_LengthUnitCode",
   "properties": {
     "LengthCodeType": {
       "$ref": "../../../niem/codes/unece_rec20/3.0/LengthCodeType.json"

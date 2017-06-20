@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<c:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:c="http://reference.niem.gov/niem/resource/mpd/catalog/3.0/"
+           xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/"
+           xsi:schemaLocation="http://reference.niem.gov/niem/resource/mpd/catalog/3.0/ mpd-catalog-3.0.xsd"
+           xmlns="http://reference.niem.gov/niem/resource/mpd/catalog/3.0/">
+  
+  <c:MPD c:mpdName="track-iepd"
+         c:mpdVersionID="1"
+         c:mpdClassURIList="iepd"
+         c:mpdURI="urn:disa:udop.tracks:1.0:trackInfo">
+
+    <nc:DescriptionText></nc:DescriptionText>
+    <c:MPDInformation>
+      <c:CreationDate>2016-12-16</c:CreationDate>
+      <c:StatusText>Draft</c:StatusText>
+    </c:MPDInformation>
+    <c:IEPConformanceTarget>
+      <c:HasDocumentElement c:qualifiedNameList="TrackInfo"/>
+      <c:IEPSampleXMLDocument c:pathURI="sample-xml/Unit.xml"/>
+      <c:IEPSampleXMLDocument c:pathURI="sample-xml/Unit_All.xml"/>
+    </c:IEPConformanceTarget>
+    <c:ReadMe c:pathURI="00-readme.txt"/>
+    <c:XMLCatalog c:pathURI="base-xsd/niem/xml-catalog.xml"/>
+    <c:Wantlist c:pathURI="base-xsd/niem/wantlist.xml"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/Track.xsd"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/TrackInfo.xsd"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/Event.xsd"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/EventAmplification.xsd"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/GeneralLibrary.xsd"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/Library.xsd"/>
+    <c:ExtensionSchemaDocument c:pathURI="base-xsd/extension/unit.xsd"/>
+    <c:ExternalSchemaDocument c:pathURI="base-xsd/ic-ism/CVE/Schema/ISM/IC-ISM.xsd"/>
+    <c:ConformanceAssertion c:pathURI="03-conformance-statement.txt"/>
+    <c:Documentation c:pathURI="01-changelong.txt"/>
+    <c:Documentation c:pathURI="base-xsd/02-distribution statement.txt"/>
+    <c:Documentation c:pathURI="base-xsd/extension/tsoaappinfo.xsd"/>    
+    <c:Documentation c:pathURI="base-xsd/documentation/TrackNIEM Mapping"/>  
+  
+  </c:MPD>
+
+</c:Catalog>

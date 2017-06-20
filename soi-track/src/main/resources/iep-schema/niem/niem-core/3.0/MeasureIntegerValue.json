@@ -1,12 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://release.niem.gov/niem/niem-core/3.0/MeasureIntegerValue",
-  "type": "integer",
-  "description": "",
-  "version": "0.2.0",
-  "javaType": "http___release_niem_gov_niem_niem_core_3_0_MeasureIntegerValue",
-  "additionalProperties": false,
-  "required": [
-    ""
-  ]
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#MeasureIntegerValue",
+  "title": "MeasureIntegerValue",
+  "type": "number",
+  "description": "An integer measurement value.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_MeasureIntegerValue",
+  "properties": {},
+  "additionalProperties": false
 }

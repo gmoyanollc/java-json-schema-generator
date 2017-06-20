@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../../../../../../../../niem/appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../../../../../../../../niem/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:moms="https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Restricted MilOps Version 3.2
+      DISTRIBUTION STATEMENT C. 
+      Distribution authorized to U.S. Government agencies and their contractors 
+      (Critical Technology, Export Controlled, Software Documentation) (15 Nov 2011). 
+      Other requests for this document shall be referred to Joint Staff J6, Data and Services Division.
+      WARNING - This document contains technical data whose export is restricted by the 
+      Arms Export Control Act (Title 22, U.S.C., Sec 2751, et seq.) or the Export Administration 
+      Act of 1979 (Title 50, U.S.C., App. 2401 et seq.), as amended. Violations of these export 
+      laws are subject to severe criminal penalties. Disseminate in accordance with provisions of DoD Directive 5230.25.</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../../niem/niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../../niem/structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:complexType name="ObserverType">
+    <xs:annotation>
+      <xs:documentation>A data type for an entity that becomes aware of things through senses.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="moms:ObserverAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="UnitReferenceNumberSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an identifier specifying the Unit Reference Number (URN) used by units to uniquely identify friendly military units, broadcast networks, and multicast groups.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0">
+        <xs:annotation>
+          <xs:documentation>Minimum allowed value = 0 (inclusive).</xs:documentation>
+        </xs:annotation>
+      </xs:minInclusive>
+      <xs:maxInclusive value="16777215">
+        <xs:annotation>
+          <xs:documentation>Maximum allowed value = 16,777,215 (inclusive).</xs:documentation>
+        </xs:annotation>
+      </xs:maxInclusive>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="UnitReferenceNumberType">
+    <xs:annotation>
+      <xs:documentation>A data type for an identifier specifying the Unit Reference Number (URN) used by units to uniquely identify friendly military units, broadcast networks, and multicast groups.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="moms:UnitReferenceNumberSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="WeaponSystemType">
+    <xs:annotation>
+      <xs:documentation>A data type for a combination of one or more weapons with all related equipment, materials, services, personnel, and means of delivery and deployment (if applicable) required for self-sufficiency.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ItemType">
+        <xs:sequence>
+          <xs:element ref="moms:WeaponSystemAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Observer" type="moms:ObserverType">
+    <xs:annotation>
+      <xs:documentation>An entity that becomes aware of things through senses.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObserverAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for a type mo:ObserverType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UnitReferenceNumberID" type="moms:UnitReferenceNumberType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier specifying the Unit Reference Number (URN) used by units to uniquely identify friendly military units, broadcast networks, and multicast groups.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WeaponSystem" type="moms:WeaponSystemType">
+    <xs:annotation>
+      <xs:documentation>A combination of one or more weapons with all related equipment, materials, services, personnel, and means of delivery and deployment (if applicable) required for self-sufficiency.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WeaponSystemAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for a type mo:WeaponSystemType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#ContactInformationAugmentation",
+  "title": "ContactInformationAugmentation",
+  "type": "object",
+  "description": "A contact information augmentation.",
+  "version": "0.4.4",
+  "javaType": "tsoa_soi_tsoa_track_2_0_ContactInformationAugmentation",
+  "properties": {
+    "ContactDSNTelephoneNumber": {
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/ContactDSNTelephoneNumber.json"
+    }
+  },
+  "additionalProperties": false
+}

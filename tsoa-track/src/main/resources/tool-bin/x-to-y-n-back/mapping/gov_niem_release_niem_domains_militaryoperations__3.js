@@ -3,274 +3,8 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
     name: 'gov_niem_release_niem_domains_militaryoperations__3',
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
-    dependencies: ['gov_niem_release_niem_structures__3', 'gov_niem_release_niem_proxy_xsd__3', 'NIEM_Core', 'gov_niem_release_niem_codes_nga_genc__3', 'gov_niem_release_niem_codes_nga_datum__3', 'NIEM_Core_OGC_GML'],
+    dependencies: ['NIEM_Core_OGC_GML', 'gov_niem_release_niem_structures__3', 'gov_niem_release_niem_proxy_xsd__3', 'NIEM_Core', 'gov_niem_release_niem_codes_nga_genc__3', 'gov_niem_release_niem_codes_nga_datum__3'],
     typeInfos: [{
-        localName: 'SensorType',
-        baseTypeInfo: 'NIEM_Core.ItemType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'sensorIdentification',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'SensorIdentification',
-            typeInfo: 'NIEM_Core.IdentificationType'
-          }]
-      }, {
-        localName: 'UnitNameType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: 'Token',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'StandardIdentityCodeType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: '.StandardIdentityCodeSimpleType',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'ObservedObjectLocationType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'observedObject2DGeospatialCoordinate',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'ObservedObject2DGeospatialCoordinate',
-            typeInfo: 'NIEM_Core.Location2DGeospatialCoordinateType'
-          }, {
-            name: 'altitudeMeasure',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'AltitudeMeasure',
-            typeInfo: 'NIEM_Core.LocationHeightMeasureType'
-          }, {
-            name: 'elevationMeasure',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'ElevationMeasure',
-            typeInfo: 'NIEM_Core.LocationHeightMeasureType'
-          }, {
-            name: 'observedObjectLocationAugmentationPoint',
-            mixed: false,
-            allowDom: false,
-            elementName: 'ObservedObjectLocationAugmentationPoint',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }]
-      }, {
-        localName: 'MILSTD2525DSIDCPartType',
-        typeName: 'MILSTD2525-D-SIDC-PartType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: 'UnsignedInt',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'EventType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'eventIdentification',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'EventIdentification',
-            typeInfo: 'NIEM_Core.IdentificationType'
-          }, {
-            name: 'eventValidityDateTimeRange',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'EventValidityDateTimeRange',
-            typeInfo: 'NIEM_Core.DateRangeType'
-          }, {
-            name: 'eventAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'EventAugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
-        localName: 'TrackType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'trackIdentification',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'TrackIdentification',
-            typeInfo: 'NIEM_Core.IdentificationType'
-          }, {
-            name: 'trackAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            allowDom: false,
-            elementName: 'TrackAugmentationPoint',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }]
-      }, {
-        localName: 'MotionType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'courseAbstract',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            allowDom: false,
-            elementName: 'CourseAbstract',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'speedValue',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'SpeedValue',
-            typeInfo: '.SpeedValueType'
-          }]
-      }, {
-        localName: 'MILSTD2525DSIDCType',
-        typeName: 'MILSTD2525-D-SIDC-Type',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'milstd2525DSIDCPart1Code',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'MILSTD2525-D-SIDC-Part1Code',
-            typeInfo: '.MILSTD2525DSIDCPartType'
-          }, {
-            name: 'milstd2525DSIDCPart2Code',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'MILSTD2525-D-SIDC-Part2Code',
-            typeInfo: '.MILSTD2525DSIDCPartType'
-          }, {
-            name: 'milstd2525DSIDCPart3Code',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'MILSTD2525-D-SIDC-Part3Code',
-            typeInfo: '.MILSTD2525DSIDCPartType'
-          }, {
-            name: 'milstd2525DSIDCAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'MILSTD2525-D-SIDC-AugmentationPoint',
-            typeInfo: 'AnyType'
-          }]
-      }, {
-        localName: 'Degree360Type',
-        baseTypeInfo: 'NIEM_Core.Degree360Type',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'sigmaErrorValue',
-            typeInfo: 'Decimal',
-            attributeName: {
-              localPart: 'sigmaErrorValue',
-              namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'WGS84LocationCylinderType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'wgs84LocationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'WGS84LocationPoint',
-            typeInfo: '.WGS84LocationPointType'
-          }]
-      }, {
-        localName: 'MissionType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'missionName',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'MissionName',
-            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String'
-          }]
-      }, {
         localName: 'UnitTypeCodeTextType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -297,6 +31,56 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
             type: 'attribute'
           }]
       }, {
+        localName: 'MotionType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'courseAbstract',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementName: 'CourseAbstract',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            name: 'speedValue',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'SpeedValue',
+            typeInfo: '.SpeedValueType'
+          }]
+      }, {
+        localName: 'MissionType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'missionName',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'MissionName',
+            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String'
+          }]
+      }, {
+        localName: 'Degree360Type',
+        baseTypeInfo: 'NIEM_Core.Degree360Type',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'sigmaErrorValue',
+            typeInfo: 'Decimal',
+            attributeName: {
+              localPart: 'sigmaErrorValue',
+              namespaceURI: 'http:\/\/release.niem.gov\/niem\/domains\/militaryOperations\/3.2\/'
+            },
+            type: 'attribute'
+          }]
+      }, {
         localName: 'FacilityAugmentationType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.AugmentationType',
         propertyInfos: [{
@@ -313,39 +97,72 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
             type: 'elementRef'
           }]
       }, {
-        localName: 'CourseAngleDegreesMeasureType',
+        localName: 'MILSTD2525CSIDCType',
+        typeName: 'MILSTD2525-C-SIDC-Type',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'Token',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'WGS84LocationCylinderType',
         baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
-            name: 'angleDegreesMeasure',
+            name: 'wgs84LocationPoint',
             minOccurs: 0,
             collection: true,
-            elementName: 'AngleDegreesMeasure',
-            typeInfo: 'NIEM_Core.AngularMeasureType'
-          }, {
-            name: 'directionDatumAbstract',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            allowDom: false,
-            elementName: 'DirectionDatumAbstract',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
-          }, {
-            name: 'courseAngleDegreesMeasureAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            allowDom: false,
-            elementName: 'CourseAngleDegreesMeasureAugmentationPoint',
-            typeInfo: 'AnyType',
-            type: 'elementRef'
+            elementName: 'WGS84LocationPoint',
+            typeInfo: '.WGS84LocationPointType'
           }]
       }, {
-        localName: 'MILSTD2525CSIDCType',
-        typeName: 'MILSTD2525-C-SIDC-Type',
+        localName: 'UnitShortNameType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'UnitNameType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
@@ -409,74 +226,6 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
             type: 'elementRef'
           }]
       }, {
-        localName: 'UnitShortNameType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'MILSTD2525BSIDCType',
-        typeName: 'MILSTD2525-B-SIDC-Type',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'value',
-            typeInfo: 'Token',
-            type: 'value'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'WGS84LocationPointType',
-        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'point',
-            minOccurs: 0,
-            collection: true,
-            elementName: {
-              localPart: 'Point',
-              namespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            typeInfo: 'NIEM_Core_OGC_GML.PointType'
-          }]
-      }, {
         localName: 'SpeedValueType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -511,13 +260,55 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
             type: 'attribute'
           }]
       }, {
-        localName: 'OPEXCodeType',
+        localName: 'TrackType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'trackAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementName: 'TrackAugmentationPoint',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'EventType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'eventIdentification',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'EventIdentification',
+            typeInfo: 'NIEM_Core.IdentificationType'
+          }, {
+            name: 'eventValidityDateTimeRange',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'EventValidityDateTimeRange',
+            typeInfo: 'NIEM_Core.DateRangeType'
+          }, {
+            name: 'eventAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'EventAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'MILSTD2525DSIDCPartType',
+        typeName: 'MILSTD2525-D-SIDC-PartType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
             name: 'value',
-            typeInfo: '.OPEXCodeSimpleType',
+            typeInfo: 'UnsignedInt',
             type: 'value'
           }, {
             name: 'id',
@@ -535,6 +326,63 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
             name: 'relationshipMetadata',
             typeInfo: 'IDREFS',
             type: 'attribute'
+          }]
+      }, {
+        localName: 'ZuluDateTimeType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'DateTime',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'CourseAngleDegreesMeasureType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'angleDegreesMeasure',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AngleDegreesMeasure',
+            typeInfo: 'NIEM_Core.AngularMeasureType'
+          }, {
+            name: 'directionDatumAbstract',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementName: 'DirectionDatumAbstract',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }, {
+            name: 'courseAngleDegreesMeasureAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementName: 'CourseAngleDegreesMeasureAugmentationPoint',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
           }]
       }, {
         localName: 'UnitType',
@@ -571,13 +419,45 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
             type: 'elementRef'
           }]
       }, {
-        localName: 'ZuluDateTimeType',
+        localName: 'MILSTD2525DSIDCType',
+        typeName: 'MILSTD2525-D-SIDC-Type',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'milstd2525DSIDCPart1Code',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'MILSTD2525-D-SIDC-Part1Code',
+            typeInfo: '.MILSTD2525DSIDCPartType'
+          }, {
+            name: 'milstd2525DSIDCPart2Code',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'MILSTD2525-D-SIDC-Part2Code',
+            typeInfo: '.MILSTD2525DSIDCPartType'
+          }, {
+            name: 'milstd2525DSIDCPart3Code',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'MILSTD2525-D-SIDC-Part3Code',
+            typeInfo: '.MILSTD2525DSIDCPartType'
+          }, {
+            name: 'milstd2525DSIDCAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'MILSTD2525-D-SIDC-AugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'StandardIdentityCodeType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
           }, {
             name: 'value',
-            typeInfo: 'DateTime',
+            typeInfo: '.StandardIdentityCodeSimpleType',
             type: 'value'
           }, {
             name: 'id',
@@ -597,38 +477,161 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
             type: 'attribute'
           }]
       }, {
-        type: 'enumInfo',
-        localName: 'StandardIdentityCodeSimpleType',
-        baseTypeInfo: 'Token',
-        values: ['ASSUMED FRIEND', 'UNKNOWN', 'FRIEND', 'FAKER', 'HOSTILE', 'JOKER', 'NEUTRAL', 'SUSPECT']
+        localName: 'ObservedObjectLocationType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'observedObject2DGeospatialCoordinate',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ObservedObject2DGeospatialCoordinate',
+            typeInfo: 'NIEM_Core.Location2DGeospatialCoordinateType'
+          }, {
+            name: 'altitudeMeasure',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'AltitudeMeasure',
+            typeInfo: 'NIEM_Core.LocationHeightMeasureType'
+          }, {
+            name: 'elevationMeasure',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ElevationMeasure',
+            typeInfo: 'NIEM_Core.LocationHeightMeasureType'
+          }, {
+            name: 'observedObjectLocationAugmentationPoint',
+            mixed: false,
+            allowDom: false,
+            elementName: 'ObservedObjectLocationAugmentationPoint',
+            typeInfo: 'AnyType',
+            type: 'elementRef'
+          }]
+      }, {
+        localName: 'ContactInformationAugmentationType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.AugmentationType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'contactInformationRankText',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ContactInformationRankText',
+            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String'
+          }, {
+            name: 'contactInformationSecureEmailID',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ContactInformationSecureEmailID',
+            typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String'
+          }]
+      }, {
+        localName: 'MILSTD2525BSIDCType',
+        typeName: 'MILSTD2525-B-SIDC-Type',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: 'Token',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'SensorType',
+        baseTypeInfo: 'NIEM_Core.ItemType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'sensorIdentification',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'SensorIdentification',
+            typeInfo: 'NIEM_Core.IdentificationType'
+          }, {
+            name: 'sensorAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'SensorAugmentationPoint',
+            typeInfo: 'AnyType'
+          }]
+      }, {
+        localName: 'OPEXCodeType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'value',
+            typeInfo: '.OPEXCodeSimpleType',
+            type: 'value'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'WGS84LocationPointType',
+        baseTypeInfo: 'gov_niem_release_niem_structures__3.ObjectType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'point',
+            minOccurs: 0,
+            collection: true,
+            elementName: {
+              localPart: 'Point',
+              namespaceURI: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            typeInfo: 'NIEM_Core_OGC_GML.PointType'
+          }]
       }, {
         type: 'enumInfo',
         localName: 'OPEXCodeSimpleType',
         baseTypeInfo: 'Token',
         values: ['EXERCISE', 'OPERATIONS', 'SIMULATION', 'TEST']
+      }, {
+        type: 'enumInfo',
+        localName: 'StandardIdentityCodeSimpleType',
+        baseTypeInfo: 'Token',
+        values: ['ASSUMED FRIEND', 'UNKNOWN', 'FRIEND', 'FAKER', 'HOSTILE', 'JOKER', 'NEUTRAL', 'SUSPECT']
       }],
     elementInfos: [{
-        typeInfo: '.MILSTD2525DSIDCPartType',
-        elementName: 'MILSTD2525-D-SIDC-Part2Code'
+        typeInfo: '.ObservationType',
+        elementName: 'Observation'
       }, {
-        typeInfo: 'NIEM_Core.IdentificationType',
-        elementName: 'EventIdentification'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'ObservedObjectSymbolAbstract'
-      }, {
-        typeInfo: 'NIEM_Core.LocationHeightMeasureType',
-        elementName: 'AltitudeMeasure'
-      }, {
-        typeInfo: '.SpeedValueType',
-        elementName: 'SpeedValue'
-      }, {
-        typeInfo: 'NIEM_Core.DirectionCodeType',
-        elementName: 'CourseCode',
-        substitutionHead: 'CourseAbstract'
-      }, {
-        typeInfo: '.MILSTD2525DSIDCPartType',
-        elementName: 'MILSTD2525-D-SIDC-Part3Code'
+        typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String',
+        elementName: 'ContactInformationRankText'
       }, {
         typeInfo: '.WGS84LocationCylinderType',
         elementName: 'WGS84LocationCylinder',
@@ -637,69 +640,118 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
           namespaceURI: 'http:\/\/release.niem.gov\/niem\/niem-core\/3.0\/'
         }
       }, {
-        typeInfo: 'NIEM_Core.AngularMeasureType',
-        elementName: 'CourseAngleMeasure',
-        substitutionHead: 'CourseAbstract'
-      }, {
-        typeInfo: 'NIEM_Core.Location2DGeospatialCoordinateType',
-        elementName: 'ObservedObject2DGeospatialCoordinate'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'EventAugmentationPoint'
-      }, {
-        typeInfo: '.StandardIdentityCodeType',
-        elementName: 'ObservedObjectStandardIdentityCode',
-        substitutionHead: 'ObservedObjectStandardIdentityCodeAbstract'
-      }, {
-        typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String',
-        elementName: 'MissionName'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'EventCategoryAbstract'
-      }, {
-        typeInfo: 'NIEM_Core.DateRangeType',
-        elementName: 'EventValidityDateTimeRange'
-      }, {
-        typeInfo: '.SensorType',
-        elementName: 'Sensor'
-      }, {
-        typeInfo: '.TrackType',
-        elementName: 'Track'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'CourseAbstract'
-      }, {
-        typeInfo: 'NIEM_Core.IdentificationType',
-        elementName: 'SensorIdentification'
+        typeInfo: 'gov_niem_release_niem_codes_nga_datum__3.DirectionDatumCodeType',
+        elementName: 'DirectionDatumCode',
+        substitutionHead: 'DirectionDatumAbstract'
       }, {
         typeInfo: '.UnitTypeCodeTextType',
         elementName: 'UnitTypeCodeText'
       }, {
+        typeInfo: '.WGS84LocationPointType',
+        elementName: 'WGS84LocationPoint'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'TrackAugmentationPoint'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'ObservedObjectStandardIdentityCodeAbstract'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'ObservationAugmentationPoint'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'EventCategoryAbstract'
+      }, {
         typeInfo: 'NIEM_Core.AngularMeasureType',
         elementName: 'AngleDegreesMeasure'
       }, {
+        typeInfo: 'NIEM_Core.Location2DGeospatialCoordinateType',
+        elementName: 'ObservedObject2DGeospatialCoordinate'
+      }, {
+        typeInfo: 'NIEM_Core.IdentificationType',
+        elementName: 'SensorIdentification'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'EventAugmentationPoint'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'UnitAugmentationPoint'
+      }, {
+        typeInfo: '.MILSTD2525DSIDCPartType',
+        elementName: 'MILSTD2525-D-SIDC-Part1Code'
+      }, {
+        typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String',
+        elementName: 'ContactInformationSecureEmailID'
+      }, {
+        typeInfo: 'NIEM_Core.FullTelephoneNumberType',
+        elementName: 'ContactDSNTelephoneNumber'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'CourseAbstract'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'DirectionDatumAbstract'
+      }, {
+        typeInfo: 'NIEM_Core.LocationHeightMeasureType',
+        elementName: 'AltitudeMeasure'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'CourseAngleDegreesMeasureAugmentationPoint'
+      }, {
+        typeInfo: 'gov_niem_release_niem_proxy_xsd__3.Decimal',
+        elementName: 'AngularMeasureDecimalValue',
+        substitutionHead: 'CourseAngleDegreesMeasureAugmentationPoint'
+      }, {
+        typeInfo: 'NIEM_Core.DateRangeType',
+        elementName: 'EventValidityDateTimeRange'
+      }, {
         typeInfo: 'NIEM_Core.LocationHeightMeasureType',
         elementName: 'ElevationMeasure'
+      }, {
+        typeInfo: '.SpeedValueType',
+        elementName: 'SpeedValue'
+      }, {
+        typeInfo: '.MILSTD2525DSIDCType',
+        elementName: 'MILSTD2525-D-SIDC'
+      }, {
+        typeInfo: '.CourseAngleDegreesMeasureType',
+        elementName: 'CourseAngleDegreesMeasure',
+        substitutionHead: 'CourseAbstract'
+      }, {
+        typeInfo: 'NIEM_Core.AngularMeasureType',
+        elementName: 'CourseAngleMeasure',
+        substitutionHead: 'CourseAbstract'
+      }, {
+        typeInfo: '.MILSTD2525BSIDCType',
+        elementName: 'MILSTD2525-B-SIDC-Code'
+      }, {
+        typeInfo: '.ObservedObjectLocationType',
+        elementName: 'ObservedObjectLocation'
+      }, {
+        typeInfo: '.UnitType',
+        elementName: 'Unit'
+      }, {
+        typeInfo: '.MissionType',
+        elementName: 'Mission'
+      }, {
+        typeInfo: '.MILSTD2525DSIDCPartType',
+        elementName: 'MILSTD2525-D-SIDC-Part3Code'
+      }, {
+        typeInfo: 'AnyType',
+        elementName: 'ObservedObjectSymbolAbstract'
       }, {
         typeInfo: 'gov_niem_release_niem_codes_nga_genc__3.CountryAlpha3CodeType',
         elementName: 'FacilityAllegianceCountryCode',
         substitutionHead: 'FacilityAllegianceCountryAbstract'
       }, {
-        typeInfo: 'AnyType',
-        elementName: 'UnitAugmentationPoint'
+        typeInfo: '.MILSTD2525CSIDCType',
+        elementName: 'MILSTD2525-C-SIDC-Code'
       }, {
-        typeInfo: 'AnyType',
-        elementName: 'FacilityAllegianceCountryAbstract'
+        typeInfo: 'NIEM_Core.IdentificationType',
+        elementName: 'EventIdentification'
       }, {
-        typeInfo: 'gov_niem_release_niem_codes_nga_datum__3.DirectionDatumCodeType',
-        elementName: 'DirectionDatumCode',
-        substitutionHead: 'DirectionDatumAbstract'
-      }, {
-        typeInfo: '.UnitNameType',
-        elementName: 'UnitName'
-      }, {
-        typeInfo: '.MILSTD2525DSIDCPartType',
-        elementName: 'MILSTD2525-D-SIDC-Part1Code'
+        typeInfo: '.TrackType',
+        elementName: 'Track'
       }, {
         typeInfo: '.UnitShortNameType',
         elementName: 'UnitShortName'
@@ -707,74 +759,50 @@ var gov_niem_release_niem_domains_militaryoperations__3_Module_Factory = functio
         typeInfo: 'AnyType',
         elementName: 'MILSTD2525-D-SIDC-AugmentationPoint'
       }, {
-        typeInfo: '.ObservedObjectLocationType',
-        elementName: 'ObservedObjectLocation'
-      }, {
-        typeInfo: '.MILSTD2525CSIDCType',
-        elementName: 'MILSTD2525-C-SIDC-Code'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'ObservedObjectStandardIdentityCodeAbstract'
-      }, {
-        typeInfo: '.UnitType',
-        elementName: 'Unit'
-      }, {
-        typeInfo: '.ZuluDateTimeType',
-        elementName: 'ObservationDateTime'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'CourseAngleDegreesMeasureAugmentationPoint'
-      }, {
-        typeInfo: '.CourseAngleDegreesMeasureType',
-        elementName: 'CourseAngleDegreesMeasure',
-        substitutionHead: 'CourseAbstract'
-      }, {
-        typeInfo: 'AnyType',
-        elementName: 'TrackAugmentationPoint'
-      }, {
-        typeInfo: 'NIEM_Core.IdentificationType',
-        elementName: 'TrackIdentification'
+        typeInfo: '.OPEXCodeType',
+        elementName: 'ObservationOPEXCode'
       }, {
         typeInfo: '.MotionType',
         elementName: 'ObservedObjectMotion'
       }, {
-        typeInfo: '.WGS84LocationPointType',
-        elementName: 'WGS84LocationPoint'
-      }, {
-        typeInfo: '.ObservationType',
-        elementName: 'Observation'
+        typeInfo: 'AnyType',
+        elementName: 'FacilityAllegianceCountryAbstract'
       }, {
         typeInfo: 'AnyType',
-        elementName: 'ObservationAugmentationPoint'
+        elementName: 'SensorAugmentationPoint'
       }, {
-        typeInfo: 'gov_niem_release_niem_proxy_xsd__3.Decimal',
-        elementName: 'AngularMeasureDecimalValue',
-        substitutionHead: 'CourseAngleDegreesMeasureAugmentationPoint'
+        typeInfo: '.StandardIdentityCodeType',
+        elementName: 'ObservedObjectStandardIdentityCode',
+        substitutionHead: 'ObservedObjectStandardIdentityCodeAbstract'
       }, {
-        typeInfo: '.MILSTD2525BSIDCType',
-        elementName: 'MILSTD2525-B-SIDC-Code'
+        typeInfo: 'NIEM_Core.DirectionCodeType',
+        elementName: 'CourseCode',
+        substitutionHead: 'CourseAbstract'
+      }, {
+        typeInfo: 'gov_niem_release_niem_proxy_xsd__3.String',
+        elementName: 'MissionName'
       }, {
         typeInfo: 'AnyType',
-        elementName: 'DirectionDatumAbstract'
-      }, {
-        typeInfo: '.EventType',
-        elementName: 'Event'
+        elementName: 'ObservedObjectLocationAugmentationPoint'
       }, {
         typeInfo: '.Degree360Type',
         elementName: 'CourseValue',
         substitutionHead: 'CourseAbstract'
       }, {
-        typeInfo: 'AnyType',
-        elementName: 'ObservedObjectLocationAugmentationPoint'
+        typeInfo: '.SensorType',
+        elementName: 'Sensor'
       }, {
-        typeInfo: '.OPEXCodeType',
-        elementName: 'ObservationOPEXCode'
+        typeInfo: '.UnitNameType',
+        elementName: 'UnitName'
       }, {
-        typeInfo: '.MILSTD2525DSIDCType',
-        elementName: 'MILSTD2525-D-SIDC'
+        typeInfo: '.MILSTD2525DSIDCPartType',
+        elementName: 'MILSTD2525-D-SIDC-Part2Code'
       }, {
-        typeInfo: '.MissionType',
-        elementName: 'Mission'
+        typeInfo: '.ZuluDateTimeType',
+        elementName: 'ObservationDateTime'
+      }, {
+        typeInfo: '.EventType',
+        elementName: 'Event'
       }]
   };
   return {

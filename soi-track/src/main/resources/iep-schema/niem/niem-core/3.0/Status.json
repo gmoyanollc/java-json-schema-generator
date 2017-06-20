@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#Status",
+  "title": "Status",
+  "type": "object",
+  "description": "A state of something or someone.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_Status",
+  "properties": {
+    "StatusCommentText": {
+      "$ref": "StatusCommentText.json"
+    }
+  },
+  "additionalProperties": false
+}

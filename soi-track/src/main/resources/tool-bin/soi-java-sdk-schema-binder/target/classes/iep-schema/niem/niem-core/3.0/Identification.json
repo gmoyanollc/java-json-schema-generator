@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#Identification",
+  "title": "Identification",
+  "type": "object",
+  "description": "A representation of an identity.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_Identification",
+  "properties": {
+    "IdentificationID": {
+      "$ref": "IdentificationID.json"
+    },
+    "IdentificationJurisdiction": {
+      "$ref": "IdentificationJurisdiction.json"
+    },
+    "IdentificationAugmentationPoint": {
+      "ShortName": {
+        "$ref": "../../../tsoa/soi/tsoa-track/2.0/ShortName.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}

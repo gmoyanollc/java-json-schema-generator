@@ -1,4 +1,12 @@
-{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/", "documentation": ["A feature observer of something."],"components": {"FeatureObserverType": { "type": "complexType", "documentation": ["A data type for a feature observer of something."]}, "FeatureObserver": { "type": "element", "documentation": [
+{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/", "documentation": ["A feature observer of something."],"components": {"ObserverPointOfContactType": { "type": "complexType", "documentation": ["A data type for an observer Point-Of-Contact."]}, "ObserverIdentificationType": { "type": "complexType", "documentation": ["A data type for an observer identification."]}, "FeatureObserverType": { "type": "complexType", "documentation": ["A data type for a feature observer of something."]}, "ObserverPointOfContact": { "type": "element", "documentation": [
+    
+      "An observer Point-Of-Contact described by its properties."
+    
+  ]}, "ObserverIdentification": { "type": "element", "documentation": [
+    
+      "An observer identification described by its properties."
+    
+  ]}, "FeatureObserver": { "type": "element", "documentation": [
     
       "A feature observer of something."
     

@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/maritime/3.2/#AngleUnit",
+  "title": "AngleUnit",
+  "type": "object",
+  "description": "A data concept for a unit of measure of an angle value.",
+  "version": "0.4.4",
+  "javaType": "niem_domains_maritime_3_2_AngleUnit",
+  "properties": {},
+  "additionalProperties": false
+}

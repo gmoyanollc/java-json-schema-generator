@@ -4,6 +4,20 @@ var gov_niem_release_niem_structures__3_Module_Factory = function () {
     defaultElementNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     defaultAttributeNamespaceURI: 'http:\/\/release.niem.gov\/niem\/structures\/3.0\/',
     typeInfos: [{
+        localName: 'MetadataType',
+        propertyInfos: [{
+            name: 'otherAttributes',
+            type: 'anyAttribute'
+          }, {
+            name: 'id',
+            typeInfo: 'ID',
+            type: 'attribute'
+          }, {
+            name: 'ref',
+            typeInfo: 'IDREF',
+            type: 'attribute'
+          }]
+      }, {
         localName: 'AugmentationType',
         propertyInfos: [{
             name: 'otherAttributes',
@@ -18,34 +32,6 @@ var gov_niem_release_niem_structures__3_Module_Factory = function () {
             type: 'attribute'
           }, {
             name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'ObjectType',
-        propertyInfos: [{
-            name: 'otherAttributes',
-            type: 'anyAttribute'
-          }, {
-            name: 'objectAugmentationPoint',
-            minOccurs: 0,
-            collection: true,
-            elementName: 'ObjectAugmentationPoint',
-            typeInfo: 'AnyType'
-          }, {
-            name: 'id',
-            typeInfo: 'ID',
-            type: 'attribute'
-          }, {
-            name: 'ref',
-            typeInfo: 'IDREF',
-            type: 'attribute'
-          }, {
-            name: 'metadata',
-            typeInfo: 'IDREFS',
-            type: 'attribute'
-          }, {
-            name: 'relationshipMetadata',
             typeInfo: 'IDREFS',
             type: 'attribute'
           }]
@@ -78,10 +64,16 @@ var gov_niem_release_niem_structures__3_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'MetadataType',
+        localName: 'ObjectType',
         propertyInfos: [{
             name: 'otherAttributes',
             type: 'anyAttribute'
+          }, {
+            name: 'objectAugmentationPoint',
+            minOccurs: 0,
+            collection: true,
+            elementName: 'ObjectAugmentationPoint',
+            typeInfo: 'AnyType'
           }, {
             name: 'id',
             typeInfo: 'ID',
@@ -90,14 +82,22 @@ var gov_niem_release_niem_structures__3_Module_Factory = function () {
             name: 'ref',
             typeInfo: 'IDREF',
             type: 'attribute'
+          }, {
+            name: 'metadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
+          }, {
+            name: 'relationshipMetadata',
+            typeInfo: 'IDREFS',
+            type: 'attribute'
           }]
       }],
     elementInfos: [{
         typeInfo: 'AnyType',
-        elementName: 'ObjectAugmentationPoint'
+        elementName: 'AssociationAugmentationPoint'
       }, {
         typeInfo: 'AnyType',
-        elementName: 'AssociationAugmentationPoint'
+        elementName: 'ObjectAugmentationPoint'
       }]
   };
   return {

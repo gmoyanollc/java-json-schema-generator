@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observer/2.0/#ObserverIdentification",
+  "title": "ObserverIdentification",
+  "type": "object",
+  "description": "An observer identification described by its properties.",
+  "version": "0.4.4",
+  "javaType": "tsoa_soi_feature_observer_2_0_ObserverIdentification",
+  "properties": {
+    "value": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

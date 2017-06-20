@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/screening/3.2/#PersonIdentification",
+  "title": "PersonIdentification",
+  "type": "object",
+  "description": "An identification enumerator that represents a PERSON.",
+  "version": "0.4.4",
+  "javaType": "niem_domains_screening_3_2_PersonIdentification",
+  "properties": {
+    "IdentificationType": {
+      "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+    }
+  },
+  "additionalProperties": false
+}

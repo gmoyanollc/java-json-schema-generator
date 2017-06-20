@@ -2,6 +2,60 @@
 {
     "id":"http://release.niem.gov/niem/structures/3.0/#",
     "definitions":{
+        "MetadataType":{
+            "type":"object",
+            "title":"MetadataType",
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "id":{
+                    "title":"id",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"id",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "ref":{
+                    "title":"ref",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"ref",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"MetadataType",
+                "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "id",
+                "ref"
+            ]
+        },
         "AugmentationType":{
             "type":"object",
             "title":"AugmentationType",
@@ -68,106 +122,6 @@
                 "id",
                 "ref",
                 "metadata"
-            ]
-        },
-        "ObjectType":{
-            "type":"object",
-            "title":"ObjectType",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "objectAugmentationPoint":{
-                    "title":"objectAugmentationPoint",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                            },
-                            "minItems":0
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ObjectAugmentationPoint",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "id":{
-                    "title":"id",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/ID"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"id",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "ref":{
-                    "title":"ref",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREF"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"ref",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "metadata":{
-                    "title":"metadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"metadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                },
-                "relationshipMetadata":{
-                    "title":"relationshipMetadata",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"relationshipMetadata",
-                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObjectType",
-                "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "objectAugmentationPoint",
-                "id",
-                "ref",
-                "metadata",
-                "relationshipMetadata"
             ]
         },
         "AssociationType":{
@@ -270,9 +224,9 @@
                 "relationshipMetadata"
             ]
         },
-        "MetadataType":{
+        "ObjectType":{
             "type":"object",
-            "title":"MetadataType",
+            "title":"ObjectType",
             "properties":{
                 "otherAttributes":{
                     "title":"otherAttributes",
@@ -285,6 +239,23 @@
                         }
                     ],
                     "propertyType":"anyAttribute"
+                },
+                "objectAugmentationPoint":{
+                    "title":"objectAugmentationPoint",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                            },
+                            "minItems":0
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ObjectAugmentationPoint",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
                 },
                 "id":{
                     "title":"id",
@@ -311,55 +282,50 @@
                         "localPart":"ref",
                         "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
                     }
+                },
+                "metadata":{
+                    "title":"metadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"metadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
+                },
+                "relationshipMetadata":{
+                    "title":"relationshipMetadata",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/IDREFS"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"relationshipMetadata",
+                        "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+                    }
                 }
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"MetadataType",
+                "localPart":"ObjectType",
                 "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
             },
             "propertiesOrder":[
                 "otherAttributes",
+                "objectAugmentationPoint",
                 "id",
-                "ref"
+                "ref",
+                "metadata",
+                "relationshipMetadata"
             ]
         }
     },
     "anyOf":[
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "ObjectAugmentationPoint"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://release.niem.gov/niem/structures/3.0/"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"ObjectAugmentationPoint",
-                "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
-            }
-        },
         {
             "type":"object",
             "properties":{
@@ -391,6 +357,40 @@
             },
             "elementName":{
                 "localPart":"AssociationAugmentationPoint",
+                "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "ObjectAugmentationPoint"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://release.niem.gov/niem/structures/3.0/"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
+                }
+            },
+            "elementName":{
+                "localPart":"ObjectAugmentationPoint",
                 "namespaceURI":"http://release.niem.gov/niem/structures/3.0/"
             }
         }

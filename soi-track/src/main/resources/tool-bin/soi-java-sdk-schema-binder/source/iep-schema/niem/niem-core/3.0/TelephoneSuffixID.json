@@ -1,0 +1,13 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#TelephoneSuffixID",
+  "title": "TelephoneSuffixID",
+  "type": "array",
+  "description": "An additional sequence of numbers to be entered after a call connects to be directed to the appropriate place.",
+  "version": "0.4.4",
+  "items": [
+    {
+      "type": "string"
+    }
+  ],
+  "additionalItems": false
+}

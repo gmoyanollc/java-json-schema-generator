@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#TrackOriginationPointOfContact",
+  "title": "TrackOriginationPointOfContact",
+  "type": "object",
+  "description": "An Track Origination Point-Of-Contact described by its properties.",
+  "version": "0.4.4",
+  "javaType": "tsoa_soi_tsoa_track_2_0_TrackOriginationPointOfContact",
+  "properties": {
+    "ContactInformation": {
+      "$ref": "../../../../niem/niem-core/3.0/ContactInformation.json"
+    }
+  },
+  "additionalProperties": false
+}

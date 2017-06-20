@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#OriginatorTrackIdentification",
+  "title": "OriginatorTrackIdentification",
+  "type": "object",
+  "description": "An originator track indentification.  SOI JTCW connector had mapped UnitTrack.idl/lURN to SOI-Track-datatype/1.x/Track/Identifiers/UniqueReferenceCode. UniqueReferenceCode is mappable to this object.",
+  "version": "0.4.4",
+  "javaType": "tsoa_soi_tsoa_track_2_0_OriginatorTrackIdentification",
+  "properties": {
+    "IdentificationType": {
+      "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+    }
+  },
+  "additionalProperties": false
+}

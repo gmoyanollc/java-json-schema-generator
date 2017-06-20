@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#BinaryURI",
+  "title": "BinaryURI",
+  "type": "string",
+  "description": "A URL or file reference of a binary object.",
+  "version": "0.4.4",
+  "javaType": "niem_niem_core_3_0_BinaryURI",
+  "properties": {},
+  "additionalProperties": false,
+  "format": "date-time"
+}

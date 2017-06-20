@@ -1,11 +1,24 @@
-{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/", "documentation": ["A TSOA Track of observation acts."],"components": {"TsoaTrackType": { "type": "complexType", "documentation": ["A data type for a TSOA Track of observation acts."]}, "ShortName": { "type": "element", "documentation": [
-  
+{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/", "documentation": ["A TSOA Track of observation acts."],"components": {"ContactInformationAugmentationType": { "type": "complexType", "documentation": ["A data type for a contact information augmentation."]}, "TrackOriginationPointOfContactType": { "type": "complexType", "documentation": ["A data type for a Track Origination Point-Of-Contact."]}, "TrackOriginationType": { "type": "complexType", "documentation": ["A track origination type."]}, "TsoaTrackType": { "type": "complexType", "documentation": ["A data type for TSOA Track observation acts."]}, "ContactInformationAugmentation": { "type": "element", "documentation": [
+    
+      "A contact information augmentation."
+    
+  ]}, "TrackOriginationPointOfContact": { "type": "element", "documentation": [
+    
+      "An Track Origination Point-Of-Contact described by its properties."
+    
+  ]}, "ShortName": { "type": "element", "documentation": [
+    
     
       "A short-name, nick-name for something."
     
-  ]}, "TrackIdentification": { "type": "element", "documentation": [
+  ]}, "TrackOrigination": { "type": "element", "documentation": [
     
-      "A track indentification for a TSOA Track of observation acts."
+      "A track origination."
+      ,"SOI JTCW connector had mapped UnitTrack.idl/lURN to SOI-Track-datatype/1.x/Track/Identifiers/UniqueReferenceCode. UniqueReferenceCode is mappable to this object."
+    
+  ]}, "OriginatorTrackIdentification": { "type": "element", "documentation": [
+    
+      "An originator track indentification."
       ,"SOI JTCW connector had mapped UnitTrack.idl/lURN to SOI-Track-datatype/1.x/Track/Identifiers/UniqueReferenceCode. UniqueReferenceCode is mappable to this object."
     
   ]}, "TsoaTrack": { "type": "element", "documentation": [

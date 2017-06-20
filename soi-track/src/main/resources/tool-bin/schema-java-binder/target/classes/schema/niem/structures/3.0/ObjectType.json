@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/structures/3.0/#ObjectType",
+  "title": "ObjectType",
+  "type": "object",
+  "description": "",
+  "version": "0.4.4",
+  "javaType": "ObjectType",
+  "properties": {
+    "id": {
+      "value": {
+        "type": "null"
+      }
+    },
+    "ref": {
+      "value": {
+        "type": "null"
+      }
+    },
+    "metadata": {
+      "value": {
+        "type": "null"
+      }
+    },
+    "relationshipMetadata": {
+      "value": {
+        "type": "null"
+      }
+    }
+  },
+  "additionalProperties": false
+}

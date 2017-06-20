@@ -1,5 +1,5 @@
 {
-  "targetSchemaBuildVersion": "0.4.1",
+  "targetSchemaBuildVersion": "0.4.4",
   "schemaBaseDir": {
     "source": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/",
     "target": "../../iep-schema/"
@@ -8,13 +8,14 @@
   "schemaSourceFilenames": [
     "TSOA_Track-schema.json"
   ],
-  "g_schemaSourceFilenames": [
+  "schemaSourceFilenames_bak": [
     "gov_niem_release_niem_codes_nga_datum__3.jsonschema",
     "gov_niem_release_niem_codes_unece_rec20__3.jsonschema", 
     "gov_niem_release_niem_domains_cbrn__3.jsonschema",
     "gov_niem_release_niem_domains_intelligence__3.jsonschema",
     "gov_niem_release_niem_domains_maritime__3.jsonschema", 
     "gov_niem_release_niem_domains_militaryoperations__3.jsonschema",
+    "gov_niem_release_niem_domains_screening__3.jsonschema",
     "gov_niem_release_niem_localterminology__3.jsonschema",
     "gov_niem_release_niem_proxy_xsd__3.jsonschema",
     "gov_niem_release_niem_structures__3.jsonschema",
@@ -131,6 +132,15 @@
       "sourceSchemaFileId": "http://release.niem.gov/niem/domains/militaryOperations/3.2/",
       "targetSchemaFilepath": "niem/domains/militaryOperations/3.2/"
     },{
+      "namespace": "http://release.niem.gov/niem/domains/screening/3.2/",
+      "sourceDocumentationFilename": "screening-documentation.json",
+      "sourceDocumentationFilepath": "niem/domains/screening/3.2/",
+      "sourceModuleFilename": "gov_niem_release_niem_domains_screening__3.js",
+      "sourceSchemaFilename": "gov_niem_release_niem_domains_screening__3.jsonschema",
+      "sourceSchemaFileId": "http://release.niem.gov/niem/domains/screening/3.2/",
+      "targetSchemaFilepath": "niem/domains/screening/3.2/"
+    },
+    {
       "namespace": "https://metadata.ces.mil/dse/dse_assets/100135658/SubmissionPackage/niem/militaryOperationsRestricted/3.2/",
       "sourceDocumentationFilename": "moms-documentation.json",
       "sourceDocumentationFilepath": "niem/domains/militaryOperationsRestricted/3.2/",
@@ -276,8 +286,8 @@
       "targetSchemaFilepath": "iso/19139/20070417/gts/"
     },{
       "namespace": "http://www.opengis.net/gml/3.2",
-      "sourceDocumentationFilename": "",
-      "sourceDocumentationFilepath": "",
+      "sourceDocumentationFilename": "gml-xsd-documentation.json",
+      "sourceDocumentationFilepath": "niem/external/ogc/gml/3.2.1/",
       "sourceModuleFilename": "NIEM_Core_OGC_GML.js",
       "sourceSchemaFilename": "NIEM_Core_OGC_GML-schema.json",
       "sourceSchemaFileId": "http://www.opengis.net/gml/3.2",

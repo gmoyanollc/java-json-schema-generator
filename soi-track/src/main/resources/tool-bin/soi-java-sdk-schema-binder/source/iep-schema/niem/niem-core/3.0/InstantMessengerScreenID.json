@@ -1,0 +1,13 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#InstantMessengerScreenID",
+  "title": "InstantMessengerScreenID",
+  "type": "array",
+  "description": "An account identifier used to reference a person or organization within an instant messaging system.",
+  "version": "0.4.4",
+  "items": [
+    {
+      "type": "string"
+    }
+  ],
+  "additionalItems": false
+}

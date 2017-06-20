@@ -1,0 +1,13 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#OrganizationAbbreviationText",
+  "title": "OrganizationAbbreviationText",
+  "type": "array",
+  "description": "An abbreviation, acronym, or code for an organization name.",
+  "version": "0.4.4",
+  "items": {
+    "value": {
+      "type": "string"
+    }
+  },
+  "additionalItems": false
+}

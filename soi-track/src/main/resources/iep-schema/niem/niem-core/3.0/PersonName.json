@@ -1,0 +1,13 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#PersonName",
+  "title": "PersonName",
+  "type": "array",
+  "description": "A combination of names and/or titles by which a person is known.",
+  "version": "0.4.4",
+  "items": {
+    "PersonFullName": {
+      "$ref": "PersonFullName.json"
+    }
+  },
+  "additionalItems": false
+}

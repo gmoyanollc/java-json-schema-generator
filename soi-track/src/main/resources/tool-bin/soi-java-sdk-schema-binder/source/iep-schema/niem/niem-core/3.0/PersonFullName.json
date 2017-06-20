@@ -1,0 +1,13 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#PersonFullName",
+  "title": "PersonFullName",
+  "type": "array",
+  "description": "A complete name of a person.",
+  "version": "0.4.4",
+  "items": {
+    "value": {
+      "type": "string"
+    }
+  },
+  "additionalItems": false
+}

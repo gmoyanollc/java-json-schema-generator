@@ -16,8 +16,14 @@
     <json-converter-plugin-source-directory>source</json-converter-plugin-source-directory>
   </properties>
 
-    <dependencies>
-        <dependency>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+    <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+    </dependency>
+    <dependency>
         <groupId>commons-lang</groupId>
         <artifactId>commons-lang</artifactId>
         <version>2.4</version>
@@ -26,6 +32,11 @@
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
         <version>2.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
     </dependency>
     <dependency>
         <groupId>org.mongodb.morphia</groupId>
@@ -42,25 +53,67 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>mc2sa.soi.sdk.plugins.schema</groupId>
-                <artifactId>json-converter-plugin</artifactId>
-                <version>1.2.0</version>
-                <configuration>
-                  <sourceDirectory>${json-converter-plugin-source-directory}</sourceDirectory>
-                    <useMongoAnnotations>false</useMongoAnnotations>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+      <finalName>tsoa-track-2.0-json-iep-schema-0.4.4</finalName>
+      <resources>
+        <resource>
+          <directory>source</directory>
+          <includes>
+            <include>**/*</include>
+          </includes>
+        </resource>
+        <resource>
+          <directory>target</directory>
+          <includes>
+            <include>generated-sources/**</include>
+          </includes>
+        </resource>
+        <resource>
+          <directory>../..</directory>
+          <excludes>
+            <exclude>**/*.zip</exclude>
+          </excludes>
+          <includes>
+            <include>change-log.md</include>
+            <include>iep-sample/**</include>
+          </includes>
+        </resource>
+        <resource>
+          <directory>../../../../../../tsoa-track/src/main</directory>
+          <excludes>
+            <exclude>**/*.zip</exclude>
+          </excludes>
+          <includes>
+            <include>resources/*</include>
+            <include>resources/documentation/**</include>
+            <include>resources/iep-sample/**</include>
+            <include>resources/iep-schema/**</include>
+          </includes>
+        </resource>
+      </resources>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+            <groupId>mc2sa.soi.sdk.plugins.schema</groupId>
+            <artifactId>json-converter-plugin</artifactId>
+            <version>1.2.0</version>
+            <configuration>
+              <sourceDirectory>${json-converter-plugin-source-directory}</sourceDirectory>
+                <useMongoAnnotations>false</useMongoAnnotations>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+      </plugins>
     </build>
 
     <reporting/>
