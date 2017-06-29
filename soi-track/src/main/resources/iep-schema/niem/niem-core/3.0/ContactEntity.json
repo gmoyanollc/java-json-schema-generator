@@ -3,7 +3,7 @@
   "title": "ContactEntity",
   "type": "array",
   "description": "An entity that may be contacted by using the given contact information.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "EntityRepresentation": {
       "EntityPerson": {
@@ -14,5 +14,6 @@
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

@@ -4,8 +4,8 @@
   "title": "SystemIdentification",
   "type": "object",
   "description": "A number or code identification assigned by a system to uniquely identify a person or object.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_intelligence_3_2_SystemIdentification",
+  "version": "0.4.5",
+  "javaType": "niem.domains.intelligence._3_2.SystemIdentification",
   "properties": {
     "SystemIdentificationType": {
       "$ref": "../../../../niem/niem-core/3.0/SystemIdentificationType.json"

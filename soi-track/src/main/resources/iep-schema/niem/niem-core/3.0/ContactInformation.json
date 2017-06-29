@@ -3,7 +3,7 @@
   "title": "ContactInformation",
   "type": "array",
   "description": "A set of details about how to contact a person or an organization.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "ContactMeans": {
       "ContactInstantMessenger": {
@@ -28,5 +28,6 @@
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

@@ -4,8 +4,8 @@
   "title": "OriginLocation",
   "type": "object",
   "description": "An origin location measurement.",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_feature_observation_2_0_OriginLocation",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.feature_observation._2_0.OriginLocation",
   "properties": {
     "AltitudeMeasure": {
       "$ref": "../../../../niem/domains/militaryOperations/3.2/AltitudeMeasure.json"

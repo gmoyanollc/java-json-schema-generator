@@ -4,8 +4,8 @@
   "title": "Observer",
   "type": "object",
   "description": "An entity that becomes aware of things through senses.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperationsRestricted_3_2_Observer",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperationsRestricted._3_2.Observer",
   "properties": {
     "ObserverAugmentationPoint": {
       "ObserverIdentification": {

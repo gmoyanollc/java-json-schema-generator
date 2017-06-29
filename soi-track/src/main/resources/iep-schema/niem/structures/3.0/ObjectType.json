@@ -4,26 +4,32 @@
   "title": "ObjectType",
   "type": "object",
   "description": "",
-  "version": "0.4.4",
-  "javaType": "ObjectType",
+  "version": "0.4.5",
+  "javaType": "niem.structures._3_0.ObjectType",
   "properties": {
     "id": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
     },
     "ref": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
     },
     "metadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     },
     "relationshipMetadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     }

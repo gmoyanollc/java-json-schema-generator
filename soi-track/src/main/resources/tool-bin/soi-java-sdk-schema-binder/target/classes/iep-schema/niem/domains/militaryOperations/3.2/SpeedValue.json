@@ -3,38 +3,40 @@
   "title": "SpeedValue",
   "type": "array",
   "description": "A magnitude of motion (rate of change of position) of an object.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
-    "value": {
-      "value": {
-        "type": "string"
-      }
-    },
+    "value": {},
     "speedUnitCode": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "id": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "ref": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "metadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     },
     "relationshipMetadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

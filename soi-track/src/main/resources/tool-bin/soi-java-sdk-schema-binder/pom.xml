@@ -53,7 +53,7 @@
     </dependencies>
 
     <build>
-      <finalName>tsoa-track-2.0-json-iep-schema-0.4.4</finalName>
+      <finalName>tsoa-track-2.0-json-iep-schema-0.4.4.1</finalName>
       <resources>
         <resource>
           <directory>source</directory>

@@ -4,12 +4,8 @@
   "title": "DirectionDatumCodeType",
   "type": "object",
   "description": "A data type for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).",
-  "version": "0.4.4",
-  "javaType": "niem_codes_nga_datum_3_0_DirectionDatumCodeType",
-  "properties": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "javaType": "niem.codes.nga_datum._3_0.DirectionDatumCodeType",
+  "properties": {},
   "additionalProperties": false
 }

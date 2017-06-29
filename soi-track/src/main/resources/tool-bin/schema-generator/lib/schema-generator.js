@@ -21,6 +21,8 @@ var SchemaGenerator = function () {
   this.targetSchemaBaseDir;
   this.targetSchemaFileDestination;
   this.targetSchemaBuildVersion;
+  this.defaultPrimitiveFacets;
+  this.w3cXmlTypeSchema;
 }
 /* initialize { */
 SchemaGenerator.prototype.setSourceSchemaNamespace = function (sourceSchemaObject) {
@@ -180,8 +182,58 @@ SchemaGenerator.prototype.setPropertyObjectTemplate = function (definitionObject
 }
 
 SchemaGenerator.prototype.setPropertyPrimitiveTemplate = function (definitionObjectProperty) {
-  var schemaPropertyPrimitiveTemplate = this.createSchemaTemplateObject('property-primitive-template');
+  let defaultPrimitiveFacets = this.defaultPrimitiveFacets;
+
+  function getAnyDefaultFacets(schemaPropertyPrimitiveTemplate) {
+    var anyDefaultFacets = [];
+    var propertyPrimitiveType;
+    if (Array.isArray(schemaPropertyPrimitiveTemplate.type))
+      propertyPrimitiveType = schemaPropertyPrimitiveTemplate.type[0]
+    else propertyPrimitiveType = schemaPropertyPrimitiveTemplate.type;
+    if (typeof defaultPrimitiveFacets[propertyPrimitiveType] != "undefined")
+
+      for (var facet in defaultPrimitiveFacets[propertyPrimitiveType]) {
+        if (typeof defaultPrimitiveFacets[propertyPrimitiveType[facet]] == "undefined")
+          anyDefaultFacets.push({ [facet]: defaultPrimitiveFacets[propertyPrimitiveType][facet] })
+      }
+
+    else console.log("Primitive default facets not defined for: " + propertyPrimitiveType);
+    return(anyDefaultFacets);
+  };
+
+  //045 var schemaPropertyPrimitiveTemplate = this.createSchemaTemplateObject('property-primitive-template');
+  var schemaPropertyPrimitiveTemplate = {};
   //044 schemaPropertyPrimitiveTemplate.type = "string";
+  //if (typeof definitionObjectProperty.attributeName != "undefined") {
+    //console.log("####setPropertyPrimitiveTemplate to default: " + JSON.stringify(this.defaultPrimitiveFacets.stringFacets));
+    //schemaPropertyPrimitiveTemplate = this.defaultPrimitiveFacets.stringFacets;
+    var primitiveType = this.getDefinitionReferenceName(definitionObjectProperty);
+    if (typeof this.w3cXmlTypeSchema.definitions[primitiveType] != "undefined") {
+      if (typeof this.w3cXmlTypeSchema.definitions[primitiveType].type != "undefined")
+        schemaPropertyPrimitiveTemplate.type = this.w3cXmlTypeSchema.definitions[primitiveType].type
+      else
+        if (typeof this.w3cXmlTypeSchema.definitions[primitiveType].anyOf != "undefined")
+          if (typeof this.w3cXmlTypeSchema.definitions[primitiveType].anyOf[0].type != "undefined") 
+            if (this.w3cXmlTypeSchema.definitions[primitiveType].anyOf[0].type == "array")
+              schemaPropertyPrimitiveTemplate = this.w3cXmlTypeSchema.definitions[primitiveType].anyOf[0];
+            else {
+              schemaPropertyPrimitiveTemplate.type = [];
+
+              this.w3cXmlTypeSchema.definitions[primitiveType].anyOf.forEach(function (typeItem) {
+                schemaPropertyPrimitiveTemplate.type.push(typeItem.type)
+              });
+
+            };
+      var anyDefaultFacets = getAnyDefaultFacets(schemaPropertyPrimitiveTemplate);
+
+      anyDefaultFacets.forEach( function (facet) {
+        schemaPropertyPrimitiveTemplate = Object.assign(schemaPropertyPrimitiveTemplate, facet);
+      });
+
+    }
+    else
+      throw("w3cXmlTypeSchema.definition not found for: " + primitiveType);
+  //}
   return (schemaPropertyPrimitiveTemplate);
 }
 
@@ -437,6 +489,8 @@ SchemaGenerator.prototype.generateRemotePropertySchema = function (definitionObj
   ssg.schemaTemplateObjects = this.schemaTemplateObjects;
   ssg.targetSchemaBaseDir = this.targetSchemaBaseDir;
   ssg.targetSchemaBuildVersion = this.targetSchemaBuildVersion;
+  ssg.defaultPrimitiveFacets = this.defaultPrimitiveFacets;
+  ssg.w3cXmlTypeSchema = this.w3cXmlTypeSchema;
   ssg.schemaFilepathMappings = this.schemaFilepathMappings;
   ssg.sourceSchemaBaseDir = this.sourceSchemaBaseDir;
   ssg.sourceDocumentationBaseDir = this.sourceDocumentationBaseDir;
@@ -511,18 +565,24 @@ SchemaGenerator.prototype.generateObjectDefinitionSchema = function (sourceSchem
             schemaObject.items.push({ "type": "object" });
             break;
           case "DateTime":
-            console.log("##object definition is 'DateTime'; type set to 'string', format 'date-time'.");
-            schemaObject.items.push({ "type": "string", "format": "date-time" });
+            //045 console.log("##object definition type set to default 'string', 'format': 'date-time'.");
+            console.log("##object definition type set to default: " + JSON.stringify(this.defaultPrimitiveFacets.dateTimeFacets));
+            //045 schemaObject.items.push({ "type": "string", "format": "date-time" });
+            schemaObject.items.push(this.defaultPrimitiveFacets.dateTimeFacets);
             break;
           case "Decimal":
           case "Integer":
-            console.log("##object definition type set to 'number'.");
-            schemaObject.items.push({ "type": "number" });
+            //045 console.log("##object definition type set to default 'number', 'maximum': 2147483647, 'minimum': -2147483648.");
+            console.log("##object definition type set to default: " + JSON.stringify(this.defaultPrimitiveFacets.numberFacets));
+            //045 schemaObject.items.push({ "type": "number", "maximum": 2147483647, "minimum": -2147483648 });
+            schemaObject.items.push(this.defaultPrimitiveFacets.numberFacets);
             break;
           case "String":
           case "token":
-            console.log("##object definition type set to 'string'.");
-            schemaObject.items.push({ "type": "string" });
+            //045 console.log("##object definition type set to default 'string', 'maxLength': 64.");
+            console.log("##object definition type set to default: " + JSON.stringify(this.defaultPrimitiveFacets.stringFacets));
+            //045 schemaObject.items.push({ "type": "string", "maxLength": 64 });
+            schemaObject.items.push(this.defaultPrimitiveFacets.stringFacets);
             break;
           default:
             if ((typeof sourceSchemaObject.definitions != "undefined")
@@ -553,11 +613,18 @@ SchemaGenerator.prototype.generateObjectDefinitionSchema = function (sourceSchem
               //044 if (typeof definitionObjectName == "undefined") definitionObjectName = schemaObject.title;
               if (typeof definitionObjectName == "undefined")
                 if ((typeof sourceSchemaObject.definitions != "undefined")
-                  && (typeof sourceSchemaObject.definitions[schemaObject.title] != "undefined"))
+                  && (typeof sourceSchemaObject.definitions[schemaObject.title] != "undefined")) {
                   //044 && (typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined"))
-                  schemaObject.properties
-                    = this.getProperties(sourceSchemaObject, definitionObject_allOfObject)
-                else {
+                  //045 schemaObject.properties = this.getProperties(sourceSchemaObject, definitionObject_allOfObject)
+                  var properties = 
+                  this.getProperties(sourceSchemaObject, definitionObject_allOfObject);
+
+                  for (var property in properties) {
+                    schemaObject.properties[property] = properties[property];
+                    //JSON.parse(JSON.stringify(property));
+                  }
+
+                } else {
                   //044 schemaObject.properties = this.getRemoteDefinitionReference(definitionObject_allOfObject);
                   //044 schemaObject.properties[definitionObjectName] = this.getRemoteDefinitionReference(definitionObject_allOfObject);
                   schemaObject.properties[definitionObjectName] = { "$ref": this.getRemoteDefinitionFileLocation(definitionObject_allOfObject) };
@@ -586,17 +653,18 @@ SchemaGenerator.prototype.generateObjectDefinitionSchema = function (sourceSchem
                       console.log("##object definition type set to 'string'.");
                       schemaObject.properties.value = { "type": "string" };
                       break;
-                    /*default:
+                    default:
                       if ((typeof sourceSchemaObject.definitions != "undefined")
                         && (typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined"))
-                        //044 schemaObject.properties
-                        schemaObject.properties[definitionObjectName]
-                          = this.getProperties(sourceSchemaObject, definitionObject_allOfObject)
+                        //045 schemaObject.properties[definitionObjectName] = this.getProperties(sourceSchemaObject, definitionObject_allOfObject)
+                        schemaObject.properties = this.getProperties(sourceSchemaObject, sourceSchemaObject.definitions[definitionObjectName])
                       else {
                         //044 schemaObject.properties = this.getRemoteDefinitionReference(definitionObject_allOfObject);
-                        schemaObject.properties[definitionObjectName] = this.getRemoteDefinitionReference(definitionObject_allOfObject);
-                        this.generateRemoteDefinitionObjectSchema(definitionObject_allOfObject, definitionObjectName);
-                      };*/
+                        //045 schemaObject.properties[definitionObjectName] = this.getRemoteDefinitionReference(definitionObject_allOfObject);
+                        //045 this.generateRemoteDefinitionObjectSchema(definitionObject_allOfObject, definitionObjectName);
+                        schemaObject.properties[definitionObjectName] = { "$ref": this.getRemoteDefinitionFileLocation(definitionObject) };
+                        this.generateRemoteDefinitionObjectSchema(definitionObject, definitionObjectName);
+                      };
                   }
                 } else {
                   console.log("##object definition is 'anyType'.");
@@ -648,8 +716,7 @@ SchemaGenerator.prototype.generateObjectDefinitionSchema = function (sourceSchem
             default:
               if ((typeof sourceSchemaObject.definitions != "undefined")
                 && (typeof sourceSchemaObject.definitions[definitionObjectName] != "undefined"))
-                schemaObject.properties
-                  = this.getProperties(sourceSchemaObject, sourceSchemaObject.definitions[definitionObjectName])
+                schemaObject.properties = this.getProperties(sourceSchemaObject, sourceSchemaObject.definitions[definitionObjectName])
               else {
                 //044 schemaObject.properties = this.getRemoteDefinitionReference(definitionObject);
                 schemaObject.properties[definitionObjectName] = { "$ref": this.getRemoteDefinitionFileLocation(definitionObject) };
@@ -679,6 +746,8 @@ SchemaGenerator.prototype.generateRemoteDefinitionObjectSchema = function (anyOf
   ssg.schemaTemplateObjects = this.schemaTemplateObjects;
   ssg.targetSchemaBaseDir = this.targetSchemaBaseDir;
   ssg.targetSchemaBuildVersion = this.targetSchemaBuildVersion;
+  ssg.defaultPrimitiveFacets = this.defaultPrimitiveFacets;
+  ssg.w3cXmlTypeSchema = this.w3cXmlTypeSchema;
   ssg.schemaFilepathMappings = this.schemaFilepathMappings;
   ssg.sourceSchemaBaseDir = this.sourceSchemaBaseDir;
   ssg.sourceDocumentationBaseDir = this.sourceDocumentationBaseDir;
@@ -844,13 +913,29 @@ SchemaGenerator.prototype.getVersion = function () {
   return (this.targetSchemaBuildVersion);
 }
 
+SchemaGenerator.prototype.getdefaultPrimitiveFacets = function () {
+  console.log('##defaultPrimitiveFacets: ' + this.defaultPrimitiveFacets);
+  return (this.defaultPrimitiveFacets);
+}
+
 SchemaGenerator.prototype.getJavaType = function (propertyObject) {
+
+  function replacer(match, p1, offset, string) {
+  return ['_' + p1.replace(/\./g, '_')];
+  }
+
   console.log('##get javaType from Property Object');
-  var propertyObjectIdentifierContainer = this.getPropertyObjectIdentifierContainer(propertyObject);
+  //045 var propertyObjectIdentifierContainer = this.getPropertyObjectIdentifierContainer(propertyObject);
   //var javaType = propertyObjectIdentifierContainer.namespaceURI.replace(/[:\/\.-]/g, '_')
   //044 var javaType = propertyObjectIdentifierContainer.localPart.replace(/[:\/\.-]/g, '_');
-  var javaTypeSchemaFileDestination = String(String(this.getSchemaFileDestination(propertyObject)).replace(/[\/\.-]/g, '_'));
-  var javaType = javaTypeSchemaFileDestination.substring(0, javaTypeSchemaFileDestination.lastIndexOf('_'));
+  //045 var javaTypeSchemaFileDestination = String(String(this.getSchemaFileDestination(propertyObject)).replace(/[\/\.-]/g, '_'));
+  var schemaFileDestination = this.getSchemaFileDestination(propertyObject);
+  //045 var javaType = javaTypeSchemaFileDestination.substring(0, javaTypeSchemaFileDestination.lastIndexOf('_'));
+  var javaTypeParts = schemaFileDestination.substring(0, schemaFileDestination.lastIndexOf(".json"));
+  //g var javaTypePartsVersion = javaTypeParts.replace(/([0-9])(\.)([0-9])/, replacer);
+  //g var javaTypePartsVersion = javaTypeParts.replace(/(\/[0-9])/g, replacer);
+  var javaTypePartsVersion = javaTypeParts.replace(/(\d+\.?\d{0,9}?\.\d+\.?\d{0,9})/, replacer);
+  var javaType = String(javaTypePartsVersion.replace(/-/g, '_')).replace(/\//g, '.');
   console.log("##javaType: " + javaType);
   return(javaType);
 }
@@ -919,7 +1004,7 @@ SchemaGenerator.prototype.getProperties = function (sourceSchemaObject, definiti
         switch (propertyTemplateType) {
           case 'array':
             if (typeof definitionPropertyContainer.properties[definitionObjectProperty].elementName != 'undefined')
-              if (definitionPropertyContainer.properties[definitionObjectProperty].elementName.namespaceURI == this.sourceSchemaNamespace) {
+              if (definitionPropertyContainer.properties[definitionObjectProperty].elementName.namespaceURI == this.sourceSchemaNamespace) //045 {
                 this.generateObjectDefinitionSchema(sourceSchemaObject, definitionPropertyContainer.properties[definitionObjectProperty]);
                 /*if (definitionObjectNamespace === this.sourceSchemaNamespace) {
                   schemaPropertyArrayTemplate.items.$ref = definitionObjectProperty.elementName.localPart + '.json'
@@ -928,8 +1013,9 @@ SchemaGenerator.prototype.getProperties = function (sourceSchemaObject, definiti
                 };*/
                 //g schemaProperties[propertyObjectName] = { "$ref": this.getSchemaFileDestination(definitionPropertyContainer.properties[definitionObjectProperty]) } ;
                 //var propertyTemplate = this.setPropertyObjectTemplate(definitionPropertyContainer.properties[definitionObjectProperty]);
-                schemaProperties[propertyObjectName] = { "$ref": this.getSchemaReference(definitionPropertyContainer.properties[definitionObjectProperty]) };
-              } else
+                //045 schemaProperties[propertyObjectName] = { "$ref": this.getSchemaReference(definitionPropertyContainer.properties[definitionObjectProperty]) };
+              //045 } 
+              else
                 this.generateRemotePropertySchema(definitionPropertyContainer.properties[definitionObjectProperty]);
               /*if (typeof sourceSchemaObject.definitions != "undefined") {
                 if ((typeof sourceSchemaObject.definitions[definitionObjectProperty] != "undefined")
@@ -947,6 +1033,7 @@ SchemaGenerator.prototype.getProperties = function (sourceSchemaObject, definiti
               //g properties = [propertyTemplate];
               //if (typeof definitionPropertyContainer.properties[definitionObjectProperty].elementName != 'undefined')
               //  if (definitionPropertyContainer.properties[definitionObjectProperty].elementName.namespaceURI != this.sourceSchemaNamespace) this.generateRemotePropertySchema(definitionPropertyContainer.properties[definitionObjectProperty]);
+              schemaProperties[propertyObjectName] = { "$ref": this.getSchemaReference(definitionPropertyContainer.properties[definitionObjectProperty]) };
               break;
           case 'object':
             if ((typeof sourceSchemaObject.definitions != "undefined")
@@ -955,7 +1042,7 @@ SchemaGenerator.prototype.getProperties = function (sourceSchemaObject, definiti
             else {
               var remoteObject = this.getRemoteObject(this.getId(definitionPropertyContainer.properties[definitionObjectProperty]));
               this.generateRemotePropertySchema(remoteObject);
-            }
+            };
             /*044
             var propertyTemplate = this.setPropertyObjectTemplate(definitionPropertyContainer.properties[definitionObjectProperty]);
             schemaProperties[propertyObjectName] = propertyTemplate;*/

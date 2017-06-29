@@ -4,8 +4,8 @@
   "title": "ObservedWeaponSystem",
   "type": "object",
   "description": "An observed weapon system.",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_observed_weapon_2_0_ObservedWeaponSystem",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.observed_weapon._2_0.ObservedWeaponSystem",
   "properties": {
     "WeaponSystem": {
       "$ref": "../../../../niem/domains/militaryOperationsRestricted/3.2/WeaponSystem.json"

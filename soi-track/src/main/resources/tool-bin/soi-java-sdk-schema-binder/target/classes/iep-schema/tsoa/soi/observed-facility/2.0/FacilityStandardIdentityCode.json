@@ -4,8 +4,8 @@
   "title": "FacilityStandardIdentityCode",
   "type": "object",
   "description": "A Facility Standard Identity Code.",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_observed_facility_2_0_FacilityStandardIdentityCode",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.observed_facility._2_0.FacilityStandardIdentityCode",
   "properties": {
     "StandardIdentityCodeType": {
       "$ref": "../../../../niem/domains/militaryOperations/3.2/StandardIdentityCodeType.json"

@@ -4,12 +4,8 @@
   "title": "DirectionCodeType",
   "type": "object",
   "description": "A data type for compass directions.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_DirectionCodeType",
-  "properties": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.DirectionCodeType",
+  "properties": {},
   "additionalProperties": false
 }

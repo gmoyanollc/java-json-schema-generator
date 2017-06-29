@@ -3,11 +3,12 @@
   "title": "PersonName",
   "type": "array",
   "description": "A combination of names and/or titles by which a person is known.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "PersonFullName": {
       "$ref": "PersonFullName.json"
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

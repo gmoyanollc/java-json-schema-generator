@@ -4,11 +4,11 @@
   "title": "MILSTD2525-C",
   "type": "object",
   "description": "A MILSTD2525-C symbol representation",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_feature_observation_2_0_MILSTD2525_C",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.feature_observation._2_0.MILSTD2525_C",
   "properties": {
-    "value": {
-      "type": "string"
+    "MILSTD2525-C-SIDC-Code": {
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525-C-SIDC-Code.json"
     }
   },
   "additionalProperties": false

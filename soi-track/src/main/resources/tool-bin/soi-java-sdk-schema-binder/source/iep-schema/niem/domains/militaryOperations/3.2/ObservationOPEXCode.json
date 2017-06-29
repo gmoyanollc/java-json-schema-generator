@@ -4,31 +4,31 @@
   "title": "ObservationOPEXCode",
   "type": "object",
   "description": "A designator specifying whether observation was a part of an operation, exercise or simulation.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_ObservationOPEXCode",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.ObservationOPEXCode",
   "properties": {
-    "value": {
-      "value": {
-        "type": "string"
-      }
-    },
+    "value": {},
     "id": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "ref": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "metadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     },
     "relationshipMetadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     }

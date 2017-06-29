@@ -4,8 +4,8 @@
   "title": "EntityPerson",
   "type": "object",
   "description": "A person capable of bearing legal rights and responsibilities.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_EntityPerson",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.EntityPerson",
   "properties": {
     "PersonDescriptionText": {
       "$ref": "PersonDescriptionText.json"

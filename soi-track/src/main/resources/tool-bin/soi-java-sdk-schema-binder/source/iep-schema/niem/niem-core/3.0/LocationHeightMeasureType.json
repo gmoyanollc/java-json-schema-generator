@@ -4,9 +4,22 @@
   "title": "LocationHeightMeasureType",
   "type": "object",
   "description": "A data type for a measurement of the height of a location relative to a reference point.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_LocationHeightMeasureType",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.LocationHeightMeasureType",
   "properties": {
+    "MeasureValue": {
+      "MeasurePoint": {
+        "$ref": "MeasurePoint.json"
+      }
+    },
+    "MeasureUnit": {
+      "AngleUnit": {
+        "$ref": "../../../niem/domains/maritime/3.2/AngleUnit.json"
+      },
+      "LengthUnitCode": {
+        "$ref": "LengthUnitCode.json"
+      }
+    },
     "LocationHeightVerticalDatum": {
       "LocationHeightVerticalDatumCode": {
         "$ref": "LocationHeightVerticalDatumCode.json"

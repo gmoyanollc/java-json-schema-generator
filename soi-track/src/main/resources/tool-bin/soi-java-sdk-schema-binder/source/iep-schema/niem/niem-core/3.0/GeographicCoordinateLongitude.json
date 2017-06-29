@@ -4,8 +4,8 @@
   "title": "GeographicCoordinateLongitude",
   "type": "object",
   "description": "A measurement of the angular distance between a point on the Earth and the Prime Meridian.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_GeographicCoordinateLongitude",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.GeographicCoordinateLongitude",
   "properties": {
     "LongitudeDegreeValue": {
       "$ref": "LongitudeDegreeValue.json"

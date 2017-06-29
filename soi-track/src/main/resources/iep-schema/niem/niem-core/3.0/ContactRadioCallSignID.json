@@ -3,11 +3,13 @@
   "title": "ContactRadioCallSignID",
   "type": "array",
   "description": "An identifier of a person using a radio.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": [
     {
-      "type": "string"
+      "type": "string",
+      "maxLength": 128
     }
   ],
+  "maxItems": 16,
   "additionalItems": false
 }

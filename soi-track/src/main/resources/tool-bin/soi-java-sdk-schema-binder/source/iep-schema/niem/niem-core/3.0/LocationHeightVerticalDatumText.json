@@ -4,12 +4,8 @@
   "title": "LocationHeightVerticalDatumText",
   "type": "object",
   "description": "A vertical datum system used to designate the reference point for a height measurement.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_LocationHeightVerticalDatumText",
-  "properties": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.LocationHeightVerticalDatumText",
+  "properties": {},
   "additionalProperties": false
 }

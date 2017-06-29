@@ -4,11 +4,19 @@
   "title": "SystemIdentificationType",
   "type": "object",
   "description": "A data type for a number or code assigned to a system to uniquely identify the system.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_SystemIdentificationType",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.SystemIdentificationType",
   "properties": {
-    "IdentificationType": {
-      "$ref": "IdentificationType.json"
+    "IdentificationID": {
+      "$ref": "IdentificationID.json"
+    },
+    "IdentificationJurisdiction": {
+      "$ref": "IdentificationJurisdiction.json"
+    },
+    "IdentificationAugmentationPoint": {
+      "ShortName": {
+        "$ref": "../../../tsoa/soi/tsoa-track/2.0/ShortName.json"
+      }
     },
     "SystemName": {
       "$ref": "SystemName.json"

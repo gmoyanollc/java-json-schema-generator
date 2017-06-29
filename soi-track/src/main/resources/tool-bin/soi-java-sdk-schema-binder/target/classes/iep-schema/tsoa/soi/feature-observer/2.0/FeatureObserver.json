@@ -4,8 +4,8 @@
   "title": "FeatureObserver",
   "type": "object",
   "description": "A feature observer of something.",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_feature_observer_2_0_FeatureObserver",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.feature_observer._2_0.FeatureObserver",
   "properties": {
     "Observer": {
       "$ref": "../../../../niem/domains/militaryOperationsRestricted/3.2/Observer.json"

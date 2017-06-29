@@ -4,11 +4,11 @@
   "title": "ObservedMilitaryUnit",
   "type": "object",
   "description": "An observed military unit described by its properties.",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_observed_military_unit_2_0_ObservedMilitaryUnit",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.observed_military_unit._2_0.ObservedMilitaryUnit",
   "properties": {
-    "value": {
-      "type": "string"
+    "Unit": {
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/Unit.json"
     }
   },
   "additionalProperties": false

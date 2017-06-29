@@ -3,11 +3,14 @@
   "title": "AngularDegreeValue",
   "type": "array",
   "description": "A value that specifies a degree of an angular measure.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": [
     {
-      "type": "number"
+      "type": "number",
+      "maximum": 2147483647,
+      "minimum": -2147483648
     }
   ],
+  "maxItems": 16,
   "additionalItems": false
 }

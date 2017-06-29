@@ -4,8 +4,8 @@
   "title": "DateTime",
   "type": "string",
   "description": "A full date and time.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_DateTime",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.DateTime",
   "properties": {},
   "additionalProperties": false,
   "format": "date-time"

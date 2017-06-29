@@ -3,7 +3,7 @@
   "title": "Track",
   "type": "array",
   "description": "A series of related contacts displayed on a data display console or other display device.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "TrackAugmentationPoint": {
       "FeatureObservation": {
@@ -32,5 +32,6 @@
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

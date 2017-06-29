@@ -3,7 +3,7 @@
   "title": "MILSTD2525-D-SIDC",
   "type": "array",
   "description": "A symbol identification code, a numeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "MILSTD2525-D-SIDC-Part1Code": {
       "$ref": "MILSTD2525-D-SIDC-Part1Code.json"
@@ -15,5 +15,6 @@
       "$ref": "MILSTD2525-D-SIDC-Part3Code.json"
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

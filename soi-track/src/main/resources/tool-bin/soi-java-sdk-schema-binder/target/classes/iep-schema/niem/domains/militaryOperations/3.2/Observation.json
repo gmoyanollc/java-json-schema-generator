@@ -3,7 +3,7 @@
   "title": "Observation",
   "type": "array",
   "description": "A time, location and information of an observation.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "ObservedObjectLocation": {
       "$ref": "ObservedObjectLocation.json"
@@ -34,5 +34,6 @@
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

@@ -4,8 +4,8 @@
   "title": "AltitudeMeasure",
   "type": "object",
   "description": "A vertical elevation of an object above a surface (as sea level or land) of a planet or natural satellite.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_AltitudeMeasure",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.AltitudeMeasure",
   "properties": {
     "LocationHeightMeasureType": {
       "$ref": "../../../../niem/niem-core/3.0/LocationHeightMeasureType.json"

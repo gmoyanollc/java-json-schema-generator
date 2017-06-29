@@ -4,8 +4,8 @@
   "title": "Identification",
   "type": "object",
   "description": "A representation of an identity.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_Identification",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.Identification",
   "properties": {
     "IdentificationID": {
       "$ref": "IdentificationID.json"

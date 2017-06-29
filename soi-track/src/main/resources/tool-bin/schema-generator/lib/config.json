@@ -1,12 +1,19 @@
 {
-  "targetSchemaBuildVersion": "0.4.4",
+  "targetSchemaBuildVersion": "0.4.5",
+  "defaultPrimitiveFacets": {
+    "dateTimeFacets": { "type": "string", "format": "date-time" },
+    "numberFacets": { "type": "number", "maximum": 2147483647, "minimum": -2147483648 },
+    "stringFacets": { "type": "string", "maxLength": 128 },
+    "string": { "maxLength": 128 }
+  },
   "schemaBaseDir": {
     "source": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/",
     "target": "../../iep-schema/"
   },
   "sourceDocumentationBaseDir": "../xml-schema-content-extractor/output/",
+  "w3cXmlTypeSchema": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/jsonschemas/w3c/2001/XMLSchema.jsonschema",
   "schemaSourceFilenames": [
-    "TSOA_Track-schema.json"
+    "gov_niem_release_niem_domains_screening__3.jsonschema"
   ],
   "schemaSourceFilenames_bak": [
     "gov_niem_release_niem_codes_nga_datum__3.jsonschema",

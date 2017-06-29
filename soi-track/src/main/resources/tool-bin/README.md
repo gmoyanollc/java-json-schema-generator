@@ -1,23 +1,22 @@
-% XML-to-JSON-Schema-Converter README version 0.4
+% XML-to-JSON-Schema README v0.5
 % George Moyano
-% May 2017
+% June 2017
 
 # Introduction
-XML-to-JSON-Schema-Converter produces JSON Schema from XML-Schema.  
+XML-to-JSON-Schema generates JSON Schema from XML Schema.  
 
-The conversion pipeline contains the following tasks:
+The process is de-composed as follows:
 
-  1. Convert
-  2. Extract
-  3. Generate
-  4. De-Reference
-  5. Validate
+  1. Convert XML Schema
+  2. Extract XML Schema Content
+  3. Generate JSON Schema Components
+  4. De-Reference JSON Schema Components
 
-Each task is automated and discretely implemented for increased maintainability, modularity, and portability.  A project folder for each task contains a README.md file with more details, to include, configuration and usage.
+Each automated task is discretely implemented for increased maintainability, modularity, and portability.  A project folder for each task contains a README.md file with more details, to include, configuration and usage.
 
-The remainder of this document provides an overview description of each task in the conversion pipeline.
+The remainder of this document provides an overview description of each task in the pipeline for generating JSON Schema from XML Schema.
 
-## Convert
+## Convert XML Schema
 This task takes each data component described in XML Schema and re-describes it in JavaScript modules and JSON schema.  
     
     ```
@@ -51,8 +50,10 @@ The JSON schema produced by this task is considered intermediary for purposes of
   Node v6.9.1 | nodejs
   XJC 2.2.8 | java-1.8.0-openjdk
 
-## Extract
-This task extracts valuable XML Schema content ignored by Java XJC/JAXB.  XML documentation and facets for each data component are converted and formatted as JSON data structures.  Facets include value constraints such as numeric maximum and minimum, and character string length.
+## Extract XML Schema Content
+This task extracts valuable XML Schema content ignored by Java XJC/JAXB, see [Add support for XML schema facets and documentation #917](https://github.com/javaee/jaxb-v2/issues/917).  
+
+XML documentation and facets for each data component are converted and formatted as JSON data structures.  Facets include value constraints such as numeric maximum and minimum, and character string length.
 
     ```
     .------------.
@@ -71,13 +72,13 @@ This task extracts valuable XML Schema content ignored by Java XJC/JAXB.  XML do
     ```
 
 ### Software Components
-What is wrong
 
   Library | Language | Package
   ------- | -------- | -------
   extract-xml-schema-documentation.xsl | XSL | n/a
   extract-xml-schema-facets.xsl | XSL | n/a
   SaxonEE9-7-0-18J* | Java | Saxonica
+
   *SaxonEE is the purchased product, however, most XSL 2.0-compatible XML transformers should meet expectations.
 
   Binary | Package
@@ -85,7 +86,7 @@ What is wrong
   Node v6.9.1 | nodejs
   GNU bash v4.2.46 | x86_64-redhat-linux-gnu
 
-## Generate
+## Generate JSON Schema Components
 This task generates JSON Schema components from the outputs of the Convert and Extract tasks.  
 
     ```
@@ -143,8 +144,8 @@ For example, the following NIEM Crash schema snippet references ('$ref') the ide
   ------ | -------
   Node v6.9.1 | nodejs
 
-## De-Reference
-This task creates a JSON Schema that is de-referenced.  In other words, references ('$ref') are replaced with the contents of JSON schema.
+## De-Reference JSON Schema Components
+This task creates a JSON Schema that is de-referenced.  In other words, references ('$ref') are replaced with the contents of JSON schema components.
 
 For example, a snippet of the de-referenced Crash component is depicted below:
 
@@ -205,6 +206,9 @@ For example, a snippet of the de-referenced Crash component is depicted below:
     }
     
     ```
+
+The resulting de-referenced JSON schema may be used to validate JSON instances.  To validate instances, use a [JSON Schema validator](http://json-schema.org/implementations#validators) with the de-referenced JSON schema.
+
 ### Software Components
 
   Library | Language | Package
@@ -215,20 +219,15 @@ For example, a snippet of the de-referenced Crash component is depicted below:
   ------ | -------
   Node v6.9.1 | nodejs
 
-## Validate
-This task validates the de-referenced JSON Schema.
-
-### Software Components
-
-  Library | Language | Package
-  ------- | -------- | -------
-  ajv v4.11.3 | JavaScript | NPM
-
-  Binary | Package
-  ------ | -------
-  Node v6.9.1 | nodejs
-
 # Conclusion
+XML-to-JSON-Schema generates JSON Schema from XML Schema with discrete automated tasks:
+
+  1. Convert XML Schema
+  2. Extract XML Schema Content
+  3. Generate JSON Schema Components
+  4. De-Reference JSON Schema Components
+
+Each automated task has a specific project folder with a README.md file that includes configuration and usage.  Their discrete implementation increases maintainability, modularity, and portability.
 
 # Appendix A - Use Case: NIEM XML Schema Components
 

@@ -4,9 +4,12 @@
   "title": "DateRangeType",
   "type": "object",
   "description": "A data type for a range of dates.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_DateRangeType",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.DateRangeType",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "StartDate": {
       "$ref": "StartDate.json"
     },

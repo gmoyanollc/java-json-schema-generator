@@ -4,12 +4,8 @@
   "title": "USMTFEnvironmentCategoryCodeType",
   "type": "object",
   "description": "A data type for a USMTF-defined force-threat designator code used in combination with threat codes.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_maritime_3_2_USMTFEnvironmentCategoryCodeType",
-  "properties": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "javaType": "niem.domains.maritime._3_2.USMTFEnvironmentCategoryCodeType",
+  "properties": {},
   "additionalProperties": false
 }

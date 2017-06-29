@@ -4,8 +4,8 @@
   "title": "ObservedObjectLocation",
   "type": "object",
   "description": "A location of an observed object.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_ObservedObjectLocation",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.ObservedObjectLocation",
   "properties": {
     "ObservedObject2DGeospatialCoordinate": {
       "$ref": "ObservedObject2DGeospatialCoordinate.json"

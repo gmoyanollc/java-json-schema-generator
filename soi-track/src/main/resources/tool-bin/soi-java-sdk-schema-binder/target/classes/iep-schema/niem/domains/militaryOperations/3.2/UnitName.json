@@ -3,33 +3,34 @@
   "title": "UnitName",
   "type": "array",
   "description": "A character string assigned to represent a unit name.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
-    "value": {
-      "value": {
-        "type": "string"
-      }
-    },
+    "value": {},
     "id": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "ref": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "metadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     },
     "relationshipMetadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

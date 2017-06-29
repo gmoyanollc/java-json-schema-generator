@@ -3,11 +3,8 @@
   "title": "FacilityName",
   "type": "array",
   "description": "A name of a facility.",
-  "version": "0.4.4",
-  "items": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "items": {},
+  "maxItems": 16,
   "additionalItems": false
 }

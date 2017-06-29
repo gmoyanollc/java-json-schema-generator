@@ -4,12 +4,8 @@
   "title": "VerticalDatumCodeType",
   "type": "object",
   "description": "A data type for vertical datum codes.",
-  "version": "0.4.4",
-  "javaType": "niem_codes_nga_datum_3_0_VerticalDatumCodeType",
-  "properties": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "javaType": "niem.codes.nga_datum._3_0.VerticalDatumCodeType",
+  "properties": {},
   "additionalProperties": false
 }

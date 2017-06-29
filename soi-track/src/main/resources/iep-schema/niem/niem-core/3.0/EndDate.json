@@ -3,7 +3,7 @@
   "title": "EndDate",
   "type": "array",
   "description": "An end date.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "DateRepresentation": {
       "DateTime": {
@@ -11,5 +11,6 @@
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

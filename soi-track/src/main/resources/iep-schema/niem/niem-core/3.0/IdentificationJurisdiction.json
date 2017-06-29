@@ -3,7 +3,7 @@
   "title": "IdentificationJurisdiction",
   "type": "array",
   "description": "An area, region, or unit where a unique identification is issued.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "LocationCountry": {
       "LocationCountryName": {
@@ -11,5 +11,6 @@
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

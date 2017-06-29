@@ -6,11 +6,9 @@
   },
   "SystemIdentification": {
     "SystemIdentificationType": {
-      "IdentificationType": {
         "IdentificationID": [
           "https://mctssa.mcsc.usmc.mil/soi/datastore/2.0/ac5b998b-49ac-4fdb-9871-bf30d00abe19"
         ]
-      }
     }
   },
   "Track": [

@@ -4,8 +4,8 @@
   "title": "Origin",
   "type": "object",
   "description": "A definition of an origin in a relative location coordinate system. The coordinates of a point in the relative location system are defined based on this origin.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_cbrn_3_2_Origin",
+  "version": "0.4.5",
+  "javaType": "niem.domains.cbrn._3_2.Origin",
   "properties": {
     "OriginAugmentationPoint": {
       "OriginLocation": {

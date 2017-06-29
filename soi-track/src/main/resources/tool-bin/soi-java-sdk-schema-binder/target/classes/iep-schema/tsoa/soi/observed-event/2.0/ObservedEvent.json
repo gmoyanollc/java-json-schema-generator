@@ -4,11 +4,11 @@
   "title": "ObservedEvent",
   "type": "object",
   "description": "An observed event.",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_observed_event_2_0_ObservedEvent",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.observed_event._2_0.ObservedEvent",
   "properties": {
-    "value": {
-      "type": "string"
+    "Event": {
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/Event.json"
     }
   },
   "additionalProperties": false

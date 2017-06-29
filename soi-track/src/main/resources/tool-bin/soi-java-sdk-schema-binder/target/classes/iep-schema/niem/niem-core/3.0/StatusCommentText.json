@@ -5,7 +5,7 @@
   "type": "object",
   "description": "A comment regarding a status.",
   "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_StatusCommentText",
+  "javaType": "niem.niem.core._3_0.StatusCommentText",
   "properties": {
     "value": {
       "type": "string"

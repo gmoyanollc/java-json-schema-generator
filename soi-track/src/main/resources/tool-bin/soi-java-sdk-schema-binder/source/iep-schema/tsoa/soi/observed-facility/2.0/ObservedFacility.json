@@ -4,11 +4,11 @@
   "title": "ObservedFacility",
   "type": "object",
   "description": "An observed facility described by its properties.",
-  "version": "0.4.4",
-  "javaType": "tsoa_soi_observed_facility_2_0_ObservedFacility",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.observed_facility._2_0.ObservedFacility",
   "properties": {
-    "value": {
-      "type": "string"
+    "Facility": {
+      "$ref": "../../../../niem/niem-core/3.0/Facility.json"
     }
   },
   "additionalProperties": false

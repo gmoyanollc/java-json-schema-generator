@@ -4,9 +4,12 @@
   "title": "FullTelephoneNumberType",
   "type": "object",
   "description": "A data type for a full telephone number.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_FullTelephoneNumberType",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.FullTelephoneNumberType",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "TelephoneNumberFullID": {
       "$ref": "TelephoneNumberFullID.json"
     },

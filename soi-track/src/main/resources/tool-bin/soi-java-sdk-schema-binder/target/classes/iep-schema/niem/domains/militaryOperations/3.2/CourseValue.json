@@ -4,13 +4,14 @@
   "title": "CourseValue",
   "type": "object",
   "description": "A direction of horizontal motion with respect to true north, measured in degrees.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_CourseValue",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.CourseValue",
   "properties": {
     "sigmaErrorValue": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "number",
+        "null"
+      ]
     }
   },
   "additionalProperties": false

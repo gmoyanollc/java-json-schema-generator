@@ -4,9 +4,12 @@
   "title": "AngularMeasureType",
   "type": "object",
   "description": "A data type for the measurement of an angle.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_AngularMeasureType",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.AngularMeasureType",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "AngularDegreeValue": {
       "$ref": "AngularDegreeValue.json"
     },

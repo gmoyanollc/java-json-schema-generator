@@ -4,8 +4,8 @@
   "title": "FacilityAllegianceCountryCode",
   "type": "object",
   "description": "A designator for a country to which a facility owes its allegiance.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_FacilityAllegianceCountryCode",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.FacilityAllegianceCountryCode",
   "properties": {
     "CountryAlpha3CodeType": {
       "$ref": "../../../../niem/codes/nga_genc/3.0/CountryAlpha3CodeType.json"

@@ -4,8 +4,8 @@
   "title": "ContactInstantMessenger",
   "type": "object",
   "description": "A user account for an instant messaging program by which a person or organization may be contacted.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_ContactInstantMessenger",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.ContactInstantMessenger",
   "properties": {
     "InstantMessengerServiceName": {
       "$ref": "InstantMessengerServiceName.json"

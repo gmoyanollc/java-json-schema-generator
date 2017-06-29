@@ -4,12 +4,8 @@
   "title": "ContactTelephoneNumber",
   "type": "object",
   "description": "A telephone number for a telecommunication device by which a person or organization may be contacted.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_ContactTelephoneNumber",
-  "properties": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.ContactTelephoneNumber",
+  "properties": {},
   "additionalProperties": false
 }

@@ -4,31 +4,31 @@
   "title": "ObservationDateTime",
   "type": "object",
   "description": "A Date Time Group when this object was observed with the given information. Not to be confused with the Publish Time, which indicates when the system published the message.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_ObservationDateTime",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.ObservationDateTime",
   "properties": {
-    "value": {
-      "value": {
-        "type": "string"
-      }
-    },
+    "value": {},
     "id": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "ref": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "metadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     },
     "relationshipMetadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     }

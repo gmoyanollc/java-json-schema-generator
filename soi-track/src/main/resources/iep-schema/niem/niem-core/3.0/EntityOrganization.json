@@ -4,8 +4,8 @@
   "title": "EntityOrganization",
   "type": "object",
   "description": "An organization capable of bearing legal rights and responsibilities.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_EntityOrganization",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.EntityOrganization",
   "properties": {
     "OrganizationAbbreviationText": {
       "$ref": "OrganizationAbbreviationText.json"

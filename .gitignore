@@ -3,3 +3,4 @@
 .vscode/
 node_modules/
 tsoa-track/drop-latest-iepd/target
+soi-track/src/main/resources/tool-bin/soi-java-sdk-schema-binder/target

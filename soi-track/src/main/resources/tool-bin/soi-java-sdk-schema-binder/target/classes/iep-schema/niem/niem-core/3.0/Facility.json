@@ -3,7 +3,7 @@
   "title": "Facility",
   "type": "array",
   "description": "A building, place, or structure that provides a particular service.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "FacilityIdentification": {
       "$ref": "FacilityIdentification.json"
@@ -20,5 +20,6 @@
       }
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }

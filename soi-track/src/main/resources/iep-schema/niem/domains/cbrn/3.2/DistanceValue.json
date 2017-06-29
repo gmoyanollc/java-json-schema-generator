@@ -4,13 +4,14 @@
   "title": "DistanceValue",
   "type": "object",
   "description": "A scalar distance between the center of an object (i.e., instrument, detector, or item) or nuclide and the center of a reference point (Origin).",
-  "version": "0.4.4",
-  "javaType": "niem_domains_cbrn_3_2_DistanceValue",
+  "version": "0.4.5",
+  "javaType": "niem.domains.cbrn._3_2.DistanceValue",
   "properties": {
     "unitsText": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
   "additionalProperties": false

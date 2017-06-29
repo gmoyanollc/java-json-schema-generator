@@ -4,31 +4,31 @@
   "title": "LongitudeDegreeValue",
   "type": "object",
   "description": "A value that specifies the degree of a longitude. The value comes from a restricted range between -180 (inclusive) and +180 (exclusive).",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_LongitudeDegreeValue",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.LongitudeDegreeValue",
   "properties": {
-    "value": {
-      "value": {
-        "type": "string"
-      }
-    },
+    "value": {},
     "id": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "ref": {
-      "value": {
-        "type": "string"
-      }
+      "type": [
+        "string",
+        "null"
+      ]
     },
     "metadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     },
     "relationshipMetadata": {
-      "value": {
+      "type": "array",
+      "item": {
         "type": "string"
       }
     }

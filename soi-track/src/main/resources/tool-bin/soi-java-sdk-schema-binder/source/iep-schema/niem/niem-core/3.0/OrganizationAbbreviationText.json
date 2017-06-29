@@ -3,11 +3,8 @@
   "title": "OrganizationAbbreviationText",
   "type": "array",
   "description": "An abbreviation, acronym, or code for an organization name.",
-  "version": "0.4.4",
-  "items": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "items": {},
+  "maxItems": 16,
   "additionalItems": false
 }

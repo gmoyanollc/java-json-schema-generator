@@ -4,8 +4,8 @@
   "title": "ContactDSNTelephoneNumber",
   "type": "object",
   "description": "A Defense Switched Network (DSN) telephone number for a telecommunications device by which a person or organization may be contacted.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_ContactDSNTelephoneNumber",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.ContactDSNTelephoneNumber",
   "properties": {
     "FullTelephoneNumberType": {
       "$ref": "../../../../niem/niem-core/3.0/FullTelephoneNumberType.json"

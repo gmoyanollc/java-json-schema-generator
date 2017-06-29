@@ -3,11 +3,8 @@
   "title": "SystemName",
   "type": "array",
   "description": "A name of the kind or the source of a system identifier.",
-  "version": "0.4.4",
-  "items": {
-    "value": {
-      "type": "string"
-    }
-  },
+  "version": "0.4.5",
+  "items": {},
+  "maxItems": 16,
   "additionalItems": false
 }

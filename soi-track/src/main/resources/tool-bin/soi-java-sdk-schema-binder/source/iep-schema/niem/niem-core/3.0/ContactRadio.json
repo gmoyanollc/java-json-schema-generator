@@ -4,8 +4,8 @@
   "title": "ContactRadio",
   "type": "object",
   "description": "A method of contacting a person or organization by messages over a radio.",
-  "version": "0.4.4",
-  "javaType": "niem_niem_core_3_0_ContactRadio",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.ContactRadio",
   "properties": {
     "ContactRadioChannelText": {
       "$ref": "ContactRadioChannelText.json"

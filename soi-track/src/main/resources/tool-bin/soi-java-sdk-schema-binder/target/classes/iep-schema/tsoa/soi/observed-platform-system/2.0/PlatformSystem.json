@@ -3,7 +3,7 @@
   "title": "PlatformSystem",
   "type": "array",
   "description": "A platform system described by its properties.",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "items": {
     "SystemIdentification": {
       "$ref": "../../../../niem/domains/intelligence/3.2/SystemIdentification.json"
@@ -12,5 +12,6 @@
       "$ref": "PlatformStandardIdentityCode.json"
     }
   },
+  "maxItems": 16,
   "additionalItems": false
 }
