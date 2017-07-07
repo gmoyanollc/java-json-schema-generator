@@ -1,11 +1,15 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ContactInformationRankText",
   "title": "ContactInformationRankText",
-  "type": "string",
+  "type": "array",
   "description": "A military rank for the focal point of information concerning an activity or event.",
-  "version": "0.4.4",
-  "javaType": "niem_domains_militaryOperations_3_2_ContactInformationRankText",
-  "properties": {},
-  "additionalProperties": false
+  "version": "0.4.5",
+  "items": [
+    {
+      "type": "string",
+      "maxLength": 128
+    }
+  ],
+  "maxItems": 16,
+  "additionalItems": false
 }

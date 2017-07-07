@@ -6,6 +6,10 @@
   "description": "A name of a country, territory, dependency, or other such geopolitical subdivision of a location.",
   "version": "0.4.5",
   "javaType": "niem.niem_core._3_0.LocationCountryName",
-  "properties": {},
+  "properties": {
+    "TextType": {
+      "$ref": "TextType.json"
+    }
+  },
   "additionalProperties": false
 }

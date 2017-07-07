@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ContactInformationAugmentationType",
+  "title": "ContactInformationAugmentationType",
+  "type": "object",
+  "description": "A data type for additional information about a nc:Contact.",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.ContactInformationAugmentationType",
+  "properties": {
+    "AugmentationType": {
+      "$ref": "../../../../niem/structures/3.0/AugmentationType.json"
+    },
+    "ContactInformationRankText": {
+      "$ref": "ContactInformationRankText.json"
+    },
+    "ContactInformationSecureEmailID": {
+      "$ref": "ContactInformationSecureEmailID.json"
+    }
+  },
+  "additionalProperties": false
+}

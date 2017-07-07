@@ -5,10 +5,8 @@
   "description": "An area, region, or unit where a unique identification is issued.",
   "version": "0.4.5",
   "items": {
-    "LocationCountry": {
-      "LocationCountryName": {
-        "$ref": "LocationCountryName.json"
-      }
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     }
   },
   "maxItems": 16,

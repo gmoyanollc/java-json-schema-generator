@@ -7,6 +7,7 @@ var config;
 
 initialize();
 
+var generatedSchema;
 var sourceSchemaFile;
 var sourceSchemaBuffer;
 var sourceSchemaObject;
@@ -34,7 +35,8 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
   ssg.setSourceSchemaBaseDirRelativeDepth();
   ssg.setSubstitutionMappings();
   ssg.loadDocumentationMap();
-  ssg.generateObjectSchema(sourceSchemaObject);
+  generatedSchema = ssg.generateObjectSchema(sourceSchemaObject);
+  generatedSchema.logIdentifierList();
 };
 
 //writeDeferencedTargetSchemaFile();

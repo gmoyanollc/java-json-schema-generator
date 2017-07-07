@@ -13,7 +13,7 @@
   "sourceDocumentationBaseDir": "../xml-schema-content-extractor/output/",
   "w3cXmlTypeSchema": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/jsonschemas/w3c/2001/XMLSchema.jsonschema",
   "schemaSourceFilenames": [
-    "gov_niem_release_niem_domains_screening__3.jsonschema"
+    "TSOA_Track-schema.json"
   ],
   "schemaSourceFilenames_bak": [
     "gov_niem_release_niem_codes_nga_datum__3.jsonschema",
