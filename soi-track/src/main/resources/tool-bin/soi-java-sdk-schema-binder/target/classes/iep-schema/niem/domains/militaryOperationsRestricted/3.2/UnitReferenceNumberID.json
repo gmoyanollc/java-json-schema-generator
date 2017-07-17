@@ -5,18 +5,25 @@
   "description": "An identifier specifying the Unit Reference Number (URN) used by units to uniquely identify friendly military units, broadcast networks, and multicast groups.",
   "version": "0.4.5",
   "items": {
-    "value": {},
+    "undefined": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
     "id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "metadata": {
       "type": "array",

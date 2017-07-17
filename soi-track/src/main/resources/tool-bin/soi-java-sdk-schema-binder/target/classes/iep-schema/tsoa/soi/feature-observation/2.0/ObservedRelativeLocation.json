@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.feature_observation._2_0.ObservedRelativeLocation",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "RelativeLocation": {
       "$ref": "../../../../niem/domains/cbrn/3.2/RelativeLocation.json"
     }

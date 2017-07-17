@@ -34,9 +34,9 @@ public class CourseAngleMeasure {
      */
     @JsonProperty("AngularMeasureType")
     @Valid
-    private niem.niem.core._3_0.AngularMeasureType AngularMeasureType;
+    private niem.niem_core._3_0.AngularMeasureType AngularMeasureType;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseAngleMeasure\",\"title\":\"CourseAngleMeasure\",\"type\":\"object\",\"description\":\"An angular distance of a direction from a chosen reference direction. The measured and reference directions are located in the horizontal plane, and the value of the angle is positive in a clockwise direction as viewed from \\\"above\\\" the horizontal plane.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.CourseAngleMeasure\",\"properties\":{\"AngularMeasureType\":{\"$ref\":\"../../../../niem/niem-core/3.0/AngularMeasureType.json\"}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseAngleMeasure\",\"title\":\"CourseAngleMeasure\",\"type\":\"object\",\"description\":\"An angular distance of a direction from a chosen reference direction. The measured and reference directions are located in the horizontal plane, and the value of the angle is positive in a clockwise direction as viewed from \\\"above\\\" the horizontal plane.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.CourseAngleMeasure\",\"properties\":{\"AngularMeasureType\":{\"$ref\":\"../../../../niem/niem-core/3.0/AngularMeasureType.json\"}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
@@ -48,7 +48,7 @@ public class CourseAngleMeasure {
      *     The AngularMeasureType
      */
     @JsonProperty("AngularMeasureType")
-    public niem.niem.core._3_0.AngularMeasureType getAngularMeasureType() {
+    public niem.niem_core._3_0.AngularMeasureType getAngularMeasureType() {
         return AngularMeasureType;
     }
 
@@ -61,7 +61,7 @@ public class CourseAngleMeasure {
      *     The AngularMeasureType
      */
     @JsonProperty("AngularMeasureType")
-    public void setAngularMeasureType(niem.niem.core._3_0.AngularMeasureType AngularMeasureType) {
+    public void setAngularMeasureType(niem.niem_core._3_0.AngularMeasureType AngularMeasureType) {
         this.AngularMeasureType = AngularMeasureType;
     }
 
@@ -75,10 +75,10 @@ public class CourseAngleMeasure {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("AngularMeasureType".equals(name)) {
-            if (value instanceof niem.niem.core._3_0.AngularMeasureType) {
-                setAngularMeasureType(((niem.niem.core._3_0.AngularMeasureType) value));
+            if (value instanceof niem.niem_core._3_0.AngularMeasureType) {
+                setAngularMeasureType(((niem.niem_core._3_0.AngularMeasureType) value));
             } else {
-                throw new IllegalArgumentException(("property \"AngularMeasureType\" is of type \"niem.niem.core._3_0.AngularMeasureType\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"AngularMeasureType\" is of type \"niem.niem_core._3_0.AngularMeasureType\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
@@ -136,11 +136,11 @@ public class CourseAngleMeasure {
     }
 
     public static String[] getReferenceSchemaArray() {
-        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularMeasureType\",\"title\":\"AngularMeasureType\",\"type\":\"object\",\"description\":\"A data type for the measurement of an angle.\",\"version\":\"0.4.4\",\"javaType\":\"niem.niem.core._3_0.AngularMeasureType\",\"properties\":{\"AngularDegreeValue\":{\"$ref\":\"AngularDegreeValue.json\"},\"AngularMinuteValue\":{\"$ref\":\"AngularMinuteValue.json\"},\"AngularSecondValue\":{\"$ref\":\"AngularSecondValue.json\"}},\"additionalProperties\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularMinuteValue\",\"title\":\"AngularMinuteValue\",\"type\":\"array\",\"description\":\"A value that specifies a minute of a degree. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).\",\"version\":\"0.4.4\",\"items\":{\"value\":{\"value\":{\"type\":\"string\"}},\"id\":{\"value\":{\"type\":\"string\"}},\"ref\":{\"value\":{\"type\":\"string\"}},\"metadata\":{\"value\":{\"type\":\"string\"}},\"relationshipMetadata\":{\"value\":{\"type\":\"string\"}}},\"additionalItems\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularSecondValue\",\"title\":\"AngularSecondValue\",\"type\":\"array\",\"description\":\"A value that specifies a second of a minute. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).\",\"version\":\"0.4.4\",\"items\":{\"value\":{\"value\":{\"type\":\"string\"}},\"id\":{\"value\":{\"type\":\"string\"}},\"ref\":{\"value\":{\"type\":\"string\"}},\"metadata\":{\"value\":{\"type\":\"string\"}},\"relationshipMetadata\":{\"value\":{\"type\":\"string\"}}},\"additionalItems\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularDegreeValue\",\"title\":\"AngularDegreeValue\",\"type\":\"array\",\"description\":\"A value that specifies a degree of an angular measure.\",\"version\":\"0.4.4\",\"items\":[{\"type\":\"number\"}],\"additionalItems\":false}"};
+        return new String[] {"{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularDegreeValue\",\"title\":\"AngularDegreeValue\",\"type\":\"array\",\"description\":\"A value that specifies a degree of an angular measure.\",\"version\":\"0.4.5\",\"items\":{\"type\":\"number\",\"maximum\":2147483647,\"minimum\":-2147483648},\"maxItems\":16,\"additionalItems\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularMinuteValue\",\"title\":\"AngularMinuteValue\",\"type\":\"array\",\"description\":\"A value that specifies a minute of a degree. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).\",\"version\":\"0.4.5\",\"items\":{\"undefined\":{\"type\":[\"number\",\"null\"]},\"id\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"ref\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"metadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"}},\"relationshipMetadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"}}},\"maxItems\":16,\"additionalItems\":false}", "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/structures/3.0/#ObjectType\",\"title\":\"ObjectType\",\"type\":\"object\",\"description\":\"\",\"version\":\"0.4.5\",\"javaType\":\"niem.structures._3_0.ObjectType\",\"properties\":{\"id\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"ref\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"metadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"},\"maxItems\":16},\"relationshipMetadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"},\"maxItems\":16}},\"additionalProperties\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularSecondValue\",\"title\":\"AngularSecondValue\",\"type\":\"array\",\"description\":\"A value that specifies a second of a minute. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).\",\"version\":\"0.4.5\",\"items\":{\"undefined\":{\"type\":[\"number\",\"null\"]},\"id\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"ref\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"metadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"}},\"relationshipMetadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"}}},\"maxItems\":16,\"additionalItems\":false}", "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#AngularMeasureType\",\"title\":\"AngularMeasureType\",\"type\":\"object\",\"description\":\"A data type for the measurement of an angle.\",\"version\":\"0.4.5\",\"javaType\":\"niem.niem_core._3_0.AngularMeasureType\",\"properties\":{\"ObjectType\":{\"$ref\":\"../../../niem/structures/3.0/ObjectType.json\"},\"AngularDegreeValue\":{\"$ref\":\"AngularDegreeValue.json\"},\"AngularMinuteValue\":{\"$ref\":\"AngularMinuteValue.json\"},\"AngularSecondValue\":{\"$ref\":\"AngularSecondValue.json\"}},\"additionalProperties\":false}"};
     }
 
     public static String[] getReferenceArray() {
-        return new String[] {"../../../../niem/niem-core/3.0/AngularMeasureType.json", "AngularMinuteValue.json", "AngularSecondValue.json", "AngularDegreeValue.json"};
+        return new String[] {"AngularDegreeValue.json", "AngularMinuteValue.json", "../../../niem/structures/3.0/ObjectType.json", "AngularSecondValue.json", "../../../../niem/niem-core/3.0/AngularMeasureType.json"};
     }
 
     public static String getSchema() {

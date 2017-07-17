@@ -34,9 +34,9 @@ public class CourseCode {
      */
     @JsonProperty("DirectionCodeType")
     @Valid
-    private niem.niem.core._3_0.DirectionCodeType DirectionCodeType;
+    private niem.niem_core._3_0.DirectionCodeType DirectionCodeType;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseCode\",\"title\":\"CourseCode\",\"type\":\"object\",\"description\":\"A designator for the 16 generalized directions (for example: southeast) based on the compass rose.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.CourseCode\",\"properties\":{\"DirectionCodeType\":{\"$ref\":\"../../../../niem/niem-core/3.0/DirectionCodeType.json\"}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseCode\",\"title\":\"CourseCode\",\"type\":\"object\",\"description\":\"A designator for the 16 generalized directions (for example: southeast) based on the compass rose.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.CourseCode\",\"properties\":{\"DirectionCodeType\":{\"$ref\":\"../../../../niem/niem-core/3.0/DirectionCodeType.json\"}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
@@ -48,7 +48,7 @@ public class CourseCode {
      *     The DirectionCodeType
      */
     @JsonProperty("DirectionCodeType")
-    public niem.niem.core._3_0.DirectionCodeType getDirectionCodeType() {
+    public niem.niem_core._3_0.DirectionCodeType getDirectionCodeType() {
         return DirectionCodeType;
     }
 
@@ -61,7 +61,7 @@ public class CourseCode {
      *     The DirectionCodeType
      */
     @JsonProperty("DirectionCodeType")
-    public void setDirectionCodeType(niem.niem.core._3_0.DirectionCodeType DirectionCodeType) {
+    public void setDirectionCodeType(niem.niem_core._3_0.DirectionCodeType DirectionCodeType) {
         this.DirectionCodeType = DirectionCodeType;
     }
 
@@ -75,10 +75,10 @@ public class CourseCode {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("DirectionCodeType".equals(name)) {
-            if (value instanceof niem.niem.core._3_0.DirectionCodeType) {
-                setDirectionCodeType(((niem.niem.core._3_0.DirectionCodeType) value));
+            if (value instanceof niem.niem_core._3_0.DirectionCodeType) {
+                setDirectionCodeType(((niem.niem_core._3_0.DirectionCodeType) value));
             } else {
-                throw new IllegalArgumentException(("property \"DirectionCodeType\" is of type \"niem.niem.core._3_0.DirectionCodeType\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"DirectionCodeType\" is of type \"niem.niem_core._3_0.DirectionCodeType\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
@@ -136,7 +136,7 @@ public class CourseCode {
     }
 
     public static String[] getReferenceSchemaArray() {
-        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#DirectionCodeType\",\"title\":\"DirectionCodeType\",\"type\":\"object\",\"description\":\"A data type for compass directions.\",\"version\":\"0.4.4\",\"javaType\":\"niem.niem.core._3_0.DirectionCodeType\",\"properties\":{\"value\":{\"type\":\"string\"}},\"additionalProperties\":false}"};
+        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#DirectionCodeType\",\"title\":\"DirectionCodeType\",\"type\":\"object\",\"description\":\"A data type for compass directions.\",\"version\":\"0.4.5\",\"javaType\":\"niem.niem_core._3_0.DirectionCodeType\",\"properties\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"additionalProperties\":false}"};
     }
 
     public static String[] getReferenceArray() {

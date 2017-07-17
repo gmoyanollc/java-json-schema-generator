@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#OPEXCodeType",
+  "title": "OPEXCodeType",
+  "type": "object",
+  "description": "A data type for the operational status of an event.",
+  "version": "0.4.5",
+  "javaType": "niem.domains.militaryOperations._3_2.OPEXCodeType",
+  "properties": {
+    "value": {
+      "type" : "string",
+        "description" : "http://www.w3.org/TR/xmlschema-2/#normalizedString",
+        "enum":[
+          "EXERCISE",
+          "OPERATIONS",
+          "SIMULATION",
+          "TEST"
+        ]}
+  },
+  "additionalProperties": false
+}

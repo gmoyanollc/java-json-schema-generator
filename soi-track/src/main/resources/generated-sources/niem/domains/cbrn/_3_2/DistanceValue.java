@@ -26,9 +26,9 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class DistanceValue {
 
     @JsonProperty("unitsText")
-    private Object unitsText;
+    private String unitsText;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/cbrn/3.2/#DistanceValue\",\"title\":\"DistanceValue\",\"type\":\"object\",\"description\":\"A scalar distance between the center of an object (i.e., instrument, detector, or item) or nuclide and the center of a reference point (Origin).\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.cbrn._3_2.DistanceValue\",\"properties\":{\"unitsText\":{\"value\":{\"type\":\"string\"}}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/cbrn/3.2/#DistanceValue\",\"title\":\"DistanceValue\",\"type\":\"object\",\"description\":\"A scalar distance between the center of an object (i.e., instrument, detector, or item) or nuclide and the center of a reference point (Origin).\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.cbrn._3_2.DistanceValue\",\"properties\":{\"unitsText\":{\"type\":[\"string\",\"null\"]}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
@@ -37,7 +37,7 @@ public class DistanceValue {
      *     The unitsText
      */
     @JsonProperty("unitsText")
-    public Object getUnitsText() {
+    public String getUnitsText() {
         return unitsText;
     }
 
@@ -47,7 +47,7 @@ public class DistanceValue {
      *     The unitsText
      */
     @JsonProperty("unitsText")
-    public void setUnitsText(Object unitsText) {
+    public void setUnitsText(String unitsText) {
         this.unitsText = unitsText;
     }
 
@@ -61,10 +61,10 @@ public class DistanceValue {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("unitsText".equals(name)) {
-            if (value instanceof Object) {
-                setUnitsText(((Object) value));
+            if (value instanceof String) {
+                setUnitsText(((String) value));
             } else {
-                throw new IllegalArgumentException(("property \"unitsText\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"unitsText\" is of type \"java.lang.String\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {

@@ -4,7 +4,11 @@
   "type": "array",
   "description": "A complete name of a person.",
   "version": "0.4.5",
-  "items": {},
+  "items": {
+    "ProperNameTextType": {
+      "$ref": "ProperNameTextType.json"
+    }
+  },
   "maxItems": 16,
   "additionalItems": false
 }

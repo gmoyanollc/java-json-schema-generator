@@ -4,12 +4,11 @@
   "type": "array",
   "description": "An identifier.",
   "version": "0.4.5",
-  "items": [
+  "items": 
     {
       "type": "string",
       "maxLength": 128
-    }
-  ],
+    },
   "maxItems": 16,
   "additionalItems": false
 }

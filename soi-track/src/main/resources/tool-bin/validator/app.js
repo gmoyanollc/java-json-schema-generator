@@ -3,7 +3,8 @@ var Ajv = require('ajv');
 
 var resultSummary = [];
 //var schemaFile = '../../iep-schema/SoiTrack-dereferenced.json';
-var schemaFile = '../../iep-schema/TsoaTrack-dereferenced.json';
+//045 var schemaFile = '../../iep-schema/TsoaTrack-dereferenced.json';
+var schemaFile = '../soi-java-sdk-schema-binder/source/dereferenced-TsoaTrack.json';
 const dataFileSet = [
   "../../iep-sample/observed-military-unit.json",
   "../../iep-sample/observed-facility.json",

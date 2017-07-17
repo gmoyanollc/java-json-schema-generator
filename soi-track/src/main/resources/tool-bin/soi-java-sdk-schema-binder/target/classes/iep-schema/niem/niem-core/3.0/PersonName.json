@@ -5,6 +5,9 @@
   "description": "A combination of names and/or titles by which a person is known.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "PersonFullName": {
       "$ref": "PersonFullName.json"
     }

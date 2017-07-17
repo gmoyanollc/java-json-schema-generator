@@ -5,6 +5,9 @@
   "description": "A military element whose structure is prescribed by competent authority.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "UnitName": {
       "$ref": "UnitName.json"
     },

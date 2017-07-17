@@ -1,0 +1,12 @@
+{
+  "id": "http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservedObject2DGeospatialCoordinate",
+  "title": "ObservedObject2DGeospatialCoordinate",
+  "type": "array",
+  "description": "A latitude and longitude of an observed object.",
+  "version": "0.4.5",
+  "items": {
+    "$ref": "../../../../niem/niem-core/3.0/Location2DGeospatialCoordinateType.json"
+  },
+  "maxItems": 16,
+  "additionalItems": false
+}

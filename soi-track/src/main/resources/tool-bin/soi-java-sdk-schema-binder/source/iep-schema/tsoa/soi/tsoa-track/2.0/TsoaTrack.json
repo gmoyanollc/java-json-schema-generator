@@ -9,6 +9,15 @@
   "properties": {
     "ObjectType": {
       "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
+    "Identification": {
+      "$ref": "../../../../niem/niem-core/3.0/Identification.json"
+    },
+    "SystemIdentification": {
+      "$ref": "../../../../niem/domains/intelligence/3.2/SystemIdentification.json"
+    },
+    "Track": {
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/Track.json"
     }
   },
   "additionalProperties": false

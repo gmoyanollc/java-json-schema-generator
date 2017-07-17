@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#MeasurePoint",
+  "title": "MeasurePoint",
+  "type": "object",
+  "description": "A data concept for a measurement value.",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.MeasurePoint",
+  "properties": {
+    "MeasureValue": {
+      "MeasureIntegerValue": {
+        "value": {
+          "type" : [ "integer", "null" ],
+			    "description" : "http://www.w3.org/TR/xmlschema-2/#decimal",
+          "maximum": 2147483647, 
+          "minimum": -2147483648
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

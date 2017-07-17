@@ -5,6 +5,9 @@
   "description": "A building, place, or structure that provides a particular service.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "FacilityIdentification": {
       "$ref": "FacilityIdentification.json"
     },

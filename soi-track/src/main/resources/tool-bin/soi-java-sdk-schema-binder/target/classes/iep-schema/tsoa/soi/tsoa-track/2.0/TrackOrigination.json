@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.tsoa_track._2_0.TrackOrigination",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "OriginatorTrackIdentification": {
       "$ref": "OriginatorTrackIdentification.json"
     },

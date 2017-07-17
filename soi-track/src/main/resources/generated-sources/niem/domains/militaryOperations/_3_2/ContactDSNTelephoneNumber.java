@@ -34,9 +34,9 @@ public class ContactDSNTelephoneNumber {
      */
     @JsonProperty("FullTelephoneNumberType")
     @Valid
-    private niem.niem.core._3_0.FullTelephoneNumberType FullTelephoneNumberType;
+    private niem.niem_core._3_0.FullTelephoneNumberType FullTelephoneNumberType;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#ContactDSNTelephoneNumber\",\"title\":\"ContactDSNTelephoneNumber\",\"type\":\"object\",\"description\":\"A Defense Switched Network (DSN) telephone number for a telecommunications device by which a person or organization may be contacted.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.ContactDSNTelephoneNumber\",\"properties\":{\"FullTelephoneNumberType\":{\"$ref\":\"../../../../niem/niem-core/3.0/FullTelephoneNumberType.json\"}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#ContactDSNTelephoneNumber\",\"title\":\"ContactDSNTelephoneNumber\",\"type\":\"object\",\"description\":\"A Defense Switched Network (DSN) telephone number for a telecommunications device by which a person or organization may be contacted.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.ContactDSNTelephoneNumber\",\"properties\":{\"FullTelephoneNumberType\":{\"$ref\":\"../../../../niem/niem-core/3.0/FullTelephoneNumberType.json\"}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
@@ -48,7 +48,7 @@ public class ContactDSNTelephoneNumber {
      *     The FullTelephoneNumberType
      */
     @JsonProperty("FullTelephoneNumberType")
-    public niem.niem.core._3_0.FullTelephoneNumberType getFullTelephoneNumberType() {
+    public niem.niem_core._3_0.FullTelephoneNumberType getFullTelephoneNumberType() {
         return FullTelephoneNumberType;
     }
 
@@ -61,7 +61,7 @@ public class ContactDSNTelephoneNumber {
      *     The FullTelephoneNumberType
      */
     @JsonProperty("FullTelephoneNumberType")
-    public void setFullTelephoneNumberType(niem.niem.core._3_0.FullTelephoneNumberType FullTelephoneNumberType) {
+    public void setFullTelephoneNumberType(niem.niem_core._3_0.FullTelephoneNumberType FullTelephoneNumberType) {
         this.FullTelephoneNumberType = FullTelephoneNumberType;
     }
 
@@ -75,10 +75,10 @@ public class ContactDSNTelephoneNumber {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("FullTelephoneNumberType".equals(name)) {
-            if (value instanceof niem.niem.core._3_0.FullTelephoneNumberType) {
-                setFullTelephoneNumberType(((niem.niem.core._3_0.FullTelephoneNumberType) value));
+            if (value instanceof niem.niem_core._3_0.FullTelephoneNumberType) {
+                setFullTelephoneNumberType(((niem.niem_core._3_0.FullTelephoneNumberType) value));
             } else {
-                throw new IllegalArgumentException(("property \"FullTelephoneNumberType\" is of type \"niem.niem.core._3_0.FullTelephoneNumberType\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"FullTelephoneNumberType\" is of type \"niem.niem_core._3_0.FullTelephoneNumberType\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
@@ -136,11 +136,11 @@ public class ContactDSNTelephoneNumber {
     }
 
     public static String[] getReferenceSchemaArray() {
-        return new String[] {"{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#TelephoneSuffixID\",\"title\":\"TelephoneSuffixID\",\"type\":\"array\",\"description\":\"An additional sequence of numbers to be entered after a call connects to be directed to the appropriate place.\",\"version\":\"0.4.4\",\"items\":[{\"type\":\"string\"}],\"additionalItems\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#TelephoneNumberFullID\",\"title\":\"TelephoneNumberFullID\",\"type\":\"array\",\"description\":\"A complete telephone number.\",\"version\":\"0.4.4\",\"items\":[{\"type\":\"string\"}],\"additionalItems\":false}", "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#FullTelephoneNumberType\",\"title\":\"FullTelephoneNumberType\",\"type\":\"object\",\"description\":\"A data type for a full telephone number.\",\"version\":\"0.4.4\",\"javaType\":\"niem.niem.core._3_0.FullTelephoneNumberType\",\"properties\":{\"TelephoneNumberFullID\":{\"$ref\":\"TelephoneNumberFullID.json\"},\"TelephoneSuffixID\":{\"$ref\":\"TelephoneSuffixID.json\"}},\"additionalProperties\":false}"};
+        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#FullTelephoneNumberType\",\"title\":\"FullTelephoneNumberType\",\"type\":\"object\",\"description\":\"A data type for a full telephone number.\",\"version\":\"0.4.5\",\"javaType\":\"niem.niem_core._3_0.FullTelephoneNumberType\",\"properties\":{\"ObjectType\":{\"$ref\":\"../../../niem/structures/3.0/ObjectType.json\"},\"TelephoneNumberFullID\":{\"$ref\":\"TelephoneNumberFullID.json\"},\"TelephoneSuffixID\":{\"$ref\":\"TelephoneSuffixID.json\"}},\"additionalProperties\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#TelephoneSuffixID\",\"title\":\"TelephoneSuffixID\",\"type\":\"array\",\"description\":\"An additional sequence of numbers to be entered after a call connects to be directed to the appropriate place.\",\"version\":\"0.4.5\",\"items\":{\"type\":\"string\",\"maxLength\":128},\"maxItems\":16,\"additionalItems\":false}", "{\"id\":\"http://release.niem.gov/niem/niem-core/3.0/#TelephoneNumberFullID\",\"title\":\"TelephoneNumberFullID\",\"type\":\"array\",\"description\":\"A complete telephone number.\",\"version\":\"0.4.5\",\"items\":{\"type\":\"string\",\"maxLength\":128},\"maxItems\":16,\"additionalItems\":false}", "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/structures/3.0/#ObjectType\",\"title\":\"ObjectType\",\"type\":\"object\",\"description\":\"\",\"version\":\"0.4.5\",\"javaType\":\"niem.structures._3_0.ObjectType\",\"properties\":{\"id\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"ref\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"metadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"},\"maxItems\":16},\"relationshipMetadata\":{\"type\":\"array\",\"item\":{\"type\":\"string\"},\"maxItems\":16}},\"additionalProperties\":false}"};
     }
 
     public static String[] getReferenceArray() {
-        return new String[] {"TelephoneSuffixID.json", "TelephoneNumberFullID.json", "../../../../niem/niem-core/3.0/FullTelephoneNumberType.json"};
+        return new String[] {"../../../../niem/niem-core/3.0/FullTelephoneNumberType.json", "TelephoneSuffixID.json", "TelephoneNumberFullID.json", "../../../niem/structures/3.0/ObjectType.json"};
     }
 
     public static String getSchema() {

@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "niem.domains.militaryOperations._3_2.CourseAngleDegreesMeasure",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "AngleDegreesMeasure": {
       "$ref": "AngleDegreesMeasure.json"
     },

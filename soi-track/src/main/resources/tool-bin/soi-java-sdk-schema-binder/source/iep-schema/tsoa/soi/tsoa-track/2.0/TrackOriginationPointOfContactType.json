@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/tsoa-track/2.0/#TrackOriginationPointOfContactType",
+  "title": "TrackOriginationPointOfContactType",
+  "type": "object",
+  "description": "A data type for a Track Origination Point-Of-Contact.",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.tsoa_track._2_0.TrackOriginationPointOfContactType",
+  "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
+    "ContactInformation": {
+      "$ref": "../../../../niem/niem-core/3.0/ContactInformation.json"
+    }
+  },
+  "additionalProperties": false
+}

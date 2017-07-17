@@ -34,9 +34,9 @@ public class DirectionDatumCode {
      */
     @JsonProperty("DirectionDatumCodeType")
     @Valid
-    private niem.codes.nga.datum._3_0.DirectionDatumCodeType DirectionDatumCodeType;
+    private niem.codes.nga_datum._3_0.DirectionDatumCodeType DirectionDatumCodeType;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#DirectionDatumCode\",\"title\":\"DirectionDatumCode\",\"type\":\"object\",\"description\":\"A designator for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.DirectionDatumCode\",\"properties\":{\"DirectionDatumCodeType\":{\"$ref\":\"../../../../niem/codes/nga_datum/3.0/DirectionDatumCodeType.json\"}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#DirectionDatumCode\",\"title\":\"DirectionDatumCode\",\"type\":\"object\",\"description\":\"A designator for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.DirectionDatumCode\",\"properties\":{\"DirectionDatumCodeType\":{\"$ref\":\"../../../../niem/codes/nga_datum/3.0/DirectionDatumCodeType.json\"}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
@@ -48,7 +48,7 @@ public class DirectionDatumCode {
      *     The DirectionDatumCodeType
      */
     @JsonProperty("DirectionDatumCodeType")
-    public niem.codes.nga.datum._3_0.DirectionDatumCodeType getDirectionDatumCodeType() {
+    public niem.codes.nga_datum._3_0.DirectionDatumCodeType getDirectionDatumCodeType() {
         return DirectionDatumCodeType;
     }
 
@@ -61,7 +61,7 @@ public class DirectionDatumCode {
      *     The DirectionDatumCodeType
      */
     @JsonProperty("DirectionDatumCodeType")
-    public void setDirectionDatumCodeType(niem.codes.nga.datum._3_0.DirectionDatumCodeType DirectionDatumCodeType) {
+    public void setDirectionDatumCodeType(niem.codes.nga_datum._3_0.DirectionDatumCodeType DirectionDatumCodeType) {
         this.DirectionDatumCodeType = DirectionDatumCodeType;
     }
 
@@ -75,10 +75,10 @@ public class DirectionDatumCode {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("DirectionDatumCodeType".equals(name)) {
-            if (value instanceof niem.codes.nga.datum._3_0.DirectionDatumCodeType) {
-                setDirectionDatumCodeType(((niem.codes.nga.datum._3_0.DirectionDatumCodeType) value));
+            if (value instanceof niem.codes.nga_datum._3_0.DirectionDatumCodeType) {
+                setDirectionDatumCodeType(((niem.codes.nga_datum._3_0.DirectionDatumCodeType) value));
             } else {
-                throw new IllegalArgumentException(("property \"DirectionDatumCodeType\" is of type \"niem.codes.nga.datum._3_0.DirectionDatumCodeType\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"DirectionDatumCodeType\" is of type \"niem.codes.nga_datum._3_0.DirectionDatumCodeType\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
@@ -136,7 +136,7 @@ public class DirectionDatumCode {
     }
 
     public static String[] getReferenceSchemaArray() {
-        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/codes/nga_datum/3.0/#DirectionDatumCodeType\",\"title\":\"DirectionDatumCodeType\",\"type\":\"object\",\"description\":\"A data type for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).\",\"version\":\"0.4.4\",\"javaType\":\"niem.codes.nga.datum._3_0.DirectionDatumCodeType\",\"properties\":{\"value\":{\"type\":\"string\"}},\"additionalProperties\":false}"};
+        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/codes/nga_datum/3.0/#DirectionDatumCodeType\",\"title\":\"DirectionDatumCodeType\",\"type\":\"object\",\"description\":\"A data type for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).\",\"version\":\"0.4.5\",\"javaType\":\"niem.codes.nga_datum._3_0.DirectionDatumCodeType\",\"properties\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"additionalProperties\":false}"};
     }
 
     public static String[] getReferenceArray() {

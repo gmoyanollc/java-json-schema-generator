@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "niem.niem_core._3_0.LocationHeightMeasureType",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "MeasureValue": {
       "MeasurePoint": {
         "$ref": "MeasurePoint.json"

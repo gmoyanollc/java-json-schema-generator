@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/feature-observation/2.0/#SpatialEnvironmentCode",
+  "title": "SpatialEnvironmentCode",
+  "type": "object",
+  "description": "A spatial environment Code.",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.feature_observation._2_0.SpatialEnvironmentCode",
+  "properties": {
+    "USMTFEnvironmentCategoryCodeType": {
+      "$ref": "../../../../niem/domains/maritime/3.2/USMTFEnvironmentCategoryCodeType.json"
+    }
+  },
+  "additionalProperties": false
+}

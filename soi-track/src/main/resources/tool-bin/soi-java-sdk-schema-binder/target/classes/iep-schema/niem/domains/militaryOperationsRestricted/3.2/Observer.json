@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "niem.domains.militaryOperationsRestricted._3_2.Observer",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "ObserverAugmentationPoint": {
       "ObserverIdentification": {
         "$ref": "../../../../tsoa/soi/feature-observer/2.0/ObserverIdentification.json"

@@ -5,6 +5,9 @@
   "description": "An entity that may be contacted by using the given contact information.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "EntityRepresentation": {
       "EntityPerson": {
         "$ref": "EntityPerson.json"

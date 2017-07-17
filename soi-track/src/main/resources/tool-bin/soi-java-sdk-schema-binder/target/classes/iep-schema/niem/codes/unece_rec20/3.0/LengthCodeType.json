@@ -6,6 +6,12 @@
   "description": "A data type for units of measurements for a length value.",
   "version": "0.4.5",
   "javaType": "niem.codes.unece_rec20._3_0.LengthCodeType",
-  "properties": {},
+  "properties": {
+    "type": [
+      "string",
+      "null"
+    ],
+    "maxLength": 128
+  },
   "additionalProperties": false
 }

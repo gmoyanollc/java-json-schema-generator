@@ -5,6 +5,9 @@
   "description": "A series of related contacts displayed on a data display console or other display device.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "TrackAugmentationPoint": {
       "FeatureObservation": {
         "$ref": "../../../../tsoa/soi/feature-observation/2.0/FeatureObservation.json"

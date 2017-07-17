@@ -6,6 +6,10 @@
   "description": "A combination of one or more weapons with all related equipment, materials, services, personnel, and means of delivery and deployment (if applicable) required for self-sufficiency.",
   "version": "0.4.5",
   "javaType": "niem.domains.militaryOperationsRestricted._3_2.WeaponSystem",
-  "properties": {},
+  "properties": {
+    "ItemType": {
+      "$ref": "../../../../niem/niem-core/3.0/ItemType.json"
+    }
+  },
   "additionalProperties": false
 }

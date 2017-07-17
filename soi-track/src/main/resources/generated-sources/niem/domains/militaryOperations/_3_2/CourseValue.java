@@ -26,9 +26,9 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class CourseValue {
 
     @JsonProperty("sigmaErrorValue")
-    private Object sigmaErrorValue;
+    private Double sigmaErrorValue;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseValue\",\"title\":\"CourseValue\",\"type\":\"object\",\"description\":\"A direction of horizontal motion with respect to true north, measured in degrees.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.CourseValue\",\"properties\":{\"sigmaErrorValue\":{\"value\":{\"type\":\"string\"}}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#CourseValue\",\"title\":\"CourseValue\",\"type\":\"object\",\"description\":\"A direction of horizontal motion with respect to true north, measured in degrees.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.CourseValue\",\"properties\":{\"sigmaErrorValue\":{\"type\":[\"number\",\"null\"]}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
@@ -37,7 +37,7 @@ public class CourseValue {
      *     The sigmaErrorValue
      */
     @JsonProperty("sigmaErrorValue")
-    public Object getSigmaErrorValue() {
+    public Double getSigmaErrorValue() {
         return sigmaErrorValue;
     }
 
@@ -47,7 +47,7 @@ public class CourseValue {
      *     The sigmaErrorValue
      */
     @JsonProperty("sigmaErrorValue")
-    public void setSigmaErrorValue(Object sigmaErrorValue) {
+    public void setSigmaErrorValue(Double sigmaErrorValue) {
         this.sigmaErrorValue = sigmaErrorValue;
     }
 
@@ -61,10 +61,10 @@ public class CourseValue {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("sigmaErrorValue".equals(name)) {
-            if (value instanceof Object) {
-                setSigmaErrorValue(((Object) value));
+            if (value instanceof Double) {
+                setSigmaErrorValue(((Double) value));
             } else {
-                throw new IllegalArgumentException(("property \"sigmaErrorValue\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"sigmaErrorValue\" is of type \"java.lang.Double\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {

@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.feature_observer._2_0.ObserverIdentification",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "SystemIdentification": {
       "$ref": "../../../../niem/domains/intelligence/3.2/SystemIdentification.json"
     }

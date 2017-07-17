@@ -25,13 +25,15 @@
       "type": "array",
       "item": {
         "type": "string"
-      }
+      },
+      "maxItems": 16
     },
     "relationshipMetadata": {
       "type": "array",
       "item": {
         "type": "string"
-      }
+      },
+      "maxItems": 16
     }
   },
   "additionalProperties": false

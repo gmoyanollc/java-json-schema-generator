@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#LengthUnitCode",
+  "title": "LengthUnitCode",
+  "type": "object",
+  "description": "A unit of measure of a length value.",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.LengthUnitCode",
+  "properties": {
+    "LengthCodeType": {
+      "$ref": "../../../niem/codes/unece_rec20/3.0/LengthCodeType.json"
+    }
+  },
+  "additionalProperties": false
+}

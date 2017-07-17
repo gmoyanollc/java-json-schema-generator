@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#AngularMeasureType",
+  "title": "AngularMeasureType",
+  "type": "object",
+  "description": "A data type for the measurement of an angle.",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.AngularMeasureType",
+  "properties": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
+    "AngularDegreeValue": {
+      "$ref": "AngularDegreeValue.json"
+    },
+    "AngularMinuteValue": {
+      "$ref": "AngularMinuteValue.json"
+    },
+    "AngularSecondValue": {
+      "$ref": "AngularSecondValue.json"
+    }
+  },
+  "additionalProperties": false
+}

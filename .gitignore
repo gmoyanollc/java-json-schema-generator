@@ -4,3 +4,4 @@
 node_modules/
 tsoa-track/drop-latest-iepd/target
 soi-track/src/main/resources/tool-bin/soi-java-sdk-schema-binder/target
+soi-track/src/main/resources/tool-bin/schema-java-binder

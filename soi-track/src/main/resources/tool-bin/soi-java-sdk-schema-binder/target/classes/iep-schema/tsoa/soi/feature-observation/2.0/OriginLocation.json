@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.feature_observation._2_0.OriginLocation",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "AltitudeMeasure": {
       "$ref": "../../../../niem/domains/militaryOperations/3.2/AltitudeMeasure.json"
     },

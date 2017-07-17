@@ -6,6 +6,10 @@
   "description": "A telephone number for a telecommunication device by which a person or organization may be contacted.",
   "version": "0.4.5",
   "javaType": "niem.niem_core._3_0.ContactTelephoneNumber",
-  "properties": {},
+  "properties": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    }
+  },
   "additionalProperties": false
 }

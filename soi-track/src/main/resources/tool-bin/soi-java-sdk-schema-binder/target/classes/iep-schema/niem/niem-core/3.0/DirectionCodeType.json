@@ -6,6 +6,12 @@
   "description": "A data type for compass directions.",
   "version": "0.4.5",
   "javaType": "niem.niem_core._3_0.DirectionCodeType",
-  "properties": {},
+  "properties": {
+    "type": [
+      "string",
+      "null"
+    ],
+    "maxLength": 128
+  },
   "additionalProperties": false
 }

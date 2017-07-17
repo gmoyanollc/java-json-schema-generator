@@ -5,6 +5,9 @@
   "description": "An identification assigned to a facility.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+    },
     "IdentificationID": {
       "$ref": "IdentificationID.json"
     },

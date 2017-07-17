@@ -21,34 +21,57 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "value"
+    "type",
+    "maxLength"
 })
 public class USMTFEnvironmentCategoryCodeType {
 
-    @JsonProperty("value")
-    private String value;
+    @JsonProperty("type")
+    private Object type;
+    @JsonProperty("maxLength")
+    private Object maxLength;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/maritime/3.2/#USMTFEnvironmentCategoryCodeType\",\"title\":\"USMTFEnvironmentCategoryCodeType\",\"type\":\"object\",\"description\":\"A data type for a USMTF-defined force-threat designator code used in combination with threat codes.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.maritime._3_2.USMTFEnvironmentCategoryCodeType\",\"properties\":{\"value\":{\"type\":\"string\"}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/maritime/3.2/#USMTFEnvironmentCategoryCodeType\",\"title\":\"USMTFEnvironmentCategoryCodeType\",\"type\":\"object\",\"description\":\"A data type for a USMTF-defined force-threat designator code used in combination with threat codes.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.maritime._3_2.USMTFEnvironmentCategoryCodeType\",\"properties\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
      * 
      * @return
-     *     The value
+     *     The type
      */
-    @JsonProperty("value")
-    public String getValue() {
-        return value;
+    @JsonProperty("type")
+    public Object getType() {
+        return type;
     }
 
     /**
      * 
-     * @param value
-     *     The value
+     * @param type
+     *     The type
      */
-    @JsonProperty("value")
-    public void setValue(String value) {
-        this.value = value;
+    @JsonProperty("type")
+    public void setType(Object type) {
+        this.type = type;
+    }
+
+    /**
+     * 
+     * @return
+     *     The maxLength
+     */
+    @JsonProperty("maxLength")
+    public Object getMaxLength() {
+        return maxLength;
+    }
+
+    /**
+     * 
+     * @param maxLength
+     *     The maxLength
+     */
+    @JsonProperty("maxLength")
+    public void setMaxLength(Object maxLength) {
+        this.maxLength = maxLength;
     }
 
     @Override
@@ -60,15 +83,24 @@ public class USMTFEnvironmentCategoryCodeType {
         "unchecked"
     })
     protected boolean declaredProperty(String name, Object value) {
-        if ("value".equals(name)) {
-            if (value instanceof String) {
-                setValue(((String) value));
+        if ("type".equals(name)) {
+            if (value instanceof Object) {
+                setType(((Object) value));
             } else {
-                throw new IllegalArgumentException(("property \"value\" is of type \"java.lang.String\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"type\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
-            return false;
+            if ("maxLength".equals(name)) {
+                if (value instanceof Object) {
+                    setMaxLength(((Object) value));
+                } else {
+                    throw new IllegalArgumentException(("property \"maxLength\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
+                }
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -76,10 +108,14 @@ public class USMTFEnvironmentCategoryCodeType {
         "unchecked"
     })
     protected Object declaredPropertyOrNotFound(String name, Object notFoundValue) {
-        if ("value".equals(name)) {
-            return getValue();
+        if ("type".equals(name)) {
+            return getType();
         } else {
-            return notFoundValue;
+            if ("maxLength".equals(name)) {
+                return getMaxLength();
+            } else {
+                return notFoundValue;
+            }
         }
     }
 
@@ -106,7 +142,7 @@ public class USMTFEnvironmentCategoryCodeType {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(value).toHashCode();
+        return new HashCodeBuilder().append(type).append(maxLength).toHashCode();
     }
 
     @Override
@@ -118,7 +154,7 @@ public class USMTFEnvironmentCategoryCodeType {
             return false;
         }
         USMTFEnvironmentCategoryCodeType rhs = ((USMTFEnvironmentCategoryCodeType) other);
-        return new EqualsBuilder().append(value, rhs.value).isEquals();
+        return new EqualsBuilder().append(type, rhs.type).append(maxLength, rhs.maxLength).isEquals();
     }
 
     public static String[] getReferenceSchemaArray() {

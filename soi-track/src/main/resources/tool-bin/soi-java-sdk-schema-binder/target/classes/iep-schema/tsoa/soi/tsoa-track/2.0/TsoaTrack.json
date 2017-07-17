@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.tsoa_track._2_0.TsoaTrack",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "Identification": {
       "$ref": "../../../../niem/niem-core/3.0/Identification.json"
     },

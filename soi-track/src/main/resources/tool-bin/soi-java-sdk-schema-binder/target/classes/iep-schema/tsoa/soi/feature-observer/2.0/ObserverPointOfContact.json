@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.feature_observer._2_0.ObserverPointOfContact",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "ContactInformation": {
       "$ref": "../../../../niem/niem-core/3.0/ContactInformation.json"
     }

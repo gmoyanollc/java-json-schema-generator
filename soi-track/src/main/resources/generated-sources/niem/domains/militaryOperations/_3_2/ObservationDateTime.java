@@ -3,6 +3,7 @@ package niem.domains.militaryOperations._3_2;
 
 import java.io.IOException;
 import javax.annotation.Generated;
+import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -21,126 +22,47 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "value",
-    "id",
-    "ref",
-    "metadata",
-    "relationshipMetadata"
+    "value"
 })
 public class ObservationDateTime {
 
+    /**
+     * ZuluDateTimeType
+     * <p>
+     * A data type for a datetime constrained to always be ZULU.
+     * 
+     */
     @JsonProperty("value")
-    private Object value;
-    @JsonProperty("id")
-    private Object id;
-    @JsonProperty("ref")
-    private Object ref;
-    @JsonProperty("metadata")
-    private Object metadata;
-    @JsonProperty("relationshipMetadata")
-    private Object relationshipMetadata;
+    @Valid
+    private ZuluDateTimeType value;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservationDateTime\",\"title\":\"ObservationDateTime\",\"type\":\"object\",\"description\":\"A Date Time Group when this object was observed with the given information. Not to be confused with the Publish Time, which indicates when the system published the message.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.ObservationDateTime\",\"properties\":{\"value\":{\"value\":{\"type\":\"string\"}},\"id\":{\"value\":{\"type\":\"string\"}},\"ref\":{\"value\":{\"type\":\"string\"}},\"metadata\":{\"value\":{\"type\":\"string\"}},\"relationshipMetadata\":{\"value\":{\"type\":\"string\"}}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservationDateTime\",\"title\":\"ObservationDateTime\",\"type\":\"object\",\"description\":\"A Date Time Group when this object was observed with the given information. Not to be confused with the Publish Time, which indicates when the system published the message.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.ObservationDateTime\",\"properties\":{\"value\":{\"$ref\":\"ZuluDateTimeType.json\"}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
+     * ZuluDateTimeType
+     * <p>
+     * A data type for a datetime constrained to always be ZULU.
      * 
      * @return
      *     The value
      */
     @JsonProperty("value")
-    public Object getValue() {
+    public ZuluDateTimeType getValue() {
         return value;
     }
 
     /**
+     * ZuluDateTimeType
+     * <p>
+     * A data type for a datetime constrained to always be ZULU.
      * 
      * @param value
      *     The value
      */
     @JsonProperty("value")
-    public void setValue(Object value) {
+    public void setValue(ZuluDateTimeType value) {
         this.value = value;
-    }
-
-    /**
-     * 
-     * @return
-     *     The id
-     */
-    @JsonProperty("id")
-    public Object getId() {
-        return id;
-    }
-
-    /**
-     * 
-     * @param id
-     *     The id
-     */
-    @JsonProperty("id")
-    public void setId(Object id) {
-        this.id = id;
-    }
-
-    /**
-     * 
-     * @return
-     *     The ref
-     */
-    @JsonProperty("ref")
-    public Object getRef() {
-        return ref;
-    }
-
-    /**
-     * 
-     * @param ref
-     *     The ref
-     */
-    @JsonProperty("ref")
-    public void setRef(Object ref) {
-        this.ref = ref;
-    }
-
-    /**
-     * 
-     * @return
-     *     The metadata
-     */
-    @JsonProperty("metadata")
-    public Object getMetadata() {
-        return metadata;
-    }
-
-    /**
-     * 
-     * @param metadata
-     *     The metadata
-     */
-    @JsonProperty("metadata")
-    public void setMetadata(Object metadata) {
-        this.metadata = metadata;
-    }
-
-    /**
-     * 
-     * @return
-     *     The relationshipMetadata
-     */
-    @JsonProperty("relationshipMetadata")
-    public Object getRelationshipMetadata() {
-        return relationshipMetadata;
-    }
-
-    /**
-     * 
-     * @param relationshipMetadata
-     *     The relationshipMetadata
-     */
-    @JsonProperty("relationshipMetadata")
-    public void setRelationshipMetadata(Object relationshipMetadata) {
-        this.relationshipMetadata = relationshipMetadata;
     }
 
     @Override
@@ -153,50 +75,14 @@ public class ObservationDateTime {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("value".equals(name)) {
-            if (value instanceof Object) {
-                setValue(((Object) value));
+            if (value instanceof ZuluDateTimeType) {
+                setValue(((ZuluDateTimeType) value));
             } else {
-                throw new IllegalArgumentException(("property \"value\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"value\" is of type \"niem.domains.militaryOperations._3_2.ZuluDateTimeType\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
-            if ("id".equals(name)) {
-                if (value instanceof Object) {
-                    setId(((Object) value));
-                } else {
-                    throw new IllegalArgumentException(("property \"id\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                }
-                return true;
-            } else {
-                if ("ref".equals(name)) {
-                    if (value instanceof Object) {
-                        setRef(((Object) value));
-                    } else {
-                        throw new IllegalArgumentException(("property \"ref\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                    }
-                    return true;
-                } else {
-                    if ("metadata".equals(name)) {
-                        if (value instanceof Object) {
-                            setMetadata(((Object) value));
-                        } else {
-                            throw new IllegalArgumentException(("property \"metadata\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                        }
-                        return true;
-                    } else {
-                        if ("relationshipMetadata".equals(name)) {
-                            if (value instanceof Object) {
-                                setRelationshipMetadata(((Object) value));
-                            } else {
-                                throw new IllegalArgumentException(("property \"relationshipMetadata\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                            }
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
-                }
-            }
+            return false;
         }
     }
 
@@ -207,23 +93,7 @@ public class ObservationDateTime {
         if ("value".equals(name)) {
             return getValue();
         } else {
-            if ("id".equals(name)) {
-                return getId();
-            } else {
-                if ("ref".equals(name)) {
-                    return getRef();
-                } else {
-                    if ("metadata".equals(name)) {
-                        return getMetadata();
-                    } else {
-                        if ("relationshipMetadata".equals(name)) {
-                            return getRelationshipMetadata();
-                        } else {
-                            return notFoundValue;
-                        }
-                    }
-                }
-            }
+            return notFoundValue;
         }
     }
 
@@ -250,7 +120,7 @@ public class ObservationDateTime {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(value).append(id).append(ref).append(metadata).append(relationshipMetadata).toHashCode();
+        return new HashCodeBuilder().append(value).toHashCode();
     }
 
     @Override
@@ -262,15 +132,15 @@ public class ObservationDateTime {
             return false;
         }
         ObservationDateTime rhs = ((ObservationDateTime) other);
-        return new EqualsBuilder().append(value, rhs.value).append(id, rhs.id).append(ref, rhs.ref).append(metadata, rhs.metadata).append(relationshipMetadata, rhs.relationshipMetadata).isEquals();
+        return new EqualsBuilder().append(value, rhs.value).isEquals();
     }
 
     public static String[] getReferenceSchemaArray() {
-        return new String[] { };
+        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#ZuluDateTimeType\",\"title\":\"ZuluDateTimeType\",\"type\":\"object\",\"description\":\"A data type for a datetime constrained to always be ZULU.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.ZuluDateTimeType\",\"properties\":{\"value\":{\"type\":\"string\",\"format\":\"date-time\"}},\"additionalProperties\":false}"};
     }
 
     public static String[] getReferenceArray() {
-        return new String[] { };
+        return new String[] {"ZuluDateTimeType.json"};
     }
 
     public static String getSchema() {

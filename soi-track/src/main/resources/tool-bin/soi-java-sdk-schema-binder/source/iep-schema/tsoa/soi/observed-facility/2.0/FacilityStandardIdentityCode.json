@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/#FacilityStandardIdentityCode",
+  "title": "FacilityStandardIdentityCode",
+  "type": "object",
+  "description": "A Facility Standard Identity Code.",
+  "version": "0.4.5",
+  "javaType": "tsoa.soi.observed_facility._2_0.FacilityStandardIdentityCode",
+  "properties": {
+    "StandardIdentityCodeType": {
+      "$ref": "../../../../niem/domains/militaryOperations/3.2/StandardIdentityCodeType.json"
+    }
+  },
+  "additionalProperties": false
+}

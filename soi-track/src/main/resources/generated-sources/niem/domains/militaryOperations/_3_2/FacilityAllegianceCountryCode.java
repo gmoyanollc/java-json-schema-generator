@@ -3,6 +3,7 @@ package niem.domains.militaryOperations._3_2;
 
 import java.io.IOException;
 import javax.annotation.Generated;
+import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -32,9 +33,10 @@ public class FacilityAllegianceCountryCode {
      * 
      */
     @JsonProperty("CountryAlpha3CodeType")
-    private String CountryAlpha3CodeType;
+    @Valid
+    private niem.codes.nga_genc._3_0.CountryAlpha3CodeType CountryAlpha3CodeType;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#FacilityAllegianceCountryCode\",\"title\":\"FacilityAllegianceCountryCode\",\"type\":\"object\",\"description\":\"A designator for a country to which a facility owes its allegiance.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.FacilityAllegianceCountryCode\",\"properties\":{\"CountryAlpha3CodeType\":{\"$ref\":\"../../../../niem/codes/nga_genc/3.0/CountryAlpha3CodeType.json\"}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#FacilityAllegianceCountryCode\",\"title\":\"FacilityAllegianceCountryCode\",\"type\":\"object\",\"description\":\"A designator for a country to which a facility owes its allegiance.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.FacilityAllegianceCountryCode\",\"properties\":{\"CountryAlpha3CodeType\":{\"$ref\":\"../../../../niem/codes/nga_genc/3.0/CountryAlpha3CodeType.json\"}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
@@ -46,7 +48,7 @@ public class FacilityAllegianceCountryCode {
      *     The CountryAlpha3CodeType
      */
     @JsonProperty("CountryAlpha3CodeType")
-    public String getCountryAlpha3CodeType() {
+    public niem.codes.nga_genc._3_0.CountryAlpha3CodeType getCountryAlpha3CodeType() {
         return CountryAlpha3CodeType;
     }
 
@@ -59,7 +61,7 @@ public class FacilityAllegianceCountryCode {
      *     The CountryAlpha3CodeType
      */
     @JsonProperty("CountryAlpha3CodeType")
-    public void setCountryAlpha3CodeType(String CountryAlpha3CodeType) {
+    public void setCountryAlpha3CodeType(niem.codes.nga_genc._3_0.CountryAlpha3CodeType CountryAlpha3CodeType) {
         this.CountryAlpha3CodeType = CountryAlpha3CodeType;
     }
 
@@ -73,10 +75,10 @@ public class FacilityAllegianceCountryCode {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("CountryAlpha3CodeType".equals(name)) {
-            if (value instanceof String) {
-                setCountryAlpha3CodeType(((String) value));
+            if (value instanceof niem.codes.nga_genc._3_0.CountryAlpha3CodeType) {
+                setCountryAlpha3CodeType(((niem.codes.nga_genc._3_0.CountryAlpha3CodeType) value));
             } else {
-                throw new IllegalArgumentException(("property \"CountryAlpha3CodeType\" is of type \"java.lang.String\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"CountryAlpha3CodeType\" is of type \"niem.codes.nga_genc._3_0.CountryAlpha3CodeType\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
@@ -134,7 +136,7 @@ public class FacilityAllegianceCountryCode {
     }
 
     public static String[] getReferenceSchemaArray() {
-        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/codes/nga_genc/3.0/#CountryAlpha3CodeType\",\"title\":\"CountryAlpha3CodeType\",\"type\":\"string\",\"description\":\"A data type for three-character country codes.\",\"version\":\"0.4.4\",\"additionalProperties\":false}"};
+        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/codes/nga_genc/3.0/#CountryAlpha3CodeType\",\"title\":\"CountryAlpha3CodeType\",\"type\":\"object\",\"description\":\"A data type for three-character country codes.\",\"version\":\"0.4.5\",\"javaType\":\"niem.codes.nga_genc._3_0.CountryAlpha3CodeType\",\"properties\":{\"type\":[\"string\",\"null\"],\"maxLength\":128},\"additionalProperties\":false}"};
     }
 
     public static String[] getReferenceArray() {

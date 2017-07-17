@@ -5,24 +5,32 @@
   "description": "A magnitude of motion (rate of change of position) of an object.",
   "version": "0.4.5",
   "items": {
-    "value": {},
+    "undefined": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
     "speedUnitCode": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "metadata": {
       "type": "array",

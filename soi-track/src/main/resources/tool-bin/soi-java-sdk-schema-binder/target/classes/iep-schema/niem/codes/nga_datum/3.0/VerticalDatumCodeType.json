@@ -6,6 +6,12 @@
   "description": "A data type for vertical datum codes.",
   "version": "0.4.5",
   "javaType": "niem.codes.nga_datum._3_0.VerticalDatumCodeType",
-  "properties": {},
+  "properties": {
+    "type": [
+      "string",
+      "null"
+    ],
+    "maxLength": 128
+  },
   "additionalProperties": false
 }

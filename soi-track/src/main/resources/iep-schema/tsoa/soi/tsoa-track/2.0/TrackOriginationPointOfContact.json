@@ -9,6 +9,9 @@
   "properties": {
     "ObjectType": {
       "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
+    "ContactInformation": {
+      "$ref": "../../../../niem/niem-core/3.0/ContactInformation.json"
     }
   },
   "additionalProperties": false

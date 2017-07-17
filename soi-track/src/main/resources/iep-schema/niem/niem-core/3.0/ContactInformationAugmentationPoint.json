@@ -1,0 +1,14 @@
+{
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#ContactInformationAugmentationPoint",
+  "title": "ContactInformationAugmentationPoint",
+  "type": "array",
+  "description": "An augmentation point for ContactInformationType.",
+  "version": "0.4.5",
+  "items": [
+    {
+      "type": "object"
+    }
+  ],
+  "maxItems": 16,
+  "additionalItems": false
+}

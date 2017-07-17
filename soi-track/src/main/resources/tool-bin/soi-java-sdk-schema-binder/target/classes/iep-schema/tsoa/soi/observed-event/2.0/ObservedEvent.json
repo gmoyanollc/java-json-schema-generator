@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.observed_event._2_0.ObservedEvent",
   "properties": {
+    "AugmentationType": {
+      "$ref": "../../../../niem/structures/3.0/AugmentationType.json"
+    },
     "Event": {
       "$ref": "../../../../niem/domains/militaryOperations/3.2/Event.json"
     }

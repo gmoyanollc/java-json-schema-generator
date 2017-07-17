@@ -1,9 +1,12 @@
 {
-  "targetSchemaBuildVersion": "0.4.5",
+  "targetSchemaBuildVersion": "0.4.6",
   "defaultPrimitiveFacets": {
     "dateTimeFacets": { "type": "string", "format": "date-time" },
     "numberFacets": { "type": "number", "maximum": 2147483647, "minimum": -2147483648 },
     "stringFacets": { "type": "string", "maxLength": 128 },
+    "array": { "maxItems": 16 },
+    "dateTime": { "type": "string", "format": "date-time" },
+    "number": { "maximum": 2147483647, "minimum": -2147483648 },
     "string": { "maxLength": 128 }
   },
   "schemaBaseDir": {

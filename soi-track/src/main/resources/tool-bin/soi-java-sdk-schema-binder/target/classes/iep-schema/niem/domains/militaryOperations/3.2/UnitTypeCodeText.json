@@ -5,18 +5,26 @@
   "description": "A Joint Chiefs of Staff developed and assigned code, consisting of five characters that uniquely identify a \"type unit.\"",
   "version": "0.4.5",
   "items": {
-    "value": {},
+    "undefined": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    },
     "id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "metadata": {
       "type": "array",

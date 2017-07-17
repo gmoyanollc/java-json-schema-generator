@@ -3,6 +3,7 @@ package niem.domains.militaryOperations._3_2;
 
 import java.io.IOException;
 import javax.annotation.Generated;
+import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -21,126 +22,47 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-    "value",
-    "id",
-    "ref",
-    "metadata",
-    "relationshipMetadata"
+    "value"
 })
 public class ObservationOPEXCode {
 
+    /**
+     * OPEXCodeType
+     * <p>
+     * A data type for the operational status of an event.
+     * 
+     */
     @JsonProperty("value")
-    private Object value;
-    @JsonProperty("id")
-    private Object id;
-    @JsonProperty("ref")
-    private Object ref;
-    @JsonProperty("metadata")
-    private Object metadata;
-    @JsonProperty("relationshipMetadata")
-    private Object relationshipMetadata;
+    @Valid
+    private OPEXCodeType value;
     protected final static Object NOT_FOUND_VALUE = new Object();
-    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservationOPEXCode\",\"title\":\"ObservationOPEXCode\",\"type\":\"object\",\"description\":\"A designator specifying whether observation was a part of an operation, exercise or simulation.\",\"version\":\"0.4.4\",\"javaType\":\"niem.domains.militaryOperations._3_2.ObservationOPEXCode\",\"properties\":{\"value\":{\"value\":{\"type\":\"string\"}},\"id\":{\"value\":{\"type\":\"string\"}},\"ref\":{\"value\":{\"type\":\"string\"}},\"metadata\":{\"value\":{\"type\":\"string\"}},\"relationshipMetadata\":{\"value\":{\"type\":\"string\"}}},\"additionalProperties\":false}", ""};
+    private final static String[] schemaArray = new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#ObservationOPEXCode\",\"title\":\"ObservationOPEXCode\",\"type\":\"object\",\"description\":\"A designator specifying whether observation was a part of an operation, exercise or simulation.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.ObservationOPEXCode\",\"properties\":{\"value\":{\"$ref\":\"OPEXCodeType.json\"}},\"additionalProperties\":false}", ""};
     public static String schemaHash;
 
     /**
+     * OPEXCodeType
+     * <p>
+     * A data type for the operational status of an event.
      * 
      * @return
      *     The value
      */
     @JsonProperty("value")
-    public Object getValue() {
+    public OPEXCodeType getValue() {
         return value;
     }
 
     /**
+     * OPEXCodeType
+     * <p>
+     * A data type for the operational status of an event.
      * 
      * @param value
      *     The value
      */
     @JsonProperty("value")
-    public void setValue(Object value) {
+    public void setValue(OPEXCodeType value) {
         this.value = value;
-    }
-
-    /**
-     * 
-     * @return
-     *     The id
-     */
-    @JsonProperty("id")
-    public Object getId() {
-        return id;
-    }
-
-    /**
-     * 
-     * @param id
-     *     The id
-     */
-    @JsonProperty("id")
-    public void setId(Object id) {
-        this.id = id;
-    }
-
-    /**
-     * 
-     * @return
-     *     The ref
-     */
-    @JsonProperty("ref")
-    public Object getRef() {
-        return ref;
-    }
-
-    /**
-     * 
-     * @param ref
-     *     The ref
-     */
-    @JsonProperty("ref")
-    public void setRef(Object ref) {
-        this.ref = ref;
-    }
-
-    /**
-     * 
-     * @return
-     *     The metadata
-     */
-    @JsonProperty("metadata")
-    public Object getMetadata() {
-        return metadata;
-    }
-
-    /**
-     * 
-     * @param metadata
-     *     The metadata
-     */
-    @JsonProperty("metadata")
-    public void setMetadata(Object metadata) {
-        this.metadata = metadata;
-    }
-
-    /**
-     * 
-     * @return
-     *     The relationshipMetadata
-     */
-    @JsonProperty("relationshipMetadata")
-    public Object getRelationshipMetadata() {
-        return relationshipMetadata;
-    }
-
-    /**
-     * 
-     * @param relationshipMetadata
-     *     The relationshipMetadata
-     */
-    @JsonProperty("relationshipMetadata")
-    public void setRelationshipMetadata(Object relationshipMetadata) {
-        this.relationshipMetadata = relationshipMetadata;
     }
 
     @Override
@@ -153,50 +75,14 @@ public class ObservationOPEXCode {
     })
     protected boolean declaredProperty(String name, Object value) {
         if ("value".equals(name)) {
-            if (value instanceof Object) {
-                setValue(((Object) value));
+            if (value instanceof OPEXCodeType) {
+                setValue(((OPEXCodeType) value));
             } else {
-                throw new IllegalArgumentException(("property \"value\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
+                throw new IllegalArgumentException(("property \"value\" is of type \"niem.domains.militaryOperations._3_2.OPEXCodeType\", but got "+ value.getClass().toString()));
             }
             return true;
         } else {
-            if ("id".equals(name)) {
-                if (value instanceof Object) {
-                    setId(((Object) value));
-                } else {
-                    throw new IllegalArgumentException(("property \"id\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                }
-                return true;
-            } else {
-                if ("ref".equals(name)) {
-                    if (value instanceof Object) {
-                        setRef(((Object) value));
-                    } else {
-                        throw new IllegalArgumentException(("property \"ref\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                    }
-                    return true;
-                } else {
-                    if ("metadata".equals(name)) {
-                        if (value instanceof Object) {
-                            setMetadata(((Object) value));
-                        } else {
-                            throw new IllegalArgumentException(("property \"metadata\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                        }
-                        return true;
-                    } else {
-                        if ("relationshipMetadata".equals(name)) {
-                            if (value instanceof Object) {
-                                setRelationshipMetadata(((Object) value));
-                            } else {
-                                throw new IllegalArgumentException(("property \"relationshipMetadata\" is of type \"java.lang.Object\", but got "+ value.getClass().toString()));
-                            }
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
-                }
-            }
+            return false;
         }
     }
 
@@ -207,23 +93,7 @@ public class ObservationOPEXCode {
         if ("value".equals(name)) {
             return getValue();
         } else {
-            if ("id".equals(name)) {
-                return getId();
-            } else {
-                if ("ref".equals(name)) {
-                    return getRef();
-                } else {
-                    if ("metadata".equals(name)) {
-                        return getMetadata();
-                    } else {
-                        if ("relationshipMetadata".equals(name)) {
-                            return getRelationshipMetadata();
-                        } else {
-                            return notFoundValue;
-                        }
-                    }
-                }
-            }
+            return notFoundValue;
         }
     }
 
@@ -250,7 +120,7 @@ public class ObservationOPEXCode {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(value).append(id).append(ref).append(metadata).append(relationshipMetadata).toHashCode();
+        return new HashCodeBuilder().append(value).toHashCode();
     }
 
     @Override
@@ -262,15 +132,15 @@ public class ObservationOPEXCode {
             return false;
         }
         ObservationOPEXCode rhs = ((ObservationOPEXCode) other);
-        return new EqualsBuilder().append(value, rhs.value).append(id, rhs.id).append(ref, rhs.ref).append(metadata, rhs.metadata).append(relationshipMetadata, rhs.relationshipMetadata).isEquals();
+        return new EqualsBuilder().append(value, rhs.value).isEquals();
     }
 
     public static String[] getReferenceSchemaArray() {
-        return new String[] { };
+        return new String[] {"{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"id\":\"http://release.niem.gov/niem/domains/militaryOperations/3.2/#OPEXCodeType\",\"title\":\"OPEXCodeType\",\"type\":\"object\",\"description\":\"A data type for the operational status of an event.\",\"version\":\"0.4.5\",\"javaType\":\"niem.domains.militaryOperations._3_2.OPEXCodeType\",\"properties\":{\"value\":{\"type\":\"string\",\"description\":\"http://www.w3.org/TR/xmlschema-2/#normalizedString\",\"enum\":[\"EXERCISE\",\"OPERATIONS\",\"SIMULATION\",\"TEST\"]}},\"additionalProperties\":false}"};
     }
 
     public static String[] getReferenceArray() {
-        return new String[] { };
+        return new String[] {"OPEXCodeType.json"};
     }
 
     public static String getSchema() {

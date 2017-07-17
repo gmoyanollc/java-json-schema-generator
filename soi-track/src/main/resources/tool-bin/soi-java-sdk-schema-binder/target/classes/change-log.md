@@ -1,6 +1,24 @@
 # TSOA Track 2.0 JSON IEP Schema Change Log
 
 Author: George Moyano <g@gmoyano.com>
+Date:   Tue Jul 11 14:50:00 2017 -0700
+
+  * generated v0.4.5 schema components
+  * valid v0.4.5 sample instances
+
+Author: George Moyano <g@gmoyano.com>
+Date:   Fri Jul 7 15:12:40 2017 -0700
+
+  * initial primitive types referenced in property extension definitions
+  * initial reference of W3C XML Schema Type to JSON type mapping 
+
+Author: George Moyano <g@gmoyano.com>
+Date:   Thu Jun 29 15:11:31 2017 -0700
+
+  * initial default primitive facets/constraints 
+  * flattened json tree for complexType extension pattern 
+
+Author: George Moyano <g@gmoyano.com>
 Date:   Mon Jun 19 21:56:56 PDT 2017
 
   * generated v0.4.4 schema components

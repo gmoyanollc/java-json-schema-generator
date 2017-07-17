@@ -7,6 +7,9 @@
   "version": "0.4.5",
   "javaType": "tsoa.soi.feature_observation._2_0.MILSTD2525_C",
   "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "MILSTD2525-C-SIDC-Code": {
       "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525-C-SIDC-Code.json"
     }

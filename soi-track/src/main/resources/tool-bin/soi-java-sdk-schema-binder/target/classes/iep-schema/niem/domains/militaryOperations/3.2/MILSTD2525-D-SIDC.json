@@ -5,6 +5,9 @@
   "description": "A symbol identification code, a numeric code based on a database structure that provides the minimum elements required to construct the basic icon and/or a complete symbol. Also called SIDC.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "MILSTD2525-D-SIDC-Part1Code": {
       "$ref": "MILSTD2525-D-SIDC-Part1Code.json"
     },

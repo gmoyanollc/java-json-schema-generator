@@ -5,18 +5,26 @@
   "description": "A name used to create derived names and for display with military symbols.",
   "version": "0.4.5",
   "items": {
-    "value": {},
+    "undefined": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    },
     "id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "metadata": {
       "type": "array",

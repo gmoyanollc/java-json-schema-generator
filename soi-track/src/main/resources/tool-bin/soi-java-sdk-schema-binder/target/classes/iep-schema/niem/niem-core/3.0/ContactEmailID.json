@@ -2,10 +2,16 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/niem-core/3.0/#ContactEmailID",
   "title": "ContactEmailID",
-  "type": "string",
+  "type": "object",
   "description": "An electronic mailing address by which a person or organization may be contacted.",
   "version": "0.4.5",
   "javaType": "niem.niem_core._3_0.ContactEmailID",
-  "properties": {},
+  "properties": {
+    "type": [
+      "string",
+      "null"
+    ],
+    "maxLength": 128
+  },
   "additionalProperties": false
 }

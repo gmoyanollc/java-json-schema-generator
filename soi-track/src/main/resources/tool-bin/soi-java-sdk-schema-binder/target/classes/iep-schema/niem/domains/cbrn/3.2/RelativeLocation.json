@@ -5,6 +5,9 @@
   "description": "A set of information describing the location of an object (i.e., radiation measurement instrument, radiation detector, or measured item) or a radiation source relative to a reference point (Origin).",
   "version": "0.4.5",
   "items": {
+    "RemarksComplexObjectType": {
+      "$ref": "RemarksComplexObjectType.json"
+    },
     "RelativeLocationAzimuthValue": {
       "$ref": "RelativeLocationAzimuthValue.json"
     },

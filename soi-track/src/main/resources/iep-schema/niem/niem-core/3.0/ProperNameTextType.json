@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#ProperNameTextType",
+  "title": "ProperNameTextType",
+  "type": "object",
+  "description": "A data type for a word or phrase by which a person or thing is known, referred, or addressed.",
+  "version": "0.4.5",
+  "javaType": "niem.niem_core._3_0.ProperNameTextType",
+  "properties": {
+    "type": [
+      "string",
+      "null"
+    ],
+    "maxLength": 128
+  },
+  "additionalProperties": false
+}

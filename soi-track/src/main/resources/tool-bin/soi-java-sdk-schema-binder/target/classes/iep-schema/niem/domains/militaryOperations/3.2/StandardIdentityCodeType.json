@@ -6,6 +6,12 @@
   "description": "A data type for a code describing the standard identity of a track; codes defined by MIL-STD-2525C.",
   "version": "0.4.5",
   "javaType": "niem.domains.militaryOperations._3_2.StandardIdentityCodeType",
-  "properties": {},
+  "properties": {
+    "type": [
+      "string",
+      "null"
+    ],
+    "maxLength": 128
+  },
   "additionalProperties": false
 }

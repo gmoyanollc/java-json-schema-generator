@@ -5,6 +5,9 @@
   "description": "An existance of a process or object at a location during a time interval.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "EventIdentification": {
       "$ref": "EventIdentification.json"
     },

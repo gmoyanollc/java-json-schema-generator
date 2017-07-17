@@ -5,6 +5,9 @@
   "description": "A platform system described by its properties.",
   "version": "0.4.5",
   "items": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
     "SystemIdentification": {
       "$ref": "../../../../niem/domains/intelligence/3.2/SystemIdentification.json"
     },

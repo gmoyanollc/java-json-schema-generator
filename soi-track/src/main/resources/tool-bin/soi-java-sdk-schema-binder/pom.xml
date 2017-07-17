@@ -14,7 +14,7 @@
   <properties>
     <property.build.sourceEncoding>UTF-8</property.build.sourceEncoding>
     <!--<json-converter-plugin-source-directory>/home/g/g-dev/soi-messaging/soi-track/src/main/resources/iep-schema/niem/structures/3.0/</json-converter-plugin-source-directory>-->
-    <json-converter-plugin-source-directory>source</json-converter-plugin-source-directory>
+    <json-converter-plugin-source-directory>source/iep-schema</json-converter-plugin-source-directory>
   </properties>
 
   <dependencies>
@@ -54,7 +54,7 @@
     </dependencies>
 
     <build>
-      <finalName>${artifactId}-${version}</finalName>
+      <finalName>${project.artifactId}-${project.version}</finalName>
       <resources>
         <resource>
           <directory>source</directory>

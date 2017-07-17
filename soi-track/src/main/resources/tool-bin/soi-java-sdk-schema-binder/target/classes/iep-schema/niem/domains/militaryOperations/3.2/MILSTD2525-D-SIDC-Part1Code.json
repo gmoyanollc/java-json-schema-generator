@@ -5,18 +5,25 @@
   "description": "An unsigned integer containing the first ten digits of a symbol identification code (SIDC).",
   "version": "0.4.5",
   "items": {
-    "value": {},
+    "undefined": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
     "id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "metadata": {
       "type": "array",

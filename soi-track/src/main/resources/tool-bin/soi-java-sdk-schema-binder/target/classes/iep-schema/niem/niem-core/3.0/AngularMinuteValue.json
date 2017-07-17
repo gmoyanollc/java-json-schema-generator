@@ -5,18 +5,25 @@
   "description": "A value that specifies a minute of a degree. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).",
   "version": "0.4.5",
   "items": {
-    "value": {},
+    "undefined": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
     "id": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "ref": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 128
     },
     "metadata": {
       "type": "array",
