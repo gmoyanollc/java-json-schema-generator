@@ -9,7 +9,7 @@
   "properties": {
     "OriginAugmentationPoint": {
       "OriginLocation": {
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/OriginLocation.json"
+        "$ref": "../../../tsoa/soi/feature-observation/2.0/OriginLocation.json"
       }
     }
   },

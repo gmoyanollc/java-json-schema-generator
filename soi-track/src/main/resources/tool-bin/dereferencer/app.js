@@ -3,7 +3,8 @@ var $refParser = require("json-schema-ref-parser");
 
 const DEREFERENCED_FILE_NAME_LABEL_PART = "dereferenced";
 //var DEFAULT_SCHEMA_FILE = "../../iep-schema/tsoa/soi/tsoa-track/2.0/TsoaTrack.json";
-const DEFAULT_INPUT_SCHEMA_FILE = "../soi-java-sdk-schema-binder/source/iep-schema/tsoa/soi/tsoa-track/2.0/TsoaTrack.json";
+//const DEFAULT_INPUT_SCHEMA_FILE = "../soi-java-sdk-schema-binder/source/iep-schema/tsoa/soi/tsoa-track/2.0/TsoaTrack.json";
+const DEFAULT_INPUT_SCHEMA_FILE = "../soi-java-sdk-schema-binder/source/iep-schema/niem/domains/screening/3.2/PersonIdentification.json";
 //var DEFAULT_DEREFERENCED_FILE_LOCATION = "../../iep-schema";
 const DEFAULT_OUTPUT_FOLDER = "../soi-java-sdk-schema-binder/source";
 

@@ -8,10 +8,10 @@
   "javaType": "tsoa.soi.feature_observation._2_0.FeatureObservation",
   "properties": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "Observation": {
-      "$ref": "../../../../niem/domains/militaryOperations/3.2/Observation.json"
+      "$ref": "../../../niem/domains/militaryOperations/3.2/Observation.json"
     }
   },
   "additionalProperties": false

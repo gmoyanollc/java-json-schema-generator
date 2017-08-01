@@ -8,11 +8,11 @@
   "javaType": "tsoa.soi.observed_facility._2_0.FacilityAugmentationAbstract",
   "properties": {
     "AugmentationType": {
-      "$ref": "../../../../niem/structures/3.0/AugmentationType.json"
+      "$ref": "../../../niem/structures/3.0/AugmentationType.json"
     },
     "FacilityAllegianceCountryAbstract": {
       "FacilityAllegianceCountryCode": {
-        "$ref": "../../../../niem/domains/militaryOperations/3.2/FacilityAllegianceCountryCode.json"
+        "$ref": "../../../niem/domains/militaryOperations/3.2/FacilityAllegianceCountryCode.json"
       }
     }
   },

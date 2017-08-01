@@ -8,7 +8,7 @@
   "javaType": "niem.domains.militaryOperationsRestricted._3_2.WeaponSystem",
   "properties": {
     "ItemType": {
-      "$ref": "../../../../niem/niem-core/3.0/ItemType.json"
+      "$ref": "../../../niem/niem-core/3.0/ItemType.json"
     }
   },
   "additionalProperties": false

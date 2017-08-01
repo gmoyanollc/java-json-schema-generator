@@ -5,7 +5,7 @@
   "description": "An angle in two dimensions measured in degrees (the angle between two half-lines terminating at the same point).",
   "version": "0.4.5",
   "items": {
-    "$ref": "../../../../niem/niem-core/3.0/AngularMeasureType.json"
+    "$ref": "../../../niem/niem-core/3.0/AngularMeasureType.json"
   },
   "maxItems": 16,
   "additionalItems": false

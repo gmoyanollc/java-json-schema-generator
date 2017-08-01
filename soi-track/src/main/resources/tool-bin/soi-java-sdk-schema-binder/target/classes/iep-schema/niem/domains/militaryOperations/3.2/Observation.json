@@ -6,7 +6,7 @@
   "version": "0.4.5",
   "items": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "ObservedObjectLocation": {
       "$ref": "ObservedObjectLocation.json"
@@ -22,18 +22,18 @@
     },
     "ObservedObjectSymbolAbstract": {
       "MILSTD2525-C": {
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-C.json"
+        "$ref": "../../../tsoa/soi/feature-observation/2.0/MILSTD2525-C.json"
       },
       "MILSTD2525-D": {
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-D.json"
+        "$ref": "../../../tsoa/soi/feature-observation/2.0/MILSTD2525-D.json"
       },
       "MILSTD2525-B": {
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/MILSTD2525-B.json"
+        "$ref": "../../../tsoa/soi/feature-observation/2.0/MILSTD2525-B.json"
       }
     },
     "ObservationAugmentationPoint": {
       "SpatialEnvironmentCode": {
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/SpatialEnvironmentCode.json"
+        "$ref": "../../../tsoa/soi/feature-observation/2.0/SpatialEnvironmentCode.json"
       }
     }
   },

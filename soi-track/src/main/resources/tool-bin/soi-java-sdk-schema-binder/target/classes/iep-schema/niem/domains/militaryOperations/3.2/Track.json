@@ -6,32 +6,32 @@
   "version": "0.4.5",
   "items": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "TrackAugmentationPoint": {
       "FeatureObservation": {
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/FeatureObservation.json"
+        "$ref": "../../../tsoa/soi/feature-observation/2.0/FeatureObservation.json"
       },
       "FeatureObserver": {
-        "$ref": "../../../../tsoa/soi/feature-observer/2.0/FeatureObserver.json"
+        "$ref": "../../../tsoa/soi/feature-observer/2.0/FeatureObserver.json"
       },
       "ObservedEvent": {
-        "$ref": "../../../../tsoa/soi/observed-event/2.0/ObservedEvent.json"
+        "$ref": "../../../tsoa/soi/observed-event/2.0/ObservedEvent.json"
       },
       "ObservedFacility": {
-        "$ref": "../../../../tsoa/soi/observed-facility/2.0/ObservedFacility.json"
+        "$ref": "../../../tsoa/soi/observed-facility/2.0/ObservedFacility.json"
       },
       "ObservedMilitaryUnit": {
-        "$ref": "../../../../tsoa/soi/observed-military-unit/2.0/ObservedMilitaryUnit.json"
+        "$ref": "../../../tsoa/soi/observed-military-unit/2.0/ObservedMilitaryUnit.json"
       },
       "ObservedPlatformSystem": {
-        "$ref": "../../../../tsoa/soi/observed-platform-system/2.0/ObservedPlatformSystem.json"
+        "$ref": "../../../tsoa/soi/observed-platform-system/2.0/ObservedPlatformSystem.json"
       },
       "ObservedWeaponSystem": {
-        "$ref": "../../../../tsoa/soi/observed-weapon/2.0/ObservedWeaponSystem.json"
+        "$ref": "../../../tsoa/soi/observed-weapon/2.0/ObservedWeaponSystem.json"
       },
       "TrackOrigination": {
-        "$ref": "../../../../tsoa/soi/tsoa-track/2.0/TrackOrigination.json"
+        "$ref": "../../../tsoa/soi/tsoa-track/2.0/TrackOrigination.json"
       }
     }
   },

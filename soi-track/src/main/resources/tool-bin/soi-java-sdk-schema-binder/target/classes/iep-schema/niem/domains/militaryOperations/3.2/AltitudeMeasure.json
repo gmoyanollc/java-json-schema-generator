@@ -5,7 +5,7 @@
   "description": "A vertical elevation of an object above a surface (as sea level or land) of a planet or natural satellite.",
   "version": "0.4.5",
   "items": {
-    "$ref": "../../../../niem/niem-core/3.0/LocationHeightMeasureType.json"
+    "$ref": "../../../niem/niem-core/3.0/LocationHeightMeasureType.json"
   },
   "maxItems": 16,
   "additionalItems": false

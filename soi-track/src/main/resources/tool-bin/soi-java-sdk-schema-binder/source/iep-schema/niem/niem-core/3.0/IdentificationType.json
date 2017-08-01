@@ -4,23 +4,24 @@
   "title": "IdentificationType",
   "type": "object",
   "description": "A data type for a representation of an identity.",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "javaType": "niem.niem_core._3_0.IdentificationType",
   "properties": {
     "ObjectType": {
-      "$ref": "../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
     },
-    "IdentificationID": {
-      "$ref": "IdentificationID.json"
+    "otherAttributes": {
+      "type": "string",
+      "maxLength": 128
     },
-    "IdentificationJurisdiction": {
-      "$ref": "IdentificationJurisdiction.json"
+    "identificationID": {
+      "$ref": "../../../../niem/niem-core/3.0/IdentificationID.json"
     },
-    "IdentificationAugmentationPoint": {
-      "ShortName": {
-        "$ref": "../../../tsoa/soi/tsoa-track/2.0/ShortName.json"
-      }
+    "identificationJurisdiction": {
+      "$ref": "../../../../niem/niem-core/3.0/JurisdictionType.json"
+    },
+    "identificationAugmentationPoint": {
+      "$ref": "../../../../niem/niem-core/3.0/IdentificationAugmentationPoint.json"
     }
-  },
-  "additionalProperties": false
+  }
 }

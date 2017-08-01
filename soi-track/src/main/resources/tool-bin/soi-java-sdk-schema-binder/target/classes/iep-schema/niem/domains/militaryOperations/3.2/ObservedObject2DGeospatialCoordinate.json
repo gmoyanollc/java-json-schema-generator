@@ -5,7 +5,7 @@
   "description": "A latitude and longitude of an observed object.",
   "version": "0.4.5",
   "items": {
-    "$ref": "../../../../niem/niem-core/3.0/Location2DGeospatialCoordinateType.json"
+    "$ref": "../../../niem/niem-core/3.0/Location2DGeospatialCoordinateType.json"
   },
   "maxItems": 16,
   "additionalItems": false

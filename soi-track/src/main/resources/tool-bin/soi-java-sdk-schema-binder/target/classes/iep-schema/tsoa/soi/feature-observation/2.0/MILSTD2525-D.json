@@ -8,10 +8,10 @@
   "javaType": "tsoa.soi.feature_observation._2_0.MILSTD2525_D",
   "properties": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "MILSTD2525-D-SIDC": {
-      "$ref": "../../../../niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC.json"
+      "$ref": "../../../niem/domains/militaryOperations/3.2/MILSTD2525-D-SIDC.json"
     }
   },
   "additionalProperties": false

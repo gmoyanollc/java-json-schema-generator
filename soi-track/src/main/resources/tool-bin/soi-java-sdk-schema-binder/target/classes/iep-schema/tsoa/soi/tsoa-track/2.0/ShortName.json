@@ -8,7 +8,7 @@
   "javaType": "tsoa.soi.tsoa_track._2_0.ShortName",
   "properties": {
     "TextType": {
-      "$ref": "../../../../niem/niem-core/3.0/TextType.json"
+      "$ref": "../../../niem/niem-core/3.0/TextType.json"
     }
   },
   "additionalProperties": false

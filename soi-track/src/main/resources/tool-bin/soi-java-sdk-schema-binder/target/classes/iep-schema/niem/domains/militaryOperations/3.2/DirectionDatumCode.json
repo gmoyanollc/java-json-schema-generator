@@ -8,7 +8,7 @@
   "javaType": "niem.domains.militaryOperations._3_2.DirectionDatumCode",
   "properties": {
     "DirectionDatumCodeType": {
-      "$ref": "../../../../niem/codes/nga_datum/3.0/DirectionDatumCodeType.json"
+      "$ref": "../../../niem/codes/nga_datum/3.0/DirectionDatumCodeType.json"
     }
   },
   "additionalProperties": false

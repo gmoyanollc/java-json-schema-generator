@@ -4,14 +4,15 @@
   "title": "ProperNameTextType",
   "type": "object",
   "description": "A data type for a word or phrase by which a person or thing is known, referred, or addressed.",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "javaType": "niem.niem_core._3_0.ProperNameTextType",
   "properties": {
-    "type": [
-      "string",
-      "null"
-    ],
-    "maxLength": 128
-  },
-  "additionalProperties": false
+    "TextType": {
+      "$ref": "../../../../niem/niem-core/3.0/TextType.json"
+    },
+    "otherAttributes": {
+      "type": "string",
+      "maxLength": 128
+    }
+  }
 }

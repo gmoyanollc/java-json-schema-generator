@@ -8,16 +8,16 @@
   "javaType": "tsoa.soi.feature_observation._2_0.OriginLocation",
   "properties": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "AltitudeMeasure": {
-      "$ref": "../../../../niem/domains/militaryOperations/3.2/AltitudeMeasure.json"
+      "$ref": "../../../niem/domains/militaryOperations/3.2/AltitudeMeasure.json"
     },
     "ElevationMeasure": {
-      "$ref": "../../../../niem/domains/militaryOperations/3.2/ElevationMeasure.json"
+      "$ref": "../../../niem/domains/militaryOperations/3.2/ElevationMeasure.json"
     },
     "Location2DGeospatialCoordinate": {
-      "$ref": "../../../../niem/niem-core/3.0/Location2DGeospatialCoordinate.json"
+      "$ref": "../../../niem/niem-core/3.0/Location2DGeospatialCoordinate.json"
     }
   },
   "additionalProperties": false

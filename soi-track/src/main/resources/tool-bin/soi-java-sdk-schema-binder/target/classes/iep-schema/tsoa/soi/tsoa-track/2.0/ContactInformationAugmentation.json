@@ -8,7 +8,7 @@
   "javaType": "tsoa.soi.tsoa_track._2_0.ContactInformationAugmentation",
   "properties": {
     "ContactDSNTelephoneNumber": {
-      "$ref": "../../../../niem/domains/militaryOperations/3.2/ContactDSNTelephoneNumber.json"
+      "$ref": "../../../niem/domains/militaryOperations/3.2/ContactDSNTelephoneNumber.json"
     }
   },
   "additionalProperties": false

@@ -8,13 +8,13 @@
   "javaType": "tsoa.soi.tsoa_track._2_0.TrackOrigination",
   "properties": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "OriginatorTrackIdentification": {
       "$ref": "OriginatorTrackIdentification.json"
     },
     "SystemIdentification": {
-      "$ref": "../../../../niem/domains/intelligence/3.2/SystemIdentification.json"
+      "$ref": "../../../niem/domains/intelligence/3.2/SystemIdentification.json"
     },
     "TrackOriginationPointOfContact": {
       "$ref": "TrackOriginationPointOfContact.json"

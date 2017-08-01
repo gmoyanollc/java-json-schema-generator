@@ -4,12 +4,19 @@
   "title": "TextType",
   "type": "object",
   "description": "A data type for a character string.",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "javaType": "niem.niem_core._3_0.TextType",
   "properties": {
-    "value": {
-      "type": "string"
+    "String": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    },
+    "otherAttributes": {
+      "type": "string",
+      "maxLength": 128
     }
-  },
-  "additionalProperties": false
+  }
 }

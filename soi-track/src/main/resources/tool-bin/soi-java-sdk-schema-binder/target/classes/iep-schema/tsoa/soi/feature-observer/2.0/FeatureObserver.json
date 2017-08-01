@@ -8,10 +8,10 @@
   "javaType": "tsoa.soi.feature_observer._2_0.FeatureObserver",
   "properties": {
     "AugmentationType": {
-      "$ref": "../../../../niem/structures/3.0/AugmentationType.json"
+      "$ref": "../../../niem/structures/3.0/AugmentationType.json"
     },
     "Observer": {
-      "$ref": "../../../../niem/domains/militaryOperationsRestricted/3.2/Observer.json"
+      "$ref": "../../../niem/domains/militaryOperationsRestricted/3.2/Observer.json"
     }
   },
   "additionalProperties": false

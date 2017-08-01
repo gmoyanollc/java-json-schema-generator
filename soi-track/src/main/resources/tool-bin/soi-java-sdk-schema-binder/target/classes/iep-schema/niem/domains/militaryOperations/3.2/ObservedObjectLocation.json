@@ -18,7 +18,7 @@
     },
     "ObservedObjectLocationAugmentationPoint": {
       "ObservedRelativeLocation": {
-        "$ref": "../../../../tsoa/soi/feature-observation/2.0/ObservedRelativeLocation.json"
+        "$ref": "../../../tsoa/soi/feature-observation/2.0/ObservedRelativeLocation.json"
       }
     }
   },

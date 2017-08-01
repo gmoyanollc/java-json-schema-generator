@@ -35,7 +35,7 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
   ssg.setSourceSchemaBaseDirRelativeDepth();
   ssg.setSubstitutionMappings();
   ssg.loadDocumentationMap();
-  generatedSchema = ssg.generateObjectSchema(sourceSchemaObject);
+  generatedSchema = ssg.generate(sourceSchemaObject);
   generatedSchema.logIdentifierList();
 };
 

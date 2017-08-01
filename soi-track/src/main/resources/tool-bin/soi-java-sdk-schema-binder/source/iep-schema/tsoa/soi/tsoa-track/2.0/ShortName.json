@@ -4,12 +4,18 @@
   "title": "ShortName",
   "type": "object",
   "description": "A short-name, nick-name for something.",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "javaType": "tsoa.soi.tsoa_track._2_0.ShortName",
   "properties": {
-    "TextType": {
+    "name": {
+      "type": "string",
+      "enum": [
+        "ShortName"
+      ],
+      "maxLength": 128
+    },
+    "value": {
       "$ref": "../../../../niem/niem-core/3.0/TextType.json"
     }
-  },
-  "additionalProperties": false
+  }
 }

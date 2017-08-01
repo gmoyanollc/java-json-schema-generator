@@ -16,7 +16,7 @@
   "sourceDocumentationBaseDir": "../xml-schema-content-extractor/output/",
   "w3cXmlTypeSchema": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/jsonschemas/w3c/2001/XMLSchema.jsonschema",
   "schemaSourceFilenames": [
-    "TSOA_Track-schema.json"
+    "gov_niem_release_niem_domains_screening__3.jsonschema"
   ],
   "schemaSourceFilenames_bak": [
     "gov_niem_release_niem_codes_nga_datum__3.jsonschema",
@@ -44,6 +44,9 @@
   ],
   "schemaTemplates": [
     {
+      "id": "schema-template",
+      "file": "./lib/schema-template.json"
+    }, {
       "id": "object-template",
       "file": "./lib/schema-object-template.json"
     }, {

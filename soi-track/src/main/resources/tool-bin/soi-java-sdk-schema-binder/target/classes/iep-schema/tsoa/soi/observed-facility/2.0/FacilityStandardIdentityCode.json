@@ -8,7 +8,7 @@
   "javaType": "tsoa.soi.observed_facility._2_0.FacilityStandardIdentityCode",
   "properties": {
     "StandardIdentityCodeType": {
-      "$ref": "../../../../niem/domains/militaryOperations/3.2/StandardIdentityCodeType.json"
+      "$ref": "../../../niem/domains/militaryOperations/3.2/StandardIdentityCodeType.json"
     }
   },
   "additionalProperties": false

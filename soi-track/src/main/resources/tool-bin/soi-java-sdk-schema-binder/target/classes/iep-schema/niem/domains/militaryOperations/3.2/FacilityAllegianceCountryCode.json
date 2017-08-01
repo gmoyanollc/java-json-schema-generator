@@ -8,7 +8,7 @@
   "javaType": "niem.domains.militaryOperations._3_2.FacilityAllegianceCountryCode",
   "properties": {
     "CountryAlpha3CodeType": {
-      "$ref": "../../../../niem/codes/nga_genc/3.0/CountryAlpha3CodeType.json"
+      "$ref": "../../../niem/codes/nga_genc/3.0/CountryAlpha3CodeType.json"
     }
   },
   "additionalProperties": false

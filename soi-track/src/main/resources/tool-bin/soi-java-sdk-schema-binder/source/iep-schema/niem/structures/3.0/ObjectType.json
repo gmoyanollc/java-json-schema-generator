@@ -4,9 +4,13 @@
   "title": "ObjectType",
   "type": "object",
   "description": "",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "javaType": "niem.structures._3_0.ObjectType",
   "properties": {
+    "otherAttributes": {
+      "type": "string",
+      "maxLength": 128
+    },
     "id": {
       "type": [
         "string",
@@ -35,6 +39,5 @@
       },
       "maxItems": 16
     }
-  },
-  "additionalProperties": false
+  }
 }

@@ -8,7 +8,7 @@
   "javaType": "tsoa.soi.feature_observation._2_0.SpatialEnvironmentCode",
   "properties": {
     "USMTFEnvironmentCategoryCodeType": {
-      "$ref": "../../../../niem/domains/maritime/3.2/USMTFEnvironmentCategoryCodeType.json"
+      "$ref": "../../../niem/domains/maritime/3.2/USMTFEnvironmentCategoryCodeType.json"
     }
   },
   "additionalProperties": false

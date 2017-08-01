@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://release.niem.gov/niem/niem-core/3.0/#JurisdictionType",
+  "title": "JurisdictionType",
+  "type": "object",
+  "description": "A data type for a geopolitical area in which an organization, person, or object has a specific range of authority.",
+  "version": "0.4.6",
+  "javaType": "niem.niem_core._3_0.JurisdictionType",
+  "properties": {
+    "ObjectType": {
+      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+    },
+    "otherAttributes": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "locationCountry": {
+      "$ref": "../../../../niem/niem-core/3.0/LocationCountry.json"
+    }
+  }
+}

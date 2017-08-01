@@ -8,7 +8,7 @@
   "javaType": "tsoa.soi.observed_platform_system._2_0.ObservedPlatformSystem",
   "properties": {
     "AugmentationType": {
-      "$ref": "../../../../niem/structures/3.0/AugmentationType.json"
+      "$ref": "../../../niem/structures/3.0/AugmentationType.json"
     },
     "PlatformSystem": {
       "$ref": "PlatformSystem.json"

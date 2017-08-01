@@ -8,7 +8,7 @@
   "javaType": "tsoa.soi.tsoa_track._2_0.OriginatorTrackIdentification",
   "properties": {
     "IdentificationType": {
-      "$ref": "../../../../niem/niem-core/3.0/IdentificationType.json"
+      "$ref": "../../../niem/niem-core/3.0/IdentificationType.json"
     }
   },
   "additionalProperties": false

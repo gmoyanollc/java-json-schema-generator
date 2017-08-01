@@ -8,10 +8,10 @@
   "javaType": "tsoa.soi.observed_military_unit._2_0.UnitReferenceNumber",
   "properties": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "UnitReferenceNumberID": {
-      "$ref": "../../../../niem/domains/militaryOperationsRestricted/3.2/UnitReferenceNumberID.json"
+      "$ref": "../../../niem/domains/militaryOperationsRestricted/3.2/UnitReferenceNumberID.json"
     }
   },
   "additionalProperties": false

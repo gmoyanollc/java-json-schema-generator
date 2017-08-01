@@ -8,7 +8,7 @@
   "javaType": "niem.domains.intelligence._3_2.SystemIdentification",
   "properties": {
     "SystemIdentificationType": {
-      "$ref": "../../../../niem/niem-core/3.0/SystemIdentificationType.json"
+      "$ref": "../../../niem/niem-core/3.0/SystemIdentificationType.json"
     }
   },
   "additionalProperties": false

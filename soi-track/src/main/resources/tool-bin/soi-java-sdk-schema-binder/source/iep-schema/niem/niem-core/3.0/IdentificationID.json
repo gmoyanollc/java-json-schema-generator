@@ -1,14 +1,25 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://release.niem.gov/niem/niem-core/3.0/#IdentificationID",
   "title": "IdentificationID",
-  "type": "array",
+  "type": "object",
   "description": "An identifier.",
-  "version": "0.4.5",
-  "items": 
-    {
+  "version": "0.4.6",
+  "javaType": "niem.niem_core._3_0.IdentificationID",
+  "properties": {
+    "name": {
       "type": "string",
+      "enum": [
+        "IdentificationID"
+      ],
       "maxLength": 128
     },
-  "maxItems": 16,
-  "additionalItems": false
+    "value": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    }
+  }
 }

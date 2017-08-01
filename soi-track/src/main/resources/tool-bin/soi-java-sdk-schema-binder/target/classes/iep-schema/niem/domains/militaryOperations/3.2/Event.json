@@ -6,7 +6,7 @@
   "version": "0.4.5",
   "items": {
     "ObjectType": {
-      "$ref": "../../../../niem/structures/3.0/ObjectType.json"
+      "$ref": "../../../niem/structures/3.0/ObjectType.json"
     },
     "EventIdentification": {
       "$ref": "EventIdentification.json"

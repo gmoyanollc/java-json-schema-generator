@@ -8,10 +8,10 @@
   "javaType": "tsoa.soi.observed_weapon._2_0.ObservedWeaponSystem",
   "properties": {
     "AugmentationType": {
-      "$ref": "../../../../niem/structures/3.0/AugmentationType.json"
+      "$ref": "../../../niem/structures/3.0/AugmentationType.json"
     },
     "WeaponSystem": {
-      "$ref": "../../../../niem/domains/militaryOperationsRestricted/3.2/WeaponSystem.json"
+      "$ref": "../../../niem/domains/militaryOperationsRestricted/3.2/WeaponSystem.json"
     }
   },
   "additionalProperties": false

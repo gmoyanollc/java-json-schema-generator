@@ -8,10 +8,10 @@
   "javaType": "tsoa.soi.observed_facility._2_0.ObservedFacility",
   "properties": {
     "AugmentationType": {
-      "$ref": "../../../../niem/structures/3.0/AugmentationType.json"
+      "$ref": "../../../niem/structures/3.0/AugmentationType.json"
     },
     "Facility": {
-      "$ref": "../../../../niem/niem-core/3.0/Facility.json"
+      "$ref": "../../../niem/niem-core/3.0/Facility.json"
     }
   },
   "additionalProperties": false
