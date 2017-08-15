@@ -1,24 +1,30 @@
-var fs = require('fs')
-  , $RefParser = require('json-schema-ref-parser')
-  , SchemaGenerator = require('./lib/schema-generator.js');
+var fs = require('fs');
+//046e   , $RefParser = require('json-schema-ref-parser')
+//046e   , SchemaGenerator = require('./lib/schema-generator.js');
+var generateSchema = require('./lib/schema-generator.js');
 
-var config;
+function help() {
+  console.log("  usage: " + process.argv[0] + ' ' + process.argv[1] + " schema-file");
+}
+
+//046e var config;
 //var schemaTemplateObjects = [];
 
-initialize();
+//046e initialize();
 
-var generatedSchema;
+/* 046e var generatedSchema;
 var sourceSchemaFile;
 var sourceSchemaBuffer;
 var sourceSchemaObject;
 var sourceModuleFile;
 var sourceModuleBuffer
-var sourceModuleObject
+var sourceModuleObject*/
 
-console.log('##iterate JSONIX generated JSON schema files');
+//046e console.log('##iterate JSONIX generated JSON schema files');
 
-for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
-  sourceSchemaFile = config.schemaBaseDir.source + config.schemaSourceFilenames[index];
+//046e for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
+
+  /*046e sourceSchemaFile = config.schemaBaseDir.source + config.schemaSourceFilenames[index];
   console.log('##source schema file: ' + sourceSchemaFile);
   sourceSchemaBuffer = readFile(sourceSchemaFile);
   sourceSchemaObject = JSON.parse(sourceSchemaBuffer);
@@ -36,21 +42,35 @@ for (var index = 0; index < config.schemaSourceFilenames.length; index++) {
   ssg.setSubstitutionMappings();
   ssg.loadDocumentationMap();
   generatedSchema = ssg.generate(sourceSchemaObject);
-  generatedSchema.logIdentifierList();
-};
+  generatedSchema.logIdentifierList();*/
+//046e };
+
+var argv = process.argv.slice(2);
+if (argv.length > 0) 
+  fs.access(argv[0], function (err) {
+    if (!err) {
+      var generatedSchema = new generateSchema(argv[0]);
+      generatedSchema.logIdentifierList();
+    } else {
+      console.log(err);
+      help();
+    }
+  })
+else
+  help();
 
 //writeDeferencedTargetSchemaFile();
-done();
+//046e done();
 
-function readFile(file) {
+/*046e function readFile(file) {
   console.log('##read file: ' + file);
   var fileBuffer = fs.readFileSync(file);
   //console.log('##output file buffer string');
   //console.log(fileBuffer.toString());
   return(fileBuffer);
-}
+}*/
 
-function getSchemaTemplateObjects() {
+/*046e function getSchemaTemplateObjects() {
   var schemaTemplateObjects = [];
   
   config.schemaTemplates.forEach(function (schemaTemplate) {
@@ -63,9 +83,9 @@ function getSchemaTemplateObjects() {
   });
 
   return(schemaTemplateObjects);
-}
+}*/
 
-function writeDeferencedTargetSchemaFile() {
+/*046e function writeDeferencedTargetSchemaFile() {
 
   $RefParser.dereference(config.schemaBaseDir.target + 'TsoaTrack.json', function(err, schema) {
     if (err) {
@@ -77,14 +97,14 @@ function writeDeferencedTargetSchemaFile() {
       console.log(schema.id);
     }
   });
-}
+}*/
 
-function initialize() {
+/*046e function initialize() {
   console.log('#Hello World');
   config = JSON.parse(readFile('./lib/config.json'));
   //schemaTemplateObjects = getSchemaTemplateObjects();
-}
+}*/
 
-function done() {
+/*046e function done() {
   console.log('#done');
-}
+}*/

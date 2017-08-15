@@ -1,4 +1,4 @@
-{
+exports.config = {
   "targetSchemaBuildVersion": "0.4.6",
   "defaultPrimitiveFacets": {
     "dateTimeFacets": { "type": "string", "format": "date-time" },
