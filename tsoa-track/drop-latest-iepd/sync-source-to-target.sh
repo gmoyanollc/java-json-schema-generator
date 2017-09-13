@@ -1,1 +1,0 @@
-ant sync-source-to-target | tee sync-source-to-target.log
