@@ -1,9 +1,0 @@
-{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-facility/2.0/", "documentation": ["An observed facility described by its properties."],"components": {"FacilityAugmentationType": { "type": "complexType", "documentation": ["A data type for a Facility Standard Identity Code."]}, "ObservedFacilityType": { "type": "complexType", "documentation": ["A data type for an observed facility ."]}, "FacilityStandardIdentityCode": { "type": "element", "documentation": [
-    
-      "A Facility Standard Identity Code."
-    
-  ]}, "FacilityAugmentationAbstract": { "type": "element", "documentation": []}, "ObservedFacility": { "type": "element", "documentation": [
-    
-      "An observed facility described by its properties."
-    
-  ]}}}

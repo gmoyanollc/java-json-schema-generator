@@ -1,5 +1,0 @@
-{ "schemaUri": "http://release.niem.gov/niem/domains/screening/3.2/", "documentation": ["The People Screening domain provides harmonized information sharing content within the Screening Portfolio of DHS. The Screening namespace is initially being populated with person screening information for immigrant and non-immigrant person types who have been encountered and identified by the Screening Portfolio Components. Screening expands on encounter-related NIEM elements currently included in the Immigration and Intelligence domains."],"components": {"PersonIdentification": { "type": "element", "documentation": [
-    
-      "An identification enumerator that represents a PERSON."
-    
-  ]}}}

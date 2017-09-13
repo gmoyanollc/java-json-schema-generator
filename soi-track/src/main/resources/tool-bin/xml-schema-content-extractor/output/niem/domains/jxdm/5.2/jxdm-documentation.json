@@ -1,5 +1,0 @@
-{ "schemaUri": "http://release.niem.gov/niem/domains/jxdm/5.2/", "documentation": ["Justice"],"components": {"NetworkAddressID": { "type": "element", "documentation": [
-    
-      "A network address involved in association."
-    
-  ]}}}

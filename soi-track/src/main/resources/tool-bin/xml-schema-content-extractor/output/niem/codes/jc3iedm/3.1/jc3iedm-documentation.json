@@ -1,5 +1,0 @@
-{ "schemaUri": "http://release.niem.gov/niem/codes/jc3iedm/3.1/", "documentation": ["Codes from JC3IEDM"],"components": {"EventCategoryCodeSimpleType": { "type": "simpleType", "documentation": ["A data type for a designator for a name which denotes the category that some event falls under."]}, "EventCategoryCodeType": { "type": "complexType", "documentation": ["A data type for a designator for a name which denotes the category that some event falls under."]}, "EventCategoryCode": { "type": "element", "documentation": [
-    
-      "A designator for a category that some event falls under."
-    
-  ]}}}

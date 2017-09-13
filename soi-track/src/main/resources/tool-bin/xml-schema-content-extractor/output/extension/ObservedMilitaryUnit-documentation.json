@@ -1,9 +1,0 @@
-{ "schemaUri": "http://mcsc.usmc.mil/mc2sa/tsoa/soi/observed-military-unit/2.0/", "documentation": ["An observed military unit described by its properties."],"components": {"UnitReferenceNumberType": { "type": "complexType", "documentation": ["A type for a Unit Reference Number (URN). A \"(URN) is a number used by units using VMF on an interface to uniquely identify friendly military units, broadcast networks, and multicast groups.\""]}, "ObservedMilitaryUnitType": { "type": "complexType", "documentation": ["A data type for an observed military unit."]}, "UnitReferenceNumber": { "type": "element", "documentation": [
-    
-      "A Unit Reference Number (URN)."
-    
-  ]}, "ObservedMilitaryUnit": { "type": "element", "documentation": [
-    
-      "An observed military unit described by its properties."
-    
-  ]}}}
