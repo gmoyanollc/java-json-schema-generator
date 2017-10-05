@@ -1,0 +1,13 @@
+{
+  "name": "schema-generator",
+  "version": "1.0.0",
+  "description": "Generate JSON schema for binding to Java classes from JSONIX generated JSON schema.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "[George Moyano] (https://onename.com/gmoyano)",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
