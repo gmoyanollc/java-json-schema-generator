@@ -1,10 +1,11 @@
-#Schema Generator
-##JSONIX
+# schema-generator  
+
+## JSONIX
 
   * Jsonix is based on JAXB/XJC and XJC uses XSOM to process XML schemas (https://github.com/highsource/jsonix/issues/33)
 
-#Jsonix Caveats
-The following are caveats that the Schema Generator is intended to resolve.
+### Jsonix Caveats
+The following Jsonix caveats that the Schema Generator is intended to resolve.
 
   * xs:pattern is not supported and the expressions are not compatible
     * XML Schema regular expressions are not compatible with JavaScript/ECMAScript regular expressions
@@ -16,6 +17,8 @@ The following are caveats that the Schema Generator is intended to resolve.
     * A simple extension to JAXB RI is available but Java developers have disappeared:
       * https://github.com/whummer/jaxb-facets)
     *   length, enumerations
+  * JSON schema operators oneOf, anyOf or allOf are not supported by popular Jackson-based Java Class JSON Schema binders.  This module produces JSON schema without the oneOf, anyOf or allOf operators.  The JSON schema is encoded to support [jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo)
+    * [Generating a POJO using oneOf, anyOf or allOf with constraints · Issue #392 · joelittlejohn/jsonschema2pojo](https://github.com/joelittlejohn/jsonschema2pojo/issues/392).
 
 
 #JSON Schema Generation

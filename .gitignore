@@ -2,7 +2,8 @@
 *.zip
 .vscode/
 node_modules/
-./config/config-*.*
-tsoa-track/drop-latest-iepd/target
-soi-track/src/main/resources/tool-bin/soi-java-sdk-schema-binder/target
-soi-track/src/main/resources/tool-bin/schema-java-binder
+data/
+data.forge/
+log/
+.config*.*
+
