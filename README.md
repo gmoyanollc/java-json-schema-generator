@@ -1,4 +1,5 @@
-# schema-generator  
+# java-json-schema-generator  
+java-json-schema-generator produces JSON schema for binding to Java classes from JSONIX generated JSON schema.
 
 ## JSONIX
 
