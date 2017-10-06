@@ -234,4 +234,3 @@ getProperties(sourceSchemaObject, definitionObject)
 - [x] generate schema files recursively or remove filter for JSONIX compiler.  The schema file for certain definition properties is never generated because the property is locally referenced by a definition but not defined in the local JSONIX schema file.  This may be attributeable to filtered generation of JSONIX artifacts. [Example]("http://release.niem.gov/niem/niem-core/3.0/#SystemName")  Another case is a definition not referenced by a local 'anyOf' component.
 - [ ] refactor global scope to include constants in generator object
 
-
