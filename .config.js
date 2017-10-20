@@ -10,10 +10,10 @@ exports.config = {
     "string": { "maxLength": 128 }
   },
   "schemaBaseDir": {
-    "source": "../xml-schema-convertor/mapping/",
-    "target": "../schema/json/"
+    "source": "./data/conversion/mapping/",
+    "target": "./data/java-json-schema/"
   },
-  "sourceDocumentationBaseDir": "../xml-schema-content-extractor/output/",
+  "sourceDocumentationBaseDir": "./data/xml-schema-content/",
   "w3cXmlTypeSchema": "../xml-schema-convertor/node_modules/jsonix/jsonschemas/w3c/2001/XMLSchema.jsonschema",
   "schemaTemplates": [
     {

@@ -131,7 +131,9 @@ JSON schema object's structural properties and constraints are defined by a "def
   * namespace prefix is represented by first letter of the system, service, domain object namespace parts
     * example: `xmlns:tst="http://mcsc.usmc.mil/mc2sa/tsoa/soi/track/2.0/`
 
-#workflow
+
+
+#workflow (no longer applicable)
 Every 'anyOf' and 'definition' referenced by an anyOf component gets a schema file generated.  
 
 generateObjectSchema
@@ -232,6 +234,7 @@ getProperties(sourceSchemaObject, definitionObject)
 - [x] allOf reference to a definition should define only the properties of the definition.  The definition object should be ignored.
 - [x] include base definition in derived component, e.g., mo:Degree360Type --> nc:Degree360Type, Type --> SimpleType
 - [x] generate schema files recursively or remove filter for JSONIX compiler.  The schema file for certain definition properties is never generated because the property is locally referenced by a definition but not defined in the local JSONIX schema file.  This may be attributeable to filtered generation of JSONIX artifacts. [Example]("http://release.niem.gov/niem/niem-core/3.0/#SystemName")  Another case is a definition not referenced by a local 'anyOf' component.
-- [ ] refactor global scope to include constants in generator object
+- [x] refactor global scope to include constants in generator object
+  [ ] halt execution when file not found
 
 

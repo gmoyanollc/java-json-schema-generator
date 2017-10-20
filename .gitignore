@@ -2,8 +2,7 @@
 *.zip
 .vscode/
 node_modules/
-data/
-data.forge/
+data*/**
 log/
 .config*.*
 

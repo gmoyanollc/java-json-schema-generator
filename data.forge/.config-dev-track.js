@@ -10,38 +10,11 @@ exports.config = {
     "string": { "maxLength": 128 }
   },
   "schemaBaseDir": {
-    "source": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/",
-    "target": "../../iep-schema/"
+    "source": "./data/conversion/mapping/",
+    "target": "./data/java-json-schema/"
   },
-  "sourceDocumentationBaseDir": "../xml-schema-content-extractor/output/",
-  "w3cXmlTypeSchema": "../../../../../../tsoa-track/src/main/resources/tool-bin/x-to-y-n-back/mapping/jsonschemas/w3c/2001/XMLSchema.jsonschema",
-  "schemaSourceFilenames": [
-    "gov_niem_release_niem_domains_screening__3.jsonschema"
-  ],
-  "schemaSourceFilenames_bak": [
-    "gov_niem_release_niem_codes_nga_datum__3.jsonschema",
-    "gov_niem_release_niem_codes_unece_rec20__3.jsonschema", 
-    "gov_niem_release_niem_domains_cbrn__3.jsonschema",
-    "gov_niem_release_niem_domains_intelligence__3.jsonschema",
-    "gov_niem_release_niem_domains_maritime__3.jsonschema", 
-    "gov_niem_release_niem_domains_militaryoperations__3.jsonschema",
-    "gov_niem_release_niem_domains_screening__3.jsonschema",
-    "gov_niem_release_niem_localterminology__3.jsonschema",
-    "gov_niem_release_niem_proxy_xsd__3.jsonschema",
-    "gov_niem_release_niem_structures__3.jsonschema",
-    "https_metadata_ces_mil_dse_dse_assets__100135658_submissionpackage_niem_militaryoperationsrestricted__3.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_facility__2.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observation__2.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_feature_observer__2.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_event__2.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_platform_system__2.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_military_unit__2.jsonschema",
-    "mil_usmc_mcsc_mc2sa_tsoa_soi_observed_weapon__2.jsonschema",
-    "org_isotc211__2005_gco.jsonschema", 
-    "NIEM_Core-schema.json", 
-    "NIEM_Core_OGC_GML-schema.json",
-    "TSOA_Track-schema.json"
-  ],
+  "sourceDocumentationBaseDir": "./data/xml-schema-content/",
+  "w3cXmlTypeSchema": "../xml-schema-convertor/node_modules/jsonix/jsonschemas/w3c/2001/XMLSchema.jsonschema",
   "schemaTemplates": [
     {
       "id": "schema-template",
