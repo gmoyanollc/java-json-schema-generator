@@ -10,11 +10,11 @@ exports.config = {
     "string": { "maxLength": 128 }
   },
   "schemaBaseDir": {
-    "source": "./data/conversion/mapping/",
+    "source": "./data/mapping/",
     "target": "./data/java-json-schema/"
   },
-  "sourceDocumentationBaseDir": "./data/xml-schema-content/",
-  "w3cXmlTypeSchema": "../xml-schema-convertor/node_modules/jsonix/jsonschemas/w3c/2001/XMLSchema.jsonschema",
+  "sourceDocumentationBaseDir": "./data/extraction/",
+  "w3cXmlTypeSchema": "../xml-schema-json-mapper/node_modules/jsonix/jsonschemas/w3c/2001/XMLSchema.jsonschema",
   "schemaTemplates": [
     {
       "id": "schema-template",
