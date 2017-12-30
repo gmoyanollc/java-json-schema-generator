@@ -48,7 +48,7 @@ exports.config = {
       "sourceModuleFilename": "mil_army_us_peoc3t_abcs_target__2.js",
       "sourceSchemaFilename": "mil_army_us_peoc3t_abcs_target__2.jsonschema",
       "sourceSchemaFileId": "http://peoc3t.us.army.mil/abcs/target:2.0#",
-      "targetSchemaFilepath": "mil/army/us/peoc3t/abcs/target/2.0"
+      "targetSchemaFilepath": "mil/army/us/peoc3t/abcs/target/2.0/"
     },{
       "namespace": "http://peoc3t.us.army.mil/abcs/firescommon:2.0",
       "sourceDocumentationFilename": "FireSupportCommon.xsd-documentation.json",
@@ -56,7 +56,7 @@ exports.config = {
       "sourceModuleFilename": "mil_army_us_peoc3t_abcs_firescommon__2.js",
       "sourceSchemaFilename": "mil_army_us_peoc3t_abcs_firescommon__2.jsonschema",
       "sourceSchemaFileId": "http://peoc3t.us.army.mil/abcs/firescommon:2.0#",
-      "targetSchemaFilepath": "mil/army/us/peoc3t/abcs/firescommon/2.0"
+      "targetSchemaFilepath": "mil/army/us/peoc3t/abcs/firescommon/2.0/"
     },{
       "namespace": "http://peoc3t.us.army.mil/abcs/common:2.0",
       "sourceDocumentationFilename": "AbcsCommon.xsd-documentation.json",
@@ -64,7 +64,7 @@ exports.config = {
       "sourceModuleFilename": "mil_army_us_peoc3t_abcs_common__2.js",
       "sourceSchemaFilename": "mil_army_us_peoc3t_abcs_common__2.jsonschema",
       "sourceSchemaFileId": "http://peoc3t.us.army.mil/abcs/common:2.0#",
-      "targetSchemaFilepath": "mil/army/us/peoc3t/abcs/common/2.0"
+      "targetSchemaFilepath": "mil/army/us/peoc3t/abcs/common/2.0/"
     },{
       "namespace": "urn:us:gov:ic:ism:v2",
       "sourceDocumentationFilename": "IC-ISM-v2.1.xsd-documentation.json",
@@ -72,7 +72,7 @@ exports.config = {
       "sourceModuleFilename": "us_gov_ic_ism_v2.js",
       "sourceSchemaFilename": "us_gov_ic_ism_v2.jsonschema",
       "sourceSchemaFileId": "#",
-      "targetSchemaFilepath": "us/gov/ic/ism/v2"
+      "targetSchemaFilepath": "us/gov/ic/ism/v2/"
     },{
       "namespace": "http://www.w3.org/1999/xlink",
       "sourceDocumentationFilename": "",
